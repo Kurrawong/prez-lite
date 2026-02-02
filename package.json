@@ -1,0 +1,20 @@
+{
+  "name": "prez-lite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lightweight static vocabulary publishing system",
+  "pnpm": {
+    "onlyBuiltDependencies": ["better-sqlite3"]
+  },
+  "scripts": {
+    "build:data": "node scripts/build-data.js",
+    "build:site": "pnpm --filter web generate",
+    "build": "pnpm build:data && pnpm build:site",
+    "dev": "pnpm --filter web dev",
+    "preview": "pnpm --filter web preview"
+  },
+  "devDependencies": {
+    "n3": "^2.0.1"
+  }
+}

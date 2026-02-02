@@ -1,0 +1,39 @@
+# Reference repos (cloned for local searching only)
+resources/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+.output/
+.nuxt/
+
+# Generated data (built from TTL at build time)
+web/public/data/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Temp
+tmp/
+temp/
+*.tmp
