@@ -31,7 +31,7 @@ const CONFIG = {
   vocabsDir: join(ROOT_DIR, 'data', 'vocabs'),
   backgroundDir: join(ROOT_DIR, 'data', 'background'),
   manifestPath: join(ROOT_DIR, 'data', 'background', 'manifest.json'),
-  outputDir: join(ROOT_DIR, 'web', 'public', 'data'),
+  outputDir: join(ROOT_DIR, 'public', 'data'),
   conceptsChunkSize: 10000,
   defaultLang: 'en'
 };

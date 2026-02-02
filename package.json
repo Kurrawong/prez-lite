@@ -9,12 +9,24 @@
   },
   "scripts": {
     "build:data": "node scripts/build-data.js",
-    "build:site": "pnpm --filter web generate",
-    "build": "pnpm build:data && pnpm build:site",
-    "dev": "pnpm --filter web dev",
-    "preview": "pnpm --filter web preview"
+    "build": "pnpm build:data && nuxt generate",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.11.0",
+    "@nuxt/ui": "^4.4.0",
+    "mermaid": "^11.12.2",
+    "n3": "^2.0.1",
+    "nuxt": "^4.3.0",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.27",
+    "vue-router": "^4.6.4",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
-    "n3": "^2.0.1"
+    "better-sqlite3": "^12.6.2"
   }
 }

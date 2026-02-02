@@ -11,15 +11,14 @@ This plan combines two key initiatives:
 - **Pre-build web components** in prez-lite repo (organizations don't build them)
 - Create **GitHub template repo** for one-click organization setup
 
-**Distribution Strategy (requires validation):**
-- Primary: `extends: ['github:Kurrawong/prez-lite/web']` (subdirectory extends)
-- Fallback: npm package `@kurrawong/prez-lite` if GitHub subdirectory proves problematic
+**Distribution Strategy:** ✅ VALIDATED
+- `extends: ['github:Kurrawong/prez-lite']` (root-level extends)
+- Nuxt app moved to repo root (no subfolder) to avoid dependency isolation issues
+- Subdirectory extends (`github:org/repo/subfolder`) has native module compilation issues
 
-**Known Caveats with GitHub Subdirectory Extends:**
-- Layer dependencies are isolated in `.c12/` - may need explicit dependency management
-- Some users report issues on Vercel/Netlify deployments
-- GitHub rate limiting can cause 404 errors - use `GIGET_AUTH` token in CI
+**Notes for Private Repos:**
 - Private repos require `GIGET_AUTH=<token>` environment variable
+- GitHub rate limiting can cause 404 errors - use auth token in CI
 
 ---
 
@@ -29,34 +28,34 @@ This plan combines two key initiatives:
 
 ```
 prez-lite/
-├── web/                              # Nuxt layer (extended by orgs)
-│   ├── app/
-│   │   ├── pages/
-│   │   │   ├── index.vue
-│   │   │   ├── vocabs.vue
-│   │   │   ├── scheme.vue
-│   │   │   ├── concept.vue
-│   │   │   ├── search.vue
-│   │   │   └── share/               # NEW: Share pages
-│   │   │       ├── index.vue        # Share overview
-│   │   │       └── [vocab].vue      # Individual vocab share
-│   │   ├── components/
-│   │   └── composables/
-│   ├── public/
-│   │   ├── export/                  # NEW: Generated at build
-│   │   │   └── vocabs/
-│   │   │       └── [vocab-name]/
-│   │   │           ├── [vocab].ttl
-│   │   │           ├── [vocab].json
-│   │   │           ├── [vocab].jsonld
-│   │   │           ├── [vocab].rdf
-│   │   │           └── [vocab].csv
-│   │   └── web-components/          # NEW: Pre-built components
-│   │       ├── prez-vocab.min.js
-│   │       ├── prez-vocab.min.css
-│   │       └── README.md
-│   ├── nuxt.config.ts
-│   └── package.json
+├── app/                              # Nuxt app (at root for layer extends)
+│   ├── pages/
+│   │   ├── index.vue
+│   │   ├── vocabs.vue
+│   │   ├── scheme.vue
+│   │   ├── concept.vue
+│   │   ├── search.vue
+│   │   └── share/                   # NEW: Share pages
+│   │       ├── index.vue            # Share overview
+│   │       └── [vocab].vue          # Individual vocab share
+│   ├── components/
+│   └── composables/
+├── public/
+│   ├── export/                      # NEW: Generated at build
+│   │   └── vocabs/
+│   │       └── [vocab-name]/
+│   │           ├── [vocab].ttl
+│   │           ├── [vocab].json
+│   │           ├── [vocab].jsonld
+│   │           ├── [vocab].rdf
+│   │           └── [vocab].csv
+│   └── web-components/              # NEW: Pre-built components
+│       ├── prez-vocab.min.js
+│       ├── prez-vocab.min.css
+│       └── README.md
+├── content/                         # Markdown content
+├── nuxt.config.ts
+├── package.json
 │
 ├── packages/
 │   └── web-components/              # NEW: Web component source
@@ -73,31 +72,11 @@ prez-lite/
 │   ├── export-vocabs.js             # NEW: Generate export formats
 │   └── build-web-components.js      # NEW: Build & copy to public/
 │
-├── actions/                          # NEW: Reusable GitHub Actions
-│   ├── build-data/
-│   │   └── action.yml
-│   └── build-site/
-│       └── action.yml
+├── data/                            # Source TTL vocabularies
+│   └── vocabs/
 │
-├── template/                         # NEW: Organization template
-│   ├── data/vocabs/.gitkeep
-│   ├── content/
-│   │   ├── index.md
-│   │   └── about.md
-│   ├── public/
-│   │   └── logo.png
-│   ├── app.config.ts
-│   ├── nuxt.config.ts
-│   ├── package.json
-│   └── .github/workflows/deploy.yml
-│
-├── example/                          # NEW: Working example
-│   ├── data/vocabs/
-│   │   └── example-vocab.ttl
-│   └── nuxt.config.ts
-│
-└── docs/
-    ├── getting-started.md
+├── docs/                            # Documentation
+│   ├── getting-started.md
     ├── customization.md
     └── sharing.md
 ```

@@ -40,12 +40,12 @@ jobs:
         run: node scripts/build-data.js
 
       - name: Build static site
-        run: cd web && pnpm generate
+        run: pnpm generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: web/.output/public
+          path: .output/public
 
   deploy:
     environment:

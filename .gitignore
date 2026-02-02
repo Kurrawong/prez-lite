@@ -5,16 +5,21 @@ resources/
 node_modules/
 .pnpm-store/
 
-# Build outputs
+# Nuxt dev/build outputs
 .output/
 .nuxt/
+.nitro/
+.cache/
+.data/
+dist/
 
 # Generated data (built from TTL at build time)
-web/public/data/
+public/data/
 
 # IDE
 .idea/
 .vscode/
+.fleet/
 *.swp
 *.swo
 *~
@@ -29,6 +34,7 @@ Thumbs.db
 !.env.example
 
 # Logs
+logs/
 *.log
 npm-debug.log*
 pnpm-debug.log*
