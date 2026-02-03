@@ -43,7 +43,14 @@ export default defineNuxtPlugin(() => {
 
     if (mermaidBlocks.length === 0) return
 
-    const mermaid = await import('mermaid')
+    let mermaid
+    try {
+      mermaid = await import('mermaid')
+    } catch {
+      // mermaid is an optional dependency - diagrams won't render without it
+      console.info('[prez-lite] mermaid not installed - diagram rendering disabled. Install mermaid to enable.')
+      return
+    }
     mermaid.default.initialize(getMermaidConfig())
 
     for (const block of mermaidBlocks) {
@@ -82,7 +89,12 @@ export default defineNuxtPlugin(() => {
   const reRenderExistingDiagrams = async () => {
     const containers = document.querySelectorAll<HTMLElement>('.mermaid-diagram[data-mermaid-code]')
     if (containers.length === 0) return
-    const mermaid = await import('mermaid')
+    let mermaid
+    try {
+      mermaid = await import('mermaid')
+    } catch {
+      return
+    }
     mermaid.default.initialize(getMermaidConfig())
     for (const container of containers) {
       const encoded = container.getAttribute('data-mermaid-code')

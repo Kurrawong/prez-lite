@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxt/content', '~/modules/dayjs-fix'],
+  modules: ['@nuxt/ui', '@nuxt/content'],
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {
@@ -46,16 +46,13 @@ export default defineNuxtConfig({
   // Fix for Vue instance issues when used as a layer (Nuxt UI + UApp)
   // See: https://github.com/nuxt/ui/issues/2622
   build: {
-    transpile: ['vue', 'dayjs']
+    transpile: ['vue']
   },
 
-  // Additional vite config (dayjs fix handled by ~/modules/dayjs-fix)
+  // Dedupe common dependencies to avoid version conflicts with layers
   vite: {
     resolve: {
-      dedupe: ['dayjs', 'vue']
-    },
-    ssr: {
-      noExternal: ['dayjs']
+      dedupe: ['vue', 'vue-router']
     }
   }
 })
