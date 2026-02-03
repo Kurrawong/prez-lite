@@ -46,6 +46,14 @@ export default defineNuxtConfig({
   // Fix for Vue instance issues when used as a layer (Nuxt UI + UApp)
   // See: https://github.com/nuxt/ui/issues/2622
   build: {
-    transpile: ['vue']
+    transpile: ['vue', 'dayjs']
+  },
+
+  // Fix dayjs ESM export issue when used as a layer
+  // See: https://github.com/nuxt/nuxt/issues/29087
+  vite: {
+    optimizeDeps: {
+      include: ['dayjs']
+    }
   }
 })
