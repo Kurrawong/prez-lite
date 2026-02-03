@@ -41,5 +41,11 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: false
     }
+  },
+
+  // Fix for Vue instance issues when used as a layer (Nuxt UI + UApp)
+  // See: https://github.com/nuxt/ui/issues/2622
+  build: {
+    transpile: ['vue']
   }
 })
