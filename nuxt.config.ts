@@ -5,6 +5,13 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxt/content'],
 
+  // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
+  content: {
+    experimental: {
+      nativeSqlite: true,
+    },
+  },
+
   // Nuxt UI configuration
   ui: {
     theme: {

@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "description": "Lightweight static vocabulary publishing system",
-  "pnpm": {
-    "onlyBuiltDependencies": ["better-sqlite3"]
+  "engines": {
+    "node": ">=22.5.0"
   },
   "scripts": {
     "build:data": "node scripts/build-data.js",
@@ -26,6 +26,7 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "better-sqlite3": "^12.6.2"
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.87"
   }
 }
