@@ -54,6 +54,12 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       include: ['dayjs']
+    },
+    resolve: {
+      dedupe: ['dayjs']
+    },
+    ssr: {
+      noExternal: ['dayjs']
     }
   }
 })
