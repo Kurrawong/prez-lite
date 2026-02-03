@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxt/content'],
+  modules: ['@nuxt/ui', '@nuxt/content', './modules/layer-css'],
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {
@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['./app/assets/css/main.css'],
+  // CSS is added by ./modules/layer-css for proper path resolution in layers
 
   // Static site generation
   ssr: true,
