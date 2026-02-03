@@ -1,9 +1,16 @@
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+
+// Get absolute path to this layer's CSS
+const currentDir = dirname(fileURLToPath(import.meta.url))
+const layerCssPath = resolve(currentDir, 'app/assets/css/main.css')
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxt/content', './modules/layer-css'],
+  modules: ['@nuxt/ui', '@nuxt/content'],
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {
@@ -19,7 +26,8 @@ export default defineNuxtConfig({
     }
   },
 
-  // CSS is added by ./modules/layer-css for proper path resolution in layers
+  // Layer CSS with absolute path for proper resolution
+  css: [layerCssPath],
 
   // Static site generation
   ssr: true,
