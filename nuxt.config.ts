@@ -13,7 +13,20 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
-    './modules/prez-lite-content'  // Add base layer content source
+    // Inline module to add base layer content source
+    function (_options, nuxt) {
+      const contentPath = resolve(currentDir, 'content')
+      console.log('[prez-lite] Adding content source from:', contentPath)
+
+      nuxt.options.content = nuxt.options.content || {}
+      nuxt.options.content.sources = nuxt.options.content.sources || {}
+      nuxt.options.content.sources['prez-lite-base'] = {
+        driver: 'fs',
+        prefix: '',
+        base: contentPath
+      }
+      console.log('[prez-lite] Content sources:', Object.keys(nuxt.options.content.sources))
+    }
   ],
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
