@@ -1,9 +1,10 @@
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
 
-// Get absolute path to this layer's CSS
+// Get absolute paths for layer assets
 const currentDir = dirname(fileURLToPath(import.meta.url))
 const layerCssPath = resolve(currentDir, 'app/assets/css/main.css')
+const layerContentPath = resolve(currentDir, 'content')
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -17,6 +18,14 @@ export default defineNuxtConfig({
     experimental: {
       nativeSqlite: true,
     },
+    sources: {
+      // Base layer content with absolute path for proper layer resolution
+      'prez-lite': {
+        driver: 'fs',
+        prefix: '',
+        base: layerContentPath
+      }
+    }
   },
 
   // Nuxt UI configuration
