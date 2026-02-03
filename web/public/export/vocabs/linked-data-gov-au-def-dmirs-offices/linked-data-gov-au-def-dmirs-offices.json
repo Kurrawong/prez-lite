@@ -1,0 +1,413 @@
+{
+  "iri": "https://linked.data.gov.au/def/dmirs-offices",
+  "label": "DEMIRS offices",
+  "description": "Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. ",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/carlisle",
+      "label": "Carlisle",
+      "definition": "Carlisle is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. The site includes several buildings encompassing separate functions of the Geological Survey of Western Australia, including the Perth Core Library, and is located at 37 Harris St, Carlisle WA 6101."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library",
+      "label": "JH (Joe) Lord Core Library",
+      "definition": "The JH (Joe) Lord Core Library is one of two Geological Survey storage and viewing facilities housing geological exploration materials (predominantly drillcores and samples) and related media. The building is on the Kalgoorlie site at the corner of Hunter and Broadwood Streets, West Kalgoorlie WA 6430.",
+      "altLabels": [
+        "Joe Lord Core Library",
+        "Kalgoorlie Core Library"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+      "label": "Goldfields–Esperance (Kalgoorlie) regional office",
+      "definition": "The Kalgoorlie office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Goldfields and Esperance regions. In addition to administrative functions of the Department and of the Geological Survey of Western Australia, the Kalgoorlie office houses the Joe (JH) Lord Core Library, East Mine Inspectorate and Kalgoorlie Mining Registrar. The office is at the corner of Hunter and Broadwood Streets, West Kalgoorlie WA 6430.",
+      "altLabels": [
+        "Kalgoorlie office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+      "label": "Mineral House",
+      "definition": "Mineral House is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It is the department's main administrative office, housing the Geological Survey and Resource Strategy, Resource and Environmental Compliance, Resource Tenure and Aboriginal Empowerment Petroleum, Mineral Titles Divisions of the Department, the West Mine Inspectorate and the Perth Mining Registrar. The building is at 100 Plain St, East Perth WA 6004.",
+      "altLabels": [
+        "MH"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/perth-core-library",
+      "label": "Perth Core Library",
+      "definition": "The Perth Core Library is one of two Geological Survey storage and viewing facilities housing geological exploration materials (predominantly drillcores and samples) and related media. The building is on the Carlisle site at 37 Harris Street, Carlisle WA 6101.",
+      "altLabels": [
+        "Carlisle",
+        "Carlisle core library"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/collie-office",
+      "label": "Collie office",
+      "definition": "The Collie office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the South Mine Inspectorate, and is at 66 Wittenoom Street, Collie WA 6225."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
+      "label": "North West (Karratha) regional office",
+      "definition": "The Karratha office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the North West region. The office houses the Karratha Mining Registrar and North Mine Inspectorate, and is located at Level 2, The Quarter, 20 Sharpe Avenue, Karratha WA 6714.",
+      "altLabels": [
+        "Karratha office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
+      "label": "Leonora office",
+      "definition": "The Leonora office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Leonora Mining Registrar, and is at the corner of Tower (Goldfield Highway) and Rochester Streets, Leonora WA 6438."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
+      "label": "Mount Magnet office",
+      "definition": "The Mount Magnet office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Mount Magnet Mining Registrar, and is at the corner of Hepburn and Richardson Streets, Mount Magnet WA 6638."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office",
+      "label": "Southern Cross office",
+      "definition": "The Southern Cross office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Southern Cross Mining Registrar, and is located at 75 Canopus Street, Southern Cross WA 6426."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace",
+      "label": "1 Adelaide Terrace",
+      "definition": "1 Adelaide Terrace is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Resources Safety and Dangerous Goods Divisions, and both Private and Public Sector Labour Relations subdivisions of the Department. The office is located at Level 3, 1 Adelaide Terrace, East Perth WA 6004.",
+      "altLabels": [
+        "1AT"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/albany-office",
+      "label": "Great Southern (Albany) regional office",
+      "definition": "The Albany office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Great Southern region. The office is at 2/129 Aberdeen St, Albany WA 6331.",
+      "altLabels": [
+        "Albany office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/broome-office",
+      "label": "Kimberley (Broome) regional office",
+      "definition": "The Broome office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Kimberley region. The office is at Level 1, Woody's Arcade, 6/15 Dampier Terrace, Broome WA 6725.",
+      "altLabels": [
+        "Broome office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office",
+      "label": "South West (Bunbury) regional office",
+      "definition": "The Bunbury office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the South West region. The office is located at Level 8, 61 Victoria Street, Bunbury WA 6230."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan",
+      "label": "Metropolitan offices",
+      "definition": "Offices of the Department of Energy, Mines, Industry Regulation and Safety located in the Perth metropolitan area (Western Australia).",
+      "altLabels": [
+        "Metro offices"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/dmirs-offices/carlisle",
+        "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+        "https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace",
+        "https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house",
+        "https://linked.data.gov.au/def/dmirs-offices/mason-bird",
+        "https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house",
+      "label": "Gordon Stephenson House",
+      "definition": "Gordon Stephenson House is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Consumer Protection Group of the department. The building is in the Perth CBD at 140 William Street, Perth WA 6000.",
+      "altLabels": [
+        "GSH"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mason-bird",
+      "label": "Mason Bird Building",
+      "definition": "Mason Bird Building is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Building and Energy and WorkSafe Divisions of the Department. The building is at 303 Sevenoaks Street, Cannington WA 6107.",
+      "altLabels": [
+        "MBB"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace",
+      "label": "66 St Georges Terrace",
+      "definition": "66 St Georges Terrace is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Energy Policy WA subdivision of the Department. The building is in the Perth CBD at Level 1, 66 St Georges Terrace, Perth WA 6000."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/dmirs-regional",
+      "label": "Regional offices",
+      "definition": "The Department of Energy, Mines, Industry Regulation and Safety has representative offices in a number of regional centres in Western Australia.",
+      "narrower": [
+        "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+        "https://linked.data.gov.au/def/dmirs-offices/collie-office",
+        "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
+        "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
+        "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
+        "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office",
+        "https://linked.data.gov.au/def/dmirs-offices/albany-office",
+        "https://linked.data.gov.au/def/dmirs-offices/broome-office",
+        "https://linked.data.gov.au/def/dmirs-offices/bunbury-office",
+        "https://linked.data.gov.au/def/dmirs-offices/geraldton-office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office",
+      "label": "Mid-West (Geraldton) regional office",
+      "definition": "The Geraldton office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Mid-West region. The office is in the Post Office Plaza at 50–52 Durlacher Street, Geraldton WA 6531.",
+      "altLabels": [
+        "Geraldton office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries",
+      "label": "Core libraries",
+      "definition": "Western Australia has two purpose-built core libraries: the Perth Core Library, located in Carlisle, and the Joe Lord Core Library in Kalgoorlie. The core libraries archive drillcore acquired during mineral and petroleum exploration in the State. They include viewing and sampling facilities to assist subsequent exploration activity. Both facilities are administered by the Geological Survey.",
+      "narrower": [
+        "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library",
+        "https://linked.data.gov.au/def/dmirs-offices/perth-core-library"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace",
+      "label": "1 Adelaide Terrace",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace",
+      "label": "66 St Georges Terrace",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/carlisle",
+      "label": "Carlisle",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/collie-office",
+      "label": "Collie office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries",
+      "label": "Core libraries",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library",
+          "label": "JH (Joe) Lord Core Library",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/perth-core-library",
+          "label": "Perth Core Library",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+      "label": "Goldfields–Esperance (Kalgoorlie) regional office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house",
+      "label": "Gordon Stephenson House",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/albany-office",
+      "label": "Great Southern (Albany) regional office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library",
+      "label": "JH (Joe) Lord Core Library",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/broome-office",
+      "label": "Kimberley (Broome) regional office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
+      "label": "Leonora office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mason-bird",
+      "label": "Mason Bird Building",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan",
+      "label": "Metropolitan offices",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace",
+          "label": "1 Adelaide Terrace",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace",
+          "label": "66 St Georges Terrace",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/carlisle",
+          "label": "Carlisle",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house",
+          "label": "Gordon Stephenson House",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/mason-bird",
+          "label": "Mason Bird Building",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+          "label": "Mineral House",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office",
+      "label": "Mid-West (Geraldton) regional office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+      "label": "Mineral House",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
+      "label": "Mount Magnet office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
+      "label": "North West (Karratha) regional office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/perth-core-library",
+      "label": "Perth Core Library",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/dmirs-regional",
+      "label": "Regional offices",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/collie-office",
+          "label": "Collie office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+          "label": "Goldfields–Esperance (Kalgoorlie) regional office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/albany-office",
+          "label": "Great Southern (Albany) regional office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/broome-office",
+          "label": "Kimberley (Broome) regional office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
+          "label": "Leonora office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office",
+          "label": "Mid-West (Geraldton) regional office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
+          "label": "Mount Magnet office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
+          "label": "North West (Karratha) regional office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office",
+          "label": "South West (Bunbury) regional office",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office",
+          "label": "Southern Cross office",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office",
+      "label": "South West (Bunbury) regional office",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office",
+      "label": "Southern Cross office",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

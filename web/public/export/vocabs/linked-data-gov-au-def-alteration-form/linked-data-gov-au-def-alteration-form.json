@@ -1,0 +1,433 @@
+{
+  "iri": "https://linked.data.gov.au/def/alteration-form",
+  "label": "Alteration form",
+  "description": "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011).",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/banding-controlled",
+      "label": "banding-controlled",
+      "definition": "Alteration that selectively replaces specific bands within rocks.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/layer-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/layer-controlled",
+      "label": "layer-controlled",
+      "definition": "Alteration restricted to compositionally or texturally defined layers within rocks.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/non-pervasive"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/banding-controlled",
+        "https://linked.data.gov.au/def/alteration-form/bedding-controlled",
+        "https://linked.data.gov.au/def/alteration-form/unconformity-related"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/bedding-controlled",
+      "label": "bedding-controlled",
+      "definition": "Alteration that selectively replaces specific beds within sedimentary rocks.",
+      "altLabels": [
+        "stratabound"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/layer-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/breccia-vein",
+      "label": "breccia vein",
+      "definition": "Alteration associated with a fissure containing cemented wallrock fragments.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled",
+      "label": "hydrothermal breccia-controlled",
+      "definition": "Alteration spatially associated with a breccia.",
+      "altLabels": [
+        "hydrothermal breccia"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/breccia-vein"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/fault-breccia",
+      "label": "fault breccia",
+      "definition": "Alteration associated with a fault displaying angular rock fragments resulting from fracturing.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/fault-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/fault-controlled",
+      "label": "fault-controlled",
+      "definition": "Alteration spatially associated with a fault.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/fracture-controlled"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/fault-breccia"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/foliation-controlled",
+      "label": "foliation-controlled",
+      "definition": "Alteration confined to volumes of rocks exhibiting a foliation.",
+      "altLabels": [
+        "foliation parallel"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/structure-controlled",
+      "label": "structure-controlled",
+      "definition": "Alteration spatially restricted to rocks within and/or immediately adjacent to structures such as shear zones, fault zones, veins, hydrothermal breccias, vugs or fractures.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/non-pervasive"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled",
+        "https://linked.data.gov.au/def/alteration-form/foliation-controlled",
+        "https://linked.data.gov.au/def/alteration-form/shear-zone-controlled",
+        "https://linked.data.gov.au/def/alteration-form/vein-controlled",
+        "https://linked.data.gov.au/def/alteration-form/vug-controlled",
+        "https://linked.data.gov.au/def/alteration-form/fracture-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/pervasive",
+      "label": "pervasive",
+      "definition": "Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.",
+      "altLabels": [
+        "complete",
+        "continuous",
+        "extensive",
+        "homogeneous",
+        "massive",
+        "ubiquitous",
+        "widespread"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive",
+      "label": "selectively non-pervasive",
+      "definition": "Alteration characterized by the replacement of only specific components (e.g. minerals, grains, clasts) of the original rock, with partial to complete obliteration of textures only in part of the area under observation.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/selective"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/selective",
+      "label": "selective",
+      "definition": "Alteration characterized by the replacement of only specific components (e.g. minerals, grains, clasts) of the original rock, with partial to complete obliteration of textures at the scale of observation.",
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive",
+        "https://linked.data.gov.au/def/alteration-form/selectively-pervasive"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/selectively-pervasive",
+      "label": "selectively pervasive",
+      "definition": "Alteration characterized by the replacement of only specific components (e.g. minerals, grains, clasts) of the original rock, with partial to complete obliteration of textures across the whole area of observation.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/selective"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/shear-zone-controlled",
+      "label": "shear zone-controlled",
+      "definition": "Alteration spatially associated with a shear zone.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/unaltered",
+      "label": "unaltered",
+      "definition": "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.",
+      "altLabels": [
+        "not altered"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/unconformity-related",
+      "label": "unconformity-related",
+      "definition": "Alteration that occurs at or around an unconformable or disconformable contact.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/layer-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/vein-controlled",
+      "label": "vein-controlled",
+      "definition": "Alteration spatially associated with a vein.",
+      "altLabels": [
+        "stockwork",
+        "veined"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/vug-controlled",
+      "label": "vug-controlled",
+      "definition": "Alteration associated with small cavities in a vein or rock, usually lined with crystals of a different mineral composition from the enclosing rock.",
+      "altLabels": [
+        "vuggy",
+        "vugh"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/zoned-central",
+      "label": "zoned-central",
+      "definition": "The central region of an alteration zone",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/zoned"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/zoned",
+      "label": "zoned",
+      "definition": "Alteration that can be divided spatially into several mineralogically or texturally distinct regions, with systematic variations in mineral assemblages, compositions and/or textures.",
+      "altLabels": [
+        "aureole",
+        "selvage"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/non-pervasive"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/zoned-central",
+        "https://linked.data.gov.au/def/alteration-form/zoned-inner",
+        "https://linked.data.gov.au/def/alteration-form/zoned-outer"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/zoned-inner",
+      "label": "zoned-inner",
+      "definition": "The inner region of an alteration zone.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/zoned"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/zoned-outer",
+      "label": "zoned-outer",
+      "definition": "The outer region of an alteration zone.",
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/zoned"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/fracture-controlled",
+      "label": "fracture-controlled",
+      "definition": "Alteration spatially associated with a fracture, i.e. with any break/separation in a geological formation with or without relative displacement of the parts (e.g. a joint or a fault).",
+      "altLabels": [
+        "fracture parallel"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/fault-controlled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/non-pervasive",
+      "label": "non-pervasive",
+      "definition": "Alteration that has replaced or filled in only certain portions of the rock at the scale of observation (e.g. the envelopes around veins), certain primary minerals, or pore spaces (including vesicles and interclast voids).",
+      "altLabels": [
+        "selective",
+        "anastomosing",
+        "blebby",
+        "concentrated",
+        "diffuse",
+        "discrete",
+        "disseminated",
+        "heterogeneous",
+        "irregular",
+        "localised",
+        "localized",
+        "matrix",
+        "mottled",
+        "patchy",
+        "semi-pervasive",
+        "spotty",
+        "variable",
+        "wispy"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/alteration-form/layer-controlled",
+        "https://linked.data.gov.au/def/alteration-form/structure-controlled",
+        "https://linked.data.gov.au/def/alteration-form/zoned"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/non-pervasive",
+      "label": "non-pervasive",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/alteration-form/layer-controlled",
+          "label": "layer-controlled",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/banding-controlled",
+              "label": "banding-controlled",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/bedding-controlled",
+              "label": "bedding-controlled",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/unconformity-related",
+              "label": "unconformity-related",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/alteration-form/structure-controlled",
+          "label": "structure-controlled",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/foliation-controlled",
+              "label": "foliation-controlled",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/fracture-controlled",
+              "label": "fracture-controlled",
+              "notation": null,
+              "children": [
+                {
+                  "iri": "https://linked.data.gov.au/def/alteration-form/fault-controlled",
+                  "label": "fault-controlled",
+                  "notation": null,
+                  "children": [
+                    {
+                      "iri": "https://linked.data.gov.au/def/alteration-form/fault-breccia",
+                      "label": "fault breccia",
+                      "notation": null,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled",
+              "label": "hydrothermal breccia-controlled",
+              "notation": null,
+              "children": [
+                {
+                  "iri": "https://linked.data.gov.au/def/alteration-form/breccia-vein",
+                  "label": "breccia vein",
+                  "notation": null,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/shear-zone-controlled",
+              "label": "shear zone-controlled",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/vein-controlled",
+              "label": "vein-controlled",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/vug-controlled",
+              "label": "vug-controlled",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/alteration-form/zoned",
+          "label": "zoned",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/zoned-central",
+              "label": "zoned-central",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/zoned-inner",
+              "label": "zoned-inner",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/alteration-form/zoned-outer",
+              "label": "zoned-outer",
+              "notation": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/pervasive",
+      "label": "pervasive",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/selective",
+      "label": "selective",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive",
+          "label": "selectively non-pervasive",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/alteration-form/selectively-pervasive",
+          "label": "selectively pervasive",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form/unaltered",
+      "label": "unaltered",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

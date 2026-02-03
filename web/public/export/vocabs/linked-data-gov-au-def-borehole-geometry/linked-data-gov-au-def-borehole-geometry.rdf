@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-azimuth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://coringmagazine.com/article/directional-diamond-drilling-definitions-terms-simple-calculations/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">drift</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">drift direction</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">heading</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The angle, measured in the horizontal plane, between north (unspecified) and the projection of the borehole axis at the point of measurement. For curved trajectories, the azimuth is measured from the projection of the tangent to the borehole axis at the point of measurement.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">azimuth</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole.</skos:definition>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Concepts used by the resources industry. Some covered in [WAPIMS].[dbo.DeviationSurveyPoint].</skos:historyNote>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Borehole geometry</skos:prefLabel>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-02</schema:dateCreated>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-02</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/borehole-geometry/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-azimuth"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-diameter"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-dip"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-downholesurvey"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-end-point"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-inclination"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-kickoff-point"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-declination"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-start-point"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-totaldepth"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/measured-depth"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/reduced-level-depth"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-geometry/true-vertical-depth"/>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/gridazimuth</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The azimuth measured clockwise from the central meridian of a plane-rectangular coordinate system such as a local reference grid.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">grid azimuth</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/magneticazimuth</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The azimuth measured clockwise from magnetic north through to 360°. This parameter changes with time and thus needs to be qualified by a date.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">magnetic azimuth</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/trueazimuth</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The azimuth measured clockwise from true north (also called geodetic north or geographic north) through 360°.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true azimuth</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-diameter">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">hole size</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The width of the borehole.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">borehole diameter</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-dip">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://coringmagazine.com/article/directional-diamond-drilling-definitions-terms-simple-calculations/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Measured on a vertical plane, dip is the angle of a borehole defined by a tangent line at the point of measurement and the horizontal plane. In the minerals industry, vertical is commonly denoted as –90° and changes to 0° (horizontal). The sum of inclination and dip is 90°.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">dip</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-downholesurvey">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://coringmagazine.com/article/directional-diamond-drilling-definitions-terms-simple-calculations/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">alignment survey</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">borehole survey</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">deviation survey</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">directional survey</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">downhole deviation survey</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">well survey</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A geometric measurement of inclination and azimuth at a certain depth along the borehole trajectory.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/dogleg-rate"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">downhole directional survey</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.pvisoftware.com/drilling-glossary/vertical-section.html</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.drillingformulas.com/negative-vertical-section-mean/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">VS</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The vertical section is the horizontal distance along the centreline of a wellbore to a certain point on a well trajectory, measured along a pre-defined azimuth in the horizontal plane.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">vertical section</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/dogleg-rate">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.slb.com/en/terms/d/dogleg</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">dogleg severity</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A particularly crooked place in a borehole where the trajectory of the borehole in 3D space changes rapidly, either intentionally or unintentionally. In surveying borehole trajectories, a standard calculation of dogleg severity is made, usually expressed in 2D degrees per 30 metres of wellbore length.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">dogleg rate</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-end-point">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">EOH</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">bottom hole location</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">end of hole</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">end point</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The spatial location where the drilling of a borehole was completed, expressed as coordinates and elevation (i.e. x, y, z).</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">end point location</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-inclination">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://coringmagazine.com/article/directional-diamond-drilling-definitions-terms-simple-calculations/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">deviation</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">deviation angle</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Measured on a vertical plane, inclination is the angle defined by a tangent line to the borehole and a vertical line representing the Earth&apos;s gravity vector at the point of measurement. In the energy industry, inclination is usually expressed as an angle from the vertical (0°, downward pointing) to 90° (horizontal). The sum of inclination and dip is 90°. In the resources industry, inclination is often used interchangeably with dip, though the two concepts are not the same.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">inclination</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-kickoff-point">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://coringmagazine.com/article/directional-diamond-drilling-definitions-terms-simple-calculations/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">KOP</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">kickoff point</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">wedge depth</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The point at a given measured depth at which a directional borehole is intentionally deviated.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">kick-off point</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-declination">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Magnetic_declination</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/magneticdeclination</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">magnetic variation</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The angle, measured in the horizontal plane, between magnetic north and true north. This angle varies depending on the position on the Earth&apos;s surface, and changes over time. By convention, magnetic declination is positive when magnetic north is east of true north, and negative when it is to the west. Magnetic declination is a critical parameter to report in conjunction with magnetic azimuth to fully characterize the 3D orientation of a borehole.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">magnetic declination</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-start-point">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/location</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">collar</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">point of origin</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">start point</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">top hole location</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The spatial location where the drilling of a borehole commenced, expressed as coordinates and elevation (i.e. x, y, z).</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">start point location</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/bh-totaldepth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/totaldepth</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">EOH depth</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">End of hole depth</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TD</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TML</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Total measured length</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">borehole depth</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">drillhole depth</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Total depth is the distance measured along the actual trajectory of the borehole from the borehole start point / surface reference point to the end of the hole where the drilling has stopped.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">total depth</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MDKB</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Measured depth of the borehole measured from the kelly bushing to the point of interest or survey point.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">measured depth from kelly bushing</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/md-rotarytable">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MDRT</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Measured depth of the borehole measured from the rotary table to the point of interest or survey point.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">measured depth from rotary table</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/measured-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">elevation%29%20using%20information%20commonly%20found%20on%20log%20headers.</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://wiki.aapg.org/Depth_and_thickness_conversion#:~:text=Measured%20depth%20%28MD%20measured%20depth%29%2C%20or%20drilled%20to</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.rigworker.com/engineering-4/depth-references.html</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">DD</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Depth</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MD</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Measured depth (MD), or drilled to depth (DD), is the distance measured along the actual trajectory of the borehole from the borehole start point / surface reference point to the point of interest or survey point, i.e. to any feature in the hole such as a casing point, a sidewall core or a significant geological marker.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/md-rotarytable"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/precollar-depth"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">measured depth</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/precollar-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The measured depth where the pre-collar hole ends and the diamond tail (i.e. diamond drilling) starts, and from which the length/depth of the diamond core is referenced.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">pre-collar depth</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/reduced-level-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.thirdistudio.com.au/HowToWorkOutReducedLevels.html</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Reduced_level</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mRL</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">relative level</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Reduced level depth (usually reported as mRL, i.e. metres from reduced level) is the vertical distance between a survey point and the adopted datum plane, i.e. the base elevation that is used as reference to report heights or depths during drilling. The reference datum may be a real or arbitrary location/plane, and is commonly assigned a nominated elevation.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">reduced level depth</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/true-vertical-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">elevation%29%20using%20information%20commonly%20found%20on%20log%20headers.</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://wiki.aapg.org/Depth_and_thickness_conversion#:~:text=Measured%20depth%20%28MD%20measured%20depth%29%2C%20or%20drilled%20to</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.rigworker.com/engineering-4/depth-references.html</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TVD</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">True vertical depth (TVD) of a point within a borehole is the distance of that point from the depth reference level / borehole start point (e.g. mean sea level, kelly bushing, rotary table, ground level, drill collar) projected on a vertical line (i.e. a line connecting the point to the centre of the Earth). This is a calculated or derived depth. In the energy industry, this depth is always calculated from the deviation survey data.</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-geometry/tvd-subsea"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TVDBML</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">True vertical depth below mudline (TVDBML) of a point within a borehole is the distance of that point from the mudline projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth below mudline</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TVDDF</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">True vertical depth drill floor (TVDDF) of a point within a borehole is the distance of that point from the drill floor projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth drillfloor</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TVDKB</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">True vertical depth kelly bushing (TVDKB) of a point within a borehole is the distance of that point from the kelly bushing projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth kelly bushing</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TVDRT</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">True vertical depth rotary table (TVDRT) of a point within a borehole is the distance of that point from the rotary table projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).</skos:definition>
+    <skos:historyNote>Resources industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth rotary table</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/tvd-subsea">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.rigworker.com/engineering-4/depth-references.html</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://help.dugeo.com/m/faq/l/167077-height-datums-and-abbreviations</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">TVDSS</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth sub-sea</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The true vertical depth subsea (TVDSS) is the vertical distance from the mean sea level to a point on the borehole course. This depth is always calculated from the deviation survey data.</skos:definition>
+    <skos:historyNote>Resources industry concept; modified from: https://www.rigworker.com/engineering-4/depth-references.html
+https://help.dugeo.com/m/faq/l/167077-height-datums-and-abbreviations</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-geometry"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">true vertical depth subsea</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-geometry/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-371">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-372">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+</rdf:RDF>

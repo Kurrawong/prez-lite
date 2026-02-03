@@ -48,6 +48,10 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       failOnError: false
+    },
+    routeRules: {
+      '/export/**': { headers: { 'Access-Control-Allow-Origin': '*' } },
+      '/web-components/**': { headers: { 'Access-Control-Allow-Origin': '*' } }
     }
   },
 

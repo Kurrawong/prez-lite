@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Barrovian style metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high temperature/pressure</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">kyanite to sillimanite series</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ultra-high temperature granulites</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">High geothermal gradient or high apparent thermal gradient metamorphism, characterized by high heat flow. That is, temperature increases more rapidly than average with depth. Defined by apparent thermal gradients between 77.5 and 150 °C/kbar (or 775 and 1500 °C/GPa), and encompassing most of what is traditionally referred to as Barrovian style metamorphism. High thermal gradients encompass the middle and lower pressure range of amphibolite facies as well as the pressure range of typical granulites and ultra-high temperature granulites. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.</skos:definition>
+    <skos:historyNote>Adapted from:
+a) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.
+b) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.
+c) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high T/P</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one).</skos:definition>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Concepts and definitions adapted from:
+a) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.
+b) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.
+c) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.</skos:historyNote>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metamorphic thermal regime style</skos:prefLabel>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</schema:dateCreated>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Barrovian style metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high pressure metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high-pressure amphibolite facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high-pressure granulite facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">intermediate temperature/pressure</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">kyanite series</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Intermediate geothermal gradient or intermediate apparent thermal gradient metamorphism, characterized by average heat flow, approximating that of a steady-state geotherm for average thickness continental crust. That is, temperature increases at what is considered a normal rate with depth. Defined by apparent thermal gradients between 37.5 and 77.5°C/kbar (or 375 and 775°C/GPa), and encompassing, at the higher thermal gradient end of the range, the higher pressure part of what is traditionally referred to as Barrovian-style metamorphism. Intermediate thermal gradients encompass the middle and upper pressure range of amphibolite facies as well as high-pressure granulite (transitional to eclogite) facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.</skos:definition>
+    <skos:historyNote>Adapted from:
+a) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.
+b) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.
+c) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">intermediate T/P</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">&quot;high pressure&quot; metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">blueschist facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">eclogite facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">low temperature/pressure</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ultra-high pressure metamorphism</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Low geothermal gradient or low apparent thermal gradient metamorphism, characterized by low heat flow (i.e. temperature increases more slowly than average with depth). Defined by apparent thermal gradients between 15 and 37.5°C/kbar (or 150 and 375°C/GPa). Low thermal gradients encompass most of the blueschist and eclogite facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.</skos:definition>
+    <skos:historyNote>Adapted from:
+a) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.
+b) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.
+c) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">low T/P</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">&quot;low pressure&quot; metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">near-surface ultra-high temperature/pressure</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">pyroxene hornfels facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">sanidinite facies</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Near-surface ultra-high geothermal gradient or near-surface ultra-high apparent thermal gradient metamorphism, characterized by extremely high heat flow. That is, temperature increases extremely rapidly with depth compared to average. Defined by apparent thermal gradients greater than 250°C/kbar (or 2500°C/GPa). Near-surface ultra-high thermal gradients encompass pyroxene-hornfels and sanidinite facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.</skos:definition>
+    <skos:historyNote>Adapted from:
+a) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.
+b) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.
+c) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">near-surface ultra-high T/P</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">&quot;low-pressure&quot; metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Buchan style metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">andalusite series</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high temperature-low pressure metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">low-pressure</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">low-pressure amphibolite facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">low-pressure granulite facies</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ultra-high temperature metamorphism</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ultra-high temperature/pressure</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Ultra-high geothermal gradient or ultra-high apparent thermal gradient metamorphism, characterized by very high heat flow. That is, temperature increases much more rapidly than average with depth. Defined by apparent thermal gradients between 150 and 250°C/kbar (or 1500 and 2500°C/GPa), and encompassing most of what is traditionally referred to as Buchan-style metamorphism. Ultra-high thermal gradients encompass low-pressure amphibolite facies (incorporating andalusite stability), low-pressure granulite facies, and rare low-pressure, ultra-high temperature metamorphism. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.</skos:definition>
+    <skos:historyNote>Adapted from:
+a) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.
+b) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.
+c) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ultra-high T/P</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-thermal-regime/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-409">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://www.linkedin.com/in/david-kelsey-425746137/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-410">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0003-0007-8342"/>
+  </rdf:Description>
+
+</rdf:RDF>

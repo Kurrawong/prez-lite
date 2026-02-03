@@ -9,12 +9,16 @@
   },
   "scripts": {
     "build:data": "node scripts/build-data.js",
+    "build:export": "node scripts/export-vocabs.js",
+    "build:components": "pnpm --filter @prez-lite/web-components build",
     "dev": "pnpm --filter @prez-lite/web dev",
-    "build": "pnpm build:data && pnpm --filter @prez-lite/web generate",
+    "build": "pnpm build:data && pnpm build:export && pnpm build:components && pnpm --filter @prez-lite/web generate",
     "generate": "pnpm --filter @prez-lite/web generate",
     "preview": "pnpm --filter @prez-lite/web preview"
   },
   "dependencies": {
+    "@fast-csv/format": "^5.0.2",
+    "jsonld": "^8.3.3",
     "n3": "^2.0.1"
   }
 }

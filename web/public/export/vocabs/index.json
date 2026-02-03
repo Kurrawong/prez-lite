@@ -1,0 +1,566 @@
+{
+  "generated": "2026-02-03T20:47:55.016Z",
+  "count": 35,
+  "vocabs": [
+    {
+      "slug": "linked-data-gov-au-def-alteration-form",
+      "iri": "https://linked.data.gov.au/def/alteration-form",
+      "label": "Alteration form",
+      "description": "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011).",
+      "conceptCount": 24,
+      "modified": "2024-12-02",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-alteration-intensity",
+      "iri": "https://linked.data.gov.au/def/alteration-intensity",
+      "label": "Alteration intensity",
+      "description": "A compilation of terms that describe the degree to which (i.e. how much) a rock or a mineral has been affected by alteration. Alteration in this context is considered as a modification of the original lithology caused by meteoric, connate, metamorphic or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. These concepts are generally used as convenient field or petrographic descriptive terms. Definitions are largely from Pirajno (2009) and the Glossary of geology (5th edition revised; Neuendorf et. al., 2011).",
+      "conceptCount": 6,
+      "modified": "2024-12-02",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-alteration-type",
+      "iri": "https://linked.data.gov.au/def/alteration-type",
+      "label": "Alteration type",
+      "description": "Compilation of terms that describe the classification of alteration in a rock, with a focus on hydrothermal processes (i.e. mineralogical, chemical and textural changes resulting from the interaction of hot aqueous fluids with the rocks through which they circulate, under evolving physico-chemical conditions), and excluding weathering, mineralization and direct metamorphic or magmatic processes. Classification is based on the identification of the most important alteration mineral, the distinctive mineral assemblage, or the chemical changes that have occurred during alteration. Definitions are largely from Pirajno (2009), the Glossary of geology (5th edition revised; Neuendorf et.al., 2011), Thompson et al. (1996), and Wikipedia.",
+      "conceptCount": 47,
+      "modified": "2024-12-02",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-australian-physiographic-units",
+      "iri": "https://linked.data.gov.au/def/australian-physiographic-units",
+      "label": "Australian physiographic units",
+      "description": "A list of physiographic units in Australia that provide a consistent framework for mapping soils and landforms at national and regional scales, compiled at a continental scale. The list was defined by Pain et al. (2011; https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf)* and built on the work of Jennings and Mabbutt (1986). It recognises a subdivision of the Australian onshore continent into three physiographic divisions, 23 physiographic provinces and 220 physiographic regions. The three divisions correspond broadly with the geological subdivision into the western shields, the central basins and the eastern fold belts. Provinces can be used to make interpretations about landscape processes at the broadest scale; descriptors for provinces include a name, geology, structure, and broad regolith types. The primary descriptors for regions are geographic name and a simple text description including major geologic and geomorphic features. Bounding box coordinates in decimal degrees are included. Each physiographic unit is also identified by a numeric code (one, three, and five digits for divisions, provinces and regions, respectively). For physiographic units within Western Australia, notations provided include extensions to five-digit numbering for divisions and provinces, to allow better characterization for database purposes. For Western Australian physiographic units, an alphabetical code is also listed; these consist of three upper-case letters for the division and provinces, with an additional two lower-case letter suffix for regions. These alphabetical codes are used by the Geological Survey of Western Australia (GSWA) to spatially assign regolith units to the correct physiographic unit during mapping. GSWA describes a physiographic unit as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.'\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html).",
+      "conceptCount": 246,
+      "modified": "2023-09-20",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-borehole-configuration",
+      "iri": "https://linked.data.gov.au/def/borehole-configuration",
+      "label": "Borehole configuration",
+      "description": "A description of the intended configuration and trajectory of a borehole, covering concepts from the energy and mineral resources industry. Note that most of the concepts in this vocabulary apply to both the process of drilling (e.g. directional drilling), as well as to an actual borehole (e.g. directional well), even if the definitions in this vocabulary focus specifically on the latter.",
+      "conceptCount": 9,
+      "modified": "2023-09-01",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-borehole-drilling-method-western-australia",
+      "iri": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia",
+      "label": "Borehole drilling method",
+      "description": "A list of drilling methods routinely used by the mineral and energy resource industries. The drilling methods are grouped into three main categories based on the dominant motion of the drillstem (i.e. the string of pipe that transmits power from the surface down to the drillbit) and drillbit (the part of the bottom-hole assembly that cuts, grinds or breaks the bottom-hole formation to make the hole). Specifically, the presence/absence of rotation in either or both is used as the main distinguishing factor, hence the main grouping into rotary, non-rotary and hybrid. Most drilling used by the mineral and energy resource industries falls into the rotary drilling category. Note that alternative classification schemes can use parameters such as the hole-making method in combination with the hole-clearing and stabilizing method and/or the type of sample produced (e.g. core versus chips). These methods can cross over between the main categories used here; for example, percussion drilling can be used in conjunction with rotary, non-rotary and hybrid methods and the term is not always qualified in company reports. In addition, many drilling rigs are multipurpose and hence can use a combination of drilling methods, including in the same borehole; for example, reverse circulation drilling can be followed by diamond drilling — however, these are both rotary drilling methods. Definitions are compiled from a variety of sources, including the Australian Drilling Industry Association's Drilling Manual (2018, Sixth edition), existing published vocabularies, drilling company webpages, Wikipedia, and a variety reports/publications.",
+      "conceptCount": 39,
+      "modified": "2023-10-25",
+      "version": "1.0",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-borehole-geometry",
+      "iri": "https://linked.data.gov.au/def/borehole-geometry",
+      "label": "Borehole geometry",
+      "description": "This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole.",
+      "conceptCount": 26,
+      "modified": "2023-11-02",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-borehole-purpose-wa",
+      "iri": "https://linked.data.gov.au/def/borehole-purpose-wa",
+      "label": "Borehole purpose",
+      "description": "The primary purpose for which a borehole was drilled or any secondary purpose that the borehole may acquire during its lifecycle. The vocabulary focuses on drilling purposes within the resources industry, with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. Some terms covered by jurisdictional legislation are highlighted in the provenance field. Variations in terminology within definitions (i.e. usage of borehole, well and wellbore) stem from usage in different sectors of the resources industry, but for the purpose of this vocabulary are considered to be equivalent. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). ",
+      "conceptCount": 66,
+      "modified": "2025-02-03",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-borehole-start-point-setting",
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting",
+      "label": "Borehole start point setting",
+      "description": "Indicates the nature of the borehole start point location, i.e. the general setting and type of surrounding where the borehole is positioned (e.g. onshore, offshore, etc.).",
+      "conceptCount": 8,
+      "modified": "2023-09-06",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-borehole-status-wa",
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa",
+      "label": "Borehole status",
+      "description": "The stage of a borehole in relation to the lifecycle of the borehole, from proposal and operational stages through to completion and rehabilitation, and with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. The vocabulary focuses on standard terminology from the energy and mineral resources sectors, highlighting instances where the same term carries different meaning in different fields. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). Note that the currency of borehole status data in GSWA's databases is time-stamped, reflecting information gathered from a borehole operator’s well completion report or from a responsible regulatory authority at a specific point in time; subsequent changes are unlikely to be recorded.",
+      "conceptCount": 34,
+      "modified": "2025-02-03",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-crirsco-mineral-resource-reporting",
+      "iri": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting",
+      "label": "CRIRSCO mineral resource reporting",
+      "description": "Terminology defined by the Committee for Mineral Reserves International Reporting Standards (CRIRSCO; https://www.crirsco.com/) based on the International Reporting Template (IRT; https://www.crirsco.com/docs/CRIRSCO_International_Reporting_Template_November_2019.pdf). The IRT is a document that draws on the best of the CRIRSCO-style reporting standards, the JORC Code (Australasia), SAMREC Code (South Africa), Reporting Code (UK / Western Europe), CIM Guidelines (Canada), SME Guide (USA) and Certification Code (Chile). These reporting standards are recognized and adopted worldwide for market-related reporting and financial investment.",
+      "conceptCount": 16,
+      "modified": "2023-12-04",
+      "version": "1.1: updated IRI to use lowercase characters",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-dmirs-offices",
+      "iri": "https://linked.data.gov.au/def/dmirs-offices",
+      "label": "DEMIRS offices",
+      "description": "Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. ",
+      "conceptCount": 21,
+      "modified": "2023-12-01",
+      "version": "1.1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-earthsci-for",
+      "iri": "https://linked.data.gov.au/def/earthsci-for",
+      "label": "Earth science fields of research",
+      "description": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+      "conceptCount": 255,
+      "modified": "2024-10-23",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-geological-feature-type",
+      "iri": "https://linked.data.gov.au/def/geological-feature-type",
+      "label": "Geological feature type",
+      "description": "This vocabulary lists the fundamental types of geological features that are used to define the geological framework/4D evolution of Western Australia and are relevant to the duties of the Geological Survey of Western Australia. A geological feature is a physical or conceptual feature that is hypothesized to exist coherently in the Earth and that results from geological processes (definition largely derived from SWEET ontology http://sweetontology.net/realmGeol#geologicfeature).",
+      "conceptCount": 14,
+      "modified": "2023-09-06",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-geological-sample-type",
+      "iri": "https://linked.data.gov.au/def/geological-sample-type",
+      "label": "Geological sample type",
+      "description": "The form of a sample, i.e. the visible shape or configuration of a geological material. The listing includes both primary samples and derived specimens, that is primary sources (e.g. drillcore, hand specimen) and items resulting from preparation of those source materials for the purpose of research/analytical work (e.g. thin section, fine powder). Artefacts are also included, but in this vocabulary they specifically refer to man-made objects of cultural or historical interest such as a tool or decoration (i.e. items such as thin sections, mounts, etc. are not regarded as artefacts in this context). Descriptions were compiled trying to avoid reference to the material that comprises the specimen (e.g. rock, fossil) or the sampling method (e.g. drilling), although in practice it is not always possible to completely separate these concepts from the sample type (e.g. rotary sidewall core); in fact many of the concepts for sample type and sample materials are (incorrectly) used interchangeably. ",
+      "conceptCount": 98,
+      "modified": "2025-11-24",
+      "version": "None",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-uom-geoscience",
+      "iri": "https://linked.data.gov.au/def/uom-geoscience",
+      "label": "Geoscience units of measurement",
+      "description": "A list of units of measurement relevant for geoscience and the administration of statutory submissions from the resource industries. The list is based on the Geological Survey of Queensland (GSQ) Geoscience Profile of the Quantities, Units, Dimensions & Types (QUDT) ontology and vocabularies lists (https://linked.data.gov.au/def/geou and https://www.qudt.org/doc/DOC_VOCAB-UNITS.html - version 2.1.29). QUDT is based largely on the international standard for metric units (International System of Units, or SI) but also includes units from other systems, notably the Centimetre–Gram–Second (CGS or cgs) system of units and most US Customary and British imperial units for length, weight and heat. Wherever applicable, the SI standard is used for conversions between non-SI units (https://www.qudt.org/pages/QUDToverviewPage.html). Commonly used multiples of base units are also included, and the list has been expanded to include units of measurements for time that are relevant to earth sciences; for these, notations follow the recommendations of Norman et al. (2011), available at http://www.dmp.wa.gov.au/Documents/Geological-Survey/Use-and-reporting-of-geochronology.pdf). Some QUDT definitions have been extended, mostly to clarify what the unit is a measure of. Notations are the correct symbol to use for the unit of measurement; common variations of these are indicated as alternate labels, but their use is strongly discouraged. English spelling is preferred over American spelling (e.g. metre, not meter). Other rules and style conventions for spelling units names follow the 2008 Edition of the Guide for International System of Units (SI), NIST Special Publication 811, National Institute of Standards and Technology, US Department of Commerce (https://physics.nist.gov/cuu/pdf/sp811.pdf).",
+      "conceptCount": 288,
+      "modified": "2025-12-02",
+      "version": "1.3",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-gswa-collection-facilities",
+      "iri": "https://linked.data.gov.au/def/gswa-collection-facilities",
+      "label": "GSWA collection facilities",
+      "description": "Names and physical locations of facilities housing Geological Survey of Western Australia (GSWA) collections of physical objects. The list includes buildings or designated parts of buildings, as well as external storage facilities. ",
+      "conceptCount": 17,
+      "modified": "2023-12-01",
+      "version": "1.1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-gswa-rock-classification-scheme",
+      "iri": "https://linked.data.gov.au/def/gswa-rock-classification-scheme",
+      "label": "GSWA rock classification scheme",
+      "description": "Listing of rock types and lithological nomenclature (and related codes) used by the Geological Survey of Western Australia (GSWA) for the dual purpose of recording lithologies during mapping / core logging, and for representing mappable lithostratigraphic/lithotectonic units in the State. Rather than attempting to cover for all existing rock types and lithologies, the GSWA’s scheme and terms in this vocabulary are specifically informed by Western Australian geology; a companion vocabulary covers lithological equivalents for regolith materials. \n\nApart from the approach to classification of some volcanic (pyroclastic) rocks, GSWA's lithological nomenclature largely conforms to internationally recognized classifications such as Le Maitre et al. (2005) for plutonic/intrusive rocks and Fettes and Desmons (2007) for metamorphic rocks. Note that: a) GSWA prefers the term intrusive to plutonic, as it carries no inference on depth of emplacement; b) GSWA's rock classification scheme prefers the use of volcanic terminology for any igneous rock formed on or near the Earth's surface, i.e. for those hypabyssal or sub-volcanic rocks such as dykes, sills, and cryptodomes that are demonstrably both spatially and temporally associated with extrusive volcanic rocks; c) some intrusive mafic/ultramafic terminology is allowed for cumulate rocks originating from thick volcanic successions. In the absence of a single unified scheme for sedimentary rocks, multiple sources were considered, and definitions rely heavily on the Glossary of geology (5th edition, revised; Neuendorf et al., 2011). Full references listed under History Note.\n\nGSWA’s rock classification scheme is designed to provide consistent terminology within the organization, and primarily relies on features observable in all rocks at outcrop scale, in hand specimen, and in thin section. Additional terms cover for broader combinations of multiple lithologies encountered during mapping (especially for sedimentary rocks, e.g. ‘siliciclastic + lesser carbonate’), and to ensure a coherent approach across different rock types (e.g. use of ‘mylonitized’ for all metamorphic rock groups, even if some would be rare occurrences or difficult to identify in the field). Definitions in this vocabulary are largely compiled or derived from the quoted references and the Glossary of Geology (5th edition, revised, Neuendorf et al., 2011), with adaptions based on recommended GSWA usage; metamorphic lithologies are often derived from definitions of non-metamorphosed equivalents. Some mineralogical/petrological knowledge is expected of the reader.\n Each concept is characterized by a notation consisting of one to four lower-case letters. This notation represents the lithological code used for mapping lithologies and labelling lithostratigraphic units on maps. Note that in the GSWA's scheme, some lithological codes are reserved for use in the Field Observation database (WAROX) or the Explanatory Notes System (ENS) only; the latter are highlighted in the concept definitions and should not be used for field observations. Also note that in ENS codes are supplemented by primary and secondary qualifiers (not covered in this vocabulary); a concerted effort has been made to match WAROX-only codes with those generated via qualifiers in ENS, but in a few instances alphabetical limitations have prevented this (i.e. the code used in WAROX has a slightly different meaning from the same string of letters generated in ENS).\n\nThe approach behind GSWA’s rock classification scheme is documented in Tyler at al. (2004; https://dmpbookshop.eruditetechnologies.com.au/product/the-revised-gswa-rock-classification-scheme.do). Details of GSWA’s code construction for ENS can be found in Riganti et al. (2013; https://dmpbookshop.eruditetechnologies.com.au/product/gswa-code-builder-constructing-and-unravelling-gswa-geological-codes.do) and in a companion application, the GSWA Code Builder (ENS codes only), available from the Department’s Data and Software Centre (https://dasc.demirs.wa.gov.au/).",
+      "conceptCount": 727,
+      "modified": "2024-07-12",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-gswa-vocabulary-themes",
+      "iri": "https://linked.data.gov.au/def/gswa-vocabulary-themes",
+      "label": "GSWA vocabulary themes",
+      "description": "The overarching categorization of vocabularies prepared by the Geological Survey of Western Australia (GSWA).",
+      "conceptCount": 14,
+      "modified": "2024-12-02",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "resource-geosciml-org-classifier-ics-ischart",
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart",
+      "label": "International Chronostratigraphic Chart",
+      "description": "This is a SKOS vocabulary presentation of the time units of the International Chronostratigraphic Chart represented as SKOS Concepts. Beginning and End ages are given for each unit in units of Millions of Years Ago (MYA).",
+      "conceptCount": 178,
+      "modified": "2024-11-22",
+      "version": "2024-12",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-jorc-code",
+      "iri": "https://linked.data.gov.au/def/JORC-Code",
+      "label": "JORC Code",
+      "description": "The Australasian Code for Reporting of Exploration Results, Mineral Resources and Ore Reserves ('the JORC Code') is a professional code of practice that sets mandatory, minimum standards for Public Reporting of minerals Exploration Results, Mineral Resources and Ore Reserves, according to the levels of confidence in geological knowledge and technical and economic considerations. The JORC Code is prepared by the Joint Ore Reserves Committee of the Australasian Institute of Mining and Metallurgy, the Australian Institute of Geoscientists and the Minerals Council of Australia as in force from time to time (JORC; https://jorc.org/) and was last updated in 2012 (https://jorc.org/docs/JORC_code_2012.pdf). The JORC Committee was established in 1971, and is sponsored by the Australian mining industry and its professional organisations. The JORC Committee is a member of CRIRSCO, the Committee for Mineral Reserves International Reporting Standards (CRIRSCO; https://www.crirsco.com/).",
+      "conceptCount": 15,
+      "modified": "2023-12-04",
+      "version": "1.1: updated IRI to use lowercase characters",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-location-method",
+      "iri": "https://linked.data.gov.au/def/location-method",
+      "label": "Location method",
+      "description": "Methods used to spatially locate geological features and exploration, mining and related infrastructure sites. These can be either features directly observed in the field (e.g. site/outcrop descriptions, structural readings, etc.) or obtained from legacy and current documents/datasets (e.g. airphotos, maps, previously published reports, exploration reports, etc.). Each location method has a spatial accuracy that indicates an estimate of the approximate error in the location. Captured geographical locations for geological or mining features are expressed as a set of coordinates (latitude and longitude degrees), with or without an elevation above or below sea level.",
+      "conceptCount": 54,
+      "modified": "2022-11-23",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-metamorphic-facies",
+      "iri": "https://linked.data.gov.au/def/metamorphic-facies",
+      "label": "Metamorphic facies",
+      "description": "A metamorphic facies is defined by a repeatedly occurring and thus predictable set of stable mineral assemblages in metamorphic rocks. Such metamorphic mineral assemblages crystallize and are stable over a range of externally imposed physical conditions, most crucially lithostatic pressure and temperature, and thus the facies define areas in two-dimensional plots of pressure–temperature space. There is a demonstrable/proven relationship between mineral composition and bulk rock chemical composition and a consistent relationship through geological time. Rocks which contain certain metamorphic mineral assemblages can therefore be linked to particular tectonic settings, times and places in the geological history of an area. The boundaries between facies are typically gradational as the disappearance or appearance of minerals occurs over pressure, temperature, space and time. The vocabulary is based on Fettes and Desmons (2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks edited by D Fettes and J Desmons, 244p.), with further subdivisions for some facies. Definitions also borrow from Neuendorf et al. (2005, Glossary of Geology: 5th edition, revised edited by KKE Neuendorf, JP Mehl Jr and JA Jackson: American Geological Institute, Alexandria, Virginia, USA, 779p.). More detailed metamorphic mineral assemblages for specific rock types can be found at https://en.wikipedia.org/wiki/Metamorphic_facies).",
+      "conceptCount": 22,
+      "modified": "2023-11-01",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-metamorphic-p-t-trajectory",
+      "iri": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory",
+      "label": "Metamorphic P–T trajectory",
+      "description": "Terms used to describe the sequence of pressure(P) – temperature(T) conditions that occurred in a given rock body over a period of time (t) of a particular metamorphic event. Also called P–T–t paths.\r\n\r\nDefinitions are largely derived from: \r\na) England, PC and Richardson, SW 1977, The influence of erosion upon the mineral facies of rocks from different metamorphic environments: Journal of the Geological Society, v.134, p.201–213, doi:10.1144/gsjgs.134.2.0201)\r\nb) England, PC and Thompson, AB 1984, Pressure-temperature-time paths of regional metamorphism I. Heat transfer during the evolution of thickened continental crust: Journal of Petrology,v.25,no.4,p.894–928)\r\nc) Harley, 1989 (Harley, SL 1989, The origins of granulites: a metamorphic perspective: Geological Magazine,v.126,no.3,p.215–247, doi:10.1017/S0016756800022330)\r\nd) https://en.wikipedia.org/wiki/Pressure-temperature-time_path.",
+      "conceptCount": 13,
+      "modified": "2023-11-01",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-metamorphic-stage",
+      "iri": "https://linked.data.gov.au/def/metamorphic-stage",
+      "label": "Metamorphic stage",
+      "description": "Terms used to describe the stage of metamorphism of rocks based on the nature of the change in pressure and temperature conditions to which the rocks are subjected. Definitions are taken or derived from:\r\nFettes, D and Desmons, J (eds.) 2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press, 244p.",
+      "conceptCount": 8,
+      "modified": "2023-11-01",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-metamorphic-thermal-regime",
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "label": "Metamorphic thermal regime style",
+      "description": "Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one).",
+      "conceptCount": 5,
+      "modified": "2023-11-01",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-physiographic-unit-types",
+      "iri": "https://linked.data.gov.au/def/physiographic-unit-types",
+      "label": "Physiographic unit types",
+      "description": "Characterization of the type of physiographic units used by the Geological Survey of Western Australia for mapping regolith and landforms in the State. A physiographic units is defined as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.' Physiographic unit types are based on the classification of Pain et al. (2011)* whereby three hierarchical types of units are identified for mapping at different scales. The list of identified units is compiled in a companion vocabulary — Australian physiographic units.\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (publication available at https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf; dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html).",
+      "conceptCount": 3,
+      "modified": "2023-09-06",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-sample-data-quality-management",
+      "iri": "https://linked.data.gov.au/def/sample-data-quality-management",
+      "label": "Sample data quality management",
+      "description": "The types of physical samples that are used to undertake quality assurance (QA) and quality control (QC) checks at all stages of the sampling, preparation and analytical processes, and/or to retain representative material for future reference. Note that QA and QC are often used collectively as a single term, but are in fact distinct procedures: QA 'refers to defect prevention', i.e. ‘the protocols and procedures that ensure that sampling and assaying is completed to the required quality’, whereas QC 'refers to defect detection', i.e. ‘the use of control samples and statistical analysis to ensure that assay results are reliable’ (Graindorge, 2010, p. 112; https://www.usgs.gov/data-management/manage-quality). This vocabulary thus also encapsulates terminology covering sample representability. ",
+      "conceptCount": 22,
+      "modified": "2025-06-18",
+      "version": "1.0",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-sample-condition",
+      "iri": "https://linked.data.gov.au/def/sample-condition",
+      "label": "Sample/specimen condition",
+      "description": "List of terms describing the condition, completeness and risk/hazard profile of individual samples/specimens, including any specific requirements needed for the preservation of the object.",
+      "conceptCount": 56,
+      "modified": "2024-12-09",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-sample-curation-status",
+      "iri": "https://linked.data.gov.au/def/sample-curation-status",
+      "label": "Sample/specimen curation status",
+      "description": "The status of a sample or specimen in relation to curation processes (e.g. the recording and organization of items in a collection), both before and after storage/archiving, and with respect to its display or storage location at a specific point in time.",
+      "conceptCount": 23,
+      "modified": "2024-12-09",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-sample-nomenclature-publication-status",
+      "iri": "https://linked.data.gov.au/def/sample-nomenclature-publication-status",
+      "label": "Sample/specimen nomenclature and publication status",
+      "description": "Listing of standard nomenclature types (typus) and publication statuses that may characterize fossil, mineral or meteorite samples/specimens held in the Geological Survey of Western Australia's collections. These terms should only be applied to physical items, and are not applicable to derived results or data. This vocabulary includes terms for type specimens as recognized under several international nomenclature codes (see History Note for details). Taxonomic schemes applied to different classes of objects each have their own set of accepted types, and can define the same term differently, so care should be taken to use the correct nomenclature when referring to type specimens; to minimize confusion, individual terms have been labelled with a suffix indicating the relevant code. Note that multiple statuses can apply to a single specimen (e.g. by definition a type specimen will always be described-and-published).",
+      "conceptCount": 40,
+      "modified": "2024-12-09",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-tectonic-unit-type",
+      "iri": "https://linked.data.gov.au/def/tectonic-unit-type",
+      "label": "Tectonic unit type",
+      "description": "This vocabulary lists the types of tectonic and lithotectonic units that are used to define the geological framework / 4D evolution of Western Australia and are relevant to the duties of the Geological Survey of Western Australia (GSWA). A tectonic unit is defined as a named mass/body of rock with defined geological characteristics (geological structure, sedimentary stratigraphy, magmatic activity, metamorphism, metallogeny and alteration) and evolutionary history different from that of surrounding/contiguous units. A lithotectonic (or lithostructural) unit is defined as an assemblage of rocks unified on the basis of structural or deformational features, mutual relationships, origin, or historical evolution, that: a) is a subset of a larger tectonic unit (e.g. inlier/outlier), b) incorporates components from more than one tectonic units (e.g. greenstone belt), and c) encompasses large tectonic components of the State of Western Australia and/or facilitates the grouping of common tectonic elements at the highest level of the State tectonic hierarchy (e.g. large igneous provinces). Tectonic unit types are an integral part of GSWA's Explanatory Notes System (ENS), a digital repository of detailed unit descriptions that integrates stratigraphic relationships with links to all tectonic units and events recognized in Western Australia. This vocabulary does not attempt to show hierarchical relationships between tectonic types as enforced in ENS, as many are not one-to-one relationships.",
+      "conceptCount": 21,
+      "modified": "2023-11-01",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-vertical-depth-reference-systems",
+      "iri": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "label": "Vertical/depth reference systems",
+      "description": "The point or level from which heights and depths are measured and referenced to for an entity or activity. Typically these are expressed relative to a common global or regional reference datum such as the Australian Height Datum (AHD) or can be related to local reference systems. Specific emphasis is placed on elevation references used by resource exploration and drilling programs, whereby depths are measured relative to local reference datums or specific parts of a borehole/drilling platform. Concepts in this vocabulary include both reference datums (e.g. mean sea level) and how depths are expressed relative to them (e.g. mean sea level height).",
+      "conceptCount": 25,
+      "modified": "2023-09-06",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-wa-coordinate-reference-systems",
+      "iri": "https://linked.data.gov.au/def/wa-coordinate-reference-systems",
+      "label": "Western Australian coordinate reference systems",
+      "description": "The coordinate reference systems (geographic and projected) used and referred to within Western Australia. It includes historical and current reference systems, Universal Transverse Mercator (UTM) zones, and, where applicable, notations based on the EPSG registry (https://epsg.io/). Some concepts are included to account for legacy data/maps with limited information.",
+      "conceptCount": 43,
+      "modified": "2023-09-13",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    },
+    {
+      "slug": "linked-data-gov-au-def-wa-mineral-fields-and-districts",
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts",
+      "label": "Western Australian mineral fields and districts",
+      "description": "The State of Western Australia is divided into various Mineral Fields that represent administrative land subdivisions under which mining is administered in the State according to Section 16 of the Mining Act 1978. Some mineral fields are further subdivided into Districts. Mineral field and district boundaries can be changed by proclamation under the Mining Act 1978 — the listing provided is current as of June 2023. Each mineral field or district is characterized by a two-digit prefix code used for map representations and tenement indexing. Most districts and some mineral fields are also characterized by an upper case letter code: these are historical identifiers currently not applied, but are relevant for legacy mining tenement information. Field and district proclamations date back as far as the late 1890s; individual entities may have undergone several alterations of boundaries and even been changed from district to field (NB the gazetted date provided usually refers to the first entity). In gold-endowed areas, mineral fields were originally classified as 'Goldfields', but this categorisation stopped with the ratification of the Mining Act 1978. In terms of management, tenements under each mineral field are administered under a designated Mining Registrar (here expressed as collections). Information for this vocabulary was sourced from the Tengraph (Web) Help (https://www.dmp.wa.gov.au/tgwhelp/mineral-fields-and-district-codes-637.aspx), the Department of Mines, Industry Regulation and Safety (https://dmp.wa.gov.au/History-and-locations-of-the-12531.aspx) and a dedicated Wikipedia (https://en.wikipedia.org/wiki/Mineral_fields_of_Western_Australia) webpages, as well as the consolidated printed version of the 1904 Act and individual Western Australian Government Gazettes.",
+      "conceptCount": 46,
+      "modified": "2023-09-12",
+      "version": "1",
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv"
+      ]
+    }
+  ]
+}

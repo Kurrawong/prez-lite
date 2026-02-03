@@ -15,6 +15,10 @@ const {
   breadcrumbs
 } = useScheme(uri)
 
+// Share functionality
+const { getShareUrl } = useShare()
+const shareUrl = computed(() => uri.value ? getShareUrl(uri.value) : undefined)
+
 // Tree controls
 const searchQuery = ref('')
 const expandAll = ref(false)
@@ -123,6 +127,15 @@ function copyIriToClipboard(iri: string) {
             variant="ghost"
             size="xs"
             @click="copyIriToClipboard(scheme.iri)"
+          />
+          <UButton
+            v-if="shareUrl"
+            :to="shareUrl"
+            icon="i-heroicons-share"
+            color="neutral"
+            variant="ghost"
+            size="xs"
+            aria-label="Share or embed this vocabulary"
           />
         </div>
         <div v-if="scheme.definition">

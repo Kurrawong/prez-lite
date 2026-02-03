@@ -1,0 +1,144 @@
+{
+  "iri": "https://linked.data.gov.au/def/borehole-start-point-setting",
+  "label": "Borehole start point setting",
+  "description": "Indicates the nature of the borehole start point location, i.e. the general setting and type of surrounding where the borehole is positioned (e.g. onshore, offshore, etc.).",
+  "concepts": [
+    {
+      "iri": "http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole",
+      "label": "from pre-existing hole",
+      "definition": "Indicates that the borehole was drilled from a pre-existing hole, whether at surface or underground."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall",
+      "label": "open pit floor or wall",
+      "definition": "Indicates that the borehole was drilled from an open pit floor or open pit wall."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/borehole-start-point/underground",
+      "label": "underground",
+      "definition": "Indicates that the borehole was drilled from an underground location."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface",
+      "label": "man-made surface",
+      "definition": "Indicates that the borehole was drilled from an artificially made or engineered surface, commonly near a natural ground surface. This concept includes drilling originating from tailings and waste dumps, as well as excavations such as quarries and open pit mines.",
+      "narrower": [
+        "http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall",
+        "https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface",
+      "label": "mining byproduct surface",
+      "definition": "Indicates that the borehole was drilled from artificially made surfaces related to byproducts of exploration and mining operations, such as tailings and waste dumps."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface",
+      "label": "natural ground surface",
+      "definition": "Indicates that the borehole was drilled from the natural ground surface or from ground with limited disturbance carried out in preparation for drilling, i.e. shallow excavation works, drill pads, cut and fill."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/offshore",
+      "label": "offshore",
+      "definition": "Indicates that the borehole was drilled in marine waters / open sea from a floating vessel or fixed platform, such as a drill ship, jackup or semisubmersible rig, petroleum platform or a marine research vessel, on the seaward side of the baseline of the territorial sea (as defined in the Seas and Submerged Lands Act 1973, Registered 11 September 2019)."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/onshore",
+      "label": "onshore",
+      "definition": "Indicates that the borehole was drilled from or near the natural ground surface. This includes drilling originating on land and on internal waters, i.e. those bodies of water that are located on the landward side of the baseline of the territorial sea (as defined in the Seas and Submerged Lands Act 1973, Registered 11 September 2019).",
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface",
+        "https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole",
+      "label": "from pre-existing hole",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface",
+      "label": "man-made surface",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface",
+          "label": "mining byproduct surface",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall",
+          "label": "open pit floor or wall",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface",
+      "label": "mining byproduct surface",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface",
+      "label": "natural ground surface",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/offshore",
+      "label": "offshore",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/onshore",
+      "label": "onshore",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface",
+          "label": "man-made surface",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface",
+              "label": "mining byproduct surface",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall",
+              "label": "open pit floor or wall",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface",
+          "label": "natural ground surface",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall",
+      "label": "open pit floor or wall",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/borehole-start-point/underground",
+      "label": "underground",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

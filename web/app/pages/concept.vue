@@ -17,6 +17,10 @@ const {
   resolveLabelFor
 } = useConcept(uri)
 
+// Share functionality
+const { getShareUrl } = useShare()
+const shareUrl = computed(() => scheme.value ? getShareUrl(scheme.value.iri) : undefined)
+
 function copyUriToClipboard() {
   if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
     navigator.clipboard.writeText(uri.value).catch(() => {})
@@ -56,6 +60,15 @@ function copyUriToClipboard() {
                 variant="ghost"
                 size="xs"
                 @click="copyUriToClipboard"
+              />
+              <UButton
+                v-if="shareUrl"
+                :to="shareUrl"
+                icon="i-heroicons-share"
+                color="neutral"
+                variant="ghost"
+                size="xs"
+                aria-label="Share vocabulary"
               />
             </div>
 

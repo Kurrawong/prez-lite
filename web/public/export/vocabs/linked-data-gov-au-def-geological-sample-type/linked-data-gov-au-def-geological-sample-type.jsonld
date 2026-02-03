@@ -1,0 +1,2708 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@language": "en"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@language": "en"
+    },
+    "definition": {
+      "@id": "skos:definition",
+      "@language": "en"
+    },
+    "notation": "skos:notation",
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@type": "@id"
+    },
+    "related": {
+      "@id": "skos:related",
+      "@type": "@id"
+    },
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "topConceptOf": {
+      "@id": "skos:topConceptOf",
+      "@type": "@id"
+    },
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "_:n3-356",
+      "http://www.w3.org/ns/prov#agent": {
+        "@id": "https://orcid.org/0009-0002-5543-2719"
+      },
+      "http://www.w3.org/ns/prov#hadRole": {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type",
+      "@type": "ConceptScheme",
+      "http://www.w3.org/2002/07/owl#versionIRI": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/None"
+      },
+      "definition": "The form of a sample, i.e. the visible shape or configuration of a geological material. The listing includes both primary samples and derived specimens, that is primary sources (e.g. drillcore, hand specimen) and items resulting from preparation of those source materials for the purpose of research/analytical work (e.g. thin section, fine powder). Artefacts are also included, but in this vocabulary they specifically refer to man-made objects of cultural or historical interest such as a tool or decoration (i.e. items such as thin sections, mounts, etc. are not regarded as artefacts in this context). Descriptions were compiled trying to avoid reference to the material that comprises the specimen (e.g. rock, fossil) or the sampling method (e.g. drilling), although in practice it is not always possible to completely separate these concepts from the sample type (e.g. rotary sidewall core); in fact many of the concepts for sample type and sample materials are (incorrectly) used interchangeably. ",
+      "hasTopConcept": [
+        "https://linked.data.gov.au/def/geological-sample-type/acetate-peel",
+        "https://linked.data.gov.au/def/geological-sample-type/bulk-sample",
+        "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+        "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen",
+        "https://linked.data.gov.au/def/geological-sample-type/concretion",
+        "https://linked.data.gov.au/def/geological-sample-type/drillcore",
+        "https://linked.data.gov.au/def/geological-sample-type/core-cutting",
+        "https://linked.data.gov.au/def/geological-sample-type/crush",
+        "https://linked.data.gov.au/def/geological-sample-type/crystal",
+        "https://linked.data.gov.au/def/geological-sample-type/cut-block",
+        "https://linked.data.gov.au/def/geological-sample-type/fluid-sample",
+        "https://linked.data.gov.au/def/geological-sample-type/faceted-gemstone",
+        "https://linked.data.gov.au/def/geological-sample-type/grain",
+        "https://linked.data.gov.au/def/geological-sample-type/hand-sample",
+        "https://linked.data.gov.au/def/geological-sample-type/concentrate",
+        "https://linked.data.gov.au/def/geological-sample-type/slide",
+        "https://linked.data.gov.au/def/geological-sample-type/mount",
+        "https://linked.data.gov.au/def/geological-sample-type/residue",
+        "https://linked.data.gov.au/def/geological-sample-type/nodule",
+        "https://linked.data.gov.au/def/geological-sample-type/nugget",
+        "https://linked.data.gov.au/def/geological-sample-type/other",
+        "https://linked.data.gov.au/def/geological-sample-type/sidewall-core",
+        "https://linked.data.gov.au/def/geological-sample-type/offcut",
+        "https://linked.data.gov.au/def/geological-sample-type/pulp",
+        "https://linked.data.gov.au/def/geological-sample-type/rock-chips",
+        "https://linked.data.gov.au/def/geological-sample-type/scat-mining",
+        "https://linked.data.gov.au/def/geological-sample-type/separate",
+        "https://linked.data.gov.au/def/geological-sample-type/slab",
+        "https://linked.data.gov.au/def/geological-sample-type/size-fraction",
+        "https://linked.data.gov.au/def/geological-sample-type/thin-section-chip",
+        "https://linked.data.gov.au/def/geological-sample-type/unconsolidated",
+        "https://linked.data.gov.au/def/geological-sample-type/unknown",
+        "https://linked.data.gov.au/def/geological-sample-type/unspecified",
+        "https://linked.data.gov.au/def/geological-sample-type/artefact",
+        "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings"
+      ],
+      "historyNote": "Sources consulted when considering terms this vocabulary include: Geoscience Australia's Sample Type vocabulary (https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType) and Museums Victoria. Definitions were compiled from a number of different sources as indicated against each concept where relevant.",
+      "prefLabel": "Geological sample type",
+      "http://www.w3.org/ns/prov#qualifiedAttribution": {
+        "@id": "_:n3-356"
+      },
+      "schema:creator": {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      },
+      "schema:dateCreated": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-11-24"
+      },
+      "schema:dateModified": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-11-24"
+      },
+      "schema:keywords": {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/earth-sciences"
+      },
+      "schema:publisher": {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      },
+      "schema:version": "None"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/acetate-peel",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "Rock surfaces (~30 μm thick) that are etched (e.g. with acid) and embedded in sheets of cellulose acetate. This method is generally used to study features on cut core surfaces, especially at scales where a thin section is impractical.",
+      "historyNote": "Modified after Wilson, MA and Palmer, TJ 1989, 13. Preparation of acetate peels, in Paleotechniques edited by RM Feldmann, RE Chapman and JT Hannibal: The Paleontological Society, Special Publication 4, 4p., <https://markwilson.voices.wooster.edu/wp-content/uploads/sites/29/2012/05/Preparation-of-acetate-peels.pdf>.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ACPL"
+      },
+      "prefLabel": "acetate peel",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://markwilson.voices.wooster.edu/wp-content/uploads/sites/29/2012/05/Preparation-of-acetate-peels.pdf"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/artefact",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "An object made by a human being, such as a tool or a decoration, especially one that is of cultural or historical interest.",
+      "historyNote": "Definition modified after Oxford Languages",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/model",
+        "https://linked.data.gov.au/def/geological-sample-type/replica"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARTF"
+      },
+      "prefLabel": "artefact",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://dictionary.cambridge.org/dictionary/english/artefact"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/assembled-stone",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "composite stone",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "definition": "Any gemstone consisting of two or more parts, whether natural, synthetic, imitation, or a combination thereof; e.g. a doublet or triplet.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/doublet",
+        "https://linked.data.gov.au/def/geological-sample-type/triplet"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMAS"
+      },
+      "prefLabel": "assembled stone",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/assembledstone"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/bit-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings",
+      "definition": "Rock sample removed from the end of a drillbit when it is brought to surface, assumed to be from the total depth of the current well interval.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "BISA"
+      },
+      "prefLabel": "bit sample",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/bulk-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A smaller fraction of material (e.g. rock, regolith, sediment) that is considered to sufficiently represent certain characteristics of the parent material.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "BULK"
+      },
+      "prefLabel": "bulk sample",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/cabochon",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "definition": "An unfaceted cut gemstone of domed or convex form. The top is smoothly polished; the back, or base, is usually flat or slightly convex, sometimes concave, and often unpolished. The girdle outline may be round, oval, square, or of any other shape.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMCB"
+      },
+      "prefLabel": "cabochon",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/cabochon"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/carved-specimen",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen",
+      "definition": "Any Earth material shaped into a decorative form (e.g. sphere, egg, free-form, etc.) using tools to scrape away portions of that material. The technique can be applied to any material that is solid enough to hold a form even when pieces have been removed from it, and yet soft enough for portions to be scraped away with available tools.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "POCV"
+      },
+      "prefLabel": "carved specimen",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://dictionary.cambridge.org/dictionary/english/carve"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Carving"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/cast",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/replica",
+      "definition": "An object formed by pouring metal, plaster, fiberglass, etc., in a fluid state into a mold and letting it harden. Casts are usually made of objects (natural or artefacts) that have a special significance or scientific/monetary value due to their nature, size, rarity and provenance (e.g. nugget, meteorite, fossil); casts are also made to limit the handling of original specimens or for display purposes (e.g. for heave specimens).",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/latex-peel",
+        "https://linked.data.gov.au/def/geological-sample-type/plaster-cast"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARTA"
+      },
+      "prefLabel": "cast",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.sciencing.com/mold-cast-fossils-6556194/"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.dictionary.com/browse/cast"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/cavings-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings",
+      "closeMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/cavings"
+      },
+      "definition": "Pieces of rock that came from the borehole but that were not removed directly by the action of the drillbit. Cavings can be splinters, shards, chunks, and various shapes of rock, usually spalling from shale sections that have become unstable. The shape of the caving can indicate why the rock failure occurred. The term is typically used in the plural form.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CASA"
+      },
+      "prefLabel": "cavings sample",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/en/terms/c/cavings"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/concentrate",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fraction"
+      },
+      "definition": "A sample comprising loose mineral grains that have been concentrated relative to the parent material using a sample preparation technique, such as heavy liquid, magnetic or electrostatic separation.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/heavy-mineral-concentrate",
+        "https://linked.data.gov.au/def/geological-sample-type/light-mineral-concentrate"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CONC"
+      },
+      "prefLabel": "concentrate",
+      "relatedMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/concentrate"
+      },
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/concretion",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A hard, compact mass or aggregate of mineral matter, normally subspherical but ranging from oblate to irregular; formed by precipitation from aqueous solution about a nucleus or centre (e.g. a shell or fossil), in the pores of a sedimentary or fragmental volcanic rock, and usually of a composition widely different from that of the rock in which it is found and from which it is rather sharply separated. It ranges in size from a small pellet-like object to a great spheroidal body as much as 3 m in diameter. Most concretions were formed during diagenesis, and many shortly after sediment deposition.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CNCR"
+      },
+      "prefLabel": "concretion",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/concretion"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/core-chips",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "CC",
+        "core pieces"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/drillcore",
+      "definition": "Rock chips or fragments derived from a drillcore of any type after drilling.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "COCH"
+      },
+      "prefLabel": "core chips",
+      "relatedMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/rock-chips"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/core-cutting",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A block cut from whole, half or quartered conventional core for petrophysical analysis. Typically starting pieces are up to 20 cm in length and may be cut shorter for further sampling depending on the techniques being applied.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "COCU"
+      },
+      "prefLabel": "core cutting",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/core-plug",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/drillcore",
+      "closeMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/corePlug"
+      },
+      "definition": "A plug cut from a conventional core for analysis.",
+      "historyNote": "Modified after SLB Energy Glossary definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "COPL"
+      },
+      "prefLabel": "core plug",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/en/terms/c/core_plug"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/crush",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "closeMatch": [
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/crushed-rock"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/crush"
+        }
+      ],
+      "definition": "A coarse crushed rock sample comprising sub-centimetre sized chips. Often produced to generate a material fine enough to be pulverized into a powder, often for the purpose of geochemical analysis.",
+      "historyNote": "Modified after https://isolab.ess.washington.edu/SOPs/rock-preparation.php",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CRSH"
+      },
+      "prefLabel": "crush",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://isolab.ess.washington.edu/SOPs/rock-preparation.php"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "The homogeneous, solid body of a chemical element, compound, or isomorphous mixture whose constituents (such as atoms, molecules, or ions) are arranged in a highly ordered microscopic structure, forming an ordered lattice that extends in all directions; this regularly repeating atomic arrangement may be outwardly expressed by plane faces. Although a crystal is characterized first by its definite internal molecular structure and second by its external form, the term is generally used in reference to a mineral specimen that is at least partially defined by its geometrical shape consisting of flat faces with specific, characteristic orientations (i.e. natural external crystalline plane faces).",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/crystal-cluster",
+        "https://linked.data.gov.au/def/geological-sample-type/crystal-fragment",
+        "https://linked.data.gov.au/def/geological-sample-type/floater-crystal",
+        "https://linked.data.gov.au/def/geological-sample-type/geode",
+        "https://linked.data.gov.au/def/geological-sample-type/single-crystal"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CRYL"
+      },
+      "prefLabel": "crystal",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Crystal"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.americangeosciences.org/term/crystal"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/crystal"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal-cluster",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+      "definition": "A group of mineral crystals formed in an open space environment and exhibiting a euhedral crystal form determined by their internal crystal structure; or a specimen derived from it. A cluster of small crystals coating the walls of a cavity is called a druse. From a collecting perspective, crystal cluster can also refer to a group of crystals obtained from the removal of matrix to expose well-formed crystals.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CRYC"
+      },
+      "prefLabel": "crystal cluster",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://en.wikipedia.org/wiki/Crystal_cluster"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal-fragment",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+      "definition": "Broken piece(s) of a single crystal or crystal cluster. The breakage process can be either natural (i.e. due to geological factors/events) or artificial (e.g. occurring during sampling or specimen preparation).",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CRYG"
+      },
+      "prefLabel": "crystal fragment(s)",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal-model",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/model",
+      "definition": "A teaching aid used for understanding crystallography concepts and the morphology of crystals, especially used for teaching/recognizing symmetry elements in crystals.",
+      "historyNote": "Definition modified from Wikipedia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARTC"
+      },
+      "prefLabel": "crystal model",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://en.wikipedia.org/wiki/Crystal_model"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/cut-block",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A hand sample or block with at least one side cut with a rock saw, which has not been polished.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CUTB"
+      },
+      "prefLabel": "cut block",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "DC",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings",
+      "definition": "Rock chips or fragments retrieved during the drilling of a petroleum well, usually mixed with drilling fluid residue. Can be either 'unwashed' when collected straight from the well, 'washed' when rinsed to remove drilling fluid residue, and/or 'dried' if cleaned and processed to remove moisture.",
+      "historyNote": "Modified after Geoscience Australia's definition for drill chips/cuttings",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/bit-sample",
+        "https://linked.data.gov.au/def/geological-sample-type/cavings-sample"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DTCU"
+      },
+      "prefLabel": "ditch cuttings",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "http://pid.geoscience.gov.au/def/voc/ga/sampletype/drill_chips_cuttings"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/doublet",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/assembled-stone",
+      "definition": "A gem substitute composed of two pieces of gem material, or one of gem material and a second of glass or synthetic, fused or cemented together; e.g. a glass imitation with a thin layer of natural gemstone (e.g. opal) fused on the top.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMAD"
+      },
+      "prefLabel": "doublet",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/doublet"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-chips",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "chips",
+        "drillchips"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings",
+      "definition": "Rock chips or fragments derived from drilling whereby the primary sampling methodology is fragmentation of the material prior to recovery.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillChipsCuttings"
+      },
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/rab-chips",
+        "https://linked.data.gov.au/def/geological-sample-type/rc-chips"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DRCH"
+      },
+      "prefLabel": "drill chips",
+      "relatedMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/rock-chips"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "cutt",
+        "cutts"
+      ],
+      "closeMatch": [
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillChipsCuttings"
+        },
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/cuttings"
+        }
+      ],
+      "definition": "A mixture of rock chips or fragments generated during a borehole/well construction. Drill cuttings are generated by the action of the drill bit and brought to the surface by drilling fluids.",
+      "historyNote": "Modified after Geoscience Australia's definition and Costa et al. 2023, Physical and chemical characterisation of drill cuttings: A review: Marine Pollution Bulletin, v. 194, Part A, September 2023, 115342.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings",
+        "https://linked.data.gov.au/def/geological-sample-type/drill-chips"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DRCU"
+      },
+      "prefLabel": "drill cuttings",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillChipsCuttings"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.sciencedirect.com/science/article/abs/pii/S0025326X23007762"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/drillcore",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "conventional core",
+        "core"
+      ],
+      "definition": "A specimen (usually, but not always, cylindrical) of rock and/or regolith.",
+      "exactMatch": [
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/core"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/core"
+        }
+      ],
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/core-chips",
+        "https://linked.data.gov.au/def/geological-sample-type/core-plug"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DRCO"
+      },
+      "prefLabel": "drillcore",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/core"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/drilling-fluid-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "drilling mud sample",
+        "mud sample"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/fluid-sample",
+      "closeMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/drill-fluid"
+      },
+      "definition": "A sample of the fluid used for drilling (mainly drillbit lubrication) and for return of ground rock material from the bottom of the drilling interval, e.g. drilling mud.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillingFluidSpecimen"
+      },
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DFSA"
+      },
+      "prefLabel": "drilling fluid sample",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillingFluidSpecimen"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/dump-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "definition": "A mount created by pouring or 'dumping' material such as minerals or rock pieces/fragments onto a mounting medium such as resin, i.e. there is no hand picking of grains.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/heavy-mineral-mount",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DUMT"
+      },
+      "prefLabel": "dump mount",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/etched-specimen",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen",
+      "definition": "A mineral or rock where a pattern or design has been cut into or appears on a smooth surface, generated by using acid or a sharp instrument, or by removing the rock surface coating. Typical of meteorite surfaces cut, polished and treated to expose Widmanstätten figures, but can also occur naturally in minerals due to the action of fluids.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ETCH"
+      },
+      "prefLabel": "etched specimen",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://geology.com/articles/petroglyphs.shtml"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/facet-rough",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "rough gemstone",
+        "rough stone"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/rough",
+      "definition": "A raw, uncut gemstone that is suitable for faceting; e.g. a rough diamond.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMRF"
+      },
+      "prefLabel": "facet rough",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.folkmarketgems.com/blogs/gems-and-mineral-information/understanding-facet-rough-and-cabochon-grade-lapidary-rough"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/rough"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/faceted-gemstone",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "definition": "A precious or semi-precious gemstone that has been cut and shaped with multiple flat surfaces, known as facets, to enhance its brilliance and optical properties. These facets are geometrically arranged and polished to maximize the gemstone's ability to reflect and refract light, usually resulting in a dazzling display of colours and sparkle. Opaque materials can also be faceted.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMFA"
+      },
+      "prefLabel": "faceted gemstone",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.gemselect.com/other-info/faceted-gemstones.php"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.gemsociety.org/article/gemstone-facets/"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/floater-crystal",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+      "definition": "In mineralogical terms, a 'floater' is a single crystal or aggregate of crystals that is not attached to a host rock / hard matrix, and has no obvious indication that it has been removed from matrix. All sides of floater crystals are usually fully intact without damage, as they don't have a fractured attachment point. Floaters can form when crystals grow within a matrix that is either soft or subsequently removed (such as from a clay); or it may be a crystal that formed attached to matrix but was subsequently detached during tectonic activity, with the broken attachment point later re-healed or extended by a secondary mineralization event. The term is generally not used for crystals that have been freed from hard matrix, such as garnets removed from schist, whether such removal was natural or artificial. Not to be confused with 'float', a loose rock collected at the surface of the Earth.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CRYF"
+      },
+      "prefLabel": "floater crystal",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/floater"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.minerals.net/mineral_glossary/floater_crystal.aspx"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/fluid-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "Any liquid or gas sampled during downhole sampling processes or at the surface.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": [
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/drill-fluid"
+        },
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/water-specimen"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/gasSpecimen"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/waterSpecimen"
+        }
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/drilling-fluid-sample",
+        "https://linked.data.gov.au/def/geological-sample-type/formation-fluid-sample"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "FLSA"
+      },
+      "prefLabel": "fluid sample",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/formation-fluid-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "formation water",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/fluid-sample",
+      "definition": "A sample of any fluid that occurs in the pores and fractures of a rock, such as various saturations of oil, gas and water.",
+      "historyNote": "Modified after SLB Energy Glossary definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/reservoir-fluid-sample",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "FMFS"
+      },
+      "prefLabel": "formation fluid sample",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/en/terms/f/formation_fluid"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "fine gem",
+        "gem",
+        "gem stone",
+        "precious stone",
+        "semiprecious stone"
+      ],
+      "definition": "Any mineral or naturally occurring substance that, when cut and polished, has sufficient beauty, rarity, and durability for use as a personal adornment or other ornament. Organic materials such as pearl are considered gem materials rather than gemstones. Because of their desirability and demand, synthetic and imitation gemstones are common replacements for natural gemstones.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/cabochon",
+        "https://linked.data.gov.au/def/geological-sample-type/assembled-stone",
+        "https://linked.data.gov.au/def/geological-sample-type/rough",
+        "https://linked.data.gov.au/def/geological-sample-type/imitation-gemstone",
+        "https://linked.data.gov.au/def/geological-sample-type/synthetic-gemstone"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMST"
+      },
+      "prefLabel": "gemstone",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Gemstone"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.americangeosciences.org/term/gemstone"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/gemstone"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.minerals.net/mineral_glossary/gemstone.aspx"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/geochronology-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "geochron mount",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/grain-mount",
+      "definition": "A polished mount created from minerals such as zircon for the purpose of geochronology.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GEOC"
+      },
+      "prefLabel": "geochronology mount",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/geode",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+      "definition": "A geode is a globular/spherical to irregular mass of resistant mineral matter that is usually hollow and partially to completely filled with crystals. Completely infilled geodes are often referred to as nodules, but the two names are not always consistently used: geodes differ from nodules in that a nodule is a solid mass of mineral matter, but some nodules may have a tiny void space in their interiors and the distinction between a geode and a nodule may be barely discernible if the cavity is miniscule. Geodes differ from vugs in that geodes can be separated free from any matrix, because their walls commonly weather out of rock exposures. Unlike a druse, a geode is separable (by weathering) as a discrete concretion from the rock in which it occurs, and its inner crystals are not of the same minerals as those of the enclosing rock. The crystals lining a geode are formed by the filling of vesicles in volcanic and subvolcanic rocks by minerals deposited from hydrothermal fluids; or by the dissolution of syngenetic concretions and partial filling by the same or other minerals precipitated from water, groundwater, or hydrothermal fluids in sedimentary rocks.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GEOD"
+      },
+      "prefLabel": "geode",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Geode"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.americangeosciences.org/term/geode"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/geode"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/grain",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "closeMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralGrain"
+      },
+      "definition": "An individual particle, either a mineral or fossil, sampled directly from an outcrop, drillcore or environment, or obtained from a concentrate, and stored in an unmounted state.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GRAN"
+      },
+      "prefLabel": "grain",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralGrain"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/grain-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "dump mount",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "definition": "A mount created from loose mineral grains that have been hand picked for the purpose of imaging or analysis.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/geochronology-mount",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GRMT"
+      },
+      "prefLabel": "grain mount",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/hand-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "hand specimen",
+      "definition": "Portable, self-contained rock, fossil, regolith or mineral specimen collected for analysis and/or conservation. Hand samples are of a size that is convenient for megascopic study and for preserving in a study collection. The term 'hand sample' is generally applied to materials collected from outcrop but could also be taken from other landscape features. Hand samples are generally selected to be representative of a particular area, lithology, assemblage or outcrop.",
+      "exactMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/hand-sample"
+      },
+      "historyNote": "GSWA definition, modified after American Geosciences Institute Glossary of Geology (5th edition).",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "HAND"
+      },
+      "prefLabel": "hand sample",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/handspecimen"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/heavy-mineral-concentrate",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fraction"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/concentrate",
+      "definition": "A sample comprising loose mineral grains with a density of 2.9 g/cm³ or greater that have been concentrated relative to the parent material usually using a technique called heavy liquid separation.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "HVCN"
+      },
+      "prefLabel": "heavy mineral concentrate",
+      "relatedMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/concentrate"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/heavy-mineral-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/dump-mount",
+      "definition": "A polished dump mount created from a heavy mineral concentrate (minerals with a density greater than 2.9 g/cm³).",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "HMMT"
+      },
+      "prefLabel": "heavy mineral mount",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/imitation-gemstone",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "simulant gemstone",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "definition": "Gemstones made from materials that look (or have been treated to look) like real gemstones but have different chemical compositions and properties (cf. synthetic gemstone).",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMIM"
+      },
+      "prefLabel": "imitation gemstone",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://thenaturalgem.com/en/synthetic-and-artificial-gemstones/"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.gemrockauctions.com/learn/technical-information-on-gemstones/what-are-synthetic-gemstones-imitation-and-simulants"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/kerogen-slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A strew slide prepared for transmitted light microscopy, where the original sediment sample is treated to retain all non-soluble organic matter. This compares to strew slides prepared for palynostratigraphy, where samples are oxidized prior to mounting to remove extraneous organic matter such as inertinite and vitrinite in order to highlight the assemblage of palynomorphs. As a result, kerogen slides are often generated alongside palynostratigraphic strew slides.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "KERS"
+      },
+      "prefLabel": "kerogen slide",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/lapidary-rough",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "cabochon grade gemstones",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/rough",
+      "definition": "Lapidary rough is raw gemstone material used for various types of cutting and shaping, to create cabochons, carvings, beads, and other decorative items. Many different types of stones can be used as lapidary rough, including agate, jasper, turquoise and quartz.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMRL"
+      },
+      "prefLabel": "lapidary rough",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.folkmarketgems.com/blogs/gems-and-mineral-information/understanding-facet-rough-and-cabochon-grade-lapidary-rough"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/rough"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/latex-peel",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/cast",
+      "definition": "A copy of a three-dimensional form, particularly a fossil or rock surface, made in molding latex.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARLP"
+      },
+      "prefLabel": "latex peel",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/light-mineral-concentrate",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "light mineral separate",
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fraction"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/concentrate",
+      "definition": "A sample comprising loose mineral grains with a density of less than 2.9 g/cm³ that have been concentrated relative to the parent material usually using a technique called heavy liquid separation.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "LTCN"
+      },
+      "prefLabel": "light mineral concentrate",
+      "relatedMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/concentrate"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-grid-slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "gridded slide",
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/microfossilSlide"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A slide prepared for microscope analysis of microfossils, where picked specimens are mounted on a numbered grid backing for identification.",
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMIS"
+      },
+      "prefLabel": "microfossil grid slide",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/microfossilSlide"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "definition": "Separated or isolated microfossil mounted on a backing in preparation for imaging or analysis. This term is preferred when the form of the mount is unknown, and is a partial equivalent of SEM mount / SEM stub where the mounted material is a fossil prepared for SEM microscopy. Gridded slides and well slides are occasionally referred to as mounts or mounted slides but are better considered as slide types.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/microfossilSlide"
+      },
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "MFMT"
+      },
+      "prefLabel": "microfossil mount",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-residue",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "micropaleontology residue",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/residue",
+      "definition": "Remains of sample prepared for microfossil studies, usually stored as dried sediment. Residues may be picked (i.e. depleted of specific fossils separated for analysis) or unpicked.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "RSMF"
+      },
+      "prefLabel": "microfossil residue",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-well-slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "well slide",
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/microfossilSlide"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A slide prepared for microscope analysis of microfossils, where picked specimens are contained within one (or a series of) circular wells, often unfixed.",
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "MFWS"
+      },
+      "prefLabel": "microfossil well slide",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/microfossilSlide"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/micromount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "micro-mineral",
+        "micro-mount",
+        "micromineral"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "definition": "Any single or group of crystals (with or without matrix) that requires optical aid to be appreciated, commonly a hand-lens or a binocular microscope with a 10–40 times magnification. A micromount is permanently mounted in some kind of box and labelled with the name of the mineral and the location from which it came. Proper mounting both preserves delicate crystals and facilitates their handling. The term is used mostly by mineral collectors and amateur geologists.",
+      "historyNote": "Term from Museum Victoria listing, definition altered from cited websites.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "MCMT"
+      },
+      "prefLabel": "micromount",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.baltimoremineralsociety.org/what-is-micromounting.html"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/micromount"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/model",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/artefact",
+      "definition": "A facsimile representation of an object, site or location; usually in three dimensions and often at a different scale.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/crystal-model",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARTM"
+      },
+      "prefLabel": "model",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Model"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/model"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/mold",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/replica",
+      "definition": "A three-dimensional shape built in order to generate a cast and thus reproduce objects of special significance/value (e.g. nugget, meteorite, fossil) and limit the handling of original specimens",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARTD"
+      },
+      "prefLabel": "mold",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://www.sciencing.com/mold-cast-fossils-6556194/"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A sample that has been prepared for viewing/analysis/storage by either securely attaching the specimen(s) to a suitable fixed point (e.g. a slide or support) and/or by using appropriate mounting compounds/media (with or without polishing) to encapsulate specimens and hold them securely in place.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/polished-block"
+      },
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/grain-mount",
+        "https://linked.data.gov.au/def/geological-sample-type/dump-mount",
+        "https://linked.data.gov.au/def/geological-sample-type/microfossil-mount",
+        "https://linked.data.gov.au/def/geological-sample-type/micromount",
+        "https://linked.data.gov.au/def/geological-sample-type/polished-mount",
+        "https://linked.data.gov.au/def/geological-sample-type/sem-mount"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "MOUN"
+      },
+      "prefLabel": "mount",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://overallscience.com/preparation-of-different-types-of-mount/"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.globalspec.com/learnmore/labware_scientific_instruments/microscopes/mounting_compounds"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/nodule",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A small, irregularly rounded knot, mass, or lump of a mineral or mineral aggregate, normally having a warty or knobby surface and no internal structure, and usually exhibiting a contrasting composition from the enclosing sediment or rock matrix in which it is/was embedded.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "NODL"
+      },
+      "prefLabel": "nodule",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/nodulesed"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/nugget",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A lump of gold or other precious metal found ready-formed in surficial deposits.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "NUGG"
+      },
+      "prefLabel": "nugget",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "Oxford English Dictionary"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.americangeosciences.org/term/nugget"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/offcut",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "oc",
+        "off cuts",
+        "off-cuts",
+        "trim ends"
+      ],
+      "definition": "Small sections of rock cut off a larger block or core.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSectionOffcut"
+      },
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/petrology-offcut",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "OFFC"
+      },
+      "prefLabel": "offcut",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/other",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A sample type that does not fit into any other category.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "OTHE"
+      },
+      "prefLabel": "other",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/palynology-residue",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/residue",
+      "definition": "Remains of sample prepared for palynological analysis but not mounted on slides. Palynology residues are generally suspended in liquids for storage, normally glycerine. Although the term 'residue' can be applied to materials at any part of the preparation process, the term is most often applied to the final concentration which is stored.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "RSPA"
+      },
+      "prefLabel": "palynology residue",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/percussion-sidewall-core",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/sidewall-core",
+      "definition": "A core taken from the side of a borehole by shooting hollow, retrievable, cylindrical bullets into the formation. With full recovery, cores from typical percussion tools are 2.5 cm in diameter and between 4.4 and 5.0 cm long. Due to the shattering or compression of the sample during collection, percussion sidewall cores cannot be used for qualitative measurements such as porosity and permeability.",
+      "historyNote": "Modified after SLB Energy Glossary definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SWPC"
+      },
+      "prefLabel": "percussion sidewall core",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/terms/s/sidewall_core"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/petrology-offcut",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "thin section offcut",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/offcut",
+      "definition": "A small fragment of rock remaining from the preparation of a thin section.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSectionOffcut"
+      },
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "TSOC"
+      },
+      "prefLabel": "petrology offcut",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSectionOffcut"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/plaster-cast",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/cast",
+      "definition": "A copy of a three-dimensional form, particularly fossils, made in plaster.",
+      "historyNote": "Modified from Wikipedia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARPC"
+      },
+      "prefLabel": "plaster cast",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://en.wikipedia.org/wiki/Plaster_cast"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "epoxy mount",
+        "polished block",
+        "resin block",
+        "resin mount"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "definition": "Materials set in a medium, typically an epoxy glue or resin, and polished.",
+      "exactMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/polished-block"
+      },
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "PLMT"
+      },
+      "prefLabel": "polished mount",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedMount"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "Any Earth material that has been modified and prepared, either by incision, by rubbing or by applying a chemical treatment, usually to create a smooth and shiny/glossy surface.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/carved-specimen",
+        "https://linked.data.gov.au/def/geological-sample-type/etched-specimen",
+        "https://linked.data.gov.au/def/geological-sample-type/polished-specimen"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "POSH"
+      },
+      "prefLabel": "polished/shaped specimen",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://en.wikipedia.org/wiki/Polishing"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-slab",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen",
+      "definition": "A thick slice of rock/mineral with a smooth and shiny/glossy surface that enhances the colour, texture and general appearance of the material.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedSlab"
+      },
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "POSL"
+      },
+      "prefLabel": "polished slab",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedSlab"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen",
+      "definition": "Natural rocks, (gem)stones or Earth materials that have undergone a meticulous process of grinding and polishing with progressively finer abrasive materials to create a smooth surface with a significant specular reflection /enhanced lustre. This method enhances their surface, bringing out the natural colours and patterns found within the specimen.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/polished-slab",
+        "https://linked.data.gov.au/def/geological-sample-type/tumbled-stone"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "POSP"
+      },
+      "prefLabel": "polished specimen",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://stonehards.com/articles/polished-rocks-guide/"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/pulp",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "powder",
+        "pulp sample"
+      ],
+      "closeMatch": [
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/powder"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/powderTungstenMill"
+        }
+      ],
+      "definition": "A rock sample that has been pulverised to a very fine powder and homogenized to be representative of a parent sample, or interval, often for the purpose of geochemical analysis.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "PULP"
+      },
+      "prefLabel": "pulp",
+      "relatedMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/powdered-chip"
+      },
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/rab-chips",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "RAB chips",
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillChipsCuttings"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/drill-chips",
+      "definition": "Rock chips or fragments derived from rotary air blast (RAB) drilling.",
+      "historyNote": "Modified after Geoscience Australia's definition for drill chips/cuttings",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DRAB"
+      },
+      "prefLabel": "rotary air blast chips",
+      "relatedMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/rock-chips"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/rc-chips",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "RC chips",
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/drillChipsCuttings"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/drill-chips",
+      "definition": "Rock chips or fragments derived from reverse circulation (RC) drilling.",
+      "historyNote": "Modified after Geoscience Australia's definition for drill chips/cuttings",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "DRRC"
+      },
+      "prefLabel": "reverse circulation chips",
+      "relatedMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/rock-chips"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/replica",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "copy",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/artefact",
+      "definition": "An expertly crafted reproduction of a natural, cultural or historical item, made to resemble the original while preserving its cultural or scientific significance.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/cast",
+        "https://linked.data.gov.au/def/geological-sample-type/mold"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "ARTR"
+      },
+      "prefLabel": "replica",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://www.vaia.com/en-us/explanations/anthropology/museum-studies/replica-artifacts/"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/reservoir-fluid-sample",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/formation-fluid-sample",
+      "closeMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/downholeReservoirFluidSample"
+      },
+      "definition": "A sample of fluids found in the reservoir formation of a well.",
+      "historyNote": "Modified after SLB Energy Glossary definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "RSFS"
+      },
+      "prefLabel": "reservoir fluid sample",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/en/terms/f/formation_fluid"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/residue",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "Unspecified material leftover from sample preparation or an analytical technique.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/microfossil-residue",
+        "https://linked.data.gov.au/def/geological-sample-type/palynology-residue"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "RSSI"
+      },
+      "prefLabel": "residue",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/standardReferenceMaterial"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/rock-chips",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "Rock fragments derived from crushing or chipping material other than by drilling (e.g. chips from an outcrop or mine channel sampling).",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/rockChips"
+      },
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/rock-chips"
+      },
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "RKCH"
+      },
+      "prefLabel": "rock chips",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/rockChips"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/rotary-sidewall-core",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/sidewall-core",
+      "definition": "A core taken from the side of a borehole using mechanical sidewall coring tools. Hollow rotary drills cut and extract core plugs that, with full recovery, are usually between 2.3 – 2.4 cm in diameter by 4.5 – 5.0 cm long. Also known as mechanical sidewall core.",
+      "historyNote": "Modified after SLB Energy Glossary definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SWRO"
+      },
+      "prefLabel": "rotary sidewall core",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/terms/s/sidewall_core"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/rough",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "definition": "A raw piece of Earth material (mineral, rock, etc.) with the potential to be cut and polished/faceted into a gemstone.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/facet-rough",
+        "https://linked.data.gov.au/def/geological-sample-type/lapidary-rough"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMRG"
+      },
+      "prefLabel": "rough (specimen)",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.folkmarketgems.com/blogs/gems-and-mineral-information/understanding-facet-rough-and-cabochon-grade-lapidary-rough"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/rough"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/scat-mining",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "Ore material in a ball mill or sag mill that has become rounded and no longer susceptible to additional size reduction. The term 'scat' is also a synonym for faecal material but is different to the use of the term in a mining sense.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SCMI"
+      },
+      "prefLabel": "scat - mining",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/sem-mount",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "SEM stub",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/mount",
+      "definition": "Separated or isolated fossil(s), mineral(s) or rock fragment(s) mounted (i.e. attached) to a metal pin or backing in preparation for imaging or analysis in a scanning electron microscope (SEM).",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SEMM"
+      },
+      "prefLabel": "SEM mount",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/separate",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "closeMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralSeparate"
+      },
+      "definition": "A sample comprising loose grains (usually minerals but could be fossils) that have been separated from their parent material by manual selection under a microscope. Often done for the purpose of undertaking detailed analysis on a particular mineral, e.g. zircon, phosphate or baddeleyite geochronology.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SPRU"
+      },
+      "prefLabel": "separate",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/serial-sectioning-slab",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slab",
+      "definition": "A hand sample or block that has been sliced into a set of slabs in order to examine sequential changes in internal features or structure.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SRSB"
+      },
+      "prefLabel": "serial sectioning slab",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/serial-sectioning-slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A set of slides prepared for visual microscopic inspection, where each slide preserves an individual section cut in sequence from a larger sample or specimen, normally to examine complex internal structures.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SRSD"
+      },
+      "prefLabel": "serial sectioning slide",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/sidewall-core",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "MSCT",
+        "SWC"
+      ],
+      "definition": "A core taken from the side of the borehole, usually by a wireline tool. These samples can provide useful details of the lithology, petrology, biostratigraphy, organic geochemistry, porosity, permeability, and hydrocarbon content of the formation.",
+      "exactMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/side-wall-core"
+      },
+      "historyNote": "Modified after American Geosciences Institute Glossary of Geology (5th edition) and AAPG Wiki.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/percussion-sidewall-core",
+        "https://linked.data.gov.au/def/geological-sample-type/rotary-sidewall-core"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SWCR"
+      },
+      "prefLabel": "sidewall core",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.slb.com/en/terms/s/sidewall_core"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://wiki.aapg.org/Overview_of_routine_core_analysis#Sidewall_core_analysis"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/single-crystal",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+      "definition": "A macroscopic or microscopic crystal usually identifiable by its geometric shape, and consisting of flat faces with specific, characteristic orientations/geometry that reflect its crystalline system of formation; a crystal in which all parts have the same crystallographic orientation and the crystal lattice of the entire sample is continuous and unbroken to the edges of the sample with no grain boundaries.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "CRYS"
+      },
+      "prefLabel": "single crystal",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Single_crystal"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/single_crystal"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/size-fraction",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broadMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fraction"
+      },
+      "definition": "A sample comprising loose particles of a specified size range that has been separated, split or fractionated from a bulk parent material, often using various sizes of sieves.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/grainsizeFraction"
+      },
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/sievedSample"
+      },
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SIZE"
+      },
+      "prefLabel": "size fraction",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/slab",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A thick slice of rock material that can range in size from hand sample (centimetres to tens of centimetres) to several metres.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/serial-sectioning-slab",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SLAB"
+      },
+      "prefLabel": "slab",
+      "relatedMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/slab"
+      },
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A thin, rectangular piece of glass used to hold samples to be studied under a microscope",
+      "historyNote": "Modified after Wikipedia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": [
+        "https://linked.data.gov.au/def/geological-sample-type/kerogen-slide",
+        "https://linked.data.gov.au/def/geological-sample-type/microfossil-grid-slide",
+        "https://linked.data.gov.au/def/geological-sample-type/microfossil-well-slide",
+        "https://linked.data.gov.au/def/geological-sample-type/serial-sectioning-slide",
+        "https://linked.data.gov.au/def/geological-sample-type/smear-slide",
+        "https://linked.data.gov.au/def/geological-sample-type/strew-slide",
+        "https://linked.data.gov.au/def/geological-sample-type/thick-section",
+        "https://linked.data.gov.au/def/geological-sample-type/thin-section"
+      ],
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SLID"
+      },
+      "prefLabel": "slide",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://en.wiktionary.org/wiki/microscope_slide"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/smear-slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A slide prepared for microscopy by smearing geological materials across the surface of a glass slide and affixing in place. The smear may or may not be covered by a thin glass coverslip.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "SMES"
+      },
+      "prefLabel": "smear slide",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/strew-slide",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "palynology slides",
+        "palynology strew slide"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A slide prepared for transmitted light microscopy through the suspension of separated materials (such as spores and pollen) in a mounting medium after chemical processing such as disaggregation and oxidization. Generally used for palynological analysis but may also be used to prepare other fossils or geological materials.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "PALS"
+      },
+      "prefLabel": "strew slide",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/synthetic-gemstone",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": [
+        "artificial gemstone",
+        "lab-grown gemstone"
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+      "definition": "A gemstone that is physically, optically, and chemically identical to a natural stone, but is created in a laboratory (e.g. synthetic rutile or strontium titanate have been used to replicate the sparkle of diamond).",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMSY"
+      },
+      "prefLabel": "synthethic gemstone",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://thenaturalgem.com/en/synthetic-and-artificial-gemstones/"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.gemrockauctions.com/learn/technical-information-on-gemstones/what-are-synthetic-gemstones-imitation-and-simulants"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Gemstone#Synthetic_and_artificial_gemstones"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/thick-section",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A translucent section of geological material prepared for microscope analysis. The rock slice is almost always glued to a glass slide backing and may or may not be covered in a thin glass coverslip. Thick sections are more than 30 μm in thickness, normally 100 μm.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/thick-section-polished",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "THIS"
+      },
+      "prefLabel": "thick section",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/thick-section-polished",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/thick-section",
+      "definition": "A polished translucent section of geological material prepared for microscope analysis that is greater than 30 μm in thickness, normally 100 μm.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "THPO"
+      },
+      "prefLabel": "thick section - polished",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/slide",
+      "definition": "A translucent section of geological material prepared for microscope analysis. The rock slice is almost always glued to a glass slide backing, and may or may not be covered in a thin glass coverslip. Thin sections are generally ground to 30 μm in thickness.",
+      "exactMatch": [
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/thin-section"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSection"
+        }
+      ],
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedThinSection"
+      },
+      "narrower": "https://linked.data.gov.au/def/geological-sample-type/thin-section-polished",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "THIN"
+      },
+      "prefLabel": "thin section",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSection"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section-chip",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "altLabel": "thin section billet",
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/offcut",
+      "definition": "A small block of rock cut from a hand sample or core section for the preparation of a standard thin section and typically to fit on a standard petrographic slide with dimensions of around 27 x 46 mm.",
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "OFTS"
+      },
+      "prefLabel": "thin section chip",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://www.microanalysis.com.au/news/thin-sectioning/"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section-polished",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broadMatch": [
+        {
+          "@id": "http://linked.data.gov.au/def/sample-type/thin-section"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSection"
+        }
+      ],
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/thin-section",
+      "definition": "A polished thin section of a material without a coverslip prepared for analysis.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedThinSection"
+      },
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "TSPO"
+      },
+      "prefLabel": "thin section - polished",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/triplet",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/assembled-stone",
+      "definition": "An assembled stone composed of three bonded parts of natural or manufactured gem materials designed to imitate natural gems; or two main pieces and a coloured cement layer (the third part of the triplet), which gives the stone colour.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "GMAT"
+      },
+      "prefLabel": "triplet",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.americangeosciences.org/term/triplet"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/tumbled-stone",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "broader": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen",
+      "definition": "Small, rounded, brightly polished pieces of rocks and minerals (usually semiprecious or precious stones), made by placing rough fragments in a barrel-shaped vessel (a rock tumbler), which rotates and tumbles them until their sharp edges are rounded and surfaces are smooth and polished.",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "POTU"
+      },
+      "prefLabel": "tumbled stone",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://geology.com/rock-tumblers/tumbled-stones/"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.mindat.org/glossary/tumbled"
+        }
+      ],
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/unconsolidated",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "A sample comprising loosely arranged, solid particulate material, such as sediment, soil or dust, that has not undergone significant compaction, cementation or lithification. The term is reserved for materials in which the primary sample is unconsolidated, i.e. not broken down during sample preparation processes (e.g. crushing).",
+      "historyNote": "Modified after https://library.fiveable.me/key-terms/hs-earth-science/unconsolidated-material",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "narrowMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/unconsolidated"
+      },
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "UNCS"
+      },
+      "prefLabel": "unconsolidated",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://library.fiveable.me/key-terms/hs-earth-science/unconsolidated-material"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/unknown",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "The sample type is not known. Typically, this refers to samples that have been lost and for which there is no other specification.",
+      "exactMatch": {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/unknown"
+      },
+      "historyNote": "Modified after Geoscience Australia's definition",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "UNKN"
+      },
+      "prefLabel": "unknown",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/unknown"
+      },
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/geological-sample-type/unspecified",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      },
+      "definition": "The sample type has not been specified.",
+      "exactMatch": {
+        "@id": "http://linked.data.gov.au/def/sample-type/unspecified"
+      },
+      "historyNote": "Definition compiled by the Geological Survey of Western Australia",
+      "inScheme": "https://linked.data.gov.au/def/geological-sample-type",
+      "notation": {
+        "@type": "https://linked.data.gov.au/def/geological-sample-type",
+        "@value": "UNSP"
+      },
+      "prefLabel": "unspecified",
+      "topConceptOf": "https://linked.data.gov.au/def/geological-sample-type",
+      "schema:status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    }
+  ]
+}

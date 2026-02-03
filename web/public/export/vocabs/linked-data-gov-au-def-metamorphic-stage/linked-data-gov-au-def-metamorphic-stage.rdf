@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/?peak">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Typically reserved for use when: a) overprinting or unclear spatial–textural relationships do not allow discernment of whether all or some of the minerals preserved in the rock are indicative of the highest temperature equilibrium mineral assemblage; or b) the possibility of polymetamorphism is likely. This ambiguity arises, for example, when sluggish reaction kinetics in porphyroblastic minerals at low to moderate pressure/temperature metamorphic conditions lead to metastability.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">?peak</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Terms used to describe the stage of metamorphism of rocks based on the nature of the change in pressure and temperature conditions to which the rocks are subjected. Definitions are taken or derived from:
+Fettes, D and Desmons, J (eds.) 2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press, 244p.</skos:definition>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metamorphic stage</skos:prefLabel>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</schema:dateCreated>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/?peak"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/?prograde"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/?retrograde"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/peak"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/prograde"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/retrograde"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/retrogressive"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-stage/unknown"/>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Based on the authoritative lists [GEOLOGY].[WAROX_REF].[MetaStage] and [WAGIMS].[ReferenceData].[MetamorphicStage] used in the Geological Survey of Western Australia&apos;s field observations (WAROX) and WAGIMS system, the repository for Western Australian geochronology, isotope geology, mineral chemistry and metamorphic history analytical data and information.</skos:historyNote>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/?prograde">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The mineral assemblage of the rock is tentatively interpreted to represent a (relict) prograde mineral assemblage. This term is used when metamorphic information is cryptically preserved, e.g. within inclusions in porphyroblastic minerals, or there is ambiguity about polymetamorphism.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">?prograde</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/?retrograde">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The mineral assemblage of the rock is tentatively interpreted to represent a (relict) retrograde mineral assemblage. Typically used when the possibility of polymetamorphism is high and/or unclear, i.e. when it cannot be ascertained whether lower temperature metamorphic minerals overprinting a higher grade assemblage formed during the same, single metamorphic cycle, or whether a later, lower temperature event (i.e. retrogressive) overprinted the higher grade assemblage.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">?retrograde</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">?retrogressive</skos:altLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/peak">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metamorphic conditions taken to be the thermal maximum reached during a metamorphic cycle or evolution, regardless of the P–T trajectory.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">peak</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">244p.</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Adapted from:</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">D and Desmons</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Fettes</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">J (eds.) 2007</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/prograde">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metamorphism giving rise to the formation of minerals that are typical of a higher metamorphic grade, i.e. higher temperature, than the former mineral assemblage. That is, a sequential increase in metamorphic grade with time (within a single metamorphic event) that is recognizable or inferred in a rock. It is that part of the metamorphic cycle up to the thermal maximum (peak metamorphic conditions).</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">prograde</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">244p.</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Adapted from:</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">D and Desmons</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Fettes</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">J (eds.) 2007</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/retrograde">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metamorphism giving rise to the formation of minerals that are typical of a lower grade, i.e. lower temperature, than the former mineral assemblage. That is, a sequential decrease in metamorphic grade with time (within a single metamorphic event) that is recognizable or inferred in a rock. It is that part of the metamorphic cycle after the thermal maximum (or peak metamorphic conditions) has been reached.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">retrograde</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">244p.</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Adapted from:</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">D and Desmons</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Fettes</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">J (eds.) 2007</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/retrogressive">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metamorphism giving rise to the formation of minerals that are typical of a lower grade, i.e. lower temperature, than the former mineral assemblage. It is distinguished from retrograde metamorphism by the fact that the development of a lower grade mineral assemblage is ascribed to a separate, discrete metamorphic event that takes place at lower temperatures and a later time than the first metamorphic event.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">retrogressive</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">244p.</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Adapted from:</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">D and Desmons</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Fettes</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">J (eds.) 2007</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/unknown">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">It is not clear what stage of the metamorphic evolution the minerals in the rock represent, usually because of poor preservation of metamorphic minerals due to excessive alteration or weathering, or due to ambiguous mineralogical relationships that are suggestive of polymetamorphism.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">unknown</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/metamorphic-stage"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-stage/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-407">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0003-0007-8342"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-408">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://www.linkedin.com/in/david-kelsey-425746137/"/>
+  </rdf:Description>
+
+</rdf:RDF>
