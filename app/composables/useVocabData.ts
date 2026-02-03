@@ -116,12 +116,17 @@ export function getLocalName(iri: string): string {
 export async function fetchSchemes(): Promise<Scheme[]> {
   try {
     const data = await $fetch<{ schemes: Scheme[] }>('/data/schemes.json')
-    return data.schemes
-  } catch (e) {
+    return Array.isArray(data?.schemes) ? data.schemes : []
+  } catch {
     // Fall back to sample data for demo purposes
-    console.info('[prez-lite] No org data found, using sample data. Run build:data to generate your own.')
-    const data = await $fetch<{ schemes: Scheme[] }>('/data-sample/schemes.json')
-    return data.schemes
+    try {
+      console.info('[prez-lite] No org data found, using sample data. Run build:data to generate your own.')
+      const data = await $fetch<{ schemes: Scheme[] }>('/data-sample/schemes.json')
+      return Array.isArray(data?.schemes) ? data.schemes : []
+    } catch {
+      console.warn('[prez-lite] No schemes found. Run build:data to generate.')
+      return []
+    }
   }
 }
 
@@ -140,13 +145,27 @@ export async function fetchConcepts(schemeIri: string): Promise<Concept[]> {
 
 // Fetch search index (falls back to sample data if org data not found)
 export async function fetchSearchIndex(): Promise<SearchEntry[]> {
+  // Handle both array format and { concepts: [...] } format
+  const extractEntries = (data: unknown): SearchEntry[] => {
+    if (Array.isArray(data)) return data
+    if (data && typeof data === 'object' && 'concepts' in data && Array.isArray((data as { concepts: unknown }).concepts)) {
+      return (data as { concepts: SearchEntry[] }).concepts
+    }
+    return []
+  }
+
   try {
-    const data = await $fetch<SearchEntry[]>('/data/search-index.json')
-    return data
-  } catch (e) {
+    const data = await $fetch<SearchEntry[] | { concepts: SearchEntry[] }>('/data/search-index.json')
+    return extractEntries(data)
+  } catch {
     // Fall back to sample data
-    const data = await $fetch<SearchEntry[]>('/data-sample/search-index.json')
-    return data
+    try {
+      const data = await $fetch<SearchEntry[] | { concepts: SearchEntry[] }>('/data-sample/search-index.json')
+      return extractEntries(data)
+    } catch {
+      console.warn('[prez-lite] No search index found. Run build:data to generate.')
+      return []
+    }
   }
 }
 

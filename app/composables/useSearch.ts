@@ -119,7 +119,7 @@ export function useSearch() {
 
   // Filter by query only (before scheme filter)
   const queryFilteredResults = computed((): SearchResult[] => {
-    if (!searchIndex.value || !query.value.trim()) return []
+    if (!searchIndex.value || !Array.isArray(searchIndex.value) || !query.value.trim()) return []
 
     const q = query.value.toLowerCase().trim()
     const words = q.split(/\s+/)
@@ -142,7 +142,7 @@ export function useSearch() {
 
   // Browse by facet: all concepts in selected schemes/publishers when no query
   const browseFilteredResults = computed((): SearchResult[] => {
-    if (!searchIndex.value || query.value.trim()) return []
+    if (!searchIndex.value || !Array.isArray(searchIndex.value) || query.value.trim()) return []
     if (selectedSchemes.value.length === 0 && selectedPublishers.value.length === 0) return []
 
     return searchIndex.value
