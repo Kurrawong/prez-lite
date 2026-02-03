@@ -34,10 +34,8 @@ const sortOptions = [
 
 <template>
   <div class="py-8">
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold mb-2">Vocabularies</h1>
-      <p class="text-muted">Browse available concept schemes and vocabularies</p>
-    </div>
+    <h1 class="text-3xl font-bold mb-2">Vocabularies</h1>
+    <p class="text-muted mb-8">Browse available concept schemes and vocabularies.</p>
 
     <!-- Controls -->
     <div class="flex flex-col sm:flex-row gap-4 mb-6">

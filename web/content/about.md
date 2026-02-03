@@ -2,7 +2,8 @@
 title: About
 description: About Prez Lite vocabulary publishing platform
 navigation: true
-order: 2
+navTitle: About
+order: 4
 ---
 
 # About Prez Lite

@@ -11,12 +11,20 @@ const siteConfig = {
   ]
 }
 
-const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Vocabularies', to: '/vocabs' },
-  { label: 'Search', to: '/search' },
-  { label: 'About', to: '/about' }
-]
+// Build navigation from content frontmatter
+const { data: navPages } = await useAsyncData('navigation', async () => {
+  const pages = await queryCollection('pages').all()
+  return pages
+    .filter(p => p.navigation === true)
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+})
+
+const navLinks = computed(() =>
+  (navPages.value ?? []).map(page => ({
+    label: page.navTitle || page.title,
+    to: page.path === '/index' ? '/' : page.path
+  }))
+)
 </script>
 
 <template>

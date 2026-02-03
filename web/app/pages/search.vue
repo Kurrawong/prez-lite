@@ -54,14 +54,16 @@ const showResultsLayout = computed(() => hasQuery.value || hasFilters.value)
 
 <template>
   <div class="py-8">
-    <!-- Search Header -->
-    <div class="max-w-3xl mx-auto text-center mb-8">
-      <h1 class="text-4xl font-bold mb-4">Search Vocabularies</h1>
-      <p class="text-lg text-muted mb-8">
-        Search across all concepts, definitions, and labels
-      </p>
+    <div class="text-center mb-8">
+      <div class="flex items-center justify-center gap-3 mb-2">
+        <UIcon name="i-heroicons-magnifying-glass" class="size-8" />
+        <h1 class="text-3xl font-bold">Search Vocabularies</h1>
+      </div>
+      <p class="text-muted">Search across all concepts, definitions, and labels.</p>
+    </div>
 
-      <!-- Search Box -->
+    <!-- Search Box -->
+    <div class="max-w-3xl mx-auto text-center mb-8">
       <div class="relative">
         <UInput
           ref="searchInput"
@@ -83,8 +85,7 @@ const showResultsLayout = computed(() => hasQuery.value || hasFilters.value)
     <!-- Initial state: no query and no filters - centered facets to start browsing -->
     <div v-else-if="!showResultsLayout" class="max-w-4xl mx-auto">
       <div class="text-center mb-8">
-        <UIcon name="i-heroicons-magnifying-glass" class="size-16 text-muted mb-4" />
-        <p class="text-lg text-muted mb-8">Enter a search term or click a vocabulary/publisher to browse</p>
+        <p class="text-lg text-muted">Enter a search term or click a vocabulary/publisher to browse</p>
       </div>
 
       <!-- Centered facets for browsing -->
@@ -245,7 +246,7 @@ const showResultsLayout = computed(() => hasQuery.value || hasFilters.value)
       </aside>
 
       <!-- Main results -->
-      <div class="flex-1 max-w-4xl">
+      <div class="flex-1 min-w-0">
         <!-- No results -->
         <div v-if="totalResults === 0" class="text-center py-12">
           <UIcon name="i-heroicons-document-magnifying-glass" class="size-16 text-muted mb-4" />

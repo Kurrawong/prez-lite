@@ -2,6 +2,7 @@
 title: Welcome
 description: A lightweight vocabulary publishing platform
 navigation: true
+navTitle: Home
 order: 1
 ---
 
