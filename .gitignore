@@ -14,7 +14,7 @@ node_modules/
 dist/
 
 # Generated data (built from TTL at build time)
-public/data/
+web/public/data/
 
 # IDE
 .idea/

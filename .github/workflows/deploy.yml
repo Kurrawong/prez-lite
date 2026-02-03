@@ -37,7 +37,7 @@ jobs:
         run: pnpm install
 
       - name: Generate JSON data from TTL
-        run: node scripts/build-data.js
+        run: pnpm build:data
 
       - name: Build static site
         run: pnpm generate
@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: web/.output/public
 
   deploy:
     environment:

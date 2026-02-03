@@ -9,43 +9,12 @@
   },
   "scripts": {
     "build:data": "node scripts/build-data.js",
-    "build": "pnpm build:data && nuxt generate",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "pnpm --filter @prez-lite/web dev",
+    "build": "pnpm build:data && pnpm --filter @prez-lite/web generate",
+    "generate": "pnpm --filter @prez-lite/web generate",
+    "preview": "pnpm --filter @prez-lite/web preview"
   },
   "dependencies": {
-    "@nuxt/content": "^3.11.0",
-    "@nuxt/ui": "^4.4.0",
-    "n3": "^2.0.1",
-    "nuxt": "^4.3.0",
-    "tailwindcss": "^4.1.18",
-    "vue": "^3.5.27",
-    "vue-router": "^4.6.4"
-  },
-  "devDependencies": {
-    "@iconify-json/heroicons": "^1.2.3",
-    "@iconify-json/lucide": "^1.2.87",
-    "mermaid": "^11.12.2"
-  },
-  "peerDependencies": {
-    "@iconify-json/heroicons": "^1.2.0",
-    "@iconify-json/lucide": "^1.2.0",
-    "@nuxt/content": "^3.11.0",
-    "@nuxt/fonts": "^0.13.0",
-    "@nuxt/icon": "^2.2.0",
-    "@nuxt/ui": "^4.4.0",
-    "@nuxtjs/color-mode": "^4.0.0",
-    "mermaid": "^11.0.0",
-    "tailwindcss": "^4.1.0",
-    "vue": "^3.5.0",
-    "vue-router": "^4.6.0"
-  },
-  "peerDependenciesMeta": {
-    "@iconify-json/heroicons": { "optional": true },
-    "@iconify-json/lucide": { "optional": true },
-    "@nuxt/fonts": { "optional": true },
-    "mermaid": { "optional": true }
+    "n3": "^2.0.1"
   }
 }

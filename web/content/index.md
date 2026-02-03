@@ -31,8 +31,13 @@ This platform is powered by:
 
 ```mermaid
 graph TD
-    A[TTL Vocabularies] --> B[Build Process]
+    A1[Styling] --> B[Build Process]
+    A2[TTL Vocabularies] --> B
+    A3[Content Pages] --> B
     B --> C[JSON Data]
-    C --> D[Static Site]
-    D --> E[GitHub Pages]
+    C --> D[GitHub Actions]
+    D --> E[Static Site]
+    E -.-> F[GitHub Pages]
+    E -.-> G[Azure Static Web Apps]
+    E -.-> H[AWS S3]
 ```
