@@ -18,13 +18,20 @@ export default defineNuxtConfig({
     experimental: {
       nativeSqlite: true,
     },
-    sources: {
-      // Base layer content with absolute path for proper layer resolution
-      'prez-lite': {
-        driver: 'fs',
-        prefix: '',
-        base: layerContentPath
+  },
+
+  hooks: {
+    // Programmatically add base layer content source for proper layer resolution
+    'content:context': (ctx) => {
+      // Add prez-lite content as a source if not already present
+      if (!ctx.options.sources['prez-lite']) {
+        ctx.options.sources['prez-lite'] = {
+          driver: 'fs',
+          prefix: '',
+          base: layerContentPath
+        }
       }
+      console.log('[prez-lite] Content sources:', Object.keys(ctx.options.sources))
     }
   },
 
