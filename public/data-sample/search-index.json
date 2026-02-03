@@ -1,0 +1,64 @@
+[
+  {
+    "iri": "https://example.org/vocab/colors/red",
+    "prefLabel": "Red",
+    "notation": "R",
+    "definition": "A primary color at the long wavelength end of the visible spectrum.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/blue",
+    "prefLabel": "Blue",
+    "notation": "B",
+    "definition": "A primary color between violet and green on the visible spectrum.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/yellow",
+    "prefLabel": "Yellow",
+    "notation": "Y",
+    "definition": "A primary color between orange and green on the visible spectrum.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/green",
+    "prefLabel": "Green",
+    "notation": "G",
+    "definition": "A secondary color created by mixing blue and yellow.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/orange",
+    "prefLabel": "Orange",
+    "notation": "O",
+    "definition": "A secondary color created by mixing red and yellow.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/purple",
+    "prefLabel": "Purple",
+    "notation": "P",
+    "definition": "A secondary color created by mixing red and blue.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/primary",
+    "prefLabel": "Primary Colors",
+    "definition": "Colors that cannot be created by mixing other colors.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  },
+  {
+    "iri": "https://example.org/vocab/colors/secondary",
+    "prefLabel": "Secondary Colors",
+    "definition": "Colors created by mixing two primary colors.",
+    "scheme": "https://example.org/vocab/colors/scheme",
+    "schemeLabel": "Example Colors"
+  }
+]

@@ -429,21 +429,20 @@ inputs:
   vocab-path:
     default: 'data/vocabs'
   output-path:
-    default: '.data'
+    default: 'public/data'
 runs:
   using: 'composite'
   steps:
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '22'  # Required for native sqlite
     - name: Install prez-lite scripts
-      run: npm install n3 jsonld fast-csv
+      run: npm install n3
       shell: bash
     - name: Run build
       run: |
         curl -sL https://raw.githubusercontent.com/Kurrawong/prez-lite/main/scripts/build-data.js | node
-        curl -sL https://raw.githubusercontent.com/Kurrawong/prez-lite/main/scripts/export-vocabs.js | node
       shell: bash
 ```
 
@@ -463,9 +462,20 @@ runs:
         publish_dir: .output/public
 ```
 
-5.3 **Finalize template**
-- [ ] Minimal package.json
-- [ ] Working nuxt.config.ts
+5.3 **Include sample vocabulary data**
+- [ ] Create minimal sample vocab TTL (`data/sample/example-vocab.ttl`)
+- [ ] Generate sample data to `public/data/sample/` (committed, not gitignored)
+- [ ] Update composables to fall back to sample data if org data not found
+- [ ] Orgs see working example immediately, then add their own vocabs
+
+5.4 **Document icon package requirements**
+- [ ] Add `@iconify-json/heroicons` and `@iconify-json/lucide` as peerDependencies
+- [ ] Document in getting-started.md that orgs must install icon packages
+- [ ] Or bundle icons in the layer (increases size but zero-config)
+
+5.5 **Finalize template**
+- [ ] Minimal package.json with required dependencies
+- [ ] Working nuxt.config.ts with compatibilityDate
 - [ ] Sample content files
 - [ ] Deploy workflow using actions
 - [ ] README with setup instructions

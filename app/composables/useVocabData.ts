@@ -112,10 +112,17 @@ export function getLocalName(iri: string): string {
   return index >= 0 ? iri.substring(index + 1) : iri
 }
 
-// Fetch all schemes
+// Fetch all schemes (falls back to sample data if org data not found)
 export async function fetchSchemes(): Promise<Scheme[]> {
-  const data = await $fetch<{ schemes: Scheme[] }>('/data/schemes.json')
-  return data.schemes
+  try {
+    const data = await $fetch<{ schemes: Scheme[] }>('/data/schemes.json')
+    return data.schemes
+  } catch (e) {
+    // Fall back to sample data for demo purposes
+    console.info('[prez-lite] No org data found, using sample data. Run build:data to generate your own.')
+    const data = await $fetch<{ schemes: Scheme[] }>('/data-sample/schemes.json')
+    return data.schemes
+  }
 }
 
 // Fetch concepts for a scheme
@@ -131,10 +138,16 @@ export async function fetchConcepts(schemeIri: string): Promise<Concept[]> {
     .map(line => JSON.parse(line) as Concept)
 }
 
-// Fetch search index
+// Fetch search index (falls back to sample data if org data not found)
 export async function fetchSearchIndex(): Promise<SearchEntry[]> {
-  const data = await $fetch<{ concepts: SearchEntry[] }>('/data/search-index.json')
-  return data.concepts
+  try {
+    const data = await $fetch<SearchEntry[]>('/data/search-index.json')
+    return data
+  } catch (e) {
+    // Fall back to sample data
+    const data = await $fetch<SearchEntry[]>('/data-sample/search-index.json')
+    return data
+  }
 }
 
 // Fetch background labels

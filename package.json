@@ -28,5 +28,19 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/lucide": "^1.2.87"
+  },
+  "peerDependencies": {
+    "@iconify-json/heroicons": "^1.2.0",
+    "@iconify-json/lucide": "^1.2.0",
+    "@nuxt/content": "^3.11.0",
+    "@nuxt/fonts": "^0.13.0",
+    "@nuxt/icon": "^2.2.0",
+    "@nuxtjs/color-mode": "^4.0.0",
+    "vue": "^3.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@iconify-json/heroicons": { "optional": true },
+    "@iconify-json/lucide": { "optional": true },
+    "@nuxt/fonts": { "optional": true }
   }
 }

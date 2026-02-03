@@ -1,0 +1,16 @@
+{
+  "schemes": [
+    {
+      "iri": "https://example.org/vocab/colors/scheme",
+      "prefLabel": "Example Colors",
+      "definition": "A sample vocabulary demonstrating prez-lite. Replace with your own vocabularies.",
+      "created": "2025-01-01",
+      "modified": "2025-01-01",
+      "topConcepts": [
+        "https://example.org/vocab/colors/primary",
+        "https://example.org/vocab/colors/secondary"
+      ],
+      "conceptCount": 8
+    }
+  ]
+}
