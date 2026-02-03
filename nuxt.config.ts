@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxt/content'],
+  modules: ['@nuxt/ui', '@nuxt/content', '~/modules/dayjs-fix'],
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {
@@ -49,14 +49,10 @@ export default defineNuxtConfig({
     transpile: ['vue', 'dayjs']
   },
 
-  // Fix dayjs ESM export issue when used as a layer
-  // See: https://github.com/nuxt/nuxt/issues/29087
+  // Additional vite config (dayjs fix handled by ~/modules/dayjs-fix)
   vite: {
-    optimizeDeps: {
-      include: ['dayjs']
-    },
     resolve: {
-      dedupe: ['dayjs']
+      dedupe: ['dayjs', 'vue']
     },
     ssr: {
       noExternal: ['dayjs']
