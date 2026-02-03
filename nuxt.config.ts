@@ -12,19 +12,11 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/ui', '@nuxt/content'],
 
-  // Nuxt Content configuration with base layer source
+  // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {
     experimental: {
       nativeSqlite: true,
     },
-    sources: {
-      // Base layer content - defined here so it's available before module init
-      'prez-lite-base': {
-        driver: 'fs',
-        prefix: '',
-        base: resolve(currentDir, 'content')
-      }
-    }
   },
 
   // Nuxt UI configuration
