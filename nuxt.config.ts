@@ -53,6 +53,9 @@ export default defineNuxtConfig({
   vite: {
     resolve: {
       dedupe: ['vue', 'vue-router']
+    },
+    optimizeDeps: {
+      include: ['mermaid']
     }
   }
 })
