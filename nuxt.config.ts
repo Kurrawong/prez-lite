@@ -1,38 +1,26 @@
 import { fileURLToPath } from 'url'
 import { dirname, resolve } from 'path'
 
-// Get absolute paths for layer assets
+// Get absolute path for layer CSS
 const currentDir = dirname(fileURLToPath(import.meta.url))
 const layerCssPath = resolve(currentDir, 'app/assets/css/main.css')
-const layerContentPath = resolve(currentDir, 'content')
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxt/content'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/content',
+    './modules/prez-lite-content'  // Add base layer content source
+  ],
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {
     experimental: {
       nativeSqlite: true,
     },
-  },
-
-  hooks: {
-    // Programmatically add base layer content source for proper layer resolution
-    'content:context': (ctx) => {
-      // Add prez-lite content as a source if not already present
-      if (!ctx.options.sources['prez-lite']) {
-        ctx.options.sources['prez-lite'] = {
-          driver: 'fs',
-          prefix: '',
-          base: layerContentPath
-        }
-      }
-      console.log('[prez-lite] Content sources:', Object.keys(ctx.options.sources))
-    }
   },
 
   // Nuxt UI configuration
