@@ -1,0 +1,776 @@
+[
+  {
+    "@id": "_:n3-188",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/earth-science-data-category/paleontology",
+    "https://prez.dev/label": [
+      {
+        "@value": "Paleontology"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of fossilized, or preserved, remnants of plant and animal life. Changes in the Earth through time can be documented by observing changes in the fossils in successive strata and the environments in which they formed or were preserved. Fossils can also be compared with their extant relatives to assess evolutionary changes. Correlations of strata can be aided by studying their fossil content, a discipline called biostratigraphy. Source: Schlumberger Oilfield Glossary"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020",
+    "https://prez.dev/label": [
+      {
+        "@value": "1297.0 ANZSRC - Australian and New Zealand Standard Research Classification, 2020: Fields of Research (FoR)"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370506",
+    "https://prez.dev/label": [
+      {
+        "@value": "Palaeontology (incl. palynology)"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth science fields of research",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/biostratigraphy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:biostratigraphy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:biostratigraphy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "biostratigraphy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The element of stratigraphy that deals with the distribution of fossils in the stratigraphic record and the organization of strata into units on the basis of their contained fossils, specifically to date and correlate strata to elucidate Earth's history. In the petroleum industry, biostratigraphy often denotes the use of terrestrial (pollen and spores) and marine (diatoms, foraminifera, nanofossils) microfossils to determine the numerical or relative age and depositional environment of a particular formation, source rock, or reservoir of interest.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/evolutionary-paleontology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:evolutionary-paleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:evolutionary-paleontology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "evolutionary paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Evolutionary paleontology (also called evolutionary paleobiology) is paleontology’s intersection with evolutionary biology. Its main aims are to reconstruct the history of life on Earth (historical paleontology, phylogeny) and the patterns and causes of evolutionary change and extinction (biological and physical processes and unique historical events).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/ichnology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ichnology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:ichnology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "ichnology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the fossilized tracks, trails, burrows and excavations made by animals and more broadly the study of bioturbation, which is the reworking of sediment by animals. Ichnofossils or trace fossils are used to interpret paleoecological aspects of sedimentary environments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/invertebrate-paleontology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:invertebrate-paleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:invertebrate-paleontology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "invertebrate paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of paleontology that studies the morphologic, taxonomic, systematic, stratigraphic, and biogeographic characteristics of organisms of the 'invertebrate' phyla, i.e. of those animals that lack notochords (non-vertebrates).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/microbial-paleobiology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microbial-paleobiology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:microbial-paleobiology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microbial paleobiology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The systematic study of fossil microbialites and other evidence of/for microbes and microbially influenced features in the geological record, focussing on their morphology, classification, and environmental and biostratigraphic significance. Microbial paleobiology commonly intersects with disciplines such as geobiology, astrobiology and biostratigraphy, and is commonly employed in studies concerned with the origins of life on Earth.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/micropaleontology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micropaleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:micropaleontology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micropaleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The systematic study of microfossils (i.e. fossils too small to be observed without the aid of a microscope), their morphology, classification, and environmental and biostratigraphic significance. Microfossils can represent the remains, or partial remains, of a wide range of organism kingdoms and phyla, but palynomorphs are generally excluded.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/molecular-paleontology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:molecular-paleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:molecular-paleontology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "molecular paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The application of molecular analytical techniques to fossil or subfossil material in order to test for the presence of original biomolecules. These molecules may be proteins, DNA, carbohydrates or lipids, or their diagenetic products.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/morphological-paleontology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:morphological-paleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:morphological-paleontology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "morphological paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A branch of paleontology that deals with the form and structure of organisms based on their fossil remains; especially a study of the forms, relations, and phylogenetic development of biological structures apart from their functions.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/paleobiogeography",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:paleobiogeography"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:paleobiogeography"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "paleobiogeography",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "That branch of paleontology that treats the geographic distribution of organisms in past geological time, especially with regard to the ecologic, climatologic, and evolutionary factors involved. It includes the more specialized paleophytogeography and paleozoogeography subdisciplines.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/paleobotany",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:paleobotany"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:paleobotany"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "paleobotany",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of paleontology that studies the morphologic, taxonomic, systematic, stratigraphic, and biogeographic characteristics of plants, fungi and algae from geological contexts, and their use for the biological reconstruction of past environments (paleogeography), as well as the evolutionary history of plants and allied kingdoms, with a bearing upon the evolution of life in general. These fossils can be impressions or compressions of the plants left on the rock's surface, or 'petrified' objects, such as wood, which preserve the original plant material in rocklike form.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/paleoecology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:paleoecology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:paleoecology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "paleoecology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A subdiscipline of paleontology concerned with reconstructing past biota, populations, communities, landscapes, environments, and ecosystems from available geological and biological (fossil) evidence. It encompasses the study of interactions between organisms and/or interactions between organisms and their environments across geological timescales, including reconstructions of past ecosystems and environments using this information.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/paleontology",
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370506"
+      },
+      {
+        "@id": "http://linked.data.gov.au/def/earth-science-data-category/paleontology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "370506",
+        "@type": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The scientific study of life in the geological past through the analysis of fossils, including those of microscopic size, and of traces representing preserved behaviour, preserved in rocks. It is concerned with all aspects of the biology of ancient life forms: their shape and structure, evolutionary patterns, taxonomic relationships with each other and with modern living species, geographic distribution, and interrelationships with the environment.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "From the Fields of Research vocabulary from the Australian and New Zealand Standard Research Classification (ANZSRC, 2020). Definition adapted from https://www.britannica.com/science/paleontology."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/paleontology",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      },
+      {
+        "@value": "https://www.britannica.com/science/paleontology",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "palaeobiology",
+        "@language": "en"
+      },
+      {
+        "@value": "palaeontology",
+        "@language": "en"
+      },
+      {
+        "@value": "paleobiology",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/morphological-paleontology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/ichnology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/invertebrate-paleontology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/microbial-paleobiology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/molecular-paleontology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/paleobiogeography"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/paleobotany"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/paleoecology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/micropaleontology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/evolutionary-paleontology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/taphonomy"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/vertebrate-paleontology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/biostratigraphy"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:paleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:paleontology"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The scientific study of life in the geological past through the analysis of fossils, including those of microscopic size, and of traces representing preserved behaviour, preserved in rocks. It is concerned with all aspects of the biology of ancient life forms: their shape and structure, evolutionary patterns, taxonomic relationships with each other and with modern living species, geographic distribution, and interrelationships with the environment.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/taphonomy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:taphonomy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:taphonomy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "taphonomy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of paleontology concerned with all processes occurring after the death of an organism until its discovery. It includes biostratonomy and fossil diagenesis.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/vertebrate-paleontology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:vertebrate-paleontology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:vertebrate-paleontology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "vertebrate paleontology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of paleontology that studies the morphologic, taxonomic, systematic, stratigraphic, and biogeographic characteristics of Phylum Chordata. This includes modern vertebrates, non-vertebrate chordates (such as lancets and turnicates), and extinct groups of uncertain placement (such as conodonts).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

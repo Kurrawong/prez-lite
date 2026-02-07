@@ -1,0 +1,2327 @@
+{
+  "schemes": [
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/associationtype",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Associated Resource Type"
+      },
+      "definition": {
+        "en": "This is a SKOS vocabulary version of the ISO19115-1 standard's AssociationType code list with code list extensions described in the GA Profile document http://pid.geoscience.gov.au/dataset/ga/122551."
+      },
+      "created": "2019-11-01",
+      "modified": "2023-04-06",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/StereoMate",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/collectiveTitle",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/crossreference",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/dependency",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/generated",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/hadDerivation",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/informed",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/isComposedOf",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/largerWorkCitation",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/operatedOnBy",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/operatesOn",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/partOfSeamlessDatabase",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/revisionOf",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/series",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/wasDerivedFrom",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/wasGeneratedBy",
+        "https://pid.geoscience.gov.au/def/voc/ga/associationtype/wasInformedBy"
+      ],
+      "version": "1.5",
+      "historyNote": {
+        "en": "https://pid.geoscience.gov.au/dataset/ga/122551"
+      },
+      "keywords": [],
+      "conceptCount": 17,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Construction Type"
+      },
+      "definition": {
+        "en": "These terms describe the type of downhole construction in a borehole (eg, inlet screen, protection casing)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType/annulusFill",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType/inlet",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType/lining",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType/protection",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType/void",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType/voidFill"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 6,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Construction Material"
+      },
+      "definition": {
+        "en": "Describes the type of material used in downhole construction in a borehole (eg, PVC, steel, cement)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/aggregate",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/cement",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/clay",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/concrete",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/gravel",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/metal",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/plastic",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/rock",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/sand",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/spoilOrCuttings",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/stainlessSteel",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/steel",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/uPVC",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/uPVC12",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/uPVC18",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/uPVC6",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/uPVC9",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/uPVS15",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial/unknown"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 19,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Purpose"
+      },
+      "definition": {
+        "en": "Purpose or intention for which the borehole was drilled. eg, exploration, development or production, geotechnical. Equivalent to PPDM Business Intention."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/appraisal",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/coalQuality",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/development",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/environmental",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/exploration",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/gasAnalysis",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/geochemistry",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/geothermal",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/hydrological",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/lox",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/monitoring",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/research",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/scientificInvestigationConstents",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/sequestration",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/service",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/stratigraphicInvestigation",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/structure",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/watersupply"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 19,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Status "
+      },
+      "definition": {
+        "en": "\"Borehole status” information provided by Geoscience Australia (GA) is not guaranteed to be authoritative or current. GA is not a reporting or regulatory authority for borehole drilling, but it sources borehole information for its research purposes from various regulatory authorities in the States, Northern Territory and Commonwealth governments. The quality and currency of borehole status data in GA’s database reflects information gathered from a borehole operator’s well completion report or from a responsible regulatory authority on a particular date. Changes in a borehole’s status after GA sourced the borehole status information may not be reflected in GA’s data. Due to the wide variety of borehole types in GA’s database, GA’s vocabulary for “borehole status” is an amalgam of terms used by professional bodies (eg, PPDM, CoalLog) and regulatory authorities. Some of the terminology used across these professional domains and jurisdictions has varied over time, and in some cases the same term has a different meaning for different types of boreholes. GA has endeavoured to merge these sources of terminology into a consistent classification that applies for all borehole types."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/abandoned",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/completed",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/drillingSuspended",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/injecting",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/inprogress",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/monitoring",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/plugged",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/pluggedAndAbandoned",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/producing",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/producingAndInjecting",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/proposed",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/rehabilitated",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/suspended",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/workover"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 15,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/CDCS",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Legacy GA Corporate Data Classification Scheme"
+      },
+      "definition": {
+        "en": "LEGACY GA Corporate Data Classification Scheme used 2005 - 2014"
+      },
+      "created": "2005-01-01",
+      "modified": "2023-03-22",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/earth-observation-imagery",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/interpretive-geology",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/palaeontology",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/boreholes",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/rock-properties",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/external",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/survey",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/physiography",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/geophysics",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/geochemistry",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/resources",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/infrastructure",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/petrography",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/administrative-boundaries",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/hazard-events",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/natural-habitat",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/geochronology",
+        "https://pid.geoscience.gov.au/def/voc/ga/CDCS/hydrogeology"
+      ],
+      "version": null,
+      "historyNote": {
+        "en": "CIMA information group"
+      },
+      "keywords": [],
+      "conceptCount": 106,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "General Geology - Confidence Level "
+      },
+      "definition": {
+        "en": "A generic list of confidence levels."
+      },
+      "created": "2022-08-11",
+      "modified": "2022-08-11",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/definite",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/high",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/highModerate",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/low",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/lowModerate",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/moderate",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/none",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/veryHigh",
+        "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel/veryLow"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 9,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/ContactCharacter",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Contact Character"
+      },
+      "definition": {
+        "en": "Terms to describe the character of a contact between two geological units."
+      },
+      "created": "2022-08-11",
+      "modified": "2022-08-11",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactCharacter/diffuse",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactCharacter/interfingering",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactCharacter/sharp"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Contact Character (FGDM.LU_contact-character)"
+      },
+      "keywords": [],
+      "conceptCount": 4,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/ContactType",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Contact Type"
+      },
+      "definition": {
+        "en": "Type of contact that forms the top or base of a geological unit exposed in a borehole, measured section, or field site."
+      },
+      "created": "2022-08-11",
+      "modified": "2023-06-14",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/conformable-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/faulted-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/ground-surface",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/igneous-intrusive-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/igneous-phase-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/sea-floor",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/sedimentry-intrusive-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/sheared-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/vein-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/alteration-facies-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/metamorphic-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/angular-unconformable-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/unconformable-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/disconformable-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/metamorphic-facies-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/metasomatic-facies-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/nonconformable-contact",
+        "https://pid.geoscience.gov.au/def/voc/ga/ContactType/paraconformable-contact"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Contact Type (FGDM.LU_LOCAL_contact_type)"
+      },
+      "keywords": [],
+      "conceptCount": 18,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "GA Country Codes"
+      },
+      "definition": {
+        "en": "GA Country Codes are the ISO3166 compliant country codes used by GA database custodians for reference. This list is NOT complete and is maintained semi-regularly so there will be updates made in the ISO3166 that will not be reflected in this vocabulary. The controlled ISO3166 list is found here https://www.iso.org/obp/ui "
+      },
+      "created": "2020-11-04",
+      "modified": "2023-09-27",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ABW",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AFG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AGO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AIA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ALA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ALB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AND",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ARE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ARG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ARM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ASM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ATA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ATF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ATG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AUS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AUT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/AZE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BDI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BEL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BEN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BES",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BFA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BGD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BGR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BHR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BHS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BIH",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BLM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BLR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BLZ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BMU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BOL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BRA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BRB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BRN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BTN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BVT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/BWA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CAN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CAF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CCK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CHE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CHN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CIV",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CHL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CMR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/COD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/COG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/COK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/COL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/COM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CPV",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CRI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CUB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CUW",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CXR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CYM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CYP",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/CZE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/DEU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/DJI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/DMA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/DNK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/DOM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/DZA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ECU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/EGY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ERI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ESH",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ESP",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/EST",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ETH",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/FIN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/FJI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/FLK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/FRA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/FRO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/FSM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GAB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GBR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GEO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GGY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GHA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GIB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GIN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GLP",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GMB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GNB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GNQ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GRC",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GRD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GRL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GTM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GUF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GUM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/GUY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/HKG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/HMD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/HND",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/HRV",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/HTI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/HUN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IDN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IMN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IND",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IOT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IRL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IRN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/IRQ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ISL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ISR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ITA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/JAM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/JEY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/JOR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/JPN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KAZ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KEN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KGZ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KHM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KIR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KNA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KOR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/KWT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LAO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LBN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LBR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LBY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LCA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LIE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LKA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LSO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LTU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LUX",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/LVA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MAC",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MAF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MAR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MCO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MDA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MDG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MDV",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MNE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MHL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MKD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MLI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MLT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MMR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MNG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MNP",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MOZ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MRT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MSR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MTQ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MUS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MWI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MEX",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MYS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/MYT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NAM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NCL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NER",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NFK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NGA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NIC",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NIU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NLD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NOR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NPL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NRU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/NZL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/OMN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PAK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PAN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PCN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PER",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PHL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PLW",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PNG",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/POL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PRI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PRK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PRT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PRY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PSE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/PYF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/QAT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/REU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ROU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SRB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/RUS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/RWA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SAU",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SDN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SEN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SGP",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SGS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SHN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SJM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SLB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SLE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SLV",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SMR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SOM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SPM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SSD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/STP",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SUR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SVK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SVN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SWE",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SWZ",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SXM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SYC",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/SYR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TCA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TCD",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TGO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/THA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TJK",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TKL",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TKM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TLS",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TON",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TTO",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TUN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TUR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TUV",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TWN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/TZA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/UGA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/UKR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/UMI",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/URY",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/USA",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/UZB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VAT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VCT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VEN",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VGB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VIR",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VNM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/VUT",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/WLF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/WSM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/YEM",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ZAF",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ZMB",
+        "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes/ZWE"
+      ],
+      "version": "1.6",
+      "historyNote": {
+        "en": "These codes are sourced from https://www.iso.org/obp/"
+      },
+      "keywords": [],
+      "conceptCount": 448,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DateQualifier",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Date Qualifier"
+      },
+      "definition": {
+        "en": "Terms to describe the confidence or quality in a recorded date "
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DateQualifier/dateUnknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/DateQualifier/estimated",
+        "https://pid.geoscience.gov.au/def/voc/ga/DateQualifier/known"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 5,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyAzimuth",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Directional Survey Azimuth "
+      },
+      "definition": {
+        "en": "The type of North datum used for azimuth measurements (eg, true north, magnetic north, local grid north)."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyAzimuth/gridNorth",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyAzimuth/magneticNorth",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyAzimuth/trueNorth"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 3,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyClass",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Directional Survey Class"
+      },
+      "definition": {
+        "en": "Terms to denote whether the directional survey is comprised of azimuth and inclination measurements, or only inclination measurements."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyClass/azimuthAndInclination",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyClass/inclinationOnly"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 2,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Directional Survey Method "
+      },
+      "definition": {
+        "en": "A vocabulary of common directional survey methods"
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/acidBottle",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/collarInclinationOnly",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/differentialSurvey",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/magneticSurvey",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/gyroscopicSurvey",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/mwd",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/totco",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod/unkown"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 11,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Directional Survey Path Computing Method"
+      },
+      "definition": {
+        "en": "Terms to describe the geometric method used to calculate the survey path from the measured survey stations (eg, minimum curvature, offset survey)."
+      },
+      "created": "2202-08-04",
+      "modified": "2202-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod/gpsSection",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod/linearSegment",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod/minimumCurvature",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod/offsetSurvey"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 4,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyRecordingMode",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Directional Survey Recording Mode "
+      },
+      "definition": {
+        "en": "Terms to describe the recording mode of the survey (eg, single-shot, multi-shot)."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyRecordingMode/multiShot",
+        "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyRecordingMode/singleShot"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 2,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Drilling Methods"
+      },
+      "definition": {
+        "en": "Method of drilling."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/auger",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/percussionDrilling",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreAir",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreBox",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreDiamond",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreGeoprobe",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreGravity",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreKasten",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreMackereth",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/corePiston",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/corePush",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreRov",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreSonic",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreUnspecified",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/coreVibro",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/reverseCirculationDrilling",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/rotaryDrilling",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/sidewallCore",
+        "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods/unknown"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 25,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "General Geology - Entity or Feature Type"
+      },
+      "definition": {
+        "en": "Type of entity or feature. (eg, measured section, borehole, field site)."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/acreageRelease",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/borehole",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/country",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/emitter",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/essci",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/estuary",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/explorationPermit",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/facies",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/fieldSite",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/laboratory",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/mapsheet",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/marsegment",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/mineWaste",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/mineralDeposit",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/mineralOccurrence",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/mineralProject",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/mineralisedZone",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/museumCollection",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/observatory",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/opggsaReprocessing",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/pipeline",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/placeName",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/politicalRegion",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/port",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/powerStation",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/productionLicence",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/project",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/province",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/resourceProcessingPlant",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/resourceProject",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/retentionLease",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/section",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/seismicline",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/state",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/stratUnitDefinitionLocation",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/survey",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/well",
+        "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature/wildcatLocation"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 38,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Field Site Purpose "
+      },
+      "definition": {
+        "en": "The purpose of the field site (eg, geological study, geochemistry, neotectonics)."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/environmental-study",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/geochemistry",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/geochronology",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/geological-study",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/geophysics",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/hydrochemistry",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/mineral-resource-appraisal",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/multi-purpose-appraisal",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/natural-resource-management-study",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/neotectonics",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/petrophysics",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose/unknown"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Field Site Purpose Terms (FGDM. LU-FIELDSITE-PURPOSE)"
+      },
+      "keywords": [],
+      "conceptCount": 12,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Field Site Type"
+      },
+      "definition": {
+        "en": "A site on the Earth, generally visited in the field from a particular geoscientific perspective. A field site type is defined by the information collected regarding rock, regolith, water, landform, or vegetation."
+      },
+      "created": "2022-08-04",
+      "modified": "2022-08-04",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/mine",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/natural-land-surface",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/sea-floor",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/spring",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/water-site",
+        "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes/watercourse"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Field Site Types (FGMD. LU-FIELDSITE-TYPE)"
+      },
+      "keywords": [],
+      "conceptCount": 11,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "GA Hazard and Risk Glossary"
+      },
+      "definition": {
+        "en": "This vocabulary is used to describe terms used for climate and disaster risk themes, covering hazard, exposure, vulnerability, impact, climate, weather and geophysical disasters"
+      },
+      "created": "2022-05-25",
+      "modified": "2022-05-25",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/abnormally_high_tide",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/adaptive_capacity",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/administrative_data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/agricultural",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/analysis",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/bathymetry",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/biological_hazard",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/built",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/burn_scar",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/bushfire",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/census",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/climate",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/climate_projections",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/coastal",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/communities",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/consequences",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/convection",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/convective_cloud",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/coping_capacity",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/critical_infrastructure",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/damage_ratio",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/damaging_waves",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/damaging_winds",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/data_visualisation",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/dataset",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/demographics",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/destructive_winds",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/economic_loss",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/disaster",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/disaster_risk",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/disaster_risk_mitigation",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/disaster_risk_prevention",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/disaster_risk_reduction",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/displacement",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/distribution_electricity",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/domain",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/domain_modelling",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/drought",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/dust_storm",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/dynamical_downscaling",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/economic_domain",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/elevation",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/environmental_assets",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/environmental_hazards",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/essential_services",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/estimate",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/event",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/exceedance_probability",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/exposure",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/families",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/hydrometeorological_hazard",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/flood_extent",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/forecast_weather",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/forecasts_data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/granularity",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/hail",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/hazard",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/hazardous_surf",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/heatwave",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/astronomical_tide",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/household",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/housing",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/impact_forecast",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/impact",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/industrial",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/infrastructure",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/integration_data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/intelligence",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/inundation",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/lahar",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/land_cover",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/land_tenure",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/land_use",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/large_hail",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/legacy_system",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/geophysical_hazards",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/local_government_area",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/loss",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/marine",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/metadata",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/methodology_statistical",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/modelling",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/multi-hazard",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/multispectral_imagery",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/natural",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/observation_weather",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/observed_data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/observed_river_height",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/oceanography",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/peak_river_height",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/physical_vulnerability",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/population",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/predicted_river_height",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/preparedness",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/prevention",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/projection",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/qualitative_data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/quantitative_data",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/reconstruction",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/recovery",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/recurrence_interval",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/relief",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/residential",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/resilience",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/response",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/risk",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/river_alert_level",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/river_height_bulletin",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/satellite_imagery",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/satellite_observations",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/scenario",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/sea_level_rise",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/severe_thunderstorm",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/severe_tropical_cyclone",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/skill",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/small_area_estimation",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/social_vulnerability",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/space_weather",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/spatial",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/statistic",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/statistical_area",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/statistical_literacy",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/storm_tide",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/survey",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/technological_hazard",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/time_series",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/transmission_electricity",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/vulnerability",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/warning",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/wave_run-up",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/weather",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/building",
+        "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk/tephra"
+      ],
+      "version": "1.0",
+      "historyNote": {
+        "en": "Combination of WMO, UNDRR and AIDR definitions agreed between GA, BoM, ABS and CSIRO"
+      },
+      "keywords": [],
+      "conceptCount": 164,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Landform Type"
+      },
+      "definition": {
+        "en": "A vocabulary of landform types used in GA Boreholes database. Reference Pain CF, 2008. Field Guide for Describing Regolith and Landforms. ISBN 978-0-9806030-0-2."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/aeolian-landforms",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/fan",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/alluvial-landforms",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/volcano",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/erosional-landforms",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/coastal-lands",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/delta",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/glacial-features",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/plain",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/karst",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/made-land",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/meteor-crater",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/plateau",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/reef",
+        "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes/unknown"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Landform type (FGDM. LU_landform_type)"
+      },
+      "keywords": [],
+      "conceptCount": 73,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/Legislation",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Legislation"
+      },
+      "definition": {
+        "en": "Legislative or administrative frameworks under which drilling is performed."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/anpm",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/dsdp",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/jpda",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/odp",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/opggsa",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/prePsla",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/psla",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/scientificInvestigationConsents",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/stateOnshore",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/stateWater",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/Legislation/zoc"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 12,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Borehole Geology - Location Method"
+      },
+      "definition": {
+        "en": "Method used to estimate the location of a point. eg, satellite navigation, estimation from printed maps or aerial photography."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/1000000Map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/100000Map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/250000Map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/25000Map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/25000Orthophoto",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/500000Map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/50000Map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/aerialPhotographUnrectified",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/astronomicalObservation",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/astronomicalObservationAndDeadReckoningBetweenFixes",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/companySuppliedLocationMethodUnknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/deadReckoning",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/deadReckoningTiedToTransitSatelliteFixes",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/deadReckoningTiedToTransitSatelliteFixesAndDifferentialGPS",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/deadReckoningTiedToTransitSatelliteFixesAndStandAloneGPS",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/digitalElevationModel",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/digitalElevationModel90mSRTM",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/digitalElevationModel9second",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/gpsAveragedObservations",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/gpsDifferentialObservation",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/gpsDifferentialObservationSurveyQuality",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/gpsObservation",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/gpsObservationSubjectToSelectiveAvailability",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/gpsObservationWithPcodeAccess",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/map",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/orthophoto",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/otherMethod",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/personalCommunicationMethodUnknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/publishedReportMethodUnknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/radioNavigation",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/satelliteDopplerAndAVLFRadioNavigation",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/satelliteImage",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/satelliteImageGoogle",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/stateOrNTAgencySuppliedLocationMethodUnknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/surveyedFromGroundControl",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod/unpublishedReportMethodUnknown"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 37,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/materialtype",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "General Geology - Sample Material Class"
+      },
+      "definition": {
+        "en": "Broad categories of earth materials (eg, rock, sediment, water, vegetation) that may be observed or sampled."
+      },
+      "created": "2022-08-09",
+      "modified": "2024-05-02",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/adsorbed_phase",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/inorganic_gas",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/atmospheric_dust",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/organic_material",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/rock",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/water",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/fluid",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/groundwater_with_oil",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/ice",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/regolith",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/manufactured_material",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/marine_sediment",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/mineral",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/snow",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/stream_sediment",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/suspended_solids",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/materialtype/unspecified_seabed_materials"
+      ],
+      "version": "1.3",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 69,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStatus",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Mineral Resources - Mining Waste Status Types"
+      },
+      "definition": {
+        "en": "Terms that describe the storage type a mining waste feature may have."
+      },
+      "created": "2022-04-13",
+      "modified": "2024-02-22",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStatus/currently_used",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStatus/not_in_use"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "This vocabulary is drawn from a Geoscience Australia Mineral Resources database table (OZMIN.LU_WASTE_STATUS)"
+      },
+      "keywords": [],
+      "conceptCount": 2,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStorageType",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Mineral Resources - Mining Waste Storage Types"
+      },
+      "definition": {
+        "en": "Terms that describe the storage type a mining waste feature may have."
+      },
+      "created": "2022-04-13",
+      "modified": "2024-02-22",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStorageType/underground",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStorageType/underwater",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStorageType/surface"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "This vocabulary is drawn from a Geoscience Australia Mineral Resources database table (OZMIN.LU_STORAGE_TYPE)"
+      },
+      "keywords": [],
+      "conceptCount": 5,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Mineral Resources - Mining Waste Structure Type"
+      },
+      "definition": {
+        "en": "Terms that describe the mining waste structure."
+      },
+      "created": "2022-04-13",
+      "modified": "2024-02-22",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/centreline_dam",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/downstream_dam",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/dry-stacked",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/evaporation_pond",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/in-pit",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/landform",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/single_stage_dam",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/upstream_dam",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType/waste_rock_dump"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "This vocabulary is drawn from a Geoscience Australia Mineral Resources database table (OZMIN.LU_WASTE_STRUCTURE_TYPES)"
+      },
+      "keywords": [],
+      "conceptCount": 10,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Mineral Resources - Mining Waste Type"
+      },
+      "definition": {
+        "en": "Terms that describe the storage type a mining waste feature may have."
+      },
+      "created": "2022-04-13",
+      "modified": "2024-02-22",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType/tailings",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType/fly_ash",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType/general_mine_waste",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType/milling",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType/slag",
+        "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType/waste_from_mineral_excavation"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "This vocabulary is drawn from a Geoscience Australia Mineral Resources database table (OZMIN.LU_WASTE_TYPE)"
+      },
+      "keywords": [],
+      "conceptCount": 11,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Mode of Occurrence"
+      },
+      "definition": {
+        "en": "Mode of occurrence of geological units and samples (eg: dyke, bed, phenocryst)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/intrusion",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/volcanic-feature",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/batholith",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/concretion",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/crystal",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/inclusion",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/facies",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/floor-ascendant",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/band-layer",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/graphic-intergrowth",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/hydrothermal-alteration",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/vein",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/leucosome",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/melanosome",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/nodule",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/grain",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/pseudomorph",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/roof-pendant",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/sedimentry-dyke",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/symplectic-intergrowth",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/unkown",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/weathering-product",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/cement",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/mineral-overgrowth",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/detritus",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/groundmass",
+        "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence/matrix"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Mode of Occurrence (FGDM.MODE_OCCURENCES)"
+      },
+      "keywords": [],
+      "conceptCount": 97,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "OnLine Function Type"
+      },
+      "definition": {
+        "en": "OnLine Function Type"
+      },
+      "created": "2017-05-11",
+      "modified": "2023-07-26",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/browseGraphic",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/browsing",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/completeMetadata",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/download",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/emailService",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/fileAccess",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/offlineAccess",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/order",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/information",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/search",
+        "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions/upload"
+      ],
+      "version": "v1.0",
+      "historyNote": {
+        "en": "ISO19115-1:2014"
+      },
+      "keywords": [],
+      "conceptCount": 12,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Geology Rock Properties - Petrophysical"
+      },
+      "definition": {
+        "en": "A vocabulary of terms defining petrophysical properties (eg, density, porosity, magnetic susceptibility, remanent magnetisation)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/naturalGamma",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/nmrRelaxation",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/porosity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/permeability",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/massDensity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/waterContent",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/caliper",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/chargeability",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/temperature",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/dynamicBulkModulus",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/poissonsRatio",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/dynamicShearModulus",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/youngsModulus",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/electricalConductivity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/electricalPotential",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/electricalResistance",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/electricalResistivity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/gammaBulkDensity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/hydraulicConductivity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/indirectTensileStrength",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/koenigsbergerRatio",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/magneticSusceptibility",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/sonicVelocity",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/remanentMagnetisation",
+        "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty/unconfinedCompressiveStrength"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 75,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Field Geology - Proportion Terms "
+      },
+      "definition": {
+        "en": "The proportion of an observed or sampled feature that is comprised by one or more earth materials. The vocabulary also provides approximate numeric percent ranges that correspond to the qualitative terms"
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/absent",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/all",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/present",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/dominant",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/major",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/minor",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/rare",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/subordinate",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/trace",
+        "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms/variable"
+      ],
+      "version": "1",
+      "historyNote": {
+        "en": "Geoscience Australia Proportion Terms (FGDM.LU_PROPORTION_TERMS)"
+      },
+      "keywords": [],
+      "conceptCount": 10,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/QaStatusCode",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "General Geology - QA Status Code"
+      },
+      "definition": {
+        "en": "Indicates the status of whether or not QA of the data for this record has been undertaken (C - Checked, U - Unchecked)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/QaStatusCode/c",
+        "https://pid.geoscience.gov.au/def/voc/ga/QaStatusCode/u"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 2,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "General Geology - Sample Type"
+      },
+      "definition": {
+        "en": "The form, shape, purpose, or environment of a collected specimen or observation. Where possible the sample type description is independent of the material that comprises the specimen (eg, rock, oil, sand), or the sampling method (eg, drilling, dredging), but in practice it is not always possible or convenient to completely separate these concepts from the sample type (eg, water column specimen)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/analyticalBlank",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/anthropogenicMaterial",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/burnSpot",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/unconsolidated",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/coastalSample",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/crush",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/downholeReservoirFluidSample",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/boreholeSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fieldSiteSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fluidInclusion",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fuildMeltInclusionSection",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/waterSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/meltInclusion",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fossil",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralGrain",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralPrecipitate",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/observationOnly",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/pellet",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/photography",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedMount",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/polishedSlab",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/thinSection",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/powder",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/powderTungstenMill",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/replicateSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/residue",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/rockPieces",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/seabeadSample",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fraction",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/specimenBlank",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/standardReferenceMaterial",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/strainedSample",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/vegetationSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/video",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/vitriniteReflectanceSpecimen",
+        "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/gasSpecimen"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 76,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "General Geology - Sampling Method"
+      },
+      "definition": {
+        "en": "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera",
+        "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 107,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Seabed geomorphology - Method Terms"
+      },
+      "definition": {
+        "en": "A vocabulary of general terms used in the two-part marine and coastal geomorphology classification scheme (International Seabed Geomorphology Mapping Working Group - ISGM-WG: Part 1 Morphology: [https://doi.org/10.5281/zenodo.4071940](https://doi.org/10.5281/zenodo.4071940); Part 2 Geomorphology: [https://doi.org/10.5281/zenodo.7804019](https://doi.org/10.5281/zenodo.7804019)).\n\nThis is one of four linked ISGM-WG vocabularies. Definitions in this vocabulary are subject to intermittent review and versioning."
+      },
+      "created": "2024-05-22",
+      "modified": "2024-10-11",
+      "creator": [
+        "https://linked.data.gov.au/org/isgm-wg"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-Type_BGU-T",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/BGU-subType_BGU-sT",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/Field_of_units",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/basic_geomorphic_unit_BGU",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/relative_depth",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/feature",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/geomorphology",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/landform",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/lithology",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/marginal_marine_process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/relative_age",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/morphology",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/morphometrics",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/grain_size",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/physiography",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/sea_level",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/setting",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral/unit"
+      ],
+      "version": "1.0",
+      "historyNote": {
+        "en": "This vocabulary describes the glossary in Part 2 of the two-part seabed geomorphology classification scheme DOI: 10.5281/zenodo.7804019"
+      },
+      "keywords": [],
+      "conceptCount": 30,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Seabed geomorphology - Part 1 Morphology"
+      },
+      "definition": {
+        "en": "A vocabulary of MORPHOLOGY FEATURE (Part 1) terms used in the two-part marine and coastal geomorphology classification scheme (International Seabed Geomorphology Mapping Working Group - ISGM-WG: Part 1 Morphology: [https://doi.org/10.5281/zenodo.4071940](https://doi.org/10.5281/zenodo.4071940); Part 2 Geomorphology: [https://doi.org/10.5281/zenodo.7804019](https://doi.org/10.5281/zenodo.7804019)) to describe the shape of the seabed.\n\nThis is one of four linked ISGM-WG vocabularies. Definitions in this vocabulary are subject to intermittent review and versioning. Unless otherwise stated, all definitions are derived from the Part 1 Morphology report (Version 2.0 [https://doi.org/10.5281/zenodo.4071940](https://doi.org/10.5281/zenodo.4071940))."
+      },
+      "created": "2024-05-22",
+      "modified": "2025-11-18",
+      "creator": [
+        "https://linked.data.gov.au/org/isgm-wg"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/apron",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/bank",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/block",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/break_in_slope",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/canyon",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/centreline",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/channel",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/cone",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/crest",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/crevice",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/depression",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/escarpment",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/fan",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/floor",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/gap",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/groove",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/gully",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/hill",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/hole",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/hummocks",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/knoll",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/lineament",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/moat",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/mound",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/peak",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/pinnacle",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/plane",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/plateau",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/platform",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/promontory",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/ridge",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/saddle",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/seamount",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/sill",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/slope",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/terrace",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/thalweg",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/trench",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/trough",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology/valley"
+      ],
+      "version": "1.0",
+      "historyNote": {
+        "none": "\"2025-08 1.1: Images added\n\nThis vocabulary describes the glossary in Part 1 of the two-part seabed geomorphology classification scheme. DOI: 10.5281/zenodo4075248"
+      },
+      "keywords": [],
+      "conceptCount": 40,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Seabed geomorphology - Physiography"
+      },
+      "definition": {
+        "en": "A vocabulary of physiographic terms used by Harris et al (2014:[https://doi.org/10.1016/j.margeo.2014.01.011](https://doi.org/10.1016/j.margeo.2014.01.011)) to map the macroscale shape and geology of the seabed. Many of these terms have been retained by the International Seabed Geomorphology Mapping Working Group (ISGM-WG)  in this PHYISOGRAPHY vocabulary, and some have been shifted into either Part 1 Morphology or Part 2 Geomorphology vocabularies, as indicated (Part 1 Morphology: [https://doi.org/10.5281/zenodo.4071940](https://doi.org/10.5281/zenodo.4071940); Part 2 Geomorphology:[https://doi.org/10.5281/zenodo.7804019](https://doi.org/10.5281/zenodo.7804019)).\n\nThis vocabulary comprises one of four linked ISGM-WG vocabularies. "
+      },
+      "created": "2024-05-22",
+      "modified": "2024-10-18",
+      "creator": [
+        "https://linked.data.gov.au/org/isgm-wg"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography//continental_slope",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography//continetal_rise",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/abyssal_plain",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/accretionary_prism",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/axial_high",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/axial_valley",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/back-arc_basin",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/continental_shelf",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/fore-arc_basin",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/island_arc",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/mid-ocean_ridge",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography/oceanic_trench"
+      ],
+      "version": "1.0",
+      "historyNote": {
+        "en": "This vocabulary describes the glossary in Part 2 of the two-part seabed geomorphology classification scheme DOI: 10.5281/zenodo.7804019"
+      },
+      "keywords": [],
+      "conceptCount": 12,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Seabed geomorphology - Part 2 Geomorphology"
+      },
+      "definition": {
+        "en": "A vocabulary of GEOMORPHIC UNIT terms (Part 2) used in the two-part marine and coastal geomorphology classification scheme (International Seabed Geomorphology Mapping Working Group - ISGM-WG: Part 1 Morphology: [https://doi.org/10.5281/zenodo.4071940](https://doi.org/10.5281/zenodo.4071940); Part 2 Geomorphology: [https://doi.org/10.5281/zenodo.7804019](https://doi.org/10.5281/zenodo.7804019) to classify MORPHOLOGY FEATURES (Part 1) with their process interpretation. These UNIT terms are structured within a consistent framework design that is replicated between eleven SETTING and PROCESS categories.\n\nThis is one of four linked ISGM-WG vocabularies. Definitions in this vocabulary are subject to intermittent review and versioning. Unless otherwise stated, all definitions are derived from the Part 2 Geomorphology report (Version 1.0) [https://doi.org/10.5281/zenodo.7804019](https://doi.org/10.5281/zenodo.7804019))."
+      },
+      "created": "2024-06-17",
+      "modified": "2025-04-02",
+      "creator": [
+        "https://linked.data.gov.au/org/isgm-wg"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Solid_Earth_Setting",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Coastal_Setting",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Biogenic_Process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Fluid_Flow_Process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Marine_Setting",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Current-induced_Process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Mass_Movement_Process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Glacial_Setting",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Fluvial_Setting",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Karst_Process",
+        "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings/Anthropogenic_Process"
+      ],
+      "version": "1.1",
+      "historyNote": {
+        "en": "This vocabulary describes the glossary in Part 2 of the two-part seabed geomorphology classification scheme DOI: 10.5281/zenodo.7804019"
+      },
+      "keywords": [],
+      "conceptCount": 380,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Boreholes Organic Geochemistry - Source Rock Quality"
+      },
+      "definition": {
+        "en": "The quality of source rock from which organic chemistry samples were obtained."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality/effectiveSourceRock",
+        "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality/notASourceRock",
+        "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality/notAssessed",
+        "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality/potentialSourceRock",
+        "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality/relicEffectiveSourceRock",
+        "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality/spentSourceRock"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 6,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Geology Rock Properties - Result Qualifier"
+      },
+      "definition": {
+        "en": "Statistical qualifier for rock property measurements (e.g. mean, maximum, median)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/maximum",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/mean",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/median",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/minimum",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/mode",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/singleMeasurementPartSample",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/singleMeasurementWholeSample",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/unknown",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier/weightedMean"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 9,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Geology Rock Properties - Statistical Uncertainty Type "
+      },
+      "definition": {
+        "en": "The type of statistical uncertainty for rock property measurements (e.g. 1 sigma, 2 sigma, 99 percent confidence, unknown)."
+      },
+      "created": "2022-08-09",
+      "modified": "2022-08-09",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/1Sigma",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/1StandardError",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/2Sigma",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/2StandardError",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/3Sigma",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/95pcConfidence",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/99pcConfidence",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/alpha95",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/delta",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/kappa",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/plusMinus",
+        "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes/unknown"
+      ],
+      "version": "1",
+      "historyNote": null,
+      "keywords": [],
+      "conceptCount": 12,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    },
+    {
+      "iri": "http://qudt.org/community/ga/voc",
+      "type": "ConceptScheme",
+      "prefLabel": {
+        "en": "Geoscience Australia Profile of QUDT Units"
+      },
+      "definition": {
+        "en": "A vocabulary of Units from the QUDT ontology used by Geoscience Australia."
+      },
+      "created": "2021-12-14",
+      "modified": "2022-02-11",
+      "creator": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "publisher": [
+        "https://linked.data.gov.au/org/ga"
+      ],
+      "topConcepts": [
+        "http://qudt.org/vocab/unit/GM",
+        "http://qudt.org/vocab/unit/KiloGM",
+        "http://qudt.org/vocab/unit/KiloGM-PER-M2",
+        "http://qudt.org/vocab/unit/M",
+        "http://qudt.org/vocab/unit/MegaYR"
+      ],
+      "version": null,
+      "historyNote": {
+        "en": "This vocabulary is a subset of the QUDT Units of Measure at http://www.qudt.org/doc/DOC_VOCAB-UNITS.html"
+      },
+      "keywords": [],
+      "conceptCount": 5,
+      "creatorLabels": [
+        null
+      ],
+      "publisherLabels": [
+        null
+      ]
+    }
+  ]
+}

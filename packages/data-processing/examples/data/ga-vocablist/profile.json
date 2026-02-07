@@ -1,0 +1,39 @@
+{
+  "conceptScheme": {
+    "propertyOrder": []
+  },
+  "concept": {
+    "propertyOrder": []
+  },
+  "catalog": {
+    "propertyOrder": []
+  },
+  "list": {
+    "propertyOrder": [
+      {
+        "path": "prefLabel",
+        "order": 0
+      },
+      {
+        "path": "iri",
+        "order": 1
+      },
+      {
+        "path": "broader",
+        "order": 2
+      }
+    ]
+  },
+  "nestedOrder": {
+    "http://www.w3.org/ns/prov#qualifiedAttribution": [
+      {
+        "path": "http://www.w3.org/ns/prov#agent",
+        "order": 0
+      },
+      {
+        "path": "http://www.w3.org/ns/prov#hadRole",
+        "order": 1
+      }
+    ]
+  }
+}

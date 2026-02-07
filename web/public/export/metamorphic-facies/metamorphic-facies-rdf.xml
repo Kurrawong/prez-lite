@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">A metamorphic facies is defined by a repeatedly occurring and thus predictable set of stable mineral assemblages in metamorphic rocks. Such metamorphic mineral assemblages crystallize and are stable over a range of externally imposed physical conditions, most crucially lithostatic pressure and temperature, and thus the facies define areas in two-dimensional plots of pressure–temperature space. There is a demonstrable/proven relationship between mineral composition and bulk rock chemical composition and a consistent relationship through geological time. Rocks which contain certain metamorphic mineral assemblages can therefore be linked to particular tectonic settings, times and places in the geological history of an area. The boundaries between facies are typically gradational as the disappearance or appearance of minerals occurs over pressure, temperature, space and time. The vocabulary is based on Fettes and Desmons (2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks edited by D Fettes and J Desmons, 244p.), with further subdivisions for some facies. Definitions also borrow from Neuendorf et al. (2005, Glossary of Geology: 5th edition, revised edited by KKE Neuendorf, JP Mehl Jr and JA Jackson: American Geological Institute, Alexandria, Virginia, USA, 779p.). More detailed metamorphic mineral assemblages for specific rock types can be found at https://en.wikipedia.org/wiki/Metamorphic_facies).</skos:definition>
+    <skos:historyNote xml:lang="en">Based on the authoritative list [GEOLOGY].[Warox_REF].[Metafacies] and [WAGIMS[ReferenceData].[MetamorphicFacies] used in the Geological Survey of Western Australia&apos;s field observation database (WAROX) and WAGIMS system, the repository for Western Australian Geochronology, Isotope geology, Mineral chemistry and Metamorphic history analytical data and information.</skos:historyNote>
+    <skos:prefLabel xml:lang="en">Metamorphic facies</skos:prefLabel>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</sdo:dateCreated>
+    <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</sdo:dateModified>
+    <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/albite-epidote-hornfels"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/amphibolite"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/blueschist"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/eclogite"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/epidote–amphibolite"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/granulite"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/greenschist"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/hornblende-hornfels"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/prehnite–pumpellyite"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/sanidinite"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/sub-greenschist"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/undifferentiated"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/zeolite"/>
+    <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-0"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/albite-epidote-hornfels">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/amphibolite">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/blueschist">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/eclogite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/epidote–amphibolite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/granulite">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/greenschist">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/hornblende-hornfels">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/prehnite–pumpellyite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/sanidinite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/sub-greenschist">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/undifferentiated">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/zeolite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-0">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://www.linkedin.com/in/david-kelsey-425746137/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-1">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0009-0003-0007-8342"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/metamorphic-facies"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -12,8 +12,33 @@ const {
   status,
   treeItems,
   metadataRows,
+  richMetadata,
   breadcrumbs
 } = useScheme(uri)
+
+// Keep track of last valid data to prevent flicker on back navigation
+const lastValidScheme = ref<typeof scheme.value>(null)
+const lastValidTreeItems = ref<typeof treeItems.value>([])
+const lastValidConcepts = ref<typeof concepts.value>([])
+
+// Update last valid data when we have successful data
+watch([scheme, treeItems, concepts], () => {
+  if (scheme.value && status.value === 'success') {
+    lastValidScheme.value = scheme.value
+    lastValidTreeItems.value = treeItems.value
+    lastValidConcepts.value = concepts.value ?? []
+  }
+}, { immediate: true })
+
+// Display values that fall back to previous data during loading
+const displayScheme = computed(() => scheme.value ?? lastValidScheme.value)
+const displayTreeItems = computed(() => treeItems.value.length ? treeItems.value : lastValidTreeItems.value)
+const displayConcepts = computed(() => concepts.value?.length ? concepts.value : lastValidConcepts.value)
+
+// Only show skeleton on initial load (no previous data)
+const showTreeSkeleton = computed(() => status.value === 'pending' && !lastValidTreeItems.value.length)
+// Show loading indicator when refreshing existing data
+const isTreeLoading = computed(() => status.value === 'pending' && lastValidTreeItems.value.length > 0)
 
 // Share functionality
 const { getShareUrl } = useShare()
@@ -39,9 +64,10 @@ function clearConceptSelection() {
   })
 }
 
-// Filter tree items based on search
+// Filter tree items based on search (uses displayTreeItems for stable display)
 const filteredTreeItems = computed(() => {
-  if (!searchQuery.value) return treeItems.value
+  const sourceItems = displayTreeItems.value
+  if (!searchQuery.value) return sourceItems
 
   const query = searchQuery.value.toLowerCase()
 
@@ -59,7 +85,7 @@ const filteredTreeItems = computed(() => {
     return null
   }
 
-  return treeItems.value.map(filterNode).filter(Boolean)
+  return sourceItems.map(filterNode).filter(Boolean)
 })
 
 // Count total concepts including nested
@@ -90,7 +116,7 @@ onMounted(() => {
   })
 })
 
-watch(() => scheme.value, () => {
+watch(() => displayScheme.value, () => {
   nextTick(() => {
     if (descriptionRef.value) {
       isDescriptionClamped.value = descriptionRef.value.scrollHeight > descriptionRef.value.clientHeight
@@ -113,20 +139,20 @@ function copyIriToClipboard(iri: string) {
       <UAlert color="warning" title="No scheme selected" description="Please select a vocabulary from the vocabularies page" />
     </div>
 
-    <template v-else-if="scheme">
+    <template v-else-if="displayScheme">
       <!-- Header -->
       <div class="mb-8">
-        <h1 class="text-3xl font-bold mb-2">{{ getLabel(scheme.prefLabel) }}</h1>
+        <h1 class="text-3xl font-bold mb-2">{{ getLabel(displayScheme.prefLabel) }}</h1>
         <div class="flex items-center gap-2 text-sm text-muted mb-4">
-          <a :href="scheme.iri" target="_blank" class="text-primary hover:underline break-all">
-            {{ scheme.iri }}
+          <a :href="displayScheme.iri" target="_blank" class="text-primary hover:underline break-all">
+            {{ displayScheme.iri }}
           </a>
           <UButton
             icon="i-heroicons-clipboard"
             color="neutral"
             variant="ghost"
             size="xs"
-            @click="copyIriToClipboard(scheme.iri)"
+            @click="copyIriToClipboard(displayScheme.iri)"
           />
           <UButton
             v-if="shareUrl"
@@ -138,12 +164,12 @@ function copyIriToClipboard(iri: string) {
             aria-label="Share or embed this vocabulary"
           />
         </div>
-        <div v-if="scheme.definition">
+        <div v-if="displayScheme.definition">
           <p
             ref="descriptionRef"
             :class="['text-lg text-muted', descriptionExpanded ? '' : 'line-clamp-[8]']"
           >
-            {{ getLabel(scheme.definition) }}
+            {{ getLabel(displayScheme.definition) }}
           </p>
           <UButton
             v-if="isDescriptionClamped || descriptionExpanded"
@@ -165,7 +191,8 @@ function copyIriToClipboard(iri: string) {
             <h2 class="font-semibold flex items-center gap-2">
               <UIcon name="i-heroicons-list-bullet" />
               Concepts
-              <UBadge color="primary" variant="subtle">{{ concepts?.length || 0 }} total</UBadge>
+              <UBadge color="primary" variant="subtle">{{ displayConcepts?.length || 0 }} total</UBadge>
+              <UIcon v-if="isTreeLoading" name="i-heroicons-arrow-path" class="size-4 text-primary animate-spin" />
             </h2>
 
             <div class="flex items-center gap-2">
@@ -190,11 +217,11 @@ function copyIriToClipboard(iri: string) {
           </div>
         </template>
 
-        <div v-if="status === 'pending'" class="space-y-2">
+        <div v-if="showTreeSkeleton" class="space-y-2">
           <USkeleton class="h-8 w-full" v-for="i in 5" :key="i" />
         </div>
 
-        <template v-else-if="filteredTreeItems.length">
+        <template v-else-if="filteredTreeItems.length || displayTreeItems.length">
           <div class="flex gap-6" :class="selectedConceptUri ? 'flex-col lg:flex-row' : ''">
             <!-- Tree panel -->
             <div :class="selectedConceptUri ? 'lg:w-1/2' : 'w-full'" class="max-h-[600px] overflow-auto">
@@ -232,7 +259,7 @@ function copyIriToClipboard(iri: string) {
         />
       </UCard>
 
-      <!-- Metadata -->
+      <!-- Metadata - use rich rendering when available -->
       <UCard class="mb-8">
         <template #header>
           <h2 class="font-semibold flex items-center gap-2">
@@ -241,7 +268,12 @@ function copyIriToClipboard(iri: string) {
           </h2>
         </template>
 
+        <!-- Rich metadata from annotated JSON-LD -->
+        <RichMetadataTable v-if="richMetadata.length" :properties="richMetadata" />
+
+        <!-- Fallback to simple table -->
         <UTable
+          v-else
           :data="metadataRows"
           :columns="[
             { accessorKey: 'property', header: 'Property' },
@@ -249,27 +281,14 @@ function copyIriToClipboard(iri: string) {
           ]"
         />
       </UCard>
-
-      <!-- History Note -->
-      <UCard v-if="scheme.historyNote">
-        <template #header>
-          <h2 class="font-semibold flex items-center gap-2">
-            <UIcon name="i-heroicons-clock" />
-            History
-          </h2>
-        </template>
-        <div class="prose prose-sm max-w-none text-muted">
-          {{ getLabel(scheme.historyNote) }}
-        </div>
-      </UCard>
     </template>
 
-    <div v-else-if="status === 'pending'" class="space-y-4">
+    <div v-else-if="status === 'pending' && !lastValidScheme" class="space-y-4">
       <USkeleton class="h-12 w-1/2" />
       <USkeleton class="h-6 w-3/4" />
       <USkeleton class="h-64 w-full" />
     </div>
 
-    <UAlert v-else color="error" title="Scheme not found" :description="`No scheme found with IRI: ${uri}`" />
+    <UAlert v-else-if="status !== 'pending'" color="error" title="Scheme not found" :description="`No scheme found with IRI: ${uri}`" />
   </div>
 </template>

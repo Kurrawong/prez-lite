@@ -1,0 +1,44 @@
+iri,broader,prefLabel
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd66,,AGD66
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z49,,AGD66 / AMG zone 49
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z50,,AGD66 / AMG zone 50
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z51,,AGD66 / AMG zone 51
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z52,,AGD66 / AMG zone 52
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd84,,AGD84
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z49,,AGD84 / AMG zone 49
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z50,,AGD84 / AMG zone 50
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z51,,AGD84 / AMG zone 51
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z52,,AGD84 / AMG zone 52
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66,,AMG66
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84,,AMG84
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858,,Clarke 1858
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z1,,Clarke 1858 zone 1
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z2,,Clarke 1858 zone 2
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z3,,Clarke 1858 zone 3
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z4,,Clarke 1858 zone 4
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda2020,,GDA2020
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z49,,GDA2020 / MGA zone 49
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z50,,GDA2020 / MGA zone 50
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z51,,GDA2020 / MGA zone 51
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z52,,GDA2020 / MGA zone 52
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda94,,GDA94
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z49,,GDA94 / MGA zone 49
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z50,,GDA94 / MGA zone 50
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z51,,GDA94 / MGA zone 51
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z52,,GDA94 / MGA zone 52
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid,,local grid
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-known,,"local grid, base station known"
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-unknown,,"local grid, base station unknown"
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020,,MGA2020
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94,,MGA94
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm,,Universal Transverse Mercator System
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/unknown,,unknown
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49,,UTM z49
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50,,UTM z50
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51,,UTM z51
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52,,UTM z52
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84,,WGS84
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z49s,,WGS84 / UTM zone 49S
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z50s,,WGS84 / UTM zone 50S
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z51s,,WGS84 / UTM zone 51S
+https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z52s,,WGS84 / UTM zone 52S

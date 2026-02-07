@@ -1,0 +1,480 @@
+[
+  {
+    "@id": "_:n3-166",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth science fields of research",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/applied-mineralogy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:applied-mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:applied-mineralogy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "applied mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Applied mineralogy is located at the intersection of natural sciences and engineering sciences/technology and deals with the entire line of raw material, from extraction/preparation to processing and disposal, i.e. the application of mineralogical information to understanding and solving problems encountered during exploration and mining, and during processing of ores, concentrates, smelter products, and related materials. It involves characterizing minerals and materials, and interpreting the data with respect to exploration, mineral processing, tailings disposal and treatment, hydrometallurgy, pyrometallurgy, and refining.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/descriptive-mineralogy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:descriptive-mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:descriptive-mineralogy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "descriptive mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Descriptive mineralogy includes a description of the crystallographic, general physical and chemical characters of each mineral species, and provides an account of their mode of occurrence and characteristic associations. For minerals possessing an economic value, it includes a brief statement of their uses and industrial applications.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/experimental-mineralogy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:experimental-mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:experimental-mineralogy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "experimental mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Experimental mineralogy and petrology are the Earth science disciplines that model or simulate mineralogical, petrological, and geochemical processes within the laboratory in order to understand the physical and chemical properties of minerals, rocks, melts, and fluids and their interactions.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/genetic-mineralogy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:genetic-mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:genetic-mineralogy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "genetic mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The empirical investigation of the principles that control mineral formation in the geological environment, including mineral paragenesis and the physical and chemical parameters of formation and alteration (mineral ontogenesis); the quantitative geothermometric, geobarometric, and chemical studies of mineral-forming systems; and experimental modelling of crystal growth in the laboratory.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/mineralogy",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/mineralogy-and-crystallography"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The scientific study of minerals, their formation, occurrence, physical and chemical properties, composition, and classification.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Definition from Glossary of geology (5th edition revised; Neuendorf et al., 2011)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/mineralogy",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/applied-mineralogy"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/descriptive-mineralogy"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/experimental-mineralogy"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/genetic-mineralogy"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/quantitative-mineralogy"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/regional-mineralogy"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:mineralogy"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The scientific study of minerals, their formation, occurrence, physical and chemical properties, composition, and classification.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/quantitative-mineralogy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quantitative-mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:quantitative-mineralogy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quantitative mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A discipline focused on the quantitative measurements of the mineralogy, chemistry, morphology and microstructures of minerals and mineral assemblages using a range of analytical techniques (e.g. modal analysis, X-ray diffractometry, infrared and Raman spectroscopy, refractometry, spectral mapping, etc.). Specifically, quantitative mineral methodologies are utilized to measure and/or constrain mineral abundances, as well as to provide mineral grade and texture information for geological and mineral processing applications.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/regional-mineralogy",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:regional-mineralogy"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:regional-mineralogy"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "regional mineralogy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The mineralogical study of specific geographic regions, from ore deposits clusters to large metallogenic provinces. It includes evaluation of location and the spatial distribution of minerals and mineral assemblages in relation to the geological history of the province (region) or the formation of the deposit. Regional mineralogy can include mineral regional fingerprinting, and directly links to metallogeny and genetic mineralogy.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

@@ -1,73 +1,102 @@
 <script setup lang="ts">
 import type { VocabExport } from '~/composables/useShare'
 
-const props = defineProps<{
-  component: 'select' | 'tree' | 'list' | 'autocomplete'
+interface InitialOptions {
+  type?: 'select' | 'dropdown' | 'radio' | 'table'
+  search?: boolean
+  [key: string]: unknown
+}
+
+const props = withDefaults(defineProps<{
+  component: 'list'
   vocab: VocabExport
   baseUrl: string
-}>()
+  initialOptions?: InitialOptions
+}>(), {
+  initialOptions: () => ({})
+})
 
-// Component tag mapping
-const componentTags = {
-  select: 'prez-vocab-select',
-  tree: 'prez-vocab-tree',
-  list: 'prez-vocab-list',
-  autocomplete: 'prez-vocab-autocomplete'
-}
+// Type options for prez-list component
+const typeOptions = ['select', 'dropdown', 'radio', 'table'] as const
 
-const tag = computed(() => componentTags[props.component])
+// Fields for table mode
+const fieldsValue = ref('')
 
-// Attribute definitions per component
-const attributeDefinitions = {
-  select: [
-    { name: 'multiple', type: 'boolean', default: false, description: 'Allow multiple selections' },
-    { name: 'show-iri', type: 'boolean', default: false, description: 'Show IRI in options' },
-    { name: 'disabled', type: 'boolean', default: false, description: 'Disable the component' },
-    { name: 'placeholder', type: 'string', default: 'Select a concept...', description: 'Placeholder text' }
-  ],
-  tree: [
-    { name: 'expand-all', type: 'boolean', default: false, description: 'Expand all nodes' },
-    { name: 'expand-level', type: 'number', default: 1, description: 'Expand to depth (0-3)', min: 0, max: 3 },
-    { name: 'selectable', type: 'boolean', default: true, description: 'Allow selection' },
-    { name: 'show-count', type: 'boolean', default: false, description: 'Show descendant counts' },
-    { name: 'disabled', type: 'boolean', default: false, description: 'Disable the component' }
-  ],
-  list: [
-    { name: 'searchable', type: 'boolean', default: true, description: 'Show search input' },
-    { name: 'show-definitions', type: 'boolean', default: false, description: 'Show definitions' },
-    { name: 'show-alt-labels', type: 'boolean', default: false, description: 'Show alt labels' },
-    { name: 'max-items', type: 'number', default: 0, description: 'Max items (0=all)', min: 0, max: 50 },
-    { name: 'disabled', type: 'boolean', default: false, description: 'Disable the component' }
-  ],
-  autocomplete: [
-    { name: 'min-chars', type: 'number', default: 1, description: 'Min chars to search', min: 1, max: 5 },
-    { name: 'max-suggestions', type: 'number', default: 10, description: 'Max suggestions', min: 3, max: 20 },
-    { name: 'show-definitions', type: 'boolean', default: false, description: 'Show definitions' },
-    { name: 'disabled', type: 'boolean', default: false, description: 'Disable the component' },
-    { name: 'placeholder', type: 'string', default: 'Type to search...', description: 'Placeholder text' }
-  ]
-}
+// Attribute definitions - these become toggle chips
+const attributeDefinitions = [
+  { name: 'flat', label: 'Flat', description: 'Render as flat list instead of tree' },
+  { name: 'search', label: 'Search', description: 'Show search/filter input' },
+  { name: 'multiple', label: 'Multiple', description: 'Allow multiple selections', showWhen: () => selectedType.value !== 'radio' },
+  { name: 'horizontal', label: 'Horizontal', description: 'Horizontal layout (radio type only)', showWhen: () => selectedType.value === 'radio' },
+  { name: 'show-count', label: 'Counts', description: 'Show descendant counts', showWhen: () => selectedType.value === 'select' && !attrValues['flat'] },
+  { name: 'show-description', label: 'Descriptions', description: 'Show concept definitions', showWhen: () => selectedType.value !== 'table' }
+]
 
-const attributes = computed(() => attributeDefinitions[props.component] || [])
+const attributes = computed(() => {
+  return attributeDefinitions.filter(attr => !attr.showWhen || attr.showWhen())
+})
 
-// Reactive attribute values
-const attrValues = reactive<Record<string, boolean | number | string>>({})
+// Reactive attribute values (all booleans for simplicity)
+const attrValues = reactive<Record<string, boolean>>({})
 
-// Initialize with defaults
-onMounted(() => {
-  for (const attr of attributes.value) {
-    attrValues[attr.name] = attr.default
+// Initialize type from initial options or default
+const selectedType = ref<'select' | 'dropdown' | 'radio' | 'table'>(
+  props.initialOptions?.type || 'select'
+)
+
+// Initialize with defaults when component changes
+watch(() => props.component, () => {
+  // Reset all attribute values
+  Object.keys(attrValues).forEach(key => {
+    attrValues[key] = false
+  })
+  // Reset fields when switching away from table
+  if (selectedType.value !== 'table') {
+    fieldsValue.value = ''
   }
 })
 
-// Event log
+// Reset attribute values when type changes (but not on initial load)
+watch(selectedType, (newType, oldType) => {
+  if (oldType !== undefined) {
+    Object.keys(attrValues).forEach(key => {
+      attrValues[key] = false
+    })
+  }
+  if (newType !== 'table') {
+    fieldsValue.value = ''
+  }
+})
+
+// Apply initial options on mount
+onMounted(() => {
+  if (props.initialOptions?.search) {
+    attrValues['search'] = true
+  }
+})
+
+// Set example fields for table mode
+function setExampleFields() {
+  fieldsValue.value = 'iri,label,description'
+  isCodeEdited.value = false
+}
+
+function clearFields() {
+  fieldsValue.value = ''
+  isCodeEdited.value = false
+}
+
+// Event log - compact format
 const eventLog = ref<Array<{ time: string; event: string; detail: string }>>([])
-const maxEvents = 20
+const eventCount = ref(0)
+const maxEvents = 10
+const showEventLog = ref(false)
 
 function addEvent(event: string, detail: unknown) {
-  const time = new Date().toLocaleTimeString()
+  const time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })
   const detailStr = JSON.stringify(detail, null, 2)
   eventLog.value.unshift({ time, event, detail: detailStr })
+  eventCount.value++
   if (eventLog.value.length > maxEvents) {
     eventLog.value.pop()
   }
@@ -75,37 +104,65 @@ function addEvent(event: string, detail: unknown) {
 
 function clearEvents() {
   eventLog.value = []
+  eventCount.value = 0
 }
 
-// Generate attributes string for preview
-const attrsString = computed(() => {
-  const parts: string[] = [`vocab="${props.vocab.slug}"`]
+// Generate the component HTML with script tag - complete working example
+const componentHtml = computed(() => {
+  let attrs = `vocab="${props.vocab.slug}"`
+
+  // Add type attribute (only if not default 'select')
+  if (selectedType.value !== 'select') {
+    attrs += ` type="${selectedType.value}"`
+  }
+
+  // Add fields attribute for table mode
+  if (selectedType.value === 'table' && fieldsValue.value) {
+    attrs += ` fields="${fieldsValue.value}"`
+  }
+
   for (const attr of attributes.value) {
-    const value = attrValues[attr.name]
-    if (value !== attr.default) {
-      if (attr.type === 'boolean' && value) {
-        parts.push(attr.name)
-      } else if (attr.type !== 'boolean') {
-        parts.push(`${attr.name}="${value}"`)
-      }
+    if (attrValues[attr.name]) {
+      attrs += ` ${attr.name}`
     }
   }
-  return parts.join('\n    ')
+
+  return `<script src="${props.baseUrl}/web-components/prez-vocab.min.js" type="module"><\/script>
+
+<prez-list ${attrs}></prez-list>`
 })
 
-// Generate preview HTML
-const previewHtml = computed(() => {
-  let attrsHtml = `vocab="${props.vocab.slug}"`
-  for (const attr of attributes.value) {
-    const value = attrValues[attr.name]
-    if (value !== attr.default) {
-      if (attr.type === 'boolean' && value) {
-        attrsHtml += ` ${attr.name}`
-      } else if (attr.type !== 'boolean') {
-        attrsHtml += ` ${attr.name}="${value}"`
-      }
-    }
+// Editable code state
+const editableCode = ref('')
+const isCodeEdited = ref(false)
+
+// Sync editable code when attributes change (if not manually edited)
+watch(componentHtml, (newHtml) => {
+  if (!isCodeEdited.value) {
+    editableCode.value = newHtml
   }
+}, { immediate: true })
+
+function handleCodeInput(e: Event) {
+  editableCode.value = (e.target as HTMLTextAreaElement).value
+  isCodeEdited.value = true
+}
+
+function resetCode() {
+  editableCode.value = componentHtml.value
+  isCodeEdited.value = false
+}
+
+// Extract just the component tag from editable code for iframe
+function extractComponentCode(code: string): string {
+  // Remove script tags, keep just the component
+  return code.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').trim()
+}
+
+// Generate full iframe HTML from the component code
+function generateIframeHtml(code: string): string {
+  const componentCode = extractComponentCode(code)
+  const eventNames = "['prez-change', 'prez-load', 'prez-error', 'prez-expand', 'prez-filter']"
 
   return `<!DOCTYPE html>
 <html>
@@ -118,7 +175,7 @@ const previewHtml = computed(() => {
       margin: 0;
       background: white;
     }
-    ${tag.value} {
+    prez-list {
       width: 100%;
       max-width: 100%;
     }
@@ -126,22 +183,46 @@ const previewHtml = computed(() => {
   <script src="${props.baseUrl}/web-components/prez-vocab.min.js" type="module"><\/script>
 </head>
 <body>
-  <${tag.value} ${attrsHtml}></${tag.value}>
-  <script>
-    const el = document.querySelector('${tag.value}');
-    ['prez-change', 'prez-load', 'prez-error'].forEach(eventName => {
-      el.addEventListener(eventName, (e) => {
-        window.parent.postMessage({
-          type: 'prez-event',
-          event: eventName,
-          detail: e.detail
-        }, '*');
-      });
+  ${componentCode}
+  <script type="module">
+    let parentReady = false;
+    const eventQueue = [];
+
+    window.addEventListener('message', (e) => {
+      if (e.data?.type === 'parent-ready') {
+        parentReady = true;
+        eventQueue.forEach(msg => window.parent.postMessage(msg, '*'));
+        eventQueue.length = 0;
+      }
+    });
+
+    function emitEvent(name, detail) {
+      const msg = { type: 'prez-event', event: name, detail };
+      if (parentReady) {
+        window.parent.postMessage(msg, '*');
+      } else {
+        eventQueue.push(msg);
+      }
+    }
+
+    // Wait for custom elements to be defined, then attach listeners
+    const eventNames = ${eventNames};
+    const tagName = 'prez-list';
+
+    customElements.whenDefined(tagName).then(() => {
+      const el = document.querySelector(tagName);
+      if (el) {
+        eventNames.forEach(eventName => {
+          el.addEventListener(eventName, (e) => {
+            emitEvent(eventName, e.detail);
+          });
+        });
+      }
     });
   <\/script>
 </body>
 </html>`
-})
+}
 
 const iframeRef = ref<HTMLIFrameElement>()
 
@@ -154,163 +235,214 @@ onMounted(() => {
   })
 })
 
-// Update iframe when preview changes
-watch(previewHtml, () => {
+function updateIframe() {
   if (iframeRef.value) {
     const doc = iframeRef.value.contentDocument
     if (doc) {
+      const html = generateIframeHtml(editableCode.value)
       doc.open()
-      doc.write(previewHtml.value)
+      doc.write(html)
       doc.close()
+
+      setTimeout(() => {
+        iframeRef.value?.contentWindow?.postMessage({ type: 'parent-ready' }, '*')
+      }, 100)
     }
   }
+}
+
+// Update iframe when editable code changes
+watch(editableCode, () => {
+  updateIframe()
 }, { flush: 'post' })
 
 onMounted(() => {
-  // Small delay to ensure attributes are initialized
   setTimeout(() => {
-    if (iframeRef.value) {
-      const doc = iframeRef.value.contentDocument
-      if (doc) {
-        doc.open()
-        doc.write(previewHtml.value)
-        doc.close()
-      }
-    }
+    updateIframe()
   }, 100)
 })
 
-// Code display
-const codeExample = computed(() => {
-  return `<${tag.value}
-    ${attrsString.value}
-></${tag.value}>`
-})
-
 async function copyCode() {
-  await navigator.clipboard.writeText(codeExample.value)
+  await navigator.clipboard.writeText(editableCode.value)
+}
+
+// Toggle an attribute
+function toggleAttr(name: string) {
+  attrValues[name] = !attrValues[name]
+  // Reset edited state so code syncs
+  isCodeEdited.value = false
 }
 </script>
 
 <template>
-  <div class="grid lg:grid-cols-2 gap-6">
-    <!-- Left: Controls & Code -->
-    <div class="space-y-6">
-      <!-- Attribute Controls -->
-      <UCard>
-        <template #header>
-          <h3 class="font-semibold">Attributes</h3>
-        </template>
+  <div class="space-y-4">
+    <!-- Type selector + Attribute Toggles -->
+    <div class="flex flex-wrap items-center gap-2">
+      <!-- Type selector for select component -->
+      <template v-if="component === 'list'">
+        <span class="text-sm text-gray-600 dark:text-gray-400 mr-1">Type:</span>
+        <button
+          v-for="t in typeOptions"
+          :key="t"
+          :class="[
+            'px-3 py-1.5 text-sm rounded-full border transition-colors capitalize',
+            selectedType === t
+              ? 'bg-primary text-white border-primary'
+              : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-gray-400'
+          ]"
+          @click="selectedType = t; isCodeEdited = false"
+        >
+          {{ t }}
+        </button>
+        <span class="text-gray-300 dark:text-gray-600 mx-1">|</span>
+      </template>
 
-        <div class="space-y-4">
-          <div v-for="attr in attributes" :key="attr.name" class="flex items-center justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <label class="text-sm font-medium">{{ attr.name }}</label>
-              <p class="text-xs text-muted truncate">{{ attr.description }}</p>
-            </div>
-            <div class="flex-shrink-0">
-              <UCheckbox
-                v-if="attr.type === 'boolean'"
-                v-model="attrValues[attr.name]"
-              />
-              <UInput
-                v-else-if="attr.type === 'number'"
-                v-model.number="attrValues[attr.name]"
-                type="number"
-                :min="attr.min"
-                :max="attr.max"
-                class="w-20"
-                size="sm"
-              />
-              <UInput
-                v-else
-                v-model="attrValues[attr.name]"
-                class="w-40"
-                size="sm"
-              />
-            </div>
-          </div>
-        </div>
-      </UCard>
+      <span class="text-sm text-gray-600 dark:text-gray-400 mr-1">Options:</span>
+      <button
+        v-for="attr in attributes"
+        :key="attr.name"
+        :class="[
+          'px-3 py-1.5 text-sm rounded-full border transition-colors',
+          attrValues[attr.name]
+            ? 'bg-blue-600 text-white border-blue-600'
+            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-gray-400'
+        ]"
+        :title="attr.description"
+        @click="toggleAttr(attr.name)"
+      >
+        {{ attr.label }}
+      </button>
 
-      <!-- Generated Code -->
-      <UCard>
-        <template #header>
-          <div class="flex items-center justify-between">
-            <h3 class="font-semibold">Code</h3>
-            <UButton
-              icon="i-heroicons-clipboard"
-              size="xs"
-              variant="ghost"
-              @click="copyCode"
-            >
-              Copy
-            </UButton>
-          </div>
-        </template>
-
-        <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 text-sm overflow-x-auto"><code>{{ codeExample }}</code></pre>
-      </UCard>
+      <!-- Fields button for table mode -->
+      <template v-if="component === 'list' && selectedType === 'table'">
+        <span class="text-gray-300 dark:text-gray-600 mx-1">|</span>
+        <button
+          :class="[
+            'px-3 py-1.5 text-sm rounded-full border transition-colors',
+            fieldsValue
+              ? 'bg-purple-600 text-white border-purple-600'
+              : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-gray-400'
+          ]"
+          title="Example: iri, label, description. Available: iri, label, notation, description, altLabels, broader, narrower"
+          @click="fieldsValue ? clearFields() : setExampleFields()"
+        >
+          Fields
+        </button>
+      </template>
+      <div class="flex-1" />
+      <button
+        :class="[
+          'px-3 py-1.5 text-sm rounded-full border transition-colors flex items-center gap-1.5',
+          showEventLog
+            ? 'bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'
+            : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-gray-400'
+        ]"
+        @click="showEventLog = !showEventLog"
+      >
+        <span class="size-2 rounded-full" :class="eventCount ? 'bg-green-500' : 'bg-gray-400'" />
+        <span>Events</span>
+        <span v-if="eventCount" class="text-xs opacity-70">({{ eventCount }})</span>
+      </button>
     </div>
 
-    <!-- Right: Preview & Events -->
-    <div class="space-y-6">
-      <!-- Live Preview -->
-      <UCard>
-        <template #header>
-          <h3 class="font-semibold">Live Preview</h3>
-        </template>
-
-        <div class="border border-gray-200 rounded-lg overflow-hidden bg-white">
-          <iframe
-            ref="iframeRef"
-            title="Component Preview"
-            class="w-full"
-            :style="{ height: component === 'tree' || component === 'list' ? '320px' : '200px' }"
-            style="border: none;"
-            sandbox="allow-scripts allow-same-origin"
-          />
+    <!-- Main Panel: Code + Preview side by side -->
+    <div class="grid md:grid-cols-2 gap-0 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+      <!-- Code Editor -->
+      <div class="bg-gray-900 relative">
+        <div class="absolute top-2 right-2 flex gap-1 z-10">
+          <button
+            v-if="isCodeEdited"
+            class="px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 rounded"
+            @click="resetCode"
+          >
+            Reset
+          </button>
+          <button
+            class="px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 text-gray-300 rounded"
+            @click="copyCode"
+          >
+            Copy
+          </button>
         </div>
-      </UCard>
+        <textarea
+          :value="editableCode"
+          @input="handleCodeInput"
+          class="w-full h-48 md:h-72 font-mono text-sm bg-transparent text-gray-100 p-4 pt-10 border-0 resize-none focus:outline-none focus:ring-0"
+          spellcheck="false"
+          placeholder="Edit component HTML..."
+        />
+        <div v-if="isCodeEdited" class="absolute bottom-2 left-4 text-xs text-gray-500">
+          edited
+        </div>
+      </div>
 
-      <!-- Event Log -->
-      <UCard>
-        <template #header>
-          <div class="flex items-center justify-between">
-            <h3 class="font-semibold">Events</h3>
-            <UButton
-              v-if="eventLog.length"
-              size="xs"
-              variant="ghost"
-              @click="clearEvents"
-            >
-              Clear
-            </UButton>
-          </div>
-        </template>
+      <!-- Live Preview -->
+      <div class="bg-white border-l border-gray-300 dark:border-gray-600">
+        <div class="text-xs text-gray-500 px-3 py-2 border-b border-gray-200 bg-gray-50">
+          Preview
+        </div>
+        <iframe
+          ref="iframeRef"
+          title="Component Preview"
+          class="w-full h-40 md:h-64"
+          style="border: none;"
+          sandbox="allow-scripts allow-same-origin"
+        />
+      </div>
+    </div>
 
-        <div class="h-48 overflow-y-auto font-mono text-xs">
-          <div v-if="eventLog.length === 0" class="text-muted text-center py-8">
+    <!-- Event Log (collapsible) -->
+    <Transition name="slide">
+      <div v-if="showEventLog" class="border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+        <div class="flex items-center justify-between px-3 py-2 bg-gray-100 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Event Log</span>
+          <button
+            v-if="eventLog.length"
+            class="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            @click="clearEvents"
+          >
+            Clear
+          </button>
+        </div>
+        <div class="max-h-48 overflow-y-auto font-mono text-xs bg-white dark:bg-gray-900">
+          <div v-if="eventLog.length === 0" class="text-gray-400 text-center py-6">
             Interact with the component to see events
           </div>
           <div
             v-for="(entry, i) in eventLog"
             :key="i"
-            class="border-b border-gray-100 py-2 last:border-0"
+            class="border-b border-gray-100 dark:border-gray-800 last:border-0 px-3 py-2"
           >
-            <div class="flex items-center gap-2 mb-1">
-              <span class="text-muted">{{ entry.time }}</span>
-              <UBadge
-                :color="entry.event === 'prez-error' ? 'error' : entry.event === 'prez-load' ? 'success' : 'primary'"
-                size="xs"
+            <div class="flex items-center gap-2">
+              <span class="text-gray-400">{{ entry.time }}</span>
+              <span
+                :class="[
+                  'px-1.5 py-0.5 rounded text-xs font-medium',
+                  entry.event === 'prez-error' ? 'bg-red-100 text-red-700' :
+                  entry.event === 'prez-load' ? 'bg-green-100 text-green-700' :
+                  'bg-blue-100 text-blue-700'
+                ]"
               >
                 {{ entry.event }}
-              </UBadge>
+              </span>
             </div>
-            <pre class="text-xs text-muted overflow-x-auto whitespace-pre-wrap">{{ entry.detail }}</pre>
+            <pre class="text-gray-500 mt-1 overflow-x-auto whitespace-pre-wrap text-xs">{{ entry.detail }}</pre>
           </div>
         </div>
-      </UCard>
-    </div>
+      </div>
+    </Transition>
   </div>
 </template>
+
+<style scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.2s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+</style>

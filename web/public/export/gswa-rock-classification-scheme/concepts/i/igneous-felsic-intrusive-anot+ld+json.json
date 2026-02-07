@@ -1,0 +1,1610 @@
+[
+  {
+    "@id": "_:n3-246",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "GSWA rock classification scheme",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Listing of rock types and lithological nomenclature (and related codes) used by the Geological Survey of Western Australia (GSWA) for the dual purpose of recording lithologies during mapping / core logging, and for representing mappable lithostratigraphic/lithotectonic units in the State. Rather than attempting to cover for all existing rock types and lithologies, the GSWA’s scheme and terms in this vocabulary are specifically informed by Western Australian geology; a companion vocabulary covers lithological equivalents for regolith materials. \n\nApart from the approach to classification of some volcanic (pyroclastic) rocks, GSWA's lithological nomenclature largely conforms to internationally recognized classifications such as Le Maitre et al. (2005) for plutonic/intrusive rocks and Fettes and Desmons (2007) for metamorphic rocks. Note that: a) GSWA prefers the term intrusive to plutonic, as it carries no inference on depth of emplacement; b) GSWA's rock classification scheme prefers the use of volcanic terminology for any igneous rock formed on or near the Earth's surface, i.e. for those hypabyssal or sub-volcanic rocks such as dykes, sills, and cryptodomes that are demonstrably both spatially and temporally associated with extrusive volcanic rocks; c) some intrusive mafic/ultramafic terminology is allowed for cumulate rocks originating from thick volcanic successions. In the absence of a single unified scheme for sedimentary rocks, multiple sources were considered, and definitions rely heavily on the Glossary of geology (5th edition, revised; Neuendorf et al., 2011). Full references listed under History Note.\n\nGSWA’s rock classification scheme is designed to provide consistent terminology within the organization, and primarily relies on features observable in all rocks at outcrop scale, in hand specimen, and in thin section. Additional terms cover for broader combinations of multiple lithologies encountered during mapping (especially for sedimentary rocks, e.g. ‘siliciclastic + lesser carbonate’), and to ensure a coherent approach across different rock types (e.g. use of ‘mylonitized’ for all metamorphic rock groups, even if some would be rare occurrences or difficult to identify in the field). Definitions in this vocabulary are largely compiled or derived from the quoted references and the Glossary of Geology (5th edition, revised, Neuendorf et al., 2011), with adaptions based on recommended GSWA usage; metamorphic lithologies are often derived from definitions of non-metamorphosed equivalents. Some mineralogical/petrological knowledge is expected of the reader.\n Each concept is characterized by a notation consisting of one to four lower-case letters. This notation represents the lithological code used for mapping lithologies and labelling lithostratigraphic units on maps. Note that in the GSWA's scheme, some lithological codes are reserved for use in the Field Observation database (WAROX) or the Explanatory Notes System (ENS) only; the latter are highlighted in the concept definitions and should not be used for field observations. Also note that in ENS codes are supplemented by primary and secondary qualifiers (not covered in this vocabulary); a concerted effort has been made to match WAROX-only codes with those generated via qualifiers in ENS, but in a few instances alphabetical limitations have prevented this (i.e. the code used in WAROX has a slightly different meaning from the same string of letters generated in ENS).\n\nThe approach behind GSWA’s rock classification scheme is documented in Tyler at al. (2004; https://dmpbookshop.eruditetechnologies.com.au/product/the-revised-gswa-rock-classification-scheme.do). Details of GSWA’s code construction for ENS can be found in Riganti et al. (2013; https://dmpbookshop.eruditetechnologies.com.au/product/gswa-code-builder-constructing-and-unravelling-gswa-geological-codes.do) and in a companion application, the GSWA Code Builder (ENS codes only), available from the Department’s Data and Software Centre (https://dasc.demirs.wa.gov.au/).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/alkali-feldspar-granite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:alkali-feldspar-granite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:alkali-feldspar-granite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "alkali feldspar granite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A special term for a variety of granite in which plagioclase is less than 10% of the total feldspar. Now defined modally in QAPF field 2 (Fig. 2.4, p. 22). (Le Maitre et al., 2005, p. 52)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/alkali-feldspar-syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "alkali feldspar syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A special term for a variety of syenite in which plagioclase is less than 10% of the total feldspar. Now defined modally in QAPF field 6 (Fig. 2.4, p. 22). (Le Maitre et al., 2005, p. 52)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting of intermediate plagioclase, commonly with hornblende and often with biotite or augite. Now defined modally in QAPF field 10 (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 73).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granitic-rock",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:granitic-rock"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:granitic-rock"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "granitic rock",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "In GSWA usage, a generic term for an igneous intrusive rock composed chiefly of one or more felsic, light-coloured minerals in its mode and with quartz modal content between 0 and 60%, otherwise uncategorized.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granitic-rock-undivided",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:granitic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:granitic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "granitic rock; undivided",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A demonstrably felsic igneous intrusive rocks, otherwise uncategorized. GSWA usage of this term is restricted to rocks that are partially weathered or are identified using remote sensing imagery, and the use of the related code/notation is limited to GSWA's Explanatory Notes System.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granodiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:granodiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:granodiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "granodiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting essentially of quartz, sodic plagioclase and lesser amounts of alkali feldspar with minor amounts of hornblende and biotite. Now defined modally in QAPF field 4 (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 86)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granophyre",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:granophyre"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:granophyre"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "granophyre",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A porphyritic rock of granite composition in which the groundmass alkali feldspar and quartz are in micrographic intergrowth (Le Maitre et al., 2005, p. 86). A strict and limited usage of the term is encouraged in the GSWA scheme.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/igneous-felsic-intrusive",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A group name for intrusive lithologies composed chiefly of one or more felsic minerals (e.g. containing modal quartz, feldspar and feldspathoids), with modal content of mafic and related minerals (M) less than 90%, where M represents the volume modal percentage of mafic and related minerals (Le Maitre et al., 2005, p. 4). Previous GSWA usage of 'igneous granitic' is not recommended.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Based on the IUGS classification of igneous rocks (Le Maitre et al., 2005) and GSWA usage."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "g",
+        "@type": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gswa-rock-code"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "igneous felsic intrusive",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/felsic",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "igneous granitic",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/alkali-feldspar-granite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/alkali-feldspar-syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granitic-rock"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granitic-rock-undivided"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granodiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/granophyre"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-alkali-feldspar-granite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-alkali-feldspar-syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-granitic-rock-undivided"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-alkali-feldspar-syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-anorthosite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-diorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-monzodiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-monzogabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-monzonite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microdiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microgranodiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzodiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzogabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzogranite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzonite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microsyenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microsyenogranite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microtonalite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microtrondhjemite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzodiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzogabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzogranite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzonite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pegmatite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-alkali-feldspar-syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-anorthosite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-diorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-monzodiorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-monzogabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-monzonite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/syenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/syenogranite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/tonalite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/trondjhemite"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:igneous-felsic-intrusive"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:igneous-felsic-intrusive"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "igneous felsic intrusive",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A group name for intrusive lithologies composed chiefly of one or more felsic minerals (e.g. containing modal quartz, feldspar and feldspathoids), with modal content of mafic and related minerals (M) less than 90%, where M represents the volume modal percentage of mafic and related minerals (Le Maitre et al., 2005, p. 4). Previous GSWA usage of 'igneous granitic' is not recommended.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-alkali-feldspar-granite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-alkali-feldspar-granite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-alkali-feldspar-granite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro alkali feldspar granite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alkali feldspar granite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-alkali-feldspar-syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro alkali feldspar syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alkali feldspar syenite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-granitic-rock-undivided",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-granitic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-granitic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro granitic rock; undivided",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A granitic rock, undivided, with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-alkali-feldspar-syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz alkali feldspar syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz alkali feldspar syenite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-anorthosite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-anorthosite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-anorthosite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz anorthosite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz anorthosite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-diorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-diorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-diorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz diorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz diorite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz gabbro with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-monzodiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-monzodiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-monzodiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz monzodiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz monzodiorite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-monzogabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-monzogabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-monzogabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz monzogabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz monzogabbro with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-monzonite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-monzonite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-monzonite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz monzonite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz monzonite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micro-quartz-syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micro-quartz-syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micro-quartz-syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micro quartz syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A quartz syenite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microdiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microdiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:microdiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microdiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A diorite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microgranodiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microgranodiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:microgranodiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microgranodiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A granodiorite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzodiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micromonzodiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micromonzodiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micromonzodiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A monzodiorite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzogabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micromonzogabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micromonzogabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micromonzogabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A monzogabbro with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzogranite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micromonzogranite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micromonzogranite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micromonzogranite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A monzogranite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/micromonzonite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:micromonzonite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:micromonzonite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "micromonzonite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A monzonite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microsyenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microsyenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:microsyenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microsyenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A syenite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microsyenogranite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microsyenogranite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:microsyenogranite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microsyenogranite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A syenogranite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microtonalite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microtonalite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:microtonalite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microtonalite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A tonalite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/microtrondhjemite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:microtrondhjemite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:microtrondhjemite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "microtrondhjemite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A trondhjemite with a grain size of less than 3 mm. Includes porphyritic varieties.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzodiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:monzodiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:monzodiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "monzodiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A term suggested to replace syenodiorite for an intrusive rock intermediate between monzonite and diorite. Now defined modally in QAPF field 9 (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 113)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzogabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:monzogabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:monzogabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "monzogabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A term suggested to replace syenogabbro for an intrusive rock of gabbroic aspect that contains minor but essential orthoclase as well as calcic plagioclase. Now defined modally in QAPF field 9 (Fig. 2.4, p. 22). (Le Maitre et al., 2005, p. 113)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzogranite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:monzogranite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:monzogranite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "monzogranite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An optional term for a variety of granite in QAPF field 3b (Fig. 2.4, p. 22) having roughly equal amounts of alkali feldspar and plagioclase (Le Maitre et al., 2005, p. 113)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/monzonite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:monzonite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:monzonite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "monzonite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock containing almost equal amounts of plagioclase and alkali feldspar with minor amphibole and/or pyroxene. Now defined modally in QAPF field 8 (Fig. 2.4, p. 22). Adapted from Le Maitre et al. (2005, p. 113).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pegmatite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pegmatite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:pegmatite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "pegmatite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An exceptionally coarse-grained igneous rock, with interlocking crystals, usually found as irregular dykes, lenses, or veins, especially at the margins of batholiths. Most grains are 1 cm or more in diameter. Although pegmatites having gross compositions similar to other rock types are known, their composition is generally that of granite; the composition may be simple or complex and may include rare minerals rich in such elements as lithium, boron, fluorine, niobium, tantalum, uranium, and rare earths. Definition adapted from Glossary of geology (Neuendorf et al., 2011, 5th edition, revised).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-alkali-feldspar-syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-alkali-feldspar-syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz alkali feldspar syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A felsic intrusive rock composed mainly of alkali feldspar, quartz and mafic minerals. Now defined modally in QAPF field 6* (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 134)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-anorthosite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-anorthosite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-anorthosite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz anorthosite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A leucocratic intrusive rock consisting essentially of calcic plagioclase, quartz and with small amounts of pyroxene. Now defined modally in QAPF field 10* (Fig. 2.4, p. 22). The term is synonymous with plagioclasite. (cf. Le Maitre et al., 2005, p. 134)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-diorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-diorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-diorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz diorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock having the composition of diorite but with an appreciable amount of quartz, i.e. between 5 and 20% of the felsic minerals, and defined modally in QAPF field 10* (Fig. 2.4, p. 22). Adapted from Le Maitre et al. (2005, p. 134).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock composed mainly of calcic plagioclase, clinopyroxene and quartz. Now defined modally in QAPF field 10* (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 134)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-monzodiorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-monzodiorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-monzodiorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz monzodiorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting essentially of sodic plagioclase, alkali feldspar, quartz and mafic minerals. Now defined modally in QAPF field 9* (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 135).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-monzogabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-monzogabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-monzogabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz monzogabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting essentially of calcic plagioclase, alkali feldspar, quartz and mafic minerals. Now defined modally in QAPF field 9* (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 135).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-monzonite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-monzonite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-monzonite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz monzonite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting of approximately equal amounts of alkali feldspar and plagioclase and with essential quartz (5–20% of felsic minerals) but not enough to make the rock a granite. Now defined modally in QAPF field 8* (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p.  135)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/quartz-syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:quartz-syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:quartz-syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "quartz syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting essentially of alkali feldspar, quartz and mafic minerals. Now defined modally in QAPF field 7* (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 135)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/syenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:syenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:syenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "syenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting mainly of alkali feldspar with subordinate sodic plagioclase, biotite, pyroxene, amphibole and occasional fayalite. Minor quartz or nepheline may also be present. Now defined modally in QAPF field 7 (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 145)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/syenogranite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:syenogranite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:syenogranite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "syenogranite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An optional term for a variety of granite in QAPF field 3a (Fig. 2.4, p. 22) consisting of alkali feldspar with subordinate plagioclase (Le Maitre et al., 2005, p. 146).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/tonalite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:tonalite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:tonalite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "tonalite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock consisting essentially of quartz and intermediate plagioclase, usually with biotite and amphibole. Now defined modally in QAPF field 5 (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p. 149)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/trondjhemite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:trondjhemite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:trondjhemite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "trondhjemite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A leucocratic variety of tonalite consisting essentially of sodic plagioclase and quartz with minor biotite. Orthoclase is characteristically absent and hornblende is rare. May be used as a synonym for plagiogranite and leucocratic tonalite of QAPF field 5 (p. 23). (Le Maitre et al., 2005, p. 152)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. </skos:definition>
+    <skos:prefLabel xml:lang="en">DEMIRS offices</skos:prefLabel>
+    <skos:historyNote xml:lang="en">Administrative compilation based on Department of Energy, Mines, Industry Regulation and Safety office locations (https://www.dmirs.wa.gov.au/content/administrative-office)</skos:historyNote>
+    <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/accepted"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/dmirs-offices/1.1"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/dmirs-offices/dmirs-regional"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-0"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1"/>
+    <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-13</sdo:dateCreated>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-01</sdo:dateModified>
+    <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:version>1.1</sdo:version>
+    <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/administration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/carlisle"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mineral-house"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mason-bird"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/dmirs-regional">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/collie-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/karratha-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/leonora-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/southern-cross-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/albany-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/broome-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/bunbury-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/geraldton-office"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/perth-core-library"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-0">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-1">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/carlisle">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mineral-house">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/perth-core-library">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/collie-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/karratha-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/leonora-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/southern-cross-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/albany-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/broome-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/bunbury-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mason-bird">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/geraldton-office">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/gswa-offices">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mine-inspectorate-offices-wa">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mining-registrar-offices-wa">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+</rdf:RDF>

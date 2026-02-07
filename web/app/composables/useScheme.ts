@@ -1,4 +1,5 @@
-import { fetchSchemes, fetchConcepts, fetchLabels, getLabel, buildConceptMap, resolveLabel, type Scheme, type Concept, type LabelsIndex } from '~/composables/useVocabData'
+import { fetchSchemes, fetchConcepts, fetchLabels, fetchVocabMetadata, getLabel, buildConceptMap, resolveLabel, type Scheme, type Concept, type LabelsIndex } from '~/composables/useVocabData'
+import { useAnnotatedProperties, type RenderedProperty, type PropertyValue } from '~/utils/annotated-properties'
 
 export interface TreeItem {
   id: string
@@ -8,9 +9,32 @@ export interface TreeItem {
   defaultExpanded?: boolean
 }
 
+/**
+ * Format property values as a simple string for table display
+ */
+function formatPropertyValues(values: PropertyValue[]): string {
+  return values.map(v => {
+    if (v.type === 'literal') {
+      return v.value
+    } else if (v.type === 'iri') {
+      return v.label ?? v.value
+    } else if (v.type === 'nested' && v.nestedProperties) {
+      // Format nested properties as key: value pairs
+      return v.nestedProperties
+        .map(np => `${np.predicateLabel}: ${formatPropertyValues(np.values)}`)
+        .join('; ')
+    }
+    return ''
+  }).join(', ')
+}
+
 export function useScheme(uri: Ref<string>) {
   const { data: schemes } = useAsyncData('schemes', fetchSchemes, { server: false })
   const scheme = computed(() => schemes.value?.find(s => s.iri === uri.value))
+
+  // Get slug for annotated properties lookup
+  const { data: vocabMetadata } = useAsyncData('vocabMetadata', fetchVocabMetadata, { server: false })
+  const slug = computed(() => vocabMetadata.value?.find(v => v.iri === uri.value)?.slug)
 
   const { data: concepts, status } = useAsyncData(
     () => `concepts-${uri.value}`,
@@ -19,6 +43,9 @@ export function useScheme(uri: Ref<string>) {
   )
 
   const { data: labelsIndex } = useAsyncData('labels', fetchLabels, { server: false })
+
+  // Get annotated properties from the anot+ld+json file
+  const { properties: annotatedProperties, status: annotatedStatus } = useAnnotatedProperties(slug, 'conceptScheme')
 
   const conceptMap = computed(() => concepts.value ? buildConceptMap(concepts.value) : new Map())
 
@@ -64,8 +91,20 @@ export function useScheme(uri: Ref<string>) {
       .map(c => buildNode(c))
   })
 
-  // Metadata table
+  // Metadata table - use annotated properties if available, fallback to basic
   const metadataRows = computed(() => {
+    // If we have annotated properties, use them
+    if (annotatedProperties.value?.length) {
+      return annotatedProperties.value.map(prop => ({
+        property: prop.predicateLabel,
+        propertyIri: prop.predicate,
+        propertyDescription: prop.predicateDescription,
+        value: formatPropertyValues(prop.values),
+        values: prop.values, // Keep raw values for rich rendering
+      }))
+    }
+
+    // Fallback to basic scheme metadata
     if (!scheme.value) return []
     const rows: { property: string; value: string }[] = []
 
@@ -94,6 +133,9 @@ export function useScheme(uri: Ref<string>) {
     return rows
   })
 
+  // Re-export annotated properties for components that want rich rendering
+  const richMetadata = computed(() => annotatedProperties.value ?? [])
+
   const breadcrumbs = computed(() => [
     { label: 'Vocabularies', to: '/vocabs' },
     { label: getLabel(scheme.value?.prefLabel) || 'Scheme' }
@@ -108,6 +150,8 @@ export function useScheme(uri: Ref<string>) {
     conceptMap,
     treeItems,
     metadataRows,
+    richMetadata,
+    slug,
     breadcrumbs
   }
 }

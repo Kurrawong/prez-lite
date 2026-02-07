@@ -1,0 +1,256 @@
+iri,broader,prefLabel
+https://linked.data.gov.au/def/earthsci-for/active-seismic,https://linked.data.gov.au/def/earthsci-for/seismic-surveys,active seismic
+https://linked.data.gov.au/def/earthsci-for/airborne-spectral-imaging,https://linked.data.gov.au/def/earthsci-for/spectral-imaging,airborne spectral imaging
+https://linked.data.gov.au/def/earthsci-for/applied-geophysics,https://linked.data.gov.au/def/earthsci-for/geophysics,applied geophysics
+https://linked.data.gov.au/def/earthsci-for/applied-mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy,applied mineralogy
+https://linked.data.gov.au/def/earthsci-for/archeology,"https://linked.data.gov.au/def/earthsci-for/history,-heritage-and-archeology",archeology
+https://linked.data.gov.au/def/earthsci-for/archival-repository-and-related-studies,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,"archival, repository and related studies"
+https://linked.data.gov.au/def/earthsci-for/artificial-intelligence,https://linked.data.gov.au/def/earthsci-for/information-and-computing-sciences,artificial intelligence
+https://linked.data.gov.au/def/earthsci-for/astrobiology,https://linked.data.gov.au/def/earthsci-for/astronomical-sciences,astrobiology
+https://linked.data.gov.au/def/earthsci-for/astronomical-sciences,https://linked.data.gov.au/def/earthsci-for/physical-sciences,astronomical sciences
+https://linked.data.gov.au/def/earthsci-for/atmospheric-sciences,https://linked.data.gov.au/def/earthsci-for/earth-sciences,atmospheric sciences
+https://linked.data.gov.au/def/earthsci-for/basement-geology,https://linked.data.gov.au/def/earthsci-for/geology,basement geology
+https://linked.data.gov.au/def/earthsci-for/basin-analysis,https://linked.data.gov.au/def/earthsci-for/geology,basin analysis
+https://linked.data.gov.au/def/earthsci-for/biogeochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,biogeochemistry
+https://linked.data.gov.au/def/earthsci-for/biogeology,https://linked.data.gov.au/def/earthsci-for/geobiology,biogeology
+https://linked.data.gov.au/def/earthsci-for/biological-sciences,,biological sciences
+https://linked.data.gov.au/def/earthsci-for/biostratigraphic-age-determination,https://linked.data.gov.au/def/earthsci-for/geochronology,biostratigraphic age determination
+https://linked.data.gov.au/def/earthsci-for/biostratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,biostratigraphy
+https://linked.data.gov.au/def/earthsci-for/borehole-logging,https://linked.data.gov.au/def/earthsci-for/logging,borehole logging
+https://linked.data.gov.au/def/earthsci-for/built-environment-and-design,,built environment and design
+https://linked.data.gov.au/def/earthsci-for/carbon-geostorage-geology,https://linked.data.gov.au/def/earthsci-for/geology,carbon geostorage geology
+https://linked.data.gov.au/def/earthsci-for/cartography-and-digital-mapping,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,cartography and digital mapping
+https://linked.data.gov.au/def/earthsci-for/chemostratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,chemostratigraphy
+https://linked.data.gov.au/def/earthsci-for/chronostratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,chronostratigraphy
+https://linked.data.gov.au/def/earthsci-for/climate-change-science,https://linked.data.gov.au/def/earthsci-for/atmospheric-sciences,climate change science
+https://linked.data.gov.au/def/earthsci-for/climatology,https://linked.data.gov.au/def/earthsci-for/climate-change-science,climatology
+https://linked.data.gov.au/def/earthsci-for/coal-geology,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,coal geology
+https://linked.data.gov.au/def/earthsci-for/collection-management,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,collection management
+https://linked.data.gov.au/def/earthsci-for/computational-modelling-and-simulation-in-earth-sciences,https://linked.data.gov.au/def/earthsci-for/geoinformatics,computational modelling and simulation in earth sciences
+https://linked.data.gov.au/def/earthsci-for/computed-tomography,https://linked.data.gov.au/def/earthsci-for/tomography,computed tomography
+https://linked.data.gov.au/def/earthsci-for/conventional-reservoir-geology,https://linked.data.gov.au/def/earthsci-for/petroleum-geology,conventional reservoir geology
+https://linked.data.gov.au/def/earthsci-for/core-and-surface-sample-petrophysics,https://linked.data.gov.au/def/earthsci-for/petrophysics,core and surface sample petrophysics
+https://linked.data.gov.au/def/earthsci-for/core-logging,https://linked.data.gov.au/def/earthsci-for/logging,core logging
+https://linked.data.gov.au/def/earthsci-for/core-spectral-imaging,https://linked.data.gov.au/def/earthsci-for/spectral-imaging,core spectral imaging
+https://linked.data.gov.au/def/earthsci-for/crystallography,https://linked.data.gov.au/def/earthsci-for/mineralogy-and-crystallography,crystallography
+https://linked.data.gov.au/def/earthsci-for/data-mining-and-knowledge-discovery,https://linked.data.gov.au/def/earthsci-for/data-science-and-data-management,data mining and knowledge discovery
+https://linked.data.gov.au/def/earthsci-for/data-science-and-data-management,https://linked.data.gov.au/def/earthsci-for/information-and-computing-sciences,data science and data management
+https://linked.data.gov.au/def/earthsci-for/deep-learning,https://linked.data.gov.au/def/earthsci-for/artificial-intelligence,deep learning
+https://linked.data.gov.au/def/earthsci-for/dendrochronology,https://linked.data.gov.au/def/earthsci-for/geochronology,dendrochronology
+https://linked.data.gov.au/def/earthsci-for/descriptive-mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy,descriptive mineralogy
+https://linked.data.gov.au/def/earthsci-for/digital-heritage,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,digital heritage
+https://linked.data.gov.au/def/earthsci-for/downhole-petrophysics,https://linked.data.gov.au/def/earthsci-for/petrophysics,downhole petrophysics
+https://linked.data.gov.au/def/earthsci-for/drilling,https://linked.data.gov.au/def/earthsci-for/resource-geoscience,drilling
+https://linked.data.gov.au/def/earthsci-for/drilling-engineering,https://linked.data.gov.au/def/earthsci-for/resources-engineering,drilling engineering
+https://linked.data.gov.au/def/earthsci-for/earth-and-space-science-informatics,https://linked.data.gov.au/def/earthsci-for/geoinformatics,Earth and space science informatics
+https://linked.data.gov.au/def/earthsci-for/earth-sciences,,earth sciences
+https://linked.data.gov.au/def/earthsci-for/earth-system-science,,earth system science
+https://linked.data.gov.au/def/earthsci-for/ecology,https://linked.data.gov.au/def/earthsci-for/biological-sciences,ecology
+https://linked.data.gov.au/def/earthsci-for/economic-analysis,https://linked.data.gov.au/def/earthsci-for/resource-geoscience,economic analysis
+https://linked.data.gov.au/def/earthsci-for/electrical-and-electromagnetic-methods-in-geophysics,https://linked.data.gov.au/def/earthsci-for/geophysics,electrical and electromagnetic methods in geophysics
+https://linked.data.gov.au/def/earthsci-for/electrical-geophysics,https://linked.data.gov.au/def/earthsci-for/electrical-and-electromagnetic-methods-in-geophysics,electrical geophysics
+https://linked.data.gov.au/def/earthsci-for/electromagnetic-geophysics,https://linked.data.gov.au/def/earthsci-for/electrical-and-electromagnetic-methods-in-geophysics,electromagnetic geophysics
+https://linked.data.gov.au/def/earthsci-for/elevation,https://linked.data.gov.au/def/earthsci-for/geodesy,elevation
+https://linked.data.gov.au/def/earthsci-for/energy-exploration,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,energy exploration
+https://linked.data.gov.au/def/earthsci-for/energy-geoscience,https://linked.data.gov.au/def/earthsci-for/resource-geoscience,energy geoscience
+https://linked.data.gov.au/def/earthsci-for/engineering,,engineering
+https://linked.data.gov.au/def/earthsci-for/engineering-geology,https://linked.data.gov.au/def/earthsci-for/geology,engineering geology
+https://linked.data.gov.au/def/earthsci-for/environmental-engineering,https://linked.data.gov.au/def/earthsci-for/engineering,environmental engineering
+https://linked.data.gov.au/def/earthsci-for/environmental-geochemistry,https://linked.data.gov.au/def/earthsci-for/environmental-sciences,environmental geochemistry
+https://linked.data.gov.au/def/earthsci-for/environmental-geology,https://linked.data.gov.au/def/earthsci-for/geology,environmental geology
+https://linked.data.gov.au/def/earthsci-for/environmental-management,https://linked.data.gov.au/def/earthsci-for/environmental-sciences,environmental management
+https://linked.data.gov.au/def/earthsci-for/environmental-sciences,,environmental sciences
+https://linked.data.gov.au/def/earthsci-for/evolutionary-paleontology,https://linked.data.gov.au/def/earthsci-for/paleontology,evolutionary paleontology
+https://linked.data.gov.au/def/earthsci-for/experimental-mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy,experimental mineralogy
+https://linked.data.gov.au/def/earthsci-for/experimental-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,experimental petrology
+https://linked.data.gov.au/def/earthsci-for/exploration-geochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,exploration geochemistry
+https://linked.data.gov.au/def/earthsci-for/extraterrestrial-geology,https://linked.data.gov.au/def/earthsci-for/geology,extraterrestrial geology
+https://linked.data.gov.au/def/earthsci-for/fluid-extract-geochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,fluid extract geochemistry
+https://linked.data.gov.au/def/earthsci-for/fluid-inclusion-geochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,fluid inclusion geochemistry
+https://linked.data.gov.au/def/earthsci-for/fluid-inclusion-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,fluid inclusion petrology
+https://linked.data.gov.au/def/earthsci-for/forensic-geology,https://linked.data.gov.au/def/earthsci-for/geology,forensic geology
+https://linked.data.gov.au/def/earthsci-for/functional-morphology,https://linked.data.gov.au/def/earthsci-for/morphological-paleontology,functional morphology
+https://linked.data.gov.au/def/earthsci-for/gemmology,https://linked.data.gov.au/def/earthsci-for/mineralogy-and-crystallography,gemmology
+https://linked.data.gov.au/def/earthsci-for/genetic-mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy,genetic mineralogy
+https://linked.data.gov.au/def/earthsci-for/geoarcheology,https://linked.data.gov.au/def/earthsci-for/archeology,geoarcheology
+https://linked.data.gov.au/def/earthsci-for/geobiology,https://linked.data.gov.au/def/earthsci-for/geology,geobiology
+https://linked.data.gov.au/def/earthsci-for/geochemistry,https://linked.data.gov.au/def/earthsci-for/earth-sciences,geochemistry
+https://linked.data.gov.au/def/earthsci-for/geochemistry-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/geochemistry,geochemistry not elsewhere classified
+https://linked.data.gov.au/def/earthsci-for/geochronology,https://linked.data.gov.au/def/earthsci-for/geology,geochronology
+https://linked.data.gov.au/def/earthsci-for/geoconservation,https://linked.data.gov.au/def/earthsci-for/land-use-and-environmental-planning,geoconservation
+https://linked.data.gov.au/def/earthsci-for/geodesy,https://linked.data.gov.au/def/earthsci-for/geophysics,geodesy
+https://linked.data.gov.au/def/earthsci-for/geodynamics,https://linked.data.gov.au/def/earthsci-for/geophysics,geodynamics
+https://linked.data.gov.au/def/earthsci-for/geoethics,https://linked.data.gov.au/def/earthsci-for/earth-sciences,geoethics
+https://linked.data.gov.au/def/earthsci-for/geographic-information-science,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,Geographic Information Science (GIScience)
+https://linked.data.gov.au/def/earthsci-for/geohazard,https://linked.data.gov.au/def/earthsci-for/geology,geohazard
+https://linked.data.gov.au/def/earthsci-for/geoheritage,"https://linked.data.gov.au/def/earthsci-for/history,-heritage-and-archeology",geoheritage
+https://linked.data.gov.au/def/earthsci-for/geoinformatics,https://linked.data.gov.au/def/earthsci-for/earth-sciences,geoinformatics
+https://linked.data.gov.au/def/earthsci-for/geoinformatics-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/geoinformatics,geoinformatics not elsewhere classified
+https://linked.data.gov.au/def/earthsci-for/geological-mapping,https://linked.data.gov.au/def/earthsci-for/geology,geological mapping
+https://linked.data.gov.au/def/earthsci-for/geological-modelling,https://linked.data.gov.au/def/earthsci-for/geoscience-data-visualisation,geological modelling
+https://linked.data.gov.au/def/earthsci-for/geology,https://linked.data.gov.au/def/earthsci-for/earth-sciences,geology
+https://linked.data.gov.au/def/earthsci-for/geology-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/geology,geology not elsewhere classified
+https://linked.data.gov.au/def/earthsci-for/geomathematics,https://linked.data.gov.au/def/earthsci-for/geology,geomathematics
+https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,https://linked.data.gov.au/def/earthsci-for/engineering,geomatic engineering
+https://linked.data.gov.au/def/earthsci-for/geomatic-engineering-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,geomatic engineering not elsewhere classified
+https://linked.data.gov.au/def/earthsci-for/geomatics,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,geomatics
+https://linked.data.gov.au/def/earthsci-for/geomechanics-and-resources-geotechnical-engineering,https://linked.data.gov.au/def/earthsci-for/resources-engineering,geomechanics and resources geotechnical engineering
+https://linked.data.gov.au/def/earthsci-for/geometallurgy,https://linked.data.gov.au/def/earthsci-for/mining-geology,geometallurgy
+https://linked.data.gov.au/def/earthsci-for/geomorphology-and-earth-surface-processes,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,geomorphology and earth surface processes
+https://linked.data.gov.au/def/earthsci-for/geophysical-fluid-dynamics,https://linked.data.gov.au/def/earthsci-for/geophysics,geophysical fluid dynamics
+https://linked.data.gov.au/def/earthsci-for/geophysical-modelling,https://linked.data.gov.au/def/earthsci-for/geoscience-data-visualisation,geophysical modelling
+https://linked.data.gov.au/def/earthsci-for/geophysics,https://linked.data.gov.au/def/earthsci-for/earth-sciences,geophysics
+https://linked.data.gov.au/def/earthsci-for/geophysics-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/geophysics,geophysics not elsewhere classified
+https://linked.data.gov.au/def/earthsci-for/geoscience-communication,https://linked.data.gov.au/def/earthsci-for/stakeholder-engagement,geoscience communication
+https://linked.data.gov.au/def/earthsci-for/geoscience-data-visualisation,https://linked.data.gov.au/def/earthsci-for/geoinformatics,geoscience data visualisation
+https://linked.data.gov.au/def/earthsci-for/geoscience-education,https://linked.data.gov.au/def/earthsci-for/stakeholder-engagement,geoscience education
+https://linked.data.gov.au/def/earthsci-for/geospatial-information-systems-and-geospatial-data-modelling,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,geospatial information systems and geospatial data modelling
+https://linked.data.gov.au/def/earthsci-for/geostatistics,https://linked.data.gov.au/def/earthsci-for/geomathematics,geostatistics
+https://linked.data.gov.au/def/earthsci-for/geostorage-engineering,https://linked.data.gov.au/def/earthsci-for/resources-engineering,geostorage engineering
+https://linked.data.gov.au/def/earthsci-for/geotechnical-engineering,https://linked.data.gov.au/def/earthsci-for/geology,geotechnical engineering
+https://linked.data.gov.au/def/earthsci-for/geothermal-resource-geology,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,geothermal resource geology
+https://linked.data.gov.au/def/earthsci-for/geothermics,https://linked.data.gov.au/def/earthsci-for/geothermics-and-radiometrics,geothermics
+https://linked.data.gov.au/def/earthsci-for/geothermics-and-radiometrics,https://linked.data.gov.au/def/earthsci-for/geophysics,geothermics and radiometrics
+https://linked.data.gov.au/def/earthsci-for/geotourism,https://linked.data.gov.au/def/earthsci-for/land-use-and-environmental-planning,geotourism
+https://linked.data.gov.au/def/earthsci-for/glaciology,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,glaciology
+https://linked.data.gov.au/def/earthsci-for/grade-control,https://linked.data.gov.au/def/earthsci-for/mining-geology,grade control
+https://linked.data.gov.au/def/earthsci-for/gravimetrics,https://linked.data.gov.au/def/earthsci-for/geophysics,gravimetrics
+https://linked.data.gov.au/def/earthsci-for/gravity-gradiometry,https://linked.data.gov.au/def/earthsci-for/gravimetrics,gravity gradiometry
+https://linked.data.gov.au/def/earthsci-for/ground-spectral-imaging,https://linked.data.gov.au/def/earthsci-for/spectral-imaging,ground spectral imaging
+https://linked.data.gov.au/def/earthsci-for/heritage-and-conservation,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,heritage and conservation
+https://linked.data.gov.au/def/earthsci-for/heritage-collections-and-interpretations,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,heritage collections and interpretations
+https://linked.data.gov.au/def/earthsci-for/heritage-tourism-visitor-and-audience-studies,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,"heritage tourism, visitor and audience studies"
+https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,"https://linked.data.gov.au/def/earthsci-for/history,-heritage-and-archeology","heritage, archive and museum studies"
+"https://linked.data.gov.au/def/earthsci-for/heritage,-archive-and-museum-studies-not-elsewhere-classified",,"heritage, archive and museum studies not elsewhere classified"
+https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,"heritage, archive and museum studies not elsewhere classified"
+https://linked.data.gov.au/def/earthsci-for/historical-geology,https://linked.data.gov.au/def/earthsci-for/geology,historical geology
+https://linked.data.gov.au/def/earthsci-for/history-of-geology,https://linked.data.gov.au/def/earthsci-for/geology,history of geology
+"https://linked.data.gov.au/def/earthsci-for/history,-heritage-and-archeology",,"history, heritage and archeology"
+https://linked.data.gov.au/def/earthsci-for/human-society,,human society
+https://linked.data.gov.au/def/earthsci-for/hydrogeochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,hydrogeochemistry
+https://linked.data.gov.au/def/earthsci-for/hydrogeology,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,hydrogeology
+https://linked.data.gov.au/def/earthsci-for/ichnology,https://linked.data.gov.au/def/earthsci-for/paleontology,ichnology
+https://linked.data.gov.au/def/earthsci-for/igneous-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,igneous petrology
+https://linked.data.gov.au/def/earthsci-for/information-and-computing-sciences,,information and computing sciences
+https://linked.data.gov.au/def/earthsci-for/information-management,https://linked.data.gov.au/def/earthsci-for/information-and-computing-sciences,information management
+https://linked.data.gov.au/def/earthsci-for/information-systems,https://linked.data.gov.au/def/earthsci-for/information-and-computing-sciences,information systems
+https://linked.data.gov.au/def/earthsci-for/inorganic-geochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,inorganic geochemistry
+https://linked.data.gov.au/def/earthsci-for/intangible-heritage,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,intangible heritage
+https://linked.data.gov.au/def/earthsci-for/invertebrate-paleontology,https://linked.data.gov.au/def/earthsci-for/paleontology,invertebrate paleontology
+https://linked.data.gov.au/def/earthsci-for/isotope-age-determination,https://linked.data.gov.au/def/earthsci-for/geochronology,isotope age determination
+https://linked.data.gov.au/def/earthsci-for/isotope-geochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,isotope geochemistry
+https://linked.data.gov.au/def/earthsci-for/laboratory-spectral-imaging,https://linked.data.gov.au/def/earthsci-for/spectral-imaging,laboratory spectral imaging
+https://linked.data.gov.au/def/earthsci-for/land-use-and-environmental-planning,https://linked.data.gov.au/def/earthsci-for/urban-and-regional-planning,land use and environmental planning
+https://linked.data.gov.au/def/earthsci-for/lithogeochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,lithogeochemistry
+https://linked.data.gov.au/def/earthsci-for/lithostratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,lithostratigraphy
+https://linked.data.gov.au/def/earthsci-for/local-geology,https://linked.data.gov.au/def/earthsci-for/geology,local geology
+https://linked.data.gov.au/def/earthsci-for/logging,https://linked.data.gov.au/def/earthsci-for/resource-geoscience,logging
+https://linked.data.gov.au/def/earthsci-for/machine-learning,https://linked.data.gov.au/def/earthsci-for/artificial-intelligence,machine learning
+https://linked.data.gov.au/def/earthsci-for/magnetics,https://linked.data.gov.au/def/earthsci-for/magnetism-and-paleomagnetism,magnetics
+https://linked.data.gov.au/def/earthsci-for/magnetism-and-paleomagnetism,https://linked.data.gov.au/def/earthsci-for/geophysics,magnetism and paleomagnetism
+https://linked.data.gov.au/def/earthsci-for/magnetostratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,magnetostratigraphy
+https://linked.data.gov.au/def/earthsci-for/magnetotellurics,https://linked.data.gov.au/def/earthsci-for/electrical-and-electromagnetic-methods-in-geophysics,magnetotellurics
+https://linked.data.gov.au/def/earthsci-for/marine-geoscience,https://linked.data.gov.au/def/earthsci-for/geology,marine geoscience
+https://linked.data.gov.au/def/earthsci-for/maritime-archeology,https://linked.data.gov.au/def/earthsci-for/archeology,maritime archeology
+https://linked.data.gov.au/def/earthsci-for/materials-conservation,https://linked.data.gov.au/def/earthsci-for/heritage-archive-and-museum-studies,materials conservation
+https://linked.data.gov.au/def/earthsci-for/medical-geology,https://linked.data.gov.au/def/earthsci-for/geology,medical geology
+https://linked.data.gov.au/def/earthsci-for/metamorphic-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,metamorphic petrology
+https://linked.data.gov.au/def/earthsci-for/microbial-paleobiology,https://linked.data.gov.au/def/earthsci-for/paleontology,microbial paleobiology
+https://linked.data.gov.au/def/earthsci-for/micropaleontology,https://linked.data.gov.au/def/earthsci-for/paleontology,micropaleontology
+https://linked.data.gov.au/def/earthsci-for/military-geology,https://linked.data.gov.au/def/earthsci-for/geology,military geology
+https://linked.data.gov.au/def/earthsci-for/mineral-chemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,mineral chemistry
+https://linked.data.gov.au/def/earthsci-for/mineral-exploration-geology,https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,mineral exploration geology
+https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,https://linked.data.gov.au/def/earthsci-for/resource-geoscience,mineral resource geology
+https://linked.data.gov.au/def/earthsci-for/mineral-system-analysis,https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,mineral system analysis
+https://linked.data.gov.au/def/earthsci-for/mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy-and-crystallography,mineralogy
+https://linked.data.gov.au/def/earthsci-for/mineralogy-and-crystallography,https://linked.data.gov.au/def/earthsci-for/geology,mineralogy and crystallography
+https://linked.data.gov.au/def/earthsci-for/mining-geology,https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,mining geology
+https://linked.data.gov.au/def/earthsci-for/molecular-paleontology,https://linked.data.gov.au/def/earthsci-for/paleontology,molecular paleontology
+https://linked.data.gov.au/def/earthsci-for/morphological-paleontology,https://linked.data.gov.au/def/earthsci-for/paleontology,morphological paleontology
+https://linked.data.gov.au/def/earthsci-for/natural-hazards,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,natural hazards
+https://linked.data.gov.au/def/earthsci-for/neotectonics,https://linked.data.gov.au/def/earthsci-for/tectonics,neotectonics
+https://linked.data.gov.au/def/earthsci-for/non-radiogenic-isotope-geochemistry,https://linked.data.gov.au/def/earthsci-for/isotope-geochemistry,non-radiogenic isotope geochemistry
+https://linked.data.gov.au/def/earthsci-for/non-radiogenic-system-age-determination,https://linked.data.gov.au/def/earthsci-for/isotope-age-determination,non-radiogenic system age determination
+https://linked.data.gov.au/def/earthsci-for/oceanography,https://linked.data.gov.au/def/earthsci-for/marine-geoscience,oceanography
+https://linked.data.gov.au/def/earthsci-for/ore-geology,https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,ore geology
+https://linked.data.gov.au/def/earthsci-for/ore-microscopy,https://linked.data.gov.au/def/earthsci-for/petrography,ore microscopy
+https://linked.data.gov.au/def/earthsci-for/ore-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,ore petrology
+https://linked.data.gov.au/def/earthsci-for/organic-geochemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,organic geochemistry
+https://linked.data.gov.au/def/earthsci-for/organic-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,organic petrology
+https://linked.data.gov.au/def/earthsci-for/paleobiogeography,https://linked.data.gov.au/def/earthsci-for/paleontology,paleobiogeography
+https://linked.data.gov.au/def/earthsci-for/paleobotany,https://linked.data.gov.au/def/earthsci-for/paleontology,paleobotany
+https://linked.data.gov.au/def/earthsci-for/paleoclimatology,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,paleoclimatology
+https://linked.data.gov.au/def/earthsci-for/paleoecology,https://linked.data.gov.au/def/earthsci-for/paleontology,paleoecology
+https://linked.data.gov.au/def/earthsci-for/paleoenvironmental-reconstruction,https://linked.data.gov.au/def/earthsci-for/paleoclimatology,paleoenvironmental reconstruction
+https://linked.data.gov.au/def/earthsci-for/paleomagnetic-age-determination,https://linked.data.gov.au/def/earthsci-for/geochronology,paleomagnetic age determination
+https://linked.data.gov.au/def/earthsci-for/paleomagnetism,https://linked.data.gov.au/def/earthsci-for/magnetism-and-paleomagnetism,paleomagnetism
+https://linked.data.gov.au/def/earthsci-for/paleontology,https://linked.data.gov.au/def/earthsci-for/geology,paleontology
+https://linked.data.gov.au/def/earthsci-for/palynology,https://linked.data.gov.au/def/earthsci-for/micropaleontology,palynology
+https://linked.data.gov.au/def/earthsci-for/passive-seismic,https://linked.data.gov.au/def/earthsci-for/seismic-surveys,passive seismic
+https://linked.data.gov.au/def/earthsci-for/pedology-and-pedometrics,https://linked.data.gov.au/def/earthsci-for/soil-sciences,pedology and pedometrics
+https://linked.data.gov.au/def/earthsci-for/petrography,https://linked.data.gov.au/def/earthsci-for/petrology,petrography
+https://linked.data.gov.au/def/earthsci-for/petroleum-and-reservoir-engineering,https://linked.data.gov.au/def/earthsci-for/resources-engineering,petroleum and reservoir engineering
+https://linked.data.gov.au/def/earthsci-for/petroleum-geochemistry,https://linked.data.gov.au/def/earthsci-for/organic-geochemistry,petroleum geochemistry
+https://linked.data.gov.au/def/earthsci-for/petroleum-geology,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,petroleum geology
+https://linked.data.gov.au/def/earthsci-for/petrology,https://linked.data.gov.au/def/earthsci-for/geology,petrology
+https://linked.data.gov.au/def/earthsci-for/petrophysics,https://linked.data.gov.au/def/earthsci-for/petrophysics-and-rock-mechanics,petrophysics
+https://linked.data.gov.au/def/earthsci-for/petrophysics-and-rock-mechanics,https://linked.data.gov.au/def/earthsci-for/geophysics,petrophysics and rock mechanics
+https://linked.data.gov.au/def/earthsci-for/photogrammetry-and-remote-sensing,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,photogrammetry and remote sensing
+https://linked.data.gov.au/def/earthsci-for/phylogenetics,https://linked.data.gov.au/def/earthsci-for/evolutionary-paleontology,phylogenetics
+https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,https://linked.data.gov.au/def/earthsci-for/earth-sciences,physical geography and environmental geoscience
+https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience-not-elsewhere-classified,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,physical geography and environmental geoscience not elsewhere classified
+https://linked.data.gov.au/def/earthsci-for/physical-sciences,,physical sciences
+https://linked.data.gov.au/def/earthsci-for/policy-and-administration,https://linked.data.gov.au/def/earthsci-for/human-society,policy and administration
+https://linked.data.gov.au/def/earthsci-for/prospecting,https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,prospecting
+https://linked.data.gov.au/def/earthsci-for/prospectivity-analysis,https://linked.data.gov.au/def/earthsci-for/mineral-resource-geology,prospectivity analysis
+https://linked.data.gov.au/def/earthsci-for/quantitative-mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy,quantitative mineralogy
+https://linked.data.gov.au/def/earthsci-for/quarry-and-extractive-resource-geology,https://linked.data.gov.au/def/earthsci-for/resource-geoscience,quarry and extractive resource geology
+https://linked.data.gov.au/def/earthsci-for/quaternary-environments,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,quaternary environments
+https://linked.data.gov.au/def/earthsci-for/radiogenic-isotopic-system-age-determination,https://linked.data.gov.au/def/earthsci-for/isotope-age-determination,radiogenic (isotopic) system age determination
+https://linked.data.gov.au/def/earthsci-for/radiogenic-age-determination,https://linked.data.gov.au/def/earthsci-for/geochronology,radiogenic age determination
+https://linked.data.gov.au/def/earthsci-for/radiogenic-isotope-geochemistry,https://linked.data.gov.au/def/earthsci-for/isotope-geochemistry,radiogenic isotope geochemistry
+https://linked.data.gov.au/def/earthsci-for/radiometrics,https://linked.data.gov.au/def/earthsci-for/geothermics-and-radiometrics,radiometrics
+https://linked.data.gov.au/def/earthsci-for/regional-geology,https://linked.data.gov.au/def/earthsci-for/geology,regional geology
+https://linked.data.gov.au/def/earthsci-for/regional-mineralogy,https://linked.data.gov.au/def/earthsci-for/mineralogy,regional mineralogy
+https://linked.data.gov.au/def/earthsci-for/regolith-and-landscape-evolution,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,regolith and landscape evolution
+https://linked.data.gov.au/def/earthsci-for/regolith-chemistry,https://linked.data.gov.au/def/earthsci-for/geochemistry,regolith chemistry
+https://linked.data.gov.au/def/earthsci-for/rehabilitation,https://linked.data.gov.au/def/earthsci-for/environmental-management,rehabilitation
+https://linked.data.gov.au/def/earthsci-for/renewable-energy-geoscience,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,renewable energy geoscience
+https://linked.data.gov.au/def/earthsci-for/reservoir-analysis,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,reservoir analysis
+https://linked.data.gov.au/def/earthsci-for/resource-geoscience,https://linked.data.gov.au/def/earthsci-for/geology,resource geoscience
+https://linked.data.gov.au/def/earthsci-for/resources-engineering,https://linked.data.gov.au/def/earthsci-for/engineering,resources engineering
+https://linked.data.gov.au/def/earthsci-for/rock-mechanics,https://linked.data.gov.au/def/earthsci-for/petrophysics-and-rock-mechanics,rock mechanics
+https://linked.data.gov.au/def/earthsci-for/satellite-spectral-imaging,https://linked.data.gov.au/def/earthsci-for/spectral-imaging,satellite spectral imaging
+https://linked.data.gov.au/def/earthsci-for/satellite-based-positioning,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,satellite-based positioning
+https://linked.data.gov.au/def/earthsci-for/seal-analysis,https://linked.data.gov.au/def/earthsci-for/energy-geoscience,seal analysis
+https://linked.data.gov.au/def/earthsci-for/sedimentary-petrology,https://linked.data.gov.au/def/earthsci-for/petrology,sedimentary petrology
+https://linked.data.gov.au/def/earthsci-for/sedimentology,https://linked.data.gov.au/def/earthsci-for/geology,sedimentology
+https://linked.data.gov.au/def/earthsci-for/seismic-stratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,seismic stratigraphy
+https://linked.data.gov.au/def/earthsci-for/seismic-surveys,https://linked.data.gov.au/def/earthsci-for/seismology-and-seismic-exploration,seismic surveys
+https://linked.data.gov.au/def/earthsci-for/seismic-tomography,https://linked.data.gov.au/def/earthsci-for/tomography,seismic tomography
+https://linked.data.gov.au/def/earthsci-for/seismology-and-seismic-exploration,https://linked.data.gov.au/def/earthsci-for/geophysics,seismology and seismic exploration
+https://linked.data.gov.au/def/earthsci-for/sequence-stratigraphy,https://linked.data.gov.au/def/earthsci-for/stratigraphy,sequence stratigraphy
+https://linked.data.gov.au/def/earthsci-for/soil-chemistry,https://linked.data.gov.au/def/earthsci-for/regolith-chemistry,soil chemistry
+https://linked.data.gov.au/def/earthsci-for/soil-sciences,https://linked.data.gov.au/def/earthsci-for/environmental-sciences,soil sciences
+https://linked.data.gov.au/def/earthsci-for/source-rock-analysis,https://linked.data.gov.au/def/earthsci-for/organic-geochemistry,source-rock analysis
+https://linked.data.gov.au/def/earthsci-for/spectral-imaging,https://linked.data.gov.au/def/earthsci-for/photogrammetry-and-remote-sensing,spectral imaging
+https://linked.data.gov.au/def/earthsci-for/speleology,https://linked.data.gov.au/def/earthsci-for/geology,speleology
+https://linked.data.gov.au/def/earthsci-for/stakeholder-engagement,,stakeholder engagement
+https://linked.data.gov.au/def/earthsci-for/stratigraphy,https://linked.data.gov.au/def/earthsci-for/geology,stratigraphy
+https://linked.data.gov.au/def/earthsci-for/structural-geology,https://linked.data.gov.au/def/earthsci-for/structural-geology-and-tectonics,structural geology
+https://linked.data.gov.au/def/earthsci-for/structural-geology-and-tectonics,https://linked.data.gov.au/def/earthsci-for/geology,structural geology and tectonics
+https://linked.data.gov.au/def/earthsci-for/surface-processes,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,surface processes
+https://linked.data.gov.au/def/earthsci-for/surface-water-hydrology,https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience,surface water hydrology
+https://linked.data.gov.au/def/earthsci-for/surveying,https://linked.data.gov.au/def/earthsci-for/geomatic-engineering,surveying
+https://linked.data.gov.au/def/earthsci-for/taphonomy,https://linked.data.gov.au/def/earthsci-for/paleontology,taphonomy
+https://linked.data.gov.au/def/earthsci-for/taxonomy,https://linked.data.gov.au/def/earthsci-for/evolutionary-paleontology,taxonomy
+https://linked.data.gov.au/def/earthsci-for/tectonics,https://linked.data.gov.au/def/earthsci-for/structural-geology-and-tectonics,tectonics
+https://linked.data.gov.au/def/earthsci-for/tephrochronology,https://linked.data.gov.au/def/earthsci-for/geochronology,tephrochronology
+https://linked.data.gov.au/def/earthsci-for/thermochronology,https://linked.data.gov.au/def/earthsci-for/geochronology,thermochronology
+https://linked.data.gov.au/def/earthsci-for/tomography,https://linked.data.gov.au/def/earthsci-for/geophysics,tomography
+https://linked.data.gov.au/def/earthsci-for/unconventional-reservoir-geology,https://linked.data.gov.au/def/earthsci-for/petroleum-geology,unconventional reservoir geology
+https://linked.data.gov.au/def/earthsci-for/urban-and-regional-planning,https://linked.data.gov.au/def/earthsci-for/built-environment-and-design,urban and regional planning
+https://linked.data.gov.au/def/earthsci-for/urban-geology,https://linked.data.gov.au/def/earthsci-for/environmental-geology,urban geology
+https://linked.data.gov.au/def/earthsci-for/varve-chronology,https://linked.data.gov.au/def/earthsci-for/geochronology,varve chronology
+https://linked.data.gov.au/def/earthsci-for/vertebrate-paleontology,https://linked.data.gov.au/def/earthsci-for/paleontology,vertebrate paleontology
+https://linked.data.gov.au/def/earthsci-for/volcanology,https://linked.data.gov.au/def/earthsci-for/geology,volcanology

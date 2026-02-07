@@ -1,0 +1,67 @@
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prez: <https://prez.dev/> .
+@prefix altr-ext: <http://www.w3.org/ns/dx/connegp/altr-ext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+# =============================================================================
+# GA Vocabularies Catalog Configuration (for prez-lite processing)
+# =============================================================================
+
+<http://pid.geoscience.gov.au/catalogue/ga-vocabs> a prez:Catalog ;
+    dcterms:identifier "catalogue:ga-vocabs"^^xsd:token ;
+    dcterms:title "GA Vocabularies" ;
+    dcterms:description "Geoscience Australia's vocabularies of controlled terms." .
+
+# =============================================================================
+# DataCatalog listing profile
+# =============================================================================
+
+prez:OGCDataCatalogProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
+    dcterms:identifier "catalog"^^xsd:token ;
+    dcterms:title "OGC Data Catalog Profile" ;
+    dcterms:description "A profile for vocabulary listings represented as schema:DataCatalog" ;
+    sh:targetClass schema:DataCatalog ;
+    altr-ext:constrainsClass schema:DataCatalog ;
+
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasResourceFormat "application/ld+json" ;
+    altr-ext:hasResourceFormat "application/rdf+xml" ;
+    altr-ext:hasResourceFormat "text/turtle" ;
+    altr-ext:hasResourceFormat "text/csv" ;
+    altr-ext:hasResourceFormat "application/json" ;
+    altr-ext:hasResourceFormat "text/html" ;
+
+    prez:labelSource schema:name, dcterms:title, rdfs:label ;
+    prez:descriptionSource schema:description, dcterms:description ;
+
+    prez:generateIdentifier true ;
+    prez:generateLink true ;
+    prez:generateMembers true ;
+    prez:generateLabel true ;
+    prez:generateDescription true ;
+    prez:generateProvenance false ;
+    prez:generateFocusNode true .
+
+# =============================================================================
+# Umbrella Profile
+# =============================================================================
+
+prez:GAVocabListProfile a prof:Profile ;
+    dcterms:identifier "ga-vocablist"^^xsd:token ;
+    dcterms:title "GA Vocabularies Listing Profile" ;
+    dcterms:description "Profile configuration for the GA vocabularies listing (catalog)" ;
+    prez:catalog <http://pid.geoscience.gov.au/catalogue/ga-vocabs> ;
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasNodeShape [
+        a sh:NodeShape ;
+        sh:targetClass schema:DataCatalog ;
+        altr-ext:hasDefaultProfile prez:OGCDataCatalogProfile
+    ] .
+

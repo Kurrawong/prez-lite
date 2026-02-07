@@ -1,0 +1,90 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/metamorphic-thermal-regime> a skos:ConceptScheme;
+    skos:definition "Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one)."@en;
+    skos:historyNote "Concepts and definitions adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.\r\nc) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p."@en;
+    skos:prefLabel "Metamorphic thermal regime style"@en;
+    sdo:dateCreated "2023-11-01"^^xsd:date;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateModified "2023-11-01"^^xsd:date;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    owl:versionIRI <https://linked.data.gov.au/def/metamorphic-thermal-regime/1>;
+    owl:versionInfo "1";
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    prov:qualifiedAttribution _:n3-0, _:n3-1;
+    prez:identifier "ns4:metamorphic-thermal-regime";
+    prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:metamorphic-thermal-regime";
+    prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:metamorphic-thermal-regime/items";
+    prez:type prez:FocusNode;
+    prez:label "Metamorphic thermal regime style"@en;
+    prez:description "Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one)."@en.
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+owl:versionInfo prez:label "versionInfo";
+    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
+    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-0 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://www.linkedin.com/in/david-kelsey-425746137/> prez:label "Dave Kelsey".
+_:n3-1 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0009-0003-0007-8342>.
+<https://orcid.org/0009-0003-0007-8342> prez:label "Fawna Korhonen".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
+_:n3-2 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+xsd:date prez:label "date".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+<https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio> a skos:Concept;
+    skos:prefLabel "high T/P"@en.
+<https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio> a skos:Concept;
+    skos:prefLabel "intermediate T/P"@en.
+<https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio> a skos:Concept;
+    skos:prefLabel "low T/P"@en.
+<https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio> a skos:Concept;
+    skos:prefLabel "near-surface ultra-high T/P"@en.
+<https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio> a skos:Concept;
+    skos:prefLabel "ultra-high T/P"@en.

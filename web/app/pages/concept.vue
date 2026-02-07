@@ -14,6 +14,7 @@ const {
   mappings,
   citations,
   breadcrumbs,
+  richMetadata,
   resolveLabelFor
 } = useConcept(uri)
 
@@ -82,31 +83,57 @@ function copyUriToClipboard() {
         </div>
       </div>
 
-      <!-- Two column layout: Relationships left, Properties right -->
-      <div class="grid gap-6 lg:grid-cols-12">
-        <!-- Left column: Relationships -->
-        <div class="lg:col-span-5 space-y-6">
-          <!-- In Scheme -->
-          <UCard v-if="scheme">
-            <template #header>
-              <h2 class="font-semibold flex items-center gap-2">
-                <UIcon name="i-heroicons-folder" />
-                In Scheme
-              </h2>
-            </template>
+      <!-- In Scheme - full width row -->
+      <div v-if="scheme" class="mb-6">
+        <NuxtLink
+          :to="{ path: '/scheme', query: { uri: scheme.iri } }"
+          class="flex items-center gap-3 p-4 rounded-lg border border-default bg-muted/30 hover:bg-muted/50 transition-colors"
+        >
+          <UIcon name="i-heroicons-book-open" class="text-primary size-5 shrink-0" />
+          <div class="min-w-0">
+            <div class="text-xs text-muted uppercase tracking-wide mb-0.5">In Scheme</div>
+            <div class="font-medium">{{ getLabel(scheme.prefLabel) }}</div>
+          </div>
+          <UIcon name="i-heroicons-chevron-right" class="size-4 text-muted ml-auto shrink-0" />
+        </NuxtLink>
+      </div>
 
-            <NuxtLink
-              :to="{ path: '/scheme', query: { uri: scheme.iri } }"
-              class="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50"
-            >
-              <UIcon name="i-heroicons-book-open" class="text-primary size-5" />
-              <div>
-                <div class="font-medium">{{ getLabel(scheme.prefLabel) }}</div>
-                <div class="text-sm text-muted truncate">{{ scheme.iri }}</div>
+      <!-- Properties - full width -->
+      <UCard class="mb-6">
+        <template #header>
+          <h2 class="font-semibold flex items-center gap-2">
+            <UIcon name="i-heroicons-document-text" />
+            Properties
+          </h2>
+        </template>
+
+        <!-- Rich metadata from annotated JSON-LD -->
+        <RichMetadataTable v-if="richMetadata.length" :properties="richMetadata" />
+
+        <!-- Fallback to simple display -->
+        <div v-else class="divide-y divide-default">
+          <div v-for="prop in coreProperties" :key="prop.property" class="py-3 first:pt-0 last:pb-0">
+            <div class="font-medium text-sm text-muted mb-1">{{ prop.property }}</div>
+            <div class="space-y-1">
+              <div
+                v-for="(val, idx) in prop.values"
+                :key="idx"
+                class="flex items-center gap-2"
+              >
+                <span>{{ val.value }}</span>
+                <UBadge v-if="val.lang" color="neutral" variant="subtle" size="xs">
+                  {{ val.lang }}
+                </UBadge>
               </div>
-            </NuxtLink>
-          </UCard>
+            </div>
+          </div>
+        </div>
+      </UCard>
 
+      <!-- Two column layout for Relationships and other content -->
+      <div class="grid gap-6 lg:grid-cols-2">
+        <!-- Left column: Relationships -->
+        <div class="space-y-6">
           <!-- Relationships -->
           <UCard v-for="rel in relationships" :key="rel.title">
             <template #header>
@@ -149,39 +176,10 @@ function copyUriToClipboard() {
           </UCard>
         </div>
 
-        <!-- Right column: Properties -->
-        <div class="lg:col-span-7 space-y-6">
-          <!-- Core Properties -->
-          <UCard>
-            <template #header>
-              <h2 class="font-semibold flex items-center gap-2">
-                <UIcon name="i-heroicons-document-text" />
-                Properties
-              </h2>
-            </template>
-
-            <div class="divide-y divide-default">
-              <div v-for="prop in coreProperties" :key="prop.property" class="py-3 first:pt-0 last:pb-0">
-                <div class="font-medium text-sm text-muted mb-1">{{ prop.property }}</div>
-                <div class="space-y-1">
-                  <div
-                    v-for="(val, idx) in prop.values"
-                    :key="idx"
-                    class="flex items-center gap-2"
-                  >
-                    <span>{{ val.value }}</span>
-                    <UBadge v-if="val.lang" color="neutral" variant="subtle" size="xs">
-                      {{ val.lang }}
-                    </UBadge>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </UCard>
-
+        <!-- Right column: Mappings and Citations -->
+        <div class="space-y-6">
           <!-- Mappings -->
-          <div v-if="mappings.length" class="space-y-4">
-            <h2 class="text-lg font-semibold">Mappings</h2>
+          <template v-if="mappings.length">
             <UCard v-for="mapping in mappings" :key="mapping.title">
               <template #header>
                 <div class="flex items-center gap-2">
@@ -203,7 +201,7 @@ function copyUriToClipboard() {
                 </li>
               </ul>
             </UCard>
-          </div>
+          </template>
 
           <!-- Citations -->
           <UCard v-if="citations.length">

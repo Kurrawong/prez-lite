@@ -3,6 +3,8 @@
  * Fetches export manifest and provides download helpers
  */
 
+import { fetchVocabMetadata, type VocabMetadata } from '~/composables/useVocabData'
+
 export interface VocabExport {
   slug: string
   iri: string
@@ -14,29 +16,32 @@ export interface VocabExport {
   formats: string[]
 }
 
-export interface ExportManifest {
-  generated: string
-  count: number
-  vocabs: VocabExport[]
-}
-
 export interface ExportFormat {
   id: string
   label: string
   description: string
   extension: string
+  filename: (slug: string) => string
   mimeType: string
 }
 
 export const EXPORT_FORMATS: ExportFormat[] = [
-  { id: 'ttl', label: 'Turtle', description: 'RDF Turtle format', extension: 'ttl', mimeType: 'text/turtle' },
-  { id: 'json', label: 'JSON', description: 'Simplified JSON for web apps', extension: 'json', mimeType: 'application/json' },
-  { id: 'jsonld', label: 'JSON-LD', description: 'JSON for Linked Data', extension: 'jsonld', mimeType: 'application/ld+json' },
-  { id: 'rdf', label: 'RDF/XML', description: 'RDF in XML format', extension: 'rdf', mimeType: 'application/rdf+xml' },
-  { id: 'csv', label: 'CSV', description: 'Comma-separated values', extension: 'csv', mimeType: 'text/csv' }
+  // RDF Formats
+  { id: 'ttl', label: 'Turtle', description: 'RDF Turtle - human-readable linked data format', extension: 'ttl', filename: (s) => `${s}-turtle.ttl`, mimeType: 'text/turtle' },
+  { id: 'jsonld', label: 'JSON-LD', description: 'JSON for Linked Data - RDF in JSON syntax', extension: 'jsonld', filename: (s) => `${s}-json+ld.json`, mimeType: 'application/ld+json' },
+  { id: 'rdf', label: 'RDF/XML', description: 'RDF in XML format - for legacy systems', extension: 'rdf', filename: (s) => `${s}-rdf.xml`, mimeType: 'application/rdf+xml' },
+
+  // Annotated variants
+  { id: 'ttl-anot', label: 'Turtle (Annotated)', description: 'Turtle with resolved labels for all IRIs', extension: 'ttl', filename: (s) => `${s}-anot+turtle.ttl`, mimeType: 'text/turtle' },
+  { id: 'jsonld-anot', label: 'JSON-LD (Annotated)', description: 'JSON-LD with resolved labels for all IRIs', extension: 'json', filename: (s) => `${s}-anot+ld+json.json`, mimeType: 'application/ld+json' },
+
+  // Web/App formats
+  { id: 'json', label: 'JSON', description: 'Simple JSON list for web apps and components', extension: 'json', filename: (s) => `${s}-concepts.json`, mimeType: 'application/json' },
+  { id: 'csv', label: 'CSV', description: 'Spreadsheet-compatible tabular format', extension: 'csv', filename: (s) => `${s}-concepts.csv`, mimeType: 'text/csv' },
+  { id: 'html', label: 'HTML', description: 'Standalone HTML page for viewing', extension: 'html', filename: (s) => `${s}-page.html`, mimeType: 'text/html' }
 ]
 
-export type ComponentType = 'select' | 'tree' | 'list' | 'autocomplete'
+export type ComponentType = 'select' | 'list'
 
 export interface ComponentInfo {
   id: ComponentType
@@ -46,25 +51,37 @@ export interface ComponentInfo {
 }
 
 export const COMPONENT_TYPES: ComponentInfo[] = [
-  { id: 'select', tag: 'prez-vocab-select', label: 'Select', description: 'Dropdown select menu' },
-  { id: 'tree', tag: 'prez-vocab-tree', label: 'Tree', description: 'Hierarchical tree view' },
-  { id: 'list', tag: 'prez-vocab-list', label: 'List', description: 'Flat searchable list' },
-  { id: 'autocomplete', tag: 'prez-vocab-autocomplete', label: 'Autocomplete', description: 'Typeahead search' }
+  { id: 'list', tag: 'prez-list', label: 'List', description: 'Interactive vocabulary list - supports tree, dropdown, radio, and table modes' }
 ]
 
-async function fetchManifest(): Promise<ExportManifest> {
+// Convert VocabMetadata to VocabExport for backwards compatibility
+function metadataToExport(meta: VocabMetadata): VocabExport {
+  return {
+    slug: meta.slug,
+    iri: meta.iri,
+    label: meta.prefLabel,
+    description: meta.definition || '',
+    conceptCount: meta.conceptCount,
+    modified: meta.modified,
+    version: meta.version,
+    formats: meta.formats || ['ttl', 'json', 'jsonld', 'rdf', 'csv']
+  }
+}
+
+async function fetchVocabs(): Promise<VocabExport[]> {
   try {
-    return await $fetch<ExportManifest>('/export/vocabs/index.json')
+    const metadata = await fetchVocabMetadata()
+    return metadata.map(metadataToExport)
   } catch {
-    console.warn('[prez-lite] No export manifest found. Run build:export to generate.')
-    return { generated: '', count: 0, vocabs: [] }
+    console.warn('[prez-lite] No vocabulary metadata found.')
+    return []
   }
 }
 
 export function useShare() {
-  const { data: manifest, status } = useLazyAsyncData('export-manifest', fetchManifest, { server: false })
+  const { data: vocabList, status } = useLazyAsyncData('export-vocabs', fetchVocabs, { server: false })
 
-  const vocabs = computed(() => manifest.value?.vocabs || [])
+  const vocabs = computed(() => vocabList.value || [])
 
   function getVocab(slug: string): VocabExport | undefined {
     return vocabs.value.find(v => v.slug === slug)
@@ -79,8 +96,13 @@ export function useShare() {
     return vocab ? `/share/${vocab.slug}` : undefined
   }
 
-  function getDownloadUrl(slug: string, format: string): string {
-    return `/export/vocabs/${slug}/${slug}.${format}`
+  function getDownloadUrl(slug: string, formatId: string): string {
+    const format = EXPORT_FORMATS.find(f => f.id === formatId || f.extension === formatId)
+    if (format) {
+      return `/export/${slug}/${format.filename(slug)}`
+    }
+    // Fallback for unknown formats
+    return `/export/${slug}/${slug}-${formatId}`
   }
 
   function getFullDownloadUrl(slug: string, format: string): string {
@@ -89,7 +111,6 @@ export function useShare() {
   }
 
   return {
-    manifest,
     vocabs,
     status,
     getVocab,

@@ -1,0 +1,74 @@
+[
+    {
+      "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod",
+      "@type": [
+        "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+      ],
+      "http://purl.org/dc/terms/created": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#date",
+          "@value": "2022-08-09"
+        }
+      ],
+      "http://purl.org/dc/terms/creator": [
+        {
+          "@id": "https://linked.data.gov.au/org/ga"
+        }
+      ],
+      "http://purl.org/dc/terms/identifier": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#token",
+          "@value": "BoreholesSamplingMethod"
+        }
+      ],
+      "http://purl.org/dc/terms/modified": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#date",
+          "@value": "2022-08-09"
+        }
+      ],
+      "http://purl.org/dc/terms/provenance": [
+        {
+          "@language": "en",
+          "@value": "Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)"
+        }
+      ],
+      "http://purl.org/dc/terms/publisher": [
+        {
+          "@id": "https://linked.data.gov.au/org/ga"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+        {
+          "@id": "https://pid.geoscience.gov.au/dataset/ga/148553"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#versionInfo": [
+        {
+          "@value": "1"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@language": "en",
+          "@value": "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@language": "en",
+          "@value": "General Geology - Sampling Method"
+        }
+      ],
+      "http://www.w3.org/ns/dcat#contactPoint": [
+        {
+          "@value": "Team Lead - Information Services; Energy, Minerals and Groundwater Division"
+        }
+      ],
+      "https://schema.org/status": [
+        {
+          "@id": "https://linked.data.gov.au/def/reg-statuses/experimental"
+        }
+      ]
+    }
+  ]

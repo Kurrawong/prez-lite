@@ -1,0 +1,92 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts> a skos:ConceptScheme;
+    skos:definition "The State of Western Australia is divided into various Mineral Fields that represent administrative land subdivisions under which mining is administered in the State according to Section 16 of the Mining Act 1978. Some mineral fields are further subdivided into Districts. Mineral field and district boundaries can be changed by proclamation under the Mining Act 1978 — the listing provided is current as of June 2023. Each mineral field or district is characterized by a two-digit prefix code used for map representations and tenement indexing. Most districts and some mineral fields are also characterized by an upper case letter code: these are historical identifiers currently not applied, but are relevant for legacy mining tenement information. Field and district proclamations date back as far as the late 1890s; individual entities may have undergone several alterations of boundaries and even been changed from district to field (NB the gazetted date provided usually refers to the first entity). In gold-endowed areas, mineral fields were originally classified as 'Goldfields', but this categorisation stopped with the ratification of the Mining Act 1978. In terms of management, tenements under each mineral field are administered under a designated Mining Registrar (here expressed as collections). Information for this vocabulary was sourced from the Tengraph (Web) Help (https://www.dmp.wa.gov.au/tgwhelp/mineral-fields-and-district-codes-637.aspx), the Department of Mines, Industry Regulation and Safety (https://dmp.wa.gov.au/History-and-locations-of-the-12531.aspx) and a dedicated Wikipedia (https://en.wikipedia.org/wiki/Mineral_fields_of_Western_Australia) webpages, as well as the consolidated printed version of the 1904 Act and individual Western Australian Government Gazettes."@en;
+    skos:historyNote "Mineral Fields and Districts are administrative land subdivisions under which mining and tenements are administered in the State of Western Australia, based on Section 16 of the Mining Act 1978."@en;
+    skos:prefLabel "Western Australian mineral fields and districts"@en;
+    sdo:dateCreated "2023-09-12"^^xsd:date;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateModified "2023-09-12"^^xsd:date;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    owl:versionIRI <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/1>;
+    owl:versionInfo "1";
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    skos:hasTopConcept <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/broadarrow-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/dundas-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/ashburton-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/gascoyne-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kimberley-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/westkimberley-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/westpilbara-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/peakhill-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yalgoo-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/collieriver-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/greenbushes-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northampton-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/phillipsriver-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/southwest-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/warburton-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yilgarn-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/coolgardie-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastcoolgardie-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastmurchison-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmargaret-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/murchison-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northcoolgardie-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northeastcoolgardie-mineral-field>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/pilbara-mineral-field>;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/administration>;
+    prov:qualifiedAttribution _:n3-0, _:n3-1.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/broadarrow-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/dundas-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/ashburton-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/gascoyne-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kimberley-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/westkimberley-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/westpilbara-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/peakhill-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yalgoo-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/collieriver-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/greenbushes-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northampton-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/phillipsriver-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/southwest-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/warburton-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yilgarn-mineral-field> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/coolgardie-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/coolgardie-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kunnanalling-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastcoolgardie-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/bulong-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastcoolgardie-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastmurchison-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/lawlers-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/wiluna-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/blackrange-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmargaret-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmalcolm-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmargaret-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmorgan-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/murchison-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/meekatharra-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/cue-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/daydawn-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmagnet-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northcoolgardie-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/menzies-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/ularring-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yerilla-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/niagara-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northeastcoolgardie-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kanowna-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kurnalpi-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/pilbara-mineral-field> skos:narrower <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/marblebar-mineral-district>, <https://linked.data.gov.au/def/wa-mineral-fields-and-districts/nullagine-mineral-district>;
+    skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+_:n3-0 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0009-0002-5543-2719>.
+_:n3-1 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/bulong-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastcoolgardie-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kanowna-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kurnalpi-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/menzies-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/ularring-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yerilla-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/lawlers-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmalcolm-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmargaret-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmorgan-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/niagara-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/marblebar-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/nullagine-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/meekatharra-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/wiluna-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/blackrange-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/cue-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/daydawn-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmagnet-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/coolgardie-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kunnanalling-mineral-district> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kalgoorlie-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/karratha-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/leonora-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/marblebar-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/meekatharra-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mountmagnet-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/perth-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.
+<https://linked.data.gov.au/def/wa-mineral-fields-and-districts/southern-cross-mining-registrar> skos:inScheme <https://linked.data.gov.au/def/wa-mineral-fields-and-districts>.

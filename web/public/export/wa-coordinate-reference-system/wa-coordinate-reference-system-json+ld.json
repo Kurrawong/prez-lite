@@ -1,0 +1,617 @@
+[
+    {
+        "@id": "_:n3-0",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0009-0002-5543-2719"
+            }
+        ]
+    },
+    {
+        "@id": "_:n3-1",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0000-0002-7645-5031"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "The coordinate reference systems (geographic and projected) used and referred to within Western Australia. It includes historical and current reference systems, Universal Transverse Mercator (UTM) zones, and, where applicable, notations based on the EPSG registry (https://epsg.io/). Some concepts are included to account for legacy data/maps with limited information.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#historyNote": [
+            {
+                "@value": "Historical and current coordinate references systems used in maps and publications by the Geological Survey of Western Australia since its inception.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Western Australian coordinate reference systems",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2023-09-13",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2023-09-13",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionIRI": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/1"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionInfo": [
+            {
+                "@value": "1"
+            }
+        ],
+        "http://purl.org/linked-data/registry#status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd66"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd84"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda2020"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda94"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/unknown"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm"
+            }
+        ],
+        "https://schema.org/keywords": [
+            {
+                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping"
+            }
+        ],
+        "http://www.w3.org/ns/prov#qualifiedAttribution": [
+            {
+                "@id": "_:n3-0"
+            },
+            {
+                "@id": "_:n3-1"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z1"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z2"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z3"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z4"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z1",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z2",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z3",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z4",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd66",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd84",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z49"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z50"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z51"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z52"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z49",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z50",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z51",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z52",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z49"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z50"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z51"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z52"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z49",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z50",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z51",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z52",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda2020",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda94",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/geographic",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-known"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-unknown"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-known",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-unknown",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z49"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z50"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z51"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z52"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z49",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z50",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z51",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z52",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z49"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z50"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z51"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z52"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z49",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z50",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z51",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z52",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/projected",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/unknown",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wa-utm-zones",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z49s"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z50s"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z51s"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z52s"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z49s",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z50s",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z51s",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z52s",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+            }
+        ]
+    }
+]

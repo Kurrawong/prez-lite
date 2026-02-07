@@ -1,0 +1,726 @@
+[
+  {
+    "@id": "_:n3-78",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/earth-science-data-category/geochemistry",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geochemistry"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the chemistry of the Earth and within solid bodies of the solar system, including the distribution, circulation and abundance of elements (and their ions and isotopes), molecules, minerals, rocks and fluids. Source Schulmberger Oilfield Glossary"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020",
+    "https://prez.dev/label": [
+      {
+        "@value": "1297.0 ANZSRC - Australian and New Zealand Standard Research Classification, 2020: Fields of Research (FoR)"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/3703",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geochemistry"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This group covers geochemistry."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth science fields of research",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/biogeochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:biogeochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:biogeochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "biogeochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A highly interdisciplinary field involving the integration of biology, geology and chemistry, and encompassing the study of the chemical, physical, geological and biological processes and reactions that govern the composition of the natural environment (including the biosphere, hydrosphere, atmosphere, pedosphere and the lithosphere).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/exploration-geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:exploration-geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:exploration-geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "exploration geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Geochemistry that is specifically focused on identification of mineralization, its dispersion haloes, alteration patterns and distribution. It specifically focuses on the enrichment or depletion of certain elements (including pathfinders) having a genetic affinity to the target mineralization. Exploration geochemistry is typical of exploration stages aiming at locating mineral deposits but also applies to the near-mine exploration conducted to further locate and delineate resources.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/fluid-extract-geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:fluid-extract-geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:fluid-extract-geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "fluid extract geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Analysis of the chemical and physical properties of fluids extracted from rocks and geological materials in the subsurface.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/fluid-inclusion-geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:fluid-inclusion-geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:fluid-inclusion-geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "fluid inclusion geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the composition, stratigraphy and petrology of liquids and/or gases contained within tiny (usually in the order of micrometres) cavities formed either by the entrapment in crystal irregularities of fluids from which the mineral/rock crystallized, or by any process after the crystallization of the host mineral is essentially complete (e.g. healing of fractures within a crystal).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geochemistry",
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/3703"
+      },
+      {
+        "@id": "http://linked.data.gov.au/def/earth-science-data-category/geochemistry"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "3703",
+        "@type": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/earth-sciences"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The study of the distribution and amounts of the chemical elements in minerals, ores, rocks, soils, water, the atmosphere on Earth and within solid bodies of the solar system, including the distribution, circulation and abundance of elements (and their ions and isotopes), molecules, minerals, rocks and fluids.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "From the Fields of Research vocabulary from the Australian and New Zealand Standard Research Classification (ANZSRC, 2020). Definition adapted from Glossary of geology (5th edition, revised; Neuendorf et al., 2011)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/geochemistry",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      },
+      {
+        "@value": "https://glossary.slb.com/en/terms/g/geochemistry",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/biogeochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/exploration-geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/fluid-extract-geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/fluid-inclusion-geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geochemistry-not-elsewhere-classified"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/hydrogeochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/inorganic-geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/lithogeochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/mineral-chemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/isotope-geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/organic-geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/regolith-chemistry"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geochemistry"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the distribution and amounts of the chemical elements in minerals, ores, rocks, soils, water, the atmosphere on Earth and within solid bodies of the solar system, including the distribution, circulation and abundance of elements (and their ions and isotopes), molecules, minerals, rocks and fluids.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geochemistry-not-elsewhere-classified",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geochemistry-not-elsewhere-classified"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geochemistry-not-elsewhere-classified"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geochemistry not elsewhere classified",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Geochemical data and information not otherwise described by other sub-categories of geochemistry.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/hydrogeochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hydrogeochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:hydrogeochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hydrogeochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The chemistry of ground and surface waters, particularly the relationships between the chemical characteristics and quality of waters and the areal and regional geology. On a broader scale, the science that uses the tools and principles of chemistry to explain the mechanisms behind major geological systems such as the Earth's crust and its oceans.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/inorganic-geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:inorganic-geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:inorganic-geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "inorganic geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The broader field for the study of the chemistry of inorganic rocks, minerals, and other Earth materials that are not currently or once living.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/isotope-geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:isotope-geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:isotope-geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "isotope geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The determination of the relative and absolute concentrations of the elements and their isotopes in the Earth and on Earth's surface.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/lithogeochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lithogeochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:lithogeochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lithogeochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the complete chemical composition of whole rocks, considering the main and trace elements, but also isotopes.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/mineral-chemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mineral-chemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:mineral-chemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mineral chemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the chemical composition of minerals, i.e. of naturally occurring inorganic element or compound with a defined chemical composition and crystal structure, i.e. having a periodically repeating arrangement of atoms and characteristic chemical composition, resulting in distinctive physical properties. It includes the analysis of the major, minor, trace and isotope elemental composition of a mineral, as well as the bonding of these elements in the mineral’s crystal structure.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/organic-geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:organic-geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:organic-geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "organic geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the role of processes and compounds that are derived from living or once-living organisms, i.e. the study of the transformation undergone by organic matter of all types, whether of biological or man-made origin, in the Earth System. The transformations involved vary from those mediated by biological processes involved in the production of living tissue and the operation of food-chains, to those controlled by temperature and pressure at depth in the crust. Photochemical processes in the atmosphere and hydrosphere can also be important in controlling the environmental behaviour of some organic compounds.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/regolith-chemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:regolith-chemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:regolith-chemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "regolith chemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the chemical composition of materials and components making up the surficial, weathered, and usually unconsolidated layer that nearly everywhere forms the surface of the land and overlies or covers the bedrock. Regolith includes rock debris of all kinds, volcanic ash, glacial drift, alluvium, loess and eolian deposits, vegetal accumulations, and soil.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+iri,broader,prefLabel
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/allotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,allotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/cited,https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status,cited
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,cotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-IMA,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral,cotype - IMA
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/described-and-published,https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status,described and published
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/epitype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,epitype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/ex-type-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,ex-type - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/figured,https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status,figured
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/formally-identified,https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen,formally identified
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/hapantotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,hapantotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,holotype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,holotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-IMA,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral,holotype - IMA
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/informally-identified,https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen,informally identified
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoepitype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,isoepitype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/isolectotype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,isolectotype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoneotype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,isoneotype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/isonym-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,isonym - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/isosyntype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,isosyntype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/isotype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,isotype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,lectotype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,lectotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,neotype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,neotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-IMA,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral,neotype - IMA
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen,,non-type specimen
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/paralectotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,paralectotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,paratype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,paratype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/reference-sample-specimen,,reference sample/specimen
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status,,specimen publication status
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,syntype - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,syntype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/topotype-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,topotype - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-series-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,type series - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil,,type specimen - fossil
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil,type specimen - ICN or PICMN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN,https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil,type specimen - ICZN
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-meteorite,,type specimen - meteorite
+https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral,,type specimen - mineral

@@ -51,6 +51,10 @@ const navLinks = computed(() =>
       <template #right>
         <UColorModeButton variant="ghost" />
       </template>
+
+      <template #body>
+        <UNavigationMenu :items="navLinks" orientation="vertical" class="-mx-2.5" />
+      </template>
     </UHeader>
 
     <UMain class="min-h-[calc(100vh-12rem)]">

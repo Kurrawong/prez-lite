@@ -1,0 +1,620 @@
+[
+  {
+    "@id": "_:n3-196",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/earth-science-data-category/petrology",
+    "https://prez.dev/label": [
+      {
+        "@value": "Petrology"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of geology that studies rocks and the conditions under which they form. Sometimes synonymous with lithology that studies the macroscopic hand-sample or outcrop-scale description of rocks. Source: Wikipedia"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broadMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020",
+    "https://prez.dev/label": [
+      {
+        "@value": "1297.0 ANZSRC - Australian and New Zealand Standard Research Classification, 2020: Fields of Research (FoR)"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370503",
+    "https://prez.dev/label": [
+      {
+        "@value": "Igneous and metamorphic petrology"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth science fields of research",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/experimental-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:experimental-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:experimental-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "experimental petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A discipline that employs high-pressure, high-temperature apparatus to investigate the geochemistry and phase relations of natural or synthetic materials at elevated pressures and temperatures. Experiments are particularly useful for investigating rocks of the lower crust and upper mantle that rarely survive the journey to the surface in pristine condition. They are also one of the prime sources of information about completely inaccessible rocks, such as those in the Earth's lower mantle and in the mantles of the other terrestrial planets and the Moon. The work of experimental petrologists has laid a foundation on which modern understanding of igneous and metamorphic processes has been built.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/fluid-inclusion-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:fluid-inclusion-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:fluid-inclusion-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "fluid inclusion petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of tiny encapsulations of fluids that trap oil, gas, water and solid phases in minerals and rocks to determine parameters such as temperature, pressure, salinity, density and depth of trapping — thereby providing direct information about the conditions of formation. In the case of hydrocarbon exploration, these studies are conducted to assess the fluid history of the rock/sedimentary basin and the prevailing thermal conditions, to determine whether oil and gas are likely to be found at a particular location, as well as the source and type of hydrocarbon present.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/igneous-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:igneous-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:igneous-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "igneous petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of petrology that describes the composition, characteristics, textures, occurrence and origin of igneous rocks, i.e. those that are formed from magma. It relies heavily on the use of chemistry, chemical methods, and phase diagrams.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/metamorphic-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:metamorphic-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:metamorphic-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "metamorphic petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of petrology that describes the composition, characteristics, textures, occurrence and origin of metamorphic rocks, i.e. those derived from the transformation of existing rocks into new types. It relies heavily on the use of chemistry, chemical methods, and phase diagrams.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/ore-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ore-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:ore-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "ore petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of petrology that describes the composition, characteristics, textures, occurrence and origin of ore minerals, i.e. of naturally occurring minerals that contain valuable elements or minerals in sufficient quantities to be economically mined and processed for their desired metal or mineral content.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/organic-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:organic-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:organic-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "organic petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Organic petrology involves the study of organic matter (OM) in rocks, including its origin and thermal maturity due to burial within the Earth's crust.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/petrography",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:petrography"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:petrography"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "petrography",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "That branch of geology dealing with the description and systematic classification of rocks and especially by means of microscopic examination of thin sections. Petrography is more restricted in scope than petrology and overlaps considerably with mineralogy.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/petrology",
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "http://linked.data.gov.au/def/earth-science-data-category/petrology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "370503",
+        "@type": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "That branch of geology dealing with the origin, occurrence, structure, and history of rocks, including the conditions under which they form. Petrology is broader in scope than petrography.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "From the Fields of Research vocabulary from the Australian and New Zealand Standard Research Classification (ANZSRC, 2020). Definition adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "petrology",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/petrology",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broadMatch": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370503"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/experimental-petrology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/fluid-inclusion-petrology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/igneous-petrology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/metamorphic-petrology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/petrography"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/ore-petrology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/organic-petrology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/sedimentary-petrology"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:petrology"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "That branch of geology dealing with the origin, occurrence, structure, and history of rocks, including the conditions under which they form. Petrology is broader in scope than petrography.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/sedimentary-petrology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sedimentary-petrology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:sedimentary-petrology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sedimentary petrology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the composition, characteristics, occurrence, and origin of sediments and sedimentary rocks.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

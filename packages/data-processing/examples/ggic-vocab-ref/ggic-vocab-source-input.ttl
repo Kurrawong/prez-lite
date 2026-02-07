@@ -1,0 +1,979 @@
+PREFIX : <http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/>
+PREFIX astatus: <https://linked.data.gov.au/def/reg-statuses/>
+PREFIX cs: <http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status>
+PREFIX lhk: <http://resource.geoscience.gov.au/classifier/ggic/LocalHierarchyKey>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status>
+    a skos:Collection ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "All Concepts in this ConceptScheme in a flat list"@en ;
+    skos:historyNote "Defined in this vocabulary as a flat listing of all its Concepts" ;
+    skos:inScheme cs: ;
+    skos:member
+        :abandoned ,
+        :accepted ,
+        :active ,
+        :application ,
+        :application-cancelled ,
+        :application-lapsed ,
+        :application-non-current ,
+        :application-pending ,
+        :application-withdrawn ,
+        :awaiting-ministerial-decision ,
+        :awaiting-payment-confirmation ,
+        :cancelled ,
+        :ceased ,
+        :ceased-to-operate ,
+        :certificate-of-application ,
+        :certificate-of-application-issued ,
+        :certificate_of-public-notice-issued ,
+        :cessation ,
+        :competing-application ,
+        :conditionally-surrendered ,
+        :consolidation-cancellation ,
+        :conversion_of-ml-to-mc ,
+        :current ,
+        :deemed-abandoned ,
+        :discarded ,
+        :expired ,
+        :expired-blocks-encumbered ,
+        :exploration-permit-proposal ,
+        :extended ,
+        :extension-renewal ,
+        :finalised ,
+        :for-grant ,
+        :granted ,
+        :in-progress ,
+        :mining-permit-status ,
+        :non-current ,
+        :non-current-unfinalised ,
+        :not-accepted ,
+        :on-hold-oil-shale-application ,
+        :paid ,
+        :payment-authorised ,
+        :payment-pending ,
+        :pending ,
+        :pending-application ,
+        :pending-ceased-to-operate ,
+        :pending-extension ,
+        :pending-extension-drilling-reservation ,
+        :pending-extension-exploration-permit ,
+        :pending-renewal ,
+        :pending-surrender ,
+        :pending-suspension ,
+        :preferred-tenderer ,
+        :prelodgement ,
+        :priority-applicant ,
+        :proceed-with-application ,
+        :proposal-accepted ,
+        :proposed ,
+        :ranked ,
+        :refusal ,
+        :rejected ,
+        :renewal-application-rejected ,
+        :renewal-lodged ,
+        :renewal-withdrawn ,
+        :renewed ,
+        :replacement-permit ,
+        :replacement-permit-application ,
+        :revoked ,
+        :secondary-application ,
+        :sub-blocks-all-relinquished ,
+        :submitted ,
+        :surrendered ,
+        :suspended-condition ,
+        :term-extended ,
+        :terminated ,
+        :tribunal-recommendation ,
+        :unfinalised ,
+        :unsuccessful-application ,
+        :withdrawn ;
+    skos:prefLabel "Petroleum Tenement Status - All Concepts"@en ;
+.
+
+:abandoned
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.1"^^lhk: ;
+    skos:prefLabel "Abandoned"@en ;
+.
+
+:accepted
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :granted ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :accepted ,
+        :awaiting-ministerial-decision ,
+        :conversion_of-ml-to-mc ,
+        :renewal-lodged ,
+        :renewal-withdrawn ;
+    skos:notation "3.5"^^lhk: ;
+    skos:prefLabel "Accepted"@en ;
+.
+
+:active
+    a skos:Concept ;
+    schema:citation "WA, NOPTA"@en ;
+    skos:broader :current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.1"^^lhk: ;
+    skos:prefLabel "Active"@en ;
+.
+
+:application-cancelled
+    a skos:Concept ;
+    schema:citation "SA"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Application was granted but was Cancelled by the Department (SA)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.2"^^lhk: ;
+    skos:prefLabel "Application Cancelled"@en ;
+.
+
+:application-lapsed
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.1"^^lhk: ;
+    skos:prefLabel "Application lapsed"@en ;
+.
+
+:application-pending
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.1000000000000001"^^lhk: ;
+    skos:prefLabel "Application Pending"@en ;
+.
+
+:application-withdrawn
+    a skos:Concept ;
+    schema:citation "SA"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Application was Withdrawn by the Applicant (SA)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.7"^^lhk: ;
+    skos:prefLabel "Application Withdrawn"@en ;
+.
+
+:awaiting-ministerial-decision
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :granted ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.6"^^lhk: ;
+    skos:prefLabel "Awaiting Ministerial decision"@en ;
+.
+
+:awaiting-payment-confirmation
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.2"^^lhk: ;
+    skos:prefLabel "Awaiting payment confirmation"@en ;
+.
+
+:cancelled
+    a skos:Concept ;
+    schema:citation "QLD, WA, VIC, NOPTA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Application was granted but was Cancelled by the Department (VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.2"^^lhk: ;
+    skos:prefLabel "Cancelled"@en ;
+.
+
+:ceased
+    a skos:Concept ;
+    schema:citation "NOPTA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.3"^^lhk: ;
+    skos:prefLabel "Ceased"@en ;
+.
+
+:ceased-to-operate
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.4"^^lhk: ;
+    skos:prefLabel "Ceased to Operate"@en ;
+.
+
+:certificate-of-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.3"^^lhk: ;
+    skos:prefLabel "Certificate of Application"@en ;
+.
+
+:certificate-of-application-issued
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.4"^^lhk: ;
+    skos:prefLabel "Certificate of Application issued"@en ;
+.
+
+:certificate_of-public-notice-issued
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.5"^^lhk: ;
+    skos:prefLabel "Certificate of Public Notice issued"@en ;
+.
+
+:cessation
+    a skos:Concept ;
+    schema:citation "NT"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.5"^^lhk: ;
+    skos:prefLabel "Cessation"@en ;
+.
+
+:competing-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.6"^^lhk: ;
+    skos:prefLabel "Competing Application"@en ;
+.
+
+:conditionally-surrendered
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.3"^^lhk: ;
+    skos:prefLabel "Conditionally surrendered"@en ;
+.
+
+:consolidation-cancellation
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.6"^^lhk: ;
+    skos:prefLabel "Consolidation cancellation"@en ;
+.
+
+:conversion_of-ml-to-mc
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :granted ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.7"^^lhk: ;
+    skos:prefLabel "Conversion of ML to MC"@en ;
+.
+
+:deemed-abandoned
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.7"^^lhk: ;
+    skos:prefLabel "Deemed abandoned"@en ;
+.
+
+:expired-blocks-encumbered
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :expired ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.9.1"^^lhk: ;
+    skos:prefLabel "Expired - Blocks Encumbered"@en ;
+.
+
+:exploration-permit-proposal
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.7"^^lhk: ;
+    skos:prefLabel "Exploration Permit Proposal"@en ;
+.
+
+:extended
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.2"^^lhk: ;
+    skos:prefLabel "Extended"@en ;
+.
+
+:extension-renewal
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.3"^^lhk: ;
+    skos:prefLabel "Extension Renewal"@en ;
+.
+
+:finalised
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.10"^^lhk: ;
+    skos:prefLabel "Finalised"@en ;
+.
+
+:for-grant
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.8"^^lhk: ;
+    skos:prefLabel "For Grant"@en ;
+.
+
+:in-progress
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :discarded ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.8.1"^^lhk: ;
+    skos:prefLabel "In progress"@en ;
+.
+
+:mining-permit-status
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.9"^^lhk: ;
+    skos:prefLabel "Mining Permit Status"@en ;
+.
+
+:non-current-unfinalised
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "The Resource Authority is non-current but still has outstanding issues to be completed (e.g., rent and reports). (QLD)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.10"^^lhk: ;
+    skos:prefLabel "Non-current unfinalised"@en ;
+.
+
+:not-accepted
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.4"^^lhk: ;
+    skos:prefLabel "Not accepted"@en ;
+.
+
+:on-hold-oil-shale-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.11"^^lhk: ;
+    skos:prefLabel "On-hold Oil Shale Application"@en ;
+.
+
+:paid
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :discarded ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.8.2"^^lhk: ;
+    skos:prefLabel "Paid"@en ;
+.
+
+:payment-authorised
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :prelodgement ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.14.1"^^lhk: ;
+    skos:prefLabel "Payment authorised"@en ;
+.
+
+:payment-pending
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :discarded ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.8.3"^^lhk: ;
+    skos:prefLabel "Payment pending"@en ;
+.
+
+:pending-application
+    a skos:Concept ;
+    schema:citation "NOPTA"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.12"^^lhk: ;
+    skos:prefLabel "Pending Application"@en ;
+.
+
+:pending-ceased-to-operate
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.1"^^lhk: ;
+    skos:prefLabel "Pending Ceased to operate"@en ;
+.
+
+:pending-extension
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.2"^^lhk: ;
+    skos:prefLabel "Pending Extension"@en ;
+.
+
+:pending-extension-drilling-reservation
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.3"^^lhk: ;
+    skos:prefLabel "Pending Extension Drilling Reservation"@en ;
+.
+
+:pending-extension-exploration-permit
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.4"^^lhk: ;
+    skos:prefLabel "Pending Extension Exploration Permit"@en ;
+.
+
+:pending-renewal
+    a skos:Concept ;
+    schema:citation "SA, VIC, NOPTA, WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Authority Needs to be Renewed or it will Expire Soon (SA, VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.5"^^lhk: ;
+    skos:prefLabel "Pending Renewal"@en ;
+.
+
+:pending-surrender
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.6"^^lhk: ;
+    skos:prefLabel "Pending Surrender"@en ;
+.
+
+:pending-suspension
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :pending ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.10.7"^^lhk: ;
+    skos:prefLabel "Pending Suspension"@en ;
+.
+
+:preferred-tenderer
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.13"^^lhk: ;
+    skos:prefLabel "Preferred Tenderer"@en ;
+.
+
+:priority-applicant
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.15"^^lhk: ;
+    skos:prefLabel "Priority Applicant"@en ;
+.
+
+:proceed-with-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.16"^^lhk: ;
+    skos:prefLabel "Proceed with Application"@en ;
+.
+
+:proposal-accepted
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.17"^^lhk: ;
+    skos:prefLabel "Proposal accepted"@en ;
+.
+
+:proposed
+    a skos:Concept ;
+    schema:citation "NT"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.18"^^lhk: ;
+    skos:prefLabel "Proposed"@en ;
+.
+
+:ranked
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.19"^^lhk: ;
+    skos:prefLabel "Ranked"@en ;
+.
+
+:refusal
+    a skos:Concept ;
+    schema:citation "SA, VIC"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Application was Refused (SA, VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.5"^^lhk: ;
+    skos:prefLabel "Refusal"@en ;
+.
+
+:rejected
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.11"^^lhk: ;
+    skos:prefLabel "Rejected"@en ;
+.
+
+:renewal-application-rejected
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.12"^^lhk: ;
+    skos:prefLabel "Renewal Application rejected"@en ;
+.
+
+:renewal-lodged
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :granted ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.8"^^lhk: ;
+    skos:prefLabel "Renewal lodged"@en ;
+.
+
+:renewal-withdrawn
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :granted ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.9"^^lhk: ;
+    skos:prefLabel "Renewal withdrawn"@en ;
+.
+
+:renewed
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.11"^^lhk: ;
+    skos:prefLabel "Renewed"@en ;
+.
+
+:replacement-permit
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.13"^^lhk: ;
+    skos:prefLabel "Replacement Permit"@en ;
+.
+
+:replacement-permit-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.20"^^lhk: ;
+    skos:prefLabel "Replacement Permit Application"@en ;
+.
+
+:revoked
+    a skos:Concept ;
+    schema:citation "NOPTA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.14"^^lhk: ;
+    skos:prefLabel "Revoked"@en ;
+.
+
+:secondary-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.21"^^lhk: ;
+    skos:prefLabel "Secondary Application"@en ;
+.
+
+:sub-blocks-all-relinquished
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.15"^^lhk: ;
+    skos:prefLabel "Sub-blocks all relinquished"@en ;
+.
+
+:submitted
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "An application has been started in MyMinesOnline, but has not yet been lodged. (QLD)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.22"^^lhk: ;
+    skos:prefLabel "Submitted"@en ;
+.
+
+:surrendered
+    a skos:Concept ;
+    schema:citation "NOPTA, QLD, SA, VIC, WA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Authority was Granted, but was Surrendered (SA, VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.16"^^lhk: ;
+    skos:prefLabel "Surrendered"@en ;
+.
+
+:suspended-condition
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.17"^^lhk: ;
+    skos:prefLabel "Suspended Condition"@en ;
+.
+
+:term-extended
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.12"^^lhk: ;
+    skos:prefLabel "Term Extended"@en ;
+.
+
+:terminated
+    a skos:Concept ;
+    schema:citation "NOPTA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.18"^^lhk: ;
+    skos:prefLabel "Terminated"@en ;
+.
+
+:tribunal-recommendation
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "1.23"^^lhk: ;
+    skos:prefLabel "Tribunal Recommendation"@en ;
+.
+
+:unfinalised
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.19"^^lhk: ;
+    skos:prefLabel "Unfinalised"@en ;
+.
+
+:unsuccessful-application
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.6"^^lhk: ;
+    skos:prefLabel "Unsuccessful Application"@en ;
+.
+
+:withdrawn
+    a skos:Concept ;
+    schema:citation "VIC, QLD"@en ;
+    skos:broader :application-non-current ;
+    skos:definition "Application was Withdrawn by the Applicant (VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "2.8"^^lhk: ;
+    skos:prefLabel "Withdrawn"@en ;
+.
+
+:expired
+    a skos:Concept ;
+    schema:citation "QLD, WA, SA, VIC, NOPTA"@en ;
+    skos:broader :non-current ;
+    skos:definition "Authority was Granted but Expired (SA, VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:notation "4.9"^^lhk: ;
+    skos:prefLabel "Expired"@en ;
+.
+
+:prelodgement
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :application ;
+    skos:definition "The application has been started in MyMinesOnline, but has not yet been lodged. (QLD)"@en ;
+    skos:inScheme cs: ;
+    skos:narrower :payment-authorised ;
+    skos:notation "1.14"^^lhk: ;
+    skos:prefLabel "Prelodgement"@en ;
+.
+
+:discarded
+    a skos:Concept ;
+    schema:citation "QLD"@en ;
+    skos:broader :non-current ;
+    skos:definition "The application has been discarded from the system."@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :in-progress ,
+        :paid ,
+        :payment-pending ;
+    skos:notation "4.8"^^lhk: ;
+    skos:prefLabel "Discarded"@en ;
+.
+
+:granted
+    a skos:Concept ;
+    schema:citation "QLD, NT"@en ;
+    skos:broader :current ;
+    skos:definition "The Resource Authority has been approved under the Resource Authority Legislation"@en ;
+    skos:inScheme cs: ;
+    skos:notation "3.4"^^lhk: ;
+    skos:prefLabel "Granted"@en ;
+.
+
+:current
+    a skos:Concept ;
+    schema:citation "GGIC, SA, VIC"@en ;
+    skos:definition "A licence, permit, or authority that is current (eg, granted) (GGIC); Authority granted by the Department (SA, VIC)"@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :active ,
+        :extended ,
+        :extension-renewal ,
+        :granted ,
+        :pending ,
+        :renewed ,
+        :term-extended ;
+    skos:notation "3"^^lhk: ;
+    skos:prefLabel "Current"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:pending
+    a skos:Concept ;
+    schema:citation "WA"@en ;
+    skos:broader :current ;
+    skos:definition "Not given"@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :pending-ceased-to-operate ,
+        :pending-extension ,
+        :pending-extension-drilling-reservation ,
+        :pending-extension-exploration-permit ,
+        :pending-renewal ,
+        :pending-surrender ,
+        :pending-suspension ;
+    skos:notation "3.10"^^lhk: ;
+    skos:prefLabel "Pending"@en ;
+.
+
+:application-non-current
+    a skos:Concept ;
+    schema:citation "GGIC"@en ;
+    skos:definition "An application for a licence, permit, or authority that was unsuccessful or refused (GGIC)"@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :abandoned ,
+        :application-cancelled ,
+        :application-withdrawn ,
+        :conditionally-surrendered ,
+        :not-accepted ,
+        :refusal ,
+        :unsuccessful-application ,
+        :withdrawn ;
+    skos:notation "2"^^lhk: ;
+    skos:prefLabel "Application non-current"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:non-current
+    a skos:Concept ;
+    schema:citation "GGIC, QLD"@en ;
+    skos:definition "A licence, permit, or authority that is not current (eg, expired, cancelled, superseded) (GGIC); The Resource Authority has been terminated in the system and is longer current. (QLD)"@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :application-lapsed ,
+        :cancelled ,
+        :ceased ,
+        :ceased-to-operate ,
+        :cessation ,
+        :consolidation-cancellation ,
+        :deemed-abandoned ,
+        :discarded ,
+        :expired ,
+        :finalised ,
+        :rejected ,
+        :renewal-application-rejected ,
+        :replacement-permit ,
+        :revoked ,
+        :sub-blocks-all-relinquished ,
+        :surrendered ,
+        :suspended-condition ,
+        :terminated ,
+        :unfinalised ;
+    skos:notation "4"^^lhk: ;
+    skos:prefLabel "Non-current"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:application
+    a skos:Concept ;
+    schema:citation "GGIC, QLD, NT, SA, VIC"@en ;
+    skos:definition "An application for a licence, permit, or authority that has not been assessed or granted (GGIC); An application has been submitted and an outcome is pending (QLD); Application under consideration by the Department (SA)"@en ;
+    skos:inScheme cs: ;
+    skos:narrower
+        :application-pending ,
+        :awaiting-payment-confirmation ,
+        :certificate-of-application ,
+        :certificate-of-application-issued ,
+        :certificate_of-public-notice-issued ,
+        :competing-application ,
+        :exploration-permit-proposal ,
+        :for-grant ,
+        :mining-permit-status ,
+        :non-current-unfinalised ,
+        :on-hold-oil-shale-application ,
+        :pending-application ,
+        :preferred-tenderer ,
+        :prelodgement ,
+        :priority-applicant ,
+        :proceed-with-application ,
+        :proposal-accepted ,
+        :proposed ,
+        :ranked ,
+        :replacement-permit-application ,
+        :secondary-application ,
+        :submitted ,
+        :tribunal-recommendation ;
+    skos:notation "1"^^lhk: ;
+    skos:prefLabel "Application"@en ;
+    skos:topConceptOf cs: ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    schema:dateCreated "2021-06-14"^^xsd:date ;
+    schema:creator <https://linked.data.gov.au/org/agson> ;
+    schema:dateModified "2025-06-04"^^xsd:date ;
+    schema:status astatus:experimental ;
+    skos:historyNote "This file contains the 2021.01 SKOS-RDF version of the GGIC Petroleum Tenement Type vocabulary; adopted April 2021; converted to MS Excel XML for SKOS generation using SKOS_from_XLS_2019.01.xslt"@en ;
+    schema:publisher <https://linked.data.gov.au/org/agson> ;
+    skos:changeNote
+        "2025-08-25 NJC: Added status experimental to ConceptScheme for status testing" ,
+        "2024-10-16 NJC: update to be VocPub 4.10 valid" ,
+        "2021-06-14 OLR: Original SKOS implementation" ,
+        "2021-07-05 Nicholas Car & Vaughan Edgell: SKOS implementation aligned with VocPub vocabulary profile for display" ,
+        "2025-06-04 NJC Updates metadata to meet the VocPub 5.1 profile"@en ;
+    skos:definition "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification."@en ;
+    skos:hasTopConcept
+        :application ,
+        :application-non-current ,
+        :current ,
+        :non-current ;
+    skos:prefLabel "Petroleum Tenement Status"@en ;
+.

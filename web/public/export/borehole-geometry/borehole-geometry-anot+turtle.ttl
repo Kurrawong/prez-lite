@@ -1,0 +1,132 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/borehole-geometry> a skos:ConceptScheme;
+    skos:definition "This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole."@en;
+    skos:historyNote "Concepts used by the resources industry. Some covered in [WAPIMS].[dbo.DeviationSurveyPoint]."@en;
+    skos:prefLabel "Borehole geometry"@en;
+    sdo:dateCreated "2023-11-02"^^xsd:date;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateModified "2023-11-02"^^xsd:date;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    owl:versionIRI <https://linked.data.gov.au/def/borehole-geometry/1>;
+    owl:versionInfo "1";
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/resources>;
+    prov:qualifiedAttribution _:n3-0, _:n3-1;
+    prez:identifier "ns4:borehole-geometry";
+    prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:borehole-geometry";
+    prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:borehole-geometry/items";
+    prez:type prez:FocusNode;
+    prez:label "Borehole geometry"@en;
+    prez:description "This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole."@en.
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+owl:versionInfo prez:label "versionInfo";
+    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
+    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-0 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0009-0002-5543-2719>.
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
+_:n3-1 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
+_:n3-2 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+xsd:date prez:label "date".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+<https://linked.data.gov.au/def/borehole-geometry/bh-azimuth> a skos:Concept;
+    skos:prefLabel "azimuth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-diameter> a skos:Concept;
+    skos:prefLabel "borehole diameter"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-dip> a skos:Concept;
+    skos:prefLabel "dip"@en.
+<https://linked.data.gov.au/def/borehole-geometry/dogleg-rate> a skos:Concept;
+    skos:prefLabel "dogleg rate"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-downholesurvey> a skos:Concept;
+    skos:prefLabel "downhole directional survey"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-end-point> a skos:Concept;
+    skos:prefLabel "end point location"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth> a skos:Concept;
+    skos:prefLabel "grid azimuth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-inclination> a skos:Concept;
+    skos:prefLabel "inclination"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-kickoff-point> a skos:Concept;
+    skos:prefLabel "kick-off point"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth> a skos:Concept;
+    skos:prefLabel "magnetic azimuth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-declination> a skos:Concept;
+    skos:prefLabel "magnetic declination"@en.
+<https://linked.data.gov.au/def/borehole-geometry/measured-depth> a skos:Concept;
+    skos:prefLabel "measured depth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing> a skos:Concept;
+    skos:prefLabel "measured depth from kelly bushing"@en.
+<https://linked.data.gov.au/def/borehole-geometry/md-rotarytable> a skos:Concept;
+    skos:prefLabel "measured depth from rotary table"@en.
+<https://linked.data.gov.au/def/borehole-geometry/precollar-depth> a skos:Concept;
+    skos:prefLabel "pre-collar depth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/reduced-level-depth> a skos:Concept;
+    skos:prefLabel "reduced level depth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-start-point> a skos:Concept;
+    skos:prefLabel "start point location"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-totaldepth> a skos:Concept;
+    skos:prefLabel "total depth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth> a skos:Concept;
+    skos:prefLabel "true azimuth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/true-vertical-depth> a skos:Concept;
+    skos:prefLabel "true vertical depth"@en.
+<https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline> a skos:Concept;
+    skos:prefLabel "true vertical depth below mudline"@en.
+<https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor> a skos:Concept;
+    skos:prefLabel "true vertical depth drillfloor"@en.
+<https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing> a skos:Concept;
+    skos:prefLabel "true vertical depth kelly bushing"@en.
+<https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table> a skos:Concept;
+    skos:prefLabel "true vertical depth rotary table"@en.
+<https://linked.data.gov.au/def/borehole-geometry/tvd-subsea> a skos:Concept;
+    skos:prefLabel "true vertical depth subsea"@en.
+<https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section> a skos:Concept;
+    skos:prefLabel "vertical section"@en.

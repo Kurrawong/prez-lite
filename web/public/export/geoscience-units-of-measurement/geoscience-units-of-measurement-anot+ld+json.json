@@ -1,0 +1,3946 @@
+[
+  {
+    "@id": "_:n3-0",
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "_:n3-1"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-1",
+    "@type": [
+      "https://schema.org/Person"
+    ],
+    "https://schema.org/email": [
+      {
+        "@value": "",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Angela Riganti"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-2",
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://orcid.org/0009-0002-5543-2719"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-3",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BBLOE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "barrel of oil equivalent per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BBL_US-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "US barrels per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BBL_US-PER-MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "US barrels per minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BOE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "barrel of oil equivalent",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BTU-PER-MegaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "British thermal unit per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BWOC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "by weight of cement",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/BWOW",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "by weight of water",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/CARAT-PER-M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "carat per cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/COUNT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "count",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/CentiM3-PER-GM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic centimetres per gram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/CentiM3-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic centimetres per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/D",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "darcy",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/DD-PER-MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "dial divisions per minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/DEG-PER-100F",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees per hundred feet",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/DEG-PER-30M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees per thirty metres",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/DEG-PER-F",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees per foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/DEG-PER-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees per metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/DecaREV-PER-MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hundred revolutions per minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/ExaBYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "exabyte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/FRAC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "decimal fraction",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/FT3-PER-TON",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "standard cubic feet per ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/FT3-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic feet per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/GAL_IMP-PER-50SACK",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gallons per 50 kg sack",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/GM-PER-KiloGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grams per kilogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/GM-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grams per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/GigaJ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gigajoule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/GigaJ-PER-MegaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gigajoules per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/GigaM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "billion cubic metres",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/HR-PER-FT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hours per foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/HR-PER-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hours per metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloBBL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand barrels",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloBBLOE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand barrels of oil equivalent per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloBTU",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand British thermal unit",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloBTU-PER-MegaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand British thermal units per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloL-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilolitre per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloLB_F",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand pounds force",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloLB_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand pounds",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/KiloREV-PER-MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand revolutions per minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/L-PER-50SACK",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "litres per 50 kg sack",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/L-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "litres per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/LB_F-PER-100FT2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pounds force per 100 square feet",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/LB_F-PER-IN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pounds per inch",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/LB_M-PER-100FT2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pounds per 100 square feet",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/LB_M-PER-50SAC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pounds per 50 kg sack",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/LB_M-PER-BBL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pounds per barrel",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/M2-PER-N",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "metre squared per newton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MYR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millions of years",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaBBL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million barrels",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaBBLOE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million barrel of oil equivalent per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaBOE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million barrel of oil equivalent",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaBTU",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million British thermal units",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaBTU-PER-MegaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million British thermal units per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaF3-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million cubic feet per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaFT3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million cubic feet",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaL-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megalitres per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million cubic metres",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MegaTON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megatonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MilliD",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millidarcy",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MilliGM-PER-KiloGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milligram per kilogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MilliGM-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milligrams per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/MilliM-PER-SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "metres per millisecond",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/OZ-PER-TON_LONG",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ounce per ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/OZ-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ounce per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/PER-PA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "inverse pascal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/PERCENT-MOL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "mole percent",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/PERCENT-PER-VOL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "percent by volume",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/PERCENT-PER-WEIGHT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "percent by weight",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/PetaJ-PER-MegaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "petajoules per megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/RATIO",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ratio",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/SHOTS-PER-FT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "shots per foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/SHOTS-PER-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "shots per metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/geou/kiloTON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilotonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/iso-4217-currencies/aud",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Australian dollar",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/ANGSTROM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ångström",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/ARCMIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "arcminute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/ARCSEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "arcsecond",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/ATM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "standard atmosphere",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/AU",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "astronomical unit",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BAR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "bar",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BBL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "barrel",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BIT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "bit",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BQ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "becquerel",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BTU_IT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "British thermal unit (international definition)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BTU_IT-PER-LB",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "British thermal unit per imperial pound",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/BYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "byte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/CARAT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "carat",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/CH",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "chain",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/CentiM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/CentiM2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "square centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/CentiM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/CentiPOISE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "centipoise",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/Ci",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "curie",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DEG",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degree",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DEG_C",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degree Celsius",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DEG_F",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degree Fahrenheit",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DWT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "penny weight",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DeciM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "decimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/DeciM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic decimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "foot per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT-PER-SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "foot per second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "square foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT3-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic foot per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/FT3-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic foot per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GALILEO",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "galileo",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GAL_IMP",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "imperial gallon",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GAL_US",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "US gallon",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GAUSS",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gauss",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GM-PER-CentiM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gram per cubic centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GM-PER-L",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gram per litre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GM-PER-M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gram per cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GM-PER-MilliL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grams per millilitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GRAD",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grad",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GRAIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grain",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GRAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gray",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/Gamma",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gamma",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GigaBYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gigabyte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GigaPA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gigapascal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/HA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hectare",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/HZ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hertz",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/IN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "inch",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/J",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "joule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/J-PER-CentiM2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "joule per square centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/K",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kelvin",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloBAR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilobar",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloBYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilobyte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloEV",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilo electron volt",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloGM-PER-L",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilogram per litre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloGM-PER-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilogram per metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloGM-PER-M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilogram per cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloJ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilojoule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilolitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloLB_M-PER-IN2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand pounds per square inch",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilometre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilonewton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/KiloPA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilopascal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/L",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "litre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/L-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "litre per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/L-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "litre per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/L-PER-MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "litre per minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LB",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pound mass",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LB_F",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pound force",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LB_M-PER-FT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pound per foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LB_M-PER-FT3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pound per cubic foot",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LB_M-PER-GAL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pound per gallon",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LB_T",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "troy pound",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/LY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "light year",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "metre per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M-PER-SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "metre per second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M-PER-SEC2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "metre per square second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "square metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M3-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic metre per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/M3-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic metre per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MI",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "imperial mile",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MI2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "square mile",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MI_N",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nautical mile",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MO",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "month",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MOL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "mole",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MegaBYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megabyte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MegaJ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megajoule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MegaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MegaLB_F",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megapound force",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MegaPA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "megapascal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microgram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroGM-PER-GM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "micrograms per gram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroGM-PER-KiloGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microgram per kilogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroGM-PER-L",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microgram per litre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "micrometre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroS",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microsiemens",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroS-PER-CentiM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microsiemens per centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroS-PER-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microsiemens per metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MicroSV",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microsievert",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliGAL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milligal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milligram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliGM-PER-GM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milligrams per gram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliGM-PER-L",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milligram per litre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millilitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliM2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "square millimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic millimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliRAD",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milliradian",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliS",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millisiemens",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliSEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millisecond",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/MilliW-PER-M2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "milliwatt per square metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/N",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "newton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/N-PER-KiloGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "newton per kilogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/N-PER-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "newton per metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/NUM-PER-SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "counts per second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/NanoGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nanogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/NanoGM-PER-L",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nanogram per litre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/NanoM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nanometre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/NanoSEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nanosecond",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/NanoT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nanotesla",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/OHM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ohm",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/OHM-M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ohm metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/OZ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ounce",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/OZ-PER-YD3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ounce (avoirdupois) per cubic yard",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/OZ_TROY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "troy ounce",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pascal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PA-PER-SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pascal per second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PA-SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pascal second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PERCENT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "percent",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PH",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "acidity (pH)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/POISE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "poise",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PPB",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "parts per billion",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PPM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "parts per million",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PPTH",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "parts per thousand",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PPTR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "parts per trillion",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PSI",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pound per square inch",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PetaBYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "petabyte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/PetaJ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "petajoule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/R",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "roentgen",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/RAD",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "radian",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/RAD_R",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "rad",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/REM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "rem",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/REV-PER-HR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "revolution per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/REV-PER-MIN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "revolution per minute",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/S",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "siemens",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/SCM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "standard cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/SEC",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/SV",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "sievert",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/T",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "tesla",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TOE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "tonne of oil equivalent",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TONNE-PER-M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "tonne per cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TON_LONG",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "long ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TON_SHORT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "short ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TeraBYTE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "terabyte",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/TeraJ",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "terajoule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/UNITLESS",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "unitless",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/W",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "watt",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/WK",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "week",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/YD",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "yard",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/YR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "year",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "https://prez.dev/label": [
+      {
+        "@value": "date"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionIRI",
+    "https://prez.dev/label": [
+      {
+        "@value": "version IRI"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The property that identifies the version IRI of an ontology."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept Scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A set of concepts, optionally including statements about semantic relationships between those concepts"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+    "https://prez.dev/label": [
+      {
+        "@value": "has top concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#agent",
+    "https://prez.dev/label": [
+      {
+        "@value": "agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#hadRole",
+    "https://prez.dev/label": [
+      {
+        "@value": "role"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+    "https://prez.dev/label": [
+      {
+        "@value": "qualified attribution"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/data-roles/custodian",
+    "https://prez.dev/label": [
+      {
+        "@value": "custodian"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/reg-statuses/stable",
+    "https://prez.dev/label": [
+      {
+        "@value": "stable"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A list of units of measurement relevant for geoscience and the administration of statutory submissions from the resource industries. The list is based on the Geological Survey of Queensland (GSQ) Geoscience Profile of the Quantities, Units, Dimensions & Types (QUDT) ontology and vocabularies lists (https://linked.data.gov.au/def/geou and https://www.qudt.org/doc/DOC_VOCAB-UNITS.html - version 2.1.29). QUDT is based largely on the international standard for metric units (International System of Units, or SI) but also includes units from other systems, notably the Centimetre–Gram–Second (CGS or cgs) system of units and most US Customary and British imperial units for length, weight and heat. Wherever applicable, the SI standard is used for conversions between non-SI units (https://www.qudt.org/pages/QUDToverviewPage.html). Commonly used multiples of base units are also included, and the list has been expanded to include units of measurements for time that are relevant to earth sciences; for these, notations follow the recommendations of Norman et al. (2011), available at http://www.dmp.wa.gov.au/Documents/Geological-Survey/Use-and-reporting-of-geochronology.pdf). Some QUDT definitions have been extended, mostly to clarify what the unit is a measure of. Notations are the correct symbol to use for the unit of measurement; common variations of these are indicated as alternate labels, but their use is strongly discouraged. English spelling is preferred over American spelling (e.g. metre, not meter). Other rules and style conventions for spelling units names follow the 2008 Edition of the Guide for International System of Units (SI), NIST Special Publication 811, National Institute of Standards and Technology, US Department of Commerce (https://physics.nist.gov/cuu/pdf/sp811.pdf).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Geoscience units of measurement",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/status": [
+      {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Based on QUDT and GSQ units of measurement vocabularies with usage noted in the following Geological Survey of Western Australia (GSWA) database tables: [DRILLHOLE].[cfg].[LookupGeoChemistryUnitOfMeasure] \n[DRILLHOLE].[dbo].[DM_UOM] \n[GEOLOGY].[ENS_REF].[UnitOfTime] \n[GEOLOGY].[Warox_REF].[MeasurementUnits] \n[GEOLOGY].[Warox_REF].[PhysicalPropertyMeasurementUnits] \n[GEOLOGY].[Warox_REF].[XRDMeasurementUnits] \n[MINEDEX].[Units_of_measure] \n[WACHEM].[dbo].[tblSYSUnits] \n[WAGIMS].[Units of Time] \n[WAPIMS].[dbo].[AnalyteValueUOM] \n[WAPIMS].[dbo].[CoreDepthUOM] \n[WAPIMS].[dbo].[TrackLengthUOM] \n[WAPIMS].[dbo].[UnitType] "
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://linked.data.gov.au/def/uom-geoscience/1.3"
+      }
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAttribution": [
+      {
+        "@id": "_:n3-0"
+      },
+      {
+        "@id": "_:n3-2"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2023-11-01",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2025-12-02",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@id": "https://linked.data.gov.au/def/GSWA-vocabulary-themes/data-acquisition"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/version": [
+      {
+        "@value": "1.3"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns4:uom-geoscience"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:uom-geoscience"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:uom-geoscience/items"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Geoscience units of measurement",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A list of units of measurement relevant for geoscience and the administration of statutory submissions from the resource industries. The list is based on the Geological Survey of Queensland (GSQ) Geoscience Profile of the Quantities, Units, Dimensions & Types (QUDT) ontology and vocabularies lists (https://linked.data.gov.au/def/geou and https://www.qudt.org/doc/DOC_VOCAB-UNITS.html - version 2.1.29). QUDT is based largely on the international standard for metric units (International System of Units, or SI) but also includes units from other systems, notably the Centimetre–Gram–Second (CGS or cgs) system of units and most US Customary and British imperial units for length, weight and heat. Wherever applicable, the SI standard is used for conversions between non-SI units (https://www.qudt.org/pages/QUDToverviewPage.html). Commonly used multiples of base units are also included, and the list has been expanded to include units of measurements for time that are relevant to earth sciences; for these, notations follow the recommendations of Norman et al. (2011), available at http://www.dmp.wa.gov.au/Documents/Geological-Survey/Use-and-reporting-of-geochronology.pdf). Some QUDT definitions have been extended, mostly to clarify what the unit is a measure of. Notations are the correct symbol to use for the unit of measurement; common variations of these are indicated as alternate labels, but their use is strongly discouraged. English spelling is preferred over American spelling (e.g. metre, not meter). Other rules and style conventions for spelling units names follow the 2008 Edition of the Guide for International System of Units (SI), NIST Special Publication 811, National Institute of Standards and Technology, US Department of Commerce (https://physics.nist.gov/cuu/pdf/sp811.pdf).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/100TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hectotonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/API",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "API",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/BANK_M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "bank cubic metres",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/BBL_US",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "barrel (US)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/BBL_US_d",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "barrel (US) per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/Bq-PER-GM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "becquerel per gram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-100-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "carat per 100 tonnes",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-STONE",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "carat per stone",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "carat per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-GigaPA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees Celsius per gigapascal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloBAR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees Celsius per kilobar",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "degrees Celsius per kilometre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DELTA-DEGREE-TWO-THETA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "delta degrees 2 theta",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_LONG",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "penny weight per long ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_SHORT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "penny weight per short ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-YD3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "penny weight per cubic yard",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/FOZT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "fine ounce",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/FT3-PER-TON_SHORT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic feet per short ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/GM-PER-TON_SHORT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gram per short ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/GigaL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gigalitre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/GigaYR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "billions of years",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/KiloCARAT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand carats",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/KiloFT2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand cubic feet",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/KiloGM-PER-TON_M",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kilogram per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/KiloM2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "square kilometre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/KiloM3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousand cubic metres",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/KiloYR",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thousands of years",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/LAMBDA",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "longitude degree",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/M3-PER-TON",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cubic metres per tonne",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/MegaCARAT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million carats",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/MegaTON_LONG",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "million long tons",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/MicroGAL",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microgal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/MicroM-PER-SEC2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "micrometre per square second",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/MicroW-PER-M3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microwatt for cubic metre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/MilliJ-PER-KiloGM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millijoules per kilogram",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/NanoGY-PER-H",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nanogray per hour",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_LONG",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "troy ounce per long ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_SHORT",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "troy ounce per short ton",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/PER-CentiM",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "reciprocal centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/PHI",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "latitude degree",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/SCM-PER-DAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "standard cubic metre per day",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/eV",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "electron volt",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/eotvos",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "eotvos",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/millisecond-per-centimetre",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "millisecond per centimetre",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/not-applicable",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "not applicable",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience/unknown",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "unknown",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/org/gswa",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geological Survey of Western Australia"
+      }
+    ]
+  },
+  {
+    "@id": "https://orcid.org/0009-0002-5543-2719",
+    "https://prez.dev/label": [
+      {
+        "@value": "Erin Marie Gray"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/Person",
+    "https://prez.dev/label": [
+      {
+        "@value": "Person"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A person (alive, dead, undead, or fictional)."
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/creator",
+    "https://prez.dev/label": [
+      {
+        "@value": "creator"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateCreated",
+    "https://prez.dev/label": [
+      {
+        "@value": "date created"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was created or the item was added to a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateModified",
+    "https://prez.dev/label": [
+      {
+        "@value": "date modified"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/email",
+    "https://prez.dev/label": [
+      {
+        "@value": "email"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Email address"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/keywords",
+    "https://prez.dev/label": [
+      {
+        "@value": "keywords"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/name",
+    "https://prez.dev/label": [
+      {
+        "@value": "name"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The name of the item"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/publisher",
+    "https://prez.dev/label": [
+      {
+        "@value": "publisher"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The publisher of the creative work"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/status",
+    "https://prez.dev/label": [
+      {
+        "@value": "status"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of the study (enumerated)."
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/version",
+    "https://prez.dev/label": [
+      {
+        "@value": "version"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The version of the CreativeWork embodied by a specified resource"
+      }
+    ]
+  }
+]

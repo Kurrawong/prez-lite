@@ -1,0 +1,1919 @@
+[
+  {
+    "@id": "_:n3-0",
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://orcid.org/0009-0002-5543-2719"
+      }
+    ],
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-1",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "https://prez.dev/label": [
+      {
+        "@value": "date"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionIRI",
+    "https://prez.dev/label": [
+      {
+        "@value": "version IRI"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The property that identifies the version IRI of an ontology."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept Scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A set of concepts, optionally including statements about semantic relationships between those concepts"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+    "https://prez.dev/label": [
+      {
+        "@value": "has top concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#agent",
+    "https://prez.dev/label": [
+      {
+        "@value": "agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#hadRole",
+    "https://prez.dev/label": [
+      {
+        "@value": "role"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+    "https://prez.dev/label": [
+      {
+        "@value": "qualified attribution"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/data-roles/custodian",
+    "https://prez.dev/label": [
+      {
+        "@value": "custodian"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The form of a sample, i.e. the visible shape or configuration of a geological material. The listing includes both primary samples and derived specimens, that is primary sources (e.g. drillcore, hand specimen) and items resulting from preparation of those source materials for the purpose of research/analytical work (e.g. thin section, fine powder). Artefacts are also included, but in this vocabulary they specifically refer to man-made objects of cultural or historical interest such as a tool or decoration (i.e. items such as thin sections, mounts, etc. are not regarded as artefacts in this context). Descriptions were compiled trying to avoid reference to the material that comprises the specimen (e.g. rock, fossil) or the sampling method (e.g. drilling), although in practice it is not always possible to completely separate these concepts from the sample type (e.g. rotary sidewall core); in fact many of the concepts for sample type and sample materials are (incorrectly) used interchangeably. ",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Sources consulted when considering terms this vocabulary include: Geoscience Australia's Sample Type vocabulary (https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType) and Museums Victoria. Definitions were compiled from a number of different sources as indicated against each concept where relevant."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Geological sample type",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/status": [
+      {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/None"
+      }
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAttribution": [
+      {
+        "@id": "_:n3-0"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2025-11-24",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2025-11-24",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/earth-sciences"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/version": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns4:geological-sample-type"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:geological-sample-type"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:geological-sample-type/items"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Geological sample type",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The form of a sample, i.e. the visible shape or configuration of a geological material. The listing includes both primary samples and derived specimens, that is primary sources (e.g. drillcore, hand specimen) and items resulting from preparation of those source materials for the purpose of research/analytical work (e.g. thin section, fine powder). Artefacts are also included, but in this vocabulary they specifically refer to man-made objects of cultural or historical interest such as a tool or decoration (i.e. items such as thin sections, mounts, etc. are not regarded as artefacts in this context). Descriptions were compiled trying to avoid reference to the material that comprises the specimen (e.g. rock, fossil) or the sampling method (e.g. drilling), although in practice it is not always possible to completely separate these concepts from the sample type (e.g. rotary sidewall core); in fact many of the concepts for sample type and sample materials are (incorrectly) used interchangeably. ",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/acetate-peel",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "acetate peel",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/artefact",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "artefact",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/assembled-stone",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "assembled stone",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/bit-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "bit sample",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/bulk-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "bulk sample",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/cabochon",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cabochon",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/carved-specimen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "carved specimen",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/cast",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cast",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/replica"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/cavings-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cavings sample",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/concentrate",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "concentrate",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/concretion",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "concretion",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/core-chips",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "core chips",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/drillcore"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/core-cutting",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "core cutting",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/core-plug",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "core plug",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/drillcore"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/crush",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "crush",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "crystal",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal-cluster",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "crystal cluster",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal-fragment",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "crystal fragment(s)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal-model",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "crystal model",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/model"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/cut-block",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "cut block",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/ditch-cuttings",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ditch cuttings",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/doublet",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "doublet",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/assembled-stone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-chips",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "drill chips",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-cuttings",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "drill cuttings",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/drillcore",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "drillcore",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/drilling-fluid-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "drilling fluid sample",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/fluid-sample"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/dump-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "dump mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/etched-specimen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "etched specimen",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/facet-rough",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "facet rough",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/rough"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/faceted-gemstone",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "faceted gemstone",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/floater-crystal",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "floater crystal",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/fluid-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "fluid sample",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/formation-fluid-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "formation fluid sample",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/fluid-sample"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gemstone",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/geochronology-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "geochronology mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/grain-mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/geode",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "geode",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/grain",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grain",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/grain-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grain mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/hand-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hand sample",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/heavy-mineral-concentrate",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "heavy mineral concentrate",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/concentrate"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/heavy-mineral-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "heavy mineral mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/dump-mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/imitation-gemstone",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "imitation gemstone",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/kerogen-slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kerogen slide",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/lapidary-rough",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "lapidary rough",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/rough"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/latex-peel",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "latex peel",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/cast"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/light-mineral-concentrate",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "light mineral concentrate",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/concentrate"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-grid-slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microfossil grid slide",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microfossil mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-residue",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microfossil residue",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/residue"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/microfossil-well-slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "microfossil well slide",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/micromount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "micromount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/model",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "model",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/artefact"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/mold",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "mold",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/replica"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "mount",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/nodule",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nodule",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/nugget",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "nugget",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/offcut",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "offcut",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/other",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "other",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/palynology-residue",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "palynology residue",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/residue"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/percussion-sidewall-core",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "percussion sidewall core",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/sidewall-core"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/petrology-offcut",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "petrology offcut",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/offcut"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/plaster-cast",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "plaster cast",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/cast"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "polished mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "polished/shaped specimen",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-slab",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "polished slab",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "polished specimen",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/pulp",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pulp",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/rab-chips",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "rotary air blast chips",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-chips"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/rc-chips",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "reverse circulation chips",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/drill-chips"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/replica",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "replica",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/artefact"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/reservoir-fluid-sample",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "reservoir fluid sample",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/formation-fluid-sample"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/residue",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "residue",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/rock-chips",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "rock chips",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/rotary-sidewall-core",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "rotary sidewall core",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/sidewall-core"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/rough",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "rough (specimen)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/scat-mining",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "scat - mining",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/sem-mount",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "SEM mount",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/mount"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/separate",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "separate",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/serial-sectioning-slab",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "serial sectioning slab",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slab"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/serial-sectioning-slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "serial sectioning slide",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/sidewall-core",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "sidewall core",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/single-crystal",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "single crystal",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/crystal"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/size-fraction",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "size fraction",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/slab",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "slab",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "slide",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/smear-slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "smear slide",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/strew-slide",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "strew slide",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/synthetic-gemstone",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "synthethic gemstone",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/gemstone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/thick-section",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thick section",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/thick-section-polished",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thick section - polished",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/thick-section"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thin section",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/slide"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section-chip",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thin section chip",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/offcut"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section-polished",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "thin section - polished",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/thin-section"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/triplet",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "triplet",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/assembled-stone"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/tumbled-stone",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "tumbled stone",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/unconsolidated",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "unconsolidated",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/unknown",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "unknown",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/unspecified",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "unspecified",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/reg-statuses/stable",
+    "https://prez.dev/label": [
+      {
+        "@value": "stable"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/org/gswa",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geological Survey of Western Australia"
+      }
+    ]
+  },
+  {
+    "@id": "https://orcid.org/0009-0002-5543-2719",
+    "https://prez.dev/label": [
+      {
+        "@value": "Erin Marie Gray"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/creator",
+    "https://prez.dev/label": [
+      {
+        "@value": "creator"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateCreated",
+    "https://prez.dev/label": [
+      {
+        "@value": "date created"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was created or the item was added to a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateModified",
+    "https://prez.dev/label": [
+      {
+        "@value": "date modified"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/keywords",
+    "https://prez.dev/label": [
+      {
+        "@value": "keywords"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/publisher",
+    "https://prez.dev/label": [
+      {
+        "@value": "publisher"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The publisher of the creative work"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/status",
+    "https://prez.dev/label": [
+      {
+        "@value": "status"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of the study (enumerated)."
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/version",
+    "https://prez.dev/label": [
+      {
+        "@value": "version"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The version of the CreativeWork embodied by a specified resource"
+      }
+    ]
+  }
+]

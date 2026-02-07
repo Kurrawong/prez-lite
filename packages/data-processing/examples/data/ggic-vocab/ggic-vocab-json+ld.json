@@ -1,0 +1,1322 @@
+[
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/abandoned",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/accepted",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/accepted"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-ministerial-decision"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/conversion_of-ml-to-mc"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-lodged"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-withdrawn"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/active",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-pending"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-payment-confirmation"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application-issued"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate_of-public-notice-issued"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/competing-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/exploration-permit-proposal"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/for-grant"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/mining-permit-status"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current-unfinalised"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/on-hold-oil-shale-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/preferred-tenderer"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/priority-applicant"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proceed-with-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposal-accepted"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposed"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ranked"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/secondary-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/submitted"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/tribunal-recommendation"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-cancelled",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-lapsed",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/abandoned"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-cancelled"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-withdrawn"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/conditionally-surrendered"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/not-accepted"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/refusal"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unsuccessful-application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/withdrawn"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-pending",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-withdrawn",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-ministerial-decision",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-payment-confirmation",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cancelled",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased-to-operate",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application-issued",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate_of-public-notice-issued",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cessation",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/competing-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/conditionally-surrendered",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/consolidation-cancellation",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/conversion_of-ml-to-mc",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/active"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/extended"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/extension-renewal"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewed"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/term-extended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/deemed-abandoned",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/in-progress"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/paid"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/payment-pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired-blocks-encumbered",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/exploration-permit-proposal",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/extended",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/extension-renewal",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/finalised",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/for-grant",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/in-progress",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/mining-permit-status",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-lapsed"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cancelled"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased-to-operate"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cessation"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/consolidation-cancellation"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/deemed-abandoned"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/finalised"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/rejected"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-application-rejected"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/revoked"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/sub-blocks-all-relinquished"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/surrendered"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/suspended-condition"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/terminated"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unfinalised"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current-unfinalised",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/not-accepted",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/on-hold-oil-shale-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/paid",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/payment-authorised",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/payment-pending",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-ceased-to-operate"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension-drilling-reservation"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension-exploration-permit"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-renewal"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-surrender"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-suspension"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-ceased-to-operate",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension-drilling-reservation",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension-exploration-permit",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-renewal",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-surrender",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-suspension",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/preferred-tenderer",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/payment-authorised"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/priority-applicant",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proceed-with-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposal-accepted",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposed",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ranked",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/refusal",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/rejected",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-application-rejected",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-lodged",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-withdrawn",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewed",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/revoked",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/secondary-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/sub-blocks-all-relinquished",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/submitted",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/surrendered",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/suspended-condition",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/term-extended",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/terminated",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/tribunal-recommendation",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unfinalised",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unsuccessful-application",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/withdrawn",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+            }
+        ]
+    },
+    {
+        "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#historyNote": [
+            {
+                "@value": "This file contains the 2021.01 SKOS-RDF version of the GGIC Petroleum Tenement Type vocabulary; adopted April 2021; converted to MS Excel XML for SKOS generation using SKOS_from_XLS_2019.01.xslt",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Petroleum Tenement Status",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2021-06-14",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/agson"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2025-06-04",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/experimental"
+            }
+        ],
+        "https://schema.org/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/agson"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#changeNote": [
+            {
+                "@value": "2025-08-25 NJC: Added status experimental to ConceptScheme for status testing"
+            },
+            {
+                "@value": "2024-10-16 NJC: update to be VocPub 4.10 valid"
+            },
+            {
+                "@value": "2021-06-14 OLR: Original SKOS implementation"
+            },
+            {
+                "@value": "2021-07-05 Nicholas Car & Vaughan Edgell: SKOS implementation aligned with VocPub vocabulary profile for display"
+            },
+            {
+                "@value": "2025-06-04 NJC Updates metadata to meet the VocPub 5.1 profile",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ]
+    }
+]

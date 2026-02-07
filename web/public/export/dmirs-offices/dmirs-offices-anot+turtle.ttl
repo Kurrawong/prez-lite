@@ -1,0 +1,122 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/dmirs-offices> a skos:ConceptScheme;
+    skos:definition "Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. "@en;
+    skos:prefLabel "DEMIRS offices"@en;
+    skos:historyNote "Administrative compilation based on Department of Energy, Mines, Industry Regulation and Safety office locations (https://www.dmirs.wa.gov.au/content/administrative-office)"@en;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/accepted>;
+    owl:versionIRI <https://linked.data.gov.au/def/dmirs-offices/1.1>;
+    prov:qualifiedAttribution _:n3-0, _:n3-1;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateCreated "2023-09-13"^^xsd:date;
+    sdo:dateModified "2023-12-01"^^xsd:date;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    sdo:version "1.1";
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/administration>;
+    prez:identifier "ns4:dmirs-offices";
+    prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:dmirs-offices";
+    prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:dmirs-offices/items";
+    prez:type prez:FocusNode;
+    prez:label "DEMIRS offices"@en;
+    prez:description "Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. "@en.
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/accepted> prez:label "accepted";
+    prez:description "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded.".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-0 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0009-0002-5543-2719>.
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
+_:n3-1 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+sdo:version prez:label "version";
+    prez:description "The version of the CreativeWork embodied by a specified resource".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
+_:n3-2 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+xsd:date prez:label "date".
+<https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace> a skos:Concept;
+    skos:prefLabel "1 Adelaide Terrace"@en.
+<https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace> a skos:Concept;
+    skos:prefLabel "66 St Georges Terrace"@en.
+<https://linked.data.gov.au/def/dmirs-offices/carlisle> a skos:Concept;
+    skos:prefLabel "Carlisle"@en.
+<https://linked.data.gov.au/def/dmirs-offices/collie-office> a skos:Concept;
+    skos:prefLabel "Collie office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries> a skos:Concept;
+    skos:prefLabel "Core libraries"@en.
+<https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office> a skos:Concept;
+    skos:prefLabel "Goldfields–Esperance (Kalgoorlie) regional office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house> a skos:Concept;
+    skos:prefLabel "Gordon Stephenson House"@en.
+<https://linked.data.gov.au/def/dmirs-offices/albany-office> a skos:Concept;
+    skos:prefLabel "Great Southern (Albany) regional office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library> a skos:Concept;
+    skos:prefLabel "JH (Joe) Lord Core Library"@en.
+<https://linked.data.gov.au/def/dmirs-offices/broome-office> a skos:Concept;
+    skos:prefLabel "Kimberley (Broome) regional office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/leonora-office> a skos:Concept;
+    skos:prefLabel "Leonora office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/mason-bird> a skos:Concept;
+    skos:prefLabel "Mason Bird Building"@en.
+<https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan> a skos:Concept;
+    skos:prefLabel "Metropolitan offices"@en.
+<https://linked.data.gov.au/def/dmirs-offices/geraldton-office> a skos:Concept;
+    skos:prefLabel "Mid-West (Geraldton) regional office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/mineral-house> a skos:Concept;
+    skos:prefLabel "Mineral House"@en.
+<https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office> a skos:Concept;
+    skos:prefLabel "Mount Magnet office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/karratha-office> a skos:Concept;
+    skos:prefLabel "North West (Karratha) regional office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/perth-core-library> a skos:Concept;
+    skos:prefLabel "Perth Core Library"@en.
+<https://linked.data.gov.au/def/dmirs-offices/dmirs-regional> a skos:Concept;
+    skos:prefLabel "Regional offices"@en.
+<https://linked.data.gov.au/def/dmirs-offices/bunbury-office> a skos:Concept;
+    skos:prefLabel "South West (Bunbury) regional office"@en.
+<https://linked.data.gov.au/def/dmirs-offices/southern-cross-office> a skos:Concept;
+    skos:prefLabel "Southern Cross office"@en.

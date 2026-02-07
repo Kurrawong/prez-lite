@@ -1,0 +1,609 @@
+[
+  {
+    "@id": "_:n3-80",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/earth-science-data-category/geochronology",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geochronology"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the relative or absolute age of rocks, minerals and fossils. Absolute age is the measurement of age in years, but 'absolute' ages typically have some amount of error and are inexact. Relative age, in contrast, is the approximate age of rocks, fossils or minerals made by determining the age of the material relative to other surrounding material. Source: Schlumberger Oilfield Glossary"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020",
+    "https://prez.dev/label": [
+      {
+        "@value": "1297.0 ANZSRC - Australian and New Zealand Standard Research Classification, 2020: Fields of Research (FoR)"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370502",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geochronology"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth science fields of research",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/biostratigraphic-age-determination",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:biostratigraphic-age-determination"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:biostratigraphic-age-determination"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "biostratigraphic age determination",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The correlation and age determination of rocks through the use of fossils, i.e. the determination of approximate absolute ages from the distribution of fossil assemblages in strata and primarily based on a number of time scales that related absolute age to the established sequence of (primarily planktonic) fossil events.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/dendrochronology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:dendrochronology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:dendrochronology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "dendrochronology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of annual growth rings of trees for dating of the recent past.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geochronology",
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/370502"
+      },
+      {
+        "@id": "http://linked.data.gov.au/def/earth-science-data-category/geochronology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "370502",
+        "@type": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The science of dating and determining the time sequence of events in the history of the Earth, i.e. the study of the relative or numerical/absolute age of rocks, minerals and fossils. Numerical age is the measurement of age in years ('numerical' is preferred to 'absolute' ages, as the latter typically have some amount of error and are inexact) whereas relative age, in contrast, is the approximate age of rocks, fossils or minerals made by determining the age of the material relative to the age of and relationships with other surrounding material.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "From the Fields of Research vocabulary from the Australian and New Zealand Standard Research Classification (ANZSRC, 2020). Definition adapted from Glossary of geology (5th edition revised; Neuendorf et. al., 2011) and Schlumberger Oilfield Glossary."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "geochronology",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/geochronology",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      },
+      {
+        "@value": "https://glossary.slb.com/terms/g/geochronology",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/biostratigraphic-age-determination"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/dendrochronology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/isotope-age-determination"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/paleomagnetic-age-determination"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/radiogenic-age-determination"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/tephrochronology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/thermochronology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/varve-chronology"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geochronology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geochronology"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geochronology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The science of dating and determining the time sequence of events in the history of the Earth, i.e. the study of the relative or numerical/absolute age of rocks, minerals and fossils. Numerical age is the measurement of age in years ('numerical' is preferred to 'absolute' ages, as the latter typically have some amount of error and are inexact) whereas relative age, in contrast, is the approximate age of rocks, fossils or minerals made by determining the age of the material relative to the age of and relationships with other surrounding material.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/isotope-age-determination",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:isotope-age-determination"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:isotope-age-determination"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "isotope age determination",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The application of natural variations in the relative abundances of isotopes of various elements, measured by isotope-ratio mass spectrometry, to reveal information about the ages of rock, air or water bodies, or processes of mixing between them.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/paleomagnetic-age-determination",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:paleomagnetic-age-determination"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:paleomagnetic-age-determination"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "paleomagnetic age determination",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The dating of geological materials by comparing the magnetic signature in rocks to known changes in the Earth's magnetic field (based on movements of the magnetic north pole over geological time). It is based on matching the changes in the paleomagnetic field recorded in lava flows or sediments with their corresponding dates in the magnetic polarity time scale. When applied to archeology, it is referred to as archeomagnetics.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/radiogenic-age-determination",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:radiogenic-age-determination"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:radiogenic-age-determination"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "radiogenic age determination",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The dating of geological materials by using the effects of radioactivity other than the natural decay from a parent to a daughter isotope. It includes methods such as fission tracks (measure of the density of track marking left in a material by the spontaneous fission of uranium-238 impurities), luminescence (measure of the effect of background radiation on certain minerals), and electron spin resonance (ESR), measure of the amount of unpaired electrons in crystalline structures that were previously exposed to natural radiation). The term radiogenic here is used as in Colman et al. (1987).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/tephrochronology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:tephrochronology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:tephrochronology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "tephrochronology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The collection, preparation, petrographic description, and approximate dating of tephra. The technique uses discrete layers of tephra (volcanic ash from a single eruption) to create a chronological framework in which paleoenvironmental or archeological records can be placed. The premise of the technique is that each volcanic event produces ash with a unique chemical 'fingerprint' that allows the deposit to be identified across the area affected by fallout. Thus, once the volcanic event has been independently dated, the tephra horizon will act as time marker (as such it is a variant of the basic geological technique of stratigraphy).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/thermochronology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:thermochronology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:thermochronology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "thermochronology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the thermal evolution of a region of a planet. Thermochronologists use radiometric dating (the determination of the age of a sample based on the rate of decay of a radioactive nuclide) along with closure temperatures (i.e. the temperature of the mineral being studied at the time given by the date recorded) to understand the thermal history of a specific rock, mineral, or geological unit.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/varve-chronology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:varve-chronology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:varve-chronology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "varve chronology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A dating method that utilizes the seasonal (summer and winter) sedimentological variations of deposits in lakes that undergo an annual freeze-up, by counting and measuring thicknesses in annual paired layers of sediments. Because each year’s sediment accumulation varies in thickness according to the climatic conditions of the melt season, any long sequence of varve measurements provides a distinctive 'signature' and can be correlated for moderate distances from lake basin to lake basin. Counting and correlation of varves have been used to measure the ages of Pleistocene glacial deposits.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

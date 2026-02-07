@@ -32,5 +32,5 @@ export function resolveVocabUrl(
   const base = baseUrl || detectBaseUrl()
   if (!base) return null
 
-  return `${base}/export/vocabs/${vocab}/${vocab}.json`
+  return `${base}/export/${vocab}/${vocab}-list.json`
 }

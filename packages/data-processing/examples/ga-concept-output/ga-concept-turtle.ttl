@@ -1,0 +1,19 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling> a skos:Concept;
+    dcterms:identifier "boreholeFluidSampling"^^xsd:token;
+    skos:definition "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."@en;
+    skos:inScheme <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod>;
+    skos:narrower <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling>;
+    skos:prefLabel "borehole fluid sampling"@en;
+    skos:topConceptOf <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod>.

@@ -1,0 +1,411 @@
+[
+  {
+    "@id": "_:n3-35",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:wa-coordinate-reference-systems"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Western Australian coordinate reference systems",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The coordinate reference systems (geographic and projected) used and referred to within Western Australia. It includes historical and current reference systems, Universal Transverse Mercator (UTM) zones, and, where applicable, notations based on the EPSG registry (https://epsg.io/). Some concepts are included to account for legacy data/maps with limited information.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The Universal Transverse Mercator coordinate system (usually simply called UTM) is a map projection system (not a projection) designed to assign coordinates to locations on the surface of the Earth. It divides the Earth into 60 zones, each 6° of longitude in width. These longitudinal zones are numbered 1 to 60 – east from longitude 180°; the polar regions south of 80°S and north of 84°N are excluded. Each zone is characterized by a central meridian; as a result, within a zone nothing is more than 3° from the central meridian and therefore locations, shapes and sizes and directions between all features are very accurate. The UTM sometimes also uses 20 latitude bands, each 8° high, numbered A to Z (with O and I not being used) – north from Antarctica. The UTM was developed in 1947 by the North Atlantic Treaty Organisation (NATO).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Universal Transverse Mercator System",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "UTM",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      },
+      {
+        "@value": "https://www.icsm.gov.au/education/fundamentals-mapping/projections/commonly-used-map-projections#UTM",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:utm"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems/items/ns1:utm"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Universal Transverse Mercator System",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Universal Transverse Mercator coordinate system (usually simply called UTM) is a map projection system (not a projection) designed to assign coordinates to locations on the surface of the Earth. It divides the Earth into 60 zones, each 6° of longitude in width. These longitudinal zones are numbered 1 to 60 – east from longitude 180°; the polar regions south of 80°S and north of 84°N are excluded. Each zone is characterized by a central meridian; as a result, within a zone nothing is more than 3° from the central meridian and therefore locations, shapes and sizes and directions between all features are very accurate. The UTM sometimes also uses 20 latitude bands, each 8° high, numbered A to Z (with O and I not being used) – north from Antarctica. The UTM was developed in 1947 by the North Atlantic Treaty Organisation (NATO).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:utm-z49"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems/items/ns1:utm-z49"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "UTM z49",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The 49th UTM zone spanning from longitudes 108°E to 114°E. Central meridian 111°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:utm-z50"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems/items/ns1:utm-z50"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "UTM z50",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The 50th UTM zone spanning from longitudes 114°E to 120°E. Central meridian 115°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:utm-z51"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems/items/ns1:utm-z51"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "UTM z51",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The 51st UTM zone spanning from longitudes 120°E to 126°E. Central meridian 121°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:utm-z52"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:wa-coordinate-reference-systems/items/ns1:utm-z52"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "UTM z52",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The 49th UTM zone spanning from longitudes 126°E to 132°E. Central meridian 129°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

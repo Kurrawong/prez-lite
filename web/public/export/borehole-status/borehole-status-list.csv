@@ -1,0 +1,35 @@
+iri,broader,prefLabel
+https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy,https://linked.data.gov.au/def/borehole-status-wa/post-operational,abandoned - energy
+https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral,https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational,abandoned - mineral
+https://linked.data.gov.au/def/borehole-status-wa/approved,https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval,approved
+https://linked.data.gov.au/def/borehole-status-wa/capped,https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,capped
+https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended,https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,cased and suspended
+https://linked.data.gov.au/def/borehole-status-wa/decommissioned,https://linked.data.gov.au/def/borehole-status-wa/post-operational,decommissioned
+https://linked.data.gov.au/def/borehole-status-wa/drilling,https://linked.data.gov.au/def/borehole-status-wa/in-progress,drilling
+https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational,https://linked.data.gov.au/def/borehole-status-wa/operational,drilling completed - operational
+https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational,https://linked.data.gov.au/def/borehole-status-wa/post-operational,drilling completed - post-operational
+https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended,https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,drilling suspended
+https://linked.data.gov.au/def/borehole-status-wa/in-progress,https://linked.data.gov.au/def/borehole-status-wa/operational,in progress
+https://linked.data.gov.au/def/borehole-status-wa/injecting,https://linked.data.gov.au/def/borehole-status-wa/operational,injecting
+https://linked.data.gov.au/def/borehole-status-wa/injecting-gas,https://linked.data.gov.au/def/borehole-status-wa/injecting,injecting gas
+https://linked.data.gov.au/def/borehole-status-wa/injecting-water,https://linked.data.gov.au/def/borehole-status-wa/injecting,injecting water
+https://linked.data.gov.au/def/borehole-status-wa/monitoring,https://linked.data.gov.au/def/borehole-status-wa/operational,monitoring
+https://linked.data.gov.au/def/borehole-status-wa/not-drilled,https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval,not drilled
+https://linked.data.gov.au/def/borehole-status-wa/operational,,operational
+https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,,operational - suspended
+https://linked.data.gov.au/def/borehole-status-wa/planned,https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval,planned
+https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval,,planning and approval
+https://linked.data.gov.au/def/borehole-status-wa/plugged,https://linked.data.gov.au/def/borehole-status-wa/rehabilitated,plugged
+https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned,https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy,plugged and abandoned
+https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled,https://linked.data.gov.au/def/borehole-status-wa/plugged,plugged and backfilled
+https://linked.data.gov.au/def/borehole-status-wa/post-operational,,post-operational
+https://linked.data.gov.au/def/borehole-status-wa/producing,https://linked.data.gov.au/def/borehole-status-wa/operational,producing
+https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting,https://linked.data.gov.au/def/borehole-status-wa/operational,producing and injecting
+https://linked.data.gov.au/def/borehole-status-wa/proposed,https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval,proposed
+https://linked.data.gov.au/def/borehole-status-wa/reaming,https://linked.data.gov.au/def/borehole-status-wa/drilling,reaming
+https://linked.data.gov.au/def/borehole-status-wa/rehabilitated,https://linked.data.gov.au/def/borehole-status-wa/post-operational,rehabilitated
+https://linked.data.gov.au/def/borehole-status-wa/shut-in,https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,shut in
+https://linked.data.gov.au/def/borehole-status-wa/suspended,https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,suspended
+https://linked.data.gov.au/def/borehole-status-wa/unknown,,unknown
+https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated,https://linked.data.gov.au/def/borehole-status-wa/post-operational,unrehabilitated
+https://linked.data.gov.au/def/borehole-status-wa/workover,https://linked.data.gov.au/def/borehole-status-wa/operational-suspended,workover

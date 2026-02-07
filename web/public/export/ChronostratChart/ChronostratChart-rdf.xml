@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">This is a SKOS vocabulary presentation of the time units of the International Chronostratigraphic Chart represented as SKOS Concepts. Beginning and End ages are given for each unit in units of Millions of Years Ago (MYA).</skos:definition>
+    <skos:historyNote>This vocabulary uses IRIs originally created for the Geologic Timescale (2020) data (see http://resource.geosciml.org/vocabulary/timescale/)</skos:historyNote>
+    <skos:prefLabel xml:lang="en">International Chronostratigraphic Chart</skos:prefLabel>
+    <skos:altLabel xml:lang="ca">TAULA CRONOESTRATIGRÀFICA INTERNACIONAL</skos:altLabel>
+    <skos:altLabel xml:lang="cs">MEZINÁRODNÍ CHRONOSTRATIGRAFICKÁ TABULKA</skos:altLabel>
+    <skos:altLabel xml:lang="de">INTERNATIONALE CHRONOSTRATIGRAPHISCHE TABELLE</skos:altLabel>
+    <skos:altLabel xml:lang="es">TABLA CRONOESTRATIGRÁFICA INTERNACIONAL</skos:altLabel>
+    <skos:altLabel xml:lang="eu">NAZIOARTEKO TAULA KRONOESTRATIGRAFIKOA</skos:altLabel>
+    <skos:altLabel xml:lang="fi">KANSAINVÄLINEN KRONOSTRATIGRAFINEN TAULU</skos:altLabel>
+    <skos:altLabel xml:lang="fr">CHARTE CHRONOSTRATIGRAPHIQUE INTERNATIONALE</skos:altLabel>
+    <skos:altLabel xml:lang="hu">NEMZETKÖZI IDŐRÉTEGTANI TÁBLÁZAT</skos:altLabel>
+    <skos:altLabel xml:lang="it">SCALA CRONOSTRATIGRAFICA INTERNAZIONALE</skos:altLabel>
+    <skos:altLabel xml:lang="ja">国際年代層序表</skos:altLabel>
+    <skos:altLabel xml:lang="ko">국 제 지 질 연 대 층 서 표</skos:altLabel>
+    <skos:altLabel xml:lang="lt">TARPTAUTINĖ CHRONOSTRATIGRAFIJOS SKALĖ</skos:altLabel>
+    <skos:altLabel xml:lang="nl">INTERNATIONALE CHRONOSTRATIGRAFISCHE TABEL</skos:altLabel>
+    <skos:altLabel xml:lang="no">INTERNASJONAL KRONOSTRATIGRAFISK TABELL</skos:altLabel>
+    <skos:altLabel xml:lang="pt">TABELA CRONOESTRATIGRÁFICA INTERNACIONAL</skos:altLabel>
+    <skos:altLabel xml:lang="ru">МЕЖДУНАРОДНАЯ ХРОНОСТРАТИГРАФИЧЕСКАЯ ШКАЛА</skos:altLabel>
+    <skos:altLabel xml:lang="sk">MEDZINÁRODNÁ CHRONOSTRATIGRAFICKÁ TABUĽKA</skos:altLabel>
+    <skos:altLabel xml:lang="tr">ULUSLARARASI KRONOSTRATİGRAFİK ÇİZELGE</skos:altLabel>
+    <skos:altLabel xml:lang="zh">国 际 年 代 地 层 表</skos:altLabel>
+    <prov:wasDerivedFrom rdf:resource="http://resource.geosciml.org/vocabulary/timescale/gts2020"/>
+    <dcterms:conformsTo rdf:resource="https://w3id.org/profile/vocpub/4.6"/>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-26</dcterms:created>
+    <dcterms:creator rdf:resource="https://linked.data.gov.au/org/ics"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-11-22</dcterms:modified>
+    <dcterms:publisher rdf:resource="https://linked.data.gov.au/org/ics"/>
+    <owl:versionIRI rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/2024-12"/>
+    <owl:versionInfo>2024-12</owl:versionInfo>
+    <skos:hasTopConcept rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic"/>
+    <skos:hasTopConcept rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Precambrian"/>
+    <sdo:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://stratigraphy.org/chart</sdo:citation>
+    <sdo:copyrightHolder rdf:resource="https://linked.data.gov.au/org/ics"/>
+    <sdo:copyrightNotice xml:lang="en">(c) International Commission on Stratigraphy, 2024</sdo:copyrightNotice>
+    <sdo:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <skos:versionInfo>2024-12: Updated Chart to include:
+
+* ratification of the Valanginian GSSP
+* numeric age of Valanginian updated to 137.05 +/- 0.2
+
+2023-09: updated form of the Geologic Timescale (2020) (see http://resource.geosciml.org/vocabulary/timescale/) to match the 2023-09 Chart, as released at https://stratigraphy.org/chart in late 2023.</skos:versionInfo>
+    <skos:scopeNote xml:lang="en">Units of all ranks are in the process of being defined by Global Boundary Stratotype Section and Points (GSSP) for their lower boundaries, including those of the Archean and Proterozoic, long defined by Global Standard Stratigraphic Ages (GSSA). Italic fonts indicate informal units and placeholders for unnamed units. Versioned charts and detailed information on ratified GSSPs are available at the website http://www.stratigraphy.org. The URL to this chart is found below.
+
+Numerical ages are subject to revision and do not define units in the Phanerozoic and the Ediacaran; only GSSPs do. For boundaries in the Phanerozoic without ratified GSSPs or without constrained numerical ages, an approximate numerical age (~) is provided.
+
+Ratified Subseries/Subepochs are abbreviated as U/L (Upper/Late), M (Middle) and L/E (Lower/Early). Numerical ages for all systems except Quaternary, upper Paleogene, Cretaceous, Jurassic, Triassic, Permian, Cambrian and Precambrian are taken from ‘A Geologic Time Scale 2012’ by Gradstein et al. (2012), those for the Quaternary, upper Paleogene, Cretaceous, Jurassic, Triassic, Permian, Cambrian and Precambrian were provided by the relevant ICS subcommissions.
+
+Colouring follows the Commission for the Geological Map of the World &lt;www.ccgm.org&gt;.
+
+Chart drafted by K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) International Commission on Stratigraphy, September 2024.
+
+To cite: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated), _The ICS International Chronostratigraphic Chart_. Episodes 36: 199-204</skos:scopeNote>
+    <skos:scopeNote xml:lang="ca">Els límits inferiors de les unitats de tots els rangs es troben actualment en procés de ser definits com a Estratotips Globals de Límit (GSSP - Global Boundary Stratotype Section and Point), incloses les de l&apos;Arqueà i el Proterozoic que, per convenció, havien estat definits cronomètricament segons edats numèriques absolutes (GSSA-Global Standard Stratigraphic Ages). Hom pot trobar la taula original i la informació detallada sobre els GSSP ratificats a http://www.stratigraphy.org.
+
+Les edats numèriques (Ma) estan subjectes a revisió i no defineixen unitats en el Fanerozoic ni en I’Ediacarià. Això només ho fan els GSSP. Pel que fa als límits d&apos;aquelles unitats del Fanerozoic que encara no tenen un GSSP ratificat, o dels quals no es disposa d&apos;una edat numèrica acotada, la taula dona una edat numèrica aproximada (~).
+
+Les Subsèries/Subèpoques ratificades s’abrevien com S/T (Superior/Tardà), M (Mitjà) i I/P (Inferior/Primerenc). Les edats numèriques de tots els sistemes, excepte el Quaternari, el Paleogen superior, el Cretaci, el Juràssic, el Triàsic, el Permià i el Precambrià provenen de “A Geologic Time Scale 2012” de Gradstein et al. (2012). Les del Quaternari, Paleogen superior, Cretaci, Juràssic, Triàsic, Permià, Cambrià i Precambrià són aportacions originals de les subcomissions respectives de la ICS (Int. Commission on Stratigraphy).
+
+Taula dissenyada per K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) Comissió Internacional d’Estratigrafia (IUGS), Setembre 2024.
+
+Citacio: Cohen, K.M., Finney, S.C., Gibbard, P.L., y Fan, J.-X. (2013; actualilzat) The ICS Intemational Chronostratigraphic Chart. Episodes 36: 199-204.
+
+Traducció al català per iniciativa de Juan Carlos Gutiérrez-Marco (CSIC).</skos:scopeNote>
+    <skos:scopeNote xml:lang="cs">Postupně se pracuje na tom, aby všechny jednotky byly definovány svými spodními hranicemi na globálních stratotypech (GSSP - Global Boundary Stratotype Section and Point). To platí i pro jednotky archaika a proterozoika, dosud definované globálním standardním stratigrafickým stářím (GSSA - Global Standard Stratigraphic Age). Neformální jednotky a jednotky doposud nepojmenované jsou psány kurzívou. Další verze tabulky a detailní informace o ratifikovaných GSSP jsou dostupné na webu http://www.stratigraphy.org. URL této tabulky je uveden níže.
+
+Absolutní stáří jsou průběžně revidována a nedefinují jednotky ve fanerozoiku a ediakaru, kde jsou rozhodující pouze GSSP. Pro absolutního stáří hranic fanerozoických jednotek bez ratifikovaného GSSP nebo bez přesného absolutního datování je použit symbol (~).
+
+Označení schválených pododdělení/podepoch jsou v tabulce zkrácena na sp/sta (spodní/starší), stř (střední) a sv/ml (svrchní/mladší). Absolutní stáří jednotek jsou převzata z Gradstein et al. (2012) ‘A Geologic Time Scale 2012’, s výjimkou kvartéru, svrchního paleogénu, křídy, jurský, triasu, permu a prekambria, pro něž byla data poskytnuta příslušnými ICS subkomisemi.
+
+Barvy jednotek převzaty podle Komise pro geologickou mapu světa (Commission for the Geological Map of the World; www.ccgm.org).
+
+Návrh originální tabulky v angličtině: K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) Mezinárodní stratigrafická komise, září 2023
+
+Způsob citace původní tabulky: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36:199-204</skos:scopeNote>
+    <skos:scopeNote xml:lang="de">Globale stratigraphische Einheiten werden mit ihrer Basis definiert an Globalen Stratotyp Profilen und Punkten (GSSP, Global Stratotyp Section and Point). Dagegen sind Einheiten ≥ 1000 Ma definiert mit Globalen Stratigraphischen Standardaltern (GSSA). Mehr Informationen dazu unter: http://www.stratigraphy.org. Bis 09/2023 ratifizierte Grenzen sind mit einem Goldenen Nagel markiert.
+
+Die numerischen Alter stammen aus der Global Time Scale 2012 (GTS 2012, Gradstein et al. 2012), die Alter für das untere Pleistozän, das Chattium, die untere Kreide, die Jura, die Trias, das Perm und das Kryogenium von den zuständigen ICS-Subkommissionen. Das Zeichen ~ steht vor relativ unsicheren Altern.
+
+Farben: Commission for the Geological Map of the World (CGMW, http://www.ccgm.org).
+
+Zitierweize: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013;aktualisiert) The ICS International Chronostratigraphic Chart. Episodes 36:199-204. URL: http://www.stratigraphy.org/ICSchart/ChronostratChart2022-02.pdf
+
+Version in Deutsch: Deutsche Stratigraphische Kommission (DSK, M. Menning) Österreichische Stratigraphische Kommission (ASC, W. Piller)</skos:scopeNote>
+    <skos:scopeNote xml:lang="es">odas las unidades de esta Tabla, cualquiera que sea su rango, se definen por el Estratotipo Global de Límite (GSSP - Global Boundary Stratotype Section and Point) referido siempre a su límite inferior. Este proceso se halla todavía inacabado e incluirá las unidades del Arcaico y Proterozoico, cuyas divisiones se convinieron inicialmente mediante edades absolutas (GSSA - Global Standard Stratigraphic Ages). La posición de los GSSP oficiales se indica en la tabla mediante el símbolo del “Clavo Dorado” (Golden Spike), que los materializa en el terreno. El original de la tabla en distintos idiomas y formatos, junto con los detalles de los estratotipos globales de límite (criterio de definición de cada uno, localización geográfica y geológica, correlación, etc.), están disponibles en la web www.stratigraphy.org.
+
+Las edades absolutas, expresadas en millones de años (Ma), son sólo orientativas, pues tanto el Ediacárico como las unidades del Fanerozoico se definen formalmente por sus correspondientes GSSP, en vez de por edades numéricas. No obstante, para aquellas divisiones que no cuentan aún con un estratotipo global o con edades bien establecidas, se indican las dataciones aproximadas (~ Ma) de sus límites. Las edades numéricas han sido tomadas de Gradstein et al. (A Geologic Time Scale 2012), con excepción de las correspondientes al Cuaternario, Paleógeno superior, Cretácico, Jurásico, Triásico, Pérmico, Cámbrico y Precámbrico, que fueron aportadas por las subcomisiones respectivas de la ICS-IUGS.
+
+Tabla diseñada por K.M. Cohen, D.A.T. Harper, P.L. Gibbard y N. Car
+
+(c) International Commission on Stratigraphy (IUGS), Septiembre 2024.
+
+Citar como: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; actualizada). The ICS International Chronostratigraphic Chart. Episodes 36: 199-204</skos:scopeNote>
+    <skos:scopeNote xml:lang="eu">Kategoria guztietako unitateak definitzeko prozesuan daude beren beheko mugen muga-estratotipo globaleko ebaki eta puntuen bidez (GSSP-Global Boundary Stratotype Section and Point); baita Arkearrekoak eta Proterozoikokoak ere, denbora luzean adin estratigrafiko estandar globalez (GSSA-Global Standard Startigraphic Ages) definituak izan direnak. Taulak eta onetsitako GSSPen informazio xehea ondorengo web orrian eskuragarri daude: http://www.stratigraphy.org. Taula honen URLa behean adierazita dago.
+
+Adin numerikoak berrikusi egin daitezke eta ez dute unitaterik definitzen Fanerozoikoan eta Ediacararrean; soilik GSSPek definitzen dituzte unitateak. GSSPrik onetsita edo adin numeriko mugaturik ez duten mugentzako gutxi gorabeharko adin numeriko bat (~) eman da.
+
+Sistema guztien adin numerikoak, Behe Pleistozeno, Permiar, Triasiko, Kretazeo eta Kanbriarraurrekoak izan ezik, “A Geological Time Scale 2012” (Gradstein et al., 2012) argitalpenetik hartuak dira; Behe Pleistozeno, Permiar, Triasiko eta Kretazeokoak dagozkien ICSko azpibatzordeek emanak dira.
+
+Taula hau K.M. Cohen, S.C. Finney eta P.L. Gibbard-ek diseinatu dute
+
+(c) International Commission on Stratigraphy (IUGS), 2024 eko urtarrila.
+
+Aipamena egiteko: Cohen, K.M., Finney, S.C., Gibbard, P.L. eta Fan, J.-X. (2013; eguneratua) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204</skos:scopeNote>
+    <skos:scopeNote xml:lang="fi">Kaikkien stratigrafisten tasojen yksiköille määritetään alarajoja Global Boundary Stratotype Section and Points (GSSP) -periaatteen mukaisesti. Tämä koskee myös arkeeisten ja proterotsooisten yksiköiden rajoja, jotka on aikaisemmin määritetty Global Standard Stratigraphic Ages (GSSA) -periaatteen mukaan. Epäviralliset yksiköt on kirjoitettu kursiivilla. Aiemmat versiot ja yksityiskohtaiset tiedot ratifioitujen globaalien stratotyyppileikkausten alakontaktien maantieteellisistä sijainneista (GSSP-kohteista) on saatavana verkkosivustolla http://www.stratigraphy.org. Kaavion verkkosivun URL-osoite on annettu alla.
+
+Numeeriset iät saattavat muuttua eikä niillä määritetä fanerotsooisia eikä ediakaran yksiköitä; ne rajautuvat yksinomaan globaalien stratotyyppileikkausten alakontaktien (GSSP:t) perusteella. Fanerotsooisille yksikkörajoille annetaan ikäarvio (~), mikäli rajoilla ei ole ratifioitua GSSP:tä tai vahvistettua numeerista ikää.
+
+Ratifioidut sarjojen ja epookkien alajaot on lyhennetty Y/M (ylä-/myöhäis-), K (keski) ja A/V (ala-/varhais-). Kvartääriä, yläpaleogeenia, liitua, triasta, permiä ja prekambria lukuun ottamatta numeeriset iät on esitetty Gradstein et al. (2012) julkaisussa ”A Geologic Time Scale 2012”; kvartäärin, yläpaleogeenin, liidun, jura, triaksen, permin ja prekambrin iät on saatu asianomaisilta ICS:n alakomiteoilta.
+
+Väritys noudattaa Maailman geologisen karttakomission Geological Map of World (http://www.ccgm.org) värejä
+
+Taulun ovat laatineet K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) International Commission on Stratigraphy, Syyskuu 2024.
+
+Viittausohje: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="fr">La définition de la limite inférieure de chaque unité formelle par un point précis dans la coupe d’un stratotype de limite global (GSSP-Global Boundary Stratotype Section and Points) est encore en cours, y compris celle des unités de l’Archéen et du Protérozoïque, auparavant définie par des âges absolus (GSSA-Global Standard Stratigraphic Ages). Les noms en italique indiquent des unités informelles et l’espace pour des unités à nommer. Les chartes et des informations plus détaillées sur les GSSP sont disponibles sur le site web de l’International Commission on Stratigraphy (ICS) www.stratigraphy.org.
+
+Les âges numériques sont sujets à révision et ne définissent pas les unités du Phanérozoïque et de l’Édicarien; seuls les GSSP le font. Pour les limites du Phanérozoïque qui n’ont pas de GSSP ratifiés ou des âges numériques calibrés, un âge numérique approximatif (~) est indiqué. Les sous-séries/-sous-époques ratifiées sont abbrégées par S (Supérieur), M (Moyen) et I (Inférieur). Les âges numériques de tous les systèmes à l’exception du Précambrien, Cambrien, Permien, Trias, Jurassique, Crétacé, Paléogène supérieur et Quaternaire sont tirés du livre A Geologic Time Scale 2012 par Gradstein et al. (2012); ceux Précambrien, Cambrien, Permien, Trias, Jurassique, Crétacé, Paléogène supérieur et Quaternaire ont été définis par les subcommissions de l’ICS.
+
+Les couleurs suivent les recommendations de la Commission de la Carte Géologique du Monde (www.ccgm.org)
+
+Chart faite par K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) Commission Internationale de Stratigraphie, Septembre 2024.
+
+Citation: Cohen, K.M., Finney, S.C., Gibbard, P..L. &amp; Fan, J.X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36:199-204</skos:scopeNote>
+    <skos:scopeNote xml:lang="hu">Bármely rendű egység alsó határának kijelölése globális határsztratotípus-szelvény és pont (GSSP) alapján történik, beleértve az archaikum és proterozoikum egységeit is, bár ezeket sokáig globális standard rétegtani korok (GSSA) útján definiálták. Az informális, valamint a még elnevezésre váró egységeket dőlt betű jelzi. A táblázat különböző verziói és a ratifikált GSSP-kre vonatkozó részletes információk a http://www.stratigraphy.org honlapról érhetők el. E táblázat webcímét lásd alább.
+
+A számszerű korok új kormeghatározási eredmények alapján változhatnak, de a fanerozoikum egységeinek és az ediacarainak a definíciójában nincs szerepük. A ratifikált GSSP-vel vagy megbízhatóan meghatározott számszerű korral nem rendelkező fanerozoikumi egységeknél közelítő számszerű kor (~) szerepel.
+
+A ratifikált alsorozatok/alkorok rövidítése f/k (felső/késő), k (középső) és a/k (alsó/kora). A számszerű korok forrása Gradstein et al. (2012) „A Geologic Time Scale 2012” c. műve, kivéve a kvarter, felső paleogén, kréta, jura, triász, perm és prekambrium egységeit, melyekhez a Nemzetközi Rétegtani Bizottság illetékes albizottságai szolgáltattak adatot.
+
+A színek a Földtani Világtérkép Bizottság (CGMW) rendszerét követik. ( www.ccgm.org )
+
+A táblázat kidolgozói: K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) Nemzetközi Rétegtani Bizottság (ICS), 2024. szeptember
+
+Javasolt idézés: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; frissítve) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="it">Le unità stratigrafiche del Fanerozoico e dell&apos;Ediacarano, sono state o sono in procinto di essere definite da GSSP (Global Boundary Stratotype Section and Points) tramite il loro limite inferiore. Le unità con età ≥ 1000 Ma, ovvero quelle dell&apos;Archeano e del Proterozoico, sono al momento definite da GSSA (Global Stratigraphic Standard Ages). I nomi in corsivo identificano le unità informali, mentre le unità non ancora definite sono indicate con il nome generico del proprio rango. Schemi aggiornati e informazioni dettagliate sui GSSP ratificati sono disponibili sul sito web http://www.stratigraphy.org. Le datazioni numeriche sono oggetto di revisione e, a differenza dei GSSP, non definiscono unità nel Fanerozoico e nell’Ediacarano. Per le unità del Fanerozoico non definite da GSSP o senza un’età precisa, viene indicata un’età numerica approssimata (~). Le età numeriche per tutti i sistemi eccetto che per il Quaternario, il Paleogene superiore, il Cretacico, il Triassico, il Permiano, il Cambriano e il Precambriano sono prese da “A Geologic Time Scale 2012” di Gradstein et al. (2012), quelle per il Quaternario, il Paleogene superiore, il Cretacico, il Giurassico, il Triassico, il Permiano, il Cambriano e il Precambriano sono state fornite dalle relative sottocommissioni della ICS.
+
+I colori seguono le indicazioni della Commission for the Geological Map of the World (www.ccgm.org)
+
+Carta redatta da K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) International Commission on Stratigraphy, settembre 2024.
+
+Da citare: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; aggiornato)
+The ICS International Chronostratigraphic Chart. Episodes 36: 199-204
+
+Traduzione a cura della Commissione Italiana di Stratigrafia</skos:scopeNote>
+    <skos:scopeNote xml:lang="ja">すべての階層の層序区分単位に対して，その下限をGSSPs（国際境界模式層断面とポイント）によって定義する作業が進行中である．これは，長らくGSSA（国際標準層序年代）によって定義されてきた太古（累）界および原生（累）界の下限に対しても同様である．GSSPsに関する図および詳細な情報は，ウェブサイト http://www.stratigraphy.org に掲載されている．
+
+本表に掲載されている年代値は見直されることがあるが，それは顕生（累）界およびエディアカラン系の層序区分単位の定義の変更を伴うものではない．そのような定義の変更は，GSSPsによってのみ可能である．GSSPsにより定義されていない境界や確定した年代値がない顕生（累）界の層序区分単位境界に対しては，おおよその年代値を「~」を付して示した．
+
+第四系，上部古第三系，白亜系，三畳系，ペルム系，カンブリア系，先カンブリア（累）界を除く全ての界の年代値は，Gradstein et al.（2012） の‘The Geologic Time Scale 2012’による．第四系，上部古第三系，白亜系，三畳系，ペルム系，カンブリア系，先カンブリア（累）界の年代値に関しては，当該問題を扱う国際層序委員会の小委員会による．
+
+この日本語版ISC Chart（2024年6月版）は，IUGS（国際地質科学 連合）の許諾を得て，日本地質学会が作成した．表の色は，国際地質図委員会（Commission for the Geological Map of the World (www.cgmw.org）の 推奨に従う
+
+図案 (オリジナル): K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car
+
+(c) 国際層序委員会，2024年12月
+
+引用: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="ko">오 랫 동 안 국 제 표 준 층 서 연 령 ( G S S A ) 으 로 지 정 된 시 생 누 대 와 원생누대의 하부경계를 포함하여, 모든 지질시대의 하부경계에 대한 국제표준층서구역(GSSP)을 지정하고 있는 중이다. 이탤릭체는 비공식적인 지질시대나 이름이 붙여지지 않은 지질시대를 나타낸다. 이 표 의 모 든 버 전 과 승 인 된 G S S P 에 대 한 자 세 한 정 보 는 http://www.stratigraphy.org에서 찾아볼 수 있다. 이 표의 URL은 아래에 적어 놓았다.
+
+수 치 연 령 은 수 정 될 수 있 으 며 , 현 생 누 대 의 지 질 시 대 와 에디아카리기는 수치연령이 아니라 GSSP에 의해서만 정의된다. GSSP가 승인되지 않았거나 범위가 제한된 수치연령이 주어지지 않은 현생누대 지질시대의 경계에는 수치연령의 근사값(~)을 적어 놓았다. 승인된 아세/아통은 후기, 중기, 전기로 표기하였다. 제4기, 상부 고진기, 백악기, 트라이아스기, 쥐라기, 페름기, 캄브리아기 그리고 선 캄 브 리 아 시 대 의 수 치 연 령 은 국 제 층 서 위 원 회 의 해 당 지질시대위원회에서 제공하였으며, 이를 제외한 모든 지질시대 경계의 수치연령은 ‘Gradstein et al. (2012)의 ‘A Geologic Time Scale 2012’로 부터 인용하였다.
+
+표의 색채는 세계지질도위원회 (www.ccgm.org) 를 따랐다.
+
+표의 초안은 2024년 06월 (c) 국제층서위원회의 K.M. Cohen, D.A.T. Harper, P.L. Gibbard, N. Car가 만들었다.
+
+인용: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="lt">Visų rangų padaliniai yra apibrėžti Globalinio stratotipo pjūvio apatinės ribos tašku (GSPT), o archejaus ir proterozojaus padaliniai nusakomi Globalinio stratigrafinio amžiaus standartu (GSAS). Patvirtintu GSPT lentelėje detali informacija yra tikra tinklalapyje http://www.stratigraphy.org
+
+Fanerozojaus ir ediakaro GSPT padalinių amžiaus skaičiai yra neapibrėžti ir gali būti tikslinami toms fanerozojaus riboms, kurioms nėra GSPT patvirtinimo arba jos negalutinės, skaičiai rodo apytikrį amžių (~), yra sąlyginiai.
+
+Visų sistemų amžius, išskyrus apatinį pleistoceną, permą, triasą, kreidą ir prekambrą yra paimti iš Geologinės laiko skalės 2012 (Gradstein ir kt., 2012), o toms apatinio pleistoceno, permo, triaso ir kreidos, sąlygiškai pagal pakomisių duomenis. Spalvos suderintos su pasaulinio geologinio žemėlapio spalvomis (http://www.ccgm.org).
+
+Lentelė sudaryta: K.M. Cohen, S.C. Finney, P.L. Gibbard
+
+(c) Tarptautinė stratigrafijos komisija, 2024 sausis.
+
+Cituoti: Cohen, K.M., Finney, S.C., Gibbard, P.L., ir Fan, J.-X. (2013; papildyta) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="nl">De ondergrens van eenheden van verschillende rang, wordt momenteel stapsgewijs gedefinieerd op basis van Global Boundary Stratotype Section and Points (GSSPs), ook die in het Archeïcum en het Proterozoïcum welke vooralsnog als Global Standard Stratigraphic Age (GSSA) vastgesteld zijn. Tabellen en nadere informatie over geratificeerde GSSPs zijn te vinden op www.stratigraphy.org. De URL van deze tabel is hieronder gegeven.
+
+Van eenheden met hun door een GSSP gedefinieerde ondergrens, wordt de veronderstelde ouderdom in Ma van tijd tot tijd herzien (naar nieuw inzicht bijgesteld). Voor Fanerozoïsche eenheden waarvoor nog geen GSSP en/of numerieke ouderdom is vastgesteld, is een ouderdom bij benadering gegeven (~).
+
+De ouderdommen in Ma zijn overgenomen uit ‘A Geological Time Scale 2012’ door Gradstein et al. (2012), met uitzondering van die voor het Precambrium, Cambrium, Perm, Trias, Jura, Krijt, boven Paleogeen en Kwartair, die afkomstig zijn van de betreffende ICS subcommissies.
+
+De kleuren volgen deze van de Commissie voor de Geologische Kaart van de Wereld www.ccgm.org
+
+Tabel opgesteld door K.M. Cohen, D.A.T. Harper, P.L. Gibbard &amp; N. Car
+
+(c) International Commission on Stratigraphy, September 2024.
+
+Citeren: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated). The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.
+</skos:scopeNote>
+    <skos:scopeNote xml:lang="no">Det pågår nå en prosess der de nedre grensene for alle enhetene i tabellen defineres med Global Boundary Stratotype Section and Points (GSSP). Dette gjelder også for grensene i arkeikum og proterozoikum som lenge har vært definert med Global Standard Stratigraphical Ages (GSSA). Tabeller og detaljert informasjon om ratifiserte GSSP er tilgjengelig på websiden www.stratigraphy.org. Denne tabellens URL finnes nedenfor.
+
+Numeriske aldre underkastes revisjon og definerer ikke enheter i fanerozoikum og ediacara; kun ratifiserte GSSP gjelder. For grenser i fanerozoikum uten ratifisert GSSP eller kalibrerte numeriske aldere, er bare tilnærmete aldre (~) oppgitt.
+
+Numeriske aldre for alle systemer unntatt prekambrium, perm, trias, jura, kritt, øvre paleogen og kvartær er hentet fra ‘A Geological Time Scale 2012’ av Gradstein et al. (2012), mens de fra prekambrium, perm, trias, jura, kritt, øvre paleogen og kvartær er fremskaffet av de relevante underkomiteer i ICS.
+
+Fargeskalaen følger retningslinjene til The Commission for the Geological Map of the World www.ccgm.org
+
+Tabellen er tegnet av K.M. Cohen, D.A.T. Harper, P.L. Gibbard &amp; J.-X. Fan
+
+(c) International Commission on Stratigraphy, Septemebr 2024.
+
+Referanse: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated). The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="pt">A definição do Estratotipo Global de Limite (GSSP - Global Boundary Stratotype Section and Point) para a base dos diversos andares, séries, sistemas e eratemas, é um processo ainda incompleto. O mesmo ocorre A Tabela original e os detalhes sobre os GSSP (critério de definição de cada um, localização geográfica e geológica, correlação, etc.), atualizam-se regularmente na web page: http://www.stratigraphy.org.
+
+As Subséries e Subépocas ratificadas estão abreviadas como S (Superior), M (Médio) e I (Inferior). A datação absoluta em milhões de anos (Ma) para a base do Ediacárico e das restantes unidades do Fanerozoico é apenas orientadora, em especial para os limites sem GSSP formal (~Ma). Estes valores poderão ser revistos no futuro ou serem recalibrados geocronometricamente. Os valores indicados são provenientes de Gradstein et al. (A Geologic Time Scale 2012), excetuando as datações do Quaternário, Paleogénico Superior, Cretácico, Jurássico, Triássico, Pérmico, Câmbrico e Precâmbrico, fornecidas pelas subcomissões respetivas da ICS-IUGS.
+
+Tabela desenhada por K.M. Cohen, D.A.T. Harper, P.L. Gibbard e N. Car Setembro de 2024 © International Commission on Stratigraphy (IUGS)
+
+Citar: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; atualizada) The ICS International chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="ru">Нижние границы всех подразделений, определяемые Точкой глобального стратотипа границ (ТГСГ) постоянно уточняются, в том числе подразделения архея и протерозоя, давно определяемые геохронологическими данными (ГССВ /GSSA).
+
+Шкалы и подробная информация о ратифицированных GSSP доступна на сайте: http://www.stratigraphy.org. URL-адрес данной шкалы приводится ниже.
+
+Геохронологические возрасты границ постоянно уточняются и не определяют поразделения фанерозоя и эдиакария, которые фиксируются только через GSSP. Для границ в фанерозое, которые не имеют ратифицированных GSSP или рассчитанных геохронологических оценок, указано приблизительное значение (~).
+
+Оценки возрастов для всех систем, за исключением раннего плейстоцена, мелового, триасового, пермского периодов и докембрия приведены по «A Geologic Time Scale 2012» (Gradstein et al., 2012); а для указанных выше систем представлены соответствующими подкомиссиями ICS.
+
+Цвета шкалы соответствуют требованиям Комиссии по геологической карте Мира (http://ccgm.org/)
+
+Шкала представлена K.M. Cohen, D.A.T. Harper, P.L. Gibbard
+
+(с) Международная комиссия по стратиграфии, февраль 2024 г.
+
+Цитировать: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; с дополнениями) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="sk">Spodné hranice všetkých rádov sú definované na základe stratotypových profilov a bodov globálnych hraníc (GSSP) vrátane archaických a peroterozoických, ktoré sú definované na základe globálnych štandardných Numerické veky sú predmetom revízie a na rozdiel od GSSP nedefinujú jednotky fanerozoika a ediakaru. Pre hranice fanerozoických stupňov bez ratifikovaných GSSP alebo bez definovaného numerického veku, je použitý približný numerický vek (~).
+
+Ratifikované pododdelenia/podepochy sú skrátene označené v./m. (vrchný/mladší), str. (stredný) a sp./st. (spodný/starší). Numerické veky pri všetkých útvaroch okrem kvartéru, vrchného paleogénu, kriedy, triasu, permu a predkambria sú prevzaté z práce Gradstein et al. (2012)A Geologic Time Scale 2012. Kvartérne, vrchnopaleogénne, kriedové, jurský, triasové, permské a predkambrické veky poskytli príslušné subkomisie ICS.
+
+Farby podľa Komisie pre geologickú mapu sveta (www.ccgm.org)
+
+Anglickú tabuľku nakreslili K.M. Cohen, D.A.T. Harper, P.L. Gibbard a N. Car
+
+(c) Medzinárodná stratigrafická komisia, septembra 2024.
+
+Citovať ako: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36</skos:scopeNote>
+    <skos:scopeNote xml:lang="tr">Bütün kademelerin birimlerinin alt sınırları Küresel Stratotip Kesit ve Noktaların Sınırları (GSSP) kapsamında tanımlanmıştır ve buna Küresel Standart Stratigrafik Yaşlar (GSSA) tarafından uzun zamandır tanımlanan Arkeen ile Proterozoyik de dâhildir. Çizelgeler ve tasdikli GSSP’ler hakkında daha detaylı bilgiler http://www.stratigraphy.org sayfasından temin edilebilir. Bu çizelgenin URL’si aşağıda verilmiştir.
+
+Sayısal yaş değerleri gözden geçirilmeye açıktır ve Fanerozoyik ile Ediyakaran içindeki birimlerin sınırlanmasını sağlamaz; sadece GSSP ile elde edilmiştir. Tasdikli GSSP’den veya sınırlandırılmış sayısal yaş değerlerinden yoksun Fanerozoyikteki sınırlar için, yaklaşık sayısal değer (~) verilmiştir.
+
+Tasdikli Alt Seri/Devreler Ü/G (Üst/Geç), O (Orta) ve A/E (Alt/Erken) olarak kısaltılmıştır. Kuvaterner, Üst Paleojen, Kretase, Jura, Triyas, Permiyen ve Pre-Kambriyen dışında tüm sistemlerin sayısal yaş değerleri “Jeolojik Zaman Tablosu 2012”den alınmıştır (Gradstein vd. 2012); Kuvaterner, Üst Paleojen, Kretase, Jura, Triyas, Permiyen ve Pre-Kambriyen için olan yaşlar, Uluslararası Stratigrafi Komisyonu’nun ilgili alt komisyonları tarafından sağlanmıştır.
+
+Renklendirme kodları için Dünya Jeoloji Haritası Komisyonu (http://www.ccgm.org) temel alınmıştır.
+
+Çizelge tasarımı: K.M. Cohen, D.A.T. Harper, P.L. Gibbard
+
+(c) International Commission on Stratigraphy, Eylül 2024.
+
+Kaynak gösterimi: Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.</skos:scopeNote>
+    <skos:scopeNote xml:lang="zh">所有全球年代地层单位均由其底界的全球界线层型剖面和点位（GSSP）界定，包括长期由全球标准地层年龄（GSSA）界定的太古宇和元古宇各单位。斜体代表非正式名称或尚未命名单位的临时名称。图件及已批准GSSP的详情参见国际地层委员会官网。本图件的网址见右下角。
+
+年龄值仍在不断修订；显生宇和埃迪卡拉系的单位不能由 年龄界定，而只能由GSSP界定。显生宇中没有确定GSSP或精 确年龄值的单位，则标注了近似年龄值（～）。
+
+已批准的亚统/亚世简写为上/晚、中、下/早；第四系、古 近系上部、白垩系、侏罗系、三叠系、二叠系、寒武系和前寒 武系的年龄值由各分会提供；其他年龄值引自Gradstein等主 编的《地质年代表2012》一书。
+
+所图中各单位的颜色参照了世界地质图委员会 发布的色谱(http://www.ccgm.org)。
+
+本图件由K.M. Cohen、D.A.T. Harper、P.L. Gibbard和N. Car绘制
+
+(c)国际地层委员会，2024年12月（英文版)
+
+(c)国际地层委员会，2024年12月（中文版)
+
+引用：Cohen, K.M., Finney, S.C., Gibbard, P.L. &amp; Fan, J.-X. (2013; updated) The ICS International Chronostratigraphic Chart. Episodes 36: 199-204.
+</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic">
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Precambrian">
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hadean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Eoarchean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Archean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Precambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eoarchean"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoarchean"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoarchean"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoarchean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Mesoarchean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Neoarchean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Paleoarchean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Quaternary"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cretaceous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jurassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Triassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carboniferous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Devonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ordovician"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Permian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Calymmian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ectasian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Stenian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Precambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cryogenian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ediacaran"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Orosirian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhyacian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Siderian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Statherian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage3">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage3"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage4"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage4">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Artinskian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Permian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Artinskian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Asselian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kungurian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sakmarian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Asselian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Kungurian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Sakmarian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Bartonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Eocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bartonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lutetian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Priabonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ypresian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Lutetian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Priabonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ypresian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage10">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Furongian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Furongian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage10"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jiangshanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paibian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Jiangshanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Furongian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Paibian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Furongian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Capitanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Permian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Capitanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Roadian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wordian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Roadian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Wordian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Greenlandian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Holocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Holocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Quaternary"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Greenlandian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Meghalayan"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Northgrippian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Meghalayan">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Holocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Northgrippian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Holocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Aeronian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Llandovery"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Llandovery">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aeronian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhuddanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Telychian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Rhuddanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Llandovery"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Telychian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Llandovery"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Changhsingian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lopingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Lopingian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Permian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Changhsingian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wuchiapingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Wuchiapingian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lopingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Albian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cretaceous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Albian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aptian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Barremian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Berriasian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hauterivian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Valanginian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Aptian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Barremian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Berriasian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Hauterivian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Valanginian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Emsian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerDevonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Devonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Emsian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lochkovian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pragian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Lochkovian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Pragian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Hettangian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jurassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hettangian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliensbachian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sinemurian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Toarcian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Pliensbachian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Sinemurian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Toarcian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Tournaisian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerMississippian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerMississippian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mississippian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tournaisian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Floian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerOrdovician">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ordovician"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Floian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tremadocian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Tremadocian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Bashkirian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerPennsylvanian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerPennsylvanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bashkirian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Induan">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/LowerTriassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Triassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Induan"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Olenekian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Olenekian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Gorstian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludlow"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ludlow">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gorstian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludfordian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ludfordian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludlow"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Drumian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miaolingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Miaolingian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Drumian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guzhangian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wuliuan"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Guzhangian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miaolingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Wuliuan">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miaolingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Eifelian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Devonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eifelian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Givetian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Givetian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Aalenian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jurassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aalenian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bajocian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bathonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Callovian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Bajocian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Bathonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Callovian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Visean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleMississippian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/MiddleMississippian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mississippian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Visean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Dapingian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ordovician"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Dapingian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Darriwilian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Darriwilian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Moscovian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddlePennsylvanian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/MiddlePennsylvanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Moscovian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Anisian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Triassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Anisian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ladinian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ladinian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Aquitanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Miocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aquitanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Burdigalian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Langhian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Messinian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Serravallian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tortonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Burdigalian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Langhian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Messinian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Serravallian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Tortonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Chattian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oligocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Oligocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Chattian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rupelian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Rupelian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oligocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Danian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Paleocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Danian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Selandian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Thanetian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Selandian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Thanetian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Calabrian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Quaternary"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Calabrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Chibanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gelasian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperPleistocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Chibanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Gelasian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperPleistocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Piacenzian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Pliocene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neogene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Piacenzian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Zanclean"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Zanclean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage2">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage2"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Fortunian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Fortunian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Campanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cretaceous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Campanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenomanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Coniacian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Maastrichtian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Santonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Turonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Cenomanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Coniacian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Maastrichtian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Santonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Turonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Famennian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperDevonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Devonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Famennian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Frasnian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Frasnian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Kimmeridgian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperJurassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jurassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kimmeridgian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oxfordian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tithonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Oxfordian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Tithonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperMississippian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperMississippian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mississippian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Hirnantian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperOrdovician">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ordovician"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hirnantian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Katian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sandbian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Katian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Sandbian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Gzhelian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperPennsylvanian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperPennsylvanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gzhelian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kasimovian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Kasimovian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperPennsylvanian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Carnian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/UpperTriassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Triassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carnian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Norian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhaetian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Norian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Rhaetian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Homerian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wenlock"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Wenlock">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Homerian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sheinwoodian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Sheinwoodian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wenlock"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Neogene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Paleogene">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oligocene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Quaternary">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Holocene"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Calymmian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ectasian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Stenian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Cretaceous">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Jurassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperJurassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Triassic">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerTriassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperTriassic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Cryogenian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ediacaran">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Tonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Orosirian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Rhyacian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Siderian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Statherian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Cambrian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Furongian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miaolingian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Carboniferous">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mississippian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Devonian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerDevonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperDevonian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ordovician">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerOrdovician"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperOrdovician"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Permian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lopingian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Silurian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Llandovery"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludlow"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wenlock"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pridoli"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Mississippian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carboniferous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerMississippian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleMississippian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperMississippian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carboniferous"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/LowerPennsylvanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddlePennsylvanian"/>
+    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/UpperPennsylvanian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Pridoli">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Hadean">
+    <skos:broader rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Precambrian"/>
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Ages">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Eons">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Epochs">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Eras">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/Periods">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/SubPeriod">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/ics/ischart/SuperEons">
+    <skos:inScheme rdf:resource="http://resource.geosciml.org/classifier/ics/ischart"/>
+  </rdf:Description>
+</rdf:RDF>

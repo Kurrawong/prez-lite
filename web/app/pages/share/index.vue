@@ -12,38 +12,15 @@ const baseUrl = computed(() => {
 
 const quickStartCode = computed(() => `<script src="${baseUrl.value}/web-components/prez-vocab.min.js" type="module"><\/script>
 
-<prez-vocab-select vocab="your-vocab-slug"></prez-vocab-select>`)
+<prez-list vocab="your-vocab-slug"></prez-list>`)
 
-// Component info for docs section
-const componentDocs = [
-  {
-    id: 'select',
-    tag: 'prez-vocab-select',
-    title: 'Select',
-    description: 'Dropdown menu for single or multiple selection',
-    icon: 'i-heroicons-chevron-up-down'
-  },
-  {
-    id: 'tree',
-    tag: 'prez-vocab-tree',
-    title: 'Tree',
-    description: 'Hierarchical tree view with expand/collapse',
-    icon: 'i-heroicons-bars-3-bottom-left'
-  },
-  {
-    id: 'list',
-    tag: 'prez-vocab-list',
-    title: 'List',
-    description: 'Flat searchable list with filtering',
-    icon: 'i-heroicons-list-bullet'
-  },
-  {
-    id: 'autocomplete',
-    tag: 'prez-vocab-autocomplete',
-    title: 'Autocomplete',
-    description: 'Typeahead search with suggestions',
-    icon: 'i-heroicons-magnifying-glass'
-  }
+// Type options for prez-list component
+const typeOptions = [
+  { id: 'select', label: 'Select', icon: 'i-heroicons-bars-3-bottom-left', attrs: 'type="select"', type: 'select', search: false, description: 'Tree view with expand/collapse' },
+  { id: 'dropdown', label: 'Dropdown', icon: 'i-heroicons-chevron-up-down', attrs: 'type="dropdown"', type: 'dropdown', search: false, description: 'Dropdown button with popover' },
+  { id: 'autocomplete', label: 'Autocomplete', icon: 'i-heroicons-magnifying-glass', attrs: 'type="dropdown" search', type: 'dropdown', search: true, description: 'Typeahead search with suggestions' },
+  { id: 'radio', label: 'Radio', icon: 'i-heroicons-check-circle', attrs: 'type="radio"', type: 'radio', search: false, description: 'Radio button selection' },
+  { id: 'table', label: 'Table', icon: 'i-heroicons-table-cells', attrs: 'type="table"', type: 'table', search: false, description: 'Tabular display with columns' }
 ]
 </script>
 
@@ -70,33 +47,38 @@ const componentDocs = [
     <!-- Component Documentation -->
     <UCard class="mb-8">
       <template #header>
-        <h2 class="text-lg font-semibold">Web Components</h2>
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold">Web Components</h2>
+          <NuxtLink to="/share/components/list" class="text-sm text-primary hover:underline">
+            View docs →
+          </NuxtLink>
+        </div>
       </template>
 
-      <p class="text-sm text-muted mb-4">
-        Four components available for different use cases. Click for full API documentation.
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <NuxtLink
-          v-for="comp in componentDocs"
-          :key="comp.id"
-          :to="`/share/components/${comp.id}`"
-          class="flex items-start gap-3 p-4 border border-gray-200 rounded-lg hover:border-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
-        >
-          <UIcon :name="comp.icon" class="size-6 text-primary flex-shrink-0 mt-0.5" />
-          <div class="flex-1 min-w-0">
-            <div class="font-medium">{{ comp.title }}</div>
-            <code class="text-xs text-primary">&lt;{{ comp.tag }}&gt;</code>
-            <p class="text-xs text-muted mt-1">{{ comp.description }}</p>
-          </div>
-          <UIcon name="i-heroicons-arrow-right" class="size-4 text-muted flex-shrink-0" />
-        </NuxtLink>
+      <div class="mb-4">
+        <code class="text-lg text-primary font-semibold">&lt;prez-list /&gt;</code>
+        <p class="text-sm text-muted mt-1">
+          One component with multiple display modes. Set the <code class="text-primary">type</code> attribute to change the layout.
+        </p>
       </div>
 
-      <p class="text-xs text-muted mt-4">
-        Each component page includes interactive preview, all properties, methods, events, and styling options.
-      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <NuxtLink
+          v-for="t in typeOptions"
+          :key="t.id"
+          :to="{ path: '/share/components/list', query: { options: JSON.stringify({ type: t.type, search: t.search }) } }"
+          class="flex items-start gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+        >
+          <div class="size-8 rounded-md bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+            <UIcon :name="t.icon" class="size-4 text-primary" />
+          </div>
+          <div class="min-w-0">
+            <div class="font-semibold">{{ t.label }}</div>
+            <code class="text-xs text-primary">{{ t.attrs }}</code>
+            <p class="text-xs text-muted mt-1">{{ t.description }}</p>
+          </div>
+        </NuxtLink>
+      </div>
     </UCard>
 
     <!-- Export Formats -->

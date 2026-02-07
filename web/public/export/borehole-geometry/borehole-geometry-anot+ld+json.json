@@ -1,0 +1,755 @@
+[
+  {
+    "@id": "_:n3-0",
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://orcid.org/0009-0002-5543-2719"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-1",
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://orcid.org/0000-0002-7645-5031"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-2",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/linked-data/registry#status",
+    "https://prez.dev/label": [
+      {
+        "@value": "status"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of this register entry"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "https://prez.dev/label": [
+      {
+        "@value": "date"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionIRI",
+    "https://prez.dev/label": [
+      {
+        "@value": "version IRI"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The property that identifies the version IRI of an ontology."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
+    "https://prez.dev/label": [
+      {
+        "@value": "versionInfo"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The annotation property that provides version information for an ontology or another OWL construct."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept Scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A set of concepts, optionally including statements about semantic relationships between those concepts"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+    "https://prez.dev/label": [
+      {
+        "@value": "has top concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#agent",
+    "https://prez.dev/label": [
+      {
+        "@value": "agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#hadRole",
+    "https://prez.dev/label": [
+      {
+        "@value": "role"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+    "https://prez.dev/label": [
+      {
+        "@value": "qualified attribution"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Concepts used by the resources industry. Some covered in [WAPIMS].[dbo.DeviationSurveyPoint].",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Borehole geometry",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2023-11-02",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2023-11-02",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-geometry/1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://purl.org/linked-data/registry#status": [
+      {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
+      }
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAttribution": [
+      {
+        "@id": "_:n3-0"
+      },
+      {
+        "@id": "_:n3-1"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns4:borehole-geometry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:borehole-geometry"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:borehole-geometry/items"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Borehole geometry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-azimuth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "azimuth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-diameter",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "borehole diameter",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-dip",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "dip",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-downholesurvey",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "downhole directional survey",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-end-point",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "end point location",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "grid azimuth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-inclination",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "inclination",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-kickoff-point",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "kick-off point",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "magnetic azimuth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-declination",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "magnetic declination",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-start-point",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "start point location",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-totaldepth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "total depth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true azimuth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "vertical section",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/dogleg-rate",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "dogleg rate",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "measured depth from kelly bushing",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/md-rotarytable",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "measured depth from rotary table",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/measured-depth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "measured depth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/precollar-depth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pre-collar depth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/reduced-level-depth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "reduced level depth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/true-vertical-depth",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true vertical depth",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true vertical depth below mudline",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true vertical depth drillfloor",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true vertical depth kelly bushing",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true vertical depth rotary table",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-geometry/tvd-subsea",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "true vertical depth subsea",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/data-roles/custodian",
+    "https://prez.dev/label": [
+      {
+        "@value": "custodian"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/reg-statuses/stable",
+    "https://prez.dev/label": [
+      {
+        "@value": "stable"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/org/gswa",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geological Survey of Western Australia"
+      }
+    ]
+  },
+  {
+    "@id": "https://orcid.org/0000-0002-7645-5031",
+    "https://prez.dev/label": [
+      {
+        "@value": "Angela Riganti"
+      }
+    ]
+  },
+  {
+    "@id": "https://orcid.org/0009-0002-5543-2719",
+    "https://prez.dev/label": [
+      {
+        "@value": "Erin Marie Gray"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/creator",
+    "https://prez.dev/label": [
+      {
+        "@value": "creator"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateCreated",
+    "https://prez.dev/label": [
+      {
+        "@value": "date created"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was created or the item was added to a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateModified",
+    "https://prez.dev/label": [
+      {
+        "@value": "date modified"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/keywords",
+    "https://prez.dev/label": [
+      {
+        "@value": "keywords"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/publisher",
+    "https://prez.dev/label": [
+      {
+        "@value": "publisher"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The publisher of the creative work"
+      }
+    ]
+  }
+]

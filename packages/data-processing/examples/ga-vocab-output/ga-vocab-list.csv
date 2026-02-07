@@ -1,0 +1,108 @@
+iri,broader,prefLabel
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector,,airfall dust collector
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,airlift
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/auger,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,auger
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterStillPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,baited remote underwater still photograph
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterVideo,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,baited remote underwater video
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,borehole DST test
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,,borehole fluid sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool,,borehole logging tool
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,borehole PROD test
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholePurgingUntilAnalyteStabilisation,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow,borehole purging until analyte stabilisation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,borehole WFT test
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation,,bottle incubation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationDark,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation,bottle incubation dark
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationLight,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation,bottle incubation light
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/cableToolDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling,cable tool drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera,,camera
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation,,chamber incubation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationDark,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation,chamber incubation dark
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationLight,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation,chamber incubation light
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreAir,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core air
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreBox,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core box
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCatcher,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,core catcher
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreConventional,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core conventional
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCutter,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,core cutter
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDiamond,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core diamond
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,core drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGeoprobe,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core geoprobe
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGravity,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core gravity
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark,,core incubation dark
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight,,core incubation light
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreKasten,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core Kasten
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreMackereth,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core Mackereth
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePiston,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core piston
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePush,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core push
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreRov,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core ROV
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSonic,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core sonic
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSpike,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core spike
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube,,core Veihmeyer tube
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVibro,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,core vibro
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing,,crushing
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter,,current meter
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterStillPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,diver-operated underwater still photograph
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterVideo,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,diver-operated underwater video
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling,dredge
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeBenthic,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge,dredge benthic
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeChainBag,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge,dredge chain bag
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeDiamantina,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge,dredge diamantina
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgePipe,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge,dredge pipe
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,,drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge,epibenthic sled
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey,,field mapping survey
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector,,filtered dust collector
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration,,filtration
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling,,gas sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling,grab
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabEckman,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab,grab Eckman
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabROV,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab,grab ROV
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabShipek,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab,grab Shipek
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabSmithMcintyre,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab,grab Smith Mcintyre
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabVanVeen,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab,grab Van Veen
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation,,grainsize separation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/handheldPortableDevice,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey,handheld portable device - field observation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,liquid-gas separation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey,,marine survey
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling,,marine survey sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling,,mine sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation,,mineral separation
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/niskinBottle,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,Niskin Bottle
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/outcropSampling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling,outcrop sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/passiveWaterSampling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,passive water sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,percussion drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pitOrTrenchSampling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling,pit or trench sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/plantobenthicSampler,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled,plantobenthic sampler
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingCentrifugal,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,pore fluid sampling - centrifugal
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingSqueezing,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,pore fluid sampling - squeezing
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,pumping
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,pumping - high flow
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingLowFlow,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,pumping - low flow
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/purgingOfThreeCaseVolumes,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow,purging of three case volumes
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/RABDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling,RAB drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rainGauge,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,rain gauge
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/reverseCirculationDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,reverse circulation drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling,rotary drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryHammerDrilling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling,rotary hammer drilling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap,,sediment trap
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling,sidewall core
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreBullet,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore,"sidewall core, bullet"
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreMechanical,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore,"sidewall core, mechanical"
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde,,sonde
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterStillPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,stereo towed underwater still photograph
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterVideo,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,stereo towed underwater video
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera,still photography
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling,,surface material sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterStillPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,towed underwater still photograph
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterVideo,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,towed underwater video
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/undergroundMineSampling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling,undergound mine sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera,underwater camera
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography,underwater still photograph
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyAUV,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,underwater still photograph AUV
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyROV,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography,underwater still photograph ROV
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography,underwater video
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoAUV,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,underwater video AUV
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoROV,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo,underwater video ROV
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown,,unknown
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera,video photography
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling,https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling,water grab sampling
+https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling,,water sampling

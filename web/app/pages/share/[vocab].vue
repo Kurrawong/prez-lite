@@ -16,14 +16,8 @@ const baseUrl = computed(() => {
   return ''
 })
 
-const selectedComponent = ref<'select' | 'tree' | 'list' | 'autocomplete'>('select')
-
-const componentTypes = [
-  { id: 'select', label: 'Select' },
-  { id: 'tree', label: 'Tree' },
-  { id: 'list', label: 'List' },
-  { id: 'autocomplete', label: 'Autocomplete' }
-] as const
+// We only have one component now (prez-list) with different types
+const selectedComponent = ref<'list'>('list')
 
 async function copyUrl(url: string) {
   await navigator.clipboard.writeText(url)
@@ -101,18 +95,12 @@ async function copyUrl(url: string) {
       <div class="mb-8">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-xl font-semibold">Interactive Preview</h2>
-          <div class="flex gap-2">
-            <UButton
-              v-for="comp in componentTypes"
-              :key="comp.id"
-              :color="selectedComponent === comp.id ? 'primary' : 'neutral'"
-              :variant="selectedComponent === comp.id ? 'solid' : 'outline'"
-              size="sm"
-              @click="selectedComponent = comp.id"
-            >
-              {{ comp.label }}
-            </UButton>
-          </div>
+          <NuxtLink
+            to="/share/components/list"
+            class="text-sm text-primary hover:underline"
+          >
+            View prez-list documentation →
+          </NuxtLink>
         </div>
 
         <InteractivePreview
@@ -120,15 +108,6 @@ async function copyUrl(url: string) {
           :vocab="vocab"
           :base-url="baseUrl"
         />
-
-        <p class="text-sm text-muted mt-4">
-          <NuxtLink
-            :to="`/share/components/${selectedComponent}`"
-            class="text-primary hover:underline"
-          >
-            View full {{ selectedComponent }} component documentation →
-          </NuxtLink>
-        </p>
       </div>
 
       <!-- Quick Reference -->
@@ -152,22 +131,18 @@ async function copyUrl(url: string) {
             <h3 class="font-medium mb-2">Basic Usage</h3>
             <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-sm overflow-x-auto"><code>&lt;script src="{{ baseUrl }}/web-components/prez-vocab.min.js" type="module"&gt;&lt;/script&gt;
 
-&lt;prez-vocab-select vocab="{{ vocab.slug }}"&gt;&lt;/prez-vocab-select&gt;</code></pre>
+&lt;prez-list vocab="{{ vocab.slug }}"&gt;&lt;/prez-list&gt;</code></pre>
           </div>
 
           <div>
             <h3 class="font-medium mb-2">Component Documentation</h3>
-            <div class="flex flex-wrap gap-2">
-              <UButton
-                v-for="comp in componentTypes"
-                :key="comp.id"
-                :to="`/share/components/${comp.id}`"
-                size="sm"
-                variant="outline"
-              >
-                {{ comp.label }} Docs
-              </UButton>
-            </div>
+            <UButton
+              to="/share/components/list"
+              size="sm"
+              variant="outline"
+            >
+              prez-list Docs
+            </UButton>
           </div>
         </div>
       </UCard>

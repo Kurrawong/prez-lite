@@ -1,0 +1,634 @@
+[
+  {
+    "@id": "_:n3-0",
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://orcid.org/0000-0002-7645-5031"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-1",
+    "http://www.w3.org/ns/prov#hadRole": [
+      {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      {
+        "@id": "https://orcid.org/0009-0002-5543-2719"
+      }
+    ]
+  },
+  {
+    "@id": "_:n3-2",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/linked-data/registry#status",
+    "https://prez.dev/label": [
+      {
+        "@value": "status"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of this register entry"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "https://prez.dev/label": [
+      {
+        "@value": "date"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionIRI",
+    "https://prez.dev/label": [
+      {
+        "@value": "version IRI"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The property that identifies the version IRI of an ontology."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept Scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A set of concepts, optionally including statements about semantic relationships between those concepts"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+    "https://prez.dev/label": [
+      {
+        "@value": "has top concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#agent",
+    "https://prez.dev/label": [
+      {
+        "@value": "agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#hadRole",
+    "https://prez.dev/label": [
+      {
+        "@value": "role"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+    "https://prez.dev/label": [
+      {
+        "@value": "qualified attribution"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The Australasian Code for Reporting of Exploration Results, Mineral Resources and Ore Reserves ('the JORC Code') is a professional code of practice that sets mandatory, minimum standards for Public Reporting of minerals Exploration Results, Mineral Resources and Ore Reserves, according to the levels of confidence in geological knowledge and technical and economic considerations. The JORC Code is prepared by the Joint Ore Reserves Committee of the Australasian Institute of Mining and Metallurgy, the Australian Institute of Geoscientists and the Minerals Council of Australia as in force from time to time (JORC; https://jorc.org/) and was last updated in 2012 (https://jorc.org/docs/JORC_code_2012.pdf). The JORC Committee was established in 1971, and is sponsored by the Australian mining industry and its professional organisations. The JORC Committee is a member of CRIRSCO, the Committee for Mineral Reserves International Reporting Standards (CRIRSCO; https://www.crirsco.com/).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "The Mines and Mineral Deposits (MINEDEX) system maintained by the Geological Survey of Western Australia requires exploration and mining companies operating in the State to submit Resource information based on the JORC or equivalent Codes. As of May 2023, the Mining Act 1978 requires submissions to be compliant with the 2004 JORC Code; the 2012 version of the JORC Code (https://jorc.org/docs/JORC_code_2012.pdf) is covered in this vocabulary and there are no term differences between the two.\n\nThe JORC Code vocabulary covers [MINEDEX].[ResourceEstimate.ResourceCategory], i.e. resource or reserve, and [MINEDEX].[ResourceEstimate.ResourceStatus], i.e. the status of resource/reserve (e.g. inferred, measured).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "JORC Code",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://linked.data.gov.au/def/JORC-Code/1.1"
+      }
+    ],
+    "http://purl.org/linked-data/registry#status": [
+      {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/accepted"
+      }
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAttribution": [
+      {
+        "@id": "_:n3-0"
+      },
+      {
+        "@id": "_:n3-1"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2023-11-01",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2023-12-04",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    ],
+    "https://schema.org/version": [
+      {
+        "@value": "1.1: updated IRI to use lowercase characters"
+      }
+    ],
+    "https://schema.org/keywords": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources-mineral"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns4:JORC-Code"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:JORC-Code"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:JORC-Code/items"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "JORC Code",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Australasian Code for Reporting of Exploration Results, Mineral Resources and Ore Reserves ('the JORC Code') is a professional code of practice that sets mandatory, minimum standards for Public Reporting of minerals Exploration Results, Mineral Resources and Ore Reserves, according to the levels of confidence in geological knowledge and technical and economic considerations. The JORC Code is prepared by the Joint Ore Reserves Committee of the Australasian Institute of Mining and Metallurgy, the Australian Institute of Geoscientists and the Minerals Council of Australia as in force from time to time (JORC; https://jorc.org/) and was last updated in 2012 (https://jorc.org/docs/JORC_code_2012.pdf). The JORC Committee was established in 1971, and is sponsored by the Australian mining industry and its professional organisations. The JORC Committee is a member of CRIRSCO, the Committee for Mineral Reserves International Reporting Standards (CRIRSCO; https://www.crirsco.com/).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Competent-Person",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Competent Person",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Exploration-Results",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Exploration Results",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Exploration-Target",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Exploration Target",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Feasibility-Study",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Feasibility Study",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Indicated-Mineral-Resource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Indicated Mineral Resource",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Inferred-Mineral-Resource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Inferred Mineral Resource",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Measured-Mineral-Resource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Measured Mineral Resource",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Mineral-Resource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Mineral Resource",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Modifying-Factors",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Modifying Factors",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Ore-Reserve",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Ore Reserve",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Pre-Feasibility-Study",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Pre-Feasibility Study",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Probable-Ore-Reserve",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Probable Ore Reserve",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Proved-Ore-Reserve",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Proved Ore Reserve",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Public-reports",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Public reports",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/JORC-Code/Scoping-Study",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Scoping Study",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/data-roles/custodian",
+    "https://prez.dev/label": [
+      {
+        "@value": "custodian"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources-mineral",
+    "https://prez.dev/label": [
+      {
+        "@value": "Resources Mineral"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/reg-statuses/accepted",
+    "https://prez.dev/label": [
+      {
+        "@value": "accepted"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/org/gswa",
+    "https://prez.dev/label": [
+      {
+        "@value": "Geological Survey of Western Australia"
+      }
+    ]
+  },
+  {
+    "@id": "https://orcid.org/0000-0002-7645-5031",
+    "https://prez.dev/label": [
+      {
+        "@value": "Angela Riganti"
+      }
+    ]
+  },
+  {
+    "@id": "https://orcid.org/0009-0002-5543-2719",
+    "https://prez.dev/label": [
+      {
+        "@value": "Erin Marie Gray"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/creator",
+    "https://prez.dev/label": [
+      {
+        "@value": "creator"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateCreated",
+    "https://prez.dev/label": [
+      {
+        "@value": "date created"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was created or the item was added to a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateModified",
+    "https://prez.dev/label": [
+      {
+        "@value": "date modified"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/keywords",
+    "https://prez.dev/label": [
+      {
+        "@value": "keywords"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/publisher",
+    "https://prez.dev/label": [
+      {
+        "@value": "publisher"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The publisher of the creative work"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/version",
+    "https://prez.dev/label": [
+      {
+        "@value": "version"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The version of the CreativeWork embodied by a specified resource"
+      }
+    ]
+  }
+]

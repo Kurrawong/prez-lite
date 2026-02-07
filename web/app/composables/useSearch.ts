@@ -1,15 +1,71 @@
-import { fetchSearchIndex, fetchSchemes, getLabel, type SearchEntry, type Scheme } from '~/composables/useVocabData'
+import { create, load, search as oramaSearch, type Orama, type Results, type RawData } from '@orama/orama'
+import { useDebounceFn } from '@vueuse/core'
+import { fetchSearchIndex, fetchSearchFacets, type SearchEntry, type SearchFacets } from '~/composables/useVocabData'
 import { PAGE_SIZE_ALL } from '~/composables/useVocabs'
 
 export interface SearchResult extends SearchEntry {
   type: 'concept'
-  schemeLabel: string
 }
 
 export interface Facet {
   value: string
   label: string
   count: number
+}
+
+// Orama database schema
+const oramaSchema = {
+  iri: 'string',
+  prefLabel: 'string',
+  altLabels: 'string[]',
+  notation: 'string',
+  definition: 'string',
+  scheme: 'string',
+  schemeLabel: 'string',
+  publisher: 'string[]',
+} as const
+
+type OramaDB = Orama<typeof oramaSchema>
+
+// Singleton for Orama database
+let oramaDb: OramaDB | null = null
+let oramaLoadPromise: Promise<OramaDB> | null = null
+
+// Try to load pre-built Orama index, fall back to building from search index
+async function getOramaDb(): Promise<OramaDB> {
+  if (oramaDb) return oramaDb
+  if (oramaLoadPromise) return oramaLoadPromise
+
+  oramaLoadPromise = (async () => {
+    const db = await create({ schema: oramaSchema })
+
+    // Try to load pre-built index
+    try {
+      const prebuiltIndex = await $fetch<RawData>('/export/_system/search/orama-index.json')
+      await load(db, prebuiltIndex)
+      console.info('[prez-lite] Loaded pre-built Orama search index')
+    } catch {
+      // Fall back to building from search index
+      console.info('[prez-lite] Building Orama index from search data...')
+      const searchIndex = await fetchSearchIndex()
+      const { insertMultiple } = await import('@orama/orama')
+      await insertMultiple(db, searchIndex.map(entry => ({
+        iri: entry.iri,
+        prefLabel: entry.prefLabel || '',
+        altLabels: entry.altLabels || [],
+        notation: entry.notation || '',
+        definition: entry.definition || '',
+        scheme: entry.scheme || '',
+        schemeLabel: entry.schemeLabel || '',
+        publisher: entry.publisher || [],
+      })))
+    }
+
+    oramaDb = db
+    return db
+  })()
+
+  return oramaLoadPromise
 }
 
 function parsePageNumber(value: unknown): number {
@@ -28,10 +84,7 @@ export function useSearch() {
   const route = useRoute()
   const router = useRouter()
 
-  const { data: searchIndex, status: indexStatus } = useLazyAsyncData('searchIndex', fetchSearchIndex, { server: false })
-  const { data: schemes } = useLazyAsyncData('schemes', fetchSchemes, { server: false })
-
-  // Initialize from URL params
+  // State
   const query = ref((route.query.q as string) || '')
   const selectedSchemes = ref<string[]>(
     route.query.vocabs
@@ -46,7 +99,46 @@ export function useSearch() {
   const currentPage = ref(parsePageNumber(route.query.page))
   const pageSize = ref(parsePageSize(route.query.numPerPage))
 
-  // Build full query object from current state
+  // Loading state
+  const indexStatus = ref<'idle' | 'pending' | 'success' | 'error'>('idle')
+
+  // Pre-computed facets from build
+  const precomputedFacets = ref<SearchFacets | null>(null)
+
+  // Search results
+  const searchResults = ref<SearchResult[]>([])
+  const totalResults = ref(0)
+
+  // Facets from current results
+  const vocabFacets = ref<Facet[]>([])
+  const publisherFacets = ref<Facet[]>([])
+
+  // Load pre-computed facets on mount
+  onMounted(async () => {
+    precomputedFacets.value = await fetchSearchFacets()
+  })
+
+  // All vocab facets (for initial display before search)
+  const allVocabFacets = computed((): Facet[] => {
+    if (!precomputedFacets.value?.schemes) return []
+    return precomputedFacets.value.schemes.map(s => ({
+      value: s.iri,
+      label: s.label,
+      count: s.count
+    })).sort((a, b) => a.label.localeCompare(b.label))
+  })
+
+  // All publisher facets (for initial display before search)
+  const allPublisherFacets = computed((): Facet[] => {
+    if (!precomputedFacets.value?.publishers) return []
+    return precomputedFacets.value.publishers.map(p => ({
+      value: p.iri,
+      label: p.label,
+      count: p.count
+    })).sort((a, b) => a.label.localeCompare(b.label))
+  })
+
+  // Build URL query
   const buildQuery = (): Record<string, string | string[]> => {
     const q: Record<string, string | string[]> = {}
     if (query.value.trim()) q.q = query.value
@@ -57,7 +149,7 @@ export function useSearch() {
     return q
   }
 
-  // Sync state to URL (only push if query actually changed)
+  // Sync state to URL
   const updateURL = () => {
     const newQuery = buildQuery()
     const current = route.query as Record<string, string | string[]>
@@ -73,10 +165,9 @@ export function useSearch() {
     }
   }
 
-  // Skip resetting page when we're syncing from route (avoids jumping back to page 1)
   let syncingFromRoute = false
 
-  // Sync refs from URL when route changes (back/forward)
+  // Sync refs from URL when route changes
   watch(
     () => route.query,
     (q) => {
@@ -103,192 +194,133 @@ export function useSearch() {
   watch(currentPage, updateURL, { flush: 'post' })
   watch(pageSize, updateURL, { flush: 'post' })
 
-  // Build scheme lookup
-  const schemeMap = computed(() => {
-    if (!schemes.value) return new Map<string, Scheme>()
-    return new Map(schemes.value.map(s => [s.iri, s]))
-  })
+  // Perform search using Orama
+  async function performSearch() {
+    indexStatus.value = 'pending'
 
-  const schemeOptions = computed(() => {
-    if (!schemes.value) return []
-    return schemes.value.map(s => ({
-      label: getLabel(s.prefLabel),
-      value: s.iri
-    }))
-  })
+    try {
+      const db = await getOramaDb()
 
-  // Filter by query only (before scheme filter)
-  const queryFilteredResults = computed((): SearchResult[] => {
-    if (!searchIndex.value || !Array.isArray(searchIndex.value) || !query.value.trim()) return []
+      // Build filter for scheme and publisher
+      const where: Record<string, unknown> = {}
+      if (selectedSchemes.value.length > 0) {
+        where.scheme = selectedSchemes.value
+      }
+      if (selectedPublishers.value.length > 0) {
+        where.publisher = { containsAll: selectedPublishers.value }
+      }
 
-    const q = query.value.toLowerCase().trim()
-    const words = q.split(/\s+/)
+      // If no query but has filters, do a browse (empty search with filters)
+      const searchTerm = query.value.trim()
 
-    return searchIndex.value
-      .filter(entry => {
-        const searchText = [
-          entry.prefLabel,
-          ...(entry.altLabels || []),
-          entry.notation || ''
-        ].join(' ').toLowerCase()
-        return words.every(word => searchText.includes(word))
-      })
-      .map(entry => ({
-        ...entry,
+      if (!searchTerm && selectedSchemes.value.length === 0 && selectedPublishers.value.length === 0) {
+        // No search, no filters - show nothing
+        searchResults.value = []
+        totalResults.value = 0
+        vocabFacets.value = []
+        publisherFacets.value = []
+        indexStatus.value = 'success'
+        return
+      }
+
+      const results = await oramaSearch(db, {
+        term: searchTerm,
+        properties: searchTerm ? ['prefLabel', 'altLabels', 'notation', 'definition'] : '*',
+        where: Object.keys(where).length > 0 ? where : undefined,
+        limit: PAGE_SIZE_ALL, // Get all results for faceting, paginate client-side
+        facets: {
+          scheme: {
+            limit: 100,
+          },
+          publisher: {
+            limit: 50,
+          },
+        },
+      }) as Results<SearchEntry>
+
+      // Transform results
+      const allResults: SearchResult[] = results.hits.map(hit => ({
+        ...hit.document,
         type: 'concept' as const,
-        schemeLabel: entry.schemeLabel || getLabel(schemeMap.value.get(entry.scheme)?.prefLabel) || entry.scheme
       }))
-  })
 
-  // Browse by facet: all concepts in selected schemes/publishers when no query
-  const browseFilteredResults = computed((): SearchResult[] => {
-    if (!searchIndex.value || !Array.isArray(searchIndex.value) || query.value.trim()) return []
-    if (selectedSchemes.value.length === 0 && selectedPublishers.value.length === 0) return []
+      // Sort: exact match > prefix match > alphabetical
+      if (searchTerm) {
+        const q = searchTerm.toLowerCase()
+        allResults.sort((a, b) => {
+          const aExact = a.prefLabel.toLowerCase() === q
+          const bExact = b.prefLabel.toLowerCase() === q
+          if (aExact && !bExact) return -1
+          if (!aExact && bExact) return 1
+          const aPrefix = a.prefLabel.toLowerCase().startsWith(q)
+          const bPrefix = b.prefLabel.toLowerCase().startsWith(q)
+          if (aPrefix && !bPrefix) return -1
+          if (!aPrefix && bPrefix) return 1
+          return a.prefLabel.localeCompare(b.prefLabel)
+        })
+      }
 
-    return searchIndex.value
-      .filter(entry => {
-        if (selectedSchemes.value.length > 0 && !selectedSchemes.value.includes(entry.scheme)) return false
-        if (selectedPublishers.value.length > 0) {
-          const pub = getSchemePublisher(entry.scheme)
-          if (!pub || !selectedPublishers.value.includes(pub.value)) return false
-        }
-        return true
-      })
-      .map(entry => ({
-        ...entry,
-        type: 'concept' as const,
-        schemeLabel: entry.schemeLabel || getLabel(schemeMap.value.get(entry.scheme)?.prefLabel) || entry.scheme
-      }))
-  })
+      searchResults.value = allResults
+      totalResults.value = allResults.length
 
-  // Get publisher for a scheme
-  function getSchemePublisher(schemeIri: string): { value: string; label: string } | null {
-    const scheme = schemeMap.value.get(schemeIri)
-    if (!scheme?.publisher?.[0]) return null
-    return {
-      value: scheme.publisher[0],
-      label: scheme.publisherLabels?.[0] || scheme.publisher[0]
+      // Extract facets from Orama results
+      if (results.facets?.scheme?.values) {
+        vocabFacets.value = Object.entries(results.facets.scheme.values)
+          .map(([iri, count]) => {
+            // Find label from precomputed or from first result with this scheme
+            const precomputed = precomputedFacets.value?.schemes.find(s => s.iri === iri)
+            const fromResult = allResults.find(r => r.scheme === iri)
+            return {
+              value: iri,
+              label: precomputed?.label || fromResult?.schemeLabel || iri,
+              count: count as number,
+            }
+          })
+          .sort((a, b) => b.count - a.count)
+      }
+
+      if (results.facets?.publisher?.values) {
+        publisherFacets.value = Object.entries(results.facets.publisher.values)
+          .map(([iri, count]) => {
+            const precomputed = precomputedFacets.value?.publishers.find(p => p.iri === iri)
+            return {
+              value: iri,
+              label: precomputed?.label || iri,
+              count: count as number,
+            }
+          })
+          .sort((a, b) => b.count - a.count)
+      }
+
+      indexStatus.value = 'success'
+    } catch (err) {
+      console.error('[prez-lite] Search error:', err)
+      indexStatus.value = 'error'
     }
   }
 
-  // Base result set: query results or browse-by-facet results
-  const baseResults = computed((): SearchResult[] => {
-    if (query.value.trim()) return queryFilteredResults.value
-    return browseFilteredResults.value
-  })
+  // Debounced search
+  const debouncedSearch = useDebounceFn(performSearch, 150)
 
-  // All vocabularies with counts (for initial display)
-  const allVocabFacets = computed((): Facet[] => {
-    if (!schemes.value) return []
-    return schemes.value
-      .map(s => ({
-        value: s.iri,
-        label: getLabel(s.prefLabel),
-        count: s.conceptCount
-      }))
-      .sort((a, b) => a.label.localeCompare(b.label))
-  })
+  // Trigger search when query or filters change
+  watch([query, selectedSchemes, selectedPublishers], () => {
+    debouncedSearch()
+  }, { deep: true, immediate: true })
 
-  // All publishers with concept counts (for initial display)
-  const allPublisherFacets = computed((): Facet[] => {
-    if (!schemes.value) return []
-    const counts = new Map<string, { label: string; count: number }>()
-    for (const scheme of schemes.value) {
-      if (scheme.publisher?.[0]) {
-        const pubIri = scheme.publisher[0]
-        const existing = counts.get(pubIri)
-        if (existing) {
-          existing.count += scheme.conceptCount
-        } else {
-          counts.set(pubIri, {
-            label: scheme.publisherLabels?.[0] || pubIri,
-            count: scheme.conceptCount
-          })
-        }
-      }
+  // Reset page when filters change
+  watch([query, selectedSchemes, selectedPublishers, pageSize], () => {
+    if (!syncingFromRoute) {
+      currentPage.value = 1
     }
-    return Array.from(counts.entries())
-      .map(([value, { label, count }]) => ({ value, label, count }))
-      .sort((a, b) => a.label.localeCompare(b.label))
-  })
-
-  // Final result set: base filtered by selected schemes/publishers when there is a query
-  const searchResults = computed((): SearchResult[] => {
-    let results = baseResults.value
-
-    if (query.value.trim()) {
-      if (selectedSchemes.value.length > 0) {
-        results = results.filter(entry => selectedSchemes.value.includes(entry.scheme))
-      }
-      if (selectedPublishers.value.length > 0) {
-        results = results.filter(entry => {
-          const pub = getSchemePublisher(entry.scheme)
-          return pub && selectedPublishers.value.includes(pub.value)
-        })
-      }
-    }
-
-    const q = query.value.toLowerCase().trim()
-    return results.sort((a, b) => {
-      if (q) {
-        const aExact = a.prefLabel.toLowerCase() === q
-        const bExact = b.prefLabel.toLowerCase() === q
-        if (aExact && !bExact) return -1
-        if (!aExact && bExact) return 1
-        const aPrefix = a.prefLabel.toLowerCase().startsWith(q)
-        const bPrefix = b.prefLabel.toLowerCase().startsWith(q)
-        if (aPrefix && !bPrefix) return -1
-        if (!aPrefix && bPrefix) return 1
-      }
-      return a.prefLabel.localeCompare(b.prefLabel)
-    })
-  })
-
-  // Facets from current result set only (left sidebar shows only what's in the results)
-  const vocabFacets = computed((): Facet[] => {
-    const counts = new Map<string, number>()
-    for (const result of searchResults.value) {
-      counts.set(result.scheme, (counts.get(result.scheme) || 0) + 1)
-    }
-    return Array.from(counts.entries())
-      .map(([iri, count]) => ({
-        value: iri,
-        label: getLabel(schemeMap.value.get(iri)?.prefLabel) || iri,
-        count
-      }))
-      .sort((a, b) => b.count - a.count)
-  })
-
-  const publisherFacets = computed((): Facet[] => {
-    const counts = new Map<string, { label: string; count: number }>()
-    for (const result of searchResults.value) {
-      const pub = getSchemePublisher(result.scheme)
-      if (pub) {
-        const existing = counts.get(pub.value)
-        if (existing) existing.count++
-        else counts.set(pub.value, { label: pub.label, count: 1 })
-      }
-    }
-    return Array.from(counts.entries())
-      .map(([value, { label, count }]) => ({ value, label, count }))
-      .sort((a, b) => b.count - a.count)
-  })
+  }, { deep: true })
 
   // Pagination
-  const totalResults = computed(() => searchResults.value.length)
   const totalPages = computed(() => Math.ceil(totalResults.value / pageSize.value))
 
   const paginatedResults = computed(() => {
     const start = (currentPage.value - 1) * pageSize.value
     return searchResults.value.slice(start, start + pageSize.value)
   })
-
-  // Reset page when user changes filters or page size (not when syncing from route)
-  watch([query, selectedSchemes, selectedPublishers, pageSize], () => {
-    if (!syncingFromRoute) {
-      currentPage.value = 1
-    }
-  }, { deep: true })
 
   // Toggle scheme selection
   function toggleScheme(schemeIri: string) {
@@ -320,11 +352,12 @@ export function useSearch() {
     selectedSchemes.value.length > 0 || selectedPublishers.value.length > 0
   )
 
-  // When result set is empty but filters are selected, show selected facets on the left (so user can see/clear them)
+  // Selected facets (for showing when results are empty)
   const selectedVocabFacets = computed((): Facet[] => {
     if (selectedSchemes.value.length === 0) return []
     return allVocabFacets.value.filter(f => selectedSchemes.value.includes(f.value))
   })
+
   const selectedPublisherFacets = computed((): Facet[] => {
     if (selectedPublishers.value.length === 0) return []
     return allPublisherFacets.value.filter(f => selectedPublishers.value.includes(f.value))

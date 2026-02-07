@@ -1,0 +1,702 @@
+[
+    {
+        "@id": "_:n3-0",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0000-0001-5888-5102"
+            }
+        ]
+    },
+    {
+        "@id": "_:n3-1",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0000-0002-7645-5031"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Compilation of terms that describe the classification of alteration in a rock, with a focus on hydrothermal processes (i.e. mineralogical, chemical and textural changes resulting from the interaction of hot aqueous fluids with the rocks through which they circulate, under evolving physico-chemical conditions), and excluding weathering, mineralization and direct metamorphic or magmatic processes. Classification is based on the identification of the most important alteration mineral, the distinctive mineral assemblage, or the chemical changes that have occurred during alteration. Definitions are largely from Pirajno (2009), the Glossary of geology (5th edition revised; Neuendorf et.al., 2011), Thompson et al. (1996), and Wikipedia.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#historyNote": [
+            {
+                "@value": "Derived from GSWA's WAROX database's table [GEOLOGY].[Warox_REF].[AltStyle] and expanded to include additional terms from the GeoSciML vocabulary Alteration Type (http://cgi.vocabs.ga.gov.au/object?uri=http%3A//resource.geosciml.org/classifierscheme/cgi/2016.01/alterationtype).\nDefinitions compiled from:\n1) Neuendorf, KKE, Mehl Jr, JP and Jackson, JA (editors) 2011, Glossary of geology (5th edition, revised): American Geosciences Institute, Alexandria, Virginia, USA, 800p.\n2) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p.\n3) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals: St. John's, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p. https://www.academia.edu/9125625/Atlas_of_Alteration",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Alteration type",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/linked-data/registry#status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionIRI": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/1"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/albitic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/biotitic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/calc-silicate-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/carbonate-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/chloritic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/deuteric-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/epidote-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/alkali-metasomatism"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/fluorite-and-topaz-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/greisenization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-other"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unknown"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unspecified"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/kaolinitic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/listvenitization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/phyllic-alteration-QSP"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/potassic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/propylitic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/sulfidation"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/rodingitization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/saussuritization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/sericitic-white-mica-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/serpentinization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/silication"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/silicification"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/sodic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/talc-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/tourmalinization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/unaltered"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/uralitization"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/zeolitic-alteration"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/hematitic-alteration"
+            }
+        ],
+        "http://www.w3.org/ns/prov#qualifiedAttribution": [
+            {
+                "@id": "_:n3-0"
+            },
+            {
+                "@id": "_:n3-1"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2024-12-02",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2024-12-02",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/keywords": [
+            {
+                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"
+            }
+        ],
+        "https://schema.org/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "https://schema.org/version": [
+            {
+                "@value": "1"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/albitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/alkali-metasomatism",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/fenitization"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/alunitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration-intermediate"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/alunitic-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration-intermediate",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/argillic-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/biotitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/calc-silicate-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/calcification",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/carbonate-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/carbonate-alteration",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/calcification"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/dolomitization"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/chloritic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/deuteric-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/dolomitization",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/carbonate-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/epidote-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/fenitization",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/alkali-metasomatism"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/fluorite-and-topaz-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/greisenization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/hematitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/jasperoid-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/hematitic-jasperoid",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/jasperoid-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-other",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unknown",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unspecified",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/jasperoid-alteration",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/hematitic-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/hematitic-jasperoid"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/sulfidic-jasperoid"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/kaolinitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/listvenitization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/phyllic-alteration-QSP",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/potassic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/propylitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/pyritic-alteration",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/sulfidation"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/rodingitization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/saussuritization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/sericitic-white-mica-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/serpentinization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/silication",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/silicification",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/skarn",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn-calcic"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn-magnesian"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn-retrograde-stage"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/skarn-calcic",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/skarn-magnesian",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/skarn-retrograde-stage",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/skarn"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/sodic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/sulfidation",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/pyritic-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/sulfidic-jasperoid",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type/jasperoid-alteration"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/talc-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/tourmalinization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/unaltered",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/uralitization",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-type/zeolitic-alteration",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-type"
+            }
+        ]
+    }
+]

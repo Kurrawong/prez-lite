@@ -1,0 +1,297 @@
+[
+  {
+    "@id": "_:n3-20",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/metamorphic-facies",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:metamorphic-facies"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:metamorphic-facies"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Metamorphic facies",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A metamorphic facies is defined by a repeatedly occurring and thus predictable set of stable mineral assemblages in metamorphic rocks. Such metamorphic mineral assemblages crystallize and are stable over a range of externally imposed physical conditions, most crucially lithostatic pressure and temperature, and thus the facies define areas in two-dimensional plots of pressure–temperature space. There is a demonstrable/proven relationship between mineral composition and bulk rock chemical composition and a consistent relationship through geological time. Rocks which contain certain metamorphic mineral assemblages can therefore be linked to particular tectonic settings, times and places in the geological history of an area. The boundaries between facies are typically gradational as the disappearance or appearance of minerals occurs over pressure, temperature, space and time. The vocabulary is based on Fettes and Desmons (2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks edited by D Fettes and J Desmons, 244p.), with further subdivisions for some facies. Definitions also borrow from Neuendorf et al. (2005, Glossary of Geology: 5th edition, revised edited by KKE Neuendorf, JP Mehl Jr and JA Jackson: American Geological Institute, Alexandria, Virginia, USA, 779p.). More detailed metamorphic mineral assemblages for specific rock types can be found at https://en.wikipedia.org/wiki/Metamorphic_facies).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:metamorphic-facies/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Highest temperature subset of the granulite facies, reserved for temperatures >900°C, and typically at pressures approximately ≥5kbar and bound at higher pressure by the kyanite–sillimanite reaction. Diagnostic mineral assemblages include orthopyroxene–sillimanite, sapphirine or osumilite in metasedimentary rock types. It is typical of high-grade regional metamorphism of deep crust and requires rocks to be pre-conditioned (refractory) in order for such thermal conditions to be attained.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Definition adapted from Harley (1998; On the occurrence and characterization of ultrahigh-temperature crustal metamorphism, in What drives metamorphism and metamorphic relations? edited by PJ Treloar and PJ O'Brien: The Geological Society of London, Special Publication138,p.81–107); Kelsey (2008; On ultrahigh-temperature crustal metamorphism: Gondwana Research,v.13,no.1,p.1–29, doi:10.1016/j.gr.2007.06.001); Brown and Korhonen (2009; Some remarks on melting and extreme metamorphism of crustal rocks, in Physics and Chemistry of the Earth’s interior: Crust, Mantle and Core edited by AK Gupta and S Dasgupta:  Springer, New Delhi, pp. 67-87); and Brown (2006; Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "ultra-high temperature",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "ultrahigh temperature",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ultra-high-temperature"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:metamorphic-facies/items/ns1:ultra-high-temperature"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "ultra-high temperature",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Highest temperature subset of the granulite facies, reserved for temperatures >900°C, and typically at pressures approximately ≥5kbar and bound at higher pressure by the kyanite–sillimanite reaction. Diagnostic mineral assemblages include orthopyroxene–sillimanite, sapphirine or osumilite in metasedimentary rock types. It is typical of high-grade regional metamorphism of deep crust and requires rocks to be pre-conditioned (refractory) in order for such thermal conditions to be attained.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

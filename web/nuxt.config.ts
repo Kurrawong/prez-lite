@@ -10,7 +10,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/ui', '@nuxt/content'],
+  modules: ['@nuxt/ui', '@nuxt/content', 'nuxt-monaco-editor'],
+
+  // Monaco editor configuration
+  monacoEditor: {
+    locale: 'en',
+    componentName: {
+      codeEditor: 'MonacoEditor',
+    },
+  },
 
   // Nuxt Content - use Node.js 22+ native sqlite (no better-sqlite3 needed)
   content: {

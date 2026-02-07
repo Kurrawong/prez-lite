@@ -8,11 +8,15 @@
     "node": ">=22.5.0"
   },
   "scripts": {
-    "build:data": "node scripts/build-data.js",
-    "build:export": "node scripts/export-vocabs.js",
+    "build:vocabs": "node packages/data-processing/scripts/process-vocab.js --profiles web/public/data/profiles.ttl --sourceDir web/public/data/vocabs --outputBase web/public/export --pattern \"*.ttl\" --backgroundDir web/public/data/background",
+    "build:vocablist": "node packages/data-processing/scripts/generate-vocablist.js --sourceDir web/public/data/vocabs --output web/public/data/vocablist-source-catalog.ttl && node packages/data-processing/scripts/process-vocab.js --profiles web/public/data/profiles.ttl --source web/public/data/vocablist-source-catalog.ttl --type catalog --outDir web/public/export/_system/vocabularies --backgroundDir web/public/data/background",
+    "build:vocab-metadata": "node packages/data-processing/scripts/generate-vocab-metadata.js --sourceDir web/public/data/vocabs --backgroundDir web/public/data/background --output web/public/export/_system/vocabularies/index.json",
+    "build:search": "node packages/data-processing/scripts/generate-search-index.js --exportDir web/public/export --output web/public/export/_system/search --vocabMetadata web/public/export/_system/vocabularies/index.json",
+    "build:labels": "node packages/data-processing/scripts/generate-labels.js --backgroundDir web/public/data/background --output web/public/export/_system/labels.json",
+    "build:all-export": "pnpm build:vocabs && pnpm build:vocablist && pnpm build:vocab-metadata && pnpm build:labels && pnpm build:search",
     "build:components": "pnpm --filter @prez-lite/web-components build",
     "dev": "pnpm --filter @prez-lite/web dev",
-    "build": "pnpm build:data && pnpm build:export && pnpm build:components && pnpm --filter @prez-lite/web generate",
+    "build": "pnpm build:all-export && pnpm build:components && pnpm --filter @prez-lite/web generate",
     "generate": "pnpm --filter @prez-lite/web generate",
     "preview": "pnpm --filter @prez-lite/web preview"
   },

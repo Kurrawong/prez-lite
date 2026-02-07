@@ -1,0 +1,14 @@
+iri,broader,prefLabel
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise,,anticlockwise
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise,,clockwise
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric,,isobaric
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling,,isobaric cooling
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating,,isobaric heating
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal,,isothermal
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease,,isothermal pressure decrease
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase,,isothermal pressure increase
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling,,near-isobaric cooling
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating,,near-isobaric heating
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression,,near-isothermal compression
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression,,near-isothermal decompression
+https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown,,unknown

@@ -1,10 +1,7 @@
 // Prez-Lite Web Components
-// Vocabulary selection components for embedding in external applications
+// Vocabulary components for embedding in external applications
 
-export { PrezVocabSelect } from './components/vocab-select.js'
-export { PrezVocabTree } from './components/vocab-tree.js'
-export { PrezVocabList } from './components/vocab-list.js'
-export { PrezVocabAutocomplete } from './components/vocab-autocomplete.js'
+export { PrezList } from './components/list.js'
 export { PrezVocabBase } from './components/base-element.js'
 
 // Utilities

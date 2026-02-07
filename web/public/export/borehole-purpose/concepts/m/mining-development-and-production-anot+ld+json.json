@@ -1,0 +1,535 @@
+[
+  {
+    "@id": "_:n3-37",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#closeMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has close match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of 'compound errors' when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:borehole-purpose-wa"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Borehole purpose",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The primary purpose for which a borehole was drilled or any secondary purpose that the borehole may acquire during its lifecycle. The vocabulary focuses on drilling purposes within the resources industry, with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. Some terms covered by jurisdictional legislation are highlighted in the provenance field. Variations in terminology within definitions (i.e. usage of borehole, well and wellbore) stem from usage in different sectors of the resources industry, but for the purpose of this vocabulary are considered to be equivalent. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/blasthole",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:blasthole"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:blasthole"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "blasthole",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A well or bore drilled to facilitate the installation and subsequent detonation of explosives, pulverising material and throwing it away from the wall or face, reducing the effort required to advance the face or recover and remove materials.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/grade-control",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:grade-control"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:grade-control"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "grade control",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled to estimate grade and location of resources/material in the ground (in-situ) to an acceptable degree of confidence for mining to be economic.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/hydrogeology-mining",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hydrogeology-mining"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:hydrogeology-mining"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hydrogeology (mining)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Hydrogeology drilling in mining operations is conducted in order to monitor and sample the water table at and around a mining site, retrieve water for use (e.g. for dust control), or to remove water from a mine (dewatering).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/in-situ-leaching",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:in-situ-leaching"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:in-situ-leaching"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "in-situ leaching",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled for the purpose of in-situ leaching (ISL, also called in-situ recovery or ISR) or solution mining, a mining process used to recover minerals (e.g. copper and uranium) through boreholes drilled into a deposit. It works by artificially dissolving minerals occurring naturally in a solid state and pumping the pregnant solution to the surface where the minerals can be recovered.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/metallurgical",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:metallurgical"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:metallurgical"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "metallurgical",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled to obtain samples for metallurgical test work, i.e. to understand the properties of metals and their production and purification.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/mining-development-and-production",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/exploration-exploitation-minerals-and-basic-raw-materials"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A borehole drilled at the surface or underground to develop mines and/or quarries to facilitate production of economic minerals and basic raw materials. It includes drilling for underground services such as cables, water pipes, access and airways.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "mining (development and production)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://linked.data.gov.au/def/borehole-purpose/mineral"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Definition compiled by the Geological Survey of Western Australia."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/blasthole"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/service-mining"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/hydrogeology-mining"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/in-situ-leaching"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/grade-control"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/metallurgical"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/resource-definition-and-conversion-to-ore-reserves"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/sterilization"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mining-development-and-production"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:mining-development-and-production"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mining (development and production)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled at the surface or underground to develop mines and/or quarries to facilitate production of economic minerals and basic raw materials. It includes drilling for underground services such as cables, water pipes, access and airways.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/resource-definition-and-conversion-to-ore-reserves",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:resource-definition-and-conversion-to-ore-reserves"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:resource-definition-and-conversion-to-ore-reserves"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "resource definition and conversion to ore reserves",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Drilling to determine the size and grade of an orebody in order to improve confidence in the Mineral Resource and Ore Reserve classification.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/service-mining",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:service-mining"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:service-mining"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "service (mining)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Boreholes drilled to provide services such as the transport of water, compressed air, other gases or materials; placement of electric cables and airlines; or raise bores for access or ventilation. It includes drilling conducted during mine rescue operations.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/sterilization",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sterilization"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:sterilization"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sterilization",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled to check that there are no minerals of current and potential economic interest located below sites for proposed infrastructure.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

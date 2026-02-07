@@ -1,0 +1,71 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling> a skos:Concept;
+    dcterms:identifier "boreholeFluidSampling"^^xsd:token;
+    skos:definition "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."@en;
+    skos:inScheme <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod>;
+    skos:narrower <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping>, <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling>;
+    skos:prefLabel "borehole fluid sampling"@en;
+    skos:topConceptOf <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod>;
+    prez:identifier "ns1:boreholeFluidSampling";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:boreholeFluidSampling";
+    prez:type prez:FocusNode;
+    prez:label "borehole fluid sampling"@en;
+    prez:description "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."@en.
+skos:Concept prez:label "Concept"@en;
+    prez:description "An idea or notion; a unit of thought."@en.
+skos:definition prez:label "definition"@en;
+    prez:description "A statement or formal explanation of the meaning of a concept."@en.
+skos:inScheme prez:label "is in scheme"@en;
+    prez:description "Relates a resource (for example a concept) to a concept scheme in which it is included."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod> prez:identifier "ns1:BoreholesSamplingMethod";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod";
+    prez:label "General Geology - Sampling Method"@en;
+    prez:description "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "@en;
+    prez:members "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items".
+skos:narrower prez:label "has narrower"@en;
+    prez:description "Relates a concept to a concept that is more specific in meaning."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift> prez:identifier "ns1:airlift";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:airlift";
+    prez:label "airlift"@en;
+    prez:description "Compressed air is used to produce a sample of groundwater during or immediately following drilling."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest> prez:identifier "ns1:boreholeDstTest";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:boreholeDstTest";
+    prez:label "borehole DST test"@en;
+    prez:description "A sample is collected during drilling by a test using a hydrostatic head to measure the formation pressures and to bring the formation fluids to the surface. The test can provide information for determination of potential petroleum producing formations and their exact depth."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest> prez:identifier "ns1:boreholeProdTest";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:boreholeProdTest";
+    prez:label "borehole PROD test"@en;
+    prez:description "A borehole sampling test similar to DST test, but on a larger scale and under the production conditions after the well completion is conducted."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest> prez:identifier "ns1:boreholeWftTest";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:boreholeWftTest";
+    prez:label "borehole WFT test"@en;
+    prez:description "A sample is taken from a borehole with a wireline formation tester by inserting a probe into a well wall to withdraw a small amount of formation fluid and to measure the formation pore pressure. This measurement can provide formation pressures along the well hole, thereby giving a measure of pressure with depth or along a horizontal borehole."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation> prez:identifier "ns1:liquidGasSeparation";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:liquidGasSeparation";
+    prez:label "liquid-gas separation"@en;
+    prez:description "Separation of natural gas from a liquid phase at a surface separator."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping> prez:identifier "ns1:pumping";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:pumping";
+    prez:label "pumping"@en;
+    prez:description "Pump used to sample surface water"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling> prez:identifier "ns1:waterGrabSampling";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns1:BoreholesSamplingMethod/items/ns1:waterGrabSampling";
+    prez:label "water grab sampling"@en;
+    prez:description "Sample acquired using a bailer to sample a bore, otherwise a bucket or other open vessel used to collect from an artesian discharge point or a surface water feature"@en.
+skos:prefLabel prez:label "preferred label"@en;
+    prez:description "The preferred lexical label for a resource, in a given language."@en.
+prez:link prez:label "link".
+<http://pid.geoscience.gov.au/catalogue/ga-vocabs> prez:identifier "catalogue:ga-vocabs".
+_:n3-2 prez:currentProfile prez:OGCItemProfile.
+prez:members prez:label "members".

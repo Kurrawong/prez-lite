@@ -111,6 +111,31 @@ export abstract class PrezVocabBase extends LitElement {
     }))
   }
 
+  /** Emit expand/collapse event */
+  protected emitExpand(iri: string, expanded: boolean): void {
+    this.dispatchEvent(new CustomEvent('prez-expand', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        iri,
+        expanded,
+        vocab: this.vocab
+      }
+    }))
+  }
+
+  /** Emit filter event */
+  protected emitFilter(text: string): void {
+    this.dispatchEvent(new CustomEvent('prez-filter', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        text,
+        vocab: this.vocab
+      }
+    }))
+  }
+
   /** Get label for a concept IRI */
   protected getConceptLabel(iri: string): string {
     const concept = this.conceptMap.get(iri)

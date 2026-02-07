@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Prez Lite Nuxt layer for vocabulary publishing",
+  "exports": {
+    "./utils/shacl-profile-parser": "./app/utils/shacl-profile-parser.ts"
+  },
   "engines": {
     "node": ">=22.5.0"
   },
@@ -17,8 +20,11 @@
   "dependencies": {
     "@nuxt/content": "^3.11.0",
     "@nuxt/ui": "^4.4.0",
+    "@orama/orama": "^3.1.18",
+    "monaco-editor": "^0.52.0",
     "n3": "^2.0.1",
     "nuxt": "^4.3.0",
+    "nuxt-monaco-editor": "^1.4.0",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.27",
     "vue-router": "^4.6.4"
@@ -42,9 +48,17 @@
     "vue-router": "^4.6.0"
   },
   "peerDependenciesMeta": {
-    "@iconify-json/heroicons": { "optional": true },
-    "@iconify-json/lucide": { "optional": true },
-    "@nuxt/fonts": { "optional": true },
-    "mermaid": { "optional": true }
+    "@iconify-json/heroicons": {
+      "optional": true
+    },
+    "@iconify-json/lucide": {
+      "optional": true
+    },
+    "@nuxt/fonts": {
+      "optional": true
+    },
+    "mermaid": {
+      "optional": true
+    }
   }
 }

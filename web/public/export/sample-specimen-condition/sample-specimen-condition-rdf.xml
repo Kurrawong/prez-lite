@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">List of terms describing the condition, completeness and risk/hazard profile of individual samples/specimens, including any specific requirements needed for the preservation of the object.</skos:definition>
+    <skos:historyNote xml:lang="en">Compiled by the Geological Survey of Western Australia to assist in the management of its physical sample/specimen collections. GSWA distinguishes samples from specimens on the basis of the latter including both primary and derived materials and having been accessioned into a suitable management system.</skos:historyNote>
+    <skos:prefLabel xml:lang="en">Sample/specimen condition</skos:prefLabel>
+    <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/sample-condition/1"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/enhanced"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/repaired"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/preserved"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/fair"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/good"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/segmented"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/multi-part"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/shielded"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/to-be-repackaged"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/uncleaned"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-0"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1"/>
+    <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateCreated>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateModified>
+    <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"/>
+    <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:version>1</sdo:version>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/hazardous">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/poisonous"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/fibrous"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/biohazard"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/dusty"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/flammable"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/heavy"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/radioactive"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/salty"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/sharp"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/unwieldy"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/poor">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/broken"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/chipped"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/degraded"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/flaking"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/incomplete"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/corroded"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/worn"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/vulnerable">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/chemically-vulnerable"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/fragile"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/oxygen-sensitive"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/photosensitive"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/thermally-vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/enhanced">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/coated"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/mounted"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/polished"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/shaped"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/cleaned"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/repaired">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/consolidated"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/glued"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/preserved">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/embedded"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/refrigerated"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/submerged"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/under-vacuum"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/fair">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/good">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/segmented">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/multi-part">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/separated"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/shielded">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/to-be-repackaged">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/to-be-retrayed"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/uncleaned">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-0">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0000-0002-5129-2467"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-1">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/arsenic-bearing">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poisonous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/poisonous">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/arsenic-bearing"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/mercury-bearing"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/mercury-bearing">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poisonous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/asbestos-bearing">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/fibrous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/fibrous">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/asbestos-bearing"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/biohazard">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/dusty">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/flammable">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/heavy">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/radioactive">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/salty">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/sharp">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/unwieldy">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/hazardous"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/broken">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/chipped">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/degraded">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/flaking">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/incomplete">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/corroded">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/tarnished"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/worn">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/poor"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/chemically-vulnerable">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/fragile">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/oxygen-sensitive">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/photosensitive">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/thermally-vulnerable">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/vulnerable"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/coated">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/enhanced"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/mounted">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/enhanced"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/framed"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/polished">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/enhanced"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/shaped">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/enhanced"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/cleaned">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/enhanced"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-condition/washed-and-dried"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/consolidated">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/repaired"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/glued">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/repaired"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/embedded">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/preserved"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/refrigerated">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/preserved"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/submerged">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/preserved"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/under-vacuum">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/preserved"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/framed">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/mounted"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/separated">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/multi-part"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/tarnished">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/corroded"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/to-be-retrayed">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/to-be-repackaged"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-condition/washed-and-dried">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-condition/cleaned"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-condition"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -5,6 +5,19 @@ import InteractivePreview from '~/components/share/InteractivePreview.vue'
 const route = useRoute()
 const componentName = computed(() => route.params.component as string)
 
+// Parse initial options from query param
+const initialOptions = computed(() => {
+  const optionsParam = route.query.options as string | undefined
+  if (optionsParam) {
+    try {
+      return JSON.parse(optionsParam)
+    } catch {
+      return {}
+    }
+  }
+  return {}
+})
+
 const { vocabs, status } = useShare()
 
 // Pick first vocab for demo
@@ -18,26 +31,47 @@ const baseUrl = computed(() => {
 })
 
 // Component metadata
-const components = {
-  select: {
-    tag: 'prez-vocab-select',
-    title: 'Select',
-    description: 'A dropdown select menu for choosing vocabulary concepts. Supports single and multiple selection modes.',
+interface ComponentMeta {
+  tag: string
+  title: string
+  description: string
+  useCases: string[]
+  properties: { name: string; type: string; default: string; description: string }[]
+  methods: { name: string; description: string }[]
+  cssProperties: { name: string; default: string; description: string }[]
+  modes?: { name: string; description: string }[]
+  fields?: { name: string; description: string }[]
+}
+
+const components: Record<string, ComponentMeta> = {
+  list: {
+    tag: 'prez-list',
+    title: 'List',
+    description: 'A unified vocabulary list/selection component supporting multiple display modes: tree, dropdown, radio, and table.',
     useCases: [
       'Form inputs requiring concept selection',
-      'Compact UI where space is limited',
-      'Single or multiple value selection'
+      'Browsing hierarchical vocabularies',
+      'Quick search in large vocabularies',
+      'Multi-select scenarios',
+      'Tabular display of vocabulary data'
     ],
     properties: [
       { name: 'vocab', type: 'string', default: '—', description: 'Vocabulary slug for auto-resolved URL' },
       { name: 'vocab-url', type: 'string', default: '—', description: 'Direct URL to vocabulary JSON (overrides vocab)' },
       { name: 'base-url', type: 'string', default: 'auto', description: 'Base URL for vocab resolution' },
+      { name: 'type', type: 'string', default: '"select"', description: 'Display type: select, dropdown, radio, or table' },
       { name: 'value', type: 'string', default: '—', description: 'Selected concept IRI (single mode)' },
       { name: 'values', type: 'string[]', default: '[]', description: 'Selected IRIs as JSON array (multiple mode)' },
+      { name: 'flat', type: 'boolean', default: 'false', description: 'Render as flat list instead of tree hierarchy' },
+      { name: 'search', type: 'boolean', default: 'false', description: 'Show search/filter input' },
       { name: 'multiple', type: 'boolean', default: 'false', description: 'Enable multiple selection' },
-      { name: 'placeholder', type: 'string', default: '"Select a concept..."', description: 'Placeholder text when nothing selected' },
-      { name: 'max-selections', type: 'number', default: '—', description: 'Maximum selections allowed (multiple mode)' },
-      { name: 'show-iri', type: 'boolean', default: 'false', description: 'Show IRI in option display' },
+      { name: 'horizontal', type: 'boolean', default: 'false', description: 'Horizontal layout (radio type only)' },
+      { name: 'fields', type: 'string', default: '—', description: 'Comma-separated fields for table columns (table type)' },
+      { name: 'max-level', type: 'number', default: '1', description: 'Tree expansion depth (-1=all, 0=collapsed)' },
+      { name: 'show-count', type: 'boolean', default: 'false', description: 'Show descendant count on parent nodes' },
+      { name: 'show-description', type: 'boolean', default: 'false', description: 'Show concept descriptions' },
+      { name: 'show-selected', type: 'boolean', default: 'true', description: 'Highlight selected items' },
+      { name: 'placeholder', type: 'string', default: '"Select..."', description: 'Placeholder text (dropdown mode)' },
       { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable the component' },
       { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' }
     ],
@@ -47,133 +81,192 @@ const components = {
     cssProperties: [
       { name: 'font-family', default: 'system-ui, sans-serif', description: 'Font family inherited into shadow DOM' },
       { name: 'font-size', default: '0.875rem', description: 'Base font size' }
-    ]
-  },
-  tree: {
-    tag: 'prez-vocab-tree',
-    title: 'Tree',
-    description: 'A hierarchical tree view for exploring vocabulary concept hierarchies with expand/collapse functionality.',
-    useCases: [
-      'Browsing hierarchical vocabularies',
-      'Exploring broader/narrower relationships',
-      'Visual navigation of concept structures'
     ],
-    properties: [
-      { name: 'vocab', type: 'string', default: '—', description: 'Vocabulary slug for auto-resolved URL' },
-      { name: 'vocab-url', type: 'string', default: '—', description: 'Direct URL to vocabulary JSON' },
-      { name: 'base-url', type: 'string', default: 'auto', description: 'Base URL for vocab resolution' },
-      { name: 'value', type: 'string', default: '—', description: 'Currently selected concept IRI' },
-      { name: 'expand-all', type: 'boolean', default: 'false', description: 'Expand all nodes on load' },
-      { name: 'expand-level', type: 'number', default: '1', description: 'Expand to this depth (0 = collapsed)' },
-      { name: 'selectable', type: 'boolean', default: 'true', description: 'Allow node selection' },
-      { name: 'show-count', type: 'boolean', default: 'false', description: 'Show descendant count on parent nodes' },
-      { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable the component' },
-      { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' }
+    modes: [
+      { name: 'select (default)', description: 'Tree view with expand/collapse. Best for browsing hierarchical vocabularies.' },
+      { name: 'dropdown', description: 'Dropdown button with tree popover. Best for form inputs.' },
+      { name: 'radio', description: 'Radio button selection. Best for small vocabularies.' },
+      { name: 'table', description: 'Tabular display with configurable columns. Best for data-heavy views.' }
     ],
-    methods: [
-      { name: 'loadVocab()', description: 'Manually trigger vocabulary reload' },
-      { name: 'expandAll()', description: 'Expand all tree nodes' },
-      { name: 'collapseAll()', description: 'Collapse all tree nodes' }
-    ],
-    cssProperties: [
-      { name: 'font-family', default: 'system-ui, sans-serif', description: 'Font family' },
-      { name: 'font-size', default: '0.875rem', description: 'Base font size' }
-    ]
-  },
-  list: {
-    tag: 'prez-vocab-list',
-    title: 'List',
-    description: 'A flat, searchable list of all concepts with optional definitions and alternative labels.',
-    useCases: [
-      'Browsing all concepts in a vocabulary',
-      'Filtering large concept sets',
-      'Displaying concept metadata inline'
-    ],
-    properties: [
-      { name: 'vocab', type: 'string', default: '—', description: 'Vocabulary slug for auto-resolved URL' },
-      { name: 'vocab-url', type: 'string', default: '—', description: 'Direct URL to vocabulary JSON' },
-      { name: 'base-url', type: 'string', default: 'auto', description: 'Base URL for vocab resolution' },
-      { name: 'value', type: 'string', default: '—', description: 'Currently selected concept IRI' },
-      { name: 'searchable', type: 'boolean', default: 'true', description: 'Show search/filter input' },
-      { name: 'placeholder', type: 'string', default: '"Filter concepts..."', description: 'Search input placeholder' },
-      { name: 'show-definitions', type: 'boolean', default: 'false', description: 'Show concept definitions' },
-      { name: 'show-alt-labels', type: 'boolean', default: 'false', description: 'Show alternative labels' },
-      { name: 'max-items', type: 'number', default: '0', description: 'Maximum items to display (0 = all)' },
-      { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable the component' },
-      { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' }
-    ],
-    methods: [
-      { name: 'loadVocab()', description: 'Manually trigger vocabulary reload' }
-    ],
-    cssProperties: [
-      { name: 'font-family', default: 'system-ui, sans-serif', description: 'Font family' },
-      { name: 'font-size', default: '0.875rem', description: 'Base font size' }
-    ]
-  },
-  autocomplete: {
-    tag: 'prez-vocab-autocomplete',
-    title: 'Autocomplete',
-    description: 'A typeahead search input with dropdown suggestions for quick concept selection.',
-    useCases: [
-      'Quick selection in large vocabularies',
-      'Search-first user experience',
-      'Inline form inputs'
-    ],
-    properties: [
-      { name: 'vocab', type: 'string', default: '—', description: 'Vocabulary slug for auto-resolved URL' },
-      { name: 'vocab-url', type: 'string', default: '—', description: 'Direct URL to vocabulary JSON' },
-      { name: 'base-url', type: 'string', default: 'auto', description: 'Base URL for vocab resolution' },
-      { name: 'value', type: 'string', default: '—', description: 'Currently selected concept IRI' },
-      { name: 'placeholder', type: 'string', default: '"Type to search..."', description: 'Input placeholder text' },
-      { name: 'min-chars', type: 'number', default: '1', description: 'Minimum characters before showing suggestions' },
-      { name: 'max-suggestions', type: 'number', default: '10', description: 'Maximum suggestions to display' },
-      { name: 'show-definitions', type: 'boolean', default: 'false', description: 'Show definitions in suggestions' },
-      { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable the component' },
-      { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' }
-    ],
-    methods: [
-      { name: 'loadVocab()', description: 'Manually trigger vocabulary reload' },
-      { name: 'clear()', description: 'Clear the current selection and input' }
-    ],
-    cssProperties: [
-      { name: 'font-family', default: 'system-ui, sans-serif', description: 'Font family' },
-      { name: 'font-size', default: '0.875rem', description: 'Base font size' }
+    fields: [
+      { name: 'iri', description: 'Concept IRI' },
+      { name: 'label', description: 'Concept preferred label' },
+      { name: 'notation', description: 'Concept notation' },
+      { name: 'description', description: 'Concept description' },
+      { name: 'altLabels', description: 'Alternative labels' },
+      { name: 'broader', description: 'Broader concept IRIs' },
+      { name: 'narrower', description: 'Narrower concept IRIs' }
     ]
   }
 }
 
 const componentData = computed(() => components[componentName.value as keyof typeof components])
 
-// Events are the same for all components
-const events = [
-  {
-    name: 'prez-change',
-    description: 'Fired when selection changes',
-    detail: [
-      { property: 'value', type: 'string | string[]', description: 'Selected IRI(s)' },
-      { property: 'vocab', type: 'string', description: 'Vocabulary slug' },
-      { property: 'concepts', type: 'object | object[]', description: 'Full concept data for selection' }
+// Events depend on component type
+const events = computed(() => {
+  const common = [
+    {
+      name: 'prez-load',
+      description: 'Fired when vocabulary loads successfully',
+      detail: [
+        { property: 'vocab', type: 'string', description: 'Vocabulary slug' },
+        { property: 'url', type: 'string', description: 'Resolved vocabulary URL' },
+        { property: 'conceptCount', type: 'number', description: 'Number of concepts loaded' }
+      ]
+    },
+    {
+      name: 'prez-error',
+      description: 'Fired when loading fails',
+      detail: [
+        { property: 'vocab', type: 'string', description: 'Vocabulary slug' },
+        { property: 'url', type: 'string', description: 'Attempted URL' },
+        { property: 'error', type: 'string', description: 'Error message' }
+      ]
+    }
+  ]
+
+  if (componentName.value === 'list') {
+    return [
+      {
+        name: 'prez-change',
+        description: 'Fired when selection changes',
+        detail: [
+          { property: 'value', type: 'string | string[]', description: 'Selected IRI(s)' },
+          { property: 'vocab', type: 'string', description: 'Vocabulary slug' },
+          { property: 'concepts', type: 'object | object[]', description: 'Full concept data for selection' }
+        ]
+      },
+      ...common
     ]
-  },
-  {
-    name: 'prez-load',
-    description: 'Fired when vocabulary loads successfully',
-    detail: [
-      { property: 'vocab', type: 'string', description: 'Vocabulary slug' },
-      { property: 'url', type: 'string', description: 'Resolved vocabulary URL' },
-      { property: 'conceptCount', type: 'number', description: 'Number of concepts loaded' }
-    ]
-  },
-  {
-    name: 'prez-error',
-    description: 'Fired when loading fails',
-    detail: [
-      { property: 'vocab', type: 'string', description: 'Vocabulary slug' },
-      { property: 'url', type: 'string', description: 'Attempted URL' },
-      { property: 'error', type: 'string', description: 'Error message' }
+  } else {
+    return [
+      {
+        name: 'prez-click',
+        description: 'Fired when an item is clicked (requires link attribute)',
+        detail: [
+          { property: 'iri', type: 'string', description: 'Clicked concept IRI' },
+          { property: 'concept', type: 'object', description: 'Full concept data' }
+        ]
+      },
+      ...common
     ]
   }
-]
+})
+
+// Framework code examples
+const frameworkExamples = computed(() => {
+  if (!componentData.value || !demoVocab.value) return []
+  const tag = componentData.value.tag
+  const vocab = demoVocab.value.slug
+
+  return [
+    {
+      id: 'html',
+      label: 'HTML',
+      code: `<script src="${baseUrl.value}/web-components/prez-vocab.min.js" type="module"><\/script>
+
+<${tag} vocab="${vocab}"${componentName.value === 'list' ? ' search' : ' searchable'}></${tag}>
+
+<script>
+  document.querySelector('${tag}')
+    .addEventListener('${componentName.value === 'list' ? 'prez-change' : 'prez-click'}', (e) => {
+      console.log('${componentName.value === 'list' ? 'Selected' : 'Clicked'}:', e.detail)
+    })
+<\/script>`
+    },
+    {
+      id: 'react',
+      label: 'React',
+      code: `import { useRef, useEffect, useState } from 'react'
+import '@prez-lite/web-components'
+
+function VocabComponent() {
+  const ref = useRef<HTMLElement>(null)
+  const [result, setResult] = useState<string | null>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const handleEvent = (e: CustomEvent) => {
+      setResult(${componentName.value === 'list' ? 'e.detail.value' : 'e.detail.iri'})
+    }
+
+    el.addEventListener('${componentName.value === 'list' ? 'prez-change' : 'prez-click'}', handleEvent)
+    return () => el.removeEventListener('${componentName.value === 'list' ? 'prez-change' : 'prez-click'}', handleEvent)
+  }, [])
+
+  return (
+    <>
+      <${tag}
+        ref={ref}
+        vocab="${vocab}"
+        ${componentName.value === 'list' ? 'search' : 'searchable link'}
+      />
+      {result && <p>${componentName.value === 'list' ? 'Selected' : 'Clicked'}: {result}</p>}
+    </>
+  )
+}`
+    },
+    {
+      id: 'vue',
+      label: 'Vue',
+      code: `<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import '@prez-lite/web-components'
+
+const elRef = ref<HTMLElement | null>(null)
+const result = ref<string | null>(null)
+
+onMounted(() => {
+  elRef.value?.addEventListener('${componentName.value === 'list' ? 'prez-change' : 'prez-click'}', (e: CustomEvent) => {
+    result.value = ${componentName.value === 'list' ? 'e.detail.value' : 'e.detail.iri'}
+  })
+})
+<\/script>
+
+<template>
+  <${tag}
+    ref="elRef"
+    vocab="${vocab}"
+    ${componentName.value === 'list' ? 'search' : 'searchable link'}
+  />
+  <p v-if="result">${componentName.value === 'list' ? 'Selected' : 'Clicked'}: {{ result }}</p>
+</template>`
+    },
+    {
+      id: 'angular',
+      label: 'Angular',
+      code: `import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core'
+import '@prez-lite/web-components'
+
+@Component({
+  selector: 'app-vocab-component',
+  template: \`
+    <${tag}
+      #vocabEl
+      vocab="${vocab}"
+      ${componentName.value === 'list' ? 'search' : 'searchable link'}
+    ></${tag}>
+    <p *ngIf="result">${componentName.value === 'list' ? 'Selected' : 'Clicked'}: {{ result }}</p>
+  \`
+})
+export class VocabComponent implements AfterViewInit {
+  @ViewChild('vocabEl') elRef!: ElementRef
+
+  result: string | null = null
+
+  ngAfterViewInit() {
+    this.elRef.nativeElement.addEventListener('${componentName.value === 'list' ? 'prez-change' : 'prez-click'}', (e: CustomEvent) => {
+      this.result = ${componentName.value === 'list' ? 'e.detail.value' : 'e.detail.iri'}
+    })
+  }
+}`
+    }
+  ]
+})
+
+const selectedFramework = ref('html')
 
 // Styling examples
 const stylingExamples = computed(() => {
@@ -190,8 +283,8 @@ const stylingExamples = computed(() => {
 }`
     },
     {
-      title: 'Custom Width',
-      description: 'Set component width',
+      title: 'Full Width',
+      description: 'Set component to fill container',
       code: `${tag} {
   width: 100%;
   max-width: 400px;
@@ -213,7 +306,7 @@ const stylingExamples = computed(() => {
   ]
 })
 
-const componentTypes = ['select', 'tree', 'list', 'autocomplete']
+const componentTypes = ['list']
 </script>
 
 <template>
@@ -243,18 +336,18 @@ const componentTypes = ['select', 'tree', 'list', 'autocomplete']
         </code>
       </div>
 
-      <!-- Component Navigation -->
-      <div class="flex gap-2 mb-8 flex-wrap">
-        <UButton
-          v-for="comp in componentTypes"
-          :key="comp"
-          :to="`/share/components/${comp}`"
-          :color="componentName === comp ? 'primary' : 'neutral'"
-          :variant="componentName === comp ? 'solid' : 'outline'"
-          size="sm"
-        >
-          {{ comp.charAt(0).toUpperCase() + comp.slice(1) }}
-        </UButton>
+      <!-- Interactive Preview -->
+      <h2 class="text-xl font-semibold mb-4">Interactive Preview</h2>
+      <div v-if="status === 'pending' || !demoVocab" class="mb-8">
+        <USkeleton class="h-64 w-full" />
+      </div>
+      <div v-else class="mb-8">
+        <InteractivePreview
+          :component="componentName as 'list'"
+          :vocab="demoVocab"
+          :base-url="baseUrl"
+          :initial-options="initialOptions"
+        />
       </div>
 
       <!-- Use Cases -->
@@ -267,18 +360,86 @@ const componentTypes = ['select', 'tree', 'list', 'autocomplete']
         </ul>
       </UCard>
 
-      <!-- Interactive Preview -->
-      <h2 class="text-xl font-semibold mb-4">Interactive Preview</h2>
-      <div v-if="status === 'pending' || !demoVocab" class="mb-8">
-        <USkeleton class="h-64 w-full" />
-      </div>
-      <div v-else class="mb-8">
-        <InteractivePreview
-          :component="componentName as 'select' | 'tree' | 'list' | 'autocomplete'"
-          :vocab="demoVocab"
-          :base-url="baseUrl"
-        />
-      </div>
+      <!-- Modes (select only) -->
+      <UCard v-if="componentData.modes" class="mb-8">
+        <template #header>
+          <h2 class="text-lg font-semibold">Display Modes</h2>
+        </template>
+        <div class="space-y-3">
+          <div v-for="mode in componentData.modes" :key="mode.name">
+            <div class="font-medium text-sm">{{ mode.name }}</div>
+            <div class="text-sm text-muted">{{ mode.description }}</div>
+          </div>
+        </div>
+      </UCard>
+
+      <!-- Available Fields (list only) -->
+      <UCard v-if="componentData.fields" class="mb-8">
+        <template #header>
+          <h2 class="text-lg font-semibold">Available Fields</h2>
+        </template>
+        <p class="text-sm text-muted mb-3">
+          Use the <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">fields</code> attribute to specify which fields to display (comma-separated).
+        </p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b">
+                <th class="text-left py-2 pr-4 font-medium">Field</th>
+                <th class="text-left py-2 font-medium">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="field in componentData.fields" :key="field.name" class="border-b border-gray-100">
+                <td class="py-2 pr-4">
+                  <code class="text-primary text-xs">{{ field.name }}</code>
+                </td>
+                <td class="py-2 text-muted">{{ field.description }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </UCard>
+
+      <!-- Framework Code Examples -->
+      <UCard class="mb-8">
+        <template #header>
+          <h2 class="text-lg font-semibold">Code Examples</h2>
+        </template>
+
+        <div class="flex gap-2 mb-4 flex-wrap">
+          <UButton
+            v-for="fw in frameworkExamples"
+            :key="fw.id"
+            :color="selectedFramework === fw.id ? 'primary' : 'neutral'"
+            :variant="selectedFramework === fw.id ? 'solid' : 'outline'"
+            size="xs"
+            @click="selectedFramework = fw.id"
+          >
+            {{ fw.label }}
+          </UButton>
+        </div>
+
+        <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 text-xs overflow-x-auto"><code>{{ frameworkExamples.find(f => f.id === selectedFramework)?.code }}</code></pre>
+
+        <div class="mt-4 text-xs text-muted">
+          <p v-if="selectedFramework === 'html'">
+            Include the script tag in your HTML head or before the component. The component will auto-detect its base URL.
+          </p>
+          <p v-else-if="selectedFramework === 'react'">
+            Install: <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">npm install @prez-lite/web-components</code>
+            <br>Add custom element types to avoid TypeScript errors (see README).
+          </p>
+          <p v-else-if="selectedFramework === 'vue'">
+            Install: <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">npm install @prez-lite/web-components</code>
+            <br>Configure Vite to recognize <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">prez-*</code> as custom elements.
+          </p>
+          <p v-else-if="selectedFramework === 'angular'">
+            Install: <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">npm install @prez-lite/web-components</code>
+            <br>Add <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">CUSTOM_ELEMENTS_SCHEMA</code> to your module.
+          </p>
+        </div>
+      </UCard>
 
       <!-- Properties -->
       <UCard class="mb-8">
@@ -370,9 +531,8 @@ el.loadVocab(); // Reload vocabulary data</code></pre>
         <div class="mt-4">
           <p class="text-sm font-medium mb-2">Example:</p>
           <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-xs overflow-x-auto"><code>document.querySelector('{{ componentData.tag }}')
-  .addEventListener('prez-change', (e) => {
-    console.log('Selected:', e.detail.value);
-    console.log('Concept:', e.detail.concepts);
+  .addEventListener('{{ componentName === 'select' ? 'prez-change' : 'prez-click' }}', (e) => {
+    console.log('{{ componentName === 'select' ? 'Selected' : 'Clicked' }}:', e.detail);
   });</code></pre>
         </div>
       </UCard>
@@ -424,36 +584,36 @@ el.loadVocab(); // Reload vocabulary data</code></pre>
         </div>
       </UCard>
 
-      <!-- Full Example -->
+      <!-- Installation -->
       <UCard>
         <template #header>
-          <h2 class="text-lg font-semibold">Full Example</h2>
+          <h2 class="text-lg font-semibold">Installation</h2>
         </template>
 
-        <pre class="bg-gray-900 text-gray-100 rounded-lg p-4 text-xs overflow-x-auto"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;{{ componentData.title }} Example&lt;/title&gt;
-  &lt;script src="{{ baseUrl }}/web-components/prez-vocab.min.js" type="module"&gt;&lt;/script&gt;
-  &lt;style&gt;
-    body { font-family: system-ui, sans-serif; padding: 2rem; }
-    {{ componentData.tag }} { width: 300px; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Vocabulary Selection&lt;/h1&gt;
+        <div class="space-y-4 text-sm">
+          <div>
+            <h3 class="font-medium mb-2">CDN / Script Tag</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-xs overflow-x-auto"><code>&lt;script src="{{ baseUrl }}/web-components/prez-vocab.min.js" type="module"&gt;&lt;/script&gt;</code></pre>
+          </div>
 
-  &lt;{{ componentData.tag }} vocab="your-vocab-slug"&gt;&lt;/{{ componentData.tag }}&gt;
+          <div>
+            <h3 class="font-medium mb-2">npm (from GitHub)</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-xs overflow-x-auto"><code># Public repo
+npm install hjohns/prez-lite#subdirectory:packages/web-components
 
-  &lt;script&gt;
-    document.querySelector('{{ componentData.tag }}')
-      .addEventListener('prez-change', (e) =&gt; {
-        console.log('Selected:', e.detail.value);
-      });
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+# Private repo (with token)
+npm install git+https://&lt;TOKEN&gt;@github.com/hjohns/prez-lite.git#subdirectory:packages/web-components</code></pre>
+          </div>
+
+          <div>
+            <h3 class="font-medium mb-2">npm (when published)</h3>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-xs overflow-x-auto"><code>npm install @prez-lite/web-components</code></pre>
+          </div>
+        </div>
+
+        <p class="text-xs text-muted mt-4">
+          See the <a href="https://github.com/hjohns/prez-lite/tree/main/packages/web-components" target="_blank" class="text-primary hover:underline">README</a> for full installation and configuration details.
+        </p>
       </UCard>
     </div>
   </div>

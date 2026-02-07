@@ -1,0 +1,24 @@
+{
+  "name": "test-prez-org",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.28.2",
+  "devDependencies": {
+    "nuxt": "^4.3.0"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.11.0",
+    "@nuxt/fonts": "^0.13.0",
+    "@nuxt/icon": "^2.2.1",
+    "@nuxtjs/color-mode": "^4.0.0"
+  }
+}

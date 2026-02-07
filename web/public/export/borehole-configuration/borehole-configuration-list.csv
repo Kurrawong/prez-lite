@@ -1,0 +1,10 @@
+iri,broader,prefLabel
+https://linked.data.gov.au/def/borehole-configuration/directional,,directional
+https://linked.data.gov.au/def/borehole-configuration/extended-reach,,extended-reach
+https://linked.data.gov.au/def/borehole-configuration/horizontal,,horizontal
+https://linked.data.gov.au/def/borehole-configuration/inclined,,inclined
+https://linked.data.gov.au/def/borehole-configuration/inclined-down,,inclined down
+https://linked.data.gov.au/def/borehole-configuration/inclined-up,,inclined up
+https://linked.data.gov.au/def/borehole-configuration/lateral,,lateral
+https://linked.data.gov.au/def/borehole-configuration/vertical,,vertical
+https://linked.data.gov.au/def/borehole-configuration/vertical-uphole,,vertical uphole

@@ -16,25 +16,22 @@ Download vocabularies in multiple formats or embed interactive selection compone
 
 ## Web Components
 
-Embed vocabulary selection directly in any web application using our custom elements.
+Embed vocabulary lists directly in any web application using our custom element.
 
-### Available Components
+### Available Component
 
-| Component | Tag | Description |
-|-----------|-----|-------------|
-| **Select** | `<prez-vocab-select>` | Dropdown menu for single/multiple selection |
-| **Tree** | `<prez-vocab-tree>` | Hierarchical tree view with expand/collapse |
-| **List** | `<prez-vocab-list>` | Flat searchable list with filtering |
-| **Autocomplete** | `<prez-vocab-autocomplete>` | Typeahead search with suggestions |
+| Tag | Description |
+|-----|-------------|
+| `<prez-list>` | Interactive vocabulary list with multiple display modes (tree, dropdown, radio, table) |
 
-[View Component Documentation →](/share/components/select)
+[View Component Documentation →](/share/components/list)
 
 ### Quick Start
 
 ```html
 <script src="https://your-site.com/web-components/prez-vocab.min.js" type="module"></script>
 
-<prez-vocab-select vocab="your-vocab-slug"></prez-vocab-select>
+<prez-list vocab="your-vocab-slug"></prez-list>
 ```
 
 Components automatically resolve vocabulary data from the script's origin.

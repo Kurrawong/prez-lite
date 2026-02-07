@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">The stage of a borehole in relation to the lifecycle of the borehole, from proposal and operational stages through to completion and rehabilitation, and with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. The vocabulary focuses on standard terminology from the energy and mineral resources sectors, highlighting instances where the same term carries different meaning in different fields. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). Note that the currency of borehole status data in GSWA&apos;s databases is time-stamped, reflecting information gathered from a borehole operator’s well completion report or from a responsible regulatory authority at a specific point in time; subsequent changes are unlikely to be recorded.</skos:definition>
+    <skos:historyNote xml:lang="en">This vocabulary combines terminology from the energy and mineral resources industries, with a structure based on the main phases of drilling operations: planning and approval, operational, operations suspended, and post-operational. It is largely based and expands on the 2021 Geoscience Australia (GA) listing (https://db-content.ga.gov.au/data_dictionary/Borehole_Status_vocabulary_2021.pdf, later published at https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus), &quot;an amalgam of terms used by professional bodies (e.g. PPDM, CoalLog) and regulatory authorities. Some of the terminology used across these professional domains and jurisdictions has varied over time, and in some cases the same term has a different meaning for different types of boreholes. GA has endeavoured to merge these sources of terminology into a consistent classification that applies for all borehole types.&quot; As GA&apos;s list stemmed largely from the energy sector, GSWA has expanded the vocabulary to cover mineral resources industry terminology, in relation to both drilling and rehabilitation stages. The Geological Survey of Queensland (GSQ) Borehole Status (http://linked.data.gov.au/def/borehole-status) and Borehole Status Event (http://linked.data.gov.au/def/borehole-status-event) vocabularies were also consulted. A draft of the GSWA&apos;s vocabulary was shared with the Government Geoscience Information Committee (GGIC) Petroleum Data Working Group, leading to the adoption of concepts from this vocabulary by GSQ (particularly for post-operational stages) and a more consistent approach nationally.</skos:historyNote>
+    <skos:prefLabel xml:lang="en">Borehole status</skos:prefLabel>
+    <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/1"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/unknown"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-0"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1"/>
+    <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-03</sdo:dateCreated>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-03</sdo:dateModified>
+    <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"/>
+    <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <sdo:version>1</sdo:version>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/approved"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/not-drilled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/planned"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/proposed"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/capped"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/shut-in"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/suspended"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/workover"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/post-operational">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/decommissioned"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/rehabilitated"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/operational">
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/injecting"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/monitoring"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/producing"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/in-progress"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/unknown">
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-0">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n3-1">
+    <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/approved">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/not-drilled">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/planned">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/proposed">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/capped">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/shut-in">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/suspended">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/workover">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/decommissioned">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/rehabilitated">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/plugged"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/injecting">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/injecting-gas"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/injecting-water"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/monitoring">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/producing">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/in-progress">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/drilling"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/injecting-gas">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/injecting"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/injecting-water">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/injecting"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/plugged"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/plugged">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/rehabilitated"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/reaming">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/drilling"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa/drilling">
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/in-progress"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/reaming"/>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+  </rdf:Description>
+</rdf:RDF>

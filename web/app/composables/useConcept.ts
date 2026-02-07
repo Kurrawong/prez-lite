@@ -1,4 +1,5 @@
-import { fetchSchemes, findConcept, fetchConcepts, fetchLabels, getLabel, getAllLabels, buildConceptMap, resolveLabel, type Concept, type LabelsIndex } from '~/composables/useVocabData'
+import { fetchSchemes, findConcept, fetchConcepts, fetchLabels, fetchVocabMetadata, getLabel, getAllLabels, buildConceptMap, resolveLabel, type Concept, type LabelsIndex } from '~/composables/useVocabData'
+import { useConceptAnnotatedProperties } from '~/utils/annotated-properties'
 
 export interface RelationRow {
   label: string
@@ -20,6 +21,16 @@ export function useConcept(uri: Ref<string>) {
     const schemeIri = concept.value?.inScheme?.[0] ?? concept.value?.topConceptOf?.[0]
     return schemes.value?.find(s => s.iri === schemeIri)
   })
+
+  // Get slug for annotated properties lookup
+  const { data: vocabMetadata } = useAsyncData('vocabMetadata', fetchVocabMetadata, { server: false })
+  const slug = computed(() => {
+    const schemeIri = concept.value?.inScheme?.[0] ?? concept.value?.topConceptOf?.[0]
+    return vocabMetadata.value?.find(v => v.iri === schemeIri)?.slug
+  })
+
+  // Get annotated properties for this concept from the scheme's annotated JSON-LD
+  const { properties: annotatedProperties } = useConceptAnnotatedProperties(slug, uri)
 
   // Load all concepts from scheme for label resolution
   const { data: schemeConcepts } = useAsyncData(
@@ -127,6 +138,9 @@ export function useConcept(uri: Ref<string>) {
   // Citations
   const citations = computed(() => concept.value?.citation || [])
 
+  // Rich metadata from annotated properties (profile-driven)
+  const richMetadata = computed(() => annotatedProperties.value ?? [])
+
   const breadcrumbs = computed(() => {
     const items: { label: string; to?: string | object }[] = [{ label: 'Vocabularies', to: '/vocabs' }]
     if (scheme.value) {
@@ -152,6 +166,7 @@ export function useConcept(uri: Ref<string>) {
     mappings,
     citations,
     breadcrumbs,
+    richMetadata,
     resolveLabelFor
   }
 }

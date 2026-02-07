@@ -1,0 +1,24 @@
+{
+  "name": "@prez-lite/data-processing",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "RDF/SKOS vocabulary processing pipeline for Prez-lite",
+  "scripts": {
+    "test": "node scripts/test-vocab-processing.js",
+    "test:regenerate": "node scripts/test-vocab-processing.js --regenerate",
+    "process:ga:vocab": "node scripts/process-vocab.js --profiles examples/ga-vocab-ref/profiles.ttl --source examples/ga-vocab-ref/ga-vocab-source-input.ttl --type vocab --outDir examples/data/ga-vocab",
+    "process:ga:concept": "node scripts/process-vocab.js --profiles examples/ga-vocab-ref/profiles.ttl --source examples/ga-vocab-ref/ga-concept-source-input.ttl --type concept --outDir examples/data/ga-concept",
+    "process:ga:vocablist": "node scripts/process-vocab.js --profiles examples/ga-vocablist-ref/profiles.ttl --source examples/ga-vocablist-ref/ga-vocablist-source-catalog.ttl --type catalog --outDir examples/data/ga-vocablist",
+    "process:ga:all": "npm run process:ga:vocab && npm run process:ga:concept && npm run process:ga:vocablist",
+    "process:gswa:vocab": "node scripts/process-vocab.js --profiles examples/gswa-vocab-ref/profiles.ttl --source examples/gswa-vocab-ref/gswa-vocab-source-input.ttl --type vocab --outDir examples/data/gswa-vocab",
+    "process:ggic:vocab": "node scripts/process-vocab.js --profiles examples/ggic-vocab-ref/profiles.ttl --source examples/ggic-vocab-ref/ggic-vocab-source-input.ttl --type vocab --outDir examples/data/ggic-vocab",
+    "process:all": "npm run process:ga:all && npm run process:gswa:vocab && npm run process:ggic:vocab"
+  },
+  "dependencies": {
+    "@fast-csv/format": "^5.0.2",
+    "@orama/orama": "^3.1.18",
+    "@prez-lite/web": "workspace:*",
+    "jsonld": "^8.3.3",
+    "n3": "^2.0.1"
+  }
+}
