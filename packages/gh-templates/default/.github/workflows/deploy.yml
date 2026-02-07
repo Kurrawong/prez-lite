@@ -1,0 +1,131 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  PREZ_LITE_REPO: hjohns/prez-lite
+  PREZ_LITE_BRANCH: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Fetch data-processing from prez-lite
+        env:
+          GITHUB_TOKEN: ${{ secrets.PREZ_LITE_TOKEN }}
+        run: |
+          echo "📥 Fetching data-processing from prez-lite..."
+
+          # Create cache directory
+          mkdir -p .prez-lite-cache
+
+          # Clone with sparse checkout to get just data-processing
+          git clone --depth 1 --filter=blob:none --sparse \
+            "https://${GITHUB_TOKEN}@github.com/${PREZ_LITE_REPO}.git" \
+            .prez-lite-cache/repo
+
+          cd .prez-lite-cache/repo
+          git sparse-checkout set packages/data-processing
+          cd ../..
+
+          # Move to expected location
+          mv .prez-lite-cache/repo/packages/data-processing .prez-lite-cache/data-processing
+          rm -rf .prez-lite-cache/repo
+
+          echo "✓ Downloaded data-processing scripts"
+
+      - name: Install data-processing dependencies
+        run: |
+          cd .prez-lite-cache/data-processing
+          npm install
+          echo "✓ Dependencies installed"
+
+      - name: Process vocabularies
+        run: |
+          echo "⚙️ Processing vocabularies..."
+
+          # Build arguments
+          ARGS="--sourceDir public/data/vocabs --outputBase public/export --pattern *.ttl"
+
+          # Add profiles if exists
+          if [ -f "public/data/profiles.ttl" ]; then
+            ARGS="$ARGS --profiles public/data/profiles.ttl"
+          fi
+
+          # Add background dir if exists
+          if [ -d "public/data/background" ]; then
+            ARGS="$ARGS --backgroundDir public/data/background"
+          fi
+
+          echo "Running: node .prez-lite-cache/data-processing/scripts/process-vocab.js $ARGS"
+          node .prez-lite-cache/data-processing/scripts/process-vocab.js $ARGS
+
+          echo "✓ Vocabularies processed"
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        env:
+          GITHUB_TOKEN: ${{ secrets.PREZ_LITE_TOKEN }}
+        run: pnpm install
+
+      - name: Generate static site
+        env:
+          GITHUB_TOKEN: ${{ secrets.PREZ_LITE_TOKEN }}
+        run: pnpm generate
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

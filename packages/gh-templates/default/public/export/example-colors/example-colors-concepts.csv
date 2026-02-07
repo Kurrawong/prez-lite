@@ -1,0 +1,9 @@
+iri,broader,prefLabel
+https://example.org/vocab/colors/blue,https://example.org/vocab/colors/primary,Blue
+https://example.org/vocab/colors/green,https://example.org/vocab/colors/secondary,Green
+https://example.org/vocab/colors/orange,https://example.org/vocab/colors/secondary,Orange
+https://example.org/vocab/colors/primary,,Primary Colors
+https://example.org/vocab/colors/purple,https://example.org/vocab/colors/secondary,Purple
+https://example.org/vocab/colors/red,https://example.org/vocab/colors/primary,Red
+https://example.org/vocab/colors/secondary,,Secondary Colors
+https://example.org/vocab/colors/yellow,https://example.org/vocab/colors/primary,Yellow

@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+/*
+ * prez-lite Template Styles
+ *
+ * Customize your vocabulary site appearance here.
+ * The base styles come from the prez-lite layer.
+ * Add your organization's branding below.
+ */
+
+/* Example: Custom primary color (uncomment to use)
+:root, :host {
+  --ui-color-primary-50: var(--color-emerald-50) !important;
+  --ui-color-primary-100: var(--color-emerald-100) !important;
+  --ui-color-primary-200: var(--color-emerald-200) !important;
+  --ui-color-primary-300: var(--color-emerald-300) !important;
+  --ui-color-primary-400: var(--color-emerald-400) !important;
+  --ui-color-primary-500: var(--color-emerald-500) !important;
+  --ui-color-primary-600: var(--color-emerald-600) !important;
+  --ui-color-primary-700: var(--color-emerald-700) !important;
+  --ui-color-primary-800: var(--color-emerald-800) !important;
+  --ui-color-primary-900: var(--color-emerald-900) !important;
+  --ui-color-primary-950: var(--color-emerald-950) !important;
+}
+*/

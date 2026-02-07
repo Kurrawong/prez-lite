@@ -1,0 +1,102 @@
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prez: <https://prez.dev/> .
+@prefix altr-ext: <http://www.w3.org/ns/dx/connegp/altr-ext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# =============================================================================
+# Catalog
+# =============================================================================
+
+<urn:catalog:default> a prez:Catalog ;
+    dcterms:identifier "catalogue:default"^^xsd:token ;
+    dcterms:title "Vocabularies" ;
+    dcterms:description "SKOS vocabularies published with prez-lite." .
+
+# =============================================================================
+# Default Vocabulary Profile
+# =============================================================================
+
+prez:DefaultSchemeProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
+    dcterms:identifier "default-scheme"^^xsd:token ;
+    dcterms:title "Default Concept Scheme Profile" ;
+    dcterms:description "Default profile for SKOS Concept Schemes" ;
+
+    sh:targetClass skos:ConceptScheme ;
+    altr-ext:constrainsClass skos:ConceptScheme ;
+
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasResourceFormat "application/ld+json" ;
+    altr-ext:hasResourceFormat "application/rdf+xml" ;
+    altr-ext:hasResourceFormat "text/turtle" ;
+    altr-ext:hasResourceFormat "text/csv" ;
+    altr-ext:hasResourceFormat "application/json" ;
+    altr-ext:hasResourceFormat "text/html" ;
+
+    prez:labelSource skos:prefLabel, dcterms:title, rdfs:label ;
+    prez:descriptionSource skos:definition, dcterms:description ;
+
+    prez:generateIdentifier true ;
+    prez:generateLink true ;
+    prez:generateMembers true ;
+    prez:generateLabel true ;
+    prez:generateDescription true ;
+    prez:generateFocusNode true ;
+
+    prez:linkTemplate "/vocabs/{schemeId}" ;
+    prez:membersTemplate "/vocabs/{schemeId}/concepts" .
+
+prez:DefaultConceptProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
+    dcterms:identifier "default-concept"^^xsd:token ;
+    dcterms:title "Default Concept Profile" ;
+    dcterms:description "Default profile for SKOS Concepts" ;
+
+    sh:targetClass skos:Concept ;
+    altr-ext:constrainsClass skos:Concept ;
+
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasResourceFormat "application/ld+json" ;
+    altr-ext:hasResourceFormat "application/rdf+xml" ;
+    altr-ext:hasResourceFormat "text/turtle" ;
+    altr-ext:hasResourceFormat "text/html" ;
+
+    prez:labelSource skos:prefLabel, dcterms:title, rdfs:label ;
+    prez:descriptionSource skos:definition, dcterms:description ;
+
+    prez:generateIdentifier true ;
+    prez:generateLink true ;
+    prez:generateLabel true ;
+    prez:generateDescription true ;
+    prez:generateFocusNode true ;
+
+    prez:linkTemplate "/vocabs/{schemeId}/concepts/{conceptId}" .
+
+# =============================================================================
+# Umbrella Profile
+# =============================================================================
+
+prez:DefaultProfile a prof:Profile ;
+    dcterms:identifier "default"^^xsd:token ;
+    dcterms:title "Default Profile" ;
+    dcterms:description "Default profile configuration for vocabulary processing" ;
+
+    prez:catalog <urn:catalog:default> ;
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+
+    altr-ext:hasNodeShape [
+        a sh:NodeShape ;
+        sh:targetClass skos:ConceptScheme ;
+        altr-ext:hasDefaultProfile prez:DefaultSchemeProfile
+    ] ;
+    altr-ext:hasNodeShape [
+        a sh:NodeShape ;
+        sh:targetClass skos:Concept ;
+        altr-ext:hasDefaultProfile prez:DefaultConceptProfile
+    ] .

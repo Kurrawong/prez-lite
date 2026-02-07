@@ -1,19 +1,20 @@
 {
-  "name": "test-prez-org",
+  "name": "prez-lite-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Template for publishing SKOS vocabularies with prez-lite",
+  "type": "module",
   "scripts": {
-    "build:data": "node scripts/build-data.js",
-    "build:export": "node scripts/export-vocabs.js",
+    "process": "node scripts/process-vocabs.js",
     "dev": "nuxt dev",
-    "build": "nuxt build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run process && nuxt build",
+    "generate": "npm run process && nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "keywords": [],
+  "keywords": ["skos", "vocabulary", "rdf", "linked-data"],
   "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.28.2",
+  "license": "MIT",
+  "packageManager": "pnpm@9.0.0",
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/lucide": "^1.2.87",
@@ -25,9 +26,6 @@
     "@nuxt/icon": "^2.2.1",
     "@nuxt/ui": "^4.4.0",
     "@nuxtjs/color-mode": "^4.0.0",
-    "jsonld": "^9.0.0",
-    "mermaid": "^11.12.2",
-    "n3": "^2.0.1",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.27"
   }
