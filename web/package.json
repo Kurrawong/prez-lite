@@ -15,7 +15,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "prepare": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/content": "^3.11.0",
