@@ -9,7 +9,7 @@ const useLocalLayer = process.env.LOCAL_LAYER || (existsSync(localWebPath) && ex
 // When deployed as standalone repo, use GitHub layer
 const layer = useLocalLayer
   ? localWebPath
-  : ['github:hjohns/prez-lite/web', { auth: process.env.GITHUB_TOKEN, install: true }]
+  : ['github:hjohns/prez-lite/web', { auth: process.env.GITHUB_TOKEN }]
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',

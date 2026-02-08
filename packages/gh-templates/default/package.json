@@ -26,7 +26,11 @@
     "@nuxt/icon": "^2.2.1",
     "@nuxt/ui": "^4.4.0",
     "@nuxtjs/color-mode": "^4.0.0",
+    "mermaid": "^11.12.2",
+    "monaco-editor": "^0.52.0",
+    "nuxt-monaco-editor": "^1.4.0",
     "tailwindcss": "^4.1.18",
-    "vue": "^3.5.27"
+    "vue": "^3.5.27",
+    "vue-router": "^4.6.4"
   }
 }
