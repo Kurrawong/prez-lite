@@ -68,6 +68,9 @@ async function main() {
   // Step 3: Run the processing
   await processVocabularies()
 
+  // Step 4: Generate system metadata files
+  await generateSystemFiles()
+
   console.log('\n✅ Processing complete!')
 }
 
@@ -205,6 +208,46 @@ async function processVocabularies() {
     console.error('❌ Processing failed:', error.message)
     process.exit(1)
   }
+}
+
+async function generateSystemFiles() {
+  console.log('📊 Generating system metadata files...')
+
+  const SYSTEM_DIR = join(OUTPUT_DIR, '_system')
+  const VOCABULARIES_DIR = join(SYSTEM_DIR, 'vocabularies')
+
+  // Create system directories
+  mkdirSync(VOCABULARIES_DIR, { recursive: true })
+
+  // Generate vocabularies metadata index
+  console.log('   Generating vocabularies/index.json...')
+  const metadataScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-vocab-metadata.js')
+  try {
+    execSync(`node "${metadataScript}" --sourceDir "${SOURCE_DIR}" --output "${join(VOCABULARIES_DIR, 'index.json')}"${existsSync(BACKGROUND_DIR) ? ` --backgroundDir "${BACKGROUND_DIR}"` : ''}`, {
+      stdio: 'pipe',
+      cwd: ROOT_DIR
+    })
+    console.log('      ✓ vocabularies/index.json')
+  } catch (error) {
+    console.warn('      ⚠ Failed to generate vocabularies index:', error.message)
+  }
+
+  // Generate labels index (if background directory exists)
+  if (existsSync(BACKGROUND_DIR)) {
+    console.log('   Generating labels.json...')
+    const labelsScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-labels.js')
+    try {
+      execSync(`node "${labelsScript}" --backgroundDir "${BACKGROUND_DIR}" --output "${join(SYSTEM_DIR, 'labels.json')}"`, {
+        stdio: 'pipe',
+        cwd: ROOT_DIR
+      })
+      console.log('      ✓ labels.json')
+    } catch (error) {
+      console.warn('      ⚠ Failed to generate labels index:', error.message)
+    }
+  }
+
+  console.log('   ✓ System files generated')
 }
 
 // Run
