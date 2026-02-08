@@ -2208,6 +2208,11 @@ async function processVocab(config) {
     await writeFile(join(config.outDir, `${sourceName}-concepts.json`), JSON.stringify(listJson), 'utf-8');
     console.log(`   ✓ ${sourceName}-concepts.json`);
     outputFileCount++;
+
+    // Also write as -list.json for web component compatibility
+    await writeFile(join(config.outDir, `${sourceName}-list.json`), JSON.stringify(listJson), 'utf-8');
+    console.log(`   ✓ ${sourceName}-list.json`);
+    outputFileCount++;
   }
 
   if (profileAllowsFormat(config, 'text/csv')) {
@@ -2215,6 +2220,11 @@ async function processVocab(config) {
     const listCsv = await generateListCSV(concepts);
     await writeFile(join(config.outDir, `${sourceName}-concepts.csv`), listCsv, 'utf-8');
     console.log(`   ✓ ${sourceName}-concepts.csv`);
+    outputFileCount++;
+
+    // Also write as -list.csv for consistency
+    await writeFile(join(config.outDir, `${sourceName}-list.csv`), listCsv, 'utf-8');
+    console.log(`   ✓ ${sourceName}-list.csv`);
     outputFileCount++;
   }
 
