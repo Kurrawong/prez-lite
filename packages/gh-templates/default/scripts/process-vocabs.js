@@ -247,6 +247,23 @@ async function generateSystemFiles() {
     }
   }
 
+  // Generate search index
+  console.log('   Generating search index...')
+  const searchScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-search-index.js')
+  const searchDir = join(SYSTEM_DIR, 'search')
+
+  try {
+    execSync(`node "${searchScript}" --exportDir "${OUTPUT_DIR}" --output "${searchDir}" --vocabMetadata "${join(VOCABULARIES_DIR, 'index.json')}"`, {
+      stdio: 'pipe',
+      cwd: ROOT_DIR
+    })
+    console.log('      ✓ search/index.json')
+    console.log('      ✓ search/orama-index.json')
+    console.log('      ✓ search/facets.json')
+  } catch (error) {
+    console.warn('      ⚠ Failed to generate search index:', error.message)
+  }
+
   console.log('   ✓ System files generated')
 }
 

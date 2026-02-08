@@ -100,7 +100,7 @@ async function findListJsonFiles(exportDir) {
     if (entry.isDirectory() && !entry.name.startsWith('_')) {
       const vocabDir = join(exportDir, entry.name);
       const vocabFiles = await readdir(vocabDir);
-      const listFile = vocabFiles.find(f => f.endsWith('-list.json'));
+      const listFile = vocabFiles.find(f => f.endsWith("-list.json") || f.endsWith("-concepts.json"));
       if (listFile) {
         files.push(join(vocabDir, listFile));
       }
