@@ -5,7 +5,9 @@ import { resolve } from 'node:path'
 const localWebPath = resolve(__dirname, '../../../web')
 const useLocalLayer = process.env.LOCAL_LAYER || (existsSync(localWebPath) && existsSync(resolve(localWebPath, 'nuxt.config.ts')))
 
-const layer = false && useLocalLayer
+// When inside prez-lite monorepo, use local layer for development
+// When deployed as standalone repo, use GitHub layer
+const layer = useLocalLayer
   ? localWebPath
   : ['github:hjohns/prez-lite/web', { auth: process.env.GITHUB_TOKEN, install: true }]
 
