@@ -29,63 +29,17 @@
     prez:type prez:FocusNode;
     prez:label "Geoscience units of measurement"@en;
     prez:description "A list of units of measurement relevant for geoscience and the administration of statutory submissions from the resource industries. The list is based on the Geological Survey of Queensland (GSQ) Geoscience Profile of the Quantities, Units, Dimensions & Types (QUDT) ontology and vocabularies lists (https://linked.data.gov.au/def/geou and https://www.qudt.org/doc/DOC_VOCAB-UNITS.html - version 2.1.29). QUDT is based largely on the international standard for metric units (International System of Units, or SI) but also includes units from other systems, notably the Centimetre–Gram–Second (CGS or cgs) system of units and most US Customary and British imperial units for length, weight and heat. Wherever applicable, the SI standard is used for conversions between non-SI units (https://www.qudt.org/pages/QUDToverviewPage.html). Commonly used multiples of base units are also included, and the list has been expanded to include units of measurements for time that are relevant to earth sciences; for these, notations follow the recommendations of Norman et al. (2011), available at http://www.dmp.wa.gov.au/Documents/Geological-Survey/Use-and-reporting-of-geochronology.pdf). Some QUDT definitions have been extended, mostly to clarify what the unit is a measure of. Notations are the correct symbol to use for the unit of measurement; common variations of these are indicated as alternate labels, but their use is strongly discouraged. English spelling is preferred over American spelling (e.g. metre, not meter). Other rules and style conventions for spelling units names follow the 2008 Edition of the Guide for International System of Units (SI), NIST Special Publication 811, National Institute of Standards and Technology, US Department of Commerce (https://physics.nist.gov/cuu/pdf/sp811.pdf)."@en.
-rdf:type prez:label "type";
-    prez:description "The subject is an instance of a class.".
-skos:ConceptScheme prez:label "Concept Scheme";
-    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
-skos:definition prez:label "definition";
-    prez:description "A statement or formal explanation of the meaning of a concept".
-skos:prefLabel prez:label "preferred label";
-    prez:description "The preferred lexical label for a resource, in a given language".
-sdo:status prez:label "status";
-    prez:description "The status of the study (enumerated).".
-<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
-    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
-skos:historyNote prez:label "history note";
-    prez:description "A note about the past state/use/meaning of a concept".
-owl:versionIRI prez:label "version IRI";
-    prez:description "The property that identifies the version IRI of an ontology.".
-prov:qualifiedAttribution prez:label "qualified attribution";
-    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
 _:n3-1520 prov:agent _:n3-1521;
     prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>.
-prov:agent prez:label "agent".
 _:n3-1521 a sdo:Person;
     sdo:email ""^^xsd:anyURI;
     sdo:name "Angela Riganti".
-sdo:Person prez:label "Person";
-    prez:description "A person (alive, dead, undead, or fictional).".
-sdo:email prez:label "email";
-    prez:description "Email address".
-sdo:name prez:label "name";
-    prez:description "The name of the item".
-prov:hadRole prez:label "role".
-<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 _:n3-1522 prov:agent <https://orcid.org/0009-0002-5543-2719>;
     prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>.
-<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
-sdo:creator prez:label "creator";
-    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
-<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
-sdo:dateCreated prez:label "date created";
-    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
-sdo:dateModified prez:label "date modified";
-    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
-sdo:keywords prez:label "keywords";
-    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
-sdo:publisher prez:label "publisher";
-    prez:description "The publisher of the creative work".
-sdo:version prez:label "version";
-    prez:description "The version of the CreativeWork embodied by a specified resource".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
 _:n3-1523 prez:currentProfile prez:OGCSchemesObjectProfile.
-prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
-    prez:description "A profile for SKOS Concept Schemes".
-skos:hasTopConcept prez:label "has top concept";
-    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
-xsd:date prez:label "date".
 <http://qudt.org/vocab/unit/PH> a skos:Concept;
     skos:prefLabel "acidity (pH)"@en.
 <http://qudt.org/vocab/unit/ANGSTROM> a skos:Concept;
