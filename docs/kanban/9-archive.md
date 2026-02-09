@@ -168,6 +168,22 @@ Full codebase security analysis:
 
 ---
 
+## 📦 Archived: Sprint 2 - Security Remediation
+
+**Archived Date:** 2026-02-09
+**Status:** ✅ Complete — 7 tasks (3 HIGH + 3 MEDIUM security fixes + workflow docs)
+**See:** `sprints.md` for full details
+
+---
+
+## 📦 Archived: Sprint 3 - SPARQL Dynamic Component
+
+**Archived Date:** 2026-02-09
+**Status:** ✅ Complete — 3 tasks (feasibility, implementation, playground styles)
+**See:** `sprints.md` for full details
+
+---
+
 ## Archive Notes
 
 Sprint 1 laid the foundation for Sprint 2's security remediation work. The security audit identified 6 urgent issues (3 HIGH + 3 MEDIUM) that were successfully addressed in Sprint 2, bringing the project to a secure state.

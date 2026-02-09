@@ -4,6 +4,42 @@
 
 ---
 
+## ✅ Completed Sprint: Sprint 4 - Performance & UX Fixes
+
+**Duration:** 2026-02-09
+**Goal:** Fix excessive HTTP requests, loading state flash, deployment, and fresh-clone experience
+**Status:** ✅ **COMPLETE** — All items approved
+
+### Sprint Outcomes
+
+**Completed: 3 tasks (100%)**
+
+1. ✅ **Sample Data Fallback for Fresh Clones**
+   - `build:ensure-data` script copies sample data when no vocabs present
+   - Fresh clones can now build without manual data setup
+
+2. ✅ **AWS S3 + CloudFront Deployment GitHub Action**
+   - Manual-trigger workflow with OIDC auth
+   - Graceful CDN invalidation skip
+
+3. ✅ **Excessive HTTP Requests + Loading State Flash**
+   - Added in-memory caching to 4 fetch functions (`fetchVocabMetadata`, `fetchSchemes`, `fetchLabels`, `fetchListConcepts`)
+   - Fixed "Concept not found" / "Scheme not found" flash caused by `useAsyncData` `'idle'` status not being treated as loading
+   - Files: `useVocabData.ts`, `concept.vue`, `scheme.vue`, `ConceptPanel.vue`
+
+### Sprint Velocity
+- **Planned:** 3 tasks
+- **Completed:** 3 tasks
+- **Success Rate:** 100%
+
+### Key Achievements
+- Eliminated duplicate HTTP requests across all composables
+- Clean skeleton loading on all pages (no error flash)
+- Out-of-box build experience for fresh clones
+- AWS deployment option added
+
+---
+
 ## ✅ Completed Sprint: Sprint 3 - SPARQL Dynamic Component
 
 **Duration:** 2026-02-09
