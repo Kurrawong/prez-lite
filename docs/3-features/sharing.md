@@ -193,6 +193,67 @@ Components automatically support light and dark modes. Override colors using inl
 
 **Note:** Inline styles override CSS variables, allowing component-specific customization.
 
+#### SPARQL Mode
+
+Connect directly to a SPARQL endpoint instead of static JSON files. The component lazily loads children on drill-down.
+
+```html
+<!-- Minimal SPARQL configuration -->
+<prez-list
+  sparql-endpoint="https://vocabs.example.org/sparql"
+  vocab-iri="https://example.org/vocab/colors"
+  search
+></prez-list>
+
+<!-- Full configuration with all options -->
+<prez-list
+  sparql-endpoint="https://vocabs.example.org/sparql"
+  vocab-iri="https://example.org/vocab/colors"
+  named-graph="https://example.org/graph/vocabs"
+  timeout="15000"
+  label-predicates="skos:prefLabel,dcterms:title,rdfs:label"
+  description-predicates="skos:definition,dcterms:description"
+  type="select"
+  search
+  show-count
+></prez-list>
+```
+
+**SPARQL-Specific Attributes:**
+
+| Attribute | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `sparql-endpoint` | string | - | SPARQL endpoint URL (enables SPARQL mode) |
+| `vocab-iri` | string | - | ConceptScheme IRI (required in SPARQL mode) |
+| `named-graph` | string | - | Named graph to query within |
+| `timeout` | number | `10000` | Request timeout in milliseconds |
+| `label-predicates` | string | `skos:prefLabel,...` | Comma-separated label predicates |
+| `description-predicates` | string | `skos:definition,...` | Comma-separated description predicates |
+
+**Profile-Driven Predicate Configuration:**
+
+By default, SPARQL queries use the same predicate fallback chain as the static export pipeline:
+- **Labels**: `skos:prefLabel` → `dcterms:title` → `rdfs:label`
+- **Descriptions**: `skos:definition` → `dcterms:description`
+
+Override using prefixed names or full IRIs:
+```html
+<prez-list
+  sparql-endpoint="https://endpoint/sparql"
+  vocab-iri="https://example.org/vocab"
+  label-predicates="rdfs:label"
+  description-predicates="dcterms:description,skos:scopeNote"
+></prez-list>
+```
+
+**Behaviour:**
+- Initial load fetches scheme metadata and top concepts
+- Expanding a node lazily fetches narrower concepts via SPARQL
+- Search queries the endpoint with 300ms debounce (not client-side filtering)
+- All existing display types (`select`, `dropdown`, `radio`, `table`) work in SPARQL mode
+
+**CORS Requirement:** The SPARQL endpoint must return `Access-Control-Allow-Origin` headers for browser requests. Common triplestores (Fuseki, GraphDB, Virtuoso) support CORS when configured.
+
 #### JavaScript Integration
 
 ```javascript

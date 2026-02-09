@@ -74,7 +74,13 @@ const components: Record<string, ComponentMeta> = {
       { name: 'placeholder', type: 'string', default: '"Select..."', description: 'Placeholder text (dropdown mode)' },
       { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable the component' },
       { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' },
-      { name: 'theme', type: 'string', default: '"auto"', description: 'Color theme: "light", "dark", or "auto" (follows system)' }
+      { name: 'theme', type: 'string', default: '"auto"', description: 'Color theme: "light", "dark", or "auto" (follows system)' },
+      { name: 'sparql-endpoint', type: 'string', default: '—', description: 'SPARQL endpoint URL — enables dynamic SPARQL mode' },
+      { name: 'vocab-iri', type: 'string', default: '—', description: 'ConceptScheme IRI (required in SPARQL mode)' },
+      { name: 'named-graph', type: 'string', default: '—', description: 'Named graph to query within (optional, SPARQL mode)' },
+      { name: 'timeout', type: 'number', default: '10000', description: 'Request timeout in ms (SPARQL mode)' },
+      { name: 'label-predicates', type: 'string', default: '"skos:prefLabel,dcterms:title,rdfs:label"', description: 'Comma-separated label predicates for SPARQL resolution' },
+      { name: 'description-predicates', type: 'string', default: '"skos:definition,dcterms:description"', description: 'Comma-separated description predicates for SPARQL resolution' }
     ],
     methods: [
       { name: 'loadVocab()', description: 'Manually trigger vocabulary reload' }

@@ -1,0 +1,205 @@
+[
+  {
+    "@id": "_:n3-10",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/vocab/colors/green",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:green"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:scheme/items/ns1:green"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Green",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A secondary color created by mixing blue and yellow.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/vocab/colors/orange",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:orange"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:scheme/items/ns1:orange"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Orange",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A secondary color created by mixing red and yellow.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/vocab/colors/purple",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:purple"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:scheme/items/ns1:purple"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Purple",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A secondary color created by mixing red and blue.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/vocab/colors/scheme",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:scheme"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:scheme"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Example Colors",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A sample vocabulary demonstrating prez-lite. Replace with your own vocabularies.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:scheme/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.org/vocab/colors/secondary",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Secondary Colors",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Colors created by mixing two primary colors.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://example.org/vocab/colors/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://example.org/vocab/colors/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://example.org/vocab/colors/green"
+      },
+      {
+        "@id": "https://example.org/vocab/colors/orange"
+      },
+      {
+        "@id": "https://example.org/vocab/colors/purple"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:secondary"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:scheme/items/ns1:secondary"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Secondary Colors",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Colors created by mixing two primary colors.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  }
+]

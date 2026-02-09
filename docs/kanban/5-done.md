@@ -2,6 +2,33 @@
 
 ---
 
+## ✅ 🔌 Implement SPARQL Endpoint Support in prez-list
+**Completed:** 2026-02-09
+
+**Summary:** Extended `prez-list` web component with live SPARQL endpoint support. The component can now fetch SKOS concept hierarchies directly from a SPARQL endpoint, with lazy loading of narrower concepts on expand and server-side search.
+
+**Deliverables:**
+- `sparql-fetch.ts` — SPARQL query builder with profile-driven predicate resolution (COALESCE fallback chain)
+- `base-element.ts` — 6 new properties (`sparql-endpoint`, `vocab-iri`, `named-graph`, `timeout`, `label-predicates`, `description-predicates`), SPARQL loading path, lazy `loadChildren()`
+- `list.ts` — Async expand with per-node loading spinners, debounced SPARQL search (300ms)
+- `index.ts` — Exported new utilities and types
+- Playground SPARQL toggle with Connect button, config panel, and live preview
+- Documentation in `docs/3-features/sharing.md` and `packages/gh-templates/default/README.md`
+- CSP updated to allow `connect-src https:` for SPARQL playground
+- Bundle: ~78KB raw / ~18.5KB gzipped
+
+---
+
+## ✅ 🔌 SPARQL Feasibility Assessment
+**Completed:** 2026-02-09
+
+**Summary:** Assessed feasibility of adding live SPARQL endpoint support to `prez-list`. Recommended extending the existing component with a `sparql-endpoint` attribute rather than creating a separate component.
+
+**Deliverables:**
+- `docs/5-technical/sparql-web-component.md` — full analysis with 3 options, SPARQL queries, risks, and effort estimate (10-16 hours)
+
+---
+
 ## ✅ 🎛️ Style Options in Playground
 **Completed:** 2026-02-09
 

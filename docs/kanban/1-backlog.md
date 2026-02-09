@@ -4,7 +4,4 @@
 
 ---
 
-🔄 SPARQL-backed dynamic web component list — feasibility assessment and approach documentation
-
-
-
+👀 AWS S3 + CloudFront deployment GitHub Action

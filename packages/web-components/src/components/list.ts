@@ -2,6 +2,8 @@ import { html, css, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { PrezVocabBase } from './base-element.js'
 import type { VocabTreeNode, VocabConcept } from '../utils/fetch-vocab.js'
+import type { SparqlTreeNode } from '../utils/sparql-fetch.js'
+import { fetchSearchConcepts } from '../utils/sparql-fetch.js'
 
 /**
  * <prez-list>
@@ -370,6 +372,21 @@ export class PrezList extends PrezVocabBase {
       padding: 0.5rem;
     }
 
+    .node-loading {
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      border: 1.5px solid var(--prez-border);
+      border-top-color: var(--prez-primary);
+      border-radius: 50%;
+      animation: prez-spin 0.6s linear infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes prez-spin {
+      to { transform: rotate(360deg); }
+    }
+
     .error {
       color: var(--prez-text-error);
       font-size: 0.75rem;
@@ -638,6 +655,13 @@ export class PrezList extends PrezVocabBase {
   @state()
   private dropdownOpen = false
 
+  /** SPARQL search results (replaces tree during search) */
+  @state()
+  private sparqlSearchResults: SparqlTreeNode[] | null = null
+
+  /** Debounce timer for SPARQL search */
+  private searchDebounceTimer: ReturnType<typeof setTimeout> | null = null
+
   private boundHandleClickOutside = this.handleClickOutside.bind(this)
 
   connectedCallback(): void {
@@ -648,6 +672,9 @@ export class PrezList extends PrezVocabBase {
   disconnectedCallback(): void {
     super.disconnectedCallback()
     document.removeEventListener('click', this.boundHandleClickOutside)
+    if (this.searchDebounceTimer) {
+      clearTimeout(this.searchDebounceTimer)
+    }
   }
 
   private handleClickOutside(e: Event): void {
@@ -667,6 +694,12 @@ export class PrezList extends PrezVocabBase {
 
   private initializeExpanded(): void {
     if (!this.vocabData?.tree) return
+
+    // In SPARQL mode, don't auto-expand (children aren't loaded yet)
+    if (this.sparqlMode) {
+      this.expandedNodes = new Set()
+      return
+    }
 
     if (this.maxLevel === -1) {
       // Expand all nodes
@@ -701,12 +734,43 @@ export class PrezList extends PrezVocabBase {
   private handleFilter(e: Event): void {
     this.filterText = (e.target as HTMLInputElement).value
     this.emitFilter(this.filterText)
+
+    if (this.sparqlMode) {
+      this.debounceSparqlSearch(this.filterText)
+    }
   }
 
-  private toggleExpand(iri: string, e: Event): void {
+  private debounceSparqlSearch(term: string): void {
+    if (this.searchDebounceTimer) {
+      clearTimeout(this.searchDebounceTimer)
+    }
+
+    if (!term) {
+      this.sparqlSearchResults = null
+      return
+    }
+
+    this.searchDebounceTimer = setTimeout(async () => {
+      const config = this.sparqlConfig
+      if (!config) return
+      try {
+        this.sparqlSearchResults = await fetchSearchConcepts(config, term)
+      } catch {
+        this.sparqlSearchResults = []
+      }
+    }, 300)
+  }
+
+  private async toggleExpand(iri: string, e: Event): Promise<void> {
     e.stopPropagation()
     const newExpanded = new Set(this.expandedNodes)
     const wasExpanded = newExpanded.has(iri)
+
+    if (!wasExpanded && this.sparqlMode) {
+      // Lazy load children if not yet loaded
+      await this.loadChildren(iri)
+    }
+
     if (wasExpanded) {
       newExpanded.delete(iri)
     } else {
@@ -849,9 +913,24 @@ export class PrezList extends PrezVocabBase {
       .filter((n): n is VocabTreeNode => n !== null)
   }
 
+  private nodeHasChildren(node: VocabTreeNode): boolean {
+    if (node.children.length > 0) return true
+    // In SPARQL mode, check the hasChildren flag
+    if (this.sparqlMode && 'hasChildren' in node) {
+      return (node as SparqlTreeNode).hasChildren
+    }
+    return false
+  }
+
+  private isNodeLoading(node: VocabTreeNode): boolean {
+    if ('loading' in node) return (node as SparqlTreeNode).loading
+    return false
+  }
+
   private renderTreeNode(node: VocabTreeNode): unknown {
-    const hasChildren = node.children.length > 0
-    const isExpanded = this.expandedNodes.has(node.iri) || (this.filterText && hasChildren)
+    const hasChildren = this.nodeHasChildren(node)
+    const nodeLoading = this.isNodeLoading(node)
+    const isExpanded = this.expandedNodes.has(node.iri) || (this.filterText && hasChildren && !this.sparqlMode)
     const isSelected = this.multiple
       ? this.values.includes(node.iri)
       : this.value === node.iri
@@ -862,7 +941,8 @@ export class PrezList extends PrezVocabBase {
           class="tree-row ${this.showSelected && isSelected ? 'selected' : ''}"
           @click=${() => this.selectNode(node.iri)}
         >
-          ${hasChildren ? html`
+          ${nodeLoading ? html`<span class="node-loading"></span>`
+          : hasChildren ? html`
             <button
               class="expand-btn"
               @click=${(e: Event) => this.toggleExpand(node.iri, e)}
@@ -896,7 +976,7 @@ export class PrezList extends PrezVocabBase {
             <span class="count">(${this.countDescendants(node)})</span>
           ` : nothing}
         </div>
-        ${hasChildren && isExpanded ? html`
+        ${hasChildren && isExpanded && node.children.length > 0 ? html`
           <ul class="children">
             ${node.children.map(child => this.renderTreeNode(child))}
           </ul>
@@ -991,7 +1071,21 @@ export class PrezList extends PrezVocabBase {
       `
     }
 
-    const tree = this.filterTreeNodes(this.vocabData?.tree || [])
+    // In SPARQL search mode, show flat search results
+    if (this.sparqlMode && this.filterText && this.sparqlSearchResults !== null) {
+      if (this.sparqlSearchResults.length === 0) {
+        return html`<div class="empty">No matching concepts</div>`
+      }
+      return html`
+        <ul class="tree" role="tree" aria-label=${this.vocabData?.label || 'Search results'}>
+          ${this.sparqlSearchResults.map(node => this.renderTreeNode(node))}
+        </ul>
+      `
+    }
+
+    const tree = this.sparqlMode
+      ? (this.vocabData?.tree || [])
+      : this.filterTreeNodes(this.vocabData?.tree || [])
     if (tree.length === 0) {
       return html`<div class="empty">${this.filterText ? 'No matching concepts' : 'No hierarchy available'}</div>`
     }
@@ -1012,6 +1106,9 @@ export class PrezList extends PrezVocabBase {
     this.emitFilter(this.filterText)
     if (!this.dropdownOpen) {
       this.dropdownOpen = true
+    }
+    if (this.sparqlMode) {
+      this.debounceSparqlSearch(this.filterText)
     }
   }
 
@@ -1100,7 +1197,21 @@ export class PrezList extends PrezVocabBase {
   }
 
   private renderTree() {
-    const tree = this.filterTreeNodes(this.vocabData?.tree || [])
+    // In SPARQL search mode, show flat search results
+    if (this.sparqlMode && this.filterText && this.sparqlSearchResults !== null) {
+      if (this.sparqlSearchResults.length === 0) {
+        return html`<div class="empty">No matching concepts</div>`
+      }
+      return html`
+        <ul class="tree" role="tree" aria-label=${this.vocabData?.label || 'Search results'}>
+          ${this.sparqlSearchResults.map(node => this.renderTreeNode(node))}
+        </ul>
+      `
+    }
+
+    const tree = this.sparqlMode
+      ? (this.vocabData?.tree || [])
+      : this.filterTreeNodes(this.vocabData?.tree || [])
 
     if (tree.length === 0) {
       return html`<div class="empty">${this.filterText ? 'No matching concepts' : 'No hierarchy available'}</div>`

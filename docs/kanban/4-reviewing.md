@@ -4,22 +4,19 @@
 
 ---
 
-*No items currently in review*
+## 📦 Sample Data Fallback for Fresh Clones
+**Review requested:** 2026-02-09
 
-All Sprint 2 items have been reviewed and approved! ✅
+### What to Review
+Build-step fallback that uses sample data when `web/public/data/vocabs/` is empty (e.g. fresh clone).
 
----
+### Changes
+- **`web/public/sample-data/`** — committed folder with `example-colors.ttl`, `profiles.ttl`, and empty `background/`
+- **`package.json`** — new `build:ensure-data` script that copies sample-data into data/ if no vocabs found
+- **`.gitignore`** — `web/public/data/` remains ignored (generated at build time)
 
-## Review Process
-
-When items are ready for review, they will appear here with:
-- What to review (code, docs, functionality)
-- Done criteria checklist
-- How to test/verify
-- Files modified
-
-**Review Instructions:**
-1. Test functionality
-2. Verify done criteria met
-3. Approve or request changes
-4. Items move to Done after approval
+### How to Test
+1. Delete `web/public/data/` entirely
+2. Run `pnpm build:ensure-data`
+3. Verify `web/public/data/vocabs/example-colors.ttl`, `data/profiles.ttl`, and `data/background/` exist
+4. Run `pnpm build:all-export` and confirm it completes successfully

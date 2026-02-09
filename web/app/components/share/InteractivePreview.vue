@@ -78,6 +78,46 @@ onMounted(() => {
   }
 })
 
+// SPARQL mode
+const sparqlMode = ref(false)
+const sparqlEndpoint = ref('https://api.data.kurrawong.ai/sparql')
+const sparqlVocabIri = ref('https://linked.data.gov.au/def/fsdf/themes')
+const sparqlNamedGraph = ref('')
+const sparqlTimeout = ref('')
+const sparqlLabelPredicates = ref('')
+const sparqlDescriptionPredicates = ref('')
+const showSparqlPanel = ref(false)
+// Whether the SPARQL config has been applied to the preview
+const sparqlConnected = ref(false)
+// Whether SPARQL fields changed since last connect
+const sparqlDirty = ref(false)
+
+function toggleSparqlMode() {
+  sparqlMode.value = !sparqlMode.value
+  sparqlConnected.value = false
+  sparqlDirty.value = false
+  isCodeEdited.value = false
+}
+
+function onSparqlFieldInput() {
+  sparqlDirty.value = true
+  // Update code editor but NOT the iframe preview
+  isCodeEdited.value = false
+}
+
+const sparqlCanConnect = computed(() => {
+  return sparqlEndpoint.value && sparqlVocabIri.value
+})
+
+function connectSparql() {
+  if (!sparqlCanConnect.value) return
+  sparqlConnected.value = true
+  sparqlDirty.value = false
+  isCodeEdited.value = false
+  // Force iframe refresh with current code
+  nextTick(() => updateIframe())
+}
+
 // Style customization
 const showStylePanel = ref(false)
 const customStyles = reactive<Record<string, string>>({
@@ -217,7 +257,27 @@ function clearEvents() {
 
 // Generate the component HTML with script tag - complete working example
 const componentHtml = computed(() => {
-  let attrs = `vocab="${props.vocab.slug}" base-url="${props.baseUrl}"`
+  let attrs: string
+
+  if (sparqlMode.value) {
+    // SPARQL mode attributes
+    attrs = `sparql-endpoint="${sparqlEndpoint.value || 'https://your-endpoint/sparql'}"\n           vocab-iri="${sparqlVocabIri.value || 'https://example.org/vocab/your-scheme'}"`
+    if (sparqlNamedGraph.value) {
+      attrs += `\n           named-graph="${sparqlNamedGraph.value}"`
+    }
+    if (sparqlTimeout.value && sparqlTimeout.value !== '10000') {
+      attrs += `\n           timeout="${sparqlTimeout.value}"`
+    }
+    if (sparqlLabelPredicates.value) {
+      attrs += `\n           label-predicates="${sparqlLabelPredicates.value}"`
+    }
+    if (sparqlDescriptionPredicates.value) {
+      attrs += `\n           description-predicates="${sparqlDescriptionPredicates.value}"`
+    }
+  } else {
+    // Static JSON mode attributes
+    attrs = `vocab="${props.vocab.slug}" base-url="${props.baseUrl}"`
+  }
 
   // Add theme attribute to match prez-lite's current color mode
   if (colorMode.value !== 'auto') {
@@ -297,7 +357,7 @@ function generateIframeHtml(code: string): string {
       max-width: 100%;
     }
   </style>
-  <script src="${props.baseUrl}/web-components/prez-lite.min.js" type="module"><\/script>
+  <script src="${props.baseUrl}/web-components/prez-lite.min.js?v=${Date.now()}" type="module"><\/script>
 </head>
 <body>
   ${componentCode}
@@ -354,22 +414,18 @@ onMounted(() => {
 
 function updateIframe() {
   if (iframeRef.value) {
-    const doc = iframeRef.value.contentDocument
-    if (doc) {
-      const html = generateIframeHtml(editableCode.value)
-      doc.open()
-      doc.write(html)
-      doc.close()
-
-      setTimeout(() => {
-        iframeRef.value?.contentWindow?.postMessage({ type: 'parent-ready' }, '*')
-      }, 100)
+    const html = generateIframeHtml(editableCode.value)
+    iframeRef.value.srcdoc = html
+    iframeRef.value.onload = () => {
+      iframeRef.value?.contentWindow?.postMessage({ type: 'parent-ready' }, '*')
     }
   }
 }
 
 // Update iframe when editable code changes
+// In SPARQL mode, only update when connected (user clicked Connect)
 watch(editableCode, () => {
+  if (sparqlMode.value && !sparqlConnected.value) return
   updateIframe()
 }, { flush: 'post' })
 
@@ -463,6 +519,19 @@ function toggleAttr(name: string) {
       <button
         :class="[
           'px-3 py-1.5 text-sm rounded-full border transition-colors flex items-center gap-1.5',
+          sparqlMode
+            ? 'bg-emerald-600 text-white border-emerald-600'
+            : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-gray-400'
+        ]"
+        title="Toggle SPARQL endpoint mode"
+        @click="toggleSparqlMode"
+      >
+        <span class="size-2 rounded-full" :class="sparqlMode ? 'bg-white' : 'bg-gray-400'" />
+        <span>SPARQL</span>
+      </button>
+      <button
+        :class="[
+          'px-3 py-1.5 text-sm rounded-full border transition-colors flex items-center gap-1.5',
           showEventLog
             ? 'bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'
             : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-gray-400'
@@ -474,6 +543,128 @@ function toggleAttr(name: string) {
         <span v-if="eventCount" class="text-xs opacity-70">({{ eventCount }})</span>
       </button>
     </div>
+
+    <!-- SPARQL Configuration Panel -->
+    <Transition name="slide">
+      <div v-if="sparqlMode" class="border border-emerald-300 dark:border-emerald-700 rounded-lg overflow-hidden">
+        <div class="flex items-center justify-between px-3 py-2 bg-emerald-50 dark:bg-emerald-900/30 border-b border-emerald-200 dark:border-emerald-800">
+          <span class="text-sm font-medium text-emerald-800 dark:text-emerald-300">SPARQL Endpoint Configuration</span>
+          <button
+            class="text-xs px-2 py-1 rounded text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-colors"
+            @click="showSparqlPanel = !showSparqlPanel"
+          >
+            {{ showSparqlPanel ? 'Hide options' : 'Show options' }}
+          </button>
+        </div>
+        <div class="p-3 bg-white dark:bg-gray-900 space-y-3">
+          <!-- Required fields -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Endpoint URL <span class="text-red-500">*</span>
+              </label>
+              <input
+                v-model="sparqlEndpoint"
+                type="url"
+                placeholder="https://vocabs.example.org/sparql"
+                class="w-full text-sm px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                @input="onSparqlFieldInput"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                ConceptScheme IRI <span class="text-red-500">*</span>
+              </label>
+              <input
+                v-model="sparqlVocabIri"
+                type="url"
+                placeholder="https://example.org/vocab/your-scheme"
+                class="w-full text-sm px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                @input="onSparqlFieldInput"
+              />
+            </div>
+          </div>
+          <!-- Connect button -->
+          <div class="flex items-center gap-3">
+            <button
+              :disabled="!sparqlCanConnect"
+              :class="[
+                'px-4 py-1.5 text-sm font-medium rounded transition-colors',
+                sparqlCanConnect
+                  ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                  : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
+              ]"
+              @click="connectSparql"
+            >
+              {{ sparqlConnected && !sparqlDirty ? 'Reconnect' : 'Connect' }}
+            </button>
+            <span v-if="sparqlConnected && !sparqlDirty" class="text-xs text-emerald-600 dark:text-emerald-400">Connected</span>
+            <span v-else-if="sparqlDirty" class="text-xs text-amber-600 dark:text-amber-400">Config changed — click Connect to apply</span>
+            <span v-else-if="!sparqlCanConnect" class="text-xs text-gray-400">Enter endpoint URL and scheme IRI</span>
+          </div>
+          <!-- Optional fields (collapsible) -->
+          <Transition name="slide">
+            <div v-if="showSparqlPanel" class="space-y-3 pt-2 border-t border-gray-200 dark:border-gray-700">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Named Graph <span class="text-gray-400">(optional)</span>
+                  </label>
+                  <input
+                    v-model="sparqlNamedGraph"
+                    type="url"
+                    placeholder="https://example.org/graph/vocabs"
+                    class="w-full text-sm px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    @input="onSparqlFieldInput"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Timeout (ms) <span class="text-gray-400">(default: 10000)</span>
+                  </label>
+                  <input
+                    v-model="sparqlTimeout"
+                    type="number"
+                    placeholder="10000"
+                    class="w-full text-sm px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    @input="onSparqlFieldInput"
+                  />
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Label Predicates <span class="text-gray-400">(default: skos:prefLabel,dcterms:title,rdfs:label)</span>
+                  </label>
+                  <input
+                    v-model="sparqlLabelPredicates"
+                    type="text"
+                    placeholder="skos:prefLabel,dcterms:title,rdfs:label"
+                    class="w-full text-sm px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    @input="onSparqlFieldInput"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Description Predicates <span class="text-gray-400">(default: skos:definition,dcterms:description)</span>
+                  </label>
+                  <input
+                    v-model="sparqlDescriptionPredicates"
+                    type="text"
+                    placeholder="skos:definition,dcterms:description"
+                    class="w-full text-sm px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    @input="onSparqlFieldInput"
+                  />
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 dark:text-gray-400">
+                Use prefixed names (skos:, dcterms:, rdfs:) or full IRIs. The endpoint must support CORS for browser access.
+              </p>
+            </div>
+          </Transition>
+        </div>
+      </div>
+    </Transition>
 
     <!-- Style Customization Panel -->
     <Transition name="slide">

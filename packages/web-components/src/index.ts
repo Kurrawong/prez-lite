@@ -7,6 +7,7 @@ export { PrezVocabBase } from './components/base-element.js'
 // Utilities
 export { fetchVocab, clearCache } from './utils/fetch-vocab.js'
 export { detectBaseUrl, resolveVocabUrl } from './utils/base-url.js'
+export { fetchTopConcepts, fetchNarrowerConcepts, fetchSearchConcepts } from './utils/sparql-fetch.js'
 
 // Types
 export type {
@@ -14,3 +15,8 @@ export type {
   VocabConcept,
   VocabTreeNode
 } from './utils/fetch-vocab.js'
+
+export type {
+  SparqlTreeNode,
+  SparqlConfig
+} from './utils/sparql-fetch.js'

@@ -74,7 +74,7 @@ export default defineNuxtConfig({
             "style-src 'self' 'unsafe-inline'",                      // unsafe-inline for Nuxt UI/Tailwind
             "img-src 'self' data: https:",
             "font-src 'self'",
-            "connect-src 'self'",
+            "connect-src 'self' https:",                         // https: needed for SPARQL playground
             "frame-ancestors 'none'",
             "base-uri 'self'",
             "form-action 'self'"

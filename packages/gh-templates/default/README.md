@@ -204,6 +204,20 @@ style="--prez-bg: #881337; --prez-text: #fce7f3; --prez-border: #be123c; --prez-
 
 **Note:** Inline styles override CSS variables, allowing component-specific customization even when dark mode defaults are active.
 
+### SPARQL Endpoint Mode
+
+Connect the web component directly to a live SPARQL endpoint instead of static files:
+
+```html
+<prez-list
+  sparql-endpoint="https://vocabs.example.org/sparql"
+  vocab-iri="https://example.org/vocab/my-vocabulary"
+  search
+></prez-list>
+```
+
+The component lazily loads narrower concepts on expand and queries the endpoint for search. The SPARQL endpoint must support CORS. See the [sharing documentation](https://github.com/hjohns/prez-lite/blob/main/docs/3-features/sharing.md) for full SPARQL configuration options.
+
 ### Background Labels
 
 Add TTL files to `public/data/background/` to provide labels for external IRIs referenced in your vocabularies.
