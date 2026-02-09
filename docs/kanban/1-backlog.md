@@ -4,7 +4,7 @@
 
 ---
 
-🎯 SPARQL-backed dynamic web component list — feasibility assessment and approach documentation
+🔄 SPARQL-backed dynamic web component list — feasibility assessment and approach documentation
 
 
 

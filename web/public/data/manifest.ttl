@@ -1,0 +1,20 @@
+PREFIX mrr: <https://prez.dev/ManifestResourceRoles/>
+PREFIX prez: <https://prez.dev/>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX schema: <https://schema.org/>
+
+[]  a prez:Manifest ;
+    prof:hasResource
+        [
+            prof:hasArtifact "vocabs/*.ttl" ;
+            prof:hasRole mrr:ResourceData ;
+            schema:description "SKOS vocabularies in Turtle format" ;
+            schema:name "Vocabulary Data" ;
+        ] ,
+        [
+            prof:hasArtifact "background/*.ttl" ;
+            prof:hasRole mrr:IncompleteCatalogueAndResourceLabels ;
+            schema:description "Background labels for external IRI resolution" ;
+            schema:name "Background Labels" ;
+        ] ;
+.

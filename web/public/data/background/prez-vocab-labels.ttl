@@ -1,0 +1,144 @@
+# Prez vocabulary labels for dcterms/prof/prez/xsd predicates and types
+# These provide human-readable labels and descriptions for common predicates
+# used in Prez profile configurations.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prez: <https://prez.dev/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix altr-ext: <http://www.w3.org/ns/dx/connegp/altr-ext#> .
+
+# DCTerms predicates
+dcterms:created prez:label "Date Created"@en ;
+    prez:description "Date of creation of the resource."@en,
+        "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en .
+
+dcterms:creator prez:label "Creator"@en ;
+    prez:description "An entity responsible for making the resource."@en,
+        "Recommended practice is to identify the creator with a URI.  If this is not possible or feasible, a literal value that identifies the creator may be provided."@en .
+
+dcterms:description prez:label "Description"@en ;
+    prez:description "An account of the resource."@en,
+        "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en .
+
+dcterms:identifier prez:label "Identifier"@en ;
+    prez:description "An unambiguous reference to the resource within a given context."@en,
+        "Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN).  Persistent identifiers should be provided as HTTP URIs."@en .
+
+dcterms:modified prez:label "Date Modified"@en ;
+    prez:description "Date on which the resource was changed."@en,
+        "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en .
+
+dcterms:provenance prez:label "Provenance"@en ;
+    prez:description "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en,
+        "The statement may include a description of any changes successive custodians made to the resource."@en .
+
+dcterms:publisher prez:label "Publisher"@en ;
+    prez:description "An entity responsible for making the resource available."@en .
+
+dcterms:title prez:label "Title"@en ;
+    prez:description "A name given to the resource."@en .
+
+# RDF predicates
+rdf:type prez:label "type" ;
+    prez:description "The subject is an instance of a class." .
+
+# RDFS predicates
+rdfs:seeAlso prez:label "see also" ;
+    prez:description "Further information about the subject resource." .
+
+# OWL predicates
+<http://www.w3.org/2002/07/owl#versionInfo> prez:label "versionInfo" ;
+    prez:description "The annotation property that provides version information for an ontology or another OWL construct." .
+
+# SKOS predicates
+<http://www.w3.org/2004/02/skos/core#definition> prez:label "definition"@en ;
+    prez:description "A statement or formal explanation of the meaning of a concept."@en .
+
+<http://www.w3.org/2004/02/skos/core#prefLabel> prez:label "preferred label"@en ;
+    prez:description "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag."@en,
+        "The preferred lexical label for a resource, in a given language."@en,
+        "The range of skos:prefLabel is the class of RDF plain literals."@en,
+        "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties."@en .
+
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> prez:label "Concept Scheme"@en ;
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
+
+# DCAT predicates
+<http://www.w3.org/ns/dcat#contactPoint> prez:label "contact point"@en ;
+    prez:description "Relevant contact information for the catalogued resource. Use of vCard is recommended."@en .
+
+# Schema.org predicates (SDO namespace)
+<https://schema.org/status> prez:label "status" ;
+    prez:description "The status of the study (enumerated)." .
+
+# XSD datatypes
+xsd:token prez:label "token" .
+
+xsd:string prez:label "string" .
+
+xsd:date prez:label "date" .
+
+xsd:dateTime prez:label "dateTime" .
+
+# ALTR-EXT predicates (Conneg by Profile)
+altr-ext:hasDefaultResourceFormat prez:label "Default Resource Format" .
+
+altr-ext:hasResourceFormat prez:label "Has Resource Format" .
+
+# Prez predicates
+prez:count prez:label "count" .
+
+prez:link prez:label "link" .
+
+prez:identifier prez:label "identifier" .
+
+prez:type prez:label "type" .
+
+prez:currentProfile prez:label "current profile" .
+
+# SHACL types
+sh:NodeShape prez:label "Node shape"@en ;
+    prez:description "A node shape is a shape that specifies constraint that need to be met with respect to focus nodes."@en .
+
+# Prof types
+prof:Profile prez:label "Profile" ;
+    prez:description """A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications.
+
+This definition includes what are often called "application profiles", "metadata application profiles", or "metadata profiles"."""@en .
+
+# Prez types
+prez:ObjectProfile prez:label "Object Profile" .
+
+prez:ListingProfile prez:label "Listing Profile" .
+
+prez:FocusNode prez:label "Focus Node" .
+
+prez:members prez:label "members" .
+
+# Prez profiles
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile" ;
+    prez:description "A profile for SKOS Concept Schemes" .
+
+prez:OGCItemProfile prez:label "OGC Object Profile" ;
+    prez:description "A profile for individual OGC Records API items" .
+
+# GA-specific resources
+<https://linked.data.gov.au/org/ga> prez:label "Geoscience Australia" ;
+    prez:description "Australia's pre-eminent public sector geoscience organisation. We are the nation's trusted advisor on the geology and geography of Australia. We apply science and technology to describe and understand the Earth for the benefit of Australia." .
+
+<http://pid.geoscience.gov.au/catalogue/ga-vocabs> prez:label "GA Vocabularies" ;
+    prez:description """Geoscience Australia's vocabularies of controlled terms.
+
+Geoscience Australia uses domain standards that are openly available, to provide a common language for communicating ideas and provide consistency of meaning of the data collected, research undertaken and products created. Part of the use of standards is the use of controlled terms - vocabularies - and this system contains those vocabularies created by Geosceince Australia.
+
+These vocabularies must be used in concert with international geo-domain vocabularies from the Commission for Geoscience Information (CGI), the Open Geospatial Consortium (OGC) and the International Organization for Standardization (ISO) and with Australian national vocabularies from the Government Geoscience Information Committee (GGIC) and the Intergovernmental Committee on Surveying and Mapping (ICSM).""" .
+
+<https://pid.geoscience.gov.au/dataset/ga/148553> prez:label "Geoscience Australia's geoscientific relational databases use look-up tables to describe the data stored within. These look-ups contain, but are not limited to, information about boreholes, field geology, inorganic and organic geochemistry, hydrochemistry, geophysics, rock properties, samples and other general geological terms. These terms have then been compiled into a vocabulary of terms for publication via GA's vocabulary service. Within this vocabulary, GA references where sourced terms are published in external vocabularies with a source vocabulary URI (Uniform Resource Identifier)." ;
+    prez:description "URL of the item" .
+
+<https://linked.data.gov.au/def/reg-statuses/experimental> prez:label "experimental"@en ;
+    prez:description "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en .

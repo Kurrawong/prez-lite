@@ -15,7 +15,7 @@ dist/
 !packages/web-components/dist/
 
 # Generated data (built from TTL at build time)
-web/public/data/
+# web/public/data/
 
 # IDE
 .idea/
