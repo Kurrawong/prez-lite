@@ -1,0 +1,951 @@
+[
+  {
+    "@id": "_:n3-2477",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "GSWA rock classification scheme",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Listing of rock types and lithological nomenclature (and related codes) used by the Geological Survey of Western Australia (GSWA) for the dual purpose of recording lithologies during mapping / core logging, and for representing mappable lithostratigraphic/lithotectonic units in the State. Rather than attempting to cover for all existing rock types and lithologies, the GSWA’s scheme and terms in this vocabulary are specifically informed by Western Australian geology; a companion vocabulary covers lithological equivalents for regolith materials. \n\nApart from the approach to classification of some volcanic (pyroclastic) rocks, GSWA's lithological nomenclature largely conforms to internationally recognized classifications such as Le Maitre et al. (2005) for plutonic/intrusive rocks and Fettes and Desmons (2007) for metamorphic rocks. Note that: a) GSWA prefers the term intrusive to plutonic, as it carries no inference on depth of emplacement; b) GSWA's rock classification scheme prefers the use of volcanic terminology for any igneous rock formed on or near the Earth's surface, i.e. for those hypabyssal or sub-volcanic rocks such as dykes, sills, and cryptodomes that are demonstrably both spatially and temporally associated with extrusive volcanic rocks; c) some intrusive mafic/ultramafic terminology is allowed for cumulate rocks originating from thick volcanic successions. In the absence of a single unified scheme for sedimentary rocks, multiple sources were considered, and definitions rely heavily on the Glossary of geology (5th edition, revised; Neuendorf et al., 2011). Full references listed under History Note.\n\nGSWA’s rock classification scheme is designed to provide consistent terminology within the organization, and primarily relies on features observable in all rocks at outcrop scale, in hand specimen, and in thin section. Additional terms cover for broader combinations of multiple lithologies encountered during mapping (especially for sedimentary rocks, e.g. ‘siliciclastic + lesser carbonate’), and to ensure a coherent approach across different rock types (e.g. use of ‘mylonitized’ for all metamorphic rock groups, even if some would be rare occurrences or difficult to identify in the field). Definitions in this vocabulary are largely compiled or derived from the quoted references and the Glossary of Geology (5th edition, revised, Neuendorf et al., 2011), with adaptions based on recommended GSWA usage; metamorphic lithologies are often derived from definitions of non-metamorphosed equivalents. Some mineralogical/petrological knowledge is expected of the reader.\n Each concept is characterized by a notation consisting of one to four lower-case letters. This notation represents the lithological code used for mapping lithologies and labelling lithostratigraphic units on maps. Note that in the GSWA's scheme, some lithological codes are reserved for use in the Field Observation database (WAROX) or the Explanatory Notes System (ENS) only; the latter are highlighted in the concept definitions and should not be used for field observations. Also note that in ENS codes are supplemented by primary and secondary qualifiers (not covered in this vocabulary); a concerted effort has been made to match WAROX-only codes with those generated via qualifiers in ENS, but in a few instances alphabetical limitations have prevented this (i.e. the code used in WAROX has a slightly different meaning from the same string of letters generated in ENS).\n\nThe approach behind GSWA’s rock classification scheme is documented in Tyler at al. (2004; https://dmpbookshop.eruditetechnologies.com.au/product/the-revised-gswa-rock-classification-scheme.do). Details of GSWA’s code construction for ENS can be found in Riganti et al. (2013; https://dmpbookshop.eruditetechnologies.com.au/product/gswa-code-builder-constructing-and-unravelling-gswa-geological-codes.do) and in a companion application, the GSWA Code Builder (ENS codes only), available from the Department’s Data and Software Centre (https://dasc.demirs.wa.gov.au/).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/arenite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:arenite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:arenite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "arenite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A general term used for well-sorted, consolidated sedimentary rocks composed of sand-sized fragments (irrespective of composition) with a pure or nearly pure chemical cement and less than 10% argillaceous matrix; as distinguished from wacke. Further subdivision is based on proportions of quartz (Q), feldspar (F) and rock/lithic fragments (R/L). Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/arkose",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:arkose"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:arkose"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "arkose",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A feldspar-rich sandstone, commonly coarse-grained and pink or reddish, that is typically composed of angular to subangular grains that may be either poorly or moderately well sorted, is usually derived from the rapid disintegration of granite or granitic rocks, and often closely resembles granite. Quartz is usually the dominant mineral, with feldspars constituting at least 25%. Cement (silica or calcite) is commonly rare, and matrix material (usually less than 15%) includes clay minerals (especially kaolinite), mica, and iron oxide; fine-grained rock fragments are often present. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/conglomerate",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:conglomerate"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:conglomerate"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "conglomerate",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A coarse-grained clastic sedimentary rock, composed of rounded to subangular fragments larger than 2 mm in diameter (granules, pebbles, cobbles, boulders) typically containing fine-grained particles (sand, silt, clay) in the interstices, and commonly cemented by iron oxide, silica, carbonate or hardened clay; the consolidated equivalent of gravel both in size range and in the essential roundness and sorting of its constituent particles. The rock or mineral fragments may be of varied composition and range widely in size. Conglomerates may be classified according to nature or composition of fragments, proportion of matrix, degree of size sorting, type of cement, and agent or environment of formation. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/conglomerate-plus-sandstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:conglomerate-plus-sandstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:conglomerate-plus-sandstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "conglomerate + sandstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Conglomerate and sandstone beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/conglomerate-with-other-siliciclastic-rock",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:conglomerate-with-other-siliciclastic-rock"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:conglomerate-with-other-siliciclastic-rock"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "conglomerate + other siliciclastic rock",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Conglomerate interleaved with other siliciclastic rocks/beds/intervals at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diamictite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diamictite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diamictite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diamictite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A comprehensive, nongenetic term for an unsorted or poorly sorted, noncalcareous, terrigenous sedimentary rock that contains a wide range of particle sizes, such as a rock with sand and/or larger particles in a muddy matrix; e.g. a tillite or a pebbly mudstone. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diamictite-with-other-siliciclastic",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diamictite-with-other-siliciclastic"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diamictite-with-other-siliciclastic"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diamictite + other siliciclastic",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Diamictite and other siliciclastic rocks/beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mixed-siliciclastic-and-volcanic-rocks",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mixed-siliciclastic-and-volcanic-rocks"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:mixed-siliciclastic-and-volcanic-rocks"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mixed siliciclastic and volcanic rocks",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Siliciclastic rocks/beds/intervals and volcanic rocks/beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mudstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mudstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:mudstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mudstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An indurated mud having the texture and composition of shale, but lacking its fine lamination or fissility. A general term that includes clay, silt, claystone, siltstone, shale, and argillite, and that should be used only when the amounts of clay and silt are not known or specified or cannot be precisely identified; or when it is desirable to characterize the whole family of finer-grained sedimentary rocks (as distinguished from sandstones, conglomerates, and limestones). The term specifies neither mineralogic composition nor mud of clastic origin. Historical GSWA usage has incorrectly used mudstone interchangeably with siltstone. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pebbly-sandstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pebbly-sandstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:pebbly-sandstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "pebbly sandstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A consolidated pebbly sand containing 10–20% pebbles in a matrix-supported framework. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sand",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sand"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sand"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sand",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A weekly cemented aggregate of mineral or rock particles of sand size, having a diameter in the range of 0.0625 to 2 mm (62–2000 μm, or 4 to -1 phi units). The material is most commonly composed of quartz resulting from rock disintegration, and when the term 'sand' is used without qualification, a siliceous composition is implied; but the particles may be of any mineral composition or mixture of rock or mineral fragments, such as 'coral sand' consisting of limestone fragments. Also, a mass of such material, especially on a beach, a desert or in a stream bed. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sandstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sandstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sandstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A sedimentary rock composed of abundant rounded or angular fragments of sand size with or without a fine-grained matrix (silt or clay) and more or less firmly united by a cementing material (commonly silica, iron oxide, or calcium carbonate); the consolidated equivalent of sand, intermediate in texture between conglomerate and mudstone. The sand particles are predominantly quartz, and the term 'sandstone', when used without qualification, indicates a rock containing about 85–90% quartz. Sandstone may be classified according to composition of particles, mineralogic or textural maturity, primary structures, and type of cement. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone-with-conglomerate",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sandstone-with-conglomerate"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sandstone-with-conglomerate"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sandstone + conglomerate",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandstone and conglomerate beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone-with-other-siliciclastic-rock",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sandstone-with-other-siliciclastic-rock"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sandstone-with-other-siliciclastic-rock"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sandstone + other siliciclastic rock",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Dominant sandstone rocks/beds/intervals interleaved at outcrop scale with other subordinate siliciclastic rocks/beds/intervals.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone-with-siltstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sandstone-with-siltstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sandstone-with-siltstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sandstone + siltstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandstone and siltstone beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sedimentary-breccia",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sedimentary-breccia"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sedimentary-breccia"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sedimentary breccia",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A coarse epiclastic rock formed by lithification of angular gravel (in which 30% of large particles are greater than 2 mm). Breccia differs from conglomerate in that the fragments have sharp edges and unworn corners, and may originate as a result of sedimentary processes such as talus accumulation, disturbance during sedimentation (intraclastic breccia), or collapse of rock material (solution breccia, collapse breccia). Excludes breccias formed by volcaniclastic processes. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sedimentary-siliciclastic",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A group name for sedimentary lithologies that are silicon-bearing (in the form of quartz and silicates) and are composed principally of broken fragments that are derived from pre-existing rocks or minerals and that have been transported some distance from their places of origin. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Compiled by the Geological Survey of Western Australia"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "s",
+        "@type": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gswa-rock-code"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "sedimentary siliciclastic",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/clastic",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      },
+      {
+        "@value": "https://glossary.americangeosciences.org/term/siliciclastic",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/conglomerate"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mudstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/conglomerate-plus-sandstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/conglomerate-with-other-siliciclastic-rock"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diamictite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diamictite-with-other-siliciclastic"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/arenite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/wacke"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/arkose"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mixed-siliciclastic-and-volcanic-rocks"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pebbly-sandstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sand"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone-with-conglomerate"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone-with-other-siliciclastic-rock"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sandstone-with-siltstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/sedimentary-breccia"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/shale"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siliciclastic-rock"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siliciclastic-rock-undivided"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siliciclastic-with-lesser-carbonate"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siltstone-with-sandstone"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sedimentary-siliciclastic"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:sedimentary-siliciclastic"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "sedimentary siliciclastic",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A group name for sedimentary lithologies that are silicon-bearing (in the form of quartz and silicates) and are composed principally of broken fragments that are derived from pre-existing rocks or minerals and that have been transported some distance from their places of origin. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/shale",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:shale"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:shale"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "shale",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A laminated, indurated very fine-grained rock with more than 66% clay-sized minerals; a claystone with fissility. GSWA now discourages the use of 'shale' as it is considered predominantly a textural term. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siliciclastic-rock",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:siliciclastic-rock"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:siliciclastic-rock"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "siliciclastic rock",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A sedimentary rock that is silicon-bearing (in the form of quartz and silicates) and is composed principally of broken fragments that are derived from pre-existing rocks or minerals and that have been transported some distance from their places of origin, but otherwise uncategorized. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siliciclastic-rock-undivided",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:siliciclastic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:siliciclastic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "siliciclastic rock; undivided",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A sedimentary rock that is silicon-bearing (in the form of quartz and silicates) and is composed principally of broken fragments that are derived from pre-existing rocks or minerals and that have been transported some distance from their places of origin, but otherwise uncategorized. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011). GSWA usage of this term is restricted to rocks that are partially weathered or are identified using remote sensing imagery, and the use of the related code/notation is limited to GSWA's Explanatory Notes System.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siliciclastic-with-lesser-carbonate",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:siliciclastic-with-lesser-carbonate"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:siliciclastic-with-lesser-carbonate"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "siliciclastic + lesser carbonate",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Siliciclastic rocks/beds/intervals and subordinate carbonate rocks/beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/siltstone-with-sandstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:siltstone-with-sandstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:siltstone-with-sandstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "siltstone + sandstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Siltstone and sandstone beds/intervals interleaved at outcrop scale.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/wacke",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:wacke"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:wacke"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "wacke",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A 'dirty' sandstone that consists of a mixed variety of unsorted or poorly sorted mineral and rock fragments, with 15–75% matrix of medium silt to clay. The term is used for a major category of sandstone, as distinguished from arenite. Adapted from Glossary of geology (5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

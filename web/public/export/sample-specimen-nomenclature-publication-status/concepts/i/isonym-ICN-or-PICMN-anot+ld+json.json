@@ -1,0 +1,320 @@
+[
+  {
+    "@id": "_:n3-2853",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/sample-nomenclature-publication-status",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sample-nomenclature-publication-status"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:sample-nomenclature-publication-status"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Sample/specimen nomenclature and publication status",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Listing of standard nomenclature types (typus) and publication statuses that may characterize fossil, mineral or meteorite samples/specimens held in the Geological Survey of Western Australia's collections. These terms should only be applied to physical items, and are not applicable to derived results or data. This vocabulary includes terms for type specimens as recognized under several international nomenclature codes (see History Note for details). Taxonomic schemes applied to different classes of objects each have their own set of accepted types, and can define the same term differently, so care should be taken to use the correct nomenclature when referring to type specimens; to minimize confusion, individual terms have been labelled with a suffix indicating the relevant code. Note that multiple statuses can apply to a single specimen (e.g. by definition a type specimen will always be described-and-published).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:sample-nomenclature-publication-status/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/sample-nomenclature-publication-status/isonym-ICN-or-PICMN",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/sample-nomenclature-publication-status"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "botanical isonym",
+        "@language": "en"
+      },
+      {
+        "@value": "microbialite isonym",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "In the International Code of Nomenclature for algae, fungi and plants (ICN) and the Proposed International Code of Microbialite Nomenclature (PICMN), the same name based on the same type, published independently at different times perhaps by different authors. Note: only the earliest isonym has nomenclatural status. No equivalent exists in the International Code of Zoological Nomenclature (ICZN).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Adapted from the ICN glossary."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/sample-nomenclature-publication-status"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "isonym - ICN or PICMN",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://www.iapt-taxon.org/nomen/pages/main/glossary.html",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:isonym-ICN-or-PICMN"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:sample-nomenclature-publication-status/items/ns1:isonym-ICN-or-PICMN"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "isonym - ICN or PICMN",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "In the International Code of Nomenclature for algae, fungi and plants (ICN) and the Proposed International Code of Microbialite Nomenclature (PICMN), the same name based on the same type, published independently at different times perhaps by different authors. Note: only the earliest isonym has nomenclatural status. No equivalent exists in the International Code of Zoological Nomenclature (ICZN).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

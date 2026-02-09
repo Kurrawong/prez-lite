@@ -1,0 +1,1148 @@
+[
+  {
+    "@id": "_:n3-769",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:australian-physiographic-units"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Australian physiographic units",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A list of physiographic units in Australia that provide a consistent framework for mapping soils and landforms at national and regional scales, compiled at a continental scale. The list was defined by Pain et al. (2011; https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf)* and built on the work of Jennings and Mabbutt (1986). It recognises a subdivision of the Australian onshore continent into three physiographic divisions, 23 physiographic provinces and 220 physiographic regions. The three divisions correspond broadly with the geological subdivision into the western shields, the central basins and the eastern fold belts. Provinces can be used to make interpretations about landscape processes at the broadest scale; descriptors for provinces include a name, geology, structure, and broad regolith types. The primary descriptors for regions are geographic name and a simple text description including major geologic and geomorphic features. Bounding box coordinates in decimal degrees are included. Each physiographic unit is also identified by a numeric code (one, three, and five digits for divisions, provinces and regions, respectively). For physiographic units within Western Australia, notations provided include extensions to five-digit numbering for divisions and provinces, to allow better characterization for database purposes. For Western Australian physiographic units, an alphabetical code is also listed; these consist of three upper-case letters for the division and provinces, with an additional two lower-case letter suffix for regions. These alphabetical codes are used by the Geological Survey of Western Australia (GSWA) to spatially assign regolith units to the correct physiographic unit during mapping. GSWA describes a physiographic unit as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.'\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/alberga-dunefield",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:alberga-dunefield"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:alberga-dunefield"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Alberga Dunefield",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Longitudinal dunes. Bounded by latitudes 26.565983°S and 27.346617°S, and longitudes 133.992033°E and 135.275623°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/boulia-downs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:boulia-downs"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:boulia-downs"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Boulia Downs",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Undulating clay plains with minor stony limestone plains. Bounded by latitudes 21.944785°S and 23.067808°S, and longitudes 138.884884°E and 140.03994°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/bulloo-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:bulloo-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:bulloo-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Bulloo Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Floodplain and terminal floodout with pans and calcreted flats. Bounded by latitudes 26.604365°S and 29.816743°S, and longitudes 142.16261°E and 144.54148°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/central-lowlands-province",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Hills and plateaus on resistant rocks, some alluvial plains. Bounded by latitudes 20.026174°S and 32.980276°S, and longitudes 133.128183°E and 152.319707°E.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Defined by Pain et al. (2011). See concept scheme for full reference."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "202",
+        "@type": "https://www.asris.csiro.au/themes/PhysioRegions.html"
+      },
+      {
+        "@value": "20200",
+        "@type": "https://www.asris.csiro.au/themes/PhysioRegions.html"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Central Lowlands Province",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "Central Lowlands Physiographic Province",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/alberga-dunefield"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/boulia-downs"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/bulloo-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/charleville-tableland"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/condamine-lowlands"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/cooper-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/denison-ranges"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/diamantina-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eromanga-lowlands"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eyre-creek-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eyre-frome-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/grey-range"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/innamincka-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/jericho-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/lightning-ridge-lowland"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/maranoa-lowland"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/nulty-springs-lowlands"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/oodnadatta-tablelands"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/paroo-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/simpson-desert-dunefield"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/simpson-desert-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/st-george-plain"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/strzelecki-desert-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/sturt-desert-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/upper-darling-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/warrego-plains"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/warwick-lowland"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/whelen-lowlands"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/winton-blackall-downs"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:central-lowlands-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:central-lowlands-province"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Central Lowlands Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Hills and plateaus on resistant rocks, some alluvial plains. Bounded by latitudes 20.026174°S and 32.980276°S, and longitudes 133.128183°E and 152.319707°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/charleville-tableland",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:charleville-tableland"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:charleville-tableland"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Charleville Tableland",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Low sandy tableland of weathered sandstone and shale. Bounded by latitudes 24.692152°S and 29.663575°S, and longitudes 145.063991°E and 150.59594°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/condamine-lowlands",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:condamine-lowlands"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:condamine-lowlands"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Condamine Lowlands",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Undulating clay lowlands on siltstone and low sandstone hills; floodplains. Bounded by latitudes 26.454383°S and 28.718057°S, and longitudes 150.121911°E and 152.319707°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/cooper-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:cooper-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:cooper-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Cooper Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Floodplain. Bounded by latitudes 24.668078°S and 28.053456°S, and longitudes 141.195363°E and 143.352939°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/denison-ranges",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:denison-ranges"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:denison-ranges"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Denison Ranges",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Bevelled low ridges of folded metamorphic rocks. Bounded by latitudes 27.968561°S and 28.823432°S, and longitudes 135.805714°1E and 36.211969°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/diamantina-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diamantina-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:diamantina-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Diamantina Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Floodplain. Bounded by latitudes 23.14687°S and 27.665199°S, and longitudes 138.318838°E and 141.696441°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eromanga-lowlands",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:eromanga-lowlands"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:eromanga-lowlands"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Eromanga Lowlands",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Stony plains with silcrete-capped mesas, minor alluvial and sandy tracts. Bounded by latitudes 21.552601°S and 28.977524°S, and longitudes 138.754777°E and 146.15178°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eyre-creek-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:eyre-creek-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:eyre-creek-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Eyre Creek Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Floodplain. Bounded by latitudes 21.61642°S and 25.11425°S, and longitudes 138.617785°E and 140.713522°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eyre-frome-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:eyre-frome-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:eyre-frome-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Eyre–Frome Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Major salt lakes and adjacent alluvial plains; minor stony plains and longitudinal dunes. Bounded by latitudes 27.842049°S and 32.155274°S, and longitudes 136.269228°E and 141.349675°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/grey-range",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:grey-range"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:grey-range"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Grey Range",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Silcrete-capped tablelands. Bounded by latitudes 27.649476°S and 30.262826°S, and longitudes 141.274586°E and 143.413904°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/innamincka-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:innamincka-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:innamincka-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Innamincka Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Eolian sandplain with west- to north-northwest-trending seif dunes, and numerous claypans and alluvial areas (floodout of Cooper Creek). Bounded by latitudes 26.326344°S and 28.826029°S, and longitudes 139.207682°E and 140.814965°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/jericho-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:jericho-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:jericho-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Jericho Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandplain. Bounded by latitudes 22.028735°S and 24.587845°S, and longitudes 145.097648°E and 146.30823°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/lightning-ridge-lowland",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lightning-ridge-lowland"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:lightning-ridge-lowland"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Lightning Ridge Lowland",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Stony plains with minor silcrete-capped mesas. Bounded by latitudes 28.483544°S and 30.072168°S, and longitudes 147.350717°E and 148.565744°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/maranoa-lowland",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:maranoa-lowland"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:maranoa-lowland"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Maranoa Lowland",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandplain with low sandstone hills. Bounded by latitudes 23.586687°S and 26.359875°S, and longitudes 145.814341°E and 148.427454°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/nulty-springs-lowlands",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:nulty-springs-lowlands"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:nulty-springs-lowlands"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Nulty Springs Lowlands",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Rolling downs and lowlands with hard red ridges and flats. Ferruginized regolith quite different from surrounding alluvial and sand plains. Bounded by latitudes 28.601625°S and 29.990434°S, and longitudes 145.582829°E and 147.063709°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/oodnadatta-tablelands",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:oodnadatta-tablelands"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:oodnadatta-tablelands"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Oodnadatta Tablelands",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Silcrete-capped low tablelands. Bounded by latitudes 25.658357°S and 30.379555°S, and longitudes 133.128183°E and 137.362127°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/paroo-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:paroo-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:paroo-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Paroo Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandplain with alluvial flats and claypans. Bounded by latitudes 27.294256°S and 30.373204°S, and longitudes 142.824185°E and 145.410658°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/simpson-desert-dunefield",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:simpson-desert-dunefield"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:simpson-desert-dunefield"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Simpson Desert Dunefield",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "South–north longitudinal dunes with sandstone ridges in the west and playas in the south. Bounded by latitudes 23.06095°S and 27.714416°S, and longitudes 134.394858°E and 139.367053°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/simpson-desert-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:simpson-desert-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:simpson-desert-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Simpson Desert Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Eolian dunefield (north-northwest trending seif dunes), with numerous claypans, Eolian sand, fine lacustrine and alluvial deposits. Bounded by latitudes 25.595982°S and 29.261594°S, and longitudes 136.70049°E and 138.799131°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/st-george-plain",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:st-george-plain"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:st-george-plain"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "St George Plain",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandplain, residual sand on old alluvium. Bounded by latitudes 26.233764°S and 28.997905°S, and longitudes 145.965588°E and 148.903252°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/strzelecki-desert-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:strzelecki-desert-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:strzelecki-desert-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Strzelecki Desert Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Longitudinal dunes and stony plains, minor claypans and floodplains. Bounded by latitudes 26.98873°S and 31.370752°S, and longitudes 138.673846°E and 142.857612°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/sturt-desert-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sturt-desert-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:sturt-desert-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Sturt Desert Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Stony plains with minor sand ridges. Bounded by latitudes 25.464829°S and 28.340281°S, and longitudes 138.396075°E and 141.955651°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/upper-darling-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:upper-darling-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:upper-darling-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Upper Darling Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Floodplains of centripetal anastomosing rivers. Bounded by latitudes 27.928535°S and 32.980276°S, and longitudes 145.891529°E and 150.867872°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/warrego-plains",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:warrego-plains"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:warrego-plains"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Warrego Plains",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Main and distributary floodplains, sandplains with claypans. Bounded by latitudes 26.702518°S and 30.216786°S, and longitudes 144.786896°E and 146.924643°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/warwick-lowland",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:warwick-lowland"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:warwick-lowland"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Warwick Lowland",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Stony plains with silcrete-capped mesas. Bounded by latitudes 28.23727°S and 32.095795°S, and longitudes 141.735532°E and 145.594392°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/whelen-lowlands",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:whelen-lowlands"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:whelen-lowlands"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Whelen Lowlands",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Undulating clay plains with silcrete-capped mesas in east. Bounded by latitudes 23.061938°S and 24.495791°S, and longitudes 138.73827°E and 139.678729°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/winton-blackall-downs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:winton-blackall-downs"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:winton-blackall-downs"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Winton–Blackall Downs",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Undulating clay plains. Bounded by latitudes 20.026174°S and 26.040646°S, and longitudes 140.601093°E and 140.601093°146.996283°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

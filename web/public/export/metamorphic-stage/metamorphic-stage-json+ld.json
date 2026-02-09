@@ -1,0 +1,192 @@
+[
+    {
+        "@id": "_:n3-2697",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0009-0003-0007-8342"
+            }
+        ]
+    },
+    {
+        "@id": "_:n3-2698",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://www.linkedin.com/in/david-kelsey-425746137/"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Terms used to describe the stage of metamorphism of rocks based on the nature of the change in pressure and temperature conditions to which the rocks are subjected. Definitions are taken or derived from:\r\nFettes, D and Desmons, J (eds.) 2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks: Cambridge University Press, 244p.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Metamorphic stage",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2023-11-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2023-11-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionIRI": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/1"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionInfo": [
+            {
+                "@value": "1"
+            }
+        ],
+        "http://purl.org/linked-data/registry#status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/?peak"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/?prograde"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/?retrograde"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/peak"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/prograde"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/retrograde"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/retrogressive"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage/unknown"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#historyNote": [
+            {
+                "@value": "Based on the authoritative lists [GEOLOGY].[WAROX_REF].[MetaStage] and [WAGIMS].[ReferenceData].[MetamorphicStage] used in the Geological Survey of Western Australia's field observations (WAROX) and WAGIMS system, the repository for Western Australian geochronology, isotope geology, mineral chemistry and metamorphic history analytical data and information.",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/keywords": [
+            {
+                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
+            }
+        ],
+        "http://www.w3.org/ns/prov#qualifiedAttribution": [
+            {
+                "@id": "_:n3-2697"
+            },
+            {
+                "@id": "_:n3-2698"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/?peak",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/?prograde",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/?retrograde",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/peak",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/prograde",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/retrograde",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/retrogressive",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/metamorphic-stage/unknown",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+            }
+        ]
+    }
+]

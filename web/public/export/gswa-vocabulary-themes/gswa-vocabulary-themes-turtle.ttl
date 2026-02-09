@@ -1,0 +1,54 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/gswa-vocabulary-themes> a skos:ConceptScheme;
+    skos:definition "The overarching categorization of vocabularies prepared by the Geological Survey of Western Australia (GSWA)."@en;
+    skos:prefLabel "GSWA vocabulary themes"@en;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    owl:versionIRI <https://linked.data.gov.au/def/gswa-vocabulary-themes/1>;
+    skos:hasTopConcept <https://linked.data.gov.au/def/gswa-vocabulary-themes/administration>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/data-acquisition>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/resources>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management>;
+    skos:historyNote "Created for the purpose of grouping related vocabularies and to allow easy sorting of published GSWA vocabularies."@en;
+    prov:qualifiedAttribution _:n3-2564, _:n3-2565;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateCreated "2024-06-06"^^xsd:date;
+    sdo:dateModified "2024-12-02"^^xsd:date;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/administration>;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    sdo:version "1".
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/administration> skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/data-acquisition> skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/geology> skos:narrower <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/geochemistry>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/geochronology>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/geophysics>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/paleontology>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation> skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/resources> skos:narrower <https://linked.data.gov.au/def/gswa-vocabulary-themes/energy>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management> skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+_:n3-2564 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://www.linkedin.com/in/davidmcbmartin/>.
+_:n3-2565 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/geochemistry> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/geochronology> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/geophysics> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/paleontology> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/energy> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/resources>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral> skos:broader <https://linked.data.gov.au/def/gswa-vocabulary-themes/resources>;
+    skos:inScheme <https://linked.data.gov.au/def/gswa-vocabulary-themes>.

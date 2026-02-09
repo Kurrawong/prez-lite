@@ -1,0 +1,572 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/australian-physiographic-units> a skos:ConceptScheme;
+    skos:definition "A list of physiographic units in Australia that provide a consistent framework for mapping soils and landforms at national and regional scales, compiled at a continental scale. The list was defined by Pain et al. (2011; https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf)* and built on the work of Jennings and Mabbutt (1986). It recognises a subdivision of the Australian onshore continent into three physiographic divisions, 23 physiographic provinces and 220 physiographic regions. The three divisions correspond broadly with the geological subdivision into the western shields, the central basins and the eastern fold belts. Provinces can be used to make interpretations about landscape processes at the broadest scale; descriptors for provinces include a name, geology, structure, and broad regolith types. The primary descriptors for regions are geographic name and a simple text description including major geologic and geomorphic features. Bounding box coordinates in decimal degrees are included. Each physiographic unit is also identified by a numeric code (one, three, and five digits for divisions, provinces and regions, respectively). For physiographic units within Western Australia, notations provided include extensions to five-digit numbering for divisions and provinces, to allow better characterization for database purposes. For Western Australian physiographic units, an alphabetical code is also listed; these consist of three upper-case letters for the division and provinces, with an additional two lower-case letter suffix for regions. These alphabetical codes are used by the Geological Survey of Western Australia (GSWA) to spatially assign regolith units to the correct physiographic unit during mapping. GSWA describes a physiographic unit as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.'\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html)."@en;
+    skos:historyNote "The scheme for Australian physiographic units is derived from: Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html). The Geological Survey of Western Australia's regolith classification system is available at https://dmpbookshop.eruditetechnologies.com.au/product/revised-classification-system-for-regolith-in-western-australia-and-the-recommended-approach-to-regolith-mapping.do (2024 update including physiographic units is in progress)."@en;
+    skos:prefLabel "Australian physiographic units"@en;
+    sdo:dateCreated "2023-09-20"^^xsd:date;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateModified "2023-09-20"^^xsd:date;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework>;
+    owl:versionIRI <https://linked.data.gov.au/def/australian-physiographic-units/1>;
+    owl:versionInfo "1";
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    prov:qualifiedAttribution _:n3-724, _:n3-725;
+    prez:identifier "ns4:australian-physiographic-units";
+    prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:australian-physiographic-units";
+    prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:australian-physiographic-units/items";
+    prez:type prez:FocusNode;
+    prez:label "Australian physiographic units"@en;
+    prez:description "A list of physiographic units in Australia that provide a consistent framework for mapping soils and landforms at national and regional scales, compiled at a continental scale. The list was defined by Pain et al. (2011; https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf)* and built on the work of Jennings and Mabbutt (1986). It recognises a subdivision of the Australian onshore continent into three physiographic divisions, 23 physiographic provinces and 220 physiographic regions. The three divisions correspond broadly with the geological subdivision into the western shields, the central basins and the eastern fold belts. Provinces can be used to make interpretations about landscape processes at the broadest scale; descriptors for provinces include a name, geology, structure, and broad regolith types. The primary descriptors for regions are geographic name and a simple text description including major geologic and geomorphic features. Bounding box coordinates in decimal degrees are included. Each physiographic unit is also identified by a numeric code (one, three, and five digits for divisions, provinces and regions, respectively). For physiographic units within Western Australia, notations provided include extensions to five-digit numbering for divisions and provinces, to allow better characterization for database purposes. For Western Australian physiographic units, an alphabetical code is also listed; these consist of three upper-case letters for the division and provinces, with an additional two lower-case letter suffix for regions. These alphabetical codes are used by the Geological Survey of Western Australia (GSWA) to spatially assign regolith units to the correct physiographic unit during mapping. GSWA describes a physiographic unit as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.'\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html)."@en.
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+owl:versionInfo prez:label "versionInfo";
+    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
+    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-724 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-7645-5031>.
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
+_:n3-725 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0009-0002-5543-2719>.
+<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
+_:n3-726 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+xsd:date prez:label "date".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+<https://linked.data.gov.au/def/australian-physiographic-units/albany-esperance-sandplain> a skos:Concept;
+    skos:prefLabel "Albany Esperance Sandplain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/alberga-dunefield> a skos:Concept;
+    skos:prefLabel "Alberga Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/alice-tableland> a skos:Concept;
+    skos:prefLabel "Alice Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/amadeus-plains> a skos:Concept;
+    skos:prefLabel "Amadeus Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/andamooka-tableland> a skos:Concept;
+    skos:prefLabel "Andamooka Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/anketell-hills> a skos:Concept;
+    skos:prefLabel "Anketell Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/armraynald-plain> a skos:Concept;
+    skos:prefLabel "Armraynald Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/arnhem-plateau> a skos:Concept;
+    skos:prefLabel "Arnhem Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/arnhem-ridges> a skos:Concept;
+    skos:prefLabel "Arnhem Ridges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/atherton-tableland> a skos:Concept;
+    skos:prefLabel "Atherton Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/augustus-ranges> a skos:Concept;
+    skos:prefLabel "Augustus Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/australian-alps> a skos:Concept;
+    skos:prefLabel "Australian Alps"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/avon-plateau> a skos:Concept;
+    skos:prefLabel "Avon Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/barkly-tablelands> a skos:Concept;
+    skos:prefLabel "Barkly Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/barkly-tanami-plains-province> a skos:Concept;
+    skos:prefLabel "Barkly–Tanami Plains Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/barrier-ranges> a skos:Concept;
+    skos:prefLabel "Barrier Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bass-coastal-platforms> a skos:Concept;
+    skos:prefLabel "Bass Coastal Platforms"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bass-islands> a skos:Concept;
+    skos:prefLabel "Bass Islands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bathurst-tablelands> a skos:Concept;
+    skos:prefLabel "Bathurst Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/belyando-plains> a skos:Concept;
+    skos:prefLabel "Belyando Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/birrundudu-plain> a skos:Concept;
+    skos:prefLabel "Birrundudu Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/boulia-downs> a skos:Concept;
+    skos:prefLabel "Boulia Downs"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/broadsound-plains> a skos:Concept;
+    skos:prefLabel "Broadsound Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/buckland-plateau> a skos:Concept;
+    skos:prefLabel "Buckland Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bulgonunna-tableland> a skos:Concept;
+    skos:prefLabel "Bulgonunna Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bulimba-plateau> a skos:Concept;
+    skos:prefLabel "Bulimba Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bulloo-plain> a skos:Concept;
+    skos:prefLabel "Bulloo Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bunda-plateau> a skos:Concept;
+    skos:prefLabel "Bunda Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/bunya-burnett-ranges> a skos:Concept;
+    skos:prefLabel "Bunya–Burnett Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/burdekin-hills-and-lowlands> a skos:Concept;
+    skos:prefLabel "Burdekin Hills and Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/burdekin-plateaus> a skos:Concept;
+    skos:prefLabel "Burdekin Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/burdekin-uplands-province> a skos:Concept;
+    skos:prefLabel "Burdekin Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cairns-ranges> a skos:Concept;
+    skos:prefLabel "Cairns Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cape-river-plains> a skos:Concept;
+    skos:prefLabel "Cape River Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/carborough-ranges> a skos:Concept;
+    skos:prefLabel "Carborough Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/carlisle-plain> a skos:Concept;
+    skos:prefLabel "Carlisle Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/carnarvon-plain> a skos:Concept;
+    skos:prefLabel "Carnarvon Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/carnegie-hills> a skos:Concept;
+    skos:prefLabel "Carnegie Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/carpentaria-fall-province> a skos:Concept;
+    skos:prefLabel "Carpentaria Fall Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/carpentaria-lowlands-province> a skos:Concept;
+    skos:prefLabel "Carpentaria Lowlands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/ceduna-dunefield> a skos:Concept;
+    skos:prefLabel "Ceduna Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/central-australian-ranges-province> a skos:Concept;
+    skos:prefLabel "Central Australian Ranges Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/central-lowlands-province> a skos:Concept;
+    skos:prefLabel "Central Lowlands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/central-ranges> a skos:Concept;
+    skos:prefLabel "Central Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/charleville-tableland> a skos:Concept;
+    skos:prefLabel "Charleville Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/chichester-range> a skos:Concept;
+    skos:prefLabel "Chichester Range"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/clara-mitchell-plains> a skos:Concept;
+    skos:prefLabel "Clara–Mitchell Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/clarence-fall> a skos:Concept;
+    skos:prefLabel "Clarence Fall"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/clarence-lowlands> a skos:Concept;
+    skos:prefLabel "Clarence Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cobar-plains> a skos:Concept;
+    skos:prefLabel "Cobar Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/coleman-plateau> a skos:Concept;
+    skos:prefLabel "Coleman Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/condamine-lowlands> a skos:Concept;
+    skos:prefLabel "Condamine Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/condobolin-plains> a skos:Concept;
+    skos:prefLabel "Condobolin Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/connors-ranges> a skos:Concept;
+    skos:prefLabel "Connors Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cooktown-ranges> a skos:Concept;
+    skos:prefLabel "Cooktown Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/coonana-ragged-plateau> a skos:Concept;
+    skos:prefLabel "Coonana–Ragged Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cooper-plain> a skos:Concept;
+    skos:prefLabel "Cooper Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/coorong-plain> a skos:Concept;
+    skos:prefLabel "Coorong Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cotherstone-plateau> a skos:Concept;
+    skos:prefLabel "Cotherstone Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/couchman-uplands> a skos:Concept;
+    skos:prefLabel "Couchman Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cumberland-lowland> a skos:Concept;
+    skos:prefLabel "Cumberland Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/cunningham-slopes> a skos:Concept;
+    skos:prefLabel "Cunningham Slopes"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/daly-basin> a skos:Concept;
+    skos:prefLabel "Daly Basin"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/dampier-tablelands> a skos:Concept;
+    skos:prefLabel "Dampier Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/dandaragan-tablelands> a skos:Concept;
+    skos:prefLabel "Dandaragan Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/darling-range> a skos:Concept;
+    skos:prefLabel "Darling Range"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/davenport-ranges> a skos:Concept;
+    skos:prefLabel "Davenport Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/de-grey-lowlands> a skos:Concept;
+    skos:prefLabel "De Grey Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/denison-ranges> a skos:Concept;
+    skos:prefLabel "Denison Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/diamantina-plain> a skos:Concept;
+    skos:prefLabel "Diamantina Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/donnybrook-lowland> a skos:Concept;
+    skos:prefLabel "Donnybrook Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/donors-tableland> a skos:Concept;
+    skos:prefLabel "Donors Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/drummond-uplands> a skos:Concept;
+    skos:prefLabel "Drummond Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/east-tasmanian-hills> a skos:Concept;
+    skos:prefLabel "East Tasmanian Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/east-victorian-uplands> a skos:Concept;
+    skos:prefLabel "East Victorian Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eastern-upland-division> a skos:Concept;
+    skos:prefLabel "Eastern Upland Division"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eighty-mile-plain> a skos:Concept;
+    skos:prefLabel "Eighty Mile Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/einasleigh-plains> a skos:Concept;
+    skos:prefLabel "Einasleigh Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eromanga-lowlands> a skos:Concept;
+    skos:prefLabel "Eromanga Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/expedition-scarplands> a skos:Concept;
+    skos:prefLabel "Expedition Scarplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eyre-creek-plain> a skos:Concept;
+    skos:prefLabel "Eyre Creek Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eyre-dunefield> a skos:Concept;
+    skos:prefLabel "Eyre Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eyre-peninsula-province> a skos:Concept;
+    skos:prefLabel "Eyre Peninsula Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/eyre-frome-plains> a skos:Concept;
+    skos:prefLabel "Eyre–Frome Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/fitzroy-plains> a skos:Concept;
+    skos:prefLabel "Fitzroy Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/fitzroy-ranges> a skos:Concept;
+    skos:prefLabel "Fitzroy Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/fitzroy-uplands-province> a skos:Concept;
+    skos:prefLabel "Fitzroy Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/flinders-lofty-ranges> a skos:Concept;
+    skos:prefLabel "Flinders–Lofty Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/fortescue-valley> a skos:Concept;
+    skos:prefLabel "Fortescue Valley"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gairdner-plain> a skos:Concept;
+    skos:prefLabel "Gairdner Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/garnet-uplands> a skos:Concept;
+    skos:prefLabel "Garnet Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gawler-cleve-ranges> a skos:Concept;
+    skos:prefLabel "Gawler–Cleve Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gibson-desert-plains> a skos:Concept;
+    skos:prefLabel "Gibson Desert Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gilbert-hills> a skos:Concept;
+    skos:prefLabel "Gilbert Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gilberton-plateau> a skos:Concept;
+    skos:prefLabel "Gilberton Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gippsland-plain> a skos:Concept;
+    skos:prefLabel "Gippsland Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/glengarry-hills> a skos:Concept;
+    skos:prefLabel "Glengarry Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/goulburn-corridor> a skos:Concept;
+    skos:prefLabel "Goulburn Corridor"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/great-barrier-reef-province> a skos:Concept;
+    skos:prefLabel "Great Barrier Reef Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/great-sandy-desert-dunefield> a skos:Concept;
+    skos:prefLabel "Great Sandy Desert Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/great-victoria-desert-dunes> a skos:Concept;
+    skos:prefLabel "Great Victoria Desert Dunes"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/greenough-hills> a skos:Concept;
+    skos:prefLabel "Greenough Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gregory-range> a skos:Concept;
+    skos:prefLabel "Gregory Range"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/grey-range> a skos:Concept;
+    skos:prefLabel "Grey Range"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gulf-coastal-lowlands> a skos:Concept;
+    skos:prefLabel "Gulf Coastal Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gulf-fall> a skos:Concept;
+    skos:prefLabel "Gulf Fall"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gulfs-ranges-province> a skos:Concept;
+    skos:prefLabel "Gulfs Ranges Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/gunnedah-lowland> a skos:Concept;
+    skos:prefLabel "Gunnedah Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/halls-creek-ridges> a skos:Concept;
+    skos:prefLabel "Halls Creek Ridges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/hamersley-plateaus> a skos:Concept;
+    skos:prefLabel "Hamersley Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/hawkesbury-shoalhaven-plateaus> a skos:Concept;
+    skos:prefLabel "Hawkesbury–Shoalhaven Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/hervey-tablelands> a skos:Concept;
+    skos:prefLabel "Hervey Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/holroyd-plains> a skos:Concept;
+    skos:prefLabel "Holroyd Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/hume-slopes> a skos:Concept;
+    skos:prefLabel "Hume Slopes"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/hunter-valley> a skos:Concept;
+    skos:prefLabel "Hunter Valley"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/innamincka-plains> a skos:Concept;
+    skos:prefLabel "Innamincka Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/interior-lowland-division> a skos:Concept;
+    skos:prefLabel "Interior Lowland Division"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/isa-ridges> a skos:Concept;
+    skos:prefLabel "Isa Ridges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/israelite-plain> a skos:Concept;
+    skos:prefLabel "Israelite Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/ivanhoe-plains> a skos:Concept;
+    skos:prefLabel "Ivanhoe Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/jardine-uplands> a skos:Concept;
+    skos:prefLabel "Jardine Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/jericho-plain> a skos:Concept;
+    skos:prefLabel "Jericho Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/karumba-plain> a skos:Concept;
+    skos:prefLabel "Karumba Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/kennedy-range> a skos:Concept;
+    skos:prefLabel "Kennedy Range"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/kimberley-plateau> a skos:Concept;
+    skos:prefLabel "Kimberley Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/kimberley-province> a skos:Concept;
+    skos:prefLabel "Kimberley Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/kosciuszkan-uplands-province> a skos:Concept;
+    skos:prefLabel "Kosciuszkan Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/kulgera-hills> a skos:Concept;
+    skos:prefLabel "Kulgera Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/lakes-plateau> a skos:Concept;
+    skos:prefLabel "Lakes Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/laura-plain> a skos:Concept;
+    skos:prefLabel "Laura Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/leemans-sandplain> a skos:Concept;
+    skos:prefLabel "Leemans Sandplain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/leeuwin-peninsula> a skos:Concept;
+    skos:prefLabel "Leeuwin Peninsula"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/lightning-ridge-lowland> a skos:Concept;
+    skos:prefLabel "Lightning Ridge Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/lincoln-hills> a skos:Concept;
+    skos:prefLabel "Lincoln Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/little-sandy-desert> a skos:Concept;
+    skos:prefLabel "Little Sandy Desert"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/liverpool-barrington-plateaus> a skos:Concept;
+    skos:prefLabel "Liverpool–Barrington Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/lower-darling-plain> a skos:Concept;
+    skos:prefLabel "Lower Darling Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/macdonald-sandplain> a skos:Concept;
+    skos:prefLabel "Macdonald Sandplain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/mackenzie-dawson-lowlands> a skos:Concept;
+    skos:prefLabel "Mackenzie–Dawson Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/macleay-barrington-fall> a skos:Concept;
+    skos:prefLabel "Macleay–Barrington Fall"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/macquarie-uplands-province> a skos:Concept;
+    skos:prefLabel "Macquarie Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/mallee-dunefield> a skos:Concept;
+    skos:prefLabel "Mallee Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/manangoora-plains> a skos:Concept;
+    skos:prefLabel "Manangoora Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/maranoa-lowland> a skos:Concept;
+    skos:prefLabel "Maranoa Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/maryborough-lowland> a skos:Concept;
+    skos:prefLabel "Maryborough Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/merluna-plain> a skos:Concept;
+    skos:prefLabel "Merluna Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/merriwa-plateau> a skos:Concept;
+    skos:prefLabel "Merriwa Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/midlands-plain> a skos:Concept;
+    skos:prefLabel "Midlands Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/millicent-plain> a skos:Concept;
+    skos:prefLabel "Millicent Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/mitchell-slopes> a skos:Concept;
+    skos:prefLabel "Mitchell Slopes"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/monaro-fall> a skos:Concept;
+    skos:prefLabel "Monaro Fall"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/monaro-tableland> a skos:Concept;
+    skos:prefLabel "Monaro Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/moreton-lowland> a skos:Concept;
+    skos:prefLabel "Moreton Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/murchison-plateau> a skos:Concept;
+    skos:prefLabel "Murchison Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/murray-lowlands-province> a skos:Concept;
+    skos:prefLabel "Murray Lowlands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/nagoa-scarplands> a skos:Concept;
+    skos:prefLabel "Nagoa Scarplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/nandewar-peaks> a skos:Concept;
+    skos:prefLabel "Nandewar Peaks"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/napier-limestone-ranges> a skos:Concept;
+    skos:prefLabel "Napier Limestone Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/new-england-moreton-uplands-province> a skos:Concept;
+    skos:prefLabel "New England–Moreton Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/newcastle-ranges> a skos:Concept;
+    skos:prefLabel "Newcastle Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/normanton-tableland> a skos:Concept;
+    skos:prefLabel "Normanton Tableland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/north-australian-plateaus-province> a skos:Concept;
+    skos:prefLabel "North Australian Plateaus Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/north-reefs> a skos:Concept;
+    skos:prefLabel "North Reefs"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/north-west-cape-ridges> a skos:Concept;
+    skos:prefLabel "North West Cape Ridges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/north-west-ramp> a skos:Concept;
+    skos:prefLabel "North West Ramp"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/northam-slopes> a skos:Concept;
+    skos:prefLabel "Northam Slopes"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/northern-alice-plains> a skos:Concept;
+    skos:prefLabel "Northern Alice Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/northern-alice-ranges> a skos:Concept;
+    skos:prefLabel "Northern Alice Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/nullagine-hills> a skos:Concept;
+    skos:prefLabel "Nullagine Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/nullarbor-plain-province> a skos:Concept;
+    skos:prefLabel "Nullarbor Plain Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/nulty-springs-lowlands> a skos:Concept;
+    skos:prefLabel "Nulty Springs Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/olary-spur> a skos:Concept;
+    skos:prefLabel "Olary Spur"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/onslow-plain> a skos:Concept;
+    skos:prefLabel "Onslow Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/oodnadatta-tablelands> a skos:Concept;
+    skos:prefLabel "Oodnadatta Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/ord-victoria-plateaus> a skos:Concept;
+    skos:prefLabel "Ord–Victoria Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/palmerville-hills> a skos:Concept;
+    skos:prefLabel "Palmerville Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/paroo-plain> a skos:Concept;
+    skos:prefLabel "Paroo Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/peninsular-uplands-province> a skos:Concept;
+    skos:prefLabel "Peninsular Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/pilbara-province> a skos:Concept;
+    skos:prefLabel "Pilbara Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/pine-creek-ridges> a skos:Concept;
+    skos:prefLabel "Pine Creek Ridges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/redvers-dunefield> a skos:Concept;
+    skos:prefLabel "Redvers Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/richenda-foothills> a skos:Concept;
+    skos:prefLabel "Richenda Foothills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/riverine-plain> a skos:Concept;
+    skos:prefLabel "Riverine Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/roe-plain> a skos:Concept;
+    skos:prefLabel "Roe Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/rudall-tablelands> a skos:Concept;
+    skos:prefLabel "Rudall Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/salmon-gums-plain> a skos:Concept;
+    skos:prefLabel "Salmon Gums Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/sandland-province> a skos:Concept;
+    skos:prefLabel "Sandland Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/sandover-sandplain> a skos:Concept;
+    skos:prefLabel "Sandover Sandplain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/scartwater-hills> a skos:Concept;
+    skos:prefLabel "Scartwater Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/shark-bay-peninsulas> a skos:Concept;
+    skos:prefLabel "Shark Bay Peninsulas"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/simpson-desert-dunefield> a skos:Concept;
+    skos:prefLabel "Simpson Desert Dunefield"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/simpson-desert-plains> a skos:Concept;
+    skos:prefLabel "Simpson Desert Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/south-reefs> a skos:Concept;
+    skos:prefLabel "South Reefs"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/south-victorian-uplands> a skos:Concept;
+    skos:prefLabel "South Victorian Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/southern-goldfields-plateau> a skos:Concept;
+    skos:prefLabel "Southern Goldfields Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/springsure-clermont-plateaus> a skos:Concept;
+    skos:prefLabel "Springsure–Clermont Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/springvale-foothills> a skos:Concept;
+    skos:prefLabel "Springvale Foothills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/st-george-plain> a skos:Concept;
+    skos:prefLabel "St George Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/stansmore-dunefield-and-ranges> a skos:Concept;
+    skos:prefLabel "Stansmore Dunefield and Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/strzelecki-desert-plains> a skos:Concept;
+    skos:prefLabel "Strzelecki Desert Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/sturt-creek-floodout> a skos:Concept;
+    skos:prefLabel "Sturt Creek Floodout"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/sturt-desert-plains> a skos:Concept;
+    skos:prefLabel "Sturt Desert Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/sturt-plateau> a skos:Concept;
+    skos:prefLabel "Sturt Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/swan-plain> a skos:Concept;
+    skos:prefLabel "Swan Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/tanami-sandplain> a skos:Concept;
+    skos:prefLabel "Tanami Sandplain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/tanami-sandplain-and-ranges> a skos:Concept;
+    skos:prefLabel "Tanami Sandplain and Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/taroom-hills> a skos:Concept;
+    skos:prefLabel "Taroom Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/tasmanian-uplands-province> a skos:Concept;
+    skos:prefLabel "Tasmanian Uplands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/tenterfield-plateau> a skos:Concept;
+    skos:prefLabel "Tenterfield Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/tinderry-gourock-ranges> a skos:Concept;
+    skos:prefLabel "Tinderry–Gourock Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/tobermory-plain> a skos:Concept;
+    skos:prefLabel "Tobermory Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/todd-plains> a skos:Concept;
+    skos:prefLabel "Todd Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/toko-plateaus> a skos:Concept;
+    skos:prefLabel "Toko Plateaus"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/toowoomba-plateau> a skos:Concept;
+    skos:prefLabel "Toowoomba Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/top-end-coastal-plains> a skos:Concept;
+    skos:prefLabel "Top End Coastal Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/torrens-gulf-plains> a skos:Concept;
+    skos:prefLabel "Torrens–Gulf Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/torres-high-islands> a skos:Concept;
+    skos:prefLabel "Torres High Islands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/townshend-ranges-and-lowlands> a skos:Concept;
+    skos:prefLabel "Townshend Ranges and Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/townsville-lowlands> a skos:Concept;
+    skos:prefLabel "Townsville Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/upper-darling-plains> a skos:Concept;
+    skos:prefLabel "Upper Darling Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/warburton-ranges> a skos:Concept;
+    skos:prefLabel "Warburton Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/warrego-plains> a skos:Concept;
+    skos:prefLabel "Warrego Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/warren-denmark-slopes> a skos:Concept;
+    skos:prefLabel "Warren–Denmark Slopes"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/warrumbungle-peaks> a skos:Concept;
+    skos:prefLabel "Warrumbungle Peaks"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/warwick-lowland> a skos:Concept;
+    skos:prefLabel "Warwick Lowland"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/weipa-plateau> a skos:Concept;
+    skos:prefLabel "Weipa Plateau"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/wenlock-uplands> a skos:Concept;
+    skos:prefLabel "Wenlock Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/werriwa-tablelands> a skos:Concept;
+    skos:prefLabel "Werriwa Tablelands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/west-tasmanian-ridges> a skos:Concept;
+    skos:prefLabel "West Tasmanian Ridges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/west-victorian-plains> a skos:Concept;
+    skos:prefLabel "West Victorian Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/west-victorian-uplands> a skos:Concept;
+    skos:prefLabel "West Victorian Uplands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/west-turkey-plains> a skos:Concept;
+    skos:prefLabel "West–Turkey Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/western-coastlands-province> a skos:Concept;
+    skos:prefLabel "Western Coastlands Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/western-desert-ranges> a skos:Concept;
+    skos:prefLabel "Western Desert Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/western-plateau-division> a skos:Concept;
+    skos:prefLabel "Western Plateau Division"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/whelen-lowlands> a skos:Concept;
+    skos:prefLabel "Whelen Lowlands"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/whirlwind-plain> a skos:Concept;
+    skos:prefLabel "Whirlwind Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/wimmera-plain> a skos:Concept;
+    skos:prefLabel "Wimmera Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/winton-blackall-downs> a skos:Concept;
+    skos:prefLabel "Winton–Blackall Downs"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/wondoola-plain> a skos:Concept;
+    skos:prefLabel "Wondoola Plain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/woodramung-hills> a skos:Concept;
+    skos:prefLabel "Woodramung Hills"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/wunaamin-miliwundi-durack-ranges> a skos:Concept;
+    skos:prefLabel "Wunaamin Miliwundi and Durack Ranges"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/yanrey-cane-plains> a skos:Concept;
+    skos:prefLabel "Yanrey–Cane Plains"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/yaringa-sandplain> a skos:Concept;
+    skos:prefLabel "Yaringa Sandplain"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/yilgarn-plateau-province> a skos:Concept;
+    skos:prefLabel "Yilgarn Plateau Province"@en.
+<https://linked.data.gov.au/def/australian-physiographic-units/yorke-peninsula> a skos:Concept;
+    skos:prefLabel "Yorke Peninsula"@en.

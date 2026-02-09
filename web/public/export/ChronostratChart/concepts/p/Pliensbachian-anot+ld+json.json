@@ -1,0 +1,491 @@
+[
+  {
+    "@id": "_:n3-494",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geosciml.org/classifier/ics/ischart",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ischart"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:ischart"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "International Chronostratigraphic Chart",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This is a SKOS vocabulary presentation of the time units of the International Chronostratigraphic Chart represented as SKOS Concepts. Beginning and End ages are given for each unit in units of Millions of Years Ago (MYA).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:ischart/items"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geosciml.org/classifier/ics/ischart/Pliensbachian",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://resource.geosciml.org/vocabulary/timescale/gts2020"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A time period from 192.9 to 184.2 million years ago"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://resource.geosciml.org/classifier/ics/ischart"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Pliensbachian",
+        "@language": "en"
+      }
+    ],
+    "http://resource.geosciml.org/ontology/timescale/gts#rank": [
+      {
+        "@id": "http://resource.geosciml.org/ontology/timescale/rank/Age"
+      }
+    ],
+    "http://resource.geosciml.org/ontology/timescale/gts#ratifiedGSSP": [
+      {
+        "@value": "true",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "Плиинѿбах",
+        "@language": "bg"
+      },
+      {
+        "@value": "Pliensbach",
+        "@language": "cs"
+      },
+      {
+        "@value": "Pliensbachien",
+        "@language": "da"
+      },
+      {
+        "@value": "Pliensbachium",
+        "@language": "de"
+      },
+      {
+        "@value": "Pliensbachiense",
+        "@language": "es"
+      },
+      {
+        "@value": "Pliensbachi",
+        "@language": "et"
+      },
+      {
+        "@value": "Plienbach",
+        "@language": "fi"
+      },
+      {
+        "@value": "Pliensbachien",
+        "@language": "fr"
+      },
+      {
+        "@value": "pliensbachi",
+        "@language": "hu"
+      },
+      {
+        "@value": "pliensbachiano",
+        "@language": "it"
+      },
+      {
+        "@value": "プリンスバッキアン期",
+        "@language": "ja"
+      },
+      {
+        "@value": "Plynsbachis",
+        "@language": "lt"
+      },
+      {
+        "@value": "Pliënsbachiën",
+        "@language": "nl"
+      },
+      {
+        "@value": "Pliensbach",
+        "@language": "no"
+      },
+      {
+        "@value": "Pliensbach",
+        "@language": "pl"
+      },
+      {
+        "@value": "Pliensbaquiano",
+        "@language": "pt"
+      },
+      {
+        "@value": "pliensbach",
+        "@language": "sk"
+      },
+      {
+        "@value": "pleinsbachij",
+        "@language": "sl"
+      },
+      {
+        "@value": "pliensbach",
+        "@language": "sv"
+      },
+      {
+        "@value": "普连斯巴奇期",
+        "@language": "zh"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "I3",
+        "@type": "http://resource.geosciml.org/classifier/ics/ischart/ccgmShortCode"
+      }
+    ],
+    "http://www.w3.org/2006/time#hasBeginning": [
+      {
+        "@id": "_:n3-163"
+      }
+    ],
+    "http://www.w3.org/2006/time#hasEnd": [
+      {
+        "@id": "_:n3-164"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasDerivedFrom": [
+      {
+        "@id": "http://resource.geosciml.org/vocabulary/timescale/gts2020"
+      }
+    ],
+    "http://www.w3.org/ns/shacl#order": [
+      {
+        "@value": "61",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "https://schema.org/color": [
+      {
+        "@value": "#80C5DD",
+        "@type": "http://resource.geosciml.org/classifier/ics/ischart/RGBHex"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:Pliensbachian"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:ischart/items/ns1:Pliensbachian"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Pliensbachian",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A time period from 192.9 to 184.2 million years ago"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geosciml.org/ontology/timescale/gts#ratifiedGSSP",
+    "https://prez.dev/label": [
+      {
+        "@value": "ratified GSSP"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geosciml.org/ontology/timescale/rank/Age",
+    "https://prez.dev/label": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2006/time#hasBeginning",
+    "https://prez.dev/label": [
+      {
+        "@value": "has beginning"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Beginning of a temporal entity."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2006/time#hasEnd",
+    "https://prez.dev/label": [
+      {
+        "@value": "has end"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "End of a temporal entity."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "https://prez.dev/label": [
+      {
+        "@value": "was derived from"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/shacl#order",
+    "https://prez.dev/label": [
+      {
+        "@value": "order"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Specifies the relative order of this compared to its siblings. For example use 0 for the first, 1 for the second."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/color",
+    "https://prez.dev/label": [
+      {
+        "@value": "color"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The color of the product"
+      }
+    ]
+  }
+]

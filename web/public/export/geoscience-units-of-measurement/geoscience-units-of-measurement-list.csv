@@ -1,0 +1,289 @@
+iri,broader,prefLabel
+http://qudt.org/vocab/unit/PH,,acidity (pH)
+http://qudt.org/vocab/unit/ANGSTROM,,ångström
+https://linked.data.gov.au/def/uom-geoscience/API,,API
+http://qudt.org/vocab/unit/ARCMIN,,arcminute
+http://qudt.org/vocab/unit/ARCSEC,,arcsecond
+http://qudt.org/vocab/unit/AU,,astronomical unit
+http://linked.data.gov.au/def/iso-4217-currencies/aud,,Australian dollar
+https://linked.data.gov.au/def/uom-geoscience/BANK_M3,,bank cubic metres
+http://qudt.org/vocab/unit/BAR,,bar
+http://qudt.org/vocab/unit/BBL,,barrel
+https://linked.data.gov.au/def/uom-geoscience/BBL_US,,barrel (US)
+https://linked.data.gov.au/def/uom-geoscience/BBL_US_d,,barrel (US) per day
+http://linked.data.gov.au/def/geou/BOE,,barrel of oil equivalent
+http://linked.data.gov.au/def/geou/BBLOE,,barrel of oil equivalent per megalitre
+http://qudt.org/vocab/unit/BQ,,becquerel
+https://linked.data.gov.au/def/uom-geoscience/Bq-PER-GM,,becquerel per gram
+http://linked.data.gov.au/def/geou/GigaM3,,billion cubic metres
+https://linked.data.gov.au/def/uom-geoscience/GigaYR,,billions of years
+http://qudt.org/vocab/unit/BIT,,bit
+http://qudt.org/vocab/unit/BTU_IT,,British thermal unit (international definition)
+http://qudt.org/vocab/unit/BTU_IT-PER-LB,,British thermal unit per imperial pound
+http://linked.data.gov.au/def/geou/BTU-PER-MegaL,,British thermal unit per megalitre
+http://linked.data.gov.au/def/geou/BWOC,,by weight of cement
+http://linked.data.gov.au/def/geou/BWOW,,by weight of water
+http://qudt.org/vocab/unit/BYTE,,byte
+http://qudt.org/vocab/unit/CARAT,,carat
+https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-100-TON_M,,carat per 100 tonnes
+http://linked.data.gov.au/def/geou/CARAT-PER-M3,,carat per cubic metre
+https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-STONE,,carat per stone
+https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-TON_M,,carat per tonne
+http://qudt.org/vocab/unit/CentiM,,centimetre
+http://qudt.org/vocab/unit/CentiPOISE,,centipoise
+http://qudt.org/vocab/unit/CH,,chain
+http://linked.data.gov.au/def/geou/COUNT,,count
+http://qudt.org/vocab/unit/NUM-PER-SEC,,counts per second
+http://qudt.org/vocab/unit/CentiM3,,cubic centimetre
+http://linked.data.gov.au/def/geou/CentiM3-PER-GM,,cubic centimetres per gram
+http://linked.data.gov.au/def/geou/CentiM3-PER-TON_M,,cubic centimetres per tonne
+http://qudt.org/vocab/unit/DeciM3,,cubic decimetre
+https://linked.data.gov.au/def/uom-geoscience/FT3-PER-TON_SHORT,,cubic feet per short ton
+http://linked.data.gov.au/def/geou/FT3-PER-TON_M,,cubic feet per tonne
+http://qudt.org/vocab/unit/FT3,,cubic foot
+http://qudt.org/vocab/unit/FT3-PER-DAY,,cubic foot per day
+http://qudt.org/vocab/unit/FT3-PER-HR,,cubic foot per hour
+http://qudt.org/vocab/unit/M3,,cubic metre
+http://qudt.org/vocab/unit/M3-PER-DAY,,cubic metre per day
+http://qudt.org/vocab/unit/M3-PER-HR,,cubic metre per hour
+https://linked.data.gov.au/def/uom-geoscience/M3-PER-TON,,cubic metres per tonne
+http://qudt.org/vocab/unit/MilliM3,,cubic millimetre
+http://qudt.org/vocab/unit/Ci,,curie
+http://linked.data.gov.au/def/geou/D,,darcy
+http://qudt.org/vocab/unit/DAY,,day
+http://linked.data.gov.au/def/geou/FRAC,,decimal fraction
+http://qudt.org/vocab/unit/DeciM,,decimetre
+http://qudt.org/vocab/unit/DEG,,degree
+http://qudt.org/vocab/unit/DEG_C,,degree Celsius
+http://qudt.org/vocab/unit/DEG_F,,degree Fahrenheit
+https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-GigaPA,,degrees Celsius per gigapascal
+https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloBAR,,degrees Celsius per kilobar
+https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloM,,degrees Celsius per kilometre
+http://linked.data.gov.au/def/geou/DEG-PER-F,,degrees per foot
+http://linked.data.gov.au/def/geou/DEG-PER-100F,,degrees per hundred feet
+http://linked.data.gov.au/def/geou/DEG-PER-M,,degrees per metre
+http://linked.data.gov.au/def/geou/DEG-PER-30M,,degrees per thirty metres
+https://linked.data.gov.au/def/uom-geoscience/DELTA-DEGREE-TWO-THETA,,delta degrees 2 theta
+http://linked.data.gov.au/def/geou/DD-PER-MIN,,dial divisions per minute
+https://linked.data.gov.au/def/uom-geoscience/eV,,electron volt
+https://linked.data.gov.au/def/uom-geoscience/eotvos,,eotvos
+http://linked.data.gov.au/def/geou/ExaBYTE,,exabyte
+https://linked.data.gov.au/def/uom-geoscience/FOZT,,fine ounce
+http://qudt.org/vocab/unit/FT,,foot
+http://qudt.org/vocab/unit/FT-PER-HR,,foot per hour
+http://qudt.org/vocab/unit/FT-PER-SEC,,foot per second
+http://qudt.org/vocab/unit/GALILEO,,galileo
+http://linked.data.gov.au/def/geou/GAL_IMP-PER-50SACK,,gallons per 50 kg sack
+http://qudt.org/vocab/unit/Gamma,,gamma
+http://qudt.org/vocab/unit/GAUSS,,gauss
+http://qudt.org/vocab/unit/GigaBYTE,,gigabyte
+http://linked.data.gov.au/def/geou/GigaJ,,gigajoule
+http://linked.data.gov.au/def/geou/GigaJ-PER-MegaL,,gigajoules per megalitre
+https://linked.data.gov.au/def/uom-geoscience/GigaL,,gigalitre
+http://qudt.org/vocab/unit/GigaPA,,gigapascal
+http://qudt.org/vocab/unit/GRAD,,grad
+http://qudt.org/vocab/unit/GRAIN,,grain
+http://qudt.org/vocab/unit/GM,,gram
+http://qudt.org/vocab/unit/GM-PER-CentiM3,,gram per cubic centimetre
+http://qudt.org/vocab/unit/GM-PER-M3,,gram per cubic metre
+http://qudt.org/vocab/unit/GM-PER-L,,gram per litre
+https://linked.data.gov.au/def/uom-geoscience/GM-PER-TON_SHORT,,gram per short ton
+http://linked.data.gov.au/def/geou/GM-PER-KiloGM,,grams per kilogram
+http://qudt.org/vocab/unit/GM-PER-MilliL,,grams per millilitre
+http://linked.data.gov.au/def/geou/GM-PER-TON_M,,grams per tonne
+http://qudt.org/vocab/unit/GRAY,,gray
+http://qudt.org/vocab/unit/HA,,hectare
+https://linked.data.gov.au/def/uom-geoscience/100TON_M,,hectotonne
+http://qudt.org/vocab/unit/HZ,,hertz
+http://qudt.org/vocab/unit/HR,,hour
+http://linked.data.gov.au/def/geou/HR-PER-FT,,hours per foot
+http://linked.data.gov.au/def/geou/HR-PER-M,,hours per metre
+http://linked.data.gov.au/def/geou/DecaREV-PER-MIN,,hundred revolutions per minute
+http://qudt.org/vocab/unit/GAL_IMP,,imperial gallon
+http://qudt.org/vocab/unit/MI,,imperial mile
+http://qudt.org/vocab/unit/IN,,inch
+http://linked.data.gov.au/def/geou/PER-PA,,inverse pascal
+http://qudt.org/vocab/unit/J,,joule
+http://qudt.org/vocab/unit/J-PER-CentiM2,,joule per square centimetre
+http://qudt.org/vocab/unit/K,,kelvin
+http://qudt.org/vocab/unit/KiloEV,,kilo electron volt
+http://qudt.org/vocab/unit/KiloBAR,,kilobar
+http://qudt.org/vocab/unit/KiloBYTE,,kilobyte
+http://qudt.org/vocab/unit/KiloGM,,kilogram
+http://qudt.org/vocab/unit/KiloGM-PER-M3,,kilogram per cubic metre
+http://qudt.org/vocab/unit/KiloGM-PER-L,,kilogram per litre
+http://qudt.org/vocab/unit/KiloGM-PER-M,,kilogram per metre
+https://linked.data.gov.au/def/uom-geoscience/KiloGM-PER-TON_M,,kilogram per tonne
+http://qudt.org/vocab/unit/KiloJ,,kilojoule
+http://qudt.org/vocab/unit/KiloL,,kilolitre
+http://linked.data.gov.au/def/geou/KiloL-PER-DAY,,kilolitre per day
+http://qudt.org/vocab/unit/KiloM,,kilometre
+http://qudt.org/vocab/unit/KiloN,,kilonewton
+http://qudt.org/vocab/unit/KiloPA,,kilopascal
+http://linked.data.gov.au/def/geou/kiloTON_M,,kilotonne
+https://linked.data.gov.au/def/uom-geoscience/PHI,,latitude degree
+http://qudt.org/vocab/unit/LY,,light year
+http://qudt.org/vocab/unit/L,,litre
+http://qudt.org/vocab/unit/L-PER-DAY,,litre per day
+http://qudt.org/vocab/unit/L-PER-HR,,litre per hour
+http://qudt.org/vocab/unit/L-PER-MIN,,litre per minute
+http://linked.data.gov.au/def/geou/L-PER-50SACK,,litres per 50 kg sack
+http://linked.data.gov.au/def/geou/L-PER-TON_M,,litres per tonne
+http://qudt.org/vocab/unit/TON_LONG,,long ton
+https://linked.data.gov.au/def/uom-geoscience/LAMBDA,,longitude degree
+http://qudt.org/vocab/unit/MegaBYTE,,megabyte
+http://qudt.org/vocab/unit/MegaJ,,megajoule
+http://qudt.org/vocab/unit/MegaL,,megalitre
+http://linked.data.gov.au/def/geou/MegaL-PER-DAY,,megalitres per day
+http://qudt.org/vocab/unit/MegaPA,,megapascal
+http://qudt.org/vocab/unit/MegaLB_F,,megapound force
+http://linked.data.gov.au/def/geou/MegaTON_M,,megatonne
+http://qudt.org/vocab/unit/M,,metre
+http://qudt.org/vocab/unit/M-PER-HR,,metre per hour
+http://qudt.org/vocab/unit/M-PER-SEC,,metre per second
+http://qudt.org/vocab/unit/M-PER-SEC2,,metre per square second
+http://linked.data.gov.au/def/geou/M2-PER-N,,metre squared per newton
+http://linked.data.gov.au/def/geou/MilliM-PER-SEC,,metres per millisecond
+https://linked.data.gov.au/def/uom-geoscience/MicroGAL,,microgal
+http://qudt.org/vocab/unit/MicroGM,,microgram
+http://qudt.org/vocab/unit/MicroGM-PER-KiloGM,,microgram per kilogram
+http://qudt.org/vocab/unit/MicroGM-PER-L,,microgram per litre
+http://qudt.org/vocab/unit/MicroGM-PER-GM,,micrograms per gram
+http://qudt.org/vocab/unit/MicroM,,micrometre
+https://linked.data.gov.au/def/uom-geoscience/MicroM-PER-SEC2,,micrometre per square second
+http://qudt.org/vocab/unit/MicroS,,microsiemens
+http://qudt.org/vocab/unit/MicroS-PER-CentiM,,microsiemens per centimetre
+http://qudt.org/vocab/unit/MicroS-PER-M,,microsiemens per metre
+http://qudt.org/vocab/unit/MicroSV,,microsievert
+https://linked.data.gov.au/def/uom-geoscience/MicroW-PER-M3,,microwatt for cubic metre
+http://linked.data.gov.au/def/geou/MilliD,,millidarcy
+http://qudt.org/vocab/unit/MilliGAL,,milligal
+http://qudt.org/vocab/unit/MilliGM,,milligram
+http://linked.data.gov.au/def/geou/MilliGM-PER-KiloGM,,milligram per kilogram
+http://qudt.org/vocab/unit/MilliGM-PER-L,,milligram per litre
+http://qudt.org/vocab/unit/MilliGM-PER-GM,,milligrams per gram
+http://linked.data.gov.au/def/geou/MilliGM-PER-TON_M,,milligrams per tonne
+https://linked.data.gov.au/def/uom-geoscience/MilliJ-PER-KiloGM,,millijoules per kilogram
+http://qudt.org/vocab/unit/MilliL,,millilitre
+http://qudt.org/vocab/unit/MilliM,,millimetre
+http://linked.data.gov.au/def/geou/MegaBOE,,million barrel of oil equivalent
+http://linked.data.gov.au/def/geou/MegaBBLOE,,million barrel of oil equivalent per megalitre
+http://linked.data.gov.au/def/geou/MegaBBL,,million barrels
+http://linked.data.gov.au/def/geou/MegaBTU,,million British thermal units
+http://linked.data.gov.au/def/geou/MegaBTU-PER-MegaL,,million British thermal units per megalitre
+https://linked.data.gov.au/def/uom-geoscience/MegaCARAT,,million carats
+http://linked.data.gov.au/def/geou/MegaFT3,,million cubic feet
+http://linked.data.gov.au/def/geou/MegaF3-PER-DAY,,million cubic feet per day
+http://linked.data.gov.au/def/geou/MegaM3,,million cubic metres
+https://linked.data.gov.au/def/uom-geoscience/MegaTON_LONG,,million long tons
+http://linked.data.gov.au/def/geou/MYR,,millions of years
+http://qudt.org/vocab/unit/MilliRAD,,milliradian
+http://qudt.org/vocab/unit/MilliSEC,,millisecond
+https://linked.data.gov.au/def/uom-geoscience/millisecond-per-centimetre,,millisecond per centimetre
+http://qudt.org/vocab/unit/MilliS,,millisiemens
+http://qudt.org/vocab/unit/MilliW-PER-M2,,milliwatt per square metre
+http://qudt.org/vocab/unit/MIN,,minute
+http://qudt.org/vocab/unit/MOL,,mole
+http://linked.data.gov.au/def/geou/PERCENT-MOL,,mole percent
+http://qudt.org/vocab/unit/MO,,month
+http://qudt.org/vocab/unit/NanoGM,,nanogram
+http://qudt.org/vocab/unit/NanoGM-PER-L,,nanogram per litre
+https://linked.data.gov.au/def/uom-geoscience/NanoGY-PER-H,,nanogray per hour
+http://qudt.org/vocab/unit/NanoM,,nanometre
+http://qudt.org/vocab/unit/NanoSEC,,nanosecond
+http://qudt.org/vocab/unit/NanoT,,nanotesla
+http://qudt.org/vocab/unit/MI_N,,nautical mile
+http://qudt.org/vocab/unit/N,,newton
+http://qudt.org/vocab/unit/N-PER-KiloGM,,newton per kilogram
+http://qudt.org/vocab/unit/N-PER-M,,newton per metre
+https://linked.data.gov.au/def/uom-geoscience/not-applicable,,not applicable
+http://qudt.org/vocab/unit/OHM,,ohm
+http://qudt.org/vocab/unit/OHM-M,,ohm metre
+http://qudt.org/vocab/unit/OZ,,ounce
+http://qudt.org/vocab/unit/OZ-PER-YD3,,ounce (avoirdupois) per cubic yard
+http://linked.data.gov.au/def/geou/OZ-PER-TON_LONG,,ounce per ton
+http://linked.data.gov.au/def/geou/OZ-PER-TON_M,,ounce per tonne
+http://qudt.org/vocab/unit/PPB,,parts per billion
+http://qudt.org/vocab/unit/PPM,,parts per million
+http://qudt.org/vocab/unit/PPTH,,parts per thousand
+http://qudt.org/vocab/unit/PPTR,,parts per trillion
+http://qudt.org/vocab/unit/PA,,pascal
+http://qudt.org/vocab/unit/PA-PER-SEC,,pascal per second
+http://qudt.org/vocab/unit/PA-SEC,,pascal second
+http://qudt.org/vocab/unit/DWT,,penny weight
+https://linked.data.gov.au/def/uom-geoscience/DWT-PER-YD3,,penny weight per cubic yard
+https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_LONG,,penny weight per long ton
+https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_SHORT,,penny weight per short ton
+http://qudt.org/vocab/unit/PERCENT,,percent
+http://linked.data.gov.au/def/geou/PERCENT-PER-VOL,,percent by volume
+http://linked.data.gov.au/def/geou/PERCENT-PER-WEIGHT,,percent by weight
+http://qudt.org/vocab/unit/PetaBYTE,,petabyte
+http://qudt.org/vocab/unit/PetaJ,,petajoule
+http://linked.data.gov.au/def/geou/PetaJ-PER-MegaL,,petajoules per megalitre
+http://qudt.org/vocab/unit/POISE,,poise
+http://qudt.org/vocab/unit/LB_F,,pound force
+http://qudt.org/vocab/unit/LB,,pound mass
+http://qudt.org/vocab/unit/LB_M-PER-FT3,,pound per cubic foot
+http://qudt.org/vocab/unit/LB_M-PER-FT,,pound per foot
+http://qudt.org/vocab/unit/LB_M-PER-GAL,,pound per gallon
+http://qudt.org/vocab/unit/PSI,,pound per square inch
+http://linked.data.gov.au/def/geou/LB_F-PER-100FT2,,pounds force per 100 square feet
+http://linked.data.gov.au/def/geou/LB_M-PER-100FT2,,pounds per 100 square feet
+http://linked.data.gov.au/def/geou/LB_M-PER-50SAC,,pounds per 50 kg sack
+http://linked.data.gov.au/def/geou/LB_M-PER-BBL,,pounds per barrel
+http://linked.data.gov.au/def/geou/LB_F-PER-IN,,pounds per inch
+http://qudt.org/vocab/unit/RAD_R,,rad
+http://qudt.org/vocab/unit/RAD,,radian
+http://linked.data.gov.au/def/geou/RATIO,,ratio
+https://linked.data.gov.au/def/uom-geoscience/PER-CentiM,,reciprocal centimetre
+http://qudt.org/vocab/unit/REM,,rem
+http://qudt.org/vocab/unit/REV-PER-HR,,revolution per hour
+http://qudt.org/vocab/unit/REV-PER-MIN,,revolution per minute
+http://qudt.org/vocab/unit/R,,roentgen
+http://qudt.org/vocab/unit/SEC,,second
+http://qudt.org/vocab/unit/TON_SHORT,,short ton
+http://linked.data.gov.au/def/geou/SHOTS-PER-FT,,shots per foot
+http://linked.data.gov.au/def/geou/SHOTS-PER-M,,shots per metre
+http://qudt.org/vocab/unit/S,,siemens
+http://qudt.org/vocab/unit/SV,,sievert
+http://qudt.org/vocab/unit/CentiM2,,square centimetre
+http://qudt.org/vocab/unit/FT2,,square foot
+https://linked.data.gov.au/def/uom-geoscience/KiloM2,,square kilometre
+http://qudt.org/vocab/unit/M2,,square metre
+http://qudt.org/vocab/unit/MI2,,square mile
+http://qudt.org/vocab/unit/MilliM2,,square millimetre
+http://qudt.org/vocab/unit/ATM,,standard atmosphere
+http://linked.data.gov.au/def/geou/FT3-PER-TON,,standard cubic feet per ton
+http://qudt.org/vocab/unit/SCM,,standard cubic metre
+https://linked.data.gov.au/def/uom-geoscience/SCM-PER-DAY,,standard cubic metre per day
+http://qudt.org/vocab/unit/TeraBYTE,,terabyte
+http://qudt.org/vocab/unit/TeraJ,,terajoule
+http://qudt.org/vocab/unit/T,,tesla
+http://linked.data.gov.au/def/geou/KiloBBL,,thousand barrels
+http://linked.data.gov.au/def/geou/KiloBBLOE,,thousand barrels of oil equivalent per megalitre
+http://linked.data.gov.au/def/geou/KiloBTU,,thousand British thermal unit
+http://linked.data.gov.au/def/geou/KiloBTU-PER-MegaL,,thousand British thermal units per megalitre
+https://linked.data.gov.au/def/uom-geoscience/KiloCARAT,,thousand carats
+https://linked.data.gov.au/def/uom-geoscience/KiloFT2,,thousand cubic feet
+https://linked.data.gov.au/def/uom-geoscience/KiloM3,,thousand cubic metres
+http://linked.data.gov.au/def/geou/KiloLB_M,,thousand pounds
+http://linked.data.gov.au/def/geou/KiloLB_F,,thousand pounds force
+http://qudt.org/vocab/unit/KiloLB_M-PER-IN2,,thousand pounds per square inch
+http://linked.data.gov.au/def/geou/KiloREV-PER-MIN,,thousand revolutions per minute
+https://linked.data.gov.au/def/uom-geoscience/KiloYR,,thousands of years
+http://qudt.org/vocab/unit/TON_M,,tonne
+http://qudt.org/vocab/unit/TOE,,tonne of oil equivalent
+http://qudt.org/vocab/unit/TONNE-PER-M3,,tonne per cubic metre
+http://qudt.org/vocab/unit/OZ_TROY,,troy ounce
+https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_LONG,,troy ounce per long ton
+https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_SHORT,,troy ounce per short ton
+http://qudt.org/vocab/unit/LB_T,,troy pound
+http://qudt.org/vocab/unit/UNITLESS,,unitless
+https://linked.data.gov.au/def/uom-geoscience/unknown,,unknown
+http://linked.data.gov.au/def/geou/BBL_US-PER-HR,,US barrels per hour
+http://linked.data.gov.au/def/geou/BBL_US-PER-MIN,,US barrels per minute
+http://qudt.org/vocab/unit/GAL_US,,US gallon
+http://qudt.org/vocab/unit/W,,watt
+http://qudt.org/vocab/unit/WK,,week
+http://qudt.org/vocab/unit/YD,,yard
+http://qudt.org/vocab/unit/YR,,year

@@ -1,0 +1,891 @@
+[
+  {
+    "@id": "_:n3-2087",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "GSWA rock classification scheme",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Listing of rock types and lithological nomenclature (and related codes) used by the Geological Survey of Western Australia (GSWA) for the dual purpose of recording lithologies during mapping / core logging, and for representing mappable lithostratigraphic/lithotectonic units in the State. Rather than attempting to cover for all existing rock types and lithologies, the GSWA’s scheme and terms in this vocabulary are specifically informed by Western Australian geology; a companion vocabulary covers lithological equivalents for regolith materials. \n\nApart from the approach to classification of some volcanic (pyroclastic) rocks, GSWA's lithological nomenclature largely conforms to internationally recognized classifications such as Le Maitre et al. (2005) for plutonic/intrusive rocks and Fettes and Desmons (2007) for metamorphic rocks. Note that: a) GSWA prefers the term intrusive to plutonic, as it carries no inference on depth of emplacement; b) GSWA's rock classification scheme prefers the use of volcanic terminology for any igneous rock formed on or near the Earth's surface, i.e. for those hypabyssal or sub-volcanic rocks such as dykes, sills, and cryptodomes that are demonstrably both spatially and temporally associated with extrusive volcanic rocks; c) some intrusive mafic/ultramafic terminology is allowed for cumulate rocks originating from thick volcanic successions. In the absence of a single unified scheme for sedimentary rocks, multiple sources were considered, and definitions rely heavily on the Glossary of geology (5th edition, revised; Neuendorf et al., 2011). Full references listed under History Note.\n\nGSWA’s rock classification scheme is designed to provide consistent terminology within the organization, and primarily relies on features observable in all rocks at outcrop scale, in hand specimen, and in thin section. Additional terms cover for broader combinations of multiple lithologies encountered during mapping (especially for sedimentary rocks, e.g. ‘siliciclastic + lesser carbonate’), and to ensure a coherent approach across different rock types (e.g. use of ‘mylonitized’ for all metamorphic rock groups, even if some would be rare occurrences or difficult to identify in the field). Definitions in this vocabulary are largely compiled or derived from the quoted references and the Glossary of Geology (5th edition, revised, Neuendorf et al., 2011), with adaptions based on recommended GSWA usage; metamorphic lithologies are often derived from definitions of non-metamorphosed equivalents. Some mineralogical/petrological knowledge is expected of the reader.\n Each concept is characterized by a notation consisting of one to four lower-case letters. This notation represents the lithological code used for mapping lithologies and labelling lithostratigraphic units on maps. Note that in the GSWA's scheme, some lithological codes are reserved for use in the Field Observation database (WAROX) or the Explanatory Notes System (ENS) only; the latter are highlighted in the concept definitions and should not be used for field observations. Also note that in ENS codes are supplemented by primary and secondary qualifiers (not covered in this vocabulary); a concerted effort has been made to match WAROX-only codes with those generated via qualifiers in ENS, but in a few instances alphabetical limitations have prevented this (i.e. the code used in WAROX has a slightly different meaning from the same string of letters generated in ENS).\n\nThe approach behind GSWA’s rock classification scheme is documented in Tyler at al. (2004; https://dmpbookshop.eruditetechnologies.com.au/product/the-revised-gswa-rock-classification-scheme.do). Details of GSWA’s code construction for ENS can be found in Riganti et al. (2013; https://dmpbookshop.eruditetechnologies.com.au/product/gswa-code-builder-constructing-and-unravelling-gswa-geological-codes.do) and in a companion application, the GSWA Code Builder (ENS codes only), available from the Department’s Data and Software Centre (https://dasc.demirs.wa.gov.au/).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/anorthosite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:anorthosite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:anorthosite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "anorthosite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A leucocratic intrusive rock consisting essentially of plagioclase commonly with small amounts of pyroxene. Now defined modally in QAPF field 10 (Fig. 2.4, p. 22). The term is synonymous with plagioclasite. (Le Maitre et al., 2005, p. 57)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/clinopyroxene-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:clinopyroxene-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:clinopyroxene-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "clinopyroxene gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A gabbro sensu strictu, i.e. a mafic intrusive rock (or the coarse-grained part of an extrusive succession) defined modally in QAPF field 10 (Fig. 2.4, p. 22) and consisting of plagioclase more calcic than An50 and clinopyroxene (augite), with less than 5% each of olivine and orthopyroxene in its mode (cf. Le Maitre et al., 2005, p. 24–25).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/dolerite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:dolerite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:dolerite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "dolerite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A rock intermediate in grain size between basalt and gabbro and composed essentially of plagioclase, pyroxene and opaque minerals; often with ophitic texture. If olivine is present the rock may be called olivine dolerite; if quartz is present, quartz dolerite. Now regarded as being synonymous with diabase and an approved synonym for microgabbro of QAPF field 10 (Fig. 2.4, p. 22). (Le Maitre et al., 2005, p. 74).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A coarse-grained intrusive rock (and including coarse-grained parts of extrusive successions) composed essentially of calcic plagioclase, pyroxene and iron oxides. If olivine is an essential constituent it is olivine gabbro; if quartz is an essential constituent it is quartz gabbro. Now defined modally in QAPF field 10 (Fig. 2.4, p. 22). (cf. Le Maitre et al., 2005, p.  83)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gabbronorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gabbronorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:gabbronorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "gabbronorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A collective name for an intrusive rock consisting of calcic plagioclase and roughly equal amounts of clinopyroxene and orthopyroxene. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25). (Le Maitre et al., 2005, p. 83)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/hornblende-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hornblende-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:hornblende-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hornblende gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A variety of gabbro in which primary hornblende occurs. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25). (Le Maitre et al., 2005, p. 90)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/igneous-mafic-intrusive",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A group name for intrusive lithologies (and including coarse-grained parts of extrusive successions) that are composed chiefly of one or more ferromagnesian, dark-coloured minerals in their mode (cf. Le Maitre et al., 2005, p. 25 and 107) and with the volume modal percentage of mafic and related minerals (M) less then 90%. Individual lithologies within the group are distinguished by the relative abundance of orthopyroxene, clinopyroxene, olivine and hornblende (cf. Le Maitre et al., 2005, p. 24).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Based on the IUGS classification of igneous rocks (Le Maitre et al., 2005)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "o",
+        "@type": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gswa-rock-code"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "igneous mafic intrusive",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/mafic",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/anorthosite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/clinopyroxene-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/dolerite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gabbronorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/hornblende-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mafic-intrusive-rock"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mafic-intrusive-rock-undivided"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/magnetite-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/norite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-clinopyroxene-norite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-gabbronorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-norite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-orthopyroxene-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/orthopyroxene-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pyroxene-hornblende-gabbro"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pyroxene-hornblende-gabbronorite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pyroxene-hornblende-norite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/troctolite"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:igneous-mafic-intrusive"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:igneous-mafic-intrusive"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "igneous mafic intrusive",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A group name for intrusive lithologies (and including coarse-grained parts of extrusive successions) that are composed chiefly of one or more ferromagnesian, dark-coloured minerals in their mode (cf. Le Maitre et al., 2005, p. 25 and 107) and with the volume modal percentage of mafic and related minerals (M) less then 90%. Individual lithologies within the group are distinguished by the relative abundance of orthopyroxene, clinopyroxene, olivine and hornblende (cf. Le Maitre et al., 2005, p. 24).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mafic-intrusive-rock",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mafic-intrusive-rock"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:mafic-intrusive-rock"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mafic intrusive rock",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An igneous intrusive rock (and including coarse-grained parts of extrusive successions) composed chiefly of one or more ferromagnesian, dark-coloured minerals in its mode, otherwise uncategorized (adapted from Glossary of geology, 5th edition revised; Neuendorf et al., 2011).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/mafic-intrusive-rock-undivided",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mafic-intrusive-rock-undivided"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:mafic-intrusive-rock-undivided"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "mafic intrusive rock; undivided",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A demonstrably mafic intrusive or a coarse-grained constituent of an extrusive succession, otherwise uncategorized. GSWA usage of this term is restricted to rocks that are partially weathered or are identified using remote sensing imagery, and the use of the related code/notation is limited to GSWA's Explanatory Notes System.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/magnetite-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:magnetite-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:magnetite-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "magnetite gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A gabbro with a high proportion (greater than 20%) of magnetite or Fe–Ti oxides.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/norite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:norite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:norite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "norite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock composed essentially of bytownite, labradorite or andesine and orthopyroxene. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25). (Le Maitre et al., 2005, p. 117)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-clinopyroxene-norite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:olivine-clinopyroxene-norite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:olivine-clinopyroxene-norite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "olivine-clinopyroxene norite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of norite in which olivine is between 5% and 85% and clinopyroxene exceeds 5% of the pyroxenes. (cf. Le Maitre et al., 2005, p. 120)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:olivine-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:olivine-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "olivine gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A commonly used name for a gabbro containing essential olivine. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of gabbro in which olivine is between 5% and 85%. (Le Maitre et al., 2005, p. 119)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-gabbronorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:olivine-gabbronorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:olivine-gabbronorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "olivine gabbronorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A collective term for intrusive rocks consisting of 10–90% calcic plagioclase and accompanied by olivine, orthopyroxene and clinopyroxene in various amounts. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of gabbronorite in which olivine is between 5% and 85%. (Le Maitre et al., 2005, p. 119)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-norite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:olivine-norite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:olivine-norite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "olivine norite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An old term for a norite containing essential olivine. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of norite in which olivine is between 5% and 85%. (Le Maitre et al., 2005, p. 120)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-orthopyroxene-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:olivine-orthopyroxene-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:olivine-orthopyroxene-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "olivine-orthopyroxene gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of gabbro in which olivine is between 5% and 85% and orthopyroxene exceeds 5% of the pyroxenes. (cf. olivine gabbro/gabbronorite in Le Maitre et al., 2005, p. 119)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/orthopyroxene-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:orthopyroxene-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:orthopyroxene-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "orthopyroxene gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A basic intrusive rock consisting mainly of calcic plagioclase, clinopyroxene and minor orthopyroxene. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25). (Le Maitre et al., 2005, p. 122)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pyroxene-hornblende-gabbro",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pyroxene-hornblende-gabbro"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:pyroxene-hornblende-gabbro"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "pyroxene-hornblende gabbro",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock (and including coarse-grained parts of extrusive successions) defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of gabbro in which hornblende is between 5% and 85% (cf. Le Maitre et al., 2005, p. 133).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pyroxene-hornblende-gabbronorite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pyroxene-hornblende-gabbronorite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:pyroxene-hornblende-gabbronorite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "pyroxene-hornblende gabbronorite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock (and including coarse-grained parts of extrusive successions) defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of gabbronorite in which hornblende is between 5% and 85% (Le Maitre et al., 2005, p. 133).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/pyroxene-hornblende-norite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pyroxene-hornblende-norite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:pyroxene-hornblende-norite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "pyroxene-hornblende norite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An intrusive rock (and including coarse-grained parts of extrusive successions) defined modally in the gabbroic rock classification (Fig. 2.6, p. 25) as a variety of norite in which hornblende is between 5% and 85% (cf. Le Maitre et al., 2005, p. 133).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/troctolite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:troctolite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:troctolite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "troctolite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A variety of gabbro composed essentially of highly calcic plagioclase and olivine with little or no pyroxene. Now defined modally in the gabbroic rock classification (Fig. 2.6, p. 25). (Le Maitre et al., 2005, p. 151)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

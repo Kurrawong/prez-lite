@@ -1,0 +1,278 @@
+[
+  {
+    "@id": "_:n3-2673",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/metamorphic-facies",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:metamorphic-facies"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:metamorphic-facies"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Metamorphic facies",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A metamorphic facies is defined by a repeatedly occurring and thus predictable set of stable mineral assemblages in metamorphic rocks. Such metamorphic mineral assemblages crystallize and are stable over a range of externally imposed physical conditions, most crucially lithostatic pressure and temperature, and thus the facies define areas in two-dimensional plots of pressure–temperature space. There is a demonstrable/proven relationship between mineral composition and bulk rock chemical composition and a consistent relationship through geological time. Rocks which contain certain metamorphic mineral assemblages can therefore be linked to particular tectonic settings, times and places in the geological history of an area. The boundaries between facies are typically gradational as the disappearance or appearance of minerals occurs over pressure, temperature, space and time. The vocabulary is based on Fettes and Desmons (2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks edited by D Fettes and J Desmons, 244p.), with further subdivisions for some facies. Definitions also borrow from Neuendorf et al. (2005, Glossary of Geology: 5th edition, revised edited by KKE Neuendorf, JP Mehl Jr and JA Jackson: American Geological Institute, Alexandria, Virginia, USA, 779p.). More detailed metamorphic mineral assemblages for specific rock types can be found at https://en.wikipedia.org/wiki/Metamorphic_facies).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:metamorphic-facies/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A metamorphic facies representing very high temperatures and low or very low pressures, with temperature lower than the sanidinite facies and pressure lower than the granulite facies. Metabasic rocks are represented by the assemblage clinopyroxene (diopside) – orthopyroxene (hypersthene) – plagioclase, with hornblende typically absent. Metapelitic rocks exhibit the association of sillimanite (or andalusite) and cordierite with potassium feldspar; muscovite is absent. Marbles contain wollastonite and calcite–forsterite–periclase (Turner, 1968). The facies corresponds to temperatures in excess of about 700 °C at pressures less than about 2 kbar. It is typical of high-grade thermal metamorphism, for example in the inner parts of contact aureoles, under ultrahigh (geo)thermal gradient and heat flow conditions. Although traditionally defined as undeformed, hornfels facies rocks exhibiting deformation features are present in the geological record.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Definition adapted from IUGS (2007); Glossary of Geology (5th edition, American Geosciences Institute); and Vernon and Clarke (2008; Principles of metamorphic petrology / Cambridge University Press. ISBN: 9780521871785. xi, 446p)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "pyroxene hornfels",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pyroxene-hornfels"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:metamorphic-facies/items/ns1:pyroxene-hornfels"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "pyroxene hornfels",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A metamorphic facies representing very high temperatures and low or very low pressures, with temperature lower than the sanidinite facies and pressure lower than the granulite facies. Metabasic rocks are represented by the assemblage clinopyroxene (diopside) – orthopyroxene (hypersthene) – plagioclase, with hornblende typically absent. Metapelitic rocks exhibit the association of sillimanite (or andalusite) and cordierite with potassium feldspar; muscovite is absent. Marbles contain wollastonite and calcite–forsterite–periclase (Turner, 1968). The facies corresponds to temperatures in excess of about 700 °C at pressures less than about 2 kbar. It is typical of high-grade thermal metamorphism, for example in the inner parts of contact aureoles, under ultrahigh (geo)thermal gradient and heat flow conditions. Although traditionally defined as undeformed, hornfels facies rocks exhibiting deformation features are present in the geological record.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

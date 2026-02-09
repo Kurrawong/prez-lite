@@ -1,0 +1,400 @@
+[
+  {
+    "@id": "_:n3-604",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geological-sample-type"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:geological-sample-type"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Geological sample type",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The form of a sample, i.e. the visible shape or configuration of a geological material. The listing includes both primary samples and derived specimens, that is primary sources (e.g. drillcore, hand specimen) and items resulting from preparation of those source materials for the purpose of research/analytical work (e.g. thin section, fine powder). Artefacts are also included, but in this vocabulary they specifically refer to man-made objects of cultural or historical interest such as a tool or decoration (i.e. items such as thin sections, mounts, etc. are not regarded as artefacts in this context). Descriptions were compiled trying to avoid reference to the material that comprises the specimen (e.g. rock, fossil) or the sampling method (e.g. drilling), although in practice it is not always possible to completely separate these concepts from the sample type (e.g. rotary sidewall core); in fact many of the concepts for sample type and sample materials are (incorrectly) used interchangeably. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:geological-sample-type/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-slab",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:polished-slab"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:geological-sample-type/items/ns1:polished-slab"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "polished slab",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A thick slice of rock/mineral with a smooth and shiny/glossy surface that enhances the colour, texture and general appearance of the material.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-specimen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Natural rocks, (gem)stones or Earth materials that have undergone a meticulous process of grinding and polishing with progressively finer abrasive materials to create a smooth surface with a significant specular reflection /enhanced lustre. This method enhances their surface, bringing out the natural colours and patterns found within the specimen.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "POSP",
+        "@type": "https://linked.data.gov.au/def/geological-sample-type"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "polished specimen",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://stonehards.com/articles/polished-rocks-guide/",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "https://schema.org/status": [
+      {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-shaped-specimen"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/polished-slab"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/geological-sample-type/tumbled-stone"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:polished-specimen"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:geological-sample-type/items/ns1:polished-specimen"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "polished specimen",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Natural rocks, (gem)stones or Earth materials that have undergone a meticulous process of grinding and polishing with progressively finer abrasive materials to create a smooth surface with a significant specular reflection /enhanced lustre. This method enhances their surface, bringing out the natural colours and patterns found within the specimen.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geological-sample-type/tumbled-stone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:tumbled-stone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:geological-sample-type/items/ns1:tumbled-stone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "tumbled stone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Small, rounded, brightly polished pieces of rocks and minerals (usually semiprecious or precious stones), made by placing rough fragments in a barrel-shaped vessel (a rock tumbler), which rotates and tumbles them until their sharp edges are rounded and surfaces are smooth and polished.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/reg-statuses/stable",
+    "https://prez.dev/label": [
+      {
+        "@value": "stable"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/status",
+    "https://prez.dev/label": [
+      {
+        "@value": "status"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of the study (enumerated)."
+      }
+    ]
+  }
+]

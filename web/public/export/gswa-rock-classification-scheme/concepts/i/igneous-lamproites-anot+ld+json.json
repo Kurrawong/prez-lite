@@ -1,0 +1,947 @@
+[
+  {
+    "@id": "_:n3-2085",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "GSWA rock classification scheme",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Listing of rock types and lithological nomenclature (and related codes) used by the Geological Survey of Western Australia (GSWA) for the dual purpose of recording lithologies during mapping / core logging, and for representing mappable lithostratigraphic/lithotectonic units in the State. Rather than attempting to cover for all existing rock types and lithologies, the GSWA’s scheme and terms in this vocabulary are specifically informed by Western Australian geology; a companion vocabulary covers lithological equivalents for regolith materials. \n\nApart from the approach to classification of some volcanic (pyroclastic) rocks, GSWA's lithological nomenclature largely conforms to internationally recognized classifications such as Le Maitre et al. (2005) for plutonic/intrusive rocks and Fettes and Desmons (2007) for metamorphic rocks. Note that: a) GSWA prefers the term intrusive to plutonic, as it carries no inference on depth of emplacement; b) GSWA's rock classification scheme prefers the use of volcanic terminology for any igneous rock formed on or near the Earth's surface, i.e. for those hypabyssal or sub-volcanic rocks such as dykes, sills, and cryptodomes that are demonstrably both spatially and temporally associated with extrusive volcanic rocks; c) some intrusive mafic/ultramafic terminology is allowed for cumulate rocks originating from thick volcanic successions. In the absence of a single unified scheme for sedimentary rocks, multiple sources were considered, and definitions rely heavily on the Glossary of geology (5th edition, revised; Neuendorf et al., 2011). Full references listed under History Note.\n\nGSWA’s rock classification scheme is designed to provide consistent terminology within the organization, and primarily relies on features observable in all rocks at outcrop scale, in hand specimen, and in thin section. Additional terms cover for broader combinations of multiple lithologies encountered during mapping (especially for sedimentary rocks, e.g. ‘siliciclastic + lesser carbonate’), and to ensure a coherent approach across different rock types (e.g. use of ‘mylonitized’ for all metamorphic rock groups, even if some would be rare occurrences or difficult to identify in the field). Definitions in this vocabulary are largely compiled or derived from the quoted references and the Glossary of Geology (5th edition, revised, Neuendorf et al., 2011), with adaptions based on recommended GSWA usage; metamorphic lithologies are often derived from definitions of non-metamorphosed equivalents. Some mineralogical/petrological knowledge is expected of the reader.\n Each concept is characterized by a notation consisting of one to four lower-case letters. This notation represents the lithological code used for mapping lithologies and labelling lithostratigraphic units on maps. Note that in the GSWA's scheme, some lithological codes are reserved for use in the Field Observation database (WAROX) or the Explanatory Notes System (ENS) only; the latter are highlighted in the concept definitions and should not be used for field observations. Also note that in ENS codes are supplemented by primary and secondary qualifiers (not covered in this vocabulary); a concerted effort has been made to match WAROX-only codes with those generated via qualifiers in ENS, but in a few instances alphabetical limitations have prevented this (i.e. the code used in WAROX has a slightly different meaning from the same string of letters generated in ENS).\n\nThe approach behind GSWA’s rock classification scheme is documented in Tyler at al. (2004; https://dmpbookshop.eruditetechnologies.com.au/product/the-revised-gswa-rock-classification-scheme.do). Details of GSWA’s code construction for ENS can be found in Riganti et al. (2013; https://dmpbookshop.eruditetechnologies.com.au/product/gswa-code-builder-constructing-and-unravelling-gswa-geological-codes.do) and in a companion application, the GSWA Code Builder (ENS codes only), available from the Department’s Data and Software Centre (https://dasc.demirs.wa.gov.au/).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-leucite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diopside-leucite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diopside-leucite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diopside-leucite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A melanocratic diopside–leucite lamproite (Table 2.7, p. 17) essentially composed of leucite and diopside with minor olivine pseudomorphs, amphibole, phlogopite and rutile. The original name cedricite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 68).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-leucite-phlogopite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diopside-leucite-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diopside-leucite-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diopside-leucite-phlogopite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a variety of leucitite composed of clinopyroxene, mica and leucite in a glassy matrix. Diopside madupitic lamproite (term preferred to 'madupite') is a more mafic variety. Now regarded as a diopside-leucite-phlogopite lamproite (Table 2.7, p. 17). The original name wyomingite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 157).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-leucite-richterite-madupitic-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diopside-leucite-richterite-madupitic-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diopside-leucite-richterite-madupitic-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diopside-leucite-richterite madupitic lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A name for a rock largely composed of leucite, mica and amphibole with subordinate clinopyroxene in a serpentine-rich matrix. Now regarded as a diopside–leucite–richterite madupitic lamproite (Table 2.7, p. 17), with the term 'madupitic' referring to the presence of poikilitic groundmass phlogopite. The original name wolgidite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 157).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-madupitic-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diopside-madupitic-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diopside-madupitic-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diopside madupitic lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a melanocratic variety of leucitite essentially composed of diopside and phlogopite in a glassy matrix, which has the composition of nepheline and leucite. Wyomingite is a more felsic variety. Now regarded as a diopside madupitic lamproite (Table 2.7, p. 17), with the term 'madupitic' referring to the presence of poikilitic groundmass phlogopite. The original name madupite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 107).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-sanidine-phlogopite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:diopside-sanidine-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:diopside-sanidine-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "diopside-sanidine-phlogopite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a variety of leucite phonolite essentially composed of leucite and alkali feldspar with subordinate clinopyroxene, mica and amphibole. Now regarded as a diopside–sanidine–phlogopite lamproite (Table 2.7, p. 17). The original name orendite is not recommended for usage. (Le Maitre et al., 2005, p. 121)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/enstatite-sanidine-phlogopite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:enstatite-sanidine-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:enstatite-sanidine-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "enstatite-sanidine-phlogopite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A variety of potassic lamproite containing normative olivine but no normative leucite (Table 2.7, p. 17). The original name cancalite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 67).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/hyalo-enstatite-phlogopite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hyalo-enstatite-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:hyalo-enstatite-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hyalo-enstatite-phlogopite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a variety of trachyte characterized by the presence of phlogopite and bronzite (= enstatite). Now regarded as an hyalo–enstatite–phlogopite lamproite (Table 2.7, p. 17), where hyalo refers to the presence of glass. The original name fortunite is not recommended for usage. (Le Maitre et al., 2005, p. 82)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/hyalo-olivine-diopside-phlogopite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hyalo-olivine-diopside-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:hyalo-olivine-diopside-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hyalo-olivine-diopside-phlogopite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a black pitch-like rock, associated with an extrusive mass of fortunite [a variety of trachyte characterized by the presence of phlogopite and bronzite (= enstatite). Now regarded as an hyalo-enstatite–phlogopite lamproite], and consisting of phenocrysts of phlogopite and olivine in a glassy matrix containing microlites of diopside and phlogopite. Now regarded as a hyalo-olivine–diopside–phlogopite lamproite (Table 2.7, p. 17). The original name verite is not recommended for usage. (Le Maitre et al., 2005, p. 154)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/igneous-lamproites",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A group name for hypabyssal or extrusive rocks rich in potassium and magnesium, usually occurring as dyke or small intrusions. The subdivision of the lamproites follows the scheme of Mitchell and Bergman (1991; Petrology of lamproites: Plenum Press, New York, London, 447p.; https://link.springer.com/book/10.1007/978-1-4615-3788-5), in which the historical terminology (e.g. wyomingite, madupite, etc.) is discarded in favour of compound names based on the predominance of phlogopite, richterite, olivine, diopside, sanidine and leucite (Le Maitre et al., 2005, p. 16).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Based on the IUGS classification of igneous rocks (Le Maitre et al., 2005)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "i",
+        "@type": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/gswa-rock-code"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "igneous lamproites",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/lamproite",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-leucite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-leucite-phlogopite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-leucite-richterite-madupitic-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-madupitic-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/diopside-sanidine-phlogopite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/enstatite-sanidine-phlogopite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/hyalo-enstatite-phlogopite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/hyalo-olivine-diopside-phlogopite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-rock-undivided"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-breccia"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-breccia-sandstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-conglomerate"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-granule-pebble-breccia"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-mudstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-rock"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-sandstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-sandstone-siltstone"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-sediment-matrix-breccia"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/leucite-phlogopite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/leucite-richterite-lamproite"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-diopside-richterite-madupitic-lamproite"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:igneous-lamproites"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:igneous-lamproites"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "igneous lamproites",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A group name for hypabyssal or extrusive rocks rich in potassium and magnesium, usually occurring as dyke or small intrusions. The subdivision of the lamproites follows the scheme of Mitchell and Bergman (1991; Petrology of lamproites: Plenum Press, New York, London, 447p.; https://link.springer.com/book/10.1007/978-1-4615-3788-5), in which the historical terminology (e.g. wyomingite, madupite, etc.) is discarded in favour of compound names based on the predominance of phlogopite, richterite, olivine, diopside, sanidine and leucite (Le Maitre et al., 2005, p. 16).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A hypabyssal or extrusive rock rich in potassium and magnesium, otherwise uncategorized.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-rock-undivided",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-rock-undivided"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic rock; undivided",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A demonstrably felsic igneous volcanic rocks, otherwise uncategorized. GSWA usage of this term is restricted to rocks that are partially weathered or are identified using remote sensing imagery, and the use of the related code/notation is limited to GSWA's Explanatory Notes System. GSWA's rock classification scheme prefers the use of volcanic terminology for any igneous rock formed on or near the Earth's surface, i.e. for those hypabyssal or subvolcanic rocks such as dykes, sills, and cryptodomes that are demonstrably both spatially and temporally associated with extrusive volcanic rocks.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-breccia",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-breccia"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-breccia"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic breccia",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A volcaniclastic rock composed mostly of angular fragments greater than 2 mm in size consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-breccia-sandstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-breccia-sandstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-breccia-sandstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic breccia-sandstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A volcaniclastic rock composed mostly of angular fragments ranging in size from sand (0.0625 – 2 mm) and above, consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-conglomerate",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-conglomerate"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-conglomerate"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic conglomerate",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A conglomerate consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-granule-pebble-breccia",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-granule-pebble-breccia"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-granule-pebble-breccia"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic granule/pebble breccia",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A breccia composed mostly of angular fragments ranging in size from granule (2–4 mm) to pebble (4–32 mm) consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-mudstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-mudstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-mudstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic mudstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A mudstone (grain size ranging from silt to clay, i.e. less than 0.0625 mm) consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-rock",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-rock"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-rock"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic rock",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A volcaniclastic rock consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition, but otherwise uncategorized. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-sandstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-sandstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-sandstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic sandstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A sandstone (grain size 0.0625 – 2 mm) consisting of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-sandstone-siltstone",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-sandstone-siltstone"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-sandstone-siltstone"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic sandstone-siltstone",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A volcaniclastic rock composed mostly of fragments ranging in size from sand (0.0625 – 2 mm) to silt (0.0039 – 0.0625 mm) of either (a) pyroclastic detritus or (b) terrigenous volcanic detritus of epiclastic origin, and with a lamproitic composition. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/lamproitic-volcaniclastic-sediment-matrix-breccia",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:lamproitic-volcaniclastic-sediment-matrix-breccia"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:lamproitic-volcaniclastic-sediment-matrix-breccia"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "lamproitic volcaniclastic sediment-matrix breccia",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A commonly monomictic breccia of overall lamproitic composition, composed of angular, coarse igneous fragments cemented by a fine-grained matrix that is clastic though not necessarily strictly sedimentary in origin. 'Volcaniclastic' includes all clastic volcanic materials formed by any process of fragmentation, dispersed by any kind of transporting agent, deposited in any environment, or mixed in any significant portion with non-volcanic fragments.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/leucite-phlogopite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:leucite-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:leucite-phlogopite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "leucite-phlogopite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A lamproite (Table 2.7, p. 17) consisting essentially of leucite and phlogopite in a chlorite-rich groundmass. The original name fitzroyite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 80).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/leucite-richterite-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:leucite-richterite-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:leucite-richterite-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "leucite-richterite lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a rock consisting essentially of leucite and magnophorite (= titanian potassian richterite) with subordinate phlogopite in a glassy matrix. Now regarded as a leucite–richterite lamproite (Table 2.7, p. 17). The original name mamilite is not recommended for usage. Adapted from Le Maitre et al. (2005, p. 108).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/gswa-rock-classification-scheme/olivine-diopside-richterite-madupitic-lamproite",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:olivine-diopside-richterite-madupitic-lamproite"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:gswa-rock-classification-scheme/items/ns1:olivine-diopside-richterite-madupitic-lamproite"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "olivine-diopside-richterite madupitic lamproite",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Originally described as a variety of olivine phonolitic leucitite composed essentially of leucite and diopside, and with subordinate olivine, alkali feldspar and phlogopite. Now regarded as an olivine–diopside–richterite madupitic lamproite (Table 2.7, p. 17), with the term 'madupitic' referring to the presence of poikilitic groundmass phlogopite. The original name jumillite is not recommended for usage. (Le Maitre et al., 2005, p. 94)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

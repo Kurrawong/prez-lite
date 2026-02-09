@@ -1,0 +1,645 @@
+[
+    {
+        "@id": "_:n3-1164",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0000-0002-7645-5031"
+            }
+        ]
+    },
+    {
+        "@id": "_:n3-1165",
+        "http://www.w3.org/ns/prov#hadRole": [
+            {
+                "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+            }
+        ],
+        "http://www.w3.org/ns/prov#agent": [
+            {
+                "@id": "https://orcid.org/0009-0002-5543-2719"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "The stage of a borehole in relation to the lifecycle of the borehole, from proposal and operational stages through to completion and rehabilitation, and with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. The vocabulary focuses on standard terminology from the energy and mineral resources sectors, highlighting instances where the same term carries different meaning in different fields. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). Note that the currency of borehole status data in GSWA's databases is time-stamped, reflecting information gathered from a borehole operator’s well completion report or from a responsible regulatory authority at a specific point in time; subsequent changes are unlikely to be recorded.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#historyNote": [
+            {
+                "@value": "This vocabulary combines terminology from the energy and mineral resources industries, with a structure based on the main phases of drilling operations: planning and approval, operational, operations suspended, and post-operational. It is largely based and expands on the 2021 Geoscience Australia (GA) listing (https://db-content.ga.gov.au/data_dictionary/Borehole_Status_vocabulary_2021.pdf, later published at https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus), \"an amalgam of terms used by professional bodies (e.g. PPDM, CoalLog) and regulatory authorities. Some of the terminology used across these professional domains and jurisdictions has varied over time, and in some cases the same term has a different meaning for different types of boreholes. GA has endeavoured to merge these sources of terminology into a consistent classification that applies for all borehole types.\" As GA's list stemmed largely from the energy sector, GSWA has expanded the vocabulary to cover mineral resources industry terminology, in relation to both drilling and rehabilitation stages. The Geological Survey of Queensland (GSQ) Borehole Status (http://linked.data.gov.au/def/borehole-status) and Borehole Status Event (http://linked.data.gov.au/def/borehole-status-event) vocabularies were also consulted. A draft of the GSWA's vocabulary was shared with the Government Geoscience Information Committee (GGIC) Petroleum Data Working Group, leading to the adoption of concepts from this vocabulary by GSQ (particularly for post-operational stages) and a more consistent approach nationally.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Borehole status",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/linked-data/registry#status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionIRI": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/1"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/unknown"
+            }
+        ],
+        "http://www.w3.org/ns/prov#qualifiedAttribution": [
+            {
+                "@id": "_:n3-1164"
+            },
+            {
+                "@id": "_:n3-1165"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2025-02-03",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2025-02-03",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/keywords": [
+            {
+                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
+            }
+        ],
+        "https://schema.org/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/gswa"
+            }
+        ],
+        "https://schema.org/version": [
+            {
+                "@value": "1"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/approved",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/capped",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/decommissioned",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/in-progress"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/reaming"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/in-progress",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting-gas"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting-water"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting-gas",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting-water",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/monitoring",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/not-drilled",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/monitoring"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/in-progress"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/capped"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/shut-in"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/suspended"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/workover"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/planned",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/approved"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/not-drilled"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/planned"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/proposed"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational",
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/decommissioned"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated"
+            },
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/proposed",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/reaming",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#narrower": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/plugged"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/shut-in",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/suspended",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/unknown",
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/workover",
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            }
+        ]
+    }
+]

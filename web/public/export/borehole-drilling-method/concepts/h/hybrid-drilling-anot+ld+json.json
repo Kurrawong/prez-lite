@@ -1,0 +1,349 @@
+[
+  {
+    "@id": "_:n3-1035",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:borehole-drilling-method-western-australia"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-drilling-method-western-australia"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Borehole drilling method",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A list of drilling methods routinely used by the mineral and energy resource industries. The drilling methods are grouped into three main categories based on the dominant motion of the drillstem (i.e. the string of pipe that transmits power from the surface down to the drillbit) and drillbit (the part of the bottom-hole assembly that cuts, grinds or breaks the bottom-hole formation to make the hole). Specifically, the presence/absence of rotation in either or both is used as the main distinguishing factor, hence the main grouping into rotary, non-rotary and hybrid. Most drilling used by the mineral and energy resource industries falls into the rotary drilling category. Note that alternative classification schemes can use parameters such as the hole-making method in combination with the hole-clearing and stabilizing method and/or the type of sample produced (e.g. core versus chips). These methods can cross over between the main categories used here; for example, percussion drilling can be used in conjunction with rotary, non-rotary and hybrid methods and the term is not always qualified in company reports. In addition, many drilling rigs are multipurpose and hence can use a combination of drilling methods, including in the same borehole; for example, reverse circulation drilling can be followed by diamond drilling — however, these are both rotary drilling methods. Definitions are compiled from a variety of sources, including the Australian Drilling Industry Association's Drilling Manual (2018, Sixth edition), existing published vocabularies, drilling company webpages, Wikipedia, and a variety reports/publications.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-drilling-method-western-australia/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia/coiled-tubing",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:coiled-tubing"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-drilling-method-western-australia/items/ns1:coiled-tubing"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "coiled tubing drilling",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Coiled tubing drilling (CTD) is a drilling method that uses a continuous steel coiled tube spooled on a large reel instead of metal pipes. This reduces the amount of time required to trip in and out of the hole (the coil can simply be run in and pulled out while a drillpipe must be assembled and dismantled joint by joint). Instead of rotating the drillbit by using a rotary table or top drive at the surface, the drillbit is turned by a downhole mud motor, powered by the motion of drilling fluid pumped from the surface. CTD is used in both mineral and petroleum industries. In the latter, CTD is commonly used in existing wellbores for re-entry drilling or sidetracking through the production tubing, for new shallow wells, deepening conventional wells and for drilling underbalanced.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia/downhole-motor",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:downhole-motor"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-drilling-method-western-australia/items/ns1:downhole-motor"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "downhole motor",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A drilling method using a drillstem equipped with a non-rotating drillstring and a rotating downhole bit driven by a downhole motor. Downhole motor drilling is used in the energy industry to drive the drillbit or other downhole tools during directional drilling or performance drilling applications. As drilling fluid is pumped through the positive displacement motor (PDM), it converts the hydraulic power of the fluid into mechanical power to cause the bit to rotate. During directional drilling, this capability is used while drilling in sliding mode, when the drillstring is not rotated from the surface. Positive displacement motors can also be used for performance drilling, straight hole drilling, coring, underreaming and milling operations. In straight hole drilling, the motor functions as a drilling performance tool to increase the rate of penetration and reduce casing wear by minimizing drillstring rotation.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hybrid-drilling",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Any drilling method that uses a non-rotating drillstem (i.e. the string of pipe that transmits power from the surface down to the drillbit) and a rotating drillbit (the part of the bottom-hole assembly that cuts, grinds or breaks the bottom-hole formation to make the hole).",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hybrid drilling",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia/coiled-tubing"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia/downhole-motor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Compiled by GSWA"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-drilling-method-western-australia"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hybrid-drilling"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-drilling-method-western-australia/items/ns1:hybrid-drilling"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hybrid drilling",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Any drilling method that uses a non-rotating drillstem (i.e. the string of pipe that transmits power from the surface down to the drillbit) and a rotating drillbit (the part of the bottom-hole assembly that cuts, grinds or breaks the bottom-hole formation to make the hole).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

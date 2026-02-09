@@ -1,0 +1,142 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/sample-condition> a skos:ConceptScheme;
+    skos:definition "List of terms describing the condition, completeness and risk/hazard profile of individual samples/specimens, including any specific requirements needed for the preservation of the object."@en;
+    skos:historyNote "Compiled by the Geological Survey of Western Australia to assist in the management of its physical sample/specimen collections. GSWA distinguishes samples from specimens on the basis of the latter including both primary and derived materials and having been accessioned into a suitable management system."@en;
+    skos:prefLabel "Sample/specimen condition"@en;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    owl:versionIRI <https://linked.data.gov.au/def/sample-condition/1>;
+    skos:hasTopConcept <https://linked.data.gov.au/def/sample-condition/hazardous>, <https://linked.data.gov.au/def/sample-condition/poor>, <https://linked.data.gov.au/def/sample-condition/vulnerable>, <https://linked.data.gov.au/def/sample-condition/enhanced>, <https://linked.data.gov.au/def/sample-condition/repaired>, <https://linked.data.gov.au/def/sample-condition/preserved>, <https://linked.data.gov.au/def/sample-condition/fair>, <https://linked.data.gov.au/def/sample-condition/good>, <https://linked.data.gov.au/def/sample-condition/segmented>, <https://linked.data.gov.au/def/sample-condition/multi-part>, <https://linked.data.gov.au/def/sample-condition/shielded>, <https://linked.data.gov.au/def/sample-condition/to-be-repackaged>, <https://linked.data.gov.au/def/sample-condition/uncleaned>;
+    prov:qualifiedAttribution _:n3-2748, _:n3-2749;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateCreated "2024-12-09"^^xsd:date;
+    sdo:dateModified "2024-12-09"^^xsd:date;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management>;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    sdo:version "1".
+<https://linked.data.gov.au/def/sample-condition/hazardous> skos:narrower <https://linked.data.gov.au/def/sample-condition/poisonous>, <https://linked.data.gov.au/def/sample-condition/fibrous>, <https://linked.data.gov.au/def/sample-condition/biohazard>, <https://linked.data.gov.au/def/sample-condition/dusty>, <https://linked.data.gov.au/def/sample-condition/flammable>, <https://linked.data.gov.au/def/sample-condition/heavy>, <https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing>, <https://linked.data.gov.au/def/sample-condition/radioactive>, <https://linked.data.gov.au/def/sample-condition/salty>, <https://linked.data.gov.au/def/sample-condition/sharp>, <https://linked.data.gov.au/def/sample-condition/unwieldy>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/poor> skos:narrower <https://linked.data.gov.au/def/sample-condition/broken>, <https://linked.data.gov.au/def/sample-condition/chipped>, <https://linked.data.gov.au/def/sample-condition/degraded>, <https://linked.data.gov.au/def/sample-condition/flaking>, <https://linked.data.gov.au/def/sample-condition/incomplete>, <https://linked.data.gov.au/def/sample-condition/corroded>, <https://linked.data.gov.au/def/sample-condition/worn>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/vulnerable> skos:narrower <https://linked.data.gov.au/def/sample-condition/chemically-vulnerable>, <https://linked.data.gov.au/def/sample-condition/fragile>, <https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic>, <https://linked.data.gov.au/def/sample-condition/oxygen-sensitive>, <https://linked.data.gov.au/def/sample-condition/photosensitive>, <https://linked.data.gov.au/def/sample-condition/thermally-vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/enhanced> skos:narrower <https://linked.data.gov.au/def/sample-condition/coated>, <https://linked.data.gov.au/def/sample-condition/mounted>, <https://linked.data.gov.au/def/sample-condition/polished>, <https://linked.data.gov.au/def/sample-condition/shaped>, <https://linked.data.gov.au/def/sample-condition/cleaned>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/repaired> skos:narrower <https://linked.data.gov.au/def/sample-condition/consolidated>, <https://linked.data.gov.au/def/sample-condition/glued>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/preserved> skos:narrower <https://linked.data.gov.au/def/sample-condition/embedded>, <https://linked.data.gov.au/def/sample-condition/refrigerated>, <https://linked.data.gov.au/def/sample-condition/submerged>, <https://linked.data.gov.au/def/sample-condition/under-vacuum>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/fair> skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/good> skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/segmented> skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/multi-part> skos:narrower <https://linked.data.gov.au/def/sample-condition/separated>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/shielded> skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/to-be-repackaged> skos:narrower <https://linked.data.gov.au/def/sample-condition/to-be-retrayed>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/uncleaned> skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+_:n3-2748 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-5129-2467>.
+_:n3-2749 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://linked.data.gov.au/def/sample-condition/arsenic-bearing> skos:broader <https://linked.data.gov.au/def/sample-condition/poisonous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/poisonous> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:narrower <https://linked.data.gov.au/def/sample-condition/arsenic-bearing>, <https://linked.data.gov.au/def/sample-condition/mercury-bearing>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/mercury-bearing> skos:broader <https://linked.data.gov.au/def/sample-condition/poisonous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/asbestos-bearing> skos:broader <https://linked.data.gov.au/def/sample-condition/fibrous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/fibrous> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:narrower <https://linked.data.gov.au/def/sample-condition/asbestos-bearing>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/biohazard> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/dusty> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/flammable> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/heavy> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/radioactive> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/salty> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/sharp> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/unwieldy> skos:broader <https://linked.data.gov.au/def/sample-condition/hazardous>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/broken> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/chipped> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/degraded> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/flaking> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/incomplete> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/corroded> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:narrower <https://linked.data.gov.au/def/sample-condition/tarnished>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/worn> skos:broader <https://linked.data.gov.au/def/sample-condition/poor>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/chemically-vulnerable> skos:broader <https://linked.data.gov.au/def/sample-condition/vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/fragile> skos:broader <https://linked.data.gov.au/def/sample-condition/vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic> skos:broader <https://linked.data.gov.au/def/sample-condition/vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/oxygen-sensitive> skos:broader <https://linked.data.gov.au/def/sample-condition/vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/photosensitive> skos:broader <https://linked.data.gov.au/def/sample-condition/vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/thermally-vulnerable> skos:broader <https://linked.data.gov.au/def/sample-condition/vulnerable>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/coated> skos:broader <https://linked.data.gov.au/def/sample-condition/enhanced>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/mounted> skos:broader <https://linked.data.gov.au/def/sample-condition/enhanced>;
+    skos:narrower <https://linked.data.gov.au/def/sample-condition/framed>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/polished> skos:broader <https://linked.data.gov.au/def/sample-condition/enhanced>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/shaped> skos:broader <https://linked.data.gov.au/def/sample-condition/enhanced>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/cleaned> skos:broader <https://linked.data.gov.au/def/sample-condition/enhanced>;
+    skos:narrower <https://linked.data.gov.au/def/sample-condition/washed-and-dried>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/consolidated> skos:broader <https://linked.data.gov.au/def/sample-condition/repaired>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/glued> skos:broader <https://linked.data.gov.au/def/sample-condition/repaired>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/embedded> skos:broader <https://linked.data.gov.au/def/sample-condition/preserved>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/refrigerated> skos:broader <https://linked.data.gov.au/def/sample-condition/preserved>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/submerged> skos:broader <https://linked.data.gov.au/def/sample-condition/preserved>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/under-vacuum> skos:broader <https://linked.data.gov.au/def/sample-condition/preserved>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/framed> skos:broader <https://linked.data.gov.au/def/sample-condition/mounted>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/separated> skos:broader <https://linked.data.gov.au/def/sample-condition/multi-part>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/tarnished> skos:broader <https://linked.data.gov.au/def/sample-condition/corroded>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/to-be-retrayed> skos:broader <https://linked.data.gov.au/def/sample-condition/to-be-repackaged>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.
+<https://linked.data.gov.au/def/sample-condition/washed-and-dried> skos:broader <https://linked.data.gov.au/def/sample-condition/cleaned>;
+    skos:inScheme <https://linked.data.gov.au/def/sample-condition>.

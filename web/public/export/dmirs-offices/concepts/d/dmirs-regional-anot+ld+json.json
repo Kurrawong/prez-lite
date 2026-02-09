@@ -1,0 +1,596 @@
+[
+  {
+    "@id": "_:n3-1241",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:dmirs-offices"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "DEMIRS offices",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/albany-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:albany-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:albany-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Great Southern (Albany) regional office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Albany office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Great Southern region. The office is at 2/129 Aberdeen St, Albany WA 6331.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/broome-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:broome-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:broome-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Kimberley (Broome) regional office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Broome office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Kimberley region. The office is at Level 1, Woody's Arcade, 6/15 Dampier Terrace, Broome WA 6725.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:bunbury-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:bunbury-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "South West (Bunbury) regional office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Bunbury office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the South West region. The office is located at Level 8, 61 Victoria Street, Bunbury WA 6230.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/collie-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:collie-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:collie-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Collie office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Collie office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the South Mine Inspectorate, and is at 66 Wittenoom Street, Collie WA 6225.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/dmirs-regional",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The Department of Energy, Mines, Industry Regulation and Safety has representative offices in a number of regional centres in Western Australia.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Regional offices",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Compiled by GSWA"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&-indian-ocean-territories.aspx",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      },
+      {
+        "@value": "https://www.dmirs.wa.gov.au/content/regional-offices",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/collie-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/karratha-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/leonora-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/albany-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/broome-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/dmirs-offices"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:dmirs-regional"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:dmirs-regional"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Regional offices",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Department of Energy, Mines, Industry Regulation and Safety has representative offices in a number of regional centres in Western Australia.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geraldton-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:geraldton-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Mid-West (Geraldton) regional office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Geraldton office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Mid-West region. The office is in the Post Office Plaza at 50–52 Durlacher Street, Geraldton WA 6531.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:kalgoorlie-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:kalgoorlie-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Goldfields–Esperance (Kalgoorlie) regional office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Kalgoorlie office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Goldfields and Esperance regions. In addition to administrative functions of the Department and of the Geological Survey of Western Australia, the Kalgoorlie office houses the Joe (JH) Lord Core Library, East Mine Inspectorate and Kalgoorlie Mining Registrar. The office is at the corner of Hunter and Broadwood Streets, West Kalgoorlie WA 6430.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:karratha-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:karratha-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "North West (Karratha) regional office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Karratha office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the North West region. The office houses the Karratha Mining Registrar and North Mine Inspectorate, and is located at Level 2, The Quarter, 20 Sharpe Avenue, Karratha WA 6714.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:leonora-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:leonora-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Leonora office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Leonora office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Leonora Mining Registrar, and is at the corner of Tower (Goldfield Highway) and Rochester Streets, Leonora WA 6438.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mount-magnet-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:mount-magnet-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Mount Magnet office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Mount Magnet office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Mount Magnet Mining Registrar, and is at the corner of Hepburn and Richardson Streets, Mount Magnet WA 6638.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:southern-cross-office"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:dmirs-offices/items/ns1:southern-cross-office"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Southern Cross office",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Southern Cross office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Southern Cross Mining Registrar, and is located at 75 Canopus Street, Southern Cross WA 6426.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

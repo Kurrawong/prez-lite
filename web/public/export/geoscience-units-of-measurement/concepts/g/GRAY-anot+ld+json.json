@@ -1,0 +1,364 @@
+[
+  {
+    "@id": "_:n3-1616",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://qudt.org/vocab/unit/GRAY",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.qudt.org/doc/DOC_VOCAB-UNITS.html"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "J/kg",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The International System of Units (SI) unit of radiation dose. Radiation carries energy, and when it is absorbed by matter the matter receives this energy. The dose is the amount of energy deposited per unit of mass. One gray is defined to be the dose of one joule of energy absorbed per kilogram of matter, or 100 rad. The unit is named for the British physician L Harold Gray (1905–65), an authority on the use of radiation in the treatment of cancer.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/uom-geoscience"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "Gy",
+        "@type": "https://www.qudt.org/doc/DOC_VOCAB-UNITS.html"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "gray",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/uom-geoscience"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "http://qudt.org/vocab/unit/GRAY",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "https://schema.org/status": [
+      {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:GRAY"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:uom-geoscience/items/ns1:GRAY"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "gray",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The International System of Units (SI) unit of radiation dose. Radiation carries energy, and when it is absorbed by matter the matter receives this energy. The dose is the amount of energy deposited per unit of mass. One gray is defined to be the dose of one joule of energy absorbed per kilogram of matter, or 100 rad. The unit is named for the British physician L Harold Gray (1905–65), an authority on the use of radiation in the treatment of cancer.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.qudt.org/doc/DOC_VOCAB-UNITS.html",
+    "https://prez.dev/label": [
+      {
+        "@value": "QUDT Units Vocabulary"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/reg-statuses/stable",
+    "https://prez.dev/label": [
+      {
+        "@value": "stable"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/uom-geoscience",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:uom-geoscience"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:uom-geoscience"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Geoscience units of measurement",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A list of units of measurement relevant for geoscience and the administration of statutory submissions from the resource industries. The list is based on the Geological Survey of Queensland (GSQ) Geoscience Profile of the Quantities, Units, Dimensions & Types (QUDT) ontology and vocabularies lists (https://linked.data.gov.au/def/geou and https://www.qudt.org/doc/DOC_VOCAB-UNITS.html - version 2.1.29). QUDT is based largely on the international standard for metric units (International System of Units, or SI) but also includes units from other systems, notably the Centimetre–Gram–Second (CGS or cgs) system of units and most US Customary and British imperial units for length, weight and heat. Wherever applicable, the SI standard is used for conversions between non-SI units (https://www.qudt.org/pages/QUDToverviewPage.html). Commonly used multiples of base units are also included, and the list has been expanded to include units of measurements for time that are relevant to earth sciences; for these, notations follow the recommendations of Norman et al. (2011), available at http://www.dmp.wa.gov.au/Documents/Geological-Survey/Use-and-reporting-of-geochronology.pdf). Some QUDT definitions have been extended, mostly to clarify what the unit is a measure of. Notations are the correct symbol to use for the unit of measurement; common variations of these are indicated as alternate labels, but their use is strongly discouraged. English spelling is preferred over American spelling (e.g. metre, not meter). Other rules and style conventions for spelling units names follow the 2008 Edition of the Guide for International System of Units (SI), NIST Special Publication 811, National Institute of Standards and Technology, US Department of Commerce (https://physics.nist.gov/cuu/pdf/sp811.pdf).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:uom-geoscience/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/status",
+    "https://prez.dev/label": [
+      {
+        "@value": "status"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of the study (enumerated)."
+      }
+    ]
+  },
+  {
+    "@id": "https://www.qudt.org/doc/DOC_VOCAB-UNITS.html",
+    "https://prez.dev/label": [
+      {
+        "@value": "QUDT Units Vocabulary"
+      }
+    ]
+  }
+]

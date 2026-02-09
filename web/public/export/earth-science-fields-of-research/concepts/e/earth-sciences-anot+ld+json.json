@@ -1,0 +1,601 @@
+[
+  {
+    "@id": "_:n3-1291",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/earth-science-data-category/earth-sciences",
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth Sciences"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Earth science or geoscience includes all fields of natural science related to the planet Earth."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020",
+    "https://prez.dev/label": [
+      {
+        "@value": "1297.0 ANZSRC - Australian and New Zealand Standard Research Classification, 2020: Fields of Research (FoR)"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/37",
+    "https://prez.dev/label": [
+      {
+        "@value": "EARTH SCIENCES"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This division covers the earth sciences."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Earth science fields of research",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A categorization of disciplines or topics that the broad field of Earth science can be subdivided into, i.e. a listing of the Fields of Research, or subjects, to which a geoscience dataset, publication, observation/activity, or entity pertains. The vocabulary also contains relevant disciplines that intersect with the various Earth science fields, such as biological sciences and built environment and design, as well as entries related to collection and heritage management. Notations included are those from the 2020 ANZSRC listing (see History Note) or in common use in the geoscience community. ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/atmospheric-sciences",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:atmospheric-sciences"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:atmospheric-sciences"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "atmospheric sciences",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the Earth's atmosphere and its various inner-working physical processes.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/earth-sciences",
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020/37"
+      },
+      {
+        "@id": "http://linked.data.gov.au/def/earth-science-data-category/earth-sciences"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "37",
+        "@type": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/anzsrc-for/2020"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "An all-embracing term for all fields of natural sciences related to the planet Earth. It is occasionally used as a synonym for geology or geological sciences, but this usage is misleading because in its wider scope earth science may be considered to include such subjects as meteorology, physical oceanography, soil chemistry, and agronomy.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "From the Fields of Research vocabulary from the Australian and New Zealand Standard Research Classification (ANZSRC, 2020). Definition adapted from Glossary of geology (5th edition, revised; Neuendorf et al., 2011)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "earth sciences",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://glossary.americangeosciences.org/term/earthscience",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "geosciences",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geophysics"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geochemistry"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geoinformatics"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/geoethics"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/earthsci-for/atmospheric-sciences"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:earth-sciences"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:earth-sciences"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "earth sciences",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An all-embracing term for all fields of natural sciences related to the planet Earth. It is occasionally used as a synonym for geology or geological sciences, but this usage is misleading because in its wider scope earth science may be considered to include such subjects as meteorology, physical oceanography, soil chemistry, and agronomy.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geochemistry",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geochemistry"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geochemistry"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geochemistry",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The study of the distribution and amounts of the chemical elements in minerals, ores, rocks, soils, water, the atmosphere on Earth and within solid bodies of the solar system, including the distribution, circulation and abundance of elements (and their ions and isotopes), molecules, minerals, rocks and fluids.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geoethics",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geoethics"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geoethics"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geoethics",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of ethics that considers the interaction of human activity with the physical world and with the practice of the Earth Sciences. It comprises scientific research and philosophical reflection on the values governing human behaviours wherever they interact with the Earth system, including the ethical, social, and cultural implications of the activities of geoscientists when conducting scientific and technological research and practice.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geoinformatics",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geoinformatics"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geoinformatics"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geoinformatics",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The application of modern information technology/computational systems to organize, preserve, and distribute geoscience data, and to facilitate and advance their analysis, i.e. the science and technology that develop and use data, software, and computing facilities in the cyberinfrastructure ecosystem to address the needs of geosciences and related branches of science and engineering.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An Earth science concerned with the planet Earth and the rocks/materials of which it is made, the processes that act on these materials and by which these change over time, the products formed, to understand the history of the planet and its life forms since its origin, and including the study of physical forces that act on the Earth, the chemistry of its constituent materials, and the biology of its past inhabitants as revealed by fossils. Geology can also include the study of the solid features of any terrestrial planet or natural satellite such as Mars or the Moon. Modern geology significantly overlaps all other earth sciences, including hydrology and the atmospheric sciences, and so is treated as one major aspect of integrated Earth system science and planetary science.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/geophysics",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:geophysics"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:geophysics"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "geophysics",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A natural science concerned with the physical processes and physical properties of the Earth and its surrounding space environment, and the use of quantitative methods for their analysis. It includes several disciplines focusing on the study of the Earth's electrical, gravitational and magnetic fields and the propagation of elastic (seismic) waves within it.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/earthsci-for/physical-geography-and-environmental-geoscience",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:physical-geography-and-environmental-geoscience"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:earthsci-for/items/ns1:physical-geography-and-environmental-geoscience"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "physical geography and environmental geoscience",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The branch of natural science which deals with the classification, form, processes, extent and patterns of natural phenomena in the natural environment such as the atmosphere, hydrosphere, biosphere, and geosphere. It differs chiefly from geology in that it considers conditions of the Earth primarily over shorter time scales (e.g. Quaternary and/or modern rates). It is more inclusive than geomorphology, dealing not only with landforms but also climate, oceans, atmosphere, soils, geologic processes, natural resources, and the biogeographical distribution of animal and plant life.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

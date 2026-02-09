@@ -1,0 +1,513 @@
+[
+  {
+    "@id": "_:n3-1183",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/operational",
+    "https://prez.dev/label": [
+      {
+        "@value": "Operational",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Borehole is being drilled or is producing, injecting or monitoring (investigating, observational).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:borehole-status-wa"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Borehole status",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The stage of a borehole in relation to the lifecycle of the borehole, from proposal and operational stages through to completion and rehabilitation, and with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. The vocabulary focuses on standard terminology from the energy and mineral resources sectors, highlighting instances where the same term carries different meaning in different fields. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). Note that the currency of borehole status data in GSWA's databases is time-stamped, reflecting information gathered from a borehole operator’s well completion report or from a responsible regulatory authority at a specific point in time; subsequent changes are unlikely to be recorded.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:drilling-completed-operational"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:drilling-completed-operational"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "drilling completed - operational",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Drilling of the borehole is completed, but operations involving the borehole are continuing (e.g. installation of production infrastructure, wirelogging, etc.). Note that in the Australian Coal Logging Standards v3.1 (CoalLog), 'completed' status is closer in meaning to 'abandoned' in this vocabulary).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/in-progress",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:in-progress"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:in-progress"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "in progress",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole commencing from the rig being moved onsite up until the time that drilling is completed. Note that this stage does not include any operations at the drillsite and within the borehole that follow the completion of drilling the hole. Note that this corresponds to the status of 'drilling' in the PPDM Wellbore Status vocabulary 2014.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:injecting"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:injecting"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "injecting",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole during which fluids (commonly gas and water) are injected rather than produced, typically with the primary objective of maintaining/increasing reservoir pressure to enhance production. Injection wells are also used to dispose of treated wastewater, recharge aquifers, tap geothermal energy, and in environmental remediation for the cleanup of contaminated soil or groundwater; the concept includes injecting for permanent storage. Boreholes/wells are specifically designed/drilled for this purpose, although a production well can be converted into an injection well and vice versa.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/monitoring",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:monitoring"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:monitoring"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "monitoring",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole/well that is actively monitoring reservoir, aquifer or other geological parameters, such as water level, water quality, fluid pressure.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/operational",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "in progress",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The status of a borehole from the commencement to the completion of drilling operations, and including the production/investigation stages.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "http://linked.data.gov.au/def/borehole-status/operational"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Compiled by the Geological Survey of Western Australia."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "operational",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/injecting"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/monitoring"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-status-wa/in-progress"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:operational"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:operational"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "operational",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole from the commencement to the completion of drilling operations, and including the production/investigation stages.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:producing"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:producing"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "producing",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole during which liquids or gas are being extracted from the borehole.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:producing-and-injecting"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-status-wa/items/ns1:producing-and-injecting"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "producing and injecting",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole that alternately produces and injects liquid or gas into a borehole.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

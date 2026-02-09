@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory> a skos:ConceptScheme;
+    skos:definition "Terms used to describe the sequence of pressure(P) – temperature(T) conditions that occurred in a given rock body over a period of time (t) of a particular metamorphic event. Also called P–T–t paths.\r\n\r\nDefinitions are largely derived from: \r\na) England, PC and Richardson, SW 1977, The influence of erosion upon the mineral facies of rocks from different metamorphic environments: Journal of the Geological Society, v.134, p.201–213, doi:10.1144/gsjgs.134.2.0201)\r\nb) England, PC and Thompson, AB 1984, Pressure-temperature-time paths of regional metamorphism I. Heat transfer during the evolution of thickened continental crust: Journal of Petrology,v.25,no.4,p.894–928)\r\nc) Harley, 1989 (Harley, SL 1989, The origins of granulites: a metamorphic perspective: Geological Magazine,v.126,no.3,p.215–247, doi:10.1017/S0016756800022330)\r\nd) https://en.wikipedia.org/wiki/Pressure-temperature-time_path."@en;
+    skos:historyNote "Based on the authoritative list [WAGIMS].[ReferenceData.PressureTemperatureTrajectory] used in the Geological Survey of Western Australia's WAGIMS system, the repository for Western Australian geochronology, isotope geology, mineral chemistry and metamorphic history analytical data and information."@en;
+    skos:prefLabel "Metamorphic P–T trajectory"@en;
+    sdo:dateCreated "2023-11-01"^^xsd:date;
+    sdo:creator <https://linked.data.gov.au/org/gswa>;
+    sdo:dateModified "2023-11-01"^^xsd:date;
+    sdo:publisher <https://linked.data.gov.au/org/gswa>;
+    owl:versionIRI <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/1>;
+    owl:versionInfo "1";
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    skos:hasTopConcept <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown>;
+    sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
+    prov:qualifiedAttribution _:n3-2681, _:n3-2682.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric> skos:narrower <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating>;
+    skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal> skos:narrower <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase>;
+    skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+_:n3-2681 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://orcid.org/0009-0003-0007-8342>.
+_:n3-2682 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
+<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.

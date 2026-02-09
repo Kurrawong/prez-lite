@@ -1,0 +1,698 @@
+[
+  {
+    "@id": "_:n3-961",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:australian-physiographic-units"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Australian physiographic units",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A list of physiographic units in Australia that provide a consistent framework for mapping soils and landforms at national and regional scales, compiled at a continental scale. The list was defined by Pain et al. (2011; https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf)* and built on the work of Jennings and Mabbutt (1986). It recognises a subdivision of the Australian onshore continent into three physiographic divisions, 23 physiographic provinces and 220 physiographic regions. The three divisions correspond broadly with the geological subdivision into the western shields, the central basins and the eastern fold belts. Provinces can be used to make interpretations about landscape processes at the broadest scale; descriptors for provinces include a name, geology, structure, and broad regolith types. The primary descriptors for regions are geographic name and a simple text description including major geologic and geomorphic features. Bounding box coordinates in decimal degrees are included. Each physiographic unit is also identified by a numeric code (one, three, and five digits for divisions, provinces and regions, respectively). For physiographic units within Western Australia, notations provided include extensions to five-digit numbering for divisions and provinces, to allow better characterization for database purposes. For Western Australian physiographic units, an alphabetical code is also listed; these consist of three upper-case letters for the division and provinces, with an additional two lower-case letter suffix for regions. These alphabetical codes are used by the Geological Survey of Western Australia (GSWA) to spatially assign regolith units to the correct physiographic unit during mapping. GSWA describes a physiographic unit as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.'\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html).",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/barkly-tanami-plains-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:barkly-tanami-plains-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:barkly-tanami-plains-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Barkly–Tanami Plains Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Uplands and interior lowlands with a northwest–southeast trend parallel to and including coastal lowlands, dominated by the Fitzroy River catchment. Bounded by latitudes 14.222438°S and 23.423680°S, and longitudes 127.703369°E and 139.516732°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/carpentaria-fall-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:carpentaria-fall-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:carpentaria-fall-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Carpentaria Fall Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Mainly dissected plateaus on subhorizontal resistant sandstones, mainly of the Sydney Basin. Bounded by latitudes 14.000811°S and 22.723370°S, and longitudes 133.138977°E and 140.930081°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/central-australian-ranges-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:central-australian-ranges-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:central-australian-ranges-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Central Australian Ranges Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Sandstone and limestone plains, coastal plains, and dunes. Bounded by latitudes 21.056309°S and 27.184211°S, and longitudes 126.478709°E and 137.029688°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eyre-peninsula-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:eyre-peninsula-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:eyre-peninsula-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Eyre Peninsula Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Lowlands and plains sloping to the Gulf of Carpentaria. Bounded by latitudes 29.346210°S and 29.346210°S, and longitudes 131.151728°E and 137.630649°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/gulfs-ranges-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:gulfs-ranges-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:gulfs-ranges-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Gulfs Ranges Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Outer barrier reef, patch reefs and some high islands. Bounded by latitudes 29.363820°S and 36.396648°S, and longitudes 136.421646°E and 142.138110°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/kimberley-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:kimberley-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:kimberley-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Kimberley Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Hilly and mountainous, high relief. Bounded by latitudes 13.689230°S and 19.371511°S, and longitudes 122.091850°E and 128.948688°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/north-australian-plateaus-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:north-australian-plateaus-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:north-australian-plateaus-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "North Australian Plateaus Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Low ranges, plateaus, tablelands and plains. Bounded by latitudes 10.903421°S and 18.623043°S, and longitudes 127.709584°E and 136.984985°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/nullarbor-plain-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:nullarbor-plain-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:nullarbor-plain-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Nullarbor Plain Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Plateaus, hills and ridges on resistant rocks, with some valley floors. Bounded by latitudes 28.892723°S and 34.108841°S, and longitudes 123.316086°E and 132.708298°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/pilbara-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pilbara-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:pilbara-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Pilbara Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Coastal and alluvial plains, plateaus, scarps, and low hills. Bounded by latitudes 20.014311°S and 27.020391°S, and longitudes 114.943213°E and 123.619433°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/sandland-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sandland-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:sandland-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Sandland Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Higher uplands falling to the east coast. Bounded by latitudes 17.842708°S and 32.196006°S, and longitudes 118.807411°E and 135.621357°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/western-coastlands-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:western-coastlands-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:western-coastlands-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Western Coastlands Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Hills and plains, alluvial plains, some dunes and lakes. Bounded by latitudes 20.3588104855°S and 34.5421327617°S, and longitudes 112.921501077°E and 116.152210277°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/western-plateau-division",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Mosaic of shield blocks and intracratonic basins; plains, plateaus, ranges, dune fields. Bounded by latitudes 10.9034°S and 36.396648°S, and longitudes 112.921501°E and 142.138110°E.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Defined by Pain et al. (2011). See concept scheme for full reference."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "3",
+        "@type": "https://www.asris.csiro.au/themes/PhysioRegions.html"
+      },
+      {
+        "@value": "300",
+        "@type": "https://www.asris.csiro.au/themes/PhysioRegions.html"
+      },
+      {
+        "@value": "30000",
+        "@type": "https://www.asris.csiro.au/themes/PhysioRegions.html"
+      },
+      {
+        "@value": "WAD",
+        "@type": "https://www.asris.csiro.au/themes/PhysioRegions.html"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Western Plateau Division",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "Western Plateau Physiographic Division",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/barkly-tanami-plains-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/carpentaria-fall-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/central-australian-ranges-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/eyre-peninsula-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/gulfs-ranges-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/kimberley-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/north-australian-plateaus-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/nullarbor-plain-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/pilbara-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/sandland-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/western-coastlands-province"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units/yilgarn-plateau-province"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/australian-physiographic-units"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:western-plateau-division"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:western-plateau-division"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Western Plateau Division",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Mosaic of shield blocks and intracratonic basins; plains, plateaus, ranges, dune fields. Bounded by latitudes 10.9034°S and 36.396648°S, and longitudes 112.921501°E and 142.138110°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/australian-physiographic-units/yilgarn-plateau-province",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:yilgarn-plateau-province"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:australian-physiographic-units/items/ns1:yilgarn-plateau-province"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Yilgarn Plateau Province",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This province is more-or-less coincident with the Murray sedimentary basin, consisting of flat alluvium with Eolian cover in places. Bounded by latitudes 25.167211°S and 35.193981 °S, and longitudes 115.212771°E and 124.341387°E.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  }
+]

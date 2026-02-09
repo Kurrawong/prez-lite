@@ -1,0 +1,541 @@
+[
+  {
+    "@id": "_:n3-1113",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/hydrogeologicalSurvey",
+    "https://prez.dev/label": [
+      {
+        "@value": "hydrogeological survey, water management"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Examination of groundwater flow, the chemical properties of ground water, and transport of particles, solutes, and energy, as well as the management of the sustainable use of ground water resources."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#closeMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has close match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of 'compound errors' when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has related match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:borehole-purpose-wa"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Borehole purpose",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The primary purpose for which a borehole was drilled or any secondary purpose that the borehole may acquire during its lifecycle. The vocabulary focuses on drilling purposes within the resources industry, with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. Some terms covered by jurisdictional legislation are highlighted in the provenance field. Variations in terminology within definitions (i.e. usage of borehole, well and wellbore) stem from usage in different sectors of the resources industry, but for the purpose of this vocabulary are considered to be equivalent. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). ",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/dewatering-hydrogeology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:dewatering-hydrogeology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:dewatering-hydrogeology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "dewatering (hydrogeology)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled to remove water, as a way to facilitate construction or other activity. It is often used as a safety measure in mining below the watertable or as a preliminary step to development in an area.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/disposal-hydrogeology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:disposal-hydrogeology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:disposal-hydrogeology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "disposal (hydrogeology)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A well in which fluids are injected rather than produced, where the primary objective is to dispose of fluid/water into an isolated formation.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/groundwater-exploration",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:groundwater-exploration"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:groundwater-exploration"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "groundwater exploration",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled to explore the extent and properties of an aquifer and the water quality of groundwater within a given area. Being generally deeper than production or monitoring boreholes, exploration boreholes may also provide geological information on the area under investigation, including stratigraphy, biostratigraphy, lithology and/or structure.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/groundwater-monitoring",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:groundwater-monitoring"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:groundwater-monitoring"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "groundwater monitoring",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled to monitor groundwater properties such as levels, quality and production impacts, as a method of assessing changes to the quantity and quality of groundwater (e.g. for piezometer installation). Groundwater data allows for sustainable water extraction and management, and the detection and remediation of groundwater contamination, among other purposes.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/groundwater-production",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:groundwater-production"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:groundwater-production"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "groundwater production",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled or altered for the purpose of groundwater abstraction, whether for domestic use, agricultural use or in support of resource infrastructure (e.g. mineral holes, petroleum wells, mines, refineries). Production boreholes are often drilled in sets, known as fields, and can be in close association with exploration and/or monitoring water bores.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/hydrogeology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A borehole drilled and completed for the search, abstraction, monitoring and/or disposal/injection of water.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#exactMatch": [
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/hydrological"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "hydrogeology",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/hydrogeologicalSurvey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "National Uniform Drillers Licensing Committee 2020, Minimum Construction Requirements for Water Bores in Australia, fourth edition, 152 p., https://adia.com.au/wp-content/uploads/2020/09/Minimum-Construction-Requirements-Edition-4.pdf"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
+      {
+        "@id": "http://linked.data.gov.au/def/borehole-purpose/water"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/dewatering-hydrogeology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/disposal-hydrogeology"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/groundwater-exploration"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/groundwater-monitoring"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/groundwater-production"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/reinjection-hydrogeology"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:hydrogeology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:hydrogeology"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "hydrogeology",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled and completed for the search, abstraction, monitoring and/or disposal/injection of water.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/borehole-purpose-wa/reinjection-hydrogeology",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:reinjection-hydrogeology"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:borehole-purpose-wa/items/ns1:reinjection-hydrogeology"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "reinjection (hydrogeology)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole drilled for the purpose of pumping water back into an aquifer.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose/hydrological",
+    "https://prez.dev/label": [
+      {
+        "@value": "hydrological"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Borehole drilled to investigate water level, or piezometer installation. "
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

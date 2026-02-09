@@ -1,0 +1,343 @@
+[
+  {
+    "@id": "_:n3-2895",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has related match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geofeatures/LargeIgneousProvince",
+    "https://prez.dev/label": [
+      {
+        "@value": "large igneous province"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A region characterized by massive crustal emplacements of predominantly mafic (Mg- and Fe-rich) extrusive and intrusive rocks which originated through processes other than \"normal\" seafloor spreading (Coffin & Eldholm, 1994); includes continental flood basalt provinces (e.g., Deccan Traps), oceanic plateaus (e.g., Ontong & Java Oceanic Plateaus), and North Atlantic volcanic passive margins (Neuendorf et al., 2011)."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/geofeatures/Supersuite",
+    "https://prez.dev/label": [
+      {
+        "@value": "Supersuite"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/tectonic-unit-type",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:tectonic-unit-type"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:tectonic-unit-type"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Tectonic unit type",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This vocabulary lists the types of tectonic and lithotectonic units that are used to define the geological framework / 4D evolution of Western Australia and are relevant to the duties of the Geological Survey of Western Australia (GSWA). A tectonic unit is defined as a named mass/body of rock with defined geological characteristics (geological structure, sedimentary stratigraphy, magmatic activity, metamorphism, metallogeny and alteration) and evolutionary history different from that of surrounding/contiguous units. A lithotectonic (or lithostructural) unit is defined as an assemblage of rocks unified on the basis of structural or deformational features, mutual relationships, origin, or historical evolution, that: a) is a subset of a larger tectonic unit (e.g. inlier/outlier), b) incorporates components from more than one tectonic units (e.g. greenstone belt), and c) encompasses large tectonic components of the State of Western Australia and/or facilitates the grouping of common tectonic elements at the highest level of the State tectonic hierarchy (e.g. large igneous provinces). Tectonic unit types are an integral part of GSWA's Explanatory Notes System (ENS), a digital repository of detailed unit descriptions that integrates stratigraphic relationships with links to all tectonic units and events recognized in Western Australia. This vocabulary does not attempt to show hierarchical relationships between tectonic types as enforced in ENS, as many are not one-to-one relationships.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:tectonic-unit-type/items"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/supersuite-tectonic",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The tectonic unit representing the expression of a specific tectonothermal event that resulted in the formation of a lithodemic supersuite, i.e. an assemblage of igneous rocks of any composition that formed as a result of volcano–plutonic episodes involving either addition of new crust or remelting of existing crust.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "A component of the tectonic module of GSWA's Explanatory Notes System (ENS)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "supersuite (tectonic)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "Supersuite_Tectonic",
+        "@language": "en"
+      },
+      {
+        "@value": "tectonic supersuite",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
+      {
+        "@id": "https://linked.data.gov.au/def/geofeatures/LargeIgneousProvince"
+      },
+      {
+        "@id": "https://linked.data.gov.au/def/geofeatures/Supersuite"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:supersuite-tectonic"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:tectonic-unit-type/items/ns1:supersuite-tectonic"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "supersuite (tectonic)",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The tectonic unit representing the expression of a specific tectonothermal event that resulted in the formation of a lithodemic supersuite, i.e. an assemblage of igneous rocks of any composition that formed as a result of volcano–plutonic episodes involving either addition of new crust or remelting of existing crust.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]
