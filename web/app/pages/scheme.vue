@@ -35,10 +35,11 @@ const displayScheme = computed(() => scheme.value ?? lastValidScheme.value)
 const displayTreeItems = computed(() => treeItems.value.length ? treeItems.value : lastValidTreeItems.value)
 const displayConcepts = computed(() => concepts.value?.length ? concepts.value : lastValidConcepts.value)
 
+const isLoading = computed(() => status.value === 'idle' || status.value === 'pending')
 // Only show skeleton on initial load (no previous data)
-const showTreeSkeleton = computed(() => status.value === 'pending' && !lastValidTreeItems.value.length)
+const showTreeSkeleton = computed(() => isLoading.value && !lastValidTreeItems.value.length)
 // Show loading indicator when refreshing existing data
-const isTreeLoading = computed(() => status.value === 'pending' && lastValidTreeItems.value.length > 0)
+const isTreeLoading = computed(() => isLoading.value && lastValidTreeItems.value.length > 0)
 
 // Share functionality
 const { getShareUrl } = useShare()
@@ -283,12 +284,12 @@ function copyIriToClipboard(iri: string) {
       </UCard>
     </template>
 
-    <div v-else-if="status === 'pending' && !lastValidScheme" class="space-y-4">
+    <div v-else-if="(status === 'idle' || status === 'pending') && !lastValidScheme" class="space-y-4">
       <USkeleton class="h-12 w-1/2" />
       <USkeleton class="h-6 w-3/4" />
       <USkeleton class="h-64 w-full" />
     </div>
 
-    <UAlert v-else-if="status !== 'pending'" color="error" title="Scheme not found" :description="`No scheme found with IRI: ${uri}`" />
+    <UAlert v-else-if="status !== 'pending' && status !== 'idle'" color="error" title="Scheme not found" :description="`No scheme found with IRI: ${uri}`" />
   </div>
 </template>

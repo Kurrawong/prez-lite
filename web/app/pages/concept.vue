@@ -37,7 +37,7 @@ function copyUriToClipboard() {
       <UAlert color="warning" title="No concept selected" description="Please select a concept from a vocabulary" />
     </div>
 
-    <div v-else-if="status === 'pending'" class="space-y-4">
+    <div v-else-if="status === 'idle' || status === 'pending'" class="space-y-4">
       <USkeleton class="h-12 w-1/2" />
       <USkeleton class="h-6 w-3/4" />
       <USkeleton class="h-64 w-full" />

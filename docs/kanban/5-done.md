@@ -2,6 +2,16 @@
 
 ---
 
+## ✅ 🚀 AWS S3 + CloudFront Deployment GitHub Action
+**Completed:** 2026-02-09
+
+**Summary:** Created GitHub Actions workflow for deploying to AWS S3 with CloudFront cache invalidation. Manual trigger, OIDC auth, graceful CDN skip.
+
+**Files Created:**
+- `.github/workflows/deploy-aws.yml`
+
+---
+
 ## ✅ 🔌 Implement SPARQL Endpoint Support in prez-list
 **Completed:** 2026-02-09
 

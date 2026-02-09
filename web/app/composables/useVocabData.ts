@@ -168,55 +168,98 @@ function metadataToScheme(meta: VocabMetadata): Scheme {
   }
 }
 
-// Fetch vocabulary metadata (new format)
+// In-memory caches to prevent duplicate HTTP requests across composables
+let cachedVocabMetadata: VocabMetadata[] | undefined
+let cachedVocabMetadataPromise: Promise<VocabMetadata[]> | undefined
+let cachedSchemes: Scheme[] | undefined
+let cachedSchemesPromise: Promise<Scheme[]> | undefined
+let cachedLabels: LabelsIndex | undefined
+let cachedLabelsPromise: Promise<LabelsIndex> | undefined
+
+// Fetch vocabulary metadata (new format) — cached
 export async function fetchVocabMetadata(): Promise<VocabMetadata[]> {
-  try {
-    const data = await $fetch<{ vocabularies: VocabMetadata[] }>('/export/_system/vocabularies/index.json')
-    return Array.isArray(data?.vocabularies) ? data.vocabularies : []
-  } catch (err) {
-    console.warn('[prez-lite] No vocabulary metadata found at /export/_system/vocabularies/index.json')
-    return []
-  }
+  if (cachedVocabMetadata) return cachedVocabMetadata
+  if (cachedVocabMetadataPromise) return cachedVocabMetadataPromise
+
+  cachedVocabMetadataPromise = (async () => {
+    try {
+      const data = await $fetch<{ vocabularies: VocabMetadata[] }>('/export/_system/vocabularies/index.json')
+      cachedVocabMetadata = Array.isArray(data?.vocabularies) ? data.vocabularies : []
+    } catch (err) {
+      console.warn('[prez-lite] No vocabulary metadata found at /export/_system/vocabularies/index.json')
+      cachedVocabMetadata = []
+    }
+    return cachedVocabMetadata
+  })()
+
+  return cachedVocabMetadataPromise
 }
 
-// Fetch all schemes (backwards compatible - converts new format to legacy)
+// Fetch all schemes (backwards compatible - converts new format to legacy) — cached
 export async function fetchSchemes(): Promise<Scheme[]> {
-  const metadata = await fetchVocabMetadata()
-  if (metadata.length > 0) {
-    return metadata.map(metadataToScheme)
-  }
+  if (cachedSchemes) return cachedSchemes
+  if (cachedSchemesPromise) return cachedSchemesPromise
 
-  // Fall back to legacy format
-  try {
-    const data = await $fetch<{ schemes: Scheme[] }>('/data/schemes.json')
-    return Array.isArray(data?.schemes) ? data.schemes : []
-  } catch {
-    try {
-      console.info('[prez-lite] No org data found, using sample data.')
-      const data = await $fetch<{ schemes: Scheme[] }>('/data-sample/schemes.json')
-      return Array.isArray(data?.schemes) ? data.schemes : []
-    } catch {
-      console.warn('[prez-lite] No schemes found.')
-      return []
+  cachedSchemesPromise = (async () => {
+    const metadata = await fetchVocabMetadata()
+    if (metadata.length > 0) {
+      cachedSchemes = metadata.map(metadataToScheme)
+      return cachedSchemes
     }
-  }
+
+    // Fall back to legacy format
+    try {
+      const data = await $fetch<{ schemes: Scheme[] }>('/data/schemes.json')
+      cachedSchemes = Array.isArray(data?.schemes) ? data.schemes : []
+    } catch {
+      try {
+        console.info('[prez-lite] No org data found, using sample data.')
+        const data = await $fetch<{ schemes: Scheme[] }>('/data-sample/schemes.json')
+        cachedSchemes = Array.isArray(data?.schemes) ? data.schemes : []
+      } catch {
+        console.warn('[prez-lite] No schemes found.')
+        cachedSchemes = []
+      }
+    }
+    return cachedSchemes
+  })()
+
+  return cachedSchemesPromise
 }
 
-// Fetch concepts for a scheme from the concepts.json file (minimal list for tree/listing)
+// Per-slug cache for list concepts
+const listConceptsCache = new Map<string, ListConcept[]>()
+const listConceptsPromiseCache = new Map<string, Promise<ListConcept[]>>()
+
+// Fetch concepts for a scheme from the concepts.json file (minimal list for tree/listing) — cached per slug
 export async function fetchListConcepts(slug: string): Promise<ListConcept[]> {
-  try {
-    // Try new -concepts.json format first
-    const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/${slug}/${slug}-concepts.json`)
-    return data?.['@graph'] || []
-  } catch {
-    // Fall back to legacy -list.json format
+  const cached = listConceptsCache.get(slug)
+  if (cached) return cached
+
+  const pending = listConceptsPromiseCache.get(slug)
+  if (pending) return pending
+
+  const promise = (async () => {
+    let result: ListConcept[]
     try {
-      const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/${slug}/${slug}-list.json`)
-      return data?.['@graph'] || []
+      // Try new -concepts.json format first
+      const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/${slug}/${slug}-concepts.json`)
+      result = data?.['@graph'] || []
     } catch {
-      return []
+      // Fall back to legacy -list.json format
+      try {
+        const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/${slug}/${slug}-list.json`)
+        result = data?.['@graph'] || []
+      } catch {
+        result = []
+      }
     }
-  }
+    listConceptsCache.set(slug, result)
+    return result
+  })()
+
+  listConceptsPromiseCache.set(slug, promise)
+  return promise
 }
 
 // Fetch concepts for a scheme (backwards compatible)
@@ -296,18 +339,25 @@ export async function fetchSearchFacets(): Promise<SearchFacets | null> {
   }
 }
 
-// Fetch background labels
+// Fetch background labels — cached
 export async function fetchLabels(): Promise<LabelsIndex> {
-  try {
-    return await $fetch<LabelsIndex>('/export/_system/labels.json')
-  } catch {
-    // Fall back to legacy location
+  if (cachedLabels) return cachedLabels
+  if (cachedLabelsPromise) return cachedLabelsPromise
+
+  cachedLabelsPromise = (async () => {
     try {
-      return await $fetch<LabelsIndex>('/data/labels.json')
+      cachedLabels = await $fetch<LabelsIndex>('/export/_system/labels.json')
     } catch {
-      return {}
+      try {
+        cachedLabels = await $fetch<LabelsIndex>('/data/labels.json')
+      } catch {
+        cachedLabels = {}
+      }
     }
-  }
+    return cachedLabels
+  })()
+
+  return cachedLabelsPromise
 }
 
 // Fetch collections

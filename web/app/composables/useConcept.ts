@@ -22,7 +22,7 @@ export function useConcept(uri: Ref<string>) {
     return schemes.value?.find(s => s.iri === schemeIri)
   })
 
-  // Get slug for annotated properties lookup
+  // Derive slug from vocabMetadata (reuses the cached fetch from fetchSchemes, no extra HTTP request)
   const { data: vocabMetadata } = useAsyncData('vocabMetadata', fetchVocabMetadata, { server: false })
   const slug = computed(() => {
     const schemeIri = concept.value?.inScheme?.[0] ?? concept.value?.topConceptOf?.[0]

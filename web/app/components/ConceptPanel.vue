@@ -48,10 +48,11 @@ const displayCoreProperties = computed(() => concept.value ? coreProperties.valu
 const displayNotes = computed(() => concept.value ? notes.value : lastValidNotes.value)
 const displayRelationships = computed(() => concept.value ? relationships.value : lastValidRelationships.value)
 
+const isLoading = computed(() => status.value === 'idle' || status.value === 'pending')
 // Only show skeleton on initial load (no previous data)
-const showSkeleton = computed(() => status.value === 'pending' && !lastValidConcept.value)
+const showSkeleton = computed(() => isLoading.value && !lastValidConcept.value)
 // Show loading overlay when switching concepts
-const isTransitioning = computed(() => status.value === 'pending' && !!lastValidConcept.value)
+const isTransitioning = computed(() => isLoading.value && !!lastValidConcept.value)
 </script>
 
 <template>
@@ -155,9 +156,9 @@ const isTransitioning = computed(() => status.value === 'pending' && !!lastValid
       </div>
     </template>
 
-    <!-- Not found (only when not loading and no concept data) -->
+    <!-- Not found (only when loading is complete and no concept data) -->
     <UAlert
-      v-else-if="status !== 'pending'"
+      v-else-if="!isLoading"
       color="warning"
       icon="i-heroicons-exclamation-triangle"
       title="Concept not found"

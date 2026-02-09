@@ -4,4 +4,5 @@
 
 ---
 
-👀 AWS S3 + CloudFront deployment GitHub Action
+✅ AWS S3 + CloudFront deployment GitHub Action
+👀 Excessive HTTP requests — duplicate fetches across application

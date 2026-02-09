@@ -23,32 +23,46 @@ Build-step fallback that uses sample data when `web/public/data/vocabs/` is empt
 
 ---
 
-## 🚀 AWS S3 + CloudFront Deployment GitHub Action
+## 🔄 Excessive HTTP Requests — Duplicate Fetches Across Application
 **Review requested:** 2026-02-09
 
-### What to Review
-New GitHub Actions workflow for deploying to AWS S3 with CloudFront cache invalidation.
+### What Was Done
+Added in-memory request caching to all core data-fetching functions in `useVocabData.ts` to prevent duplicate HTTP requests when multiple composables call the same endpoints.
 
-### Changes
-- **`.github/workflows/deploy-aws.yml`** (new) — manual deployment workflow
+### Root Causes Found
+1. **`fetchVocabMetadata()`** — called separately by `fetchSchemes()`, `useConcept`, `useScheme`, and `useShare`, each triggering a fresh `GET /export/_system/vocabularies/index.json`
+2. **`fetchSchemes()`** — called by `useVocabs`, `useConcept`, `useScheme` independently
+3. **`fetchLabels()`** — called by `useConcept` and `useScheme` independently
+4. **`fetchListConcepts(slug)`** — called by `fetchConcepts()` in scheme page, then again by `findConcept()` when `ConceptPanel` opens
+5. **`findConcept()`** — iterates ALL schemes calling `fetchConcepts` for each, which each call `fetchVocabMetadata` again
 
-### Key Design Decisions
-- **Manual trigger only** (`workflow_dispatch`) — no auto-deploy on push
-- **OIDC auth** — no long-lived AWS credentials, uses `id-token: write` + role assumption
-- **Same build pipeline** as GitHub Pages workflow (`pnpm build`)
-- **Graceful CDN skip** — CloudFront invalidation only runs if `CDN_ID` variable is set
-- **Single job** — no need for separate build/deploy since there's no artifact handoff
+### Fix Applied
+Added module-level caching with promise deduplication (same pattern as existing `fetchProfile` cache):
+- `fetchVocabMetadata()` — singleton cache
+- `fetchSchemes()` — singleton cache
+- `fetchLabels()` — singleton cache
+- `fetchListConcepts(slug)` — per-slug Map cache
 
-### Repository Configuration Required
-| Type | Name | Purpose |
-|------|------|---------|
-| Secret | `AWS_ROLE_ARN` | IAM role ARN for OIDC federation |
-| Variable | `BUCKET_NAME` | S3 bucket name |
-| Variable | `CDN_ID` | CloudFront distribution ID (optional) |
+Each function checks for cached result first, then for in-flight promise, preventing both duplicate requests and race conditions.
+
+### Also Fixed: "Concept not found" flash on load
+`useAsyncData` with `{ server: false }` starts with status `'idle'`, not `'pending'`. The template conditions only checked for `'pending'` as the loading state, so on initial render `'idle'` fell through to the error alerts — showing a red "Concept not found" or "Scheme not found" box for one frame before data loaded.
+
+Fixed by treating `'idle'` as a loading state alongside `'pending'` in:
+- `concept.vue` — skeleton shown for `'idle' || 'pending'`
+- `scheme.vue` — skeleton and tree loading states include `'idle'`
+- `ConceptPanel.vue` — `isLoading` computed includes both states; "not found" only shows when loading is definitively complete
+
+### Files Modified
+- `web/app/composables/useVocabData.ts` — added caching to 4 fetch functions
+- `web/app/pages/concept.vue` — skeleton loader covers `'idle'` status
+- `web/app/pages/scheme.vue` — skeleton loader covers `'idle'` status
+- `web/app/components/ConceptPanel.vue` — skeleton loader covers `'idle'` status
 
 ### How to Test
-1. Review `.github/workflows/deploy-aws.yml`
-2. Verify build step uses `pnpm build` (matches root package.json)
-3. Verify S3 sync targets `web/.output/public/` (matches Nuxt generate output)
-4. Confirm OIDC auth pattern matches your AWS setup
-5. Deploy manually via Actions tab after configuring secrets/variables
+1. `pnpm --filter web dev`
+2. **Duplicate requests:** Open browser Network tab, navigate to a vocabulary — should see `index.json` fetched only once. Click concepts — no duplicate requests.
+3. **Loading flash:** Navigate directly to `/concept?uri=...` — should see skeleton, never a red "Concept not found" flash
+4. Navigate to `/scheme?uri=...` — should see skeleton, never a red "Scheme not found" flash
+5. Click a concept in the hierarchy — ConceptPanel should show skeleton, not "Concept not found"
+6. If a concept genuinely doesn't exist, the error message should still appear after loading completes
