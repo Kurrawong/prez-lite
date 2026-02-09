@@ -2,13 +2,23 @@ name: Deploy to AWS
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy-mode:
+        description: 'Deploy mode'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - data-only
 
 permissions:
   contents: read
   id-token: write
 
 jobs:
-  deploy:
+  deploy-full:
+    if: inputs.deploy-mode == 'full'
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +37,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        run: pnpm build
+      - name: Build site
+        run: pnpm build:site
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
 
@@ -48,3 +58,28 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id "${{ vars.DEV_CDN_ID }}" \
             --paths "/*"
+
+  deploy-data-only:
+    if: inputs.deploy-mode == 'data-only'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ap-southeast-2
+
+      - name: Sync exports to S3
+        run: |
+          aws s3 sync web/public/export/ "s3://${{ vars.DEV_BUCKET_NAME }}/export/" --delete
+
+      - name: Invalidate CloudFront cache
+        if: vars.DEV_CDN_ID != ''
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.DEV_CDN_ID }}" \
+            --paths "/export/*"
