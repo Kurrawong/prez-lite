@@ -1,7 +1,4 @@
 # Reviewing
 
-> Tasks awaiting human manual review and approval
+> Duplicate file — see `5-reviewing.md` for active reviewing board.
 
----
-
-*No items in review*

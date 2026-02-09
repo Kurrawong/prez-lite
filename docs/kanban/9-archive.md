@@ -184,6 +184,14 @@ Full codebase security analysis:
 
 ---
 
+## 📦 Archived: Sprint 4 - Performance & UX Fixes
+
+**Archived Date:** 2026-02-09
+**Status:** ✅ Complete — 3 tasks (sample data fallback, AWS deploy, HTTP request caching)
+**See:** `sprints.md` for full details
+
+---
+
 ## Archive Notes
 
 Sprint 1 laid the foundation for Sprint 2's security remediation work. The security audit identified 6 urgent issues (3 HIGH + 3 MEDIUM) that were successfully addressed in Sprint 2, bringing the project to a secure state.

@@ -4,6 +4,22 @@
 
 ---
 
+## 👀 Sprint 5: CI/CD & Data Pipeline (In Review)
+
+**Duration:** 2026-02-09
+**Goal:** Decouple data processing from site deployment so CI uses committed exports instead of rebuilding from scratch
+
+**Tasks:**
+- 👀 **Decouple Data Processing from Site Deployment**
+  - Split `package.json` build into `build:data` (data pipeline) and `build:site` (components + Nuxt)
+  - New `process-data.yml` workflow: processes data on sample-data changes, commits exports back to repo
+  - Refactored `deploy-aws.yml` with `deploy-mode` input (`full` | `data-only`)
+  - Committed 55 MB of pre-built exports to `web/public/export/`
+
+**Status:** Awaiting review
+
+---
+
 ## ✅ Completed Sprint: Sprint 4 - Performance & UX Fixes
 
 **Duration:** 2026-02-09

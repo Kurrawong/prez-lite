@@ -8,6 +8,16 @@ updated: 2025-02-08
 
 > Version history and completed features.
 
+## 2026-02-09
+
+### CI/CD
+- Split build into `build:data` and `build:site` scripts
+- Added `process-data.yml` workflow — processes vocabs and commits exports on sample-data changes
+- Refactored `deploy-aws.yml` with `deploy-mode` input (`full` | `data-only`)
+- Committed pre-built exports so CI deploys without re-processing data
+
+---
+
 ## 2025-02-08
 
 ### Documentation

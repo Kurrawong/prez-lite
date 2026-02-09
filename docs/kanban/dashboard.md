@@ -12,8 +12,9 @@
 | Sprint 2: Security Remediation | 7/7 | ✅ Complete |
 | Sprint 3: SPARQL Dynamic Component | 3/3 | ✅ Complete |
 | Sprint 4: Performance & UX Fixes | 3/3 | ✅ Complete |
+| Sprint 5: CI/CD & Data Pipeline | 0/1 | 👀 Reviewing |
 
-**Overall:** 21 tasks completed across 4 sprints. **All clear.**
+**Overall:** 21 tasks completed across 4 sprints. Sprint 5 in review.
 
 ---
 
@@ -21,13 +22,13 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| Empty | Empty | Empty | Empty | Sprint 4 (3 items) |
+| Empty | Empty | Empty | Decouple Data/Deploy (1) | Empty |
 
 ---
 
 ## Current Status
 
-All sprints complete. Backlog is empty and ready for new work.
+Sprint 5 task awaiting review: decouple data processing from site deployment.
 
 **Project:** ~95% feature complete
 - Phase 1 (Core Browser): ✅
@@ -48,4 +49,3 @@ All sprints complete. Backlog is empty and ready for new work.
 - [Done](./5-done.md)
 - [Sprints](./sprints.md)
 - [Archive](./9-archive.md)
-- [Workflow Guide](./WORKFLOW.md)
