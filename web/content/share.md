@@ -29,7 +29,7 @@ Embed vocabulary lists directly in any web application using our custom element.
 ### Quick Start
 
 ```html
-<script src="https://your-site.com/web-components/prez-vocab.min.js" type="module"></script>
+<script src="https://your-site.com/web-components/prez-lite.min.js" type="module"></script>
 
 <prez-list vocab="your-vocab-slug"></prez-list>
 ```

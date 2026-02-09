@@ -28,6 +28,10 @@ export abstract class PrezVocabBase extends LitElement {
   @property({ type: String })
   lang = 'en'
 
+  /** Theme preference: 'light', 'dark', or 'auto' (default: 'auto' uses system preference) */
+  @property({ type: String, reflect: true })
+  theme: 'light' | 'dark' | 'auto' = 'auto'
+
   /** Loading state */
   @state()
   protected loading = false

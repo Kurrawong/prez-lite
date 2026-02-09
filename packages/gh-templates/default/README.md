@@ -108,9 +108,183 @@ Create `public/data/profiles.ttl` to customize how vocabularies are processed:
 
 Edit `assets/css/main.css` to customize the appearance.
 
+### Web Component Styling
+
+Web components automatically match your system's color scheme (light/dark mode) and can be customized using CSS custom properties.
+
+#### Theme Control
+
+Control the component theme with the `theme` attribute:
+
+```html
+<!-- Auto: follows system preference (default) -->
+<prez-vocab-select vocab="my-vocab"></prez-vocab-select>
+
+<!-- Force light mode -->
+<prez-vocab-select vocab="my-vocab" theme="light"></prez-vocab-select>
+
+<!-- Force dark mode -->
+<prez-vocab-select vocab="my-vocab" theme="dark"></prez-vocab-select>
+```
+
+#### Custom Colors
+
+Override colors using inline styles with CSS custom properties:
+
+```html
+<prez-vocab-select
+  vocab="my-vocab"
+  style="--prez-bg: #0c4a6e; --prez-text: #e0f2fe; --prez-primary: #38bdf8">
+</prez-vocab-select>
+```
+
+#### Available CSS Variables
+
+| Variable | Description | Light Default | Dark Default |
+|----------|-------------|---------------|--------------|
+| `--prez-bg` | Main background | `#ffffff` | `#1f2937` |
+| `--prez-text` | Primary text | `#374151` | `#f3f4f6` |
+| `--prez-border` | Default borders | `#d1d5db` | `#4b5563` |
+| `--prez-primary` | Primary/brand color | `#3b82f6` | `#60a5fa` |
+| `--prez-selected-bg` | Selected items | `#dbeafe` | `#2563eb` |
+| `--prez-hover-bg` | Hover states | `#f3f4f6` | `#374151` |
+
+#### Color Presets
+
+**Ocean Blue (Dark)**
+```html
+style="--prez-bg: #0c4a6e; --prez-text: #e0f2fe; --prez-border: #0369a1; --prez-primary: #38bdf8; --prez-selected-bg: #0284c7; --prez-hover-bg: #075985"
+```
+
+**Forest Green (Dark)**
+```html
+style="--prez-bg: #064e3b; --prez-text: #d1fae5; --prez-border: #047857; --prez-primary: #34d399; --prez-selected-bg: #059669; --prez-hover-bg: #065f46"
+```
+
+**Purple Haze (Dark)**
+```html
+style="--prez-bg: #4c1d95; --prez-text: #ede9fe; --prez-border: #6d28d9; --prez-primary: #a78bfa; --prez-selected-bg: #7c3aed; --prez-hover-bg: #5b21b6"
+```
+
+**Sunset Orange (Dark)**
+```html
+style="--prez-bg: #7c2d12; --prez-text: #fed7aa; --prez-border: #c2410c; --prez-primary: #fb923c; --prez-selected-bg: #ea580c; --prez-hover-bg: #9a3412"
+```
+
+**Slate Gray (Dark)**
+```html
+style="--prez-bg: #1e293b; --prez-text: #e2e8f0; --prez-border: #475569; --prez-primary: #94a3b8; --prez-selected-bg: #334155; --prez-hover-bg: #0f172a"
+```
+
+**Rose Pink (Dark)**
+```html
+style="--prez-bg: #881337; --prez-text: #fce7f3; --prez-border: #be123c; --prez-primary: #fb7185; --prez-selected-bg: #e11d48; --prez-hover-bg: #9f1239"
+```
+
+#### Complete Example
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://your-site.com/web-components/prez-lite.min.js" type="module"></script>
+</head>
+<body>
+  <!-- Ocean Blue themed dropdown -->
+  <prez-vocab-select
+    vocab="my-vocab"
+    display="dropdown"
+    search="true"
+    theme="dark"
+    style="--prez-bg: #0c4a6e; --prez-text: #e0f2fe; --prez-border: #0369a1; --prez-primary: #38bdf8; --prez-selected-bg: #0284c7; --prez-hover-bg: #075985">
+  </prez-vocab-select>
+</body>
+</html>
+```
+
+**Note:** Inline styles override CSS variables, allowing component-specific customization even when dark mode defaults are active.
+
 ### Background Labels
 
 Add TTL files to `public/data/background/` to provide labels for external IRIs referenced in your vocabularies.
+
+## Deployment
+
+### CORS Policy
+
+Vocabulary exports and web components are configured for **open access** by default, following semantic web principles of open data sharing.
+
+**Configuration file:** `public/_headers` (already included)
+
+**Supported platforms:**
+- ✅ **Netlify** - Automatic (uses `_headers`)
+- ✅ **Cloudflare Pages** - Automatic (uses `_headers`)
+- ✅ **Vercel** - Add `vercel.json` (see below)
+- ⚠️ **GitHub Pages** - Limited (no custom headers support)
+- ✅ **Self-hosted** - Configure Nginx/Apache (see below)
+
+### Platform-Specific Setup
+
+#### Netlify / Cloudflare Pages
+No additional setup required. The `public/_headers` file is automatically used.
+
+#### Vercel
+Create `vercel.json` in project root:
+```json
+{
+  "headers": [
+    {
+      "source": "/export/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/web-components/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
+}
+```
+
+#### GitHub Pages
+- ⚠️ Does not support custom CORS headers
+- Web component `<script>` includes work (browser default)
+- `fetch()` calls from other domains may be blocked
+- **Recommendation:** Use Cloudflare Pages instead for better CORS support
+
+#### Self-hosted (Nginx)
+Add to server config:
+```nginx
+location /export/ {
+    add_header Access-Control-Allow-Origin *;
+}
+location /web-components/ {
+    add_header Access-Control-Allow-Origin *;
+}
+```
+
+#### Self-hosted (Apache)
+The `public/.htaccess` file (if created) will handle CORS:
+```apache
+<FilesMatch "\.(ttl|json|jsonld|rdf|xml|csv|js)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+```
+
+### Restricting Access
+
+If you need to restrict vocabulary access to specific domains:
+
+1. Edit `public/_headers`:
+   ```
+   /export/*
+     Access-Control-Allow-Origin: https://yourdomain.com
+   ```
+
+2. Or use environment-based configuration in your deployment platform
 
 ## License
 

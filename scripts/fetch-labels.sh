@@ -49,6 +49,21 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Validate SPARQL endpoint URL to prevent command injection
+if [[ ! "$SPARQL_ENDPOINT" =~ ^https?://[a-zA-Z0-9.-]+(:[0-9]+)?(/[^[:space:]]*)?$ ]]; then
+    echo "❌ Error: Invalid SPARQL endpoint URL format"
+    echo "   Expected: http(s)://domain:port/path"
+    echo "   Received: $SPARQL_ENDPOINT"
+    exit 1
+fi
+
+# Check for suspicious characters that could indicate command injection
+if [[ "$SPARQL_ENDPOINT" =~ [\;\|\&\`\$\(\)] ]]; then
+    echo "❌ Error: Suspicious characters detected in endpoint URL"
+    echo "   URL contains characters that are not allowed for security reasons"
+    exit 1
+fi
+
 echo "🏷️  prez-lite label fetcher (using prezmanifest)"
 echo ""
 echo "Manifest: $MANIFEST"

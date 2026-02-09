@@ -19,7 +19,7 @@
  */
 
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
-import { join, dirname, basename, isAbsolute } from 'path';
+import { join, dirname, basename, isAbsolute, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { Parser, Store, Writer, DataFactory } from 'n3';
 import jsonld from 'jsonld';
@@ -35,12 +35,28 @@ const PACKAGE_DIR = join(__dirname, '..');
 const ROOT_DIR = join(__dirname, '../../..');
 
 /**
- * Resolve a CLI path argument.
- * - Absolute paths are returned as-is.
- * - Relative paths are resolved against process.cwd() (the directory the script is run from).
+ * Resolve and validate a CLI path argument to prevent path traversal attacks.
+ * - Absolute paths are validated to ensure they don't escape the working directory.
+ * - Relative paths are resolved against process.cwd() and validated.
+ * - Throws an error if path contains traversal attempts or escapes the base directory.
  */
 function resolveCliPath(val) {
-  return isAbsolute(val) ? val : join(process.cwd(), val);
+  // Validate for obvious path traversal attempts
+  if (val.includes('..') || val.includes('~')) {
+    throw new Error(`Invalid path: path traversal characters not allowed in "${val}"`);
+  }
+
+  // Resolve the path (handles both absolute and relative)
+  const resolvedPath = isAbsolute(val) ? resolve(val) : resolve(process.cwd(), val);
+  const basePath = resolve(process.cwd());
+
+  // Ensure the resolved path is within or equal to the base directory
+  // Allow paths at the same level or deeper, but not parent directories
+  if (!resolvedPath.startsWith(basePath)) {
+    throw new Error(`Path outside working directory: "${resolvedPath}" is outside "${basePath}"`);
+  }
+
+  return resolvedPath;
 }
 
 // Namespace constants

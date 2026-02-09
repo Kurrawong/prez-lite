@@ -6,11 +6,11 @@ export function detectBaseUrl(): string | null {
   const scripts = document.querySelectorAll('script[src*="prez-vocab"]')
   if (scripts.length > 0) {
     const src = (scripts[scripts.length - 1] as HTMLScriptElement).src
-    // Extract base URL (remove /web-components/prez-vocab.min.js)
+    // Extract base URL (remove /web-components/prez-lite.min.js)
     const url = new URL(src)
     const pathParts = url.pathname.split('/')
-    // Remove last two parts (web-components/prez-vocab.min.js)
-    pathParts.pop() // prez-vocab.min.js
+    // Remove last two parts (web-components/prez-lite.min.js)
+    pathParts.pop() // prez-lite.min.js
     pathParts.pop() // web-components
     url.pathname = pathParts.join('/') || '/'
     return url.origin + url.pathname.replace(/\/$/, '')

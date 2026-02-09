@@ -50,7 +50,7 @@ prez-lite/
 │   │           ├── [vocab].rdf
 │   │           └── [vocab].csv
 │   └── web-components/              # NEW: Pre-built components
-│       ├── prez-vocab.min.js
+│       ├── prez-lite.min.js
 │       ├── prez-vocab.min.css
 │       └── README.md
 ├── content/                         # Markdown content
@@ -339,8 +339,8 @@ execSync('pnpm --filter @prez-lite/web-components build')
 
 // Copy to web/public/web-components/
 copyFileSync(
-  'packages/web-components/dist/prez-vocab.min.js',
-  'web/public/web-components/prez-vocab.min.js'
+  'packages/web-components/dist/prez-lite.min.js',
+  'web/public/web-components/prez-lite.min.js'
 )
 ```
 

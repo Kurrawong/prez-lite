@@ -17,7 +17,7 @@ export default defineNuxtPlugin(() => {
     const isDark = colorMode.value === 'dark'
     return {
       startOnLoad: false,
-      securityLevel: 'loose',
+      securityLevel: 'antiscript', // Prevent script execution in diagrams
       theme: 'base',
       themeVariables: {
         darkMode: isDark,
@@ -67,7 +67,10 @@ export default defineNuxtPlugin(() => {
         const container = document.createElement('div')
         container.className = 'mermaid-diagram flex justify-center my-5 overflow-x-auto'
         try {
-          container.setAttribute('data-mermaid-code', btoa(unescape(encodeURIComponent(code))))
+          // Use modern TextEncoder instead of deprecated escape/unescape
+          const bytes = new TextEncoder().encode(code)
+          const binary = String.fromCharCode(...bytes)
+          container.setAttribute('data-mermaid-code', btoa(binary))
         } catch {
           container.setAttribute('data-mermaid-code', code)
         }
@@ -75,7 +78,19 @@ export default defineNuxtPlugin(() => {
         // Render the diagram
         const id = `mermaid-${Math.random().toString(36).substring(2, 11)}`
         const { svg } = await mermaid.default.render(id, code)
-        container.innerHTML = svg
+
+        // Use DOMParser for safer SVG insertion (prevents XSS)
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(svg, 'image/svg+xml')
+        const svgElement = doc.documentElement
+
+        // Check for parsing errors
+        const parserError = svgElement.querySelector('parsererror')
+        if (parserError) {
+          throw new Error('Invalid SVG from Mermaid')
+        }
+
+        container.appendChild(svgElement)
 
         // Replace the pre block with the rendered diagram
         block.parentNode?.replaceChild(container, block)
@@ -100,15 +115,46 @@ export default defineNuxtPlugin(() => {
       const encoded = container.getAttribute('data-mermaid-code')
       if (!encoded) continue
       try {
-        const code = decodeURIComponent(escape(atob(encoded)))
+        // Use modern TextDecoder instead of deprecated escape/unescape
+        const binary = atob(encoded)
+        const bytes = Uint8Array.from(binary, c => c.charCodeAt(0))
+        const code = new TextDecoder().decode(bytes)
+
         const id = `mermaid-${Math.random().toString(36).substring(2, 11)}`
         const { svg } = await mermaid.default.render(id, code)
-        container.innerHTML = svg
+
+        // Use DOMParser for safer SVG insertion
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(svg, 'image/svg+xml')
+        const svgElement = doc.documentElement
+
+        const parserError = svgElement.querySelector('parsererror')
+        if (parserError) {
+          throw new Error('Invalid SVG from Mermaid')
+        }
+
+        // Clear container and append new SVG
+        container.innerHTML = ''
+        container.appendChild(svgElement)
       } catch (e) {
+        // Fallback: use encoded string directly
         const code = encoded
         const id = `mermaid-${Math.random().toString(36).substring(2, 11)}`
         const { svg } = await mermaid.default.render(id, code)
-        container.innerHTML = svg
+
+        // Use DOMParser for safer SVG insertion
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(svg, 'image/svg+xml')
+        const svgElement = doc.documentElement
+
+        const parserError = svgElement.querySelector('parsererror')
+        if (parserError) {
+          console.error('Mermaid SVG parsing error:', e)
+          continue
+        }
+
+        container.innerHTML = ''
+        container.appendChild(svgElement)
       }
     }
   }

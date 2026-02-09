@@ -1,0 +1,10 @@
+{
+  "schemes": [
+    {
+      "iri": "https://example.org/vocab/colors/scheme",
+      "label": "Example Colors",
+      "count": 8
+    }
+  ],
+  "publishers": []
+}

@@ -5,8 +5,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'PrezVocab',
-      fileName: () => 'prez-vocab.js',
+      name: 'PrezLite',
+      fileName: () => 'prez-lite.js',
       formats: ['es']
     },
     rollupOptions: {

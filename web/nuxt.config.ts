@@ -58,8 +58,35 @@ export default defineNuxtConfig({
       failOnError: false
     },
     routeRules: {
+      // CORS headers for dev server only
+      // For production static deployments, use public/_headers file
+      // (supported by Netlify, Cloudflare Pages, etc.)
       '/export/**': { headers: { 'Access-Control-Allow-Origin': '*' } },
-      '/web-components/**': { headers: { 'Access-Control-Allow-Origin': '*' } }
+      '/web-components/**': { headers: { 'Access-Control-Allow-Origin': '*' } },
+      // Security headers (dev server only, static deployments use _headers file)
+      '/**': {
+        headers: {
+          // Content Security Policy - defense-in-depth against XSS
+          // Note: 'unsafe-inline' needed for Nuxt SSG hydration scripts
+          'Content-Security-Policy': [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'",  // unsafe-inline for Nuxt SSG, wasm for Mermaid
+            "style-src 'self' 'unsafe-inline'",                      // unsafe-inline for Nuxt UI/Tailwind
+            "img-src 'self' data: https:",
+            "font-src 'self'",
+            "connect-src 'self'",
+            "frame-ancestors 'none'",
+            "base-uri 'self'",
+            "form-action 'self'"
+          ].join('; '),
+          // Additional security headers
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'DENY',
+          'X-XSS-Protection': '1; mode=block',
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+          'Permissions-Policy': 'geolocation=(), microphone=(), camera=()'
+        }
+      }
     }
   },
 

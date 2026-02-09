@@ -10,7 +10,7 @@ const baseUrl = computed(() => {
   return ''
 })
 
-const quickStartCode = computed(() => `<script src="${baseUrl.value}/web-components/prez-vocab.min.js" type="module"><\/script>
+const quickStartCode = computed(() => `<script src="${baseUrl.value}/web-components/prez-lite.min.js" type="module"><\/script>
 
 <prez-list vocab="your-vocab-slug"></prez-list>`)
 

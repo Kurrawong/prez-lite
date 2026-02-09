@@ -119,7 +119,7 @@ A single, flexible component with multiple display modes.
 ```html
 <!-- Include the component bundle -->
 <script type="module"
-  src="https://vocabs.example.org/web-components/prez-vocab.min.js">
+  src="https://vocabs.example.org/web-components/prez-lite.min.js">
 </script>
 
 <!-- Use the component -->
@@ -138,6 +138,7 @@ A single, flexible component with multiple display modes.
 | `vocab` | string | - | Vocabulary slug |
 | `vocab-url` | string | - | Direct URL to vocab JSON (overrides base-url/vocab) |
 | `type` | string | `select` | Display mode: select, dropdown, radio, table |
+| `theme` | string | `auto` | Color scheme: `auto`, `light`, or `dark` |
 | `search` | boolean | false | Enable search/filter input |
 | `multiple` | boolean | false | Allow multiple selection (checkbox mode) |
 | `horizontal` | boolean | false | Horizontal layout (radio mode only) |
@@ -153,19 +154,44 @@ A single, flexible component with multiple display modes.
 | `prez-expand` | `{ iri: string, expanded: boolean }` | Tree node expanded/collapsed |
 | `prez-filter` | `{ query: string, matches: number }` | Search filter applied |
 
-#### Styling
+#### Theme Control
 
-Use CSS custom properties:
+Control color scheme with the `theme` attribute:
 
-```css
-prez-list {
-  --prez-primary-color: #3b82f6;
-  --prez-font-family: system-ui, sans-serif;
-  --prez-font-size: 14px;
-  --prez-border-radius: 0.375rem;
-  --prez-border-color: #e5e7eb;
-}
+```html
+<!-- Auto: follows system preference (default) -->
+<prez-list vocab="alteration-form"></prez-list>
+
+<!-- Force light mode -->
+<prez-list vocab="alteration-form" theme="light"></prez-list>
+
+<!-- Force dark mode -->
+<prez-list vocab="alteration-form" theme="dark"></prez-list>
 ```
+
+#### Styling with CSS Custom Properties
+
+Components automatically support light and dark modes. Override colors using inline styles:
+
+```html
+<prez-list
+  vocab="alteration-form"
+  style="--prez-bg: #0c4a6e; --prez-text: #e0f2fe; --prez-primary: #38bdf8">
+</prez-list>
+```
+
+**Available CSS Variables:**
+
+| Variable | Description | Light Default | Dark Default |
+|----------|-------------|---------------|--------------|
+| `--prez-bg` | Main background | `#ffffff` | `#1f2937` |
+| `--prez-text` | Primary text | `#374151` | `#f3f4f6` |
+| `--prez-border` | Default borders | `#d1d5db` | `#4b5563` |
+| `--prez-primary` | Primary/brand color | `#3b82f6` | `#60a5fa` |
+| `--prez-selected-bg` | Selected items | `#dbeafe` | `#2563eb` |
+| `--prez-hover-bg` | Hover states | `#f3f4f6` | `#374151` |
+
+**Note:** Inline styles override CSS variables, allowing component-specific customization.
 
 #### JavaScript Integration
 
@@ -240,7 +266,7 @@ Global IRI-to-label mappings for display.
 
 Built and served from:
 ```
-web/public/web-components/prez-vocab.min.js
+web/public/web-components/prez-lite.min.js
 ```
 
-Size: ~50KB minified
+Size: ~66KB (16KB gzipped)

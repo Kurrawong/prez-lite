@@ -73,14 +73,19 @@ const components: Record<string, ComponentMeta> = {
       { name: 'show-selected', type: 'boolean', default: 'true', description: 'Highlight selected items' },
       { name: 'placeholder', type: 'string', default: '"Select..."', description: 'Placeholder text (dropdown mode)' },
       { name: 'disabled', type: 'boolean', default: 'false', description: 'Disable the component' },
-      { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' }
+      { name: 'lang', type: 'string', default: '"en"', description: 'Preferred language for labels' },
+      { name: 'theme', type: 'string', default: '"auto"', description: 'Color theme: "light", "dark", or "auto" (follows system)' }
     ],
     methods: [
       { name: 'loadVocab()', description: 'Manually trigger vocabulary reload' }
     ],
     cssProperties: [
       { name: 'font-family', default: 'system-ui, sans-serif', description: 'Font family inherited into shadow DOM' },
-      { name: 'font-size', default: '0.875rem', description: 'Base font size' }
+      { name: 'font-size', default: '0.875rem', description: 'Base font size' },
+      { name: '--prez-bg', default: 'auto', description: 'Background color (auto-themed)' },
+      { name: '--prez-text', default: 'auto', description: 'Primary text color (auto-themed)' },
+      { name: '--prez-border', default: 'auto', description: 'Border color (auto-themed)' },
+      { name: '--prez-primary', default: 'auto', description: 'Primary brand color (auto-themed)' }
     ],
     modes: [
       { name: 'select (default)', description: 'Tree view with expand/collapse. Best for browsing hierarchical vocabularies.' },
@@ -163,7 +168,7 @@ const frameworkExamples = computed(() => {
     {
       id: 'html',
       label: 'HTML',
-      code: `<script src="${baseUrl.value}/web-components/prez-vocab.min.js" type="module"><\/script>
+      code: `<script src="${baseUrl.value}/web-components/prez-lite.min.js" type="module"><\/script>
 
 <${tag} vocab="${vocab}"${componentName.value === 'list' ? ' search' : ' searchable'}></${tag}>
 
@@ -593,7 +598,7 @@ el.loadVocab(); // Reload vocabulary data</code></pre>
         <div class="space-y-4 text-sm">
           <div>
             <h3 class="font-medium mb-2">CDN / Script Tag</h3>
-            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-xs overflow-x-auto"><code>&lt;script src="{{ baseUrl }}/web-components/prez-vocab.min.js" type="module"&gt;&lt;/script&gt;</code></pre>
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-xs overflow-x-auto"><code>&lt;script src="{{ baseUrl }}/web-components/prez-lite.min.js" type="module"&gt;&lt;/script&gt;</code></pre>
           </div>
 
           <div>

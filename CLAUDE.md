@@ -98,7 +98,7 @@ Use these in document headers and inline:
 
 ### Web Components
 - Lit library
-- Single bundled file (`prez-vocab.min.js`)
+- Single bundled file (`prez-lite.min.js`)
 - Autonomous (fetch own data)
 
 ## Current Focus

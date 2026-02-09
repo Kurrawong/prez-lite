@@ -29,10 +29,44 @@ web/public/data/
 .DS_Store
 Thumbs.db
 
-# Environment
+# Environment & Secrets (SECURITY CRITICAL)
 .env
 .env.*
 !.env.example
+*.env
+*.env.local
+*.env.production
+*.env.development
+.env.backup
+.env.old
+
+# Security-sensitive files
+secrets.*
+secret.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+id_rsa
+id_rsa.*
+*.asc
+*.gpg
+*.token
+*_token
+*-token
+credentials.*
+auth.*
+password.*
+*.secret
+
+# GitHub tokens and credentials
+github_pat_*
+ghp_*
+gho_*
+ghs_*
 
 # Logs
 logs/

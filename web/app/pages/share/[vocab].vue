@@ -129,7 +129,7 @@ async function copyUrl(url: string) {
 
           <div>
             <h3 class="font-medium mb-2">Basic Usage</h3>
-            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-sm overflow-x-auto"><code>&lt;script src="{{ baseUrl }}/web-components/prez-vocab.min.js" type="module"&gt;&lt;/script&gt;
+            <pre class="bg-gray-900 text-gray-100 rounded-lg p-3 text-sm overflow-x-auto"><code>&lt;script src="{{ baseUrl }}/web-components/prez-lite.min.js" type="module"&gt;&lt;/script&gt;
 
 &lt;prez-list vocab="{{ vocab.slug }}"&gt;&lt;/prez-list&gt;</code></pre>
           </div>

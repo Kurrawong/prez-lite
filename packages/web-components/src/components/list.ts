@@ -26,6 +26,98 @@ export class PrezList extends PrezVocabBase {
       display: block;
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 0.875rem;
+      background: var(--prez-bg);
+      color: var(--prez-text);
+      padding: 0.5rem;
+      border-radius: 0.375rem;
+
+      /* Light mode colors (default) */
+      --prez-bg: #ffffff;
+      --prez-border: #d1d5db;
+      --prez-border-hover: #9ca3af;
+      --prez-border-focus: #3b82f6;
+      --prez-focus-ring: rgba(59, 130, 246, 0.2);
+      --prez-text: #374151;
+      --prez-text-muted: #6b7280;
+      --prez-text-placeholder: #9ca3af;
+      --prez-text-error: #ef4444;
+      --prez-hover-bg: #f3f4f6;
+      --prez-selected-bg: #dbeafe;
+      --prez-selected-hover-bg: #bfdbfe;
+      --prez-table-header-bg: #f9fafb;
+      --prez-divider: #e5e7eb;
+      --prez-shadow: rgba(0, 0, 0, 0.1);
+      --prez-shadow-sm: rgba(0, 0, 0, 0.06);
+      --prez-primary: #3b82f6;
+      --prez-primary-hover: #eff6ff;
+    }
+
+    /* Dark mode - system preference */
+    @media (prefers-color-scheme: dark) {
+      :host([theme="auto"]) {
+        --prez-bg: #1f2937;
+        --prez-border: #4b5563;
+        --prez-border-hover: #6b7280;
+        --prez-border-focus: #60a5fa;
+        --prez-focus-ring: rgba(96, 165, 250, 0.3);
+        --prez-text: #f3f4f6;
+        --prez-text-muted: #9ca3af;
+        --prez-text-placeholder: #6b7280;
+        --prez-text-error: #f87171;
+        --prez-hover-bg: #374151;
+        --prez-selected-bg: #2563eb;
+        --prez-selected-hover-bg: #3b82f6;
+        --prez-table-header-bg: #111827;
+        --prez-divider: #374151;
+        --prez-shadow: rgba(0, 0, 0, 0.3);
+        --prez-shadow-sm: rgba(0, 0, 0, 0.2);
+        --prez-primary: #60a5fa;
+        --prez-primary-hover: #1e3a5f;
+      }
+    }
+
+    /* Dark mode - explicit override */
+    :host([theme="dark"]) {
+      --prez-bg: #1f2937;
+      --prez-border: #4b5563;
+      --prez-border-hover: #6b7280;
+      --prez-border-focus: #60a5fa;
+      --prez-focus-ring: rgba(96, 165, 250, 0.3);
+      --prez-text: #f3f4f6;
+      --prez-text-muted: #9ca3af;
+      --prez-text-placeholder: #6b7280;
+      --prez-text-error: #f87171;
+      --prez-hover-bg: #374151;
+      --prez-selected-bg: #2563eb;
+      --prez-selected-hover-bg: #3b82f6;
+      --prez-table-header-bg: #111827;
+      --prez-divider: #374151;
+      --prez-shadow: rgba(0, 0, 0, 0.3);
+      --prez-shadow-sm: rgba(0, 0, 0, 0.2);
+      --prez-primary: #60a5fa;
+      --prez-primary-hover: #1e3a5f;
+    }
+
+    /* Light mode - explicit override (redundant but explicit for clarity) */
+    :host([theme="light"]) {
+      --prez-bg: #ffffff;
+      --prez-border: #d1d5db;
+      --prez-border-hover: #9ca3af;
+      --prez-border-focus: #3b82f6;
+      --prez-focus-ring: rgba(59, 130, 246, 0.2);
+      --prez-text: #374151;
+      --prez-text-muted: #6b7280;
+      --prez-text-placeholder: #9ca3af;
+      --prez-text-error: #ef4444;
+      --prez-hover-bg: #f3f4f6;
+      --prez-selected-bg: #dbeafe;
+      --prez-selected-hover-bg: #bfdbfe;
+      --prez-table-header-bg: #f9fafb;
+      --prez-divider: #e5e7eb;
+      --prez-shadow: rgba(0, 0, 0, 0.1);
+      --prez-shadow-sm: rgba(0, 0, 0, 0.06);
+      --prez-primary: #3b82f6;
+      --prez-primary-hover: #eff6ff;
     }
 
     :host([disabled]) {
@@ -44,9 +136,9 @@ export class PrezList extends PrezVocabBase {
       justify-content: space-between;
       width: 100%;
       padding: 0.5rem 0.75rem;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--prez-border);
       border-radius: 0.375rem;
-      background: white;
+      background: var(--prez-bg);
       font-size: 0.875rem;
       cursor: pointer;
       text-align: left;
@@ -54,18 +146,18 @@ export class PrezList extends PrezVocabBase {
     }
 
     .dropdown-trigger:hover {
-      border-color: #9ca3af;
+      border-color: var(--prez-border-hover);
     }
 
     .dropdown-trigger:focus {
       outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      border-color: var(--prez-border-focus);
+      box-shadow: 0 0 0 2px var(--prez-focus-ring);
     }
 
     .dropdown-trigger.open {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      border-color: var(--prez-border-focus);
+      box-shadow: 0 0 0 2px var(--prez-focus-ring);
     }
 
     .dropdown-trigger-text {
@@ -73,17 +165,18 @@ export class PrezList extends PrezVocabBase {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      color: var(--prez-text);
     }
 
     .dropdown-trigger-placeholder {
-      color: #9ca3af;
+      color: var(--prez-text-placeholder);
     }
 
     .dropdown-trigger-icon {
       flex-shrink: 0;
       width: 1rem;
       height: 1rem;
-      color: #6b7280;
+      color: var(--prez-text-muted);
       transition: transform 0.15s;
     }
 
@@ -99,10 +192,11 @@ export class PrezList extends PrezVocabBase {
       padding: 0;
       outline: none;
       min-width: 0;
+      color: var(--prez-text);
     }
 
     .dropdown-search-input::placeholder {
-      color: #374151;
+      color: var(--prez-text-muted);
     }
 
     .dropdown-trigger:has(.dropdown-search-input) {
@@ -115,10 +209,10 @@ export class PrezList extends PrezVocabBase {
       left: 0;
       right: 0;
       margin-top: 0.25rem;
-      background: white;
-      border: 1px solid #d1d5db;
+      background: var(--prez-bg);
+      border: 1px solid var(--prez-border);
       border-radius: 0.375rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 6px -1px var(--prez-shadow), 0 2px 4px -1px var(--prez-shadow-sm);
       z-index: 50;
       max-height: 300px;
       overflow-y: auto;
@@ -130,7 +224,7 @@ export class PrezList extends PrezVocabBase {
 
     .dropdown-popover .search {
       padding: 0.5rem;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--prez-divider);
       margin-bottom: 0;
     }
 
@@ -146,16 +240,22 @@ export class PrezList extends PrezVocabBase {
     .search input {
       width: 100%;
       padding: 0.5rem 0.75rem;
-      border: 1px solid #d1d5db;
+      border: 1px solid var(--prez-border);
       border-radius: 0.375rem;
       font-size: 0.875rem;
       box-sizing: border-box;
+      background: var(--prez-bg);
+      color: var(--prez-text);
+    }
+
+    .search input::placeholder {
+      color: var(--prez-text-placeholder);
     }
 
     .search input:focus {
       outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      border-color: var(--prez-border-focus);
+      box-shadow: 0 0 0 2px var(--prez-focus-ring);
     }
 
     /* Tree and list styles */
@@ -190,7 +290,7 @@ export class PrezList extends PrezVocabBase {
       top: 0;
       bottom: 0.75rem;
       width: 1px;
-      background: #e5e7eb;
+      background: var(--prez-divider);
     }
 
     .tree-row {
@@ -203,11 +303,11 @@ export class PrezList extends PrezVocabBase {
     }
 
     .tree-row:hover {
-      background-color: #f3f4f6;
+      background-color: var(--prez-hover-bg);
     }
 
     .tree-row.selected {
-      background-color: #dbeafe;
+      background-color: var(--prez-selected-bg);
     }
 
     .expand-btn {
@@ -220,15 +320,15 @@ export class PrezList extends PrezVocabBase {
       border-radius: 0.25rem;
       background: transparent;
       cursor: pointer;
-      color: #6b7280;
+      color: var(--prez-text-muted);
       padding: 0;
       flex-shrink: 0;
       transition: background-color 0.15s, color 0.15s;
     }
 
     .expand-btn:hover {
-      background: #e5e7eb;
-      color: #374151;
+      background: var(--prez-divider);
+      color: var(--prez-text);
     }
 
     .expand-placeholder {
@@ -249,12 +349,12 @@ export class PrezList extends PrezVocabBase {
     }
 
     .notation {
-      color: #6b7280;
+      color: var(--prez-text-muted);
       font-size: 0.75rem;
     }
 
     .count {
-      color: #9ca3af;
+      color: var(--prez-text-muted);
       font-size: 0.75rem;
     }
 
@@ -266,24 +366,24 @@ export class PrezList extends PrezVocabBase {
 
     /* Status styles */
     .loading {
-      color: #9ca3af;
+      color: var(--prez-text-muted);
       padding: 0.5rem;
     }
 
     .error {
-      color: #ef4444;
+      color: var(--prez-text-error);
       font-size: 0.75rem;
       padding: 0.25rem;
     }
 
     .empty {
-      color: #9ca3af;
+      color: var(--prez-text-muted);
       padding: 0.5rem;
     }
 
     .selection-count {
       font-size: 0.75rem;
-      color: #6b7280;
+      color: var(--prez-text-muted);
       margin-top: 0.25rem;
     }
 
@@ -337,7 +437,7 @@ export class PrezList extends PrezVocabBase {
     .radio-children.with-separator {
       padding-bottom: 0.5rem;
       margin-bottom: 0.5rem;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--prez-divider);
     }
 
     .radio-item {
@@ -348,7 +448,7 @@ export class PrezList extends PrezVocabBase {
     }
 
     .radio-item:hover {
-      color: #3b82f6;
+      color: var(--prez-primary);
     }
 
     .radio-item input[type="radio"] {
@@ -363,7 +463,7 @@ export class PrezList extends PrezVocabBase {
     /* Description styles */
     .description {
       font-size: 0.75rem;
-      color: #6b7280;
+      color: var(--prez-text-muted);
       margin-top: 0.125rem;
       line-height: 1.4;
     }
@@ -385,12 +485,12 @@ export class PrezList extends PrezVocabBase {
       gap: 0.5rem;
       padding: 0.25rem 0;
       margin-bottom: 0.5rem;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--prez-divider);
     }
 
     .select-controls button {
       font-size: 0.75rem;
-      color: #3b82f6;
+      color: var(--prez-primary);
       background: none;
       border: none;
       padding: 0.25rem 0.5rem;
@@ -399,7 +499,7 @@ export class PrezList extends PrezVocabBase {
     }
 
     .select-controls button:hover:not(:disabled) {
-      background: #eff6ff;
+      background: var(--prez-primary-hover);
     }
 
     .select-controls button:disabled {
@@ -417,28 +517,28 @@ export class PrezList extends PrezVocabBase {
     .vocab-table th {
       text-align: left;
       padding: 0.5rem;
-      border-bottom: 2px solid #e5e7eb;
+      border-bottom: 2px solid var(--prez-divider);
       font-weight: 600;
-      color: #374151;
-      background: #f9fafb;
+      color: var(--prez-text);
+      background: var(--prez-table-header-bg);
     }
 
     .vocab-table td {
       padding: 0.5rem;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--prez-divider);
       vertical-align: top;
     }
 
     .vocab-table tr:hover {
-      background: #f9fafb;
+      background: var(--prez-table-header-bg);
     }
 
     .vocab-table tr.selected {
-      background: #dbeafe;
+      background: var(--prez-selected-bg);
     }
 
     .vocab-table tr.selected:hover {
-      background: #bfdbfe;
+      background: var(--prez-selected-hover-bg);
     }
 
     .vocab-table .cell-indent {
@@ -460,12 +560,12 @@ export class PrezList extends PrezVocabBase {
     .vocab-table .cell-iri {
       font-family: monospace;
       font-size: 0.75rem;
-      color: #6b7280;
+      color: var(--prez-text-muted);
       word-break: break-all;
     }
 
     .vocab-table .cell-description {
-      color: #6b7280;
+      color: var(--prez-text-muted);
       font-size: 0.8125rem;
     }
   `
@@ -943,7 +1043,7 @@ export class PrezList extends PrezVocabBase {
             <div class="dropdown-popover">
               ${this.renderDropdownContent()}
               ${this.multiple && this.values.length > 0 ? html`
-                <div class="selection-count" style="padding: 0.25rem 0.5rem; border-top: 1px solid #e5e7eb;">
+                <div class="selection-count" style="padding: 0.25rem 0.5rem; border-top: 1px solid var(--prez-divider);">
                   ${this.values.length} selected
                 </div>
               ` : nothing}
@@ -973,7 +1073,7 @@ export class PrezList extends PrezVocabBase {
           <div class="dropdown-popover">
             ${this.renderDropdownContent()}
             ${this.multiple && this.values.length > 0 ? html`
-              <div class="selection-count" style="padding: 0.25rem 0.5rem; border-top: 1px solid #e5e7eb;">
+              <div class="selection-count" style="padding: 0.25rem 0.5rem; border-top: 1px solid var(--prez-divider);">
                 ${this.values.length} selected
               </div>
             ` : nothing}

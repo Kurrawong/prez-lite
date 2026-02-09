@@ -16,6 +16,9 @@ const props = withDefaults(defineProps<{
   initialOptions: () => ({})
 })
 
+// Get current color mode from Nuxt UI
+const colorMode = useColorMode()
+
 // Type options for prez-list component
 const typeOptions = ['select', 'dropdown', 'radio', 'table'] as const
 
@@ -75,6 +78,111 @@ onMounted(() => {
   }
 })
 
+// Style customization
+const showStylePanel = ref(false)
+const customStyles = reactive<Record<string, string>>({
+  '--prez-bg': '',
+  '--prez-text': '',
+  '--prez-border': '',
+  '--prez-primary': '',
+  '--prez-selected-bg': '',
+  '--prez-hover-bg': ''
+})
+
+const hasCustomStyles = computed(() => {
+  return Object.values(customStyles).some(v => v !== '')
+})
+
+function resetStyles() {
+  Object.keys(customStyles).forEach(key => {
+    customStyles[key] = ''
+  })
+}
+
+const styleString = computed(() => {
+  const styles = Object.entries(customStyles)
+    .filter(([_, value]) => value !== '')
+    .map(([key, value]) => `${key}: ${value}`)
+    .join('; ')
+  return styles ? ` style="${styles}"` : ''
+})
+
+// Color presets
+const presets = [
+  {
+    name: 'Ocean Blue',
+    colors: {
+      '--prez-bg': '#0c4a6e',
+      '--prez-text': '#e0f2fe',
+      '--prez-border': '#0369a1',
+      '--prez-primary': '#38bdf8',
+      '--prez-selected-bg': '#0284c7',
+      '--prez-hover-bg': '#075985'
+    }
+  },
+  {
+    name: 'Forest Green',
+    colors: {
+      '--prez-bg': '#14532d',
+      '--prez-text': '#dcfce7',
+      '--prez-border': '#166534',
+      '--prez-primary': '#4ade80',
+      '--prez-selected-bg': '#16a34a',
+      '--prez-hover-bg': '#15803d'
+    }
+  },
+  {
+    name: 'Purple Haze',
+    colors: {
+      '--prez-bg': '#581c87',
+      '--prez-text': '#f3e8ff',
+      '--prez-border': '#7e22ce',
+      '--prez-primary': '#c084fc',
+      '--prez-selected-bg': '#9333ea',
+      '--prez-hover-bg': '#6b21a8'
+    }
+  },
+  {
+    name: 'Sunset Orange',
+    colors: {
+      '--prez-bg': '#7c2d12',
+      '--prez-text': '#fed7aa',
+      '--prez-border': '#9a3412',
+      '--prez-primary': '#fb923c',
+      '--prez-selected-bg': '#ea580c',
+      '--prez-hover-bg': '#c2410c'
+    }
+  },
+  {
+    name: 'Slate Gray',
+    colors: {
+      '--prez-bg': '#1e293b',
+      '--prez-text': '#f1f5f9',
+      '--prez-border': '#475569',
+      '--prez-primary': '#94a3b8',
+      '--prez-selected-bg': '#334155',
+      '--prez-hover-bg': '#475569'
+    }
+  },
+  {
+    name: 'Rose Pink',
+    colors: {
+      '--prez-bg': '#881337',
+      '--prez-text': '#ffe4e6',
+      '--prez-border': '#9f1239',
+      '--prez-primary': '#fb7185',
+      '--prez-selected-bg': '#e11d48',
+      '--prez-hover-bg': '#be123c'
+    }
+  }
+]
+
+function applyPreset(preset: typeof presets[0]) {
+  Object.entries(preset.colors).forEach(([key, value]) => {
+    customStyles[key] = value
+  })
+}
+
 // Set example fields for table mode
 function setExampleFields() {
   fieldsValue.value = 'iri,label,description'
@@ -109,7 +217,12 @@ function clearEvents() {
 
 // Generate the component HTML with script tag - complete working example
 const componentHtml = computed(() => {
-  let attrs = `vocab="${props.vocab.slug}"`
+  let attrs = `vocab="${props.vocab.slug}" base-url="${props.baseUrl}"`
+
+  // Add theme attribute to match prez-lite's current color mode
+  if (colorMode.value !== 'auto') {
+    attrs += ` theme="${colorMode.value}"`
+  }
 
   // Add type attribute (only if not default 'select')
   if (selectedType.value !== 'select') {
@@ -127,9 +240,9 @@ const componentHtml = computed(() => {
     }
   }
 
-  return `<script src="${props.baseUrl}/web-components/prez-vocab.min.js" type="module"><\/script>
+  return `<script src="${props.baseUrl}/web-components/prez-lite.min.js" type="module"><\/script>
 
-<prez-list ${attrs}></prez-list>`
+<prez-list ${attrs}${styleString.value}></prez-list>`
 })
 
 // Editable code state
@@ -164,6 +277,9 @@ function generateIframeHtml(code: string): string {
   const componentCode = extractComponentCode(code)
   const eventNames = "['prez-change', 'prez-load', 'prez-error', 'prez-expand', 'prez-filter']"
 
+  // Determine iframe background based on color mode
+  const bgColor = colorMode.value === 'dark' ? '#1f2937' : 'white'
+
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -173,14 +289,15 @@ function generateIframeHtml(code: string): string {
       font-family: system-ui, sans-serif;
       padding: 1rem;
       margin: 0;
-      background: white;
+      background: ${bgColor};
+      color: ${colorMode.value === 'dark' ? '#f3f4f6' : '#374151'};
     }
     prez-list {
       width: 100%;
       max-width: 100%;
     }
   </style>
-  <script src="${props.baseUrl}/web-components/prez-vocab.min.js" type="module"><\/script>
+  <script src="${props.baseUrl}/web-components/prez-lite.min.js" type="module"><\/script>
 </head>
 <body>
   ${componentCode}
@@ -333,6 +450,19 @@ function toggleAttr(name: string) {
       <button
         :class="[
           'px-3 py-1.5 text-sm rounded-full border transition-colors flex items-center gap-1.5',
+          showStylePanel
+            ? 'bg-blue-600 text-white border-blue-600'
+            : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-gray-400'
+        ]"
+        @click="showStylePanel = !showStylePanel"
+      >
+        <span class="size-2 rounded-full" :class="hasCustomStyles ? 'bg-blue-500' : 'bg-gray-400'" />
+        <span>Styles</span>
+        <span v-if="hasCustomStyles" class="text-xs opacity-70">(custom)</span>
+      </button>
+      <button
+        :class="[
+          'px-3 py-1.5 text-sm rounded-full border transition-colors flex items-center gap-1.5',
           showEventLog
             ? 'bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300'
             : 'bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400 hover:border-gray-400'
@@ -344,6 +474,60 @@ function toggleAttr(name: string) {
         <span v-if="eventCount" class="text-xs opacity-70">({{ eventCount }})</span>
       </button>
     </div>
+
+    <!-- Style Customization Panel -->
+    <Transition name="slide">
+      <div v-if="showStylePanel" class="border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden mb-4">
+        <div class="flex items-center justify-between px-3 py-2 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+          <span class="text-sm font-medium text-gray-900 dark:text-gray-300">CSS Custom Properties</span>
+          <button
+            v-if="hasCustomStyles"
+            class="text-xs px-2 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+            @click="resetStyles"
+          >
+            Reset
+          </button>
+        </div>
+
+        <!-- Presets -->
+        <div class="p-3 bg-gray-50/50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+          <div class="text-xs font-medium text-gray-900 dark:text-gray-300 mb-2">Quick Presets</div>
+          <div class="flex flex-wrap gap-2">
+            <button
+              v-for="preset in presets"
+              :key="preset.name"
+              class="px-2 py-1 text-xs rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-300 transition-colors"
+              @click="applyPreset(preset)"
+            >
+              {{ preset.name }}
+            </button>
+          </div>
+          <div class="text-xs text-gray-600 dark:text-gray-400 mt-2">
+            ℹ️ Inline styles override theme-based dark mode. Custom styles apply in both light/dark modes.
+          </div>
+        </div>
+
+        <!-- Color Pickers -->
+        <div class="p-4 bg-white dark:bg-gray-900 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div v-for="(value, key) in customStyles" :key="key">
+            <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+              {{ key }}
+            </label>
+            <input
+              v-model="customStyles[key]"
+              type="color"
+              class="w-full h-8 rounded border border-gray-300 dark:border-gray-600 cursor-pointer"
+            />
+            <input
+              v-model="customStyles[key]"
+              type="text"
+              placeholder="e.g. #3b82f6"
+              class="mt-1 w-full text-xs px-2 py-1 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+            />
+          </div>
+        </div>
+      </div>
+    </Transition>
 
     <!-- Main Panel: Code + Preview side by side -->
     <div class="grid md:grid-cols-2 gap-0 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
@@ -377,8 +561,8 @@ function toggleAttr(name: string) {
       </div>
 
       <!-- Live Preview -->
-      <div class="bg-white border-l border-gray-300 dark:border-gray-600">
-        <div class="text-xs text-gray-500 px-3 py-2 border-b border-gray-200 bg-gray-50">
+      <div class="bg-white dark:bg-gray-900 border-l border-gray-300 dark:border-gray-600">
+        <div class="text-xs text-gray-500 dark:text-gray-400 px-3 py-2 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
           Preview
         </div>
         <iframe

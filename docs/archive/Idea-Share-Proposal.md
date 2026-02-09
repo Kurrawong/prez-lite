@@ -137,7 +137,7 @@ Using Lit (lightweight web component library) provides:
 
 ```html
 <!-- Basic usage - base-url auto-detected from script source -->
-<script src="https://vocabs.gswa.gov.au/web-components/prez-vocab.min.js"></script>
+<script src="https://vocabs.gswa.gov.au/web-components/prez-lite.min.js"></script>
 <prez-vocab-select vocab="alteration-types"></prez-vocab-select>
 
 <!-- Full options -->
@@ -151,7 +151,7 @@ Using Lit (lightweight web component library) provides:
 ></prez-vocab-select>
 
 <!-- Cross-origin: explicit base-url when using data from different instance -->
-<script src="https://cdn.example.com/prez-vocab.min.js"></script>
+<script src="https://cdn.example.com/prez-lite.min.js"></script>
 <prez-vocab-select
   vocab="alteration-types"
   base-url="https://vocabs.gswa.gov.au"
@@ -268,7 +268,7 @@ The web components consume a simplified JSON format:
 ```
 public/
 └── web-components/
-    ├── prez-vocab.min.js         # All components bundled (~15KB gzip)
+    ├── prez-lite.min.js         # All components bundled (~15KB gzip)
     ├── prez-vocab.min.css        # Default styles (~3KB gzip)
     ├── prez-vocab-select.js      # Individual component
     ├── prez-vocab-tree.js
@@ -346,7 +346,7 @@ prez-vocab-select {
 │                                                              │
 │  ┌─────────────────────────────────────────────────────────┐│
 │  │ <script src="https://vocabs.example.org/               ││
-│  │          web-components/prez-vocab.min.js">             ││
+│  │          web-components/prez-lite.min.js">             ││
 │  │ </script>                                               ││
 │  │                                                          ││
 │  │ <prez-vocab-select                                      ││
@@ -525,7 +525,7 @@ prez-lite/
 ├── web/                      # Nuxt layer (extended by organizations)
 │   └── public/
 │       └── web-components/   # Pre-built components (output from packages/)
-│           ├── prez-vocab.min.js
+│           ├── prez-lite.min.js
 │           └── prez-vocab.min.css
 ├── packages/
 │   └── web-components/       # Web component SOURCE (organizations don't touch this)
@@ -701,6 +701,6 @@ export class VocabPickerComponent {
 
 ```html
 <!-- base-url auto-detected from script src -->
-<script src="https://vocabs.gswa.gov.au/web-components/prez-vocab.min.js"></script>
+<script src="https://vocabs.gswa.gov.au/web-components/prez-lite.min.js"></script>
 <prez-vocab-select vocab="alteration-types" searchable></prez-vocab-select>
 ```

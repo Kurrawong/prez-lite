@@ -32,7 +32,7 @@ Embed vocabulary selection directly in any web application using our custom elem
 ### Quick Start
 
 ```html
-<script src="https://your-site.com/web-components/prez-vocab.min.js" type="module"></script>
+<script src="https://your-site.com/web-components/prez-lite.min.js" type="module"></script>
 
 <prez-vocab-select vocab="your-vocab-slug"></prez-vocab-select>
 ```
