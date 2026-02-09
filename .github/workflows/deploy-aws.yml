@@ -40,11 +40,11 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync web/.output/public/ "s3://${{ vars.BUCKET_NAME }}/" --delete
+          aws s3 sync web/.output/public/ "s3://${{ vars.DEV_BUCKET_NAME }}/" --delete
 
       - name: Invalidate CloudFront cache
-        if: vars.CDN_ID != ''
+        if: vars.DEV_CDN_ID != ''
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id "${{ vars.CDN_ID }}" \
+            --distribution-id "${{ vars.DEV_CDN_ID }}" \
             --paths "/*"
