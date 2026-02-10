@@ -7,3 +7,5 @@ Epic: to create integration with github to modify ttl files in the data folder.
 - What options do we have, do we need to setup a server side process to handle editing or auth integration?
 - Is there a minimal way to do this? Can we do it without any server side process?
 - If someone is not logged in, they should be able to view the file. They can edit it, but they cannot save it.
+
+

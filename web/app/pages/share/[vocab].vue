@@ -13,7 +13,7 @@ const vocab = computed(() => vocabs.value.find(v => v.slug === vocabSlug.value))
 
 const githubEditUrl = computed(() => {
   if (!githubRepo || !vocab.value) return null
-  return `https://github.com/${githubRepo}/edit/${githubBranch}/${githubVocabPath}/${vocab.value.slug}.ttl`
+  return `https://github.dev/${githubRepo}/blob/${githubBranch}/${githubVocabPath}/${vocab.value.slug}.ttl`
 })
 
 const baseUrl = computed(() => {

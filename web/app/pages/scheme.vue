@@ -51,7 +51,7 @@ const githubEditUrl = computed(() => {
   if (!githubRepo || !uri.value) return null
   const vocab = getVocabByIri(uri.value)
   if (!vocab) return null
-  return `https://github.com/${githubRepo}/edit/${githubBranch}/${githubVocabPath}/${vocab.slug}.ttl`
+  return `https://github.dev/${githubRepo}/blob/${githubBranch}/${githubVocabPath}/${vocab.slug}.ttl`
 })
 
 // Tree controls
