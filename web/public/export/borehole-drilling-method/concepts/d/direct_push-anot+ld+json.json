@@ -21,12 +21,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Delft sampler"
+        "@value": "Delft sampler",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "The Delft continuous sampler, developed by GeoDelft, is used for obtaining high quality samples within very soft cohesive soils. The sampling system is available in two sizes to take continuous samples, 29 or 66mm in diameter, normally with a maximum penetration of about 18m. A steel outer tube is pushed into the ground using standard CPT (cone penetrometer test) equipment and the soil sample core is fed into a thin-walled plastic inner tube as the sampler advances. After extraction, the samples are cut into 1 m lengths and placed in purpose-made cases, being retained in the plastic tubes."
+        "@value": "The Delft continuous sampler, developed by GeoDelft, is used for obtaining high quality samples within very soft cohesive soils. The sampling system is available in two sizes to take continuous samples, 29 or 66 mm in diameter, normally with a maximum penetration of about 18 m. A steel outer tube is pushed into the ground using standard CPT (cone penetrometer test) equipment and the soil sample core is fed into a thin-walled plastic inner tube as the sampler advances. After extraction, the samples are cut into 1 m lengths and placed in purpose-made cases, being retained in the plastic tubes.",
+        "@language": "en"
       }
     ]
   },
@@ -130,12 +132,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Geoprobe core"
+        "@value": "Geoprobe core",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A proprietary type of direct push drilling. High quality core is extracted by hydraulic power. Used in rough terrain, soft sand, mud, shallow water, or tight, congested areas. Long high quality cores."
+        "@value": "A proprietary type of direct push drilling. High-quality core is extracted by hydraulic power. Used in rough terrain, soft sand, mud, shallow water or tight, congested areas.",
+        "@language": "en"
       }
     ]
   },
@@ -153,12 +157,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Mackereth core"
+        "@value": "Mackereth core",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "The Mackereth corer (Mackereth, 1958; Smith, 1959) is a pneumatic device that consists of a cylindrical aluminum chamber ~1.2m long and 0.5m in diameter. The apparatus is lowered to the lake floor on a rope, and air hoses connect the chamber to the vessel at the water surface. Compressed air is used to pump the water out of the chamber and then to force the inner core barrel downward through the chamber and into the sediment. The method can recover single-drive moderate (up to 12 m) cores from lakes of diverse depths.  Mackereth cores can be deployed on virtually any small craft and can be used in water depths up to 100 metres."
+        "@value": "The Mackereth corer (Mackereth, 1958; Smith, 1959) is a pneumatic device that consists of a cylindrical aluminium chamber about 1.2 m long and 0.5 m in diameter. The apparatus is lowered to the lake floor on a rope, and air hoses connect the chamber to the vessel at the water surface. Compressed air is used to pump the water out of the chamber and then to force the inner core barrel downward through the chamber and into the sediment. The method can recover single-drive moderate (up to 12 m) cores from lakes of diverse depths. Mackereth cores can be deployed on virtually any small craft and can be used in water depths up to 100 m.",
+        "@language": "en"
       }
     ]
   },
@@ -176,13 +182,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Messgeraet",
-        "@language": "de"
+        "@value": "probe",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "An object (eg, penetrometer) inserted into the substrate that records material properties without taking physical samples."
+        "@value": "An object (e.g. penetrometer) inserted into the substrate that records material properties without taking physical samples.",
+        "@language": "en"
       }
     ]
   },
@@ -200,137 +207,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "window sampler"
+        "@value": "window sampler",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Window or windowless sampling uses either drop weight or hydraulic hammer to drive 1m or 2m long sample tubes into the ground. The sample tubes have open slots or “windows\" along their length to allow for logging and sampling. In windowless sampling, the sample tube contains a liner which retains the sample and reduces potential for cross contamination of soils during the drilling process. Window or windowless sampling is used to bore through shallow soft soils to investigate the substrata in order to gain a profile of the ground conditions and to facilitate soil sampling for chemical and geotechnical analysis."
-      }
-    ]
-  },
-  {
-    "@id": "http://resource.geosciml.org/classifierscheme/cgi/2016.01/boreholedrillingmethod",
-    "https://prez.dev/label": [
-      {
-        "@value": "Borehole Drilling Method"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "This scheme specifies concepts used to describe methods used to drill a borehole, as defined by the IUGS Commission for Geoscience Information (CGI) Geoscience Terminology Working Group. By extension, it includes all concepts in this conceptScheme, as well as concepts in any previous versions of the scheme."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The subject is an instance of a class."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-    "https://prez.dev/label": [
-      {
-        "@value": "is defined by"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The defininition of the subject resource."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2001/XMLSchema#anyURI",
-    "https://prez.dev/label": [
-      {
-        "@value": "URI"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-    "https://prez.dev/label": [
-      {
-        "@value": "Concept"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "An idea or notion; a unit of thought"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#definition",
-    "https://prez.dev/label": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A statement or formal explanation of the meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
-    "https://prez.dev/label": [
-      {
-        "@value": "history note"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A note about the past state/use/meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
-    "https://prez.dev/label": [
-      {
-        "@value": "is in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
-    "https://prez.dev/label": [
-      {
-        "@value": "has narrower"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a concept to a concept that is more specific in meaning"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-    "https://prez.dev/label": [
-      {
-        "@value": "preferred label"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The preferred lexical label for a resource, in a given language"
+        "@value": "Window or windowless sampling uses either a drop weight or hydraulic hammer to drive 1 m or 2 m long sample tubes into the ground. The sample tubes have open slots or 'windows' along their length to allow for logging and sampling. In windowless sampling, the sample tube contains a liner which retains the sample and reduces potential for cross contamination of soils during the drilling process. Window or windowless sampling is used to bore through shallow soft soils to investigate the substrata in order to gain a profile of the ground conditions and to facilitate soil sampling for chemical and geotechnical analysis.",
+        "@language": "en"
       }
     ]
   },
@@ -398,43 +282,6 @@
     ]
   },
   {
-    "@id": "https://prez.dev/FocusNode",
-    "https://prez.dev/label": [
-      {
-        "@value": "Focus Node"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/OGCSchemesObjectProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "OGC Concept Scheme Object Profile"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A profile for SKOS Concept Schemes"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/currentProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "current profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/identifier",
-    "https://prez.dev/label": [
-      {
-        "@value": "identifier"
-      }
-    ]
-  },
-  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -447,27 +294,6 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ]
-  },
-  {
-    "@id": "https://schema.org/citation",
-    "https://prez.dev/label": [
-      {
-        "@value": "citation"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
       }
     ]
   }

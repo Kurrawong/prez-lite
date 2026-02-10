@@ -21,12 +21,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "box core"
+        "@value": "box core",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A sampling method that obtains a large volume or large surface area core with shallow penetration and minimum disturbance. Commonly uses a double spade system."
+        "@value": "A sampling method that obtains a large volume or large surface area core with shallow penetration and minimum disturbance. Commonly uses a double spade system.",
+        "@language": "en"
       }
     ]
   },
@@ -44,12 +46,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "gravity core"
+        "@value": "gravity core",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Used only where short cores are required. Core barrel is gravity forced into poorly consolidated material, producing near surface high quality core."
+        "@value": "Used only where short cores are required. The core barrel is gravity forced into poorly consolidated material, producing near-surface, high-quality core.",
+        "@language": "en"
       }
     ]
   },
@@ -67,12 +71,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Kasten core"
+        "@value": "Kasten core",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Large volume, relatively undisturbed sediment core (~3m long) from a Kasten Corer. The corer is constructed of stainless steel and is square in cross-section. A weight of several hundred kilograms on top of the corer pushes it 2-3 metres into the seabed."
+        "@value": "Large volume, relatively undisturbed sediment core (~3 m long) from a Kasten Corer. The corer is constructed of stainless steel and is square in cross-section. A weight of several hundred kilograms on top of the corer pushes it 2 to 3 m into the seabed.",
+        "@language": "en"
       }
     ]
   },
@@ -90,111 +96,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "vibrocore"
+        "@value": "vibrocore",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A core tube is attached to a source of mechanical vibration (the power head) and lowered into sediment. The vibrations provide energy for rearranging the particles within the sediment in such a way that the core tube penetrates under the static weight of the vibracoring apparatus. Samples include stiff and stony clays, soft rock and sands, and saturated sediments which can not be sampled using gravity or piston corers. Also know as VIBRA."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The subject is an instance of a class."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-    "https://prez.dev/label": [
-      {
-        "@value": "is defined by"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The defininition of the subject resource."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2001/XMLSchema#anyURI",
-    "https://prez.dev/label": [
-      {
-        "@value": "URI"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-    "https://prez.dev/label": [
-      {
-        "@value": "Concept"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "An idea or notion; a unit of thought"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#definition",
-    "https://prez.dev/label": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A statement or formal explanation of the meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
-    "https://prez.dev/label": [
-      {
-        "@value": "is in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
-    "https://prez.dev/label": [
-      {
-        "@value": "has narrower"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a concept to a concept that is more specific in meaning"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-    "https://prez.dev/label": [
-      {
-        "@value": "preferred label"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The preferred lexical label for a resource, in a given language"
+        "@value": "A core tube is attached to a source of mechanical vibration (the power head) and lowered into sediment. The vibrations provide energy for rearranging the particles within the sediment in such a way that the core tube penetrates under the static weight of the vibracoring apparatus. Samples include stiff and stony clays, soft rock and sands, and saturated sediments which can not be sampled using gravity or piston corers. Also known as VIBRA.",
+        "@language": "en"
       }
     ]
   },
@@ -312,43 +221,6 @@
     ]
   },
   {
-    "@id": "https://prez.dev/FocusNode",
-    "https://prez.dev/label": [
-      {
-        "@value": "Focus Node"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/OGCSchemesObjectProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "OGC Concept Scheme Object Profile"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A profile for SKOS Concept Schemes"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/currentProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "current profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/identifier",
-    "https://prez.dev/label": [
-      {
-        "@value": "identifier"
-      }
-    ]
-  },
-  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -361,27 +233,6 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ]
-  },
-  {
-    "@id": "https://schema.org/citation",
-    "https://prez.dev/label": [
-      {
-        "@value": "citation"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
       }
     ]
   }
