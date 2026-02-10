@@ -41,6 +41,9 @@ jobs:
         run: pnpm build:site
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
+          NUXT_PUBLIC_GITHUB_REPO: ${{ vars.GITHUB_REPO_SLUG }}
+          NUXT_PUBLIC_GITHUB_BRANCH: ${{ vars.GITHUB_BRANCH || 'main' }}
+          NUXT_PUBLIC_GITHUB_VOCAB_PATH: ${{ vars.GITHUB_VOCAB_PATH || 'web/public/data/vocabs' }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
