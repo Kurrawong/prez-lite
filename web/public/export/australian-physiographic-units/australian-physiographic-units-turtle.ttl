@@ -23,8 +23,8 @@
     owl:versionInfo "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     skos:hasTopConcept <https://linked.data.gov.au/def/australian-physiographic-units/eastern-upland-division>, <https://linked.data.gov.au/def/australian-physiographic-units/interior-lowland-division>, <https://linked.data.gov.au/def/australian-physiographic-units/western-plateau-division>;
-    prov:qualifiedAttribution _:n3-1033, _:n3-1034.
-_:n3-1033 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:qualifiedAttribution _:n3-1031, _:n3-1032.
+_:n3-1031 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-_:n3-1034 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1032 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.

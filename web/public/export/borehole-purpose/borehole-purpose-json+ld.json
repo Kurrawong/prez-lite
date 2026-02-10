@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-1393",
+        "@id": "_:n3-1391",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-1394",
+        "@id": "_:n3-1392",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -92,10 +92,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-1393"
+                "@id": "_:n3-1391"
             },
             {
-                "@id": "_:n3-1394"
+                "@id": "_:n3-1392"
             }
         ],
         "https://schema.org/creator": [

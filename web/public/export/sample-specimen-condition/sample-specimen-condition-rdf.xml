@@ -32,8 +32,8 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/shielded"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/to-be-repackaged"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-condition/uncleaned"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-3069"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-3070"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3067"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3068"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateModified>
@@ -41,11 +41,11 @@
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-3069">
+  <rdf:Description rdf:nodeID="n3-3067">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-5129-2467"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-3070">
+  <rdf:Description rdf:nodeID="n3-3068">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>

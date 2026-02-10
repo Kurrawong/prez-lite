@@ -22,59 +22,18 @@
     owl:versionInfo "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
-    prov:qualifiedAttribution _:n3-2977, _:n3-2978;
+    prov:qualifiedAttribution _:n3-2975, _:n3-2976;
     prez:identifier "ns4:metamorphic-facies";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:metamorphic-facies";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:metamorphic-facies/items";
     prez:type prez:FocusNode;
     prez:label "Metamorphic facies"@en;
     prez:description "A metamorphic facies is defined by a repeatedly occurring and thus predictable set of stable mineral assemblages in metamorphic rocks. Such metamorphic mineral assemblages crystallize and are stable over a range of externally imposed physical conditions, most crucially lithostatic pressure and temperature, and thus the facies define areas in two-dimensional plots of pressure–temperature space. There is a demonstrable/proven relationship between mineral composition and bulk rock chemical composition and a consistent relationship through geological time. Rocks which contain certain metamorphic mineral assemblages can therefore be linked to particular tectonic settings, times and places in the geological history of an area. The boundaries between facies are typically gradational as the disappearance or appearance of minerals occurs over pressure, temperature, space and time. The vocabulary is based on Fettes and Desmons (2007, Metamorphic Rocks: a classification and glossary of terms — Recommendations of the International Union of Geological Sciences Subcommission on the Systematics of Metamorphic Rocks edited by D Fettes and J Desmons, 244p.), with further subdivisions for some facies. Definitions also borrow from Neuendorf et al. (2005, Glossary of Geology: 5th edition, revised edited by KKE Neuendorf, JP Mehl Jr and JA Jackson: American Geological Institute, Alexandria, Virginia, USA, 779p.). More detailed metamorphic mineral assemblages for specific rock types can be found at https://en.wikipedia.org/wiki/Metamorphic_facies)."@en.
-rdf:type prez:label "type";
-    prez:description "The subject is an instance of a class.".
-skos:ConceptScheme prez:label "Concept Scheme";
-    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
-skos:definition prez:label "definition";
-    prez:description "A statement or formal explanation of the meaning of a concept".
-skos:historyNote prez:label "history note";
-    prez:description "A note about the past state/use/meaning of a concept".
-skos:prefLabel prez:label "preferred label";
-    prez:description "The preferred lexical label for a resource, in a given language".
-sdo:dateCreated prez:label "date created";
-    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
-sdo:creator prez:label "creator";
-    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
-<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
-sdo:dateModified prez:label "date modified";
-    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
-sdo:publisher prez:label "publisher";
-    prez:description "The publisher of the creative work".
-owl:versionIRI prez:label "version IRI";
-    prez:description "The property that identifies the version IRI of an ontology.".
-owl:versionInfo prez:label "versionInfo";
-    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
-reg:status prez:label "status";
-    prez:description "The status of this register entry".
-<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
-    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
-sdo:keywords prez:label "keywords";
-    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
-prov:qualifiedAttribution prez:label "qualified attribution";
-    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-2977 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2975 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.
-prov:hadRole prez:label "role".
-<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
-prov:agent prez:label "agent".
-<https://www.linkedin.com/in/david-kelsey-425746137/> prez:label "Dave Kelsey".
-_:n3-2978 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2976 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0003-0007-8342>.
-<https://orcid.org/0009-0003-0007-8342> prez:label "Fawna Korhonen".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2979 prez:currentProfile prez:OGCSchemesObjectProfile.
-prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
-    prez:description "A profile for SKOS Concept Schemes".
-xsd:date prez:label "date".
-skos:hasTopConcept prez:label "has top concept";
-    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+_:n3-2977 prez:currentProfile prez:OGCSchemesObjectProfile.

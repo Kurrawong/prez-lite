@@ -30,8 +30,8 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/earthsci-for/human-society"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/earthsci-for/physical-sciences"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/earthsci-for/built-environment-and-design"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1565"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1566"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1563"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1564"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-05-15</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-23</sdo:dateModified>
@@ -40,11 +40,11 @@
     <sdo:version>1</sdo:version>
     <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1565">
+  <rdf:Description rdf:nodeID="n3-1563">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1566">
+  <rdf:Description rdf:nodeID="n3-1564">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>

@@ -44,8 +44,8 @@ This vocabulary was discussed at a national level via the Government Geoscience 
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-purpose-wa/geological-investigation"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-purpose-wa/unknown"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-purpose-wa/exploration-exploitation-minerals-and-basic-raw-materials"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1393"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1394"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1391"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1392"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-03</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-03</sdo:dateModified>
@@ -53,11 +53,11 @@ This vocabulary was discussed at a national level via the Government Geoscience 
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1393">
+  <rdf:Description rdf:nodeID="n3-1391">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1394">
+  <rdf:Description rdf:nodeID="n3-1392">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>

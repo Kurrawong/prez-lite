@@ -35,55 +35,7 @@
     prez:type prez:FocusNode;
     prez:label "International Chronostratigraphic Chart"@en;
     prez:description "This is a SKOS vocabulary presentation of the time units of the International Chronostratigraphic Chart represented as SKOS Concepts. Beginning and End ages are given for each unit in units of Millions of Years Ago (MYA)."@en.
-rdf:type prez:label "type";
-    prez:description "The subject is an instance of a class.".
-skos:ConceptScheme prez:label "Concept Scheme";
-    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
-skos:definition prez:label "definition";
-    prez:description "A statement or formal explanation of the meaning of a concept".
-skos:historyNote prez:label "history note";
-    prez:description "A note about the past state/use/meaning of a concept".
-skos:prefLabel prez:label "preferred label";
-    prez:description "The preferred lexical label for a resource, in a given language".
-skos:altLabel prez:label "alternative label";
-    prez:description "An alternative lexical label for a resource".
-prov:wasDerivedFrom prez:label "was derived from";
-    prez:description "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.".
-dcterms:conformsTo prez:label "Conforms To";
-    prez:description "An established standard to which the described resource conforms.".
-<https://w3id.org/profile/vocpub/4.6> prez:label "VocPub 4.6".
-dcterms:created prez:label "Date Created";
-    prez:description "Date of creation of the resource.".
-dcterms:creator prez:label "Creator";
-    prez:description "An entity responsible for making the resource.".
-dcterms:modified prez:label "Date Modified";
-    prez:description "Date on which the resource was changed.".
-dcterms:publisher prez:label "Publisher";
-    prez:description "An entity responsible for making the resource available.".
-owl:versionIRI prez:label "version IRI";
-    prez:description "The property that identifies the version IRI of an ontology.".
-<http://resource.geosciml.org/classifier/ics/ischart/2024-12> prez:label "2024-12".
-owl:versionInfo prez:label "versionInfo";
-    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
-sdo:citation prez:label "citation";
-    prez:description "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc".
-sdo:copyrightHolder prez:label "copyright holder";
-    prez:description "The party holding the legal copyright to the CreativeWork".
-sdo:copyrightNotice prez:label "copyright notice";
-    prez:description "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work".
-sdo:license prez:label "license";
-    prez:description "A license document that applies to this content, typically indicated by URL".
-<https://creativecommons.org/licenses/by/4.0/> prez:label "Creative Commons BY 4.0".
-skos:versionInfo prez:label "version info".
-skos:scopeNote prez:label "scope note";
-    prez:description "A note that helps to clarify the meaning and/or the use of a concept".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
 _:n3-668 prez:currentProfile prez:OGCSchemesObjectProfile.
-prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
-    prez:description "A profile for SKOS Concept Schemes".
-xsd:date prez:label "date".
-skos:hasTopConcept prez:label "has top concept";
-    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
-xsd:anyURI prez:label "URI".

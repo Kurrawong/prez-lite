@@ -22,59 +22,18 @@
     owl:versionIRI <https://linked.data.gov.au/def/australian-physiographic-units/1>;
     owl:versionInfo "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
-    prov:qualifiedAttribution _:n3-1033, _:n3-1034;
+    prov:qualifiedAttribution _:n3-1031, _:n3-1032;
     prez:identifier "ns4:australian-physiographic-units";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:australian-physiographic-units";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:australian-physiographic-units/items";
     prez:type prez:FocusNode;
     prez:label "Australian physiographic units"@en;
     prez:description "A list of physiographic units in Australia that provide a consistent framework for mapping soils and landforms at national and regional scales, compiled at a continental scale. The list was defined by Pain et al. (2011; https://www.clw.csiro.au/aclep/documents/PhysiographicRegions_2011.pdf)* and built on the work of Jennings and Mabbutt (1986). It recognises a subdivision of the Australian onshore continent into three physiographic divisions, 23 physiographic provinces and 220 physiographic regions. The three divisions correspond broadly with the geological subdivision into the western shields, the central basins and the eastern fold belts. Provinces can be used to make interpretations about landscape processes at the broadest scale; descriptors for provinces include a name, geology, structure, and broad regolith types. The primary descriptors for regions are geographic name and a simple text description including major geologic and geomorphic features. Bounding box coordinates in decimal degrees are included. Each physiographic unit is also identified by a numeric code (one, three, and five digits for divisions, provinces and regions, respectively). For physiographic units within Western Australia, notations provided include extensions to five-digit numbering for divisions and provinces, to allow better characterization for database purposes. For Western Australian physiographic units, an alphabetical code is also listed; these consist of three upper-case letters for the division and provinces, with an additional two lower-case letter suffix for regions. These alphabetical codes are used by the Geological Survey of Western Australia (GSWA) to spatially assign regolith units to the correct physiographic unit during mapping. GSWA describes a physiographic unit as 'A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.'\n*Pain, C, Gregory, L, Wilson, P and McKenzie, N (2011), The physiographic regions of Australia – Explanatory notes 2011; Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain (dataset available at https://www.asris.csiro.au/themes/PhysioRegions.html)."@en.
-rdf:type prez:label "type";
-    prez:description "The subject is an instance of a class.".
-skos:ConceptScheme prez:label "Concept Scheme";
-    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
-skos:definition prez:label "definition";
-    prez:description "A statement or formal explanation of the meaning of a concept".
-skos:historyNote prez:label "history note";
-    prez:description "A note about the past state/use/meaning of a concept".
-skos:prefLabel prez:label "preferred label";
-    prez:description "The preferred lexical label for a resource, in a given language".
-sdo:dateCreated prez:label "date created";
-    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
-sdo:creator prez:label "creator";
-    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
-<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
-sdo:dateModified prez:label "date modified";
-    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
-sdo:publisher prez:label "publisher";
-    prez:description "The publisher of the creative work".
-sdo:keywords prez:label "keywords";
-    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
-owl:versionIRI prez:label "version IRI";
-    prez:description "The property that identifies the version IRI of an ontology.".
-owl:versionInfo prez:label "versionInfo";
-    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
-reg:status prez:label "status";
-    prez:description "The status of this register entry".
-<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
-    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
-prov:qualifiedAttribution prez:label "qualified attribution";
-    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-1033 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1031 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-prov:hadRole prez:label "role".
-<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
-prov:agent prez:label "agent".
-<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-1034 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1032 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
-<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-1035 prez:currentProfile prez:OGCSchemesObjectProfile.
-prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
-    prez:description "A profile for SKOS Concept Schemes".
-xsd:date prez:label "date".
-skos:hasTopConcept prez:label "has top concept";
-    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+_:n3-1033 prez:currentProfile prez:OGCSchemesObjectProfile.

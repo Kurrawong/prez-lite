@@ -1,126 +1,9 @@
 [
   {
-    "@id": "_:n3-3211",
+    "@id": "_:n3-3209",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The subject is an instance of a class."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-    "https://prez.dev/label": [
-      {
-        "@value": "is defined by"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The defininition of the subject resource."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-    "https://prez.dev/label": [
-      {
-        "@value": "Concept"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "An idea or notion; a unit of thought"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#definition",
-    "https://prez.dev/label": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A statement or formal explanation of the meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
-    "https://prez.dev/label": [
-      {
-        "@value": "history note"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A note about the past state/use/meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
-    "https://prez.dev/label": [
-      {
-        "@value": "is in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-    "https://prez.dev/label": [
-      {
-        "@value": "preferred label"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The preferred lexical label for a resource, in a given language"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#relatedMatch",
-    "https://prez.dev/label": [
-      {
-        "@value": "has related match"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
-    "https://prez.dev/label": [
-      {
-        "@value": "is top concept in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
       }
     ]
   },
@@ -129,19 +12,6 @@
     "https://prez.dev/identifier": [
       {
         "@value": "catalogue:gswa-vocabs"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/geofeatures/SeismicProvince",
-    "https://prez.dev/label": [
-      {
-        "@value": "seismic province"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Representative of a discrete \"volume\" of middle to lower crust which cannot be traced to the surface, and whose crustal reflectivity is different to that of laterally or vertically adjoining provinces (in differing lithology, geological history, and/or structural architecture). A Seismic Province is a Geophysical Domain. In North Queensland, the Numil and Abingdon Seismic Provinces are two lower crustal sectors that have been interpreted to represent microcontinents that accreted to the eastern fringe of the North Australian Craton prior to the late Paleoproterozoic (Korsch et al., 2010, Korsch, 2012)."
       }
     ]
   },
@@ -246,43 +116,6 @@
     ]
   },
   {
-    "@id": "https://prez.dev/FocusNode",
-    "https://prez.dev/label": [
-      {
-        "@value": "Focus Node"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/OGCSchemesObjectProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "OGC Concept Scheme Object Profile"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A profile for SKOS Concept Schemes"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/currentProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "current profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/identifier",
-    "https://prez.dev/label": [
-      {
-        "@value": "identifier"
-      }
-    ]
-  },
-  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -295,14 +128,6 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
       }
     ]
   }

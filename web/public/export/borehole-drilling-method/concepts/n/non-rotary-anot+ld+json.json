@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-1350",
+    "@id": "_:n3-1348",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -21,12 +21,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "cable tool drilling"
+        "@value": "cable tool",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A percussion drilling method that uses a heavy drilling tool that is raised and lowered with enough force to pulverise the rock, with the debris removed by a bailer. Although this drilling method has largely been supplanted in recent years by other, faster drilling techniques, it is still the most practicable drilling method for large diameter, deep bedrock wells, and in widespread use for small rural water supply wells. The impact of the drill bit fractures the rock and in many shale rock situations increases the water flow into a well over rotary. Many large diameter water supply wells, especially deep wells completed in bedrock aquifers, were completed using this drilling method."
+        "@value": "A percussion drilling method that uses a heavy drilling tool that is raised and lowered with enough force to pulverise the rock, with the debris removed by a bailer. Although this drilling method has largely been supplanted in recent years by other, faster drilling techniques, it is still the most practicable drilling method for large diameter, deep bedrock wells, and in widespread use for small rural water supply wells. The impact of the drillbit fractures the rock and in many shale rock situations increases the water flow into a well over rotary. Many large diameter water supply wells, especially deep wells completed in bedrock aquifers, were completed using this drilling method.",
+        "@language": "en"
       }
     ]
   },
@@ -44,129 +46,14 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "direct push"
+        "@value": "direct push drilling",
+        "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Direct push technology includes several types of drilling rigs and drilling equipment which advances a drill string by pushing or hammering without rotating the drill string. Direct push rigs include both cone penetration testing rigs and direct push sampling rigs such as a PowerProbe or Geoprobe. Direct push rigs typically are limited to drilling in unconsolidated soil materials and very soft rock. Direct push drilling rigs use hydraulic cylinders and a hydraulic hammer in advancing a hollow core sampler, typically no longer than 2 metres, to gather soil and groundwater samples. The core pipe has a valve on top that is used to create a vacuum at the top of the core when pulling the core out of the sediment. The method can be used in up to 5m of water."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The subject is an instance of a class."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-    "https://prez.dev/label": [
-      {
-        "@value": "is defined by"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The defininition of the subject resource."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-    "https://prez.dev/label": [
-      {
-        "@value": "Concept"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "An idea or notion; a unit of thought"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#definition",
-    "https://prez.dev/label": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A statement or formal explanation of the meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
-    "https://prez.dev/label": [
-      {
-        "@value": "history note"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A note about the past state/use/meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
-    "https://prez.dev/label": [
-      {
-        "@value": "is in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
-    "https://prez.dev/label": [
-      {
-        "@value": "has narrower"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a concept to a concept that is more specific in meaning"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-    "https://prez.dev/label": [
-      {
-        "@value": "preferred label"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The preferred lexical label for a resource, in a given language"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
-    "https://prez.dev/label": [
-      {
-        "@value": "is top concept in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
+        "@value": "Direct push technology includes several types of drilling rigs and drilling equipment that advance a drillstring by pushing or hammering without rotating the drillstring. Direct push rigs include both cone penetration testing rigs and direct push sampling rigs such as a PowerProbe or Geoprobe. Direct push rigs typically are limited to drilling in unconsolidated soil materials and very soft rock. Direct push drilling rigs use hydraulic cylinders and a hydraulic hammer in advancing a hollow core sampler, typically no longer than 2 m, to gather soil and groundwater samples. The core pipe has a valve on top that is used to create a vacuum at the top of the core when pulling the core out of the sediment. The method can be used in up to 5 m of water.",
+        "@language": "en"
       }
     ]
   },
@@ -338,43 +225,6 @@
     ]
   },
   {
-    "@id": "https://prez.dev/FocusNode",
-    "https://prez.dev/label": [
-      {
-        "@value": "Focus Node"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/OGCSchemesObjectProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "OGC Concept Scheme Object Profile"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A profile for SKOS Concept Schemes"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/currentProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "current profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/identifier",
-    "https://prez.dev/label": [
-      {
-        "@value": "identifier"
-      }
-    ]
-  },
-  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -387,14 +237,6 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
       }
     ]
   }

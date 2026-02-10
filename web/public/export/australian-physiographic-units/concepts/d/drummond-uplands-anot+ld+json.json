@@ -1,121 +1,9 @@
 [
   {
-    "@id": "_:n3-1108",
+    "@id": "_:n3-1106",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The subject is an instance of a class."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-    "https://prez.dev/label": [
-      {
-        "@value": "is defined by"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The defininition of the subject resource."
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2001/XMLSchema#anyURI",
-    "https://prez.dev/label": [
-      {
-        "@value": "URI"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-    "https://prez.dev/label": [
-      {
-        "@value": "Concept"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "An idea or notion; a unit of thought"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#definition",
-    "https://prez.dev/label": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A statement or formal explanation of the meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
-    "https://prez.dev/label": [
-      {
-        "@value": "history note"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A note about the past state/use/meaning of a concept"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
-    "https://prez.dev/label": [
-      {
-        "@value": "is in scheme"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#notation",
-    "https://prez.dev/label": [
-      {
-        "@value": "notation"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
-    "https://prez.dev/label": [
-      {
-        "@value": "preferred label"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "The preferred lexical label for a resource, in a given language"
       }
     ]
   },
@@ -230,43 +118,6 @@
     ]
   },
   {
-    "@id": "https://prez.dev/FocusNode",
-    "https://prez.dev/label": [
-      {
-        "@value": "Focus Node"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/OGCSchemesObjectProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "OGC Concept Scheme Object Profile"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A profile for SKOS Concept Schemes"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/currentProfile",
-    "https://prez.dev/label": [
-      {
-        "@value": "current profile"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/identifier",
-    "https://prez.dev/label": [
-      {
-        "@value": "identifier"
-      }
-    ]
-  },
-  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -279,27 +130,6 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
-      }
-    ]
-  },
-  {
-    "@id": "https://prez.dev/type",
-    "https://prez.dev/label": [
-      {
-        "@value": "type"
-      }
-    ]
-  },
-  {
-    "@id": "https://schema.org/citation",
-    "https://prez.dev/label": [
-      {
-        "@value": "citation"
-      }
-    ],
-    "https://prez.dev/description": [
-      {
-        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
       }
     ]
   }

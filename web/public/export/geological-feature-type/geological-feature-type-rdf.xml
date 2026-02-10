@@ -37,19 +37,19 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/structural-feature"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/tectonic-feature"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/tectonic-unit"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1821"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1822"/>
     <prov:qualifiedAttribution rdf:nodeID="n3-1823"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1824"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1825"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1823">
+  <rdf:Description rdf:nodeID="n3-1821">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1824">
+  <rdf:Description rdf:nodeID="n3-1822">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://www.linkedin.com/in/davidmcbmartin/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1825">
+  <rdf:Description rdf:nodeID="n3-1823">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>
