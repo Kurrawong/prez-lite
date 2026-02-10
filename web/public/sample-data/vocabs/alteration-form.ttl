@@ -15,7 +15,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:broader :layer-controlled ;
-    skos:definition "Alteration that selectively replaces specific bands within rocks."@en ;
+    skos:definition "Alteration that selectively replaces specific bands within rocksXX."@en ;
     skos:historyNote "Definition compiled by the Geological Survey of Western Australia." ;
     skos:inScheme cs: ;
     skos:prefLabel "banding-controlled"@en ;
