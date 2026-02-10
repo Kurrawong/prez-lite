@@ -8,6 +8,269 @@
     ]
   },
   {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole during which liquids (including groundwater), gas (both conventional and unconventional), or geothermal energy are being extracted from the borehole.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-csg",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing CSG",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Coal seam gas well producing gas.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-gas",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing Conventional Gas",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Petroleum well producing gas.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-geothermal-energy",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing Geothermal Energy",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Borehole/well from which geothermal energy is being extracted.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-oil",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing Oil",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Petroleum well producing oil.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-shale-gas",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing Shale Gas",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Borehole/well producing shale gas.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-tight-gas",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing Tight Gas",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Borehole/well producing tight gas.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/producing-water",
+    "https://prez.dev/label": [
+      {
+        "@value": "Producing Water",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A borehole/well that is producing water, including a borehole/well that has been converted for use as a water bore and is functional (producing water).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrowMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
     "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
     "https://prez.dev/identifier": [
       {
@@ -148,6 +411,56 @@
     ]
   },
   {
+    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/producing",
+    "https://prez.dev/label": [
+      {
+        "@value": "producing"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The status of a borehole during  which liquids or gas are being extracted from the borehole."
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -160,6 +473,14 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
       }
     ]
   }
