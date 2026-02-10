@@ -62,7 +62,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "Alteration that selectively replaces specific bands within rocks.",
+        "@value": "Alteration that selectively replaces specific bands within rocksXX.",
         "@language": "en"
       }
     ],
@@ -105,7 +105,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Alteration that selectively replaces specific bands within rocks.",
+        "@value": "Alteration that selectively replaces specific bands within rocksXX.",
         "@language": "en"
       }
     ]
