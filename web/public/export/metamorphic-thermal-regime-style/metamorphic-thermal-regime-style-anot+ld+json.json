@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-2708",
+    "@id": "_:n3-2722",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-2709",
+    "@id": "_:n3-2723",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "@id": "_:n3-2710",
+    "@id": "_:n3-2724",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -270,10 +270,10 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-2708"
+        "@id": "_:n3-2722"
       },
       {
-        "@id": "_:n3-2709"
+        "@id": "_:n3-2723"
       }
     ],
     "https://prez.dev/identifier": [
@@ -305,66 +305,6 @@
     "https://prez.dev/description": [
       {
         "@value": "Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one).",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "high T/P",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "intermediate T/P",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "low T/P",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "near-surface ultra-high T/P",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "ultra-high T/P",
         "@language": "en"
       }
     ]

@@ -4,4 +4,3 @@
 
 ---
 
-*No items in todo*

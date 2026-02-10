@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-2876",
+    "@id": "_:n3-2890",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-2877",
+    "@id": "_:n3-2891",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "@id": "_:n3-2878",
+    "@id": "_:n3-2892",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -283,10 +283,10 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-2876"
+        "@id": "_:n3-2890"
       },
       {
-        "@id": "_:n3-2877"
+        "@id": "_:n3-2891"
       }
     ],
     "https://prez.dev/identifier": [
@@ -318,258 +318,6 @@
     "https://prez.dev/description": [
       {
         "@value": "This vocabulary lists the types of tectonic and lithotectonic units that are used to define the geological framework / 4D evolution of Western Australia and are relevant to the duties of the Geological Survey of Western Australia (GSWA). A tectonic unit is defined as a named mass/body of rock with defined geological characteristics (geological structure, sedimentary stratigraphy, magmatic activity, metamorphism, metallogeny and alteration) and evolutionary history different from that of surrounding/contiguous units. A lithotectonic (or lithostructural) unit is defined as an assemblage of rocks unified on the basis of structural or deformational features, mutual relationships, origin, or historical evolution, that: a) is a subset of a larger tectonic unit (e.g. inlier/outlier), b) incorporates components from more than one tectonic units (e.g. greenstone belt), and c) encompasses large tectonic components of the State of Western Australia and/or facilitates the grouping of common tectonic elements at the highest level of the State tectonic hierarchy (e.g. large igneous provinces). Tectonic unit types are an integral part of GSWA's Explanatory Notes System (ENS), a digital repository of detailed unit descriptions that integrates stratigraphic relationships with links to all tectonic units and events recognized in Western Australia. This vocabulary does not attempt to show hierarchical relationships between tectonic types as enforced in ENS, as many are not one-to-one relationships.",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/WA-unit",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "WA unit",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/Western-Australia",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "Western Australia",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/basin",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "basin",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/craton",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "craton",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/craton-terrane",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "craton terrane",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/domain",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "domain",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/greenstone-belt_granitic-complex",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "greenstone belt / granitic complex",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/inlier_outlier",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "inlier/outlier",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/orogen",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "orogen",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/orogenic-foreland",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "orogenic foreland",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/orogenic-foreland-subunit",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "orogenic foreland sub-unit",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/province-tectonic",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "province (tectonic)",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/province-terrane_zone",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "province terrane/zone",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/seismic-province",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "seismic province",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/sub-basin",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sub-basin",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/sub-basin_element",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sub-basin element",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/suite-tectonic",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "suite (tectonic)",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/superbasin",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "superbasin",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/supersuite-tectonic",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "supersuite (tectonic)",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/superterrane",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "superterrane",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/tectonic-unit-type/tectonic-subdivision",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "tectonic subdivision",
         "@language": "en"
       }
     ]

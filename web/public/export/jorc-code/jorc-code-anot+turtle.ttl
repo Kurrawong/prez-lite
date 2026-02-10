@@ -16,7 +16,7 @@
     skos:prefLabel "JORC Code"@en;
     owl:versionIRI <https://linked.data.gov.au/def/JORC-Code/1.1>;
     reg:status <https://linked.data.gov.au/def/reg-statuses/accepted>;
-    prov:qualifiedAttribution _:n3-2581, _:n3-2582;
+    prov:qualifiedAttribution _:n3-2595, _:n3-2596;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2023-11-01"^^xsd:date;
     sdo:dateModified "2023-12-04"^^xsd:date;
@@ -47,13 +47,13 @@ reg:status prez:label "status";
     prez:description "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-2581 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2595 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-2582 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2596 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
 <https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
 sdo:creator prez:label "creator";
@@ -73,39 +73,9 @@ sdo:keywords prez:label "keywords";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2583 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-2597 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/JORC-Code/Competent-Person> a skos:Concept;
-    skos:prefLabel "Competent Person"@en.
-<https://linked.data.gov.au/def/JORC-Code/Exploration-Results> a skos:Concept;
-    skos:prefLabel "Exploration Results"@en.
-<https://linked.data.gov.au/def/JORC-Code/Exploration-Target> a skos:Concept;
-    skos:prefLabel "Exploration Target"@en.
-<https://linked.data.gov.au/def/JORC-Code/Feasibility-Study> a skos:Concept;
-    skos:prefLabel "Feasibility Study"@en.
-<https://linked.data.gov.au/def/JORC-Code/Indicated-Mineral-Resource> a skos:Concept;
-    skos:prefLabel "Indicated Mineral Resource"@en.
-<https://linked.data.gov.au/def/JORC-Code/Inferred-Mineral-Resource> a skos:Concept;
-    skos:prefLabel "Inferred Mineral Resource"@en.
-<https://linked.data.gov.au/def/JORC-Code/Measured-Mineral-Resource> a skos:Concept;
-    skos:prefLabel "Measured Mineral Resource"@en.
-<https://linked.data.gov.au/def/JORC-Code/Mineral-Resource> a skos:Concept;
-    skos:prefLabel "Mineral Resource"@en.
-<https://linked.data.gov.au/def/JORC-Code/Modifying-Factors> a skos:Concept;
-    skos:prefLabel "Modifying Factors"@en.
-<https://linked.data.gov.au/def/JORC-Code/Ore-Reserve> a skos:Concept;
-    skos:prefLabel "Ore Reserve"@en.
-<https://linked.data.gov.au/def/JORC-Code/Pre-Feasibility-Study> a skos:Concept;
-    skos:prefLabel "Pre-Feasibility Study"@en.
-<https://linked.data.gov.au/def/JORC-Code/Probable-Ore-Reserve> a skos:Concept;
-    skos:prefLabel "Probable Ore Reserve"@en.
-<https://linked.data.gov.au/def/JORC-Code/Proved-Ore-Reserve> a skos:Concept;
-    skos:prefLabel "Proved Ore Reserve"@en.
-<https://linked.data.gov.au/def/JORC-Code/Public-reports> a skos:Concept;
-    skos:prefLabel "Public reports"@en.
-<https://linked.data.gov.au/def/JORC-Code/Scoping-Study> a skos:Concept;
-    skos:prefLabel "Scoping Study"@en.

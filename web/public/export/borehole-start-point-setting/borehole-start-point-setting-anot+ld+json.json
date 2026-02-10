@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-1153",
+    "@id": "_:n3-1167",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-1154",
+    "@id": "_:n3-1168",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,46 +26,10 @@
     ]
   },
   {
-    "@id": "_:n3-1155",
+    "@id": "_:n3-1169",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
-      }
-    ]
-  },
-  {
-    "@id": "http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "from pre-existing hole",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "open pit floor or wall",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "http://linked.data.gov.au/def/borehole-start-point/underground",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underground",
-        "@language": "en"
       }
     ]
   },
@@ -298,10 +262,10 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-1153"
+        "@id": "_:n3-1167"
       },
       {
-        "@id": "_:n3-1154"
+        "@id": "_:n3-1168"
       }
     ],
     "https://prez.dev/identifier": [
@@ -333,66 +297,6 @@
     "https://prez.dev/description": [
       {
         "@value": "Indicates the nature of the borehole start point location, i.e. the general setting and type of surrounding where the borehole is positioned (e.g. onshore, offshore, etc.).",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "man-made surface",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "mining byproduct surface",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "natural ground surface",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-start-point-setting/offshore",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "offshore",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-start-point-setting/onshore",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "onshore",
         "@language": "en"
       }
     ]

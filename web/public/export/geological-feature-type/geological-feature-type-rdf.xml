@@ -37,64 +37,20 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/structural-feature"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/tectonic-feature"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/tectonic-unit"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1502"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1503"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1504"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1516"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1517"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1518"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/geological-event">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/georesources">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/landform-feature">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/lithstrat-unit">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/geological-feature-type/formal-unit"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/geological-feature-type/lithotectonic-unit"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/metallogenic-province">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/mineral-system">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/petroleum-supersystem">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/physiographic-unit">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/regolith-unit">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/structural-feature">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/tectonic-feature">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/tectonic-unit">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1502">
+  <rdf:Description rdf:nodeID="n3-1516">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1503">
+  <rdf:Description rdf:nodeID="n3-1517">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://www.linkedin.com/in/davidmcbmartin/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1504">
+  <rdf:Description rdf:nodeID="n3-1518">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/formal-unit">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/lithotectonic-unit">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
   </rdf:Description>
 </rdf:RDF>

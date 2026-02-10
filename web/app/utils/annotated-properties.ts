@@ -64,6 +64,7 @@ export interface PropertyValue {
   description?: string
   language?: string
   datatype?: string
+  datatypeLabel?: string
   nestedProperties?: RenderedProperty[] // For blank node objects
 }
 
@@ -182,11 +183,13 @@ export function extractProperties(
     const values: PropertyValue[] = rawValues.map(v => {
       if (v['@value'] !== undefined) {
         // Literal value
+        const dt = v['@type']
         return {
           type: 'literal' as const,
           value: v['@value'],
           language: v['@language'],
-          datatype: v['@type'],
+          datatype: dt,
+          datatypeLabel: dt ? (labelMap.get(dt) ?? localName(dt)) : undefined,
         }
       } else if (v['@id']) {
         const iri = v['@id']
@@ -263,11 +266,13 @@ function extractNestedProperties(
 
     const values: PropertyValue[] = rawValues.map(v => {
       if (v['@value'] !== undefined) {
+        const dt = v['@type']
         return {
           type: 'literal' as const,
           value: v['@value'],
           language: v['@language'],
-          datatype: v['@type'],
+          datatype: dt,
+          datatypeLabel: dt ? (labelMap.get(dt) ?? localName(dt)) : undefined,
         }
       } else if (v['@id']) {
         return {

@@ -84,6 +84,18 @@ xsd:date prez:label "date" .
 
 xsd:dateTime prez:label "dateTime" .
 
+xsd:anyURI prez:label "URI" .
+
+xsd:boolean prez:label "boolean" .
+
+xsd:integer prez:label "integer" .
+
+xsd:decimal prez:label "decimal" .
+
+xsd:float prez:label "float" .
+
+xsd:gYear prez:label "year" .
+
 # ALTR-EXT predicates (Conneg by Profile)
 altr-ext:hasDefaultResourceFormat prez:label "Default Resource Format" .
 

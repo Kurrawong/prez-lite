@@ -22,7 +22,7 @@
     owl:versionInfo "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
-    prov:qualifiedAttribution _:n3-2656, _:n3-2657;
+    prov:qualifiedAttribution _:n3-2670, _:n3-2671;
     prez:identifier "ns4:metamorphic-facies";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:metamorphic-facies";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:metamorphic-facies/items";
@@ -60,65 +60,21 @@ sdo:keywords prez:label "keywords";
     prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-2656 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2670 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://www.linkedin.com/in/david-kelsey-425746137/> prez:label "Dave Kelsey".
-_:n3-2657 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2671 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0003-0007-8342>.
 <https://orcid.org/0009-0003-0007-8342> prez:label "Fawna Korhonen".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2658 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-2672 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 xsd:date prez:label "date".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
-<https://linked.data.gov.au/def/metamorphic-facies/albite-epidote-hornfels> a skos:Concept;
-    skos:prefLabel "albite-epidote hornfels"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/amphibolite> a skos:Concept;
-    skos:prefLabel "amphibolite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/blueschist> a skos:Concept;
-    skos:prefLabel "blueschist"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/eclogite> a skos:Concept;
-    skos:prefLabel "eclogite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/epidote–amphibolite> a skos:Concept;
-    skos:prefLabel "epidote–amphibolite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/granulite> a skos:Concept;
-    skos:prefLabel "granulite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/greenschist> a skos:Concept;
-    skos:prefLabel "greenschist"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite> a skos:Concept;
-    skos:prefLabel "high-P amphibolite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite> a skos:Concept;
-    skos:prefLabel "high-P granulite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/hornblende-hornfels> a skos:Concept;
-    skos:prefLabel "hornblende hornfels"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite> a skos:Concept;
-    skos:prefLabel "lower amphibolite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist> a skos:Concept;
-    skos:prefLabel "lower greenschist"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite> a skos:Concept;
-    skos:prefLabel "middle amphibolite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/prehnite–pumpellyite> a skos:Concept;
-    skos:prefLabel "prehnite–pumpellyite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels> a skos:Concept;
-    skos:prefLabel "pyroxene hornfels"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/sanidinite> a skos:Concept;
-    skos:prefLabel "sanidinite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/sub-greenschist> a skos:Concept;
-    skos:prefLabel "sub-greenschist"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature> a skos:Concept;
-    skos:prefLabel "ultra-high temperature"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/undifferentiated> a skos:Concept;
-    skos:prefLabel "undifferentiated"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite> a skos:Concept;
-    skos:prefLabel "upper amphibolite"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist> a skos:Concept;
-    skos:prefLabel "upper greenschist"@en.
-<https://linked.data.gov.au/def/metamorphic-facies/zeolite> a skos:Concept;
-    skos:prefLabel "zeolite"@en.

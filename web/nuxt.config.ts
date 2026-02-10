@@ -37,6 +37,18 @@ export default defineNuxtConfig({
   // Layer CSS with absolute path for proper resolution
   css: [layerCssPath],
 
+  runtimeConfig: {
+    public: {
+      // GitHub repo for "Edit on GitHub" links (e.g. 'hjohns/prez-lite')
+      // Set via NUXT_PUBLIC_GITHUB_REPO env var or override in nuxt.config.ts
+      githubRepo: '',
+      // Branch for edit links (default: main)
+      githubBranch: 'main',
+      // Path to vocab TTL files within the repo
+      githubVocabPath: 'web/public/data/vocabs',
+    }
+  },
+
   // Static site generation
   ssr: true,
 

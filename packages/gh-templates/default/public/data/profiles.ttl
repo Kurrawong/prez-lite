@@ -6,6 +6,11 @@
 @prefix prez: <https://prez.dev/> .
 @prefix altr-ext: <http://www.w3.org/ns/dx/connegp/altr-ext#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sdo: <https://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
 
 # =============================================================================
 # Catalog
@@ -47,6 +52,22 @@ prez:DefaultSchemeProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     prez:generateLabel true ;
     prez:generateDescription true ;
     prez:generateFocusNode true ;
+
+    # Property shapes defining expected properties on a ConceptScheme export
+    sh:property [ sh:path rdf:type ; sh:order 0 ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:order 1 ] ;
+    sh:property [ sh:path skos:definition ; sh:order 2 ] ;
+    sh:property [ sh:path skos:historyNote ; sh:order 3 ] ;
+    sh:property [ sh:path reg:status ; sh:order 4 ] ;
+    sh:property [ sh:path owl:versionIRI ; sh:order 5 ] ;
+    sh:property [ sh:path sdo:creator ; sh:order 6 ] ;
+    sh:property [ sh:path sdo:publisher ; sh:order 7 ] ;
+    sh:property [ sh:path sdo:dateCreated ; sh:order 8 ] ;
+    sh:property [ sh:path sdo:dateModified ; sh:order 9 ] ;
+    sh:property [ sh:path sdo:keywords ; sh:order 10 ] ;
+    sh:property [ sh:path sdo:version ; sh:order 11 ] ;
+    sh:property [ sh:path prov:qualifiedAttribution ; sh:order 12 ] ;
+    sh:property [ sh:path dcterms:provenance ; sh:order 13 ] ;
 
     prez:linkTemplate "/vocabs/{schemeId}" ;
     prez:membersTemplate "/vocabs/{schemeId}/concepts" .

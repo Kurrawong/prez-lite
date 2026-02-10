@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-2807",
+    "@id": "_:n3-2821",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-2808",
+    "@id": "_:n3-2822",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "@id": "_:n3-2809",
+    "@id": "_:n3-2823",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -238,10 +238,10 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-2807"
+        "@id": "_:n3-2821"
       },
       {
-        "@id": "_:n3-2808"
+        "@id": "_:n3-2822"
       }
     ],
     "https://schema.org/creator": [
@@ -305,337 +305,6 @@
     "https://prez.dev/description": [
       {
         "@value": "The status of a sample or specimen in relation to curation processes (e.g. the recording and organization of items in a collection), both before and after storage/archiving, and with respect to its display or storage location at a specific point in time.",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/archived",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "archived",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/awaiting-registration",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "awaiting registration",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/collected",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "collected",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/consumed",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "consumed",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "deaccessioned",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/destroyed",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "destroyed",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/discarded",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "discarded",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/donated",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "donated",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/in-transit",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "in transit",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/loan",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "loan",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/loaned-in",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "loaned in",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/long-term-loan",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "long-term loan",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/lost",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "lost",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/on-display",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "on display",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/on-loan-external",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "on loan - external",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/on-loan-internal",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "on loan - internal",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/permanent-loan",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "permanent loan",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/processing",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "processing",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/quarantined",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "quarantined",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/restituted",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "restituted",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/sampled-under-agreement",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sampled under agreement",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/collected"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/stolen",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "stolen",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-curation-status/temporary-holding",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "temporary holding",
         "@language": "en"
       }
     ]

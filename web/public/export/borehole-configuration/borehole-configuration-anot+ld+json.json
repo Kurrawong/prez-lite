@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-1001",
+    "@id": "_:n3-1015",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-1002",
+    "@id": "_:n3-1016",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "@id": "_:n3-1003",
+    "@id": "_:n3-1017",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -262,10 +262,10 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-1001"
+        "@id": "_:n3-1015"
       },
       {
-        "@id": "_:n3-1002"
+        "@id": "_:n3-1016"
       }
     ],
     "https://prez.dev/identifier": [
@@ -297,114 +297,6 @@
     "https://prez.dev/description": [
       {
         "@value": "A description of the intended configuration and trajectory of a borehole, covering concepts from the energy and mineral resources industry. Note that most of the concepts in this vocabulary apply to both the process of drilling (e.g. directional drilling), as well as to an actual borehole (e.g. directional well), even if the definitions in this vocabulary focus specifically on the latter.",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/directional",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "directional",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/extended-reach",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "extended-reach",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/horizontal",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "horizontal",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/inclined",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "inclined",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/inclined-down",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "inclined down",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/inclined-up",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "inclined up",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/lateral",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "lateral",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/vertical",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "vertical",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/borehole-configuration/vertical-uphole",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "vertical uphole",
         "@language": "en"
       }
     ]

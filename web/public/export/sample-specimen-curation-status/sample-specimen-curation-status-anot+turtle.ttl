@@ -16,7 +16,7 @@
     skos:prefLabel "Sample/specimen curation status"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/sample-curation-status/1>;
-    prov:qualifiedAttribution _:n3-2807, _:n3-2808;
+    prov:qualifiedAttribution _:n3-2821, _:n3-2822;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-09"^^xsd:date;
     sdo:dateModified "2024-12-09"^^xsd:date;
@@ -47,13 +47,13 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-2807 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2821 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-2808 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2822 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-5129-2467>.
 <https://orcid.org/0000-0002-5129-2467> prez:label "Sarah K. Martin".
 sdo:creator prez:label "creator";
@@ -72,66 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2809 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-2823 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/sample-curation-status/archived> a skos:Concept;
-    skos:prefLabel "archived"@en.
-<https://linked.data.gov.au/def/sample-curation-status/awaiting-registration> a skos:Concept;
-    skos:prefLabel "awaiting registration"@en.
-<https://linked.data.gov.au/def/sample-curation-status/collected> a skos:Concept;
-    skos:prefLabel "collected"@en.
-<https://linked.data.gov.au/def/sample-curation-status/consumed> a skos:Concept;
-    skos:prefLabel "consumed"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/deaccessioned>.
-<https://linked.data.gov.au/def/sample-curation-status/deaccessioned> a skos:Concept;
-    skos:prefLabel "deaccessioned"@en.
-<https://linked.data.gov.au/def/sample-curation-status/destroyed> a skos:Concept;
-    skos:prefLabel "destroyed"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/deaccessioned>.
-<https://linked.data.gov.au/def/sample-curation-status/discarded> a skos:Concept;
-    skos:prefLabel "discarded"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/deaccessioned>.
-<https://linked.data.gov.au/def/sample-curation-status/donated> a skos:Concept;
-    skos:prefLabel "donated"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/deaccessioned>.
-<https://linked.data.gov.au/def/sample-curation-status/in-transit> a skos:Concept;
-    skos:prefLabel "in transit"@en.
-<https://linked.data.gov.au/def/sample-curation-status/loan> a skos:Concept;
-    skos:prefLabel "loan"@en.
-<https://linked.data.gov.au/def/sample-curation-status/loaned-in> a skos:Concept;
-    skos:prefLabel "loaned in"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/loan>.
-<https://linked.data.gov.au/def/sample-curation-status/long-term-loan> a skos:Concept;
-    skos:prefLabel "long-term loan"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/loan>.
-<https://linked.data.gov.au/def/sample-curation-status/lost> a skos:Concept;
-    skos:prefLabel "lost"@en.
-<https://linked.data.gov.au/def/sample-curation-status/on-display> a skos:Concept;
-    skos:prefLabel "on display"@en.
-<https://linked.data.gov.au/def/sample-curation-status/on-loan-external> a skos:Concept;
-    skos:prefLabel "on loan - external"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/loan>.
-<https://linked.data.gov.au/def/sample-curation-status/on-loan-internal> a skos:Concept;
-    skos:prefLabel "on loan - internal"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/loan>.
-<https://linked.data.gov.au/def/sample-curation-status/permanent-loan> a skos:Concept;
-    skos:prefLabel "permanent loan"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/loan>.
-<https://linked.data.gov.au/def/sample-curation-status/processing> a skos:Concept;
-    skos:prefLabel "processing"@en.
-<https://linked.data.gov.au/def/sample-curation-status/quarantined> a skos:Concept;
-    skos:prefLabel "quarantined"@en.
-<https://linked.data.gov.au/def/sample-curation-status/restituted> a skos:Concept;
-    skos:prefLabel "restituted"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/deaccessioned>.
-<https://linked.data.gov.au/def/sample-curation-status/sampled-under-agreement> a skos:Concept;
-    skos:prefLabel "sampled under agreement"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-curation-status/collected>.
-<https://linked.data.gov.au/def/sample-curation-status/stolen> a skos:Concept;
-    skos:prefLabel "stolen"@en.
-<https://linked.data.gov.au/def/sample-curation-status/temporary-holding> a skos:Concept;
-    skos:prefLabel "temporary holding"@en.

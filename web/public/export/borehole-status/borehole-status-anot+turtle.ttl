@@ -16,7 +16,7 @@
     skos:prefLabel "Borehole status"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/borehole-status-wa/1>;
-    prov:qualifiedAttribution _:n3-1164, _:n3-1165;
+    prov:qualifiedAttribution _:n3-1178, _:n3-1179;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2025-02-03"^^xsd:date;
     sdo:dateModified "2025-02-03"^^xsd:date;
@@ -47,13 +47,13 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-1164 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1178 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-1165 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1179 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
 <https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
 sdo:creator prez:label "creator";
@@ -72,106 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-1166 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-1180 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy> a skos:Concept;
-    skos:prefLabel "abandoned - energy"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/post-operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/post-operational> a skos:Concept;
-    skos:prefLabel "post-operational"@en.
-<https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral> a skos:Concept;
-    skos:prefLabel "abandoned - mineral"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational> a skos:Concept;
-    skos:prefLabel "drilling completed - post-operational"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/post-operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/approved> a skos:Concept;
-    skos:prefLabel "approved"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval>.
-<https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval> a skos:Concept;
-    skos:prefLabel "planning and approval"@en.
-<https://linked.data.gov.au/def/borehole-status-wa/capped> a skos:Concept;
-    skos:prefLabel "capped"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational-suspended>.
-<https://linked.data.gov.au/def/borehole-status-wa/operational-suspended> a skos:Concept;
-    skos:prefLabel "operational - suspended"@en.
-<https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended> a skos:Concept;
-    skos:prefLabel "cased and suspended"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational-suspended>.
-<https://linked.data.gov.au/def/borehole-status-wa/decommissioned> a skos:Concept;
-    skos:prefLabel "decommissioned"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/post-operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/drilling> a skos:Concept;
-    skos:prefLabel "drilling"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/in-progress>.
-<https://linked.data.gov.au/def/borehole-status-wa/in-progress> a skos:Concept;
-    skos:prefLabel "in progress"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational> a skos:Concept;
-    skos:prefLabel "drilling completed - operational"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/operational> a skos:Concept;
-    skos:prefLabel "operational"@en.
-<https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended> a skos:Concept;
-    skos:prefLabel "drilling suspended"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational-suspended>.
-<https://linked.data.gov.au/def/borehole-status-wa/injecting> a skos:Concept;
-    skos:prefLabel "injecting"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/injecting-gas> a skos:Concept;
-    skos:prefLabel "injecting gas"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/injecting>.
-<https://linked.data.gov.au/def/borehole-status-wa/injecting-water> a skos:Concept;
-    skos:prefLabel "injecting water"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/injecting>.
-<https://linked.data.gov.au/def/borehole-status-wa/monitoring> a skos:Concept;
-    skos:prefLabel "monitoring"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/not-drilled> a skos:Concept;
-    skos:prefLabel "not drilled"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval>.
-<https://linked.data.gov.au/def/borehole-status-wa/planned> a skos:Concept;
-    skos:prefLabel "planned"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval>.
-<https://linked.data.gov.au/def/borehole-status-wa/plugged> a skos:Concept;
-    skos:prefLabel "plugged"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/rehabilitated>.
-<https://linked.data.gov.au/def/borehole-status-wa/rehabilitated> a skos:Concept;
-    skos:prefLabel "rehabilitated"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/post-operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned> a skos:Concept;
-    skos:prefLabel "plugged and abandoned"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy>.
-<https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled> a skos:Concept;
-    skos:prefLabel "plugged and backfilled"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/plugged>.
-<https://linked.data.gov.au/def/borehole-status-wa/producing> a skos:Concept;
-    skos:prefLabel "producing"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting> a skos:Concept;
-    skos:prefLabel "producing and injecting"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/proposed> a skos:Concept;
-    skos:prefLabel "proposed"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval>.
-<https://linked.data.gov.au/def/borehole-status-wa/reaming> a skos:Concept;
-    skos:prefLabel "reaming"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/drilling>.
-<https://linked.data.gov.au/def/borehole-status-wa/shut-in> a skos:Concept;
-    skos:prefLabel "shut in"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational-suspended>.
-<https://linked.data.gov.au/def/borehole-status-wa/suspended> a skos:Concept;
-    skos:prefLabel "suspended"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational-suspended>.
-<https://linked.data.gov.au/def/borehole-status-wa/unknown> a skos:Concept;
-    skos:prefLabel "unknown"@en.
-<https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated> a skos:Concept;
-    skos:prefLabel "unrehabilitated"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/post-operational>.
-<https://linked.data.gov.au/def/borehole-status-wa/workover> a skos:Concept;
-    skos:prefLabel "workover"@en;
-    skos:broader <https://linked.data.gov.au/def/borehole-status-wa/operational-suspended>.

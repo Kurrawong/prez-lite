@@ -16,7 +16,7 @@
     <rdf:type rdf:resource="https://schema.org/DataCatalog"/>
     <sdo:name xml:lang="en">GSWA Vocabularies</sdo:name>
     <sdo:description xml:lang="en">Geological Survey of Western Australia&apos;s vocabularies of controlled terms.</sdo:description>
-    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-09</sdo:dateModified>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-10</sdo:dateModified>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-type"/>

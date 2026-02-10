@@ -32,8 +32,8 @@ GSWA distinguishes samples from specimens on the basis of the latter including b
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/reference-sample-specimen"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-meteorite"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2833"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2834"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2847"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2848"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateModified>
@@ -43,200 +43,12 @@ GSWA distinguishes samples from specimens on the basis of the latter including b
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/cited"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/described-and-published"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/figured"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-IMA"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-IMA"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-IMA"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/formally-identified"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/informally-identified"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/reference-sample-specimen">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-meteorite">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2833">
+  <rdf:Description rdf:nodeID="n3-2847">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2834">
+  <rdf:Description rdf:nodeID="n3-2848">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-5129-2467"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/allotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/allotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/hapantotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/paralectotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/topotype-ICZN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-series-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/hapantotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/paralectotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/topotype-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-series-ICZN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/cited">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/described-and-published">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/figured">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-IMA">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-IMA">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-IMA">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/epitype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/epitype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/ex-type-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoepitype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isolectotype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoneotype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isonym-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isosyntype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isotype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICN-or-PICMN"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/ex-type-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoepitype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isolectotype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoneotype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isonym-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isosyntype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/isotype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICN-or-PICMN">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/formally-identified">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/sample-nomenclature-publication-status/informally-identified">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status"/>
   </rdf:Description>
 </rdf:RDF>

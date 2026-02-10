@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-973",
+        "@id": "_:n3-987",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-974",
+        "@id": "_:n3-988",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -22,22 +22,6 @@
         "http://www.w3.org/ns/prov#agent": [
             {
                 "@id": "https://orcid.org/0000-0002-7645-5031"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/depth-reference/water-bottom",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/depth-reference/well-head",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
             }
         ]
     },
@@ -143,246 +127,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-973"
+                "@id": "_:n3-987"
             },
             {
-                "@id": "_:n3-974"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/above-ground-level",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum-TAS83",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-vertical-working-surface",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-systems-drilling",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/ground-level"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-collar"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-floor"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/kelly-bushing"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/mudline"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/precollar"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/rotary-table"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/depth-reference/well-head"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-unknown",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-collar",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-floor",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/ground-level",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/above-ground-level"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw-depth"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw-depth",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/kelly-bushing",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat-depth"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat-depth",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/mean-sea-level",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-depth"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-height"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/metres-sub-sea"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/metres-sub-sea",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-depth",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-height",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/mudline",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/precollar",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/reduced-level",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/rotary-table",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/seismic-reference-datum",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+                "@id": "_:n3-988"
             }
         ]
     }

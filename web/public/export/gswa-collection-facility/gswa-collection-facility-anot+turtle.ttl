@@ -16,7 +16,7 @@
     skos:prefLabel "GSWA collection facilities"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/accepted>;
     owl:versionIRI <https://linked.data.gov.au/def/gswa-collection-facilities/1.1>;
-    prov:qualifiedAttribution _:n3-1812, _:n3-1813, _:n3-1814;
+    prov:qualifiedAttribution _:n3-1826, _:n3-1827, _:n3-1828;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2023-09-06"^^xsd:date;
     sdo:dateModified "2023-12-01"^^xsd:date;
@@ -47,16 +47,16 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-1812 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1826 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
-_:n3-1813 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1827 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-1814 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1828 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-5129-2467>.
 <https://orcid.org/0000-0002-5129-2467> prez:label "Sarah K. Martin".
 sdo:creator prez:label "creator";
@@ -75,43 +75,9 @@ sdo:keywords prez:label "keywords";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-1815 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-1829 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/gswa-collection-facilities/carlisle> a skos:Concept;
-    skos:prefLabel "Carlisle"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/carlisle-laboratory> a skos:Concept;
-    skos:prefLabel "Carlisle laboratory"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/carlisle-records-building> a skos:Concept;
-    skos:prefLabel "Carlisle Records building"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/field-logistics> a skos:Concept;
-    skos:prefLabel "Field logistics"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/harry-butler-research-centre> a skos:Concept;
-    skos:prefLabel "Harry Butler Research Centre"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/iron-mountain> a skos:Concept;
-    skos:prefLabel "Iron Mountain Australia Group storage facility"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/joe-lord-core-library> a skos:Concept;
-    skos:prefLabel "JH (Joe) Lord Core Library"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/kalgoorlie-regional-office> a skos:Concept;
-    skos:prefLabel "Kalgoorlie regional office"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house> a skos:Concept;
-    skos:prefLabel "Mineral House"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-foyer> a skos:Concept;
-    skos:prefLabel "Mineral House foyer"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-library> a skos:Concept;
-    skos:prefLabel "Mineral House Library"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-other> a skos:Concept;
-    skos:prefLabel "Mineral House other"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/museum-of-the-goldfields> a skos:Concept;
-    skos:prefLabel "Museum of the Goldfields"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/perth-core-library> a skos:Concept;
-    skos:prefLabel "Perth Core Library"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/perth-mint> a skos:Concept;
-    skos:prefLabel "Perth Mint"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/wa-museum-boola-bardip> a skos:Concept;
-    skos:prefLabel "WA Museum Boola Bardip"@en.
-<https://linked.data.gov.au/def/gswa-collection-facilities/western-australian-museum> a skos:Concept;
-    skos:prefLabel "Western Australian Museum"@en.

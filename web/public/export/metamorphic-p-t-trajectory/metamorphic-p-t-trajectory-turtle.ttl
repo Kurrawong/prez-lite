@@ -23,23 +23,8 @@
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     skos:hasTopConcept <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
-    prov:qualifiedAttribution _:n3-2681, _:n3-2682.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric> skos:narrower <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating>;
-    skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal> skos:narrower <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease>, <https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase>;
-    skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-_:n3-2681 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:qualifiedAttribution _:n3-2695, _:n3-2696.
+_:n3-2695 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0003-0007-8342>.
-_:n3-2682 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2696 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.
-<https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase> skos:inScheme <https://linked.data.gov.au/def/metamorphic-P-T-trajectory>.

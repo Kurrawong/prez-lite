@@ -17,7 +17,7 @@
     reg:status <https://linked.data.gov.au/def/reg-statuses/accepted>;
     owl:versionIRI <https://linked.data.gov.au/def/borehole-drilling-method-western-australia/1>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/resources>;
-    prov:qualifiedAttribution _:n3-1013, _:n3-1014;
+    prov:qualifiedAttribution _:n3-1027, _:n3-1028;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2023-10-25"^^xsd:date;
     sdo:dateModified "2023-10-25"^^xsd:date;
@@ -49,13 +49,13 @@ sdo:keywords prez:label "keywords";
     prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-1013 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1027 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
-_:n3-1014 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1028 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
 sdo:creator prez:label "creator";
@@ -72,87 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-1015 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-1029 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/air-core> a skos:Concept;
-    skos:prefLabel "air core"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/auger> a skos:Concept;
-    skos:prefLabel "auger drilling"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/Bauer-bucket> a skos:Concept;
-    skos:prefLabel "Bauer bucket"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/box_core> a skos:Concept;
-    skos:prefLabel "box core"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/bucket-drilling> a skos:Concept;
-    skos:prefLabel "bucket drilling"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/cable_tool_drilling> a skos:Concept;
-    skos:prefLabel "cable tool"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/Calweld> a skos:Concept;
-    skos:prefLabel "Calweld"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/coiled-tubing> a skos:Concept;
-    skos:prefLabel "coiled tubing drilling"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/cone_penetrometer_test_probe> a skos:Concept;
-    skos:prefLabel "cone penetrometer test probe"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/conventional-core> a skos:Concept;
-    skos:prefLabel "conventional core"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/core-drilling> a skos:Concept;
-    skos:prefLabel "core drilling"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/delft_sampler> a skos:Concept;
-    skos:prefLabel "Delft sampler"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/diamond_core> a skos:Concept;
-    skos:prefLabel "diamond core"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/direct_push> a skos:Concept;
-    skos:prefLabel "direct push drilling"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/downhole-motor> a skos:Concept;
-    skos:prefLabel "downhole motor"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/drop-core-drilling> a skos:Concept;
-    skos:prefLabel "drop core drilling"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/geoprobe_core> a skos:Concept;
-    skos:prefLabel "Geoprobe core"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/gravity_core> a skos:Concept;
-    skos:prefLabel "gravity core"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/hand_auger> a skos:Concept;
-    skos:prefLabel "hand auger"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hybrid-drilling> a skos:Concept;
-    skos:prefLabel "hybrid drilling"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-jet> a skos:Concept;
-    skos:prefLabel "hydraulic jet"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-rotary> a skos:Concept;
-    skos:prefLabel "hydraulic rotary"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/kasten_core> a skos:Concept;
-    skos:prefLabel "Kasten core"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/mackereth_core> a skos:Concept;
-    skos:prefLabel "Mackereth core"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/mackintosh_probe> a skos:Concept;
-    skos:prefLabel "Mackintosh probe"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/non-rotary> a skos:Concept;
-    skos:prefLabel "non-rotary drilling"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/piston-core> a skos:Concept;
-    skos:prefLabel "piston core"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/power-auger> a skos:Concept;
-    skos:prefLabel "power auger"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/probe> a skos:Concept;
-    skos:prefLabel "probe"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/reverse-circulation> a skos:Concept;
-    skos:prefLabel "reverse circulation"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-air-blast> a skos:Concept;
-    skos:prefLabel "rotary air blast"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-drilling> a skos:Concept;
-    skos:prefLabel "rotary drilling"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-hammer> a skos:Concept;
-    skos:prefLabel "rotary hammer"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/sonic> a skos:Concept;
-    skos:prefLabel "sonic"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/unknown> a skos:Concept;
-    skos:prefLabel "unknown"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/vacuum> a skos:Concept;
-    skos:prefLabel "vacuum"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/vibrocore> a skos:Concept;
-    skos:prefLabel "vibrocore"@en.
-<http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/window_sampler> a skos:Concept;
-    skos:prefLabel "window sampler"@en.
-<https://linked.data.gov.au/def/borehole-drilling-method-western-australia/wireline-core> a skos:Concept;
-    skos:prefLabel "wireline core"@en.

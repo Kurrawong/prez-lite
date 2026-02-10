@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2581",
+        "@id": "_:n3-2595",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2582",
+        "@id": "_:n3-2596",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -92,10 +92,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2581"
+                "@id": "_:n3-2595"
             },
             {
-                "@id": "_:n3-2582"
+                "@id": "_:n3-2596"
             }
         ],
         "https://schema.org/creator": [
@@ -131,145 +131,6 @@
             },
             {
                 "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Competent-Person",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Exploration-Results",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Exploration-Target",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Feasibility-Study",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Indicated-Mineral-Resource",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Inferred-Mineral-Resource",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Measured-Mineral-Resource",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Mineral-Resource",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code/Indicated-Mineral-Resource"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code/Inferred-Mineral-Resource"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code/Measured-Mineral-Resource"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Modifying-Factors",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Ore-Reserve",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code/Probable-Ore-Reserve"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code/Proved-Ore-Reserve"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Pre-Feasibility-Study",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Probable-Ore-Reserve",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Proved-Ore-Reserve",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Public-reports",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/JORC-Code/Scoping-Study",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/JORC-Code"
             }
         ]
     }

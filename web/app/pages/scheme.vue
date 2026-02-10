@@ -42,8 +42,17 @@ const showTreeSkeleton = computed(() => isLoading.value && !lastValidTreeItems.v
 const isTreeLoading = computed(() => isLoading.value && lastValidTreeItems.value.length > 0)
 
 // Share functionality
-const { getShareUrl } = useShare()
+const { getShareUrl, getVocabByIri } = useShare()
 const shareUrl = computed(() => uri.value ? getShareUrl(uri.value) : undefined)
+
+// Edit on GitHub
+const { githubRepo, githubBranch, githubVocabPath } = useRuntimeConfig().public
+const githubEditUrl = computed(() => {
+  if (!githubRepo || !uri.value) return null
+  const vocab = getVocabByIri(uri.value)
+  if (!vocab) return null
+  return `https://github.com/${githubRepo}/edit/${githubBranch}/${githubVocabPath}/${vocab.slug}.ttl`
+})
 
 // Tree controls
 const searchQuery = ref('')
@@ -163,6 +172,16 @@ function copyIriToClipboard(iri: string) {
             variant="ghost"
             size="xs"
             aria-label="Share or embed this vocabulary"
+          />
+          <UButton
+            v-if="githubEditUrl"
+            :to="githubEditUrl"
+            target="_blank"
+            icon="i-heroicons-pencil-square"
+            color="neutral"
+            variant="ghost"
+            size="xs"
+            aria-label="Edit source on GitHub"
           />
         </div>
         <div v-if="displayScheme.definition">

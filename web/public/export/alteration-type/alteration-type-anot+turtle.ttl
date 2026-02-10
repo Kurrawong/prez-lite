@@ -16,7 +16,7 @@
     skos:prefLabel "Alteration type"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/alteration-type/1>;
-    prov:qualifiedAttribution _:n3-674, _:n3-675;
+    prov:qualifiedAttribution _:n3-688, _:n3-689;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-02"^^xsd:date;
     sdo:dateModified "2024-12-02"^^xsd:date;
@@ -47,13 +47,13 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-674 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-688 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0001-5888-5102>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0001-5888-5102> prez:label "Paul Duuring".
-_:n3-675 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-689 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
 sdo:creator prez:label "creator";
@@ -72,116 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-676 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-690 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/alteration-type/albitic-alteration> a skos:Concept;
-    skos:prefLabel "albitic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/alkali-metasomatism> a skos:Concept;
-    skos:prefLabel "alkali metasomatism"@en.
-<https://linked.data.gov.au/def/alteration-type/alunitic-alteration> a skos:Concept;
-    skos:prefLabel "alunitic alteration"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced>.
-<https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced> a skos:Concept;
-    skos:prefLabel "argillic alteration - advanced"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/argillic-alteration>.
-<https://linked.data.gov.au/def/alteration-type/argillic-alteration> a skos:Concept;
-    skos:prefLabel "argillic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/argillic-alteration-intermediate> a skos:Concept;
-    skos:prefLabel "argillic alteration - intermediate"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/argillic-alteration>.
-<https://linked.data.gov.au/def/alteration-type/biotitic-alteration> a skos:Concept;
-    skos:prefLabel "biotitic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/calc-silicate-alteration> a skos:Concept;
-    skos:prefLabel "calc-silicate alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/calcification> a skos:Concept;
-    skos:prefLabel "calcification"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/carbonate-alteration>.
-<https://linked.data.gov.au/def/alteration-type/carbonate-alteration> a skos:Concept;
-    skos:prefLabel "carbonate alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/chloritic-alteration> a skos:Concept;
-    skos:prefLabel "chloritic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/deuteric-alteration> a skos:Concept;
-    skos:prefLabel "deuteric alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/dolomitization> a skos:Concept;
-    skos:prefLabel "dolomitization"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/carbonate-alteration>.
-<https://linked.data.gov.au/def/alteration-type/epidote-alteration> a skos:Concept;
-    skos:prefLabel "epidote alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/fenitization> a skos:Concept;
-    skos:prefLabel "fenitization"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/alkali-metasomatism>.
-<https://linked.data.gov.au/def/alteration-type/fluorite-and-topaz-alteration> a skos:Concept;
-    skos:prefLabel "fluorite and topaz alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/greisenization> a skos:Concept;
-    skos:prefLabel "greisenization"@en.
-<https://linked.data.gov.au/def/alteration-type/hematitic-alteration> a skos:Concept;
-    skos:prefLabel "hematitic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/hematitic-jasperoid> a skos:Concept;
-    skos:prefLabel "hematitic jasperoid"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/jasperoid-alteration>.
-<https://linked.data.gov.au/def/alteration-type/jasperoid-alteration> a skos:Concept;
-    skos:prefLabel "jasperoid alteration"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/hematitic-alteration>.
-<https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-other> a skos:Concept;
-    skos:prefLabel "hydrothermal alteration - other"@en.
-<https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unknown> a skos:Concept;
-    skos:prefLabel "hydrothermal alteration - unknown"@en.
-<https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unspecified> a skos:Concept;
-    skos:prefLabel "hydrothermal alteration - unspecified"@en.
-<https://linked.data.gov.au/def/alteration-type/kaolinitic-alteration> a skos:Concept;
-    skos:prefLabel "kaolinitic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/listvenitization> a skos:Concept;
-    skos:prefLabel "listvenitization"@en.
-<https://linked.data.gov.au/def/alteration-type/phyllic-alteration-QSP> a skos:Concept;
-    skos:prefLabel "phyllic alteration (QSP)"@en.
-<https://linked.data.gov.au/def/alteration-type/potassic-alteration> a skos:Concept;
-    skos:prefLabel "potassic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/propylitic-alteration> a skos:Concept;
-    skos:prefLabel "propylitic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/pyritic-alteration> a skos:Concept;
-    skos:prefLabel "pyritic alteration"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/sulfidation>.
-<https://linked.data.gov.au/def/alteration-type/sulfidation> a skos:Concept;
-    skos:prefLabel "sulfidation"@en.
-<https://linked.data.gov.au/def/alteration-type/rodingitization> a skos:Concept;
-    skos:prefLabel "rodingitization"@en.
-<https://linked.data.gov.au/def/alteration-type/saussuritization> a skos:Concept;
-    skos:prefLabel "saussuritization"@en.
-<https://linked.data.gov.au/def/alteration-type/sericitic-white-mica-alteration> a skos:Concept;
-    skos:prefLabel "sericitic / white mica alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/serpentinization> a skos:Concept;
-    skos:prefLabel "serpentinization"@en.
-<https://linked.data.gov.au/def/alteration-type/silication> a skos:Concept;
-    skos:prefLabel "silication"@en.
-<https://linked.data.gov.au/def/alteration-type/silicification> a skos:Concept;
-    skos:prefLabel "silicification"@en.
-<https://linked.data.gov.au/def/alteration-type/skarn> a skos:Concept;
-    skos:prefLabel "skarn"@en.
-<https://linked.data.gov.au/def/alteration-type/skarn-calcic> a skos:Concept;
-    skos:prefLabel "skarn - calcic"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/skarn>.
-<https://linked.data.gov.au/def/alteration-type/skarn-magnesian> a skos:Concept;
-    skos:prefLabel "skarn - magnesian"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/skarn>.
-<https://linked.data.gov.au/def/alteration-type/skarn-retrograde-stage> a skos:Concept;
-    skos:prefLabel "skarn - retrograde stage"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/skarn>.
-<https://linked.data.gov.au/def/alteration-type/sodic-alteration> a skos:Concept;
-    skos:prefLabel "sodic alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/sulfidic-jasperoid> a skos:Concept;
-    skos:prefLabel "sulfidic jasperoid"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-type/jasperoid-alteration>.
-<https://linked.data.gov.au/def/alteration-type/talc-alteration> a skos:Concept;
-    skos:prefLabel "talc alteration"@en.
-<https://linked.data.gov.au/def/alteration-type/tourmalinization> a skos:Concept;
-    skos:prefLabel "tourmalinization"@en.
-<https://linked.data.gov.au/def/alteration-type/unaltered> a skos:Concept;
-    skos:prefLabel "unaltered"@en.
-<https://linked.data.gov.au/def/alteration-type/uralitization> a skos:Concept;
-    skos:prefLabel "uralitization"@en.
-<https://linked.data.gov.au/def/alteration-type/zeolitic-alteration> a skos:Concept;
-    skos:prefLabel "zeolitic alteration"@en.

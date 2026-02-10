@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2564",
+        "@id": "_:n3-2578",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2565",
+        "@id": "_:n3-2579",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -80,10 +80,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2564"
+                "@id": "_:n3-2578"
             },
             {
-                "@id": "_:n3-2565"
+                "@id": "_:n3-2579"
             }
         ],
         "https://schema.org/creator": [
@@ -116,186 +116,6 @@
         "https://schema.org/version": [
             {
                 "@value": "1"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/administration",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/data-acquisition",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/energy",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geochemistry",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geochronology",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geochemistry"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geochronology"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geophysics"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/paleontology"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geophysics",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/paleontology",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/energy"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes"
             }
         ]
     }

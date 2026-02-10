@@ -19,8 +19,8 @@ const {
 } = useConcept(uri)
 
 // Share functionality
-const { getShareUrl } = useShare()
-const shareUrl = computed(() => scheme.value ? getShareUrl(scheme.value.iri) : undefined)
+const { getConceptShareUrl } = useShare()
+const shareUrl = computed(() => scheme.value && uri.value ? getConceptShareUrl(scheme.value.iri, uri.value) : undefined)
 
 function copyUriToClipboard() {
   if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {

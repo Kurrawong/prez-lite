@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2681",
+        "@id": "_:n3-2695",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2682",
+        "@id": "_:n3-2696",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -121,130 +121,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2681"
+                "@id": "_:n3-2695"
             },
             {
-                "@id": "_:n3-2682"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory"
+                "@id": "_:n3-2696"
             }
         ]
     }

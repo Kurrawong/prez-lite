@@ -29,25 +29,34 @@ defineProps<{
           <td class="py-3 text-left align-top">
             <!-- Inline rendering for literals and IRIs (comma-separated) -->
             <template v-if="prop.values.every(v => v.type !== 'nested')">
-              <template v-for="(val, idx) in prop.values" :key="idx">
-                <span v-if="val.type === 'literal'">{{ val.value }}</span>
-                <span v-else-if="val.type === 'iri'" class="inline-flex items-center gap-1">
-                  <a
-                    :href="val.value"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-primary hover:underline"
-                    :title="val.description"
-                  >{{ val.label }}</a>
-                  <a
-                    :href="val.value"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-muted hover:text-primary"
-                    :title="val.description"
-                  ><UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3.5 h-3.5" /></a>
-                </span><span v-if="idx < prop.values.length - 1">, </span>
-              </template>
+              <span class="inline">
+                <template v-for="(val, idx) in prop.values" :key="idx">
+                  <span v-if="val.type === 'literal' && val.datatypeLabel" class="flex items-center justify-between gap-2">
+                    <span>{{ val.value }}</span>
+                    <UBadge as="a" :href="val.datatype" target="_blank" rel="noopener noreferrer" :title="val.datatype" color="neutral" variant="subtle" size="xs" class="shrink-0 no-underline gap-0.5">
+                      {{ val.datatypeLabel }}
+                      <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3 h-3" />
+                    </UBadge>
+                  </span>
+                  <span v-else-if="val.type === 'literal'">{{ val.value }}</span>
+                  <span v-else-if="val.type === 'iri'" class="inline-flex items-center gap-1">
+                    <a
+                      :href="val.value"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:underline"
+                      :title="val.description"
+                    >{{ val.label }}</a>
+                    <a
+                      :href="val.value"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-muted hover:text-primary"
+                      :title="val.description"
+                    ><UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3.5 h-3.5" /></a>
+                  </span><span v-if="idx < prop.values.length - 1">, </span>
+                </template>
+              </span>
             </template>
 
             <!-- Block rendering for nested values (e.g., qualifiedAttribution) -->
@@ -62,24 +71,33 @@ defineProps<{
                             {{ nested.predicateLabel }}
                           </th>
                           <td class="py-1">
-                            <template v-for="(nv, nidx) in nested.values" :key="nidx">
-                              <span v-if="nv.type === 'literal'">{{ nv.value }}</span>
-                              <span v-else-if="nv.type === 'iri'" class="inline-flex items-center gap-1">
-                                <a
-                                  :href="nv.value"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  class="text-primary hover:underline"
-                                  :title="nv.description"
-                                >{{ nv.label }}</a>
-                                <a
-                                  :href="nv.value"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  class="text-muted hover:text-primary"
-                                ><UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3.5 h-3.5" /></a>
-                              </span><span v-if="nidx < nested.values.length - 1">, </span>
-                            </template>
+                            <span class="inline">
+                              <template v-for="(nv, nidx) in nested.values" :key="nidx">
+                                <span v-if="nv.type === 'literal' && nv.datatypeLabel" class="flex items-center justify-between gap-2">
+                                  <span>{{ nv.value }}</span>
+                                  <UBadge as="a" :href="nv.datatype" target="_blank" rel="noopener noreferrer" :title="nv.datatype" color="neutral" variant="subtle" size="xs" class="shrink-0 no-underline gap-0.5">
+                                    {{ nv.datatypeLabel }}
+                                    <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3 h-3" />
+                                  </UBadge>
+                                </span>
+                                <span v-else-if="nv.type === 'literal'">{{ nv.value }}</span>
+                                <span v-else-if="nv.type === 'iri'" class="inline-flex items-center gap-1">
+                                  <a
+                                    :href="nv.value"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-primary hover:underline"
+                                    :title="nv.description"
+                                  >{{ nv.label }}</a>
+                                  <a
+                                    :href="nv.value"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-muted hover:text-primary"
+                                  ><UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3.5 h-3.5" /></a>
+                                </span><span v-if="nidx < nested.values.length - 1">, </span>
+                              </template>
+                            </span>
                           </td>
                         </tr>
                       </tbody>

@@ -2,15 +2,15 @@
   "conceptScheme": {
     "propertyOrder": [
       {
-        "path": "http://www.w3.org/2004/02/skos/core#definition",
+        "path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
         "order": 0
       },
       {
-        "path": "http://purl.org/linked-data/registry#status",
+        "path": "http://www.w3.org/2004/02/skos/core#prefLabel",
         "order": 1
       },
       {
-        "path": "http://www.w3.org/2002/07/owl#versionIRI",
+        "path": "http://www.w3.org/2004/02/skos/core#definition",
         "order": 2
       },
       {
@@ -18,8 +18,40 @@
         "order": 3
       },
       {
+        "path": "http://purl.org/linked-data/registry#status",
+        "order": 4
+      },
+      {
+        "path": "http://www.w3.org/2002/07/owl#versionIRI",
+        "order": 5
+      },
+      {
+        "path": "https://schema.org/creator",
+        "order": 6
+      },
+      {
+        "path": "https://schema.org/publisher",
+        "order": 7
+      },
+      {
+        "path": "https://schema.org/dateCreated",
+        "order": 8
+      },
+      {
+        "path": "https://schema.org/dateModified",
+        "order": 9
+      },
+      {
+        "path": "https://schema.org/keywords",
+        "order": 10
+      },
+      {
+        "path": "https://schema.org/version",
+        "order": 11
+      },
+      {
         "path": "http://www.w3.org/ns/prov#qualifiedAttribution",
-        "order": 4,
+        "order": 12,
         "propertyOrder": [
           {
             "path": "http://www.w3.org/ns/prov#agent",
@@ -32,39 +64,7 @@
         ]
       },
       {
-        "path": "https://schema.org/creator",
-        "order": 5
-      },
-      {
-        "path": "https://schema.org/dateCreated",
-        "order": 6
-      },
-      {
-        "path": "https://schema.org/dateModified",
-        "order": 7
-      },
-      {
-        "path": "https://schema.org/keywords",
-        "order": 8
-      },
-      {
-        "path": "https://schema.org/publisher",
-        "order": 9
-      },
-      {
-        "path": "https://schema.org/version",
-        "order": 10
-      },
-      {
-        "path": "http://purl.org/dc/terms/source",
-        "order": 11
-      },
-      {
-        "path": "http://purl.org/dc/terms/license",
-        "order": 12
-      },
-      {
-        "path": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+        "path": "http://purl.org/dc/terms/provenance",
         "order": 13
       }
     ]

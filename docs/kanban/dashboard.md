@@ -1,6 +1,6 @@
 # Kanban Dashboard
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-10
 
 ---
 
@@ -12,9 +12,11 @@
 | Sprint 2: Security Remediation | 7/7 | ✅ Complete |
 | Sprint 3: SPARQL Dynamic Component | 3/3 | ✅ Complete |
 | Sprint 4: Performance & UX Fixes | 3/3 | ✅ Complete |
-| Sprint 5: CI/CD & Data Pipeline | 0/1 | 👀 Reviewing |
+| Sprint 5: CI/CD & Data Pipeline | 1/1 | ✅ Complete |
+| Sprint 6: Labels, Data Types & Sharing | 4/4 | ✅ Complete |
+| Sprint 7: Export Cleanup & Share Page Fixes | 4/4 | ✅ Complete |
 
-**Overall:** 21 tasks completed across 4 sprints. Sprint 5 in review.
+**Overall:** 30 tasks completed across 7 sprints. Board clear — ready for new work.
 
 ---
 
@@ -22,13 +24,13 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| Empty | Empty | Empty | Decouple Data/Deploy (1) | Empty |
+| Empty | Empty | Empty | Empty | Sprint 7 (4 items) |
 
 ---
 
 ## Current Status
 
-Sprint 5 task awaiting review: decouple data processing from site deployment.
+All sprints complete. Board is clean and ready for Sprint 8.
 
 **Project:** ~95% feature complete
 - Phase 1 (Core Browser): ✅

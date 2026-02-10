@@ -26,6 +26,7 @@ const typeOptions = [
 
 <template>
   <div class="py-8">
+    <UBreadcrumb :items="[{ label: 'Vocabularies', to: '/vocabs' }, { label: 'Share' }]" class="mb-6" />
     <h1 class="text-3xl font-bold mb-2">Share Vocabularies</h1>
     <p class="text-muted mb-8">
       Download vocabularies in multiple formats or embed interactive components in your applications.
@@ -144,7 +145,7 @@ const typeOptions = [
             <UButton
               v-for="format in formats"
               :key="format.id"
-              :to="getDownloadUrl(vocab.slug, format.extension)"
+              :to="getDownloadUrl(vocab.slug, format.id)"
               target="_blank"
               size="xs"
               variant="outline"

@@ -30,46 +30,15 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-configuration/inclined"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-configuration/vertical"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-configuration/vertical-uphole"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1001"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1002"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1015"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1016"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/directional">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-configuration/extended-reach"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-configuration/lateral"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/horizontal">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/inclined">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-configuration/inclined-down"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-configuration/inclined-up"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/vertical">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/vertical-uphole">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1001">
+  <rdf:Description rdf:nodeID="n3-1015">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1002">
+  <rdf:Description rdf:nodeID="n3-1016">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/extended-reach">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/lateral">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/inclined-down">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-configuration/inclined-up">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
   </rdf:Description>
 </rdf:RDF>

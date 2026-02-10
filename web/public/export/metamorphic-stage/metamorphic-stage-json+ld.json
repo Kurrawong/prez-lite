@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2697",
+        "@id": "_:n3-2711",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2698",
+        "@id": "_:n3-2712",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -118,74 +118,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2697"
+                "@id": "_:n3-2711"
             },
             {
-                "@id": "_:n3-2698"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/?peak",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/?prograde",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/?retrograde",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/peak",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/prograde",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/retrograde",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/retrogressive",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-stage/unknown",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-stage"
+                "@id": "_:n3-2712"
             }
         ]
     }

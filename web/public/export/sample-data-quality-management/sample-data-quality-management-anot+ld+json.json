@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-2722",
+    "@id": "_:n3-2736",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-2723",
+    "@id": "_:n3-2737",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "@id": "_:n3-2724",
+    "@id": "_:n3-2738",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -39,7 +39,7 @@
     ]
   },
   {
-    "@id": "_:n3-2725",
+    "@id": "_:n3-2739",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -251,13 +251,13 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-2722"
+        "@id": "_:n3-2736"
       },
       {
-        "@id": "_:n3-2723"
+        "@id": "_:n3-2737"
       },
       {
-        "@id": "_:n3-2724"
+        "@id": "_:n3-2738"
       }
     ],
     "https://schema.org/creator": [
@@ -321,310 +321,6 @@
     "https://prez.dev/description": [
       {
         "@value": "The types of physical samples that are used to undertake quality assurance (QA) and quality control (QC) checks at all stages of the sampling, preparation and analytical processes, and/or to retain representative material for future reference. Note that QA and QC are often used collectively as a single term, but are in fact distinct procedures: QA 'refers to defect prevention', i.e. ‘the protocols and procedures that ensure that sampling and assaying is completed to the required quality’, whereas QC 'refers to defect detection', i.e. ‘the use of control samples and statistical analysis to ensure that assay results are reliable’ (Graindorge, 2010, p. 112; https://www.usgs.gov/data-management/manage-quality). This vocabulary thus also encapsulates terminology covering sample representability. ",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/analytical-blank",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "analytical blank",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/barren-wash",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "barren wash",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/blank",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "blank",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/blind-reference-material",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "blind reference material",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/calibration-reference-material",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "calibration reference material",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/certified-reference-material",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "certified reference material",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/check-assay-sample",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "check assay sample",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/crush-duplicate",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "crush duplicate",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "duplicate",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-blank",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "field blank",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-duplicate",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "field duplicate",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-repeat-sample",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "field repeat sample",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/laboratory-duplicate",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "laboratory duplicate",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/laboratory-reference-material",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "laboratory reference material",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/particle-sizing-check",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "particle sizing check",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/pulp-duplicate",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pulp duplicate",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/re-assayed-sample",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "re-assayed sample",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "reference material",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/replicate",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "replicate",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/sample-split",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sample split",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/spike",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "spike",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/sample-data-quality-management/umpire-assay-sample",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "umpire assay sample",
         "@language": "en"
       }
     ]

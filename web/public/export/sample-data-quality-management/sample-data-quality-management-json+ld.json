@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2722",
+        "@id": "_:n3-2736",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2723",
+        "@id": "_:n3-2737",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "@id": "_:n3-2724",
+        "@id": "_:n3-2738",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -117,13 +117,13 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2722"
+                "@id": "_:n3-2736"
             },
             {
-                "@id": "_:n3-2723"
+                "@id": "_:n3-2737"
             },
             {
-                "@id": "_:n3-2724"
+                "@id": "_:n3-2738"
             }
         ],
         "https://schema.org/creator": [
@@ -156,250 +156,6 @@
         "https://schema.org/version": [
             {
                 "@value": "1.0"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/analytical-blank",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/barren-wash",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/blank",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/blind-reference-material",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/calibration-reference-material",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/certified-reference-material",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/check-assay-sample",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/crush-duplicate",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/crush-duplicate"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-duplicate"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/laboratory-duplicate"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/pulp-duplicate"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-blank",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-duplicate",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/field-repeat-sample",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/laboratory-duplicate",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/laboratory-reference-material",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/particle-sizing-check",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/pulp-duplicate",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/duplicate"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/re-assayed-sample",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/reference-material",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/blind-reference-material"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/calibration-reference-material"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/certified-reference-material"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management/laboratory-reference-material"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/replicate",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/sample-split",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/spike",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-data-quality-management/umpire-assay-sample",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-data-quality-management"
             }
         ]
     }

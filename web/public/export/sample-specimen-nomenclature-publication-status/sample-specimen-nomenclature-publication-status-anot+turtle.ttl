@@ -16,7 +16,7 @@
     skos:prefLabel "Sample/specimen nomenclature and publication status"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/sample-nomenclature-publication-status/1>;
-    prov:qualifiedAttribution _:n3-2833, _:n3-2834;
+    prov:qualifiedAttribution _:n3-2847, _:n3-2848;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-09"^^xsd:date;
     sdo:dateModified "2024-12-09"^^xsd:date;
@@ -47,13 +47,13 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-2833 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2847 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-2834 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2848 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-5129-2467>.
 <https://orcid.org/0000-0002-5129-2467> prez:label "Sarah K. Martin".
 sdo:creator prez:label "creator";
@@ -72,123 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2835 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-2849 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/allotype-ICZN> a skos:Concept;
-    skos:prefLabel "allotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN> a skos:Concept;
-    skos:prefLabel "type specimen - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/cited> a skos:Concept;
-    skos:prefLabel "cited"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status> a skos:Concept;
-    skos:prefLabel "specimen publication status"@en.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-ICZN> a skos:Concept;
-    skos:prefLabel "cotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/cotype-IMA> a skos:Concept;
-    skos:prefLabel "cotype - IMA"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral> a skos:Concept;
-    skos:prefLabel "type specimen - mineral"@en.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/described-and-published> a skos:Concept;
-    skos:prefLabel "described and published"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/epitype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "epitype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "type specimen - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/ex-type-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "ex-type - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/figured> a skos:Concept;
-    skos:prefLabel "figured"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/specimen-publication-status>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/formally-identified> a skos:Concept;
-    skos:prefLabel "formally identified"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen> a skos:Concept;
-    skos:prefLabel "non-type specimen"@en.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/hapantotype-ICZN> a skos:Concept;
-    skos:prefLabel "hapantotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "holotype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-ICZN> a skos:Concept;
-    skos:prefLabel "holotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/holotype-IMA> a skos:Concept;
-    skos:prefLabel "holotype - IMA"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/informally-identified> a skos:Concept;
-    skos:prefLabel "informally identified"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/non-type-specimen>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoepitype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "isoepitype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/isolectotype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "isolectotype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/isoneotype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "isoneotype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/isonym-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "isonym - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/isosyntype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "isosyntype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/isotype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "isotype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "lectotype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/lectotype-ICZN> a skos:Concept;
-    skos:prefLabel "lectotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "neotype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-ICZN> a skos:Concept;
-    skos:prefLabel "neotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/neotype-IMA> a skos:Concept;
-    skos:prefLabel "neotype - IMA"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-mineral>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/paralectotype-ICZN> a skos:Concept;
-    skos:prefLabel "paralectotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "paratype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/paratype-ICZN> a skos:Concept;
-    skos:prefLabel "paratype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/reference-sample-specimen> a skos:Concept;
-    skos:prefLabel "reference sample/specimen"@en.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICN-or-PICMN> a skos:Concept;
-    skos:prefLabel "syntype - ICN or PICMN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICN-or-PICMN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/syntype-ICZN> a skos:Concept;
-    skos:prefLabel "syntype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/topotype-ICZN> a skos:Concept;
-    skos:prefLabel "topotype - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-series-ICZN> a skos:Concept;
-    skos:prefLabel "type series - ICZN"@en;
-    skos:broader <https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-ICZN>.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil> a skos:Concept;
-    skos:prefLabel "type specimen - fossil"@en.
-<https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-meteorite> a skos:Concept;
-    skos:prefLabel "type specimen - meteorite"@en.

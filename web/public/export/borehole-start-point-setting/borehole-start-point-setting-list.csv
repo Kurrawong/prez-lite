@@ -1,9 +1,0 @@
-iri,broader,prefLabel
-http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole,,from pre-existing hole
-https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface,,man-made surface
-https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface,,mining byproduct surface
-https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface,,natural ground surface
-https://linked.data.gov.au/def/borehole-start-point-setting/offshore,,offshore
-https://linked.data.gov.au/def/borehole-start-point-setting/onshore,,onshore
-http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall,,open pit floor or wall
-http://linked.data.gov.au/def/borehole-start-point/underground,,underground

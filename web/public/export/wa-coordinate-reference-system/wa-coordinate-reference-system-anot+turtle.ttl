@@ -22,7 +22,7 @@
     owl:versionInfo "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping>;
-    prov:qualifiedAttribution _:n3-2900, _:n3-2901;
+    prov:qualifiedAttribution _:n3-2914, _:n3-2915;
     prez:identifier "ns4:wa-coordinate-reference-systems";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:wa-coordinate-reference-systems";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:wa-coordinate-reference-systems/items";
@@ -60,107 +60,21 @@ sdo:keywords prez:label "keywords";
     prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-2900 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2914 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
-_:n3-2901 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2915 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2902 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-2916 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 xsd:date prez:label "date".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd66> a skos:Concept;
-    skos:prefLabel "AGD66"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z49> a skos:Concept;
-    skos:prefLabel "AGD66 / AMG zone 49"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z50> a skos:Concept;
-    skos:prefLabel "AGD66 / AMG zone 50"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z51> a skos:Concept;
-    skos:prefLabel "AGD66 / AMG zone 51"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z52> a skos:Concept;
-    skos:prefLabel "AGD66 / AMG zone 52"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd84> a skos:Concept;
-    skos:prefLabel "AGD84"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z49> a skos:Concept;
-    skos:prefLabel "AGD84 / AMG zone 49"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z50> a skos:Concept;
-    skos:prefLabel "AGD84 / AMG zone 50"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z51> a skos:Concept;
-    skos:prefLabel "AGD84 / AMG zone 51"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z52> a skos:Concept;
-    skos:prefLabel "AGD84 / AMG zone 52"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66> a skos:Concept;
-    skos:prefLabel "AMG66"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84> a skos:Concept;
-    skos:prefLabel "AMG84"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858> a skos:Concept;
-    skos:prefLabel "Clarke 1858"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z1> a skos:Concept;
-    skos:prefLabel "Clarke 1858 zone 1"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z2> a skos:Concept;
-    skos:prefLabel "Clarke 1858 zone 2"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z3> a skos:Concept;
-    skos:prefLabel "Clarke 1858 zone 3"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858-z4> a skos:Concept;
-    skos:prefLabel "Clarke 1858 zone 4"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda2020> a skos:Concept;
-    skos:prefLabel "GDA2020"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z49> a skos:Concept;
-    skos:prefLabel "GDA2020 / MGA zone 49"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z50> a skos:Concept;
-    skos:prefLabel "GDA2020 / MGA zone 50"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z51> a skos:Concept;
-    skos:prefLabel "GDA2020 / MGA zone 51"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z52> a skos:Concept;
-    skos:prefLabel "GDA2020 / MGA zone 52"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda94> a skos:Concept;
-    skos:prefLabel "GDA94"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z49> a skos:Concept;
-    skos:prefLabel "GDA94 / MGA zone 49"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z50> a skos:Concept;
-    skos:prefLabel "GDA94 / MGA zone 50"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z51> a skos:Concept;
-    skos:prefLabel "GDA94 / MGA zone 51"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z52> a skos:Concept;
-    skos:prefLabel "GDA94 / MGA zone 52"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid> a skos:Concept;
-    skos:prefLabel "local grid"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-known> a skos:Concept;
-    skos:prefLabel "local grid, base station known"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/local-grid-base-station-unknown> a skos:Concept;
-    skos:prefLabel "local grid, base station unknown"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020> a skos:Concept;
-    skos:prefLabel "MGA2020"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94> a skos:Concept;
-    skos:prefLabel "MGA94"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm> a skos:Concept;
-    skos:prefLabel "Universal Transverse Mercator System"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/unknown> a skos:Concept;
-    skos:prefLabel "unknown"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49> a skos:Concept;
-    skos:prefLabel "UTM z49"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50> a skos:Concept;
-    skos:prefLabel "UTM z50"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51> a skos:Concept;
-    skos:prefLabel "UTM z51"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52> a skos:Concept;
-    skos:prefLabel "UTM z52"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84> a skos:Concept;
-    skos:prefLabel "WGS84"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z49s> a skos:Concept;
-    skos:prefLabel "WGS84 / UTM zone 49S"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z50s> a skos:Concept;
-    skos:prefLabel "WGS84 / UTM zone 50S"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z51s> a skos:Concept;
-    skos:prefLabel "WGS84 / UTM zone 51S"@en.
-<https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z52s> a skos:Concept;
-    skos:prefLabel "WGS84 / UTM zone 52S"@en.

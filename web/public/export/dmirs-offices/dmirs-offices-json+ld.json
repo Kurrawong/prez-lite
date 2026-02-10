@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-1220",
+        "@id": "_:n3-1234",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-1221",
+        "@id": "_:n3-1235",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -71,10 +71,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-1220"
+                "@id": "_:n3-1234"
             },
             {
-                "@id": "_:n3-1221"
+                "@id": "_:n3-1235"
             }
         ],
         "https://schema.org/creator": [
@@ -107,258 +107,6 @@
         "https://schema.org/keywords": [
             {
                 "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/administration"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/albany-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/broome-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/carlisle",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/collie-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/carlisle"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/mineral-house"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/mason-bird"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/dmirs-regional",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/collie-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/karratha-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/leonora-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/albany-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/broome-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/bunbury-office"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/geraldton-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/gswa-offices",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/mason-bird",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/mine-inspectorate-offices-wa",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/mining-registrar-offices-wa",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/perth-core-library",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices/perth-core-library"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/dmirs-offices"
             }
         ]
     }

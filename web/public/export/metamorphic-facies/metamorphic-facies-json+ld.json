@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2656",
+        "@id": "_:n3-2670",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2657",
+        "@id": "_:n3-2671",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -139,213 +139,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2656"
+                "@id": "_:n3-2670"
             },
             {
-                "@id": "_:n3-2657"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/albite-epidote-hornfels",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/amphibolite",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/blueschist",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/eclogite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/epidote–amphibolite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/granulite",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/greenschist",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/hornblende-hornfels",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/prehnite–pumpellyite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/sanidinite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/sub-greenschist",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/undifferentiated",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/metamorphic-facies/zeolite",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/metamorphic-facies"
+                "@id": "_:n3-2671"
             }
         ]
     }

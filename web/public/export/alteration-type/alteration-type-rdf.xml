@@ -57,8 +57,8 @@ Definitions compiled from:
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-type/uralitization"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-type/zeolitic-alteration"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-type/hematitic-alteration"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-674"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-675"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-688"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-689"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</sdo:dateModified>
@@ -66,179 +66,12 @@ Definitions compiled from:
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/albitic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/argillic-alteration">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/argillic-alteration-intermediate"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/biotitic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/calc-silicate-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/carbonate-alteration">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/calcification"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/dolomitization"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/chloritic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/deuteric-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/epidote-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/alkali-metasomatism">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/fenitization"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/fluorite-and-topaz-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/greisenization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-other">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unknown">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/hydrothermal-alteration-unspecified">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/kaolinitic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/listvenitization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/phyllic-alteration-QSP">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/potassic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/propylitic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/sulfidation">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/pyritic-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/rodingitization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/saussuritization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/sericitic-white-mica-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/serpentinization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/silication">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/silicification">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/skarn">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/skarn-calcic"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/skarn-magnesian"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/skarn-retrograde-stage"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/sodic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/talc-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/tourmalinization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/unaltered">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/uralitization">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/zeolitic-alteration">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/hematitic-alteration">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/jasperoid-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-674">
+  <rdf:Description rdf:nodeID="n3-688">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0001-5888-5102"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-675">
+  <rdf:Description rdf:nodeID="n3-689">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/alunitic-alteration">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/argillic-alteration-advanced">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/argillic-alteration"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/alunitic-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/argillic-alteration-intermediate">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/argillic-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/calcification">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/carbonate-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/dolomitization">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/carbonate-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/fenitization">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/alkali-metasomatism"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/hematitic-jasperoid">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/jasperoid-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/jasperoid-alteration">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/hematitic-alteration"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/hematitic-jasperoid"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-type/sulfidic-jasperoid"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/sulfidic-jasperoid">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/jasperoid-alteration"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/pyritic-alteration">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/sulfidation"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/skarn-calcic">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/skarn"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/skarn-magnesian">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/skarn"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type/skarn-retrograde-stage">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-type/skarn"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
   </rdf:Description>
 </rdf:RDF>

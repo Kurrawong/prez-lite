@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2807",
+        "@id": "_:n3-2821",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2808",
+        "@id": "_:n3-2822",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -98,10 +98,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2807"
+                "@id": "_:n3-2821"
             },
             {
-                "@id": "_:n3-2808"
+                "@id": "_:n3-2822"
             }
         ],
         "https://schema.org/creator": [
@@ -134,284 +134,6 @@
         "https://schema.org/version": [
             {
                 "@value": "1"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/archived",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/awaiting-registration",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/collected",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/sampled-under-agreement"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/consumed",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/consumed"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/destroyed"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/discarded"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/donated"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/restituted"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/destroyed",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/discarded",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/donated",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/in-transit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loan",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/loaned-in"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/long-term-loan"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/on-loan-external"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/on-loan-internal"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/permanent-loan"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/loaned-in",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/long-term-loan",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/lost",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/on-display",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/on-loan-external",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/on-loan-internal",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/permanent-loan",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/loan"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/processing",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/quarantined",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/restituted",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/deaccessioned"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/sampled-under-agreement",
-        "http://www.w3.org/2004/02/skos/core#broader": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status/collected"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/stolen",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/sample-curation-status/temporary-holding",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/sample-curation-status"
             }
         ]
     }

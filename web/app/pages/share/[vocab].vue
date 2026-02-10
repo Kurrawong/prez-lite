@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { useShare } from '~/composables/useShare'
+import type { ExportFormat } from '~/composables/useShare'
 import InteractivePreview from '~/components/share/InteractivePreview.vue'
 
 const route = useRoute()
 const vocabSlug = computed(() => route.params.vocab as string)
 
 const { vocabs, status, getDownloadUrl, getFullDownloadUrl, formats } = useShare()
+const { githubRepo, githubBranch, githubVocabPath } = useRuntimeConfig().public
 
 const vocab = computed(() => vocabs.value.find(v => v.slug === vocabSlug.value))
+
+const githubEditUrl = computed(() => {
+  if (!githubRepo || !vocab.value) return null
+  return `https://github.com/${githubRepo}/edit/${githubBranch}/${githubVocabPath}/${vocab.value.slug}.ttl`
+})
 
 const baseUrl = computed(() => {
   if (typeof window !== 'undefined') {
@@ -19,18 +26,129 @@ const baseUrl = computed(() => {
 // We only have one component now (prez-list) with different types
 const selectedComponent = ref<'list'>('list')
 
+const breadcrumbs = computed(() => [
+  { label: 'Vocabularies', to: '/vocabs' },
+  ...(vocab.value
+    ? [{ label: vocab.value.label, to: { path: '/scheme', query: { uri: vocab.value.iri } } }]
+    : []),
+  { label: 'Share' }
+])
+
 async function copyUrl(url: string) {
   await navigator.clipboard.writeText(url)
+}
+
+// Preview state — default to first format (ttl-anot) once vocab loads
+const previewFormatId = ref<string | null>(null)
+const previewContent = ref<string>('')
+const previewLoading = ref(false)
+type ViewMode = 'source' | 'rendered'
+const viewMode = ref<ViewMode>('source')
+
+// Auto-load preview for first format when vocab becomes available
+const hasAutoLoaded = ref(false)
+watch(vocab, (v) => {
+  if (v && !hasAutoLoaded.value) {
+    hasAutoLoaded.value = true
+    loadPreview(formats[0])
+  }
+})
+
+// Determine which formats support a rendered view
+function hasRenderedView(formatId: string): boolean {
+  return ['html', 'json', 'jsonld', 'jsonld-anot', 'csv'].includes(formatId)
+}
+
+function getRenderedLabel(formatId: string): string {
+  if (formatId === 'html') return 'Rendered'
+  if (formatId === 'json' || formatId === 'jsonld' || formatId === 'jsonld-anot') return 'Tree'
+  if (formatId === 'csv') return 'Table'
+  return 'Rendered'
+}
+
+// Parse CSV string into rows
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = []
+  let current = ''
+  let inQuotes = false
+  let row: string[] = []
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (inQuotes) {
+      if (ch === '"' && text[i + 1] === '"') {
+        current += '"'
+        i++
+      } else if (ch === '"') {
+        inQuotes = false
+      } else {
+        current += ch
+      }
+    } else {
+      if (ch === '"') {
+        inQuotes = true
+      } else if (ch === ',') {
+        row.push(current)
+        current = ''
+      } else if (ch === '\n' || (ch === '\r' && text[i + 1] === '\n')) {
+        row.push(current)
+        current = ''
+        if (row.some(c => c !== '')) rows.push(row)
+        row = []
+        if (ch === '\r') i++
+      } else {
+        current += ch
+      }
+    }
+  }
+  if (current || row.length) {
+    row.push(current)
+    if (row.some(c => c !== '')) rows.push(row)
+  }
+  return rows
+}
+
+const csvRows = computed(() => {
+  if (!previewContent.value || !previewFormatId.value?.includes('csv')) return []
+  return parseCsv(previewContent.value)
+})
+
+// Parse JSON for tree view
+const jsonData = computed(() => {
+  if (!previewContent.value || !['json', 'jsonld', 'jsonld-anot'].includes(previewFormatId.value || '')) return null
+  try {
+    return JSON.parse(previewContent.value)
+  } catch {
+    return null
+  }
+})
+
+async function loadPreview(format: ExportFormat) {
+  if (previewFormatId.value === format.id) return
+  if (!vocab.value) return
+  previewFormatId.value = format.id
+  viewMode.value = 'source'
+  previewLoading.value = true
+  previewContent.value = ''
+  try {
+    const url = getDownloadUrl(vocab.value.slug, format.id)
+    const res = await fetch(url)
+    let text = await res.text()
+    // Pretty-print minified JSON
+    if (['json', 'jsonld', 'jsonld-anot'].includes(format.id)) {
+      try { text = JSON.stringify(JSON.parse(text), null, 2) } catch { /* keep raw */ }
+    }
+    previewContent.value = text.length > 200000 ? text.slice(0, 200000) + '\n\n… (truncated)' : text
+  } catch {
+    previewContent.value = 'Failed to load preview.'
+  } finally {
+    previewLoading.value = false
+  }
 }
 </script>
 
 <template>
   <div class="py-8">
-    <!-- Back link -->
-    <NuxtLink to="/share" class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-4">
-      <UIcon name="i-heroicons-arrow-left" class="size-4" />
-      Back to all vocabularies
-    </NuxtLink>
+    <UBreadcrumb :items="breadcrumbs" class="mb-6" />
 
     <div v-if="status === 'pending' || status === 'idle'">
       <USkeleton class="h-8 w-64 mb-4" />
@@ -59,37 +177,133 @@ async function copyUrl(url: string) {
           v{{ vocab.version }}
         </UBadge>
         <span v-if="vocab.modified">Updated {{ vocab.modified }}</span>
+        <UButton
+          v-if="githubEditUrl"
+          :to="githubEditUrl"
+          target="_blank"
+          size="xs"
+          variant="ghost"
+          icon="i-heroicons-pencil-square"
+        >
+          Edit on GitHub
+        </UButton>
       </div>
 
-      <!-- Download Formats -->
-      <UCard class="mb-8">
-        <template #header>
-          <h2 class="text-lg font-semibold">Download</h2>
-        </template>
+      <!-- Export Formats -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold mb-4">Export Formats</h2>
 
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div v-for="format in formats" :key="format.id" class="text-center">
-            <UButton
-              :to="getDownloadUrl(vocab.slug, format.extension)"
-              target="_blank"
-              variant="outline"
-              class="w-full mb-2"
-            >
-              .{{ format.extension }}
-            </UButton>
-            <div class="text-xs text-muted">{{ format.label }}</div>
-            <UButton
-              icon="i-heroicons-clipboard"
-              size="xs"
-              variant="ghost"
-              class="mt-1"
-              @click="copyUrl(getFullDownloadUrl(vocab.slug, format.extension))"
-            >
-              Copy URL
-            </UButton>
+        <div class="flex flex-col lg:flex-row border border-default rounded-lg overflow-hidden">
+          <!-- Preview panel (left, larger) -->
+          <div class="flex-1 min-w-0 flex flex-col">
+            <!-- Preview toolbar — fixed height to align with Downloads heading -->
+            <div class="flex items-center gap-3 px-3 py-2 h-[37px] border-b border-default bg-gray-50 dark:bg-gray-900/50">
+              <template v-if="previewFormatId">
+                <span class="text-sm font-semibold">{{ formats.find(f => f.id === previewFormatId)?.label }}</span>
+                <div v-if="hasRenderedView(previewFormatId)" class="flex items-center gap-1">
+                  <UButton
+                    size="xs"
+                    :variant="viewMode === 'source' ? 'solid' : 'ghost'"
+                    @click="viewMode = 'source'"
+                  >
+                    Source
+                  </UButton>
+                  <UButton
+                    size="xs"
+                    :variant="viewMode === 'rendered' ? 'solid' : 'ghost'"
+                    @click="viewMode = 'rendered'"
+                  >
+                    {{ getRenderedLabel(previewFormatId) }}
+                  </UButton>
+                </div>
+              </template>
+              <span v-else class="text-sm text-muted">Preview</span>
+            </div>
+
+            <!-- Preview content -->
+            <div class="flex-1 min-h-[24rem]">
+              <div v-if="!previewFormatId" class="flex items-center justify-center h-full text-muted text-sm">
+                Select a format to preview
+              </div>
+
+              <div v-else-if="previewLoading" class="flex items-center justify-center h-full">
+                <UIcon name="i-heroicons-arrow-path" class="w-5 h-5 animate-spin text-muted" />
+              </div>
+
+              <template v-else-if="viewMode === 'source'">
+                <pre class="bg-gray-900 text-gray-100 p-4 text-xs overflow-auto h-full max-h-[32rem]"><code>{{ previewContent }}</code></pre>
+              </template>
+
+              <template v-else>
+                <iframe
+                  v-if="previewFormatId === 'html'"
+                  :srcdoc="previewContent"
+                  class="w-full h-full min-h-[24rem]"
+                  sandbox="allow-same-origin"
+                />
+                <div
+                  v-else-if="['json', 'jsonld', 'jsonld-anot'].includes(previewFormatId) && jsonData"
+                  class="bg-gray-50 dark:bg-gray-900 p-4 overflow-auto max-h-[32rem] text-sm"
+                >
+                  <ShareJsonTreeNode :data="jsonData" :label="'root'" :expanded="true" :depth="0" />
+                </div>
+                <div
+                  v-else-if="previewFormatId === 'csv' && csvRows.length"
+                  class="overflow-auto max-h-[32rem]"
+                >
+                  <table class="w-full text-sm">
+                    <thead class="bg-gray-100 dark:bg-gray-800 sticky top-0">
+                      <tr>
+                        <th v-for="(cell, i) in csvRows[0]" :key="i" class="px-3 py-2 text-left font-medium text-muted">{{ cell }}</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-default">
+                      <tr v-for="(row, ri) in csvRows.slice(1)" :key="ri" class="hover:bg-gray-50 dark:hover:bg-gray-800">
+                        <td v-for="(cell, ci) in row" :key="ci" class="px-3 py-2">{{ cell }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Format list (right, narrower) -->
+          <div class="lg:w-64 shrink-0 border-t lg:border-t-0 lg:border-l border-default bg-gray-50/50 dark:bg-gray-900/30">
+            <div class="flex items-center px-3 py-2 h-[37px] text-sm font-semibold border-b border-default">Downloads</div>
+            <div class="divide-y divide-default">
+              <div
+                v-for="format in formats"
+                :key="format.id"
+                class="flex items-center gap-2 py-2 px-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                :class="{ 'bg-primary/5 border-l-2 border-l-primary': previewFormatId === format.id }"
+                @click="loadPreview(format)"
+              >
+                <span
+                  class="text-sm truncate flex-1"
+                  :class="previewFormatId === format.id ? 'font-medium text-primary' : ''"
+                >
+                  {{ format.label }}
+                </span>
+                <UButton
+                  icon="i-heroicons-arrow-down-tray"
+                  size="xs"
+                  variant="ghost"
+                  :to="getDownloadUrl(vocab.slug, format.id)"
+                  target="_blank"
+                  @click.stop
+                />
+                <UButton
+                  icon="i-heroicons-clipboard"
+                  size="xs"
+                  variant="ghost"
+                  @click.stop="copyUrl(getFullDownloadUrl(vocab.slug, format.id))"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </UCard>
+      </div>
 
       <!-- Interactive Preview -->
       <div class="mb-8">

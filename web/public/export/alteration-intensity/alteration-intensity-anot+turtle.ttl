@@ -16,7 +16,7 @@
     skos:prefLabel "Alteration intensity"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/alteration-intensity/1>;
-    prov:qualifiedAttribution _:n3-665, _:n3-666;
+    prov:qualifiedAttribution _:n3-679, _:n3-680;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-02"^^xsd:date;
     sdo:dateModified "2024-12-02"^^xsd:date;
@@ -47,13 +47,13 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-665 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-679 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-666 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-680 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0001-5888-5102>.
 <https://orcid.org/0000-0001-5888-5102> prez:label "Paul Duuring".
 sdo:creator prez:label "creator";
@@ -72,21 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-667 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-681 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/alteration-intensity/intense> a skos:Concept;
-    skos:prefLabel "intense"@en.
-<https://linked.data.gov.au/def/alteration-intensity/moderate> a skos:Concept;
-    skos:prefLabel "moderate"@en.
-<https://linked.data.gov.au/def/alteration-intensity/strong> a skos:Concept;
-    skos:prefLabel "strong"@en.
-<https://linked.data.gov.au/def/alteration-intensity/unaltered> a skos:Concept;
-    skos:prefLabel "unaltered"@en.
-<https://linked.data.gov.au/def/alteration-intensity/unknown> a skos:Concept;
-    skos:prefLabel "unknown"@en.
-<https://linked.data.gov.au/def/alteration-intensity/weak> a skos:Concept;
-    skos:prefLabel "weak"@en.

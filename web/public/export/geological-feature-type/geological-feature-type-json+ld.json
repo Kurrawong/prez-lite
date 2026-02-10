@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-1502",
+        "@id": "_:n3-1516",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-1503",
+        "@id": "_:n3-1517",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "@id": "_:n3-1504",
+        "@id": "_:n3-1518",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -143,133 +143,13 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-1502"
+                "@id": "_:n3-1516"
             },
             {
-                "@id": "_:n3-1503"
+                "@id": "_:n3-1517"
             },
             {
-                "@id": "_:n3-1504"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/formal-unit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/geological-event",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/georesources",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/landform-feature",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/lithotectonic-unit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/lithstrat-unit",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type/formal-unit"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type/lithotectonic-unit"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/metallogenic-province",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/mineral-system",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/petroleum-supersystem",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/physiographic-unit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/regolith-unit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/structural-feature",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/tectonic-feature",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/geological-feature-type/tectonic-unit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/geological-feature-type"
+                "@id": "_:n3-1518"
             }
         ]
     }

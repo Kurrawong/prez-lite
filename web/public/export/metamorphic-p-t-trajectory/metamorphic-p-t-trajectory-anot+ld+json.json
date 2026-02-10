@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-2681",
+    "@id": "_:n3-2695",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
     ]
   },
   {
-    "@id": "_:n3-2682",
+    "@id": "_:n3-2696",
     "http://www.w3.org/ns/prov#hadRole": [
       {
         "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "@id": "_:n3-2683",
+    "@id": "_:n3-2697",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -270,10 +270,10 @@
     ],
     "http://www.w3.org/ns/prov#qualifiedAttribution": [
       {
-        "@id": "_:n3-2681"
+        "@id": "_:n3-2695"
       },
       {
-        "@id": "_:n3-2682"
+        "@id": "_:n3-2696"
       }
     ],
     "https://prez.dev/identifier": [
@@ -305,162 +305,6 @@
     "https://prez.dev/description": [
       {
         "@value": "Terms used to describe the sequence of pressure(P) – temperature(T) conditions that occurred in a given rock body over a period of time (t) of a particular metamorphic event. Also called P–T–t paths.\r\n\r\nDefinitions are largely derived from: \r\na) England, PC and Richardson, SW 1977, The influence of erosion upon the mineral facies of rocks from different metamorphic environments: Journal of the Geological Society, v.134, p.201–213, doi:10.1144/gsjgs.134.2.0201)\r\nb) England, PC and Thompson, AB 1984, Pressure-temperature-time paths of regional metamorphism I. Heat transfer during the evolution of thickened continental crust: Journal of Petrology,v.25,no.4,p.894–928)\r\nc) Harley, 1989 (Harley, SL 1989, The origins of granulites: a metamorphic perspective: Geological Magazine,v.126,no.3,p.215–247, doi:10.1017/S0016756800022330)\r\nd) https://en.wikipedia.org/wiki/Pressure-temperature-time_path.",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/anticlockwise",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "anticlockwise",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/clockwise",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "clockwise",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "isobaric",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-cooling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "isobaric cooling",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isobaric-heating",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "isobaric heating",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "isothermal",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-decrease",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "isothermal pressure decrease",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/isothermal-P-increase",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "isothermal pressure increase",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-cooling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "near-isobaric cooling",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isobaric-heating",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "near-isobaric heating",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-compression",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "near-isothermal compression",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/near-isothermal-decompression",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "near-isothermal decompression",
-        "@language": "en"
-      }
-    ]
-  },
-  {
-    "@id": "https://linked.data.gov.au/def/metamorphic-P-T-trajectory/unknown",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "unknown",
         "@language": "en"
       }
     ]

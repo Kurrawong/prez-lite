@@ -9,17 +9,61 @@ description: Kanban workflow and sprint management guidance for task lifecycle, 
 
 ## On Start
 
-When this skill is invoked, immediately:
+When this skill is invoked, immediately perform these steps **in order**:
 
-1. Read all kanban files in `docs/kanban/` (`1-backlog.md`, `2-todo.md`, `3-in-progress.md`, `5-reviewing.md`, `4-done.md`, `dashboard.md`, `sprints.md`)
-2. Assess current state: what's in each column, what needs attention
-3. Present a summary to the user:
-   - Items in each workflow stage
-   - Next actions (e.g. tasks ready to start, tasks needing review, blockers)
-   - Any workflow issues (stale items, missing done criteria, unmarked backlog items)
-4. Ask the user what they'd like to work on, or suggest the highest-priority ready task
+### Step 0: Clean Up Completed Sprint
 
-Do NOT wait for further instructions before reading the kanban files. Start processing immediately.
+1. Read `docs/kanban/1-backlog.md`
+2. If the backlog contains items marked ✅ (completed) or 🔄/👀 with no matching in-progress/reviewing entry:
+   a. Check `docs/kanban/5-done.md` and `docs/kanban/sprints.md` to verify these items are recorded there
+   b. If all backlog items are ✅, the sprint is complete — close it:
+      - Update `sprints.md`: mark the sprint ✅, add completed tasks list and velocity
+      - Move done items to `docs/kanban/9-archive.md` if they belong to a previous sprint
+      - **Clear `1-backlog.md`** completely (leave only the header)
+      - **Clear `2-todo.md`** sprint section (leave only the header)
+      - Update `dashboard.md` to reflect the closed sprint
+   c. If only some items are ✅, leave them but flag for the user
+3. If the backlog is clean (empty or only unmarked items), skip to Step 1
+
+### Step 1: Process Intray
+
+1. Read `docs/intray.md`
+2. If the intray has items:
+   a. Parse each item and present them back to the user as a numbered list with a proposed **backlog title** and **one-line summary** for each
+   b. If any item is ambiguous or unclear, ask clarifying questions **before** adding to backlog — do not guess
+   c. Once confirmed, append items to `docs/kanban/1-backlog.md` using the **standardised backlog format** (see below)
+   d. Clear `docs/intray.md` (leave the file empty)
+3. If the intray is empty, skip to Step 2
+
+**Standardised Backlog Format** (one entry per item in `1-backlog.md`):
+```
+### [Short imperative title]
+[One-line description of what needs to happen and why]
+```
+
+Example:
+```
+### Fix background label resolution on concept pages
+Predicate labels like "altLabel" show raw camelCase instead of resolved human-readable labels from background vocabularies.
+```
+
+### Step 2: Read Board State
+
+1. Read all kanban files: `1-backlog.md`, `2-todo.md`, `3-in-progress.md`, `5-reviewing.md`, `5-done.md`, `dashboard.md`, `sprints.md`
+2. Assess current state across all columns
+
+### Step 3: Present Status and Options
+
+Show a **brief status summary** — one line per column that has items, skip empty columns.
+
+Then, based on board state, present **actionable options** using `AskUserQuestion`:
+
+- If items are **in progress**: offer "Continue [task name]" with a one-line summary of where it left off
+- If items are **in review**: offer "Approve [task name]" to move to done
+- If backlog has items but nothing is in progress: offer "Start [highest priority task]"
+- Always include "Stop here" as an option
+
+Do NOT wait for further instructions before reading files. Start processing immediately.
 
 ---
 
@@ -61,7 +105,7 @@ Do NOT wait for further instructions before reading the kanban files. Start proc
         │  Mark: ✅ [Task Name] in backlog
         ↓
 
-    ✅ DONE (4-done.md)
+    ✅ DONE (5-done.md)
         │  Reviewed & complete
         │  Update sprints.md
         │
@@ -163,7 +207,7 @@ Do NOT wait for further instructions before reading the kanban files. Start proc
 ### 5. After Review (Reviewing → Done)
 
 **If Review Passes:**
-1. Move task from `5-reviewing.md` to `4-done.md`
+1. Move task from `5-reviewing.md` to `5-done.md`
 2. Mark in backlog as complete: `✅ [Task Name]`
 3. Update `dashboard.md` with new metrics
 4. Update `sprints.md` with completed task
@@ -190,9 +234,9 @@ Do NOT wait for further instructions before reading the kanban files. Start proc
 - Sprint is concluded
 
 **Archive Process:**
-1. Review all completed tasks in `4-done.md`
+1. Review all completed tasks in `5-done.md`
 2. Move historical/completed tasks to `9-archive.md`
-3. Keep recent achievements visible in `4-done.md`
+3. Keep recent achievements visible in `5-done.md`
 4. Archive format: Task name + completion date + outcome summary
 5. Update `sprints.md` to close current sprint
 6. **Clear ALL items from `1-backlog.md`** (REQUIRED - leave completely empty)
@@ -482,7 +526,7 @@ pnpm --filter web preview
 
 **Important:** Tasks stay here until user reviews and approves
 
-### `4-done.md`
+### `5-done.md`
 **Purpose:** Completed and reviewed tasks (current sprint)
 **Format:**
 - Task name + completion date
@@ -519,7 +563,7 @@ pnpm --filter web preview
 - **Current Sprint:** Goals + in-progress + completed tasks
 - **Previous Sprints:** Closed sprints with outcomes + velocity + lessons
 
-**Update:** Add completed tasks from `4-done.md` to current sprint section
+**Update:** Add completed tasks from `5-done.md` to current sprint section
 
 ---
 
@@ -530,7 +574,7 @@ pnpm --filter web preview
 | Prioritizing tasks | `2-todo.md` (add task) + `1-backlog.md` (mark 🎯) |
 | Starting task | `3-in-progress.md` (add) + `1-backlog.md` (mark 🔄) |
 | Ready for review | `5-reviewing.md` (add) + `1-backlog.md` (mark 👀) |
-| Task reviewed & complete | `4-done.md` (add) + `1-backlog.md` (mark ✅) + `sprints.md` |
+| Task reviewed & complete | `5-done.md` (add) + `1-backlog.md` (mark ✅) + `sprints.md` |
 | Sprint ends | `sprints.md` (close sprint) + `9-archive.md` (move old done items) |
 | Feature complete | `docs/4-roadmap/CHANGELOG.md` |
 | Starting new phase | `docs/4-roadmap/current.md` |
@@ -738,7 +782,7 @@ Archive (after sprint ends, all backlog complete)
 | 🎯 | Prioritized | `1-backlog.md` + `2-todo.md` |
 | 🔄 | In progress | `1-backlog.md` + `3-in-progress.md` |
 | 👀 | In review | `1-backlog.md` + `5-reviewing.md` |
-| ✅ | Complete | `1-backlog.md` + `4-done.md` + `sprints.md` |
+| ✅ | Complete | `1-backlog.md` + `5-done.md` + `sprints.md` |
 
 ### File Update Checklist
 
@@ -762,7 +806,7 @@ In Progress → Reviewing:
   ☐ Include done criteria checklist
 
 Reviewing → Done:
-  ☐ Add to 4-done.md with completion summary
+  ☐ Add to 5-done.md with completion summary
   ☐ Mark ✅ in 1-backlog.md
   ☐ Add to sprints.md current sprint section
   ☐ Update dashboard swim lanes + metrics

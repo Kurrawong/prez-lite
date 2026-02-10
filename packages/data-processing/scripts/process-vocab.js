@@ -820,16 +820,6 @@ function createAnnotatedSchemeStore(sourceStore, backgroundStore, schemeIri, top
     addPrezAnnotationsForIri(iri, annotated, backgroundStore);
   }
 
-  // Add concept list data so the anot store is self-contained for HTML-from-single-asset
-  const concepts = extractConceptsForList(sourceStore);
-  for (const c of concepts) {
-    annotated.addQuad(quad(namedNode(c.iri), namedNode(`${RDF}type`), namedNode(`${SKOS}Concept`)));
-    annotated.addQuad(quad(namedNode(c.iri), namedNode(`${SKOS}prefLabel`), literal(c.prefLabel || '', 'en')));
-    if (c.broader) {
-      annotated.addQuad(quad(namedNode(c.iri), namedNode(`${SKOS}broader`), namedNode(c.broader)));
-    }
-  }
-
   return annotated;
 }
 
@@ -1193,16 +1183,6 @@ function createSimplifiedGraph(sourceStore) {
         }
       }
     }
-  }
-
-  const conceptProperties = [
-    `${SKOS}broader`,
-    `${SKOS}narrower`,
-    `${SKOS}inScheme`,
-  ];
-
-  for (const prop of conceptProperties) {
-    simplified.addQuads(sourceStore.getQuads(null, prop, null, null));
   }
 
   return simplified;
@@ -2224,11 +2204,6 @@ async function processVocab(config) {
     await writeFile(join(config.outDir, `${sourceName}-concepts.json`), JSON.stringify(listJson), 'utf-8');
     console.log(`   ✓ ${sourceName}-concepts.json`);
     outputFileCount++;
-
-    // Also write as -list.json for web component compatibility
-    await writeFile(join(config.outDir, `${sourceName}-list.json`), JSON.stringify(listJson), 'utf-8');
-    console.log(`   ✓ ${sourceName}-list.json`);
-    outputFileCount++;
   }
 
   if (profileAllowsFormat(config, 'text/csv')) {
@@ -2236,11 +2211,6 @@ async function processVocab(config) {
     const listCsv = await generateListCSV(concepts);
     await writeFile(join(config.outDir, `${sourceName}-concepts.csv`), listCsv, 'utf-8');
     console.log(`   ✓ ${sourceName}-concepts.csv`);
-    outputFileCount++;
-
-    // Also write as -list.csv for consistency
-    await writeFile(join(config.outDir, `${sourceName}-list.csv`), listCsv, 'utf-8');
-    console.log(`   ✓ ${sourceName}-list.csv`);
     outputFileCount++;
   }
 
@@ -2284,7 +2254,18 @@ async function processVocab(config) {
 
   if (profileAllowsFormat(config, 'text/html')) {
     console.log('   Writing HTML page...');
-    const html = generateHTMLFromAnotStore(annotatedStore, undefined, config.profile);
+    // Create an extended store for HTML that includes concept summaries
+    // so the HTML page is self-contained with a concept tree
+    const htmlStore = new Store();
+    htmlStore.addQuads(annotatedStore.getQuads(null, null, null, null));
+    for (const c of concepts) {
+      htmlStore.addQuad(quad(namedNode(c.iri), namedNode(`${RDF}type`), namedNode(`${SKOS}Concept`)));
+      htmlStore.addQuad(quad(namedNode(c.iri), namedNode(`${SKOS}prefLabel`), literal(c.prefLabel || '', 'en')));
+      if (c.broader) {
+        htmlStore.addQuad(quad(namedNode(c.iri), namedNode(`${SKOS}broader`), namedNode(c.broader)));
+      }
+    }
+    const html = generateHTMLFromAnotStore(htmlStore, undefined, config.profile);
     await writeFile(join(config.outDir, `${sourceName}-page.html`), html, 'utf-8');
     console.log(`   ✓ ${sourceName}-page.html`);
     outputFileCount++;

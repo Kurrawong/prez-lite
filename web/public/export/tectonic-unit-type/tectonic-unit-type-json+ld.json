@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-2876",
+        "@id": "_:n3-2890",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-2877",
+        "@id": "_:n3-2891",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -157,178 +157,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-2876"
+                "@id": "_:n3-2890"
             },
             {
-                "@id": "_:n3-2877"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/WA-unit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/Western-Australia",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/basin",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/craton",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/craton-terrane",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/domain",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/greenstone-belt_granitic-complex",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/inlier_outlier",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/orogen",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/orogenic-foreland",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/orogenic-foreland-subunit",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/province-tectonic",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/province-terrane_zone",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/seismic-province",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/sub-basin",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/sub-basin_element",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/suite-tectonic",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/superbasin",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/supersuite-tectonic",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/superterrane",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/tectonic-unit-type/tectonic-subdivision",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/tectonic-unit-type"
+                "@id": "_:n3-2891"
             }
         ]
     }

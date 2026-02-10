@@ -4,19 +4,118 @@
 
 ---
 
-## 👀 Sprint 5: CI/CD & Data Pipeline (In Review)
+## ✅ Completed Sprint: Sprint 7 - Export Cleanup & Share Page Fixes
+
+**Duration:** 2026-02-10
+**Goal:** Trim bloated vocab exports, fix share page download links, improve export preview UX
+**Status:** ✅ **COMPLETE** — All items approved
+
+### Sprint Outcomes
+
+**Completed: 4 tasks (100%)**
+
+1. ✅ **Trim concept data from vocab-level exports** (High)
+   - Removed concept data from annotated & simplified stores
+   - Added `sh:property` shapes to ConceptScheme profiles
+   - HTML-specific store keeps pages self-contained
+   - Fixed share page download links (`format.id` lookup)
+   - Removed `-list.json`/`-list.csv` duplicates
+
+2. ✅ **Fix comma-separated literal display formatting** (Medium)
+   - Split rendering: plain literals inline, datatype badge rows use flex
+   - Fixed both top-level and nested value contexts
+
+3. ✅ **Add missing export files to share page** (Medium)
+   - Resolved: duplicate files removed, all 8 formats correctly linked
+
+4. ✅ **Add export format preview on share pages** (Medium)
+   - Two-panel layout: preview left, download list right
+   - Source/Rendered view modes (HTML iframe, JSON tree, CSV table)
+   - Recursive `ShareJsonTreeNode` component
+   - Auto-loads annotated Turtle on page load
+   - JSON pretty-printing for minified content
+   - Reordered formats: annotated first
+
+### Sprint Velocity
+- **Planned:** 4 tasks
+- **Completed:** 4 tasks
+- **Success Rate:** 100%
+
+### Key Achievements
+- Vocab export files significantly smaller (no concept data)
+- Share page fully functional with correct download links
+- Rich preview system with format-specific rendering
+- Integrated two-panel export UI
+
+---
+
+## ✅ Completed Sprint: Sprint 6 - Labels, Data Types & Concept Sharing
+
+**Duration:** 2026-02-09
+**Goal:** Fix label resolution, add datatype badges, create concept share page, improve share page navigation
+**Status:** ✅ **COMPLETE** — All items approved
+
+### Sprint Outcomes
+
+**Completed: 4 tasks (100%)**
+
+1. ✅ **Fix background label resolution on concept and vocab pages** (High)
+   - Exports were stale — regenerated with `pnpm build:data`
+   - `labels.json` populated with 3,658 entries
+   - Predicate labels now show human-readable names
+
+2. ✅ **Show data type badges on property values** (Medium)
+   - Linked badges with external link icon on RHS of literal values
+   - Added XSD datatype labels to background vocabularies
+   - Files: `annotated-properties.ts`, `RichMetadataTable.vue`, `prez-vocab-labels.ttl`
+
+3. ✅ **Add dedicated concept share page** (Medium)
+   - New page at `/share/concept?vocab={slug}&uri={iri}`
+   - Concept info, annotated JSON-LD download, properties, quick reference
+   - Share button on concept page updated to link here
+
+4. ✅ **Improve navigation on share pages** (Low)
+   - Replaced ad-hoc nav links with UBreadcrumb on all share pages
+   - Hierarchy: Vocabularies → Vocab → Concept → Share
+
+### Sprint Velocity
+- **Planned:** 4 tasks
+- **Completed:** 4 tasks
+- **Success Rate:** 100%
+
+### Key Achievements
+- Predicate labels resolved from background vocabularies across all pages
+- Datatype badges link directly to XSD type definitions
+- Concept-level sharing with dedicated share page
+- Consistent breadcrumb navigation across all share pages
+
+---
+
+## ✅ Completed Sprint: Sprint 5 - CI/CD & Data Pipeline
 
 **Duration:** 2026-02-09
 **Goal:** Decouple data processing from site deployment so CI uses committed exports instead of rebuilding from scratch
+**Status:** ✅ **COMPLETE** — All items approved
 
-**Tasks:**
-- 👀 **Decouple Data Processing from Site Deployment**
-  - Split `package.json` build into `build:data` (data pipeline) and `build:site` (components + Nuxt)
-  - New `process-data.yml` workflow: processes data on sample-data changes, commits exports back to repo
-  - Refactored `deploy-aws.yml` with `deploy-mode` input (`full` | `data-only`)
-  - Committed 55 MB of pre-built exports to `web/public/export/`
+### Sprint Outcomes
 
-**Status:** Awaiting review
+**Completed: 1 task (100%)**
+
+1. ✅ **Decouple Data Processing from Site Deployment**
+   - Split `package.json` build into `build:data` and `build:site`
+   - New `process-data.yml` workflow: processes data on sample-data changes, commits exports back
+   - Refactored `deploy-aws.yml` with `deploy-mode` input (`full` | `data-only`)
+   - Committed 55 MB of pre-built exports to `web/public/export/`
+
+### Sprint Velocity
+- **Planned:** 1 task
+- **Completed:** 1 task
+- **Success Rate:** 100%
+
+### Key Achievements
+- CI no longer depends on data processing — deploys use committed exports
+- Data-only deploys possible (sync exports to S3 without full rebuild)
+- Data regeneration automated via `process-data.yml` on sample-data changes
 
 ---
 

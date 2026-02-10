@@ -23,33 +23,8 @@
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     skos:hasTopConcept <https://linked.data.gov.au/def/metamorphic-facies/albite-epidote-hornfels>, <https://linked.data.gov.au/def/metamorphic-facies/amphibolite>, <https://linked.data.gov.au/def/metamorphic-facies/blueschist>, <https://linked.data.gov.au/def/metamorphic-facies/eclogite>, <https://linked.data.gov.au/def/metamorphic-facies/epidote–amphibolite>, <https://linked.data.gov.au/def/metamorphic-facies/granulite>, <https://linked.data.gov.au/def/metamorphic-facies/greenschist>, <https://linked.data.gov.au/def/metamorphic-facies/hornblende-hornfels>, <https://linked.data.gov.au/def/metamorphic-facies/prehnite–pumpellyite>, <https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels>, <https://linked.data.gov.au/def/metamorphic-facies/sanidinite>, <https://linked.data.gov.au/def/metamorphic-facies/sub-greenschist>, <https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature>, <https://linked.data.gov.au/def/metamorphic-facies/undifferentiated>, <https://linked.data.gov.au/def/metamorphic-facies/zeolite>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
-    prov:qualifiedAttribution _:n3-2656, _:n3-2657.
-<https://linked.data.gov.au/def/metamorphic-facies/albite-epidote-hornfels> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/amphibolite> skos:narrower <https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite>, <https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite>, <https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite>, <https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite>;
-    skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/blueschist> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/eclogite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/epidote–amphibolite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/granulite> skos:narrower <https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite>;
-    skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/greenschist> skos:narrower <https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist>, <https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist>;
-    skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/hornblende-hornfels> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/prehnite–pumpellyite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/pyroxene-hornfels> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/sanidinite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/sub-greenschist> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/ultra-high-temperature> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/undifferentiated> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/zeolite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-_:n3-2656 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:qualifiedAttribution _:n3-2670, _:n3-2671.
+_:n3-2670 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.
-_:n3-2657 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2671 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0003-0007-8342>.
-<https://linked.data.gov.au/def/metamorphic-facies/high-P-amphibolite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/lower-amphibolite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/middle-amphibolite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/upper-amphibolite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/high-P-granulite> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/lower-greenschist> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.
-<https://linked.data.gov.au/def/metamorphic-facies/upper-greenschist> skos:inScheme <https://linked.data.gov.au/def/metamorphic-facies>.

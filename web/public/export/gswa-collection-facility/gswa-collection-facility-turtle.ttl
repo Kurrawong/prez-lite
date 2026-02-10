@@ -17,37 +17,16 @@
     reg:status <https://linked.data.gov.au/def/reg-statuses/accepted>;
     owl:versionIRI <https://linked.data.gov.au/def/gswa-collection-facilities/1.1>;
     skos:hasTopConcept <https://linked.data.gov.au/def/gswa-collection-facilities/carlisle>, <https://linked.data.gov.au/def/gswa-collection-facilities/iron-mountain>, <https://linked.data.gov.au/def/gswa-collection-facilities/kalgoorlie-regional-office>, <https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house>, <https://linked.data.gov.au/def/gswa-collection-facilities/perth-mint>, <https://linked.data.gov.au/def/gswa-collection-facilities/western-australian-museum>;
-    prov:qualifiedAttribution _:n3-1812, _:n3-1813, _:n3-1814;
+    prov:qualifiedAttribution _:n3-1826, _:n3-1827, _:n3-1828;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2023-09-06"^^xsd:date;
     sdo:dateModified "2023-12-01"^^xsd:date;
     sdo:publisher <https://linked.data.gov.au/org/gswa>;
     sdo:version "1.1";
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/administration>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/carlisle> skos:narrower <https://linked.data.gov.au/def/gswa-collection-facilities/carlisle-laboratory>, <https://linked.data.gov.au/def/gswa-collection-facilities/carlisle-records-building>, <https://linked.data.gov.au/def/gswa-collection-facilities/field-logistics>, <https://linked.data.gov.au/def/gswa-collection-facilities/perth-core-library>;
-    skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/iron-mountain> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/kalgoorlie-regional-office> skos:narrower <https://linked.data.gov.au/def/gswa-collection-facilities/joe-lord-core-library>;
-    skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house> skos:narrower <https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-foyer>, <https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-library>, <https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-other>;
-    skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/perth-mint> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/western-australian-museum> skos:narrower <https://linked.data.gov.au/def/gswa-collection-facilities/harry-butler-research-centre>, <https://linked.data.gov.au/def/gswa-collection-facilities/museum-of-the-goldfields>, <https://linked.data.gov.au/def/gswa-collection-facilities/wa-museum-boola-bardip>;
-    skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-_:n3-1812 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1826 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
-_:n3-1813 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1827 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-_:n3-1814 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1828 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-5129-2467>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/carlisle-laboratory> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/carlisle-records-building> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/field-logistics> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/perth-core-library> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/harry-butler-research-centre> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/joe-lord-core-library> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-foyer> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-library> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house-other> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/museum-of-the-goldfields> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.
-<https://linked.data.gov.au/def/gswa-collection-facilities/wa-museum-boola-bardip> skos:inScheme <https://linked.data.gov.au/def/gswa-collection-facilities>.

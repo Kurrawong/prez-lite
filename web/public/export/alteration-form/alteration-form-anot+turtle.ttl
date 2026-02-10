@@ -16,7 +16,7 @@
     skos:prefLabel "Alteration form"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/alteration-form/1>;
-    prov:qualifiedAttribution _:n3-638, _:n3-639;
+    prov:qualifiedAttribution _:n3-652, _:n3-653;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-02"^^xsd:date;
     sdo:dateModified "2024-12-02"^^xsd:date;
@@ -47,13 +47,13 @@ owl:versionIRI prez:label "version IRI";
     prez:description "The property that identifies the version IRI of an ontology.".
 prov:qualifiedAttribution prez:label "qualified attribution";
     prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
-_:n3-638 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-652 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 prov:hadRole prez:label "role".
 <https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
 prov:agent prez:label "agent".
 <https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
-_:n3-639 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-653 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0001-5888-5102>.
 <https://orcid.org/0000-0001-5888-5102> prez:label "Paul Duuring".
 sdo:creator prez:label "creator";
@@ -72,77 +72,9 @@ sdo:version prez:label "version";
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-640 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-654 prez:currentProfile prez:OGCSchemesObjectProfile.
 prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
     prez:description "A profile for SKOS Concept Schemes".
 skos:hasTopConcept prez:label "has top concept";
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
 xsd:date prez:label "date".
-<https://linked.data.gov.au/def/alteration-form/banding-controlled> a skos:Concept;
-    skos:prefLabel "banding-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/layer-controlled>.
-<https://linked.data.gov.au/def/alteration-form/layer-controlled> a skos:Concept;
-    skos:prefLabel "layer-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/non-pervasive>.
-<https://linked.data.gov.au/def/alteration-form/bedding-controlled> a skos:Concept;
-    skos:prefLabel "bedding-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/layer-controlled>.
-<https://linked.data.gov.au/def/alteration-form/breccia-vein> a skos:Concept;
-    skos:prefLabel "breccia vein"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled>.
-<https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled> a skos:Concept;
-    skos:prefLabel "hydrothermal breccia-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>.
-<https://linked.data.gov.au/def/alteration-form/fault-breccia> a skos:Concept;
-    skos:prefLabel "fault breccia"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/fault-controlled>.
-<https://linked.data.gov.au/def/alteration-form/fault-controlled> a skos:Concept;
-    skos:prefLabel "fault-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/fracture-controlled>.
-<https://linked.data.gov.au/def/alteration-form/fracture-controlled> a skos:Concept;
-    skos:prefLabel "fracture-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>.
-<https://linked.data.gov.au/def/alteration-form/foliation-controlled> a skos:Concept;
-    skos:prefLabel "foliation-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>.
-<https://linked.data.gov.au/def/alteration-form/structure-controlled> a skos:Concept;
-    skos:prefLabel "structure-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/non-pervasive>.
-<https://linked.data.gov.au/def/alteration-form/non-pervasive> a skos:Concept;
-    skos:prefLabel "non-pervasive"@en.
-<https://linked.data.gov.au/def/alteration-form/pervasive> a skos:Concept;
-    skos:prefLabel "pervasive"@en.
-<https://linked.data.gov.au/def/alteration-form/selective> a skos:Concept;
-    skos:prefLabel "selective"@en.
-<https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive> a skos:Concept;
-    skos:prefLabel "selectively non-pervasive"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/selective>.
-<https://linked.data.gov.au/def/alteration-form/selectively-pervasive> a skos:Concept;
-    skos:prefLabel "selectively pervasive"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/selective>.
-<https://linked.data.gov.au/def/alteration-form/shear-zone-controlled> a skos:Concept;
-    skos:prefLabel "shear zone-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>.
-<https://linked.data.gov.au/def/alteration-form/unaltered> a skos:Concept;
-    skos:prefLabel "unaltered"@en.
-<https://linked.data.gov.au/def/alteration-form/unconformity-related> a skos:Concept;
-    skos:prefLabel "unconformity-related"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/layer-controlled>.
-<https://linked.data.gov.au/def/alteration-form/vein-controlled> a skos:Concept;
-    skos:prefLabel "vein-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>.
-<https://linked.data.gov.au/def/alteration-form/vug-controlled> a skos:Concept;
-    skos:prefLabel "vug-controlled"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>.
-<https://linked.data.gov.au/def/alteration-form/zoned> a skos:Concept;
-    skos:prefLabel "zoned"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/non-pervasive>.
-<https://linked.data.gov.au/def/alteration-form/zoned-central> a skos:Concept;
-    skos:prefLabel "zoned-central"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/zoned>.
-<https://linked.data.gov.au/def/alteration-form/zoned-inner> a skos:Concept;
-    skos:prefLabel "zoned-inner"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/zoned>.
-<https://linked.data.gov.au/def/alteration-form/zoned-outer> a skos:Concept;
-    skos:prefLabel "zoned-outer"@en;
-    skos:broader <https://linked.data.gov.au/def/alteration-form/zoned>.

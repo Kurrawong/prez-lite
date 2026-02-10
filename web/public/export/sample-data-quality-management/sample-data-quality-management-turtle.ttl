@@ -17,48 +17,16 @@
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/sample-data-quality-management/1>;
     skos:hasTopConcept <https://linked.data.gov.au/def/sample-data-quality-management/analytical-blank>, <https://linked.data.gov.au/def/sample-data-quality-management/barren-wash>, <https://linked.data.gov.au/def/sample-data-quality-management/blank>, <https://linked.data.gov.au/def/sample-data-quality-management/reference-material>, <https://linked.data.gov.au/def/sample-data-quality-management/check-assay-sample>, <https://linked.data.gov.au/def/sample-data-quality-management/duplicate>, <https://linked.data.gov.au/def/sample-data-quality-management/field-blank>, <https://linked.data.gov.au/def/sample-data-quality-management/field-repeat-sample>, <https://linked.data.gov.au/def/sample-data-quality-management/particle-sizing-check>, <https://linked.data.gov.au/def/sample-data-quality-management/re-assayed-sample>, <https://linked.data.gov.au/def/sample-data-quality-management/replicate>, <https://linked.data.gov.au/def/sample-data-quality-management/sample-split>, <https://linked.data.gov.au/def/sample-data-quality-management/spike>, <https://linked.data.gov.au/def/sample-data-quality-management/umpire-assay-sample>;
-    prov:qualifiedAttribution _:n3-2722, _:n3-2723, _:n3-2724;
+    prov:qualifiedAttribution _:n3-2736, _:n3-2737, _:n3-2738;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2025-06-18"^^xsd:date;
     sdo:dateModified "2025-06-18"^^xsd:date;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management>;
     sdo:publisher <https://linked.data.gov.au/org/gswa>;
     sdo:version "1.0".
-<https://linked.data.gov.au/def/sample-data-quality-management/analytical-blank> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/barren-wash> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/blank> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/reference-material> skos:narrower <https://linked.data.gov.au/def/sample-data-quality-management/blind-reference-material>, <https://linked.data.gov.au/def/sample-data-quality-management/calibration-reference-material>, <https://linked.data.gov.au/def/sample-data-quality-management/certified-reference-material>, <https://linked.data.gov.au/def/sample-data-quality-management/laboratory-reference-material>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/check-assay-sample> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/duplicate> skos:narrower <https://linked.data.gov.au/def/sample-data-quality-management/crush-duplicate>, <https://linked.data.gov.au/def/sample-data-quality-management/field-duplicate>, <https://linked.data.gov.au/def/sample-data-quality-management/laboratory-duplicate>, <https://linked.data.gov.au/def/sample-data-quality-management/pulp-duplicate>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/field-blank> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/field-repeat-sample> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/particle-sizing-check> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/re-assayed-sample> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/replicate> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/sample-split> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/spike> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/umpire-assay-sample> skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-_:n3-2722 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2736 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-_:n3-2723 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2737 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-2104-6601>.
-_:n3-2724 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-2738 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-2280-1859>.
-<https://linked.data.gov.au/def/sample-data-quality-management/blind-reference-material> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/reference-material>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/calibration-reference-material> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/reference-material>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/certified-reference-material> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/reference-material>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/laboratory-reference-material> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/reference-material>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/crush-duplicate> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/duplicate>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/field-duplicate> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/duplicate>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/laboratory-duplicate> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/duplicate>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.
-<https://linked.data.gov.au/def/sample-data-quality-management/pulp-duplicate> skos:broader <https://linked.data.gov.au/def/sample-data-quality-management/duplicate>;
-    skos:inScheme <https://linked.data.gov.au/def/sample-data-quality-management>.

@@ -24,172 +24,20 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-drilling"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/unknown"/>
     <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1013"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1014"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1027"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1028"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-25</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-25</sdo:dateModified>
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1.0</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hybrid-drilling">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/coiled-tubing"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/downhole-motor"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/non-rotary">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/drop-core-drilling"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-jet"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/cable_tool_drilling"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/direct_push"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-drilling">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/bucket-drilling"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/air-core"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/core-drilling"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-rotary"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/auger"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/reverse-circulation"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-air-blast"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/sonic"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-hammer"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/vacuum"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/unknown">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1013">
+  <rdf:Description rdf:nodeID="n3-1027">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1014">
+  <rdf:Description rdf:nodeID="n3-1028">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/bucket-drilling">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/Bauer-bucket"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/Calweld"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/Bauer-bucket">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/Calweld">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/air-core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/coiled-tubing">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/diamond_core">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/conventional-core"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/wireline-core"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/conventional-core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/core-drilling">
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/diamond_core"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/downhole-motor">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/drop-core-drilling">
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/box_core"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/gravity_core"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/kasten_core"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/vibrocore"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/box_core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/gravity_core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/kasten_core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/vibrocore">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-jet">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/hydraulic-rotary">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/cable_tool_drilling">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/direct_push">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/piston-core"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/probe"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/delft_sampler"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/geoprobe_core"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/mackereth_core"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/window_sampler"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/piston-core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/auger">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/power-auger"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/hand_auger"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/power-auger">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/reverse-circulation">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-air-blast">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/sonic">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/rotary-hammer">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/vacuum">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-drilling-method-western-australia/wireline-core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/hand_auger">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/probe">
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/cone_penetrometer_test_probe"/>
-    <skos:narrower rdf:resource="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/mackintosh_probe"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/cone_penetrometer_test_probe">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/delft_sampler">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/geoprobe_core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/mackereth_core">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/window_sampler">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/mackintosh_probe">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
   </rdf:Description>
 </rdf:RDF>

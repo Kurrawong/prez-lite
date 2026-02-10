@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-1201",
+        "@id": "_:n3-1215",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-1202",
+        "@id": "_:n3-1216",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -95,10 +95,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-1201"
+                "@id": "_:n3-1215"
             },
             {
-                "@id": "_:n3-1202"
+                "@id": "_:n3-1216"
             }
         ],
         "https://schema.org/creator": [
@@ -134,153 +134,6 @@
             },
             {
                 "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Competent-Person",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Exploration-Results",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Exploration-Target",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Feasibility-Study",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Indicated-Resource",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Inferred-Resource",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Measured-Resource",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Mineral",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Mineral-Reserve",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Probable-Reserve"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Proved-Reserve"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Mineral-Resource",
-        "http://www.w3.org/2004/02/skos/core#narrower": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Indicated-Resource"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Inferred-Resource"
-            },
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Measured-Resource"
-            }
-        ],
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Modifying-Factors",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Pre-Feasibility-Study",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Probable-Reserve",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Proved-Reserve",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Public-reports",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Scoping-Study",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"
             }
         ]
     }

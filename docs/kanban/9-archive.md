@@ -4,6 +4,21 @@
 
 ---
 
+## 📦 Archived: Sprint 6 - Labels, Data Types & Concept Sharing
+
+**Archived Date:** 2026-02-10
+**Status:** ✅ Complete — 4 tasks (label resolution, datatype badges, concept share page, share page navigation)
+
+---
+
+## 📦 Archived: Sprint 5 - CI/CD & Data Pipeline
+
+**Archived Date:** 2026-02-09
+**Status:** ✅ Complete — 1 task (decouple data processing from site deployment)
+**See:** `sprints.md` for full details
+
+---
+
 ## 📦 Archived: Sprint 1 - Web Components & Analysis
 
 **Sprint Duration:** 2026-02-08 to 2026-02-09 (2 days)

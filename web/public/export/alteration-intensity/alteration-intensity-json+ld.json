@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-665",
+        "@id": "_:n3-679",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-666",
+        "@id": "_:n3-680",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -80,10 +80,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-665"
+                "@id": "_:n3-679"
             },
             {
-                "@id": "_:n3-666"
+                "@id": "_:n3-680"
             }
         ],
         "https://schema.org/creator": [
@@ -116,54 +116,6 @@
         "https://schema.org/version": [
             {
                 "@value": "1"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/alteration-intensity/intense",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/alteration-intensity"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/alteration-intensity/moderate",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/alteration-intensity"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/alteration-intensity/strong",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/alteration-intensity"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/alteration-intensity/unaltered",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/alteration-intensity"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/alteration-intensity/unknown",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/alteration-intensity"
-            }
-        ]
-    },
-    {
-        "@id": "https://linked.data.gov.au/def/alteration-intensity/weak",
-        "http://www.w3.org/2004/02/skos/core#inScheme": [
-            {
-                "@id": "https://linked.data.gov.au/def/alteration-intensity"
             }
         ]
     }
