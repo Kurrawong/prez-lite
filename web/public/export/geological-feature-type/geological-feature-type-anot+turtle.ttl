@@ -29,55 +29,13 @@
     prez:type prez:FocusNode;
     prez:label "Geological feature type"@en;
     prez:description "This vocabulary lists the fundamental types of geological features that are used to define the geological framework/4D evolution of Western Australia and are relevant to the duties of the Geological Survey of Western Australia. A geological feature is a physical or conceptual feature that is hypothesized to exist coherently in the Earth and that results from geological processes (definition largely derived from SWEET ontology http://sweetontology.net/realmGeol#geologicfeature)."@en.
-rdf:type prez:label "type";
-    prez:description "The subject is an instance of a class.".
-skos:ConceptScheme prez:label "Concept Scheme";
-    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
-skos:definition prez:label "definition";
-    prez:description "A statement or formal explanation of the meaning of a concept".
-skos:historyNote prez:label "history note";
-    prez:description "A note about the past state/use/meaning of a concept".
-skos:prefLabel prez:label "preferred label";
-    prez:description "The preferred lexical label for a resource, in a given language".
-sdo:dateCreated prez:label "date created";
-    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
-sdo:creator prez:label "creator";
-    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
-<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
-sdo:dateModified prez:label "date modified";
-    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
-sdo:publisher prez:label "publisher";
-    prez:description "The publisher of the creative work".
-owl:versionIRI prez:label "version IRI";
-    prez:description "The property that identifies the version IRI of an ontology.".
-owl:versionInfo prez:label "versionInfo";
-    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
-reg:status prez:label "status";
-    prez:description "The status of this register entry".
-<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
-    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
-sdo:keywords prez:label "keywords";
-    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
-prov:qualifiedAttribution prez:label "qualified attribution";
-    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
 _:n3-1516 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-prov:hadRole prez:label "role".
-<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
-prov:agent prez:label "agent".
-<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
 _:n3-1517 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://www.linkedin.com/in/davidmcbmartin/>.
-<https://www.linkedin.com/in/davidmcbmartin/> prez:label "David Martin".
 _:n3-1518 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
-<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
 _:n3-1519 prez:currentProfile prez:OGCSchemesObjectProfile.
-prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
-    prez:description "A profile for SKOS Concept Schemes".
-xsd:date prez:label "date".
-skos:hasTopConcept prez:label "has top concept";
-    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
