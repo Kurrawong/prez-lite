@@ -1,0 +1,21 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<http://pid.suncorp.com.au/def/brand> a owl:Ontology, skos:ConceptScheme;
+    skos:definition "Brands under Suncorp Group Limited."@en;
+    skos:prefLabel "Brand"@en;
+    dcterms:created "2025-02-19"^^xsd:date;
+    dcterms:creator <https://linked.data.gov.au/org/suncorp>;
+    dcterms:modified "2025-02-19"^^xsd:date;
+    dcterms:publisher <https://linked.data.gov.au/org/suncorp>;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental>;
+    skos:hasTopConcept <http://pid.suncorp.com.au/def/brand/aami>, <http://pid.suncorp.com.au/def/brand/gio>, <http://pid.suncorp.com.au/def/brand/suncorp>, <http://pid.suncorp.com.au/def/brand/apia>, <http://pid.suncorp.com.au/def/brand/bingle>, <http://pid.suncorp.com.au/def/brand/shannons>, <http://pid.suncorp.com.au/def/brand/cil>, <http://pid.suncorp.com.au/def/brand/essentials>, <http://pid.suncorp.com.au/def/brand/aainz>, <http://pid.suncorp.com.au/def/brand/ctp>, <http://pid.suncorp.com.au/def/brand/terri-scheer>.

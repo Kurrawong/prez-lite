@@ -20,6 +20,7 @@
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-type"/>
+    <sdo:hasPart rdf:resource="http://linked.data.gov.au/def/anzsic-2006"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/australian-physiographic-units"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/borehole-configuration"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/borehole-drilling-method-western-australia"/>
@@ -27,6 +28,7 @@
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/borehole-purpose-wa"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/borehole-status-wa"/>
+    <sdo:hasPart rdf:resource="http://pid.suncorp.com.au/def/brand"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/earthsci-for"/>
@@ -62,6 +64,9 @@
   <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-type">
     <skos:prefLabel xml:lang="en">Alteration type</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="http://linked.data.gov.au/def/anzsic-2006">
+    <skos:prefLabel xml:lang="en">Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://linked.data.gov.au/def/australian-physiographic-units">
     <skos:prefLabel xml:lang="en">Australian physiographic units</skos:prefLabel>
   </rdf:Description>
@@ -82,6 +87,9 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-status-wa">
     <skos:prefLabel xml:lang="en">Borehole status</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://pid.suncorp.com.au/def/brand">
+    <skos:prefLabel xml:lang="en">Brand</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting">
     <skos:prefLabel xml:lang="en">CRIRSCO mineral resource reporting</skos:prefLabel>

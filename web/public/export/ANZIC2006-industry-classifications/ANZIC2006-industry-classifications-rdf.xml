@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="http://linked.data.gov.au/def/anzsic-2006">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <dcterms:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument</dcterms:source>
+    <skos:definition xml:lang="en">An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.
+    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).
+    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics.</skos:definition>
+    <skos:prefLabel xml:lang="en">Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles</skos:prefLabel>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-02-17</dcterms:created>
+    <dcterms:creator rdf:resource="https://linked.data.gov.au/org/gsq"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-16</dcterms:modified>
+    <dcterms:publisher rdf:resource="https://linked.data.gov.au/org/gsq"/>
+    <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/A0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/B0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/C0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/D0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/E0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/F0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/G0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/H0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/I0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/J0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/M0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/O0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/P0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/Q0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/R0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/S0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/X0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/K0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/L0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/N0000"/>
+  </rdf:Description>
+</rdf:RDF>

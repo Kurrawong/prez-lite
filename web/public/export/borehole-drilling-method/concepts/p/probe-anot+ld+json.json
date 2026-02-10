@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-1058",
+    "@id": "_:n3-1353",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -21,14 +21,12 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "cone penetrometer test probe",
-        "@language": "en"
+        "@value": "cone penetrometer test probe"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A metal rod with an instrumented cone tip pushed hydraulically or by hammering into weakly consolidated ground at a controlled rate. Tip resistance, sleeve friction and water pressure are commonly measured parameters. Includes static and dynamic cone penetration tests.",
-        "@language": "en"
+        "@value": "A metal rod with an instrumented cone tip pushed by hammering or hydraulically into weakly consolidated ground at a controlled rate. Tip resistance, sleeve friction and water pressure are commonly measured parameters. Includes static and dynamic cone penetration tests."
       }
     ]
   },
@@ -46,14 +44,12 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Mackintosh probe",
-        "@language": "en"
+        "@value": "Mackintosh probe"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "The Mackintosh tool consists of rods that can be threaded together with barrel connectors and which are normally fitted with a driving point at their base, and a light hand-operated driving hammer at their top. The tool provides a very economical method of determining the thickness of soft deposits such as peat. The driving point is streamlined in longitudinal section with a maximum diameter of 27 mm. The drive hammer has a total weight of about 4 kg. The rods are 1.2 m long and 12 mm diameter. The device is often used to provide a depth profile by driving the point and rods into the ground with equal blows of the full drop height available from the hammer: the number of blows for each 150 mm of penetration is recorded.",
-        "@language": "en"
+        "@value": "The Mackintosh tool consists of rods which can be threaded together with barrel connectors and which are normally fitted with a driving point at their base, and a light hand-operated driving hammer at their top. The tool provides a very economical method of determining the thickness of soft deposits such as peat. The driving point is streamlined in longitudinal section with a maximum diameter of 27mm. The drive hammer has a total weight of about 4kg. The rods are 1.2m long and 12mm diameter. The device is often used to provide a depth profile by driving the point and rods into the ground with equal blows of the full drop height available from the hammer: the number of blows for each 150mm of penetration is recorded."
       }
     ]
   },
@@ -132,6 +128,131 @@
     ]
   },
   {
+    "@id": "http://resource.geosciml.org/classifierscheme/cgi/2016.01/boreholedrillingmethod",
+    "https://prez.dev/label": [
+      {
+        "@value": "Borehole Drilling Method"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This scheme specifies concepts used to describe methods used to drill a borehole, as defined by the IUGS Commission for Geoscience Information (CGI) Geoscience Terminology Working Group. By extension, it includes all concepts in this conceptScheme, as well as concepts in any previous versions of the scheme."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "https://prez.dev/label": [
+      {
+        "@value": "URI"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
     "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
     "https://prez.dev/identifier": [
       {
@@ -170,6 +291,43 @@
     ]
   },
   {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -182,6 +340,27 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
       }
     ]
   }

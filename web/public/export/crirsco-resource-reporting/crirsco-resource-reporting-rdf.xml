@@ -31,8 +31,8 @@ The CRIRSCO Code is closely related to the JORC Code used in Australasia to repo
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Pre-Feasibility-Study"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Public-reports"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/Scoping-Study"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1215"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1216"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1522"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1523"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-04</sdo:dateModified>
@@ -41,11 +41,11 @@ The CRIRSCO Code is closely related to the JORC Code used in Australasia to repo
     <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/resources-mineral"/>
     <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1215">
+  <rdf:Description rdf:nodeID="n3-1522">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1216">
+  <rdf:Description rdf:nodeID="n3-1523">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>

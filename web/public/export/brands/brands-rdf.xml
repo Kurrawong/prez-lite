@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="http://pid.suncorp.com.au/def/brand">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">Brands under Suncorp Group Limited.</skos:definition>
+    <skos:prefLabel xml:lang="en">Brand</skos:prefLabel>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-19</dcterms:created>
+    <dcterms:creator rdf:resource="https://linked.data.gov.au/org/suncorp"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-19</dcterms:modified>
+    <dcterms:publisher rdf:resource="https://linked.data.gov.au/org/suncorp"/>
+    <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/experimental"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/aami"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/gio"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/suncorp"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/apia"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/bingle"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/shannons"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/cil"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/essentials"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/aainz"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/ctp"/>
+    <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/terri-scheer"/>
+  </rdf:Description>
+</rdf:RDF>

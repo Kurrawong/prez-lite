@@ -29,14 +29,14 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/australian-physiographic-units/eastern-upland-division"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/australian-physiographic-units/interior-lowland-division"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/australian-physiographic-units/western-plateau-division"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-738"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-739"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1033"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1034"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-738">
+  <rdf:Description rdf:nodeID="n3-1033">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-739">
+  <rdf:Description rdf:nodeID="n3-1034">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>

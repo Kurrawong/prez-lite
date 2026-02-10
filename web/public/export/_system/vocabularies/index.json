@@ -22,13 +22,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"
@@ -69,13 +69,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"
@@ -144,13 +144,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"
@@ -158,6 +158,55 @@
       "themeLabels": [
         "mineral"
       ],
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv",
+        "html"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/anzsic-2006",
+      "slug": "ANZIC2006-industry-classifications",
+      "prefLabel": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles",
+      "definition": "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics.",
+      "conceptCount": 294,
+      "topConcepts": [
+        "http://linked.data.gov.au/def/anzsic-2006/A0000",
+        "http://linked.data.gov.au/def/anzsic-2006/B0000",
+        "http://linked.data.gov.au/def/anzsic-2006/C0000",
+        "http://linked.data.gov.au/def/anzsic-2006/D0000",
+        "http://linked.data.gov.au/def/anzsic-2006/E0000",
+        "http://linked.data.gov.au/def/anzsic-2006/F0000",
+        "http://linked.data.gov.au/def/anzsic-2006/G0000",
+        "http://linked.data.gov.au/def/anzsic-2006/H0000",
+        "http://linked.data.gov.au/def/anzsic-2006/I0000",
+        "http://linked.data.gov.au/def/anzsic-2006/J0000",
+        "http://linked.data.gov.au/def/anzsic-2006/M0000",
+        "http://linked.data.gov.au/def/anzsic-2006/O0000",
+        "http://linked.data.gov.au/def/anzsic-2006/P0000",
+        "http://linked.data.gov.au/def/anzsic-2006/Q0000",
+        "http://linked.data.gov.au/def/anzsic-2006/R0000",
+        "http://linked.data.gov.au/def/anzsic-2006/S0000",
+        "http://linked.data.gov.au/def/anzsic-2006/X0000",
+        "http://linked.data.gov.au/def/anzsic-2006/K0000",
+        "http://linked.data.gov.au/def/anzsic-2006/L0000",
+        "http://linked.data.gov.au/def/anzsic-2006/N0000"
+      ],
+      "modified": "2023-03-16",
+      "created": "2020-02-17",
+      "version": null,
+      "versionIRI": null,
+      "status": "https://linked.data.gov.au/def/reg-statuses/stable",
+      "statusLabel": "stable",
+      "publisher": [],
+      "publisherLabels": [],
+      "creator": [],
+      "creatorLabels": [],
+      "themes": [],
+      "themeLabels": [],
       "formats": [
         "ttl",
         "json",
@@ -188,13 +237,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
@@ -234,13 +283,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
@@ -279,13 +328,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
@@ -333,13 +382,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
@@ -384,13 +433,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
@@ -429,13 +478,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
@@ -475,13 +524,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"
@@ -489,6 +538,46 @@
       "themeLabels": [
         "resources"
       ],
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv",
+        "html"
+      ]
+    },
+    {
+      "iri": "http://pid.suncorp.com.au/def/brand",
+      "slug": "brands",
+      "prefLabel": "Brand",
+      "definition": "Brands under Suncorp Group Limited.",
+      "conceptCount": 11,
+      "topConcepts": [
+        "http://pid.suncorp.com.au/def/brand/aami",
+        "http://pid.suncorp.com.au/def/brand/gio",
+        "http://pid.suncorp.com.au/def/brand/suncorp",
+        "http://pid.suncorp.com.au/def/brand/apia",
+        "http://pid.suncorp.com.au/def/brand/bingle",
+        "http://pid.suncorp.com.au/def/brand/shannons",
+        "http://pid.suncorp.com.au/def/brand/cil",
+        "http://pid.suncorp.com.au/def/brand/essentials",
+        "http://pid.suncorp.com.au/def/brand/aainz",
+        "http://pid.suncorp.com.au/def/brand/ctp",
+        "http://pid.suncorp.com.au/def/brand/terri-scheer"
+      ],
+      "modified": "2025-02-19",
+      "created": "2025-02-19",
+      "version": null,
+      "versionIRI": null,
+      "status": "https://linked.data.gov.au/def/reg-statuses/experimental",
+      "statusLabel": "experimental",
+      "publisher": [],
+      "publisherLabels": [],
+      "creator": [],
+      "creatorLabels": [],
+      "themes": [],
+      "themeLabels": [],
       "formats": [
         "ttl",
         "json",
@@ -527,20 +616,20 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources-mineral",
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation"
       ],
       "themeLabels": [
-        "resources-mineral",
+        "Resources Mineral",
         "legislation"
       ],
       "formats": [
@@ -573,13 +662,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/administration"
@@ -626,13 +715,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
@@ -679,13 +768,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
@@ -755,13 +844,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/earthsci-for/earth-sciences"
@@ -1084,13 +1173,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/GSWA-vocabulary-themes/data-acquisition"
@@ -1131,13 +1220,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/administration",
@@ -1229,20 +1318,20 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-mapping",
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
       ],
       "themeLabels": [
-        "geology-mapping",
+        "Geology Mapping",
         "geology-framework"
       ],
       "formats": [
@@ -1278,13 +1367,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/administration"
@@ -1360,20 +1449,20 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/resources-mineral",
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/legislation"
       ],
       "themeLabels": [
-        "resources-mineral",
+        "Resources Mineral",
         "legislation"
       ],
       "formats": [
@@ -1422,13 +1511,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping"
@@ -1478,13 +1567,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
@@ -1528,13 +1617,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
@@ -1577,13 +1666,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
@@ -1623,13 +1712,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
@@ -1667,13 +1756,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
@@ -1722,13 +1811,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"
@@ -1776,13 +1865,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"
@@ -1829,13 +1918,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"
@@ -1876,13 +1965,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework",
@@ -1942,13 +2031,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"
@@ -1994,19 +2083,19 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-mapping"
       ],
       "themeLabels": [
-        "geology-mapping"
+        "Geology Mapping"
       ],
       "formats": [
         "ttl",
@@ -2048,13 +2137,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/mapping"
@@ -2113,13 +2202,13 @@
         "https://linked.data.gov.au/org/gswa"
       ],
       "publisherLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "creator": [
         "https://linked.data.gov.au/org/gswa"
       ],
       "creatorLabels": [
-        "gswa"
+        "Geological Survey of Western Australia"
       ],
       "themes": [
         "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral",

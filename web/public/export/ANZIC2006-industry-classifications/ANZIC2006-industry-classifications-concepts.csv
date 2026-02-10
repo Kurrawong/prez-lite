@@ -1,0 +1,295 @@
+iri,broader,prefLabel
+http://linked.data.gov.au/def/anzsic-2006/H4400,http://linked.data.gov.au/def/anzsic-2006/H0000,Accommodation
+http://linked.data.gov.au/def/anzsic-2006/H0000,,Accommodation and Food Services
+http://linked.data.gov.au/def/anzsic-2006/N0000,,Administrative and Support Services
+http://linked.data.gov.au/def/anzsic-2006/N7200,http://linked.data.gov.au/def/anzsic-2006/N0000,Administrative Services
+http://linked.data.gov.au/def/anzsic-2006/P8200,http://linked.data.gov.au/def/anzsic-2006/P0000,"Adult, Community and Other Education"
+http://linked.data.gov.au/def/anzsic-2006/M6940,http://linked.data.gov.au/def/anzsic-2006/M6900,Advertising Services
+http://linked.data.gov.au/def/anzsic-2006/F3310,http://linked.data.gov.au/def/anzsic-2006/F3300,Agricultural Product Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/A0100,http://linked.data.gov.au/def/anzsic-2006/A0000,Agriculture
+http://linked.data.gov.au/def/anzsic-2006/A0520,http://linked.data.gov.au/def/anzsic-2006/A0500,Agriculture and Fishing Support Services
+http://linked.data.gov.au/def/anzsic-2006/A0000,,"Agriculture, Forestry and Fishing"
+http://linked.data.gov.au/def/anzsic-2006/A0500,http://linked.data.gov.au/def/anzsic-2006/A0000,"Agriculture, Forestry and Fishing Support Services"
+http://linked.data.gov.au/def/anzsic-2006/I4900,http://linked.data.gov.au/def/anzsic-2006/I0000,Air and Space Transport
+http://linked.data.gov.au/def/anzsic-2006/I5220,http://linked.data.gov.au/def/anzsic-2006/I5200,Airport Operations and Other Air Transport Support Services
+http://linked.data.gov.au/def/anzsic-2006/Q8530,http://linked.data.gov.au/def/anzsic-2006/Q8500,Allied Health Services
+http://linked.data.gov.au/def/anzsic-2006/R9130,http://linked.data.gov.au/def/anzsic-2006/R9100,Amusement and Other Recreation Activities
+http://linked.data.gov.au/def/anzsic-2006/A0200,http://linked.data.gov.au/def/anzsic-2006/A0000,Aquaculture
+http://linked.data.gov.au/def/anzsic-2006/M6920,http://linked.data.gov.au/def/anzsic-2006/M6900,"Architectural, Engineering and Technical Services"
+http://linked.data.gov.au/def/anzsic-2006/R0000,,Arts and Recreation Services
+http://linked.data.gov.au/def/anzsic-2006/S9410,http://linked.data.gov.au/def/anzsic-2006/S9400,Automotive Repair and Maintenance
+http://linked.data.gov.au/def/anzsic-2006/K6400,http://linked.data.gov.au/def/anzsic-2006/K0000,Auxiliary Finance and Insurance Services
+http://linked.data.gov.au/def/anzsic-2006/K6410,http://linked.data.gov.au/def/anzsic-2006/K6400,Auxiliary Finance and Investment Services
+http://linked.data.gov.au/def/anzsic-2006/K6420,http://linked.data.gov.au/def/anzsic-2006/K6400,Auxiliary Insurance Services
+http://linked.data.gov.au/def/anzsic-2006/C1170,http://linked.data.gov.au/def/anzsic-2006/C1100,Bakery Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1800,http://linked.data.gov.au/def/anzsic-2006/C0000,Basic Chemical and Chemical Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1810,http://linked.data.gov.au/def/anzsic-2006/C1800,Basic Chemical Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C2110,http://linked.data.gov.au/def/anzsic-2006/C2100,Basic Ferrous Metal Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C2120,http://linked.data.gov.au/def/anzsic-2006/C2100,Basic Ferrous Metal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/F3300,http://linked.data.gov.au/def/anzsic-2006/F0000,Basic Material Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/C2130,http://linked.data.gov.au/def/anzsic-2006/C2100,Basic Non-Ferrous Metal Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C2140,http://linked.data.gov.au/def/anzsic-2006/C2100,Basic Non-Ferrous Metal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1820,http://linked.data.gov.au/def/anzsic-2006/C1800,Basic Polymer Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1200,http://linked.data.gov.au/def/anzsic-2006/C0000,Beverage and Tobacco Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1210,http://linked.data.gov.au/def/anzsic-2006/C1200,Beverage Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/J5600,http://linked.data.gov.au/def/anzsic-2006/J0000,Broadcasting (except Internet)
+http://linked.data.gov.au/def/anzsic-2006/N7310,http://linked.data.gov.au/def/anzsic-2006/N7300,"Building Cleaning, Pest Control and Gardening Services"
+http://linked.data.gov.au/def/anzsic-2006/N7300,http://linked.data.gov.au/def/anzsic-2006/N0000,"Building Cleaning, Pest Control and Other Support Services"
+http://linked.data.gov.au/def/anzsic-2006/E3240,http://linked.data.gov.au/def/anzsic-2006/E3200,Building Completion Services
+http://linked.data.gov.au/def/anzsic-2006/E3000,http://linked.data.gov.au/def/anzsic-2006/E0000,Building Construction
+http://linked.data.gov.au/def/anzsic-2006/E3230,http://linked.data.gov.au/def/anzsic-2006/E3200,Building Installation Services
+http://linked.data.gov.au/def/anzsic-2006/E3220,http://linked.data.gov.au/def/anzsic-2006/E3200,Building Structure Services
+http://linked.data.gov.au/def/anzsic-2006/H4510,http://linked.data.gov.au/def/anzsic-2006/H4500,"Cafes, Restaurants and Takeaway Food Services"
+http://linked.data.gov.au/def/anzsic-2006/C2030,http://linked.data.gov.au/def/anzsic-2006/C2000,"Cement, Lime, Plaster and Concrete Product Manufacturing"
+http://linked.data.gov.au/def/anzsic-2006/K6210,http://linked.data.gov.au/def/anzsic-2006/K6200,Central Banking
+http://linked.data.gov.au/def/anzsic-2006/O7510,http://linked.data.gov.au/def/anzsic-2006/O7500,Central Government Administration
+http://linked.data.gov.au/def/anzsic-2006/C2020,http://linked.data.gov.au/def/anzsic-2006/C2000,Ceramic Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/Q8710,http://linked.data.gov.au/def/anzsic-2006/Q8700,Child Care Services
+http://linked.data.gov.au/def/anzsic-2006/C1220,http://linked.data.gov.au/def/anzsic-2006/C1200,Cigarette and Tobacco Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/S9550,http://linked.data.gov.au/def/anzsic-2006/S9500,"Civic, Professional and Other Interest Group Services"
+http://linked.data.gov.au/def/anzsic-2006/C1850,http://linked.data.gov.au/def/anzsic-2006/C1800,Cleaning Compound and Toiletry Preparation Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1350,http://linked.data.gov.au/def/anzsic-2006/C1300,Clothing and Footwear Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/G4250,http://linked.data.gov.au/def/anzsic-2006/G4200,"Clothing, Footwear and Personal Accessory Retailing"
+http://linked.data.gov.au/def/anzsic-2006/H4530,http://linked.data.gov.au/def/anzsic-2006/H4500,Clubs (Hospitality)
+http://linked.data.gov.au/def/anzsic-2006/B0600,http://linked.data.gov.au/def/anzsic-2006/B0000,Coal Mining
+http://linked.data.gov.au/def/anzsic-2006/F3800,http://linked.data.gov.au/def/anzsic-2006/F0000,Commission-Based Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/C2420,http://linked.data.gov.au/def/anzsic-2006/C2400,Computer and Electronic Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/M7000,http://linked.data.gov.au/def/anzsic-2006/M0000,Computer System Design and Related Services
+http://linked.data.gov.au/def/anzsic-2006/E0000,,Construction
+http://linked.data.gov.au/def/anzsic-2006/B0910,http://linked.data.gov.au/def/anzsic-2006/B0900,Construction Material Mining
+http://linked.data.gov.au/def/anzsic-2006/E3200,http://linked.data.gov.au/def/anzsic-2006/E0000,Construction Services
+http://linked.data.gov.au/def/anzsic-2006/C1520,http://linked.data.gov.au/def/anzsic-2006/C1500,Converted Paper Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/R9000,http://linked.data.gov.au/def/anzsic-2006/R0000,Creative and Performing Arts Activities
+http://linked.data.gov.au/def/anzsic-2006/A0160,http://linked.data.gov.au/def/anzsic-2006/A0100,Dairy Cattle Farming
+http://linked.data.gov.au/def/anzsic-2006/C1130,http://linked.data.gov.au/def/anzsic-2006/C1100,Dairy Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/J5920,http://linked.data.gov.au/def/anzsic-2006/J5900,"Data Processing, Web Hosting and Electronic Information Storage Services"
+http://linked.data.gov.au/def/anzsic-2006/A0180,http://linked.data.gov.au/def/anzsic-2006/A0100,Deer Farming
+http://linked.data.gov.au/def/anzsic-2006/O7600,http://linked.data.gov.au/def/anzsic-2006/O0000,Defence
+http://linked.data.gov.au/def/anzsic-2006/G4260,http://linked.data.gov.au/def/anzsic-2006/G4200,Department Stores
+http://linked.data.gov.au/def/anzsic-2006/K6220,http://linked.data.gov.au/def/anzsic-2006/K6200,Depository Financial Intermediation
+http://linked.data.gov.au/def/anzsic-2006/C2440,http://linked.data.gov.au/def/anzsic-2006/C2400,Domestic Appliance Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/P0000,,Education and Training
+http://linked.data.gov.au/def/anzsic-2006/P8220,http://linked.data.gov.au/def/anzsic-2006/P8200,Educational Support Services
+http://linked.data.gov.au/def/anzsic-2006/G4220,http://linked.data.gov.au/def/anzsic-2006/G4200,Electrical and Electronic Goods Retailing
+http://linked.data.gov.au/def/anzsic-2006/C2430,http://linked.data.gov.au/def/anzsic-2006/C2400,Electrical Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/D2630,http://linked.data.gov.au/def/anzsic-2006/D2600,Electricity Distribution
+http://linked.data.gov.au/def/anzsic-2006/D2610,http://linked.data.gov.au/def/anzsic-2006/D2600,Electricity Generation
+http://linked.data.gov.au/def/anzsic-2006/D2600,http://linked.data.gov.au/def/anzsic-2006/D0000,Electricity Supply
+http://linked.data.gov.au/def/anzsic-2006/D2620,http://linked.data.gov.au/def/anzsic-2006/D2600,Electricity Transmission
+http://linked.data.gov.au/def/anzsic-2006/D0000,,"Electricity, Gas, Water and Waste Services"
+http://linked.data.gov.au/def/anzsic-2006/N7210,http://linked.data.gov.au/def/anzsic-2006/N7200,Employment Services
+http://linked.data.gov.au/def/anzsic-2006/B1010,http://linked.data.gov.au/def/anzsic-2006/B1000,Exploration
+http://linked.data.gov.au/def/anzsic-2006/B1000,http://linked.data.gov.au/def/anzsic-2006/B0000,Exploration and Other Mining Support Services
+http://linked.data.gov.au/def/anzsic-2006/C2200,http://linked.data.gov.au/def/anzsic-2006/C0000,Fabricated Metal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/L6620,http://linked.data.gov.au/def/anzsic-2006/L6600,Farm Animal and Bloodstock Leasing
+http://linked.data.gov.au/def/anzsic-2006/C1830,http://linked.data.gov.au/def/anzsic-2006/C1800,Fertiliser and Pesticide Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/K6200,http://linked.data.gov.au/def/anzsic-2006/K0000,Finance
+http://linked.data.gov.au/def/anzsic-2006/K0000,,Financial and Insurance Services
+http://linked.data.gov.au/def/anzsic-2006/K6240,http://linked.data.gov.au/def/anzsic-2006/K6200,Financial Asset Investing
+http://linked.data.gov.au/def/anzsic-2006/A0410,http://linked.data.gov.au/def/anzsic-2006/A0400,Fishing
+http://linked.data.gov.au/def/anzsic-2006/A0400,http://linked.data.gov.au/def/anzsic-2006/A0000,"Fishing, Hunting and Trapping"
+http://linked.data.gov.au/def/anzsic-2006/H4500,http://linked.data.gov.au/def/anzsic-2006/H0000,Food and Beverage Services
+http://linked.data.gov.au/def/anzsic-2006/C1100,http://linked.data.gov.au/def/anzsic-2006/C0000,Food Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/G4100,http://linked.data.gov.au/def/anzsic-2006/G0000,Food Retailing
+http://linked.data.gov.au/def/anzsic-2006/A0300,http://linked.data.gov.au/def/anzsic-2006/A0000,Forestry and Logging
+http://linked.data.gov.au/def/anzsic-2006/A0510,http://linked.data.gov.au/def/anzsic-2006/A0500,Forestry Support Services
+http://linked.data.gov.au/def/anzsic-2006/A0130,http://linked.data.gov.au/def/anzsic-2006/A0100,Fruit and Tree Nut Growing
+http://linked.data.gov.au/def/anzsic-2006/C1140,http://linked.data.gov.au/def/anzsic-2006/C1100,Fruit and Vegetable Processing
+http://linked.data.gov.au/def/anzsic-2006/G4000,http://linked.data.gov.au/def/anzsic-2006/G0000,Fuel Retailing
+http://linked.data.gov.au/def/anzsic-2006/S9520,http://linked.data.gov.au/def/anzsic-2006/S9500,"Funeral, Crematorium and Cemetery Services"
+http://linked.data.gov.au/def/anzsic-2006/C2500,http://linked.data.gov.au/def/anzsic-2006/C0000,Furniture and Other Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C2510,http://linked.data.gov.au/def/anzsic-2006/C2500,Furniture Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/F3730,http://linked.data.gov.au/def/anzsic-2006/F3700,"Furniture, Floor Covering and Other Goods Wholesaling"
+http://linked.data.gov.au/def/anzsic-2006/G4210,http://linked.data.gov.au/def/anzsic-2006/G4200,"Furniture, Floor Coverings, Houseware and Textile Goods Retailing"
+http://linked.data.gov.au/def/anzsic-2006/R9200,http://linked.data.gov.au/def/anzsic-2006/R0000,Gambling Activities
+http://linked.data.gov.au/def/anzsic-2006/D2700,http://linked.data.gov.au/def/anzsic-2006/D0000,Gas Supply
+http://linked.data.gov.au/def/anzsic-2006/C2010,http://linked.data.gov.au/def/anzsic-2006/C2000,Glass and Glass Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/O7550,http://linked.data.gov.au/def/anzsic-2006/O7500,Government Representation
+http://linked.data.gov.au/def/anzsic-2006/C1160,http://linked.data.gov.au/def/anzsic-2006/C1100,Grain Mill and Cereal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/F3600,http://linked.data.gov.au/def/anzsic-2006/F0000,"Grocery, Liquor and Tobacco Product Wholesaling"
+http://linked.data.gov.au/def/anzsic-2006/G4230,http://linked.data.gov.au/def/anzsic-2006/G4200,"Hardware, Building and Garden Supplies Retailing"
+http://linked.data.gov.au/def/anzsic-2006/K6320,http://linked.data.gov.au/def/anzsic-2006/K6300,Health and General Insurance
+http://linked.data.gov.au/def/anzsic-2006/Q0000,,Health Care and Social Assistance
+http://linked.data.gov.au/def/anzsic-2006/E3100,http://linked.data.gov.au/def/anzsic-2006/E0000,Heavy and Civil Engineering Construction
+http://linked.data.gov.au/def/anzsic-2006/R8900,http://linked.data.gov.au/def/anzsic-2006/R0000,Heritage Activities
+http://linked.data.gov.au/def/anzsic-2006/R9120,http://linked.data.gov.au/def/anzsic-2006/R9100,Horse and Dog Racing Activities
+http://linked.data.gov.au/def/anzsic-2006/Q8400,http://linked.data.gov.au/def/anzsic-2006/Q0000,Hospitals
+http://linked.data.gov.au/def/anzsic-2006/A0420,http://linked.data.gov.au/def/anzsic-2006/A0400,Hunting and Trapping
+http://linked.data.gov.au/def/anzsic-2006/J0000,,Information Media and Telecommunications
+http://linked.data.gov.au/def/anzsic-2006/K6300,http://linked.data.gov.au/def/anzsic-2006/K0000,Insurance and Superannuation Funds
+http://linked.data.gov.au/def/anzsic-2006/J5700,http://linked.data.gov.au/def/anzsic-2006/J0000,Internet Publishing and Broadcasting
+http://linked.data.gov.au/def/anzsic-2006/J5910,http://linked.data.gov.au/def/anzsic-2006/J5900,Internet Service Providers and Web Search Portals
+http://linked.data.gov.au/def/anzsic-2006/J5900,http://linked.data.gov.au/def/anzsic-2006/J0000,"Internet Service Providers, Web Search Portals and Data Processing Services"
+http://linked.data.gov.au/def/anzsic-2006/C2210,http://linked.data.gov.au/def/anzsic-2006/C2200,Iron and Steel Forging
+http://linked.data.gov.au/def/anzsic-2006/O7540,http://linked.data.gov.au/def/anzsic-2006/O7500,Justice
+http://linked.data.gov.au/def/anzsic-2006/C1340,http://linked.data.gov.au/def/anzsic-2006/C1300,Knitted Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/E3210,http://linked.data.gov.au/def/anzsic-2006/E3200,Land Development and Site Preparation Services
+http://linked.data.gov.au/def/anzsic-2006/C1320,http://linked.data.gov.au/def/anzsic-2006/C1300,"Leather Tanning, Fur Dressing and Leather Product Manufacturing"
+http://linked.data.gov.au/def/anzsic-2006/M6930,http://linked.data.gov.au/def/anzsic-2006/M6900,Legal and Accounting Services
+http://linked.data.gov.au/def/anzsic-2006/J6010,http://linked.data.gov.au/def/anzsic-2006/J6000,Libraries and Archives
+http://linked.data.gov.au/def/anzsic-2006/J6000,http://linked.data.gov.au/def/anzsic-2006/J0000,Library and Other Information Services
+http://linked.data.gov.au/def/anzsic-2006/K6310,http://linked.data.gov.au/def/anzsic-2006/K6300,Life Insurance
+http://linked.data.gov.au/def/anzsic-2006/O7530,http://linked.data.gov.au/def/anzsic-2006/O7500,Local Government Administration
+http://linked.data.gov.au/def/anzsic-2006/C1410,http://linked.data.gov.au/def/anzsic-2006/C1400,Log Sawmilling and Timber Dressing
+http://linked.data.gov.au/def/anzsic-2006/C2400,http://linked.data.gov.au/def/anzsic-2006/C0000,Machinery and Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/S9420,http://linked.data.gov.au/def/anzsic-2006/S9400,Machinery and Equipment Repair and Maintenance
+http://linked.data.gov.au/def/anzsic-2006/F3400,http://linked.data.gov.au/def/anzsic-2006/F0000,Machinery and Equipment Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/M6960,http://linked.data.gov.au/def/anzsic-2006/M6900,Management and Related Consulting Services
+http://linked.data.gov.au/def/anzsic-2006/C0000,,Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/M6950,http://linked.data.gov.au/def/anzsic-2006/M6900,Market Research and Statistical Services
+http://linked.data.gov.au/def/anzsic-2006/C1110,http://linked.data.gov.au/def/anzsic-2006/C1100,Meat and Meat Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/Q8500,http://linked.data.gov.au/def/anzsic-2006/Q0000,Medical and Other Health Care Services
+http://linked.data.gov.au/def/anzsic-2006/Q8510,http://linked.data.gov.au/def/anzsic-2006/Q8500,Medical Services
+http://linked.data.gov.au/def/anzsic-2006/C2230,http://linked.data.gov.au/def/anzsic-2006/C2200,Metal Container Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/B0800,http://linked.data.gov.au/def/anzsic-2006/B0000,Metal Ore Mining
+http://linked.data.gov.au/def/anzsic-2006/F3320,http://linked.data.gov.au/def/anzsic-2006/F3300,"Mineral, Metal and Chemical Wholesaling"
+http://linked.data.gov.au/def/anzsic-2006/B0000,,Mining
+http://linked.data.gov.au/def/anzsic-2006/J5500,http://linked.data.gov.au/def/anzsic-2006/J0000,Motion Picture and Sound Recording Activities
+http://linked.data.gov.au/def/anzsic-2006/J5510,http://linked.data.gov.au/def/anzsic-2006/J5500,Motion Picture and Video Activities
+http://linked.data.gov.au/def/anzsic-2006/C2310,http://linked.data.gov.au/def/anzsic-2006/C2300,Motor Vehicle and Motor Vehicle Part Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/G3900,http://linked.data.gov.au/def/anzsic-2006/G0000,Motor Vehicle and Motor Vehicle Parts Retailing
+http://linked.data.gov.au/def/anzsic-2006/F3500,http://linked.data.gov.au/def/anzsic-2006/F0000,Motor Vehicle and Motor Vehicle Parts Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/L6610,http://linked.data.gov.au/def/anzsic-2006/L6600,Motor Vehicle and Transport Equipment Rental and Hiring
+http://linked.data.gov.au/def/anzsic-2006/G3920,http://linked.data.gov.au/def/anzsic-2006/G3900,Motor Vehicle Parts and Tyre Retailing
+http://linked.data.gov.au/def/anzsic-2006/G3910,http://linked.data.gov.au/def/anzsic-2006/G3900,Motor Vehicle Retailing
+http://linked.data.gov.au/def/anzsic-2006/R8910,http://linked.data.gov.au/def/anzsic-2006/R8900,Museum Operation
+http://linked.data.gov.au/def/anzsic-2006/A0120,http://linked.data.gov.au/def/anzsic-2006/A0100,Mushroom and Vegetable Growing
+http://linked.data.gov.au/def/anzsic-2006/C1920,http://linked.data.gov.au/def/anzsic-2006/C1900,Natural Rubber Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/J5410,http://linked.data.gov.au/def/anzsic-2006/J5400,"Newspaper, Periodical, Book and Directory Publishing"
+http://linked.data.gov.au/def/anzsic-2006/K6230,http://linked.data.gov.au/def/anzsic-2006/K6200,Non-Depository Financing
+http://linked.data.gov.au/def/anzsic-2006/L6640,http://linked.data.gov.au/def/anzsic-2006/L6600,Non-Financial Intangible Assets (Except Copyrights) Leasing
+http://linked.data.gov.au/def/anzsic-2006/B0900,http://linked.data.gov.au/def/anzsic-2006/B0000,Non-Metallic Mineral Mining and Quarrying
+http://linked.data.gov.au/def/anzsic-2006/C2000,http://linked.data.gov.au/def/anzsic-2006/C0000,Non-Metallic Mineral Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/E3020,http://linked.data.gov.au/def/anzsic-2006/E3000,Non-Residential Building Construction
+http://linked.data.gov.au/def/anzsic-2006/G4310,http://linked.data.gov.au/def/anzsic-2006/G4300,Non-Store Retailing
+http://linked.data.gov.au/def/anzsic-2006/G4300,http://linked.data.gov.au/def/anzsic-2006/G0000,Non-Store Retailing and Retail Commission-Based Buying and/or Selling
+http://linked.data.gov.au/def/anzsic-2006/A0110,http://linked.data.gov.au/def/anzsic-2006/A0100,Nursery and Floriculture Production
+http://linked.data.gov.au/def/anzsic-2006/C1150,http://linked.data.gov.au/def/anzsic-2006/C1100,Oil and Fat Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/B0700,http://linked.data.gov.au/def/anzsic-2006/B0000,Oil and Gas Extraction
+http://linked.data.gov.au/def/anzsic-2006/D2640,http://linked.data.gov.au/def/anzsic-2006/D2600,On Selling Electricity and Electricity Market Operation
+http://linked.data.gov.au/def/anzsic-2006/N7290,http://linked.data.gov.au/def/anzsic-2006/N7200,Other Administrative Services
+http://linked.data.gov.au/def/anzsic-2006/C1890,http://linked.data.gov.au/def/anzsic-2006/C1800,Other Basic Chemical Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/E3290,http://linked.data.gov.au/def/anzsic-2006/E3200,Other Construction Services
+http://linked.data.gov.au/def/anzsic-2006/A0150,http://linked.data.gov.au/def/anzsic-2006/A0100,Other Crop Growing
+http://linked.data.gov.au/def/anzsic-2006/C2290,http://linked.data.gov.au/def/anzsic-2006/C2200,Other Fabricated Metal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1190,http://linked.data.gov.au/def/anzsic-2006/C1100,Other Food Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/L6630,http://linked.data.gov.au/def/anzsic-2006/L6600,Other Goods and Equipment Rental and Hiring
+http://linked.data.gov.au/def/anzsic-2006/F3700,http://linked.data.gov.au/def/anzsic-2006/F0000,Other Goods Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/Q8590,http://linked.data.gov.au/def/anzsic-2006/Q8500,Other Health Care Services
+http://linked.data.gov.au/def/anzsic-2006/J6020,http://linked.data.gov.au/def/anzsic-2006/J6000,Other Information Services
+http://linked.data.gov.au/def/anzsic-2006/A0190,http://linked.data.gov.au/def/anzsic-2006/A0100,Other Livestock Farming
+http://linked.data.gov.au/def/anzsic-2006/C2490,http://linked.data.gov.au/def/anzsic-2006/C2400,Other Machinery and Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/F3490,http://linked.data.gov.au/def/anzsic-2006/F3400,Other Machinery and Equipment Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/C2590,http://linked.data.gov.au/def/anzsic-2006/C2500,Other Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/B1090,http://linked.data.gov.au/def/anzsic-2006/B1000,Other Mining Support Services
+http://linked.data.gov.au/def/anzsic-2006/B0990,http://linked.data.gov.au/def/anzsic-2006/B0900,Other Non-Metallic Mineral Mining and Quarrying
+http://linked.data.gov.au/def/anzsic-2006/C2090,http://linked.data.gov.au/def/anzsic-2006/C2000,Other Non-Metallic Mineral Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/S9530,http://linked.data.gov.au/def/anzsic-2006/S9500,Other Personal Services
+http://linked.data.gov.au/def/anzsic-2006/M6990,http://linked.data.gov.au/def/anzsic-2006/M6900,"Other Professional, Scientific and Technical Services"
+http://linked.data.gov.au/def/anzsic-2006/S9490,http://linked.data.gov.au/def/anzsic-2006/S9400,Other Repair and Maintenance
+http://linked.data.gov.au/def/anzsic-2006/S0000,,Other Services
+http://linked.data.gov.au/def/anzsic-2006/Q8790,http://linked.data.gov.au/def/anzsic-2006/Q8700,Other Social Assistance Services
+http://linked.data.gov.au/def/anzsic-2006/G4200,http://linked.data.gov.au/def/anzsic-2006/G0000,Other Store-Based Retailing
+http://linked.data.gov.au/def/anzsic-2006/I5000,http://linked.data.gov.au/def/anzsic-2006/I0000,Other Transport
+http://linked.data.gov.au/def/anzsic-2006/C2390,http://linked.data.gov.au/def/anzsic-2006/C2300,Other Transport Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/I5290,http://linked.data.gov.au/def/anzsic-2006/I5200,Other Transport Support Services
+http://linked.data.gov.au/def/anzsic-2006/C1490,http://linked.data.gov.au/def/anzsic-2006/C1400,Other Wood Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/N7320,http://linked.data.gov.au/def/anzsic-2006/N7300,Packaging Services
+http://linked.data.gov.au/def/anzsic-2006/R8920,http://linked.data.gov.au/def/anzsic-2006/R8900,Parks and Gardens Operations
+http://linked.data.gov.au/def/anzsic-2006/Q8520,http://linked.data.gov.au/def/anzsic-2006/Q8500,Pathology and Diagnostic Imaging Services
+http://linked.data.gov.au/def/anzsic-2006/S9500,http://linked.data.gov.au/def/anzsic-2006/S0000,Personal and Other Services
+http://linked.data.gov.au/def/anzsic-2006/S9510,http://linked.data.gov.au/def/anzsic-2006/S9500,Personal Care Services
+http://linked.data.gov.au/def/anzsic-2006/C1700,http://linked.data.gov.au/def/anzsic-2006/C0000,Petroleum and Coal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1840,http://linked.data.gov.au/def/anzsic-2006/C1800,Pharmaceutical and Medicinal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/G4270,http://linked.data.gov.au/def/anzsic-2006/G4200,Pharmaceutical and Other Store-Based Retailing
+http://linked.data.gov.au/def/anzsic-2006/F3720,http://linked.data.gov.au/def/anzsic-2006/F3700,Pharmaceutical and Toiletry Goods Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/I5020,http://linked.data.gov.au/def/anzsic-2006/I5000,Pipeline and Other Transport
+http://linked.data.gov.au/def/anzsic-2006/C1900,http://linked.data.gov.au/def/anzsic-2006/C0000,Polymer Product and Rubber Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1910,http://linked.data.gov.au/def/anzsic-2006/C1900,Polymer Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/I5100,http://linked.data.gov.au/def/anzsic-2006/I0000,Postal and Courier Pick-up and Delivery Services
+http://linked.data.gov.au/def/anzsic-2006/A0170,http://linked.data.gov.au/def/anzsic-2006/A0100,Poultry Farming
+http://linked.data.gov.au/def/anzsic-2006/P8000,http://linked.data.gov.au/def/anzsic-2006/P0000,Preschool and School Education
+http://linked.data.gov.au/def/anzsic-2006/P8010,http://linked.data.gov.au/def/anzsic-2006/P8000,Preschool Education
+http://linked.data.gov.au/def/anzsic-2006/C2100,http://linked.data.gov.au/def/anzsic-2006/C0000,Primary Metal and Metal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1600,http://linked.data.gov.au/def/anzsic-2006/C0000,Printing (including the Reproduction of Recorded Media)
+http://linked.data.gov.au/def/anzsic-2006/C1610,http://linked.data.gov.au/def/anzsic-2006/C1600,Printing and Printing Support Services
+http://linked.data.gov.au/def/anzsic-2006/S9600,http://linked.data.gov.au/def/anzsic-2006/S0000,Private Households Employing Staff and Undifferentiated Goods and Service Producing Activities of Households for Own Use
+http://linked.data.gov.au/def/anzsic-2006/C2410,http://linked.data.gov.au/def/anzsic-2006/C2400,Professional and Scientific Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/M0000,,"Professional, Scientific and Technical Services"
+http://linked.data.gov.au/def/anzsic-2006/M6900,http://linked.data.gov.au/def/anzsic-2006/M0000,"Professional, Scientific and Technical Services (Except Computer System Design and Related Services)"
+http://linked.data.gov.au/def/anzsic-2006/L6710,http://linked.data.gov.au/def/anzsic-2006/L6700,Property Operators
+http://linked.data.gov.au/def/anzsic-2006/L6700,http://linked.data.gov.au/def/anzsic-2006/L0000,Property Operators and Real Estate Services
+http://linked.data.gov.au/def/anzsic-2006/O7500,http://linked.data.gov.au/def/anzsic-2006/O0000,Public Administration
+http://linked.data.gov.au/def/anzsic-2006/O0000,,Public Administration and Safety
+http://linked.data.gov.au/def/anzsic-2006/O7710,http://linked.data.gov.au/def/anzsic-2006/O7700,Public Order and Safety Services
+http://linked.data.gov.au/def/anzsic-2006/O7700,http://linked.data.gov.au/def/anzsic-2006/O0000,"Public Order, Safety and Regulatory Services"
+http://linked.data.gov.au/def/anzsic-2006/J5400,http://linked.data.gov.au/def/anzsic-2006/J0000,Publishing (except Internet and Music Publishing)
+http://linked.data.gov.au/def/anzsic-2006/H4520,http://linked.data.gov.au/def/anzsic-2006/H4500,"Pubs, Taverns and Bars"
+http://linked.data.gov.au/def/anzsic-2006/C1500,http://linked.data.gov.au/def/anzsic-2006/C0000,"Pulp, Paper and Converted Paper Product Manufacturing"
+http://linked.data.gov.au/def/anzsic-2006/C1510,http://linked.data.gov.au/def/anzsic-2006/C1500,"Pulp, Paper and Paperboard Manufacturing"
+http://linked.data.gov.au/def/anzsic-2006/C2450,http://linked.data.gov.au/def/anzsic-2006/C2400,"Pump, Compressor, Heating and Ventilation Equipment Manufacturing"
+http://linked.data.gov.au/def/anzsic-2006/J5610,http://linked.data.gov.au/def/anzsic-2006/J5600,Radio Broadcasting
+http://linked.data.gov.au/def/anzsic-2006/I4710,http://linked.data.gov.au/def/anzsic-2006/I4700,Rail Freight Transport
+http://linked.data.gov.au/def/anzsic-2006/I4720,http://linked.data.gov.au/def/anzsic-2006/I4700,Rail Passenger Transport
+http://linked.data.gov.au/def/anzsic-2006/I4700,http://linked.data.gov.au/def/anzsic-2006/I0000,Rail Transport
+http://linked.data.gov.au/def/anzsic-2006/L6720,http://linked.data.gov.au/def/anzsic-2006/L6700,Real Estate Services
+http://linked.data.gov.au/def/anzsic-2006/G4240,http://linked.data.gov.au/def/anzsic-2006/G4200,Recreational Goods Retailing
+http://linked.data.gov.au/def/anzsic-2006/O7720,http://linked.data.gov.au/def/anzsic-2006/O7700,Regulatory Services
+http://linked.data.gov.au/def/anzsic-2006/S9540,http://linked.data.gov.au/def/anzsic-2006/S9500,Religious Services
+http://linked.data.gov.au/def/anzsic-2006/L6600,http://linked.data.gov.au/def/anzsic-2006/L0000,Rental and Hiring Services (except Real Estate)
+http://linked.data.gov.au/def/anzsic-2006/L0000,,"Rental, Hiring and Real Estate Services"
+http://linked.data.gov.au/def/anzsic-2006/S9400,http://linked.data.gov.au/def/anzsic-2006/S0000,Repair and Maintenance
+http://linked.data.gov.au/def/anzsic-2006/C1620,http://linked.data.gov.au/def/anzsic-2006/C1600,Reproduction of Recorded Media
+http://linked.data.gov.au/def/anzsic-2006/E3010,http://linked.data.gov.au/def/anzsic-2006/E3000,Residential Building Construction
+http://linked.data.gov.au/def/anzsic-2006/Q8600,http://linked.data.gov.au/def/anzsic-2006/Q0000,Residential Care Services
+http://linked.data.gov.au/def/anzsic-2006/G4320,http://linked.data.gov.au/def/anzsic-2006/G4300,Retail Commission-Based Buying and/or Selling
+http://linked.data.gov.au/def/anzsic-2006/G0000,,Retail Trade
+http://linked.data.gov.au/def/anzsic-2006/I4610,http://linked.data.gov.au/def/anzsic-2006/I4600,Road Freight Transport
+http://linked.data.gov.au/def/anzsic-2006/I4620,http://linked.data.gov.au/def/anzsic-2006/I4600,Road Passenger Transport
+http://linked.data.gov.au/def/anzsic-2006/I4600,http://linked.data.gov.au/def/anzsic-2006/I0000,Road Transport
+http://linked.data.gov.au/def/anzsic-2006/I5010,http://linked.data.gov.au/def/anzsic-2006/I5000,Scenic and Sightseeing Transport
+http://linked.data.gov.au/def/anzsic-2006/P8020,http://linked.data.gov.au/def/anzsic-2006/P8000,School Education
+http://linked.data.gov.au/def/anzsic-2006/M6910,http://linked.data.gov.au/def/anzsic-2006/M6900,Scientific Research Services
+http://linked.data.gov.au/def/anzsic-2006/C1120,http://linked.data.gov.au/def/anzsic-2006/C1100,Seafood Processing
+http://linked.data.gov.au/def/anzsic-2006/A0140,http://linked.data.gov.au/def/anzsic-2006/A0100,"Sheep, Beef Cattle and Grain Farming"
+http://linked.data.gov.au/def/anzsic-2006/C2240,http://linked.data.gov.au/def/anzsic-2006/C2200,Sheet Metal Product Manufacturing (except Metal Structural and Container Products)
+http://linked.data.gov.au/def/anzsic-2006/Q8700,http://linked.data.gov.au/def/anzsic-2006/Q0000,Social Assistance Services
+http://linked.data.gov.au/def/anzsic-2006/J5420,http://linked.data.gov.au/def/anzsic-2006/J5400,Software Publishing
+http://linked.data.gov.au/def/anzsic-2006/J5520,http://linked.data.gov.au/def/anzsic-2006/J5500,Sound Recording and Music Publishing
+http://linked.data.gov.au/def/anzsic-2006/G4120,http://linked.data.gov.au/def/anzsic-2006/G4100,Specialised Food Retailing
+http://linked.data.gov.au/def/anzsic-2006/F3410,http://linked.data.gov.au/def/anzsic-2006/F3400,Specialised Industrial Machinery and Equipment Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/C2460,http://linked.data.gov.au/def/anzsic-2006/C2400,Specialised Machinery and Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/R9110,http://linked.data.gov.au/def/anzsic-2006/R9100,Sports and Physical Recreation Activities
+http://linked.data.gov.au/def/anzsic-2006/R9100,http://linked.data.gov.au/def/anzsic-2006/R0000,Sports and Recreation Activities
+http://linked.data.gov.au/def/anzsic-2006/O7520,http://linked.data.gov.au/def/anzsic-2006/O7500,State Government Administration
+http://linked.data.gov.au/def/anzsic-2006/C2220,http://linked.data.gov.au/def/anzsic-2006/C2200,Structural Metal Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1180,http://linked.data.gov.au/def/anzsic-2006/C1100,Sugar and Confectionery Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/K6330,http://linked.data.gov.au/def/anzsic-2006/K6300,Superannuation Funds
+http://linked.data.gov.au/def/anzsic-2006/G4110,http://linked.data.gov.au/def/anzsic-2006/G4100,Supermarket and Grocery Stores
+http://linked.data.gov.au/def/anzsic-2006/J5800,http://linked.data.gov.au/def/anzsic-2006/J0000,Telecommunications Services
+http://linked.data.gov.au/def/anzsic-2006/J5620,http://linked.data.gov.au/def/anzsic-2006/J5600,Television Broadcasting
+http://linked.data.gov.au/def/anzsic-2006/P8100,http://linked.data.gov.au/def/anzsic-2006/P0000,Tertiary Education
+http://linked.data.gov.au/def/anzsic-2006/C1310,http://linked.data.gov.au/def/anzsic-2006/C1300,Textile Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/C1330,http://linked.data.gov.au/def/anzsic-2006/C1300,Textile Product Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/F3710,http://linked.data.gov.au/def/anzsic-2006/F3700,"Textile, Clothing and Footwear Wholesaling"
+http://linked.data.gov.au/def/anzsic-2006/C1300,http://linked.data.gov.au/def/anzsic-2006/C0000,"Textile, Leather, Clothing and Footwear Manufacturing"
+http://linked.data.gov.au/def/anzsic-2006/F3330,http://linked.data.gov.au/def/anzsic-2006/F3300,Timber and Hardware Goods Wholesaling
+http://linked.data.gov.au/def/anzsic-2006/C2300,http://linked.data.gov.au/def/anzsic-2006/C0000,Transport Equipment Manufacturing
+http://linked.data.gov.au/def/anzsic-2006/I5200,http://linked.data.gov.au/def/anzsic-2006/I0000,Transport Support Services
+http://linked.data.gov.au/def/anzsic-2006/I0000,,"Transport, Postal and Warehousing"
+http://linked.data.gov.au/def/anzsic-2006/N7220,http://linked.data.gov.au/def/anzsic-2006/N7200,Travel Agency and Tour Arrangement Services
+http://linked.data.gov.au/def/anzsic-2006/X0000,,Undefined Industry
+http://linked.data.gov.au/def/anzsic-2006/X9900,http://linked.data.gov.au/def/anzsic-2006/X0000,Unknown
+http://linked.data.gov.au/def/anzsic-2006/X9800,http://linked.data.gov.au/def/anzsic-2006/X0000,Unspecified Industry
+http://linked.data.gov.au/def/anzsic-2006/M6970,http://linked.data.gov.au/def/anzsic-2006/M6900,Veterinary Services
+http://linked.data.gov.au/def/anzsic-2006/I5300,http://linked.data.gov.au/def/anzsic-2006/I0000,Warehousing and Storage Services
+http://linked.data.gov.au/def/anzsic-2006/D2910,http://linked.data.gov.au/def/anzsic-2006/D2900,Waste Collection Services
+http://linked.data.gov.au/def/anzsic-2006/D2900,http://linked.data.gov.au/def/anzsic-2006/D0000,"Waste Collection, Treatment and Disposal Services"
+http://linked.data.gov.au/def/anzsic-2006/D2920,http://linked.data.gov.au/def/anzsic-2006/D2900,"Waste Treatment, Disposal and Remediation Services"
+http://linked.data.gov.au/def/anzsic-2006/I4810,http://linked.data.gov.au/def/anzsic-2006/I4800,Water Freight Transport
+http://linked.data.gov.au/def/anzsic-2006/I4820,http://linked.data.gov.au/def/anzsic-2006/I4800,Water Passenger Transport
+http://linked.data.gov.au/def/anzsic-2006/D2800,http://linked.data.gov.au/def/anzsic-2006/D0000,"Water Supply, Sewerage and Drainage Services"
+http://linked.data.gov.au/def/anzsic-2006/I4800,http://linked.data.gov.au/def/anzsic-2006/I0000,Water Transport
+http://linked.data.gov.au/def/anzsic-2006/I5210,http://linked.data.gov.au/def/anzsic-2006/I5200,Water Transport Support Services
+http://linked.data.gov.au/def/anzsic-2006/F0000,,Wholesale Trade
+http://linked.data.gov.au/def/anzsic-2006/C1400,http://linked.data.gov.au/def/anzsic-2006/C0000,Wood Product Manufacturing

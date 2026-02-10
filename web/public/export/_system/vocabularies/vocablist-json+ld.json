@@ -1,5 +1,23 @@
 [
     {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006",
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "http://pid.suncorp.com.au/def/brand",
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Brand",
+                "@language": "en"
+            }
+        ]
+    },
+    {
         "@id": "http://resource.geosciml.org/classifier/ics/ischart",
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
@@ -42,6 +60,9 @@
                 "@id": "https://linked.data.gov.au/def/alteration-type"
             },
             {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006"
+            },
+            {
                 "@id": "https://linked.data.gov.au/def/australian-physiographic-units"
             },
             {
@@ -61,6 +82,9 @@
             },
             {
                 "@id": "https://linked.data.gov.au/def/borehole-status-wa"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand"
             },
             {
                 "@id": "https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting"

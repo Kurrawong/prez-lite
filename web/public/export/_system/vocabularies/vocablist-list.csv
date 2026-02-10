@@ -2,6 +2,7 @@ iri,label,link
 https://linked.data.gov.au/def/alteration-form,Alteration form,/catalogs/catalogue:gswa-vocabs/collections/alteration-form
 https://linked.data.gov.au/def/alteration-intensity,Alteration intensity,/catalogs/catalogue:gswa-vocabs/collections/alteration-intensity
 https://linked.data.gov.au/def/alteration-type,Alteration type,/catalogs/catalogue:gswa-vocabs/collections/alteration-type
+http://linked.data.gov.au/def/anzsic-2006,Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles,/catalogs/catalogue:gswa-vocabs/collections/anzsic-2006
 https://linked.data.gov.au/def/australian-physiographic-units,Australian physiographic units,/catalogs/catalogue:gswa-vocabs/collections/australian-physiographic-units
 https://linked.data.gov.au/def/borehole-configuration,Borehole configuration,/catalogs/catalogue:gswa-vocabs/collections/borehole-configuration
 https://linked.data.gov.au/def/borehole-drilling-method-western-australia,Borehole drilling method,/catalogs/catalogue:gswa-vocabs/collections/borehole-drilling-method-western-australia
@@ -9,6 +10,7 @@ https://linked.data.gov.au/def/borehole-geometry,Borehole geometry,/catalogs/cat
 https://linked.data.gov.au/def/borehole-purpose-wa,Borehole purpose,/catalogs/catalogue:gswa-vocabs/collections/borehole-purpose-wa
 https://linked.data.gov.au/def/borehole-start-point-setting,Borehole start point setting,/catalogs/catalogue:gswa-vocabs/collections/borehole-start-point-setting
 https://linked.data.gov.au/def/borehole-status-wa,Borehole status,/catalogs/catalogue:gswa-vocabs/collections/borehole-status-wa
+http://pid.suncorp.com.au/def/brand,Brand,/catalogs/catalogue:gswa-vocabs/collections/brand
 https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting,CRIRSCO mineral resource reporting,/catalogs/catalogue:gswa-vocabs/collections/CRIRSCO-mineral-resource-reporting
 https://linked.data.gov.au/def/dmirs-offices,DEMIRS offices,/catalogs/catalogue:gswa-vocabs/collections/dmirs-offices
 https://linked.data.gov.au/def/earthsci-for,Earth science fields of research,/catalogs/catalogue:gswa-vocabs/collections/earthsci-for

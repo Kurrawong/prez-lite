@@ -23,8 +23,8 @@
     skos:hasTopConcept <https://linked.data.gov.au/def/metamorphic-stage/?peak>, <https://linked.data.gov.au/def/metamorphic-stage/?prograde>, <https://linked.data.gov.au/def/metamorphic-stage/?retrograde>, <https://linked.data.gov.au/def/metamorphic-stage/peak>, <https://linked.data.gov.au/def/metamorphic-stage/prograde>, <https://linked.data.gov.au/def/metamorphic-stage/retrograde>, <https://linked.data.gov.au/def/metamorphic-stage/retrogressive>, <https://linked.data.gov.au/def/metamorphic-stage/unknown>;
     skos:historyNote "Based on the authoritative lists [GEOLOGY].[WAROX_REF].[MetaStage] and [WAGIMS].[ReferenceData].[MetamorphicStage] used in the Geological Survey of Western Australia's field observations (WAROX) and WAGIMS system, the repository for Western Australian geochronology, isotope geology, mineral chemistry and metamorphic history analytical data and information."@en;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/geology>;
-    prov:qualifiedAttribution _:n3-2711, _:n3-2712.
-_:n3-2711 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+    prov:qualifiedAttribution _:n3-3018, _:n3-3019.
+_:n3-3018 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0003-0007-8342>.
-_:n3-2712 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-3019 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://www.linkedin.com/in/david-kelsey-425746137/>.

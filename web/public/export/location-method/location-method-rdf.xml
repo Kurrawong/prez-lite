@@ -38,8 +38,8 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/location-method/topographic-map-mga"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/location-method/totalstation"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/location-method/unknown"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2613"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2614"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2920"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2921"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</sdo:dateModified>
@@ -47,11 +47,11 @@
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2613">
+  <rdf:Description rdf:nodeID="n3-2920">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://www.linkedin.com/in/terry-farrell-3b501126/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2614">
+  <rdf:Description rdf:nodeID="n3-2921">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>

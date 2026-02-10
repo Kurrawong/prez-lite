@@ -16,7 +16,7 @@
     skos:prefLabel "Earth science fields of research"@en;
     owl:versionIRI <https://linked.data.gov.au/def/earthsci-for/1>;
     skos:hasTopConcept <https://linked.data.gov.au/def/earthsci-for/earth-system-science>, <https://linked.data.gov.au/def/earthsci-for/biological-sciences>, <https://linked.data.gov.au/def/earthsci-for/engineering>, <https://linked.data.gov.au/def/earthsci-for/environmental-sciences>, <https://linked.data.gov.au/def/earthsci-for/earth-sciences>, <https://linked.data.gov.au/def/earthsci-for/history,-heritage-and-archeology>, <https://linked.data.gov.au/def/earthsci-for/stakeholder-engagement>, <https://linked.data.gov.au/def/earthsci-for/heritage,-archive-and-museum-studies-not-elsewhere-classified>, <https://linked.data.gov.au/def/earthsci-for/information-and-computing-sciences>, <https://linked.data.gov.au/def/earthsci-for/human-society>, <https://linked.data.gov.au/def/earthsci-for/physical-sciences>, <https://linked.data.gov.au/def/earthsci-for/built-environment-and-design>;
-    prov:qualifiedAttribution _:n3-1258, _:n3-1259;
+    prov:qualifiedAttribution _:n3-1565, _:n3-1566;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2023-05-15"^^xsd:date;
     sdo:dateModified "2024-10-23"^^xsd:date;
@@ -24,7 +24,7 @@
     sdo:publisher <https://linked.data.gov.au/org/gswa>;
     sdo:version "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>.
-_:n3-1258 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1565 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-_:n3-1259 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-1566 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.

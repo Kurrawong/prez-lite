@@ -6,6 +6,11 @@
       "count": 727
     },
     {
+      "iri": "http://linked.data.gov.au/def/anzsic-2006",
+      "label": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles",
+      "count": 294
+    },
+    {
       "iri": "https://linked.data.gov.au/def/uom-geoscience",
       "label": "Geoscience units of measurement",
       "count": 288
@@ -146,6 +151,11 @@
       "count": 13
     },
     {
+      "iri": "http://pid.suncorp.com.au/def/brand",
+      "label": "Brand",
+      "count": 11
+    },
+    {
       "iri": "https://linked.data.gov.au/def/borehole-configuration",
       "label": "Borehole configuration",
       "count": 9
@@ -179,7 +189,7 @@
   "publishers": [
     {
       "iri": "https://linked.data.gov.au/org/gswa",
-      "label": "gswa",
+      "label": "Geological Survey of Western Australia",
       "count": 2351
     }
   ]

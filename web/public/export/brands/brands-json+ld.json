@@ -1,0 +1,83 @@
+[
+    {
+        "@id": "http://pid.suncorp.com.au/def/brand",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology",
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Brands under Suncorp Group Limited.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Brand",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/created": [
+            {
+                "@value": "2025-02-19",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/suncorp"
+            }
+        ],
+        "http://purl.org/dc/terms/modified": [
+            {
+                "@value": "2025-02-19",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/suncorp"
+            }
+        ],
+        "http://purl.org/linked-data/registry#status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/experimental"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/aami"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/gio"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/suncorp"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/apia"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/bingle"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/shannons"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/cil"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/essentials"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/aainz"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/ctp"
+            },
+            {
+                "@id": "http://pid.suncorp.com.au/def/brand/terri-scheer"
+            }
+        ]
+    }
+]

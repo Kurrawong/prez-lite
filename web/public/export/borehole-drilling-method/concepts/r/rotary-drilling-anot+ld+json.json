@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-1061",
+    "@id": "_:n3-1356",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -21,14 +21,25 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "auger drilling",
-        "@language": "en"
+        "@value": "auger"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Auger drilling is done with a helical screw that is driven into the ground with rotation; the earth is lifted up the borehole by the blade of the screw. Auger drills may be either rotated by hand or mechanically driven. Hollow stem auger drilling is used for softer ground such as swamps where the hole will not stay open by itself, and for environmental drilling, geotechnical drilling, soil engineering and geochemistry reconnaissance work in exploration for mineral deposits. Solid flight augers/bucket augers are used in harder ground construction drilling. In some cases, mine shafts are dug with auger drills. Small augers can be mounted on the back of a utility truck, with large augers used for sinking piles for bridge foundations.",
-        "@language": "en"
+        "@value": "Auger drilling is done with a helical screw which is driven into the ground with rotation; the earth is lifted up the borehole by the blade of the screw. Auger drills may be either rotated by hand or mechanically driven. Hollow stem auger drilling is used for softer ground such as swamps where the hole will not stay open by itself for environmental drilling, geotechnical drilling, soil engineering and geochemistry reconnaissance work in exploration for mineral deposits. Solid flight augers/bucket augers are used in harder ground construction drilling. In some cases, mine shafts are dug with auger drills. Small augers can be mounted on the back of a utility truck, with large augers used for sinking piles for bridge foundations."
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geosciml.org/classifier/cgi/boreholedrillingmethod/rotary_drilling",
+    "https://prez.dev/label": [
+      {
+        "@value": "rotary drilling"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A drilling method using a drill stem equipped with a bit that is rotated"
       }
     ]
   },
@@ -46,14 +57,142 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "sonic",
-        "@language": "en"
+        "@value": "sonic"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A sonic or vibratory drillhead works by sending high-frequency resonant vibrations down the drillstring to the drillbit, while the operator controls these frequencies to suit the specific conditions of the soil/rock geology. Vibrations may also be generated within the drillhead. The frequency is generally between 50 and 180 Hz (cycles per second) and can be varied by the operator. Resonance magnifies the amplitude of the drillbit, which fluidizes the soil particles at the bit face, allowing for fast and easy penetration through most geological formations. An internal spring system isolates these vibrational forces from the rest of the drill rig.",
-        "@language": "en"
+        "@value": "A sonic or vibratory drill head works by sending high frequency resonant vibrations down the drill string to the drill bit, while the operator controls these frequencies to suit the specific conditions of the soil/rock geology. Vibrations may also be generated within the drill head. The frequency is generally between 50 and 180 hertz (cycles per second) and can be varied by the operator. Resonance magnifies the amplitude of the drill bit, which fluidizes the soil particles at the bit face, allowing for fast and easy penetration through most geological formations. An internal spring system isolates these vibrational forces from the rest of the drill rig."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+    "https://prez.dev/label": [
+      {
+        "@value": "is top concept in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to the concept scheme that it is a top level concept of"
       }
     ]
   },
@@ -398,6 +537,43 @@
     ]
   },
   {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -410,6 +586,14 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
       }
     ]
   }

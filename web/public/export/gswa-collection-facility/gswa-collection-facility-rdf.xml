@@ -25,9 +25,9 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/gswa-collection-facilities/mineral-house"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/gswa-collection-facilities/perth-mint"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/gswa-collection-facilities/western-australian-museum"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1826"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1827"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1828"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2133"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2134"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2135"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-01</sdo:dateModified>
@@ -36,15 +36,15 @@
     <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/administration"/>
     <sdo:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/sample-acquisition-management"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1826">
+  <rdf:Description rdf:nodeID="n3-2133">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1827">
+  <rdf:Description rdf:nodeID="n3-2134">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1828">
+  <rdf:Description rdf:nodeID="n3-2135">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-5129-2467"/>
   </rdf:Description>

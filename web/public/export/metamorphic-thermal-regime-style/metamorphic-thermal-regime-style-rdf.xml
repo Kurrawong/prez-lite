@@ -33,14 +33,14 @@ c) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Be
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2722"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2723"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3029"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3030"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2722">
+  <rdf:Description rdf:nodeID="n3-3029">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://www.linkedin.com/in/david-kelsey-425746137/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2723">
+  <rdf:Description rdf:nodeID="n3-3030">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0003-0007-8342"/>
   </rdf:Description>

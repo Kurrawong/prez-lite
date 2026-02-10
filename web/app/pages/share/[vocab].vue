@@ -16,6 +16,53 @@ const githubEditUrl = computed(() => {
   return `https://github.dev/${githubRepo}/blob/${githubBranch}/${githubVocabPath}/${vocab.value.slug}.ttl`
 })
 
+// --- Inline Editor ---
+const { isAuthenticated } = useGitHubAuth()
+
+const [editorOwner, editorRepoName] = (githubRepo as string).split('/')
+const editorPath = `${githubVocabPath}/${route.params.vocab}.ttl`
+const editorEnabled = !!(editorOwner && editorRepoName && githubRepo)
+
+const githubFile = editorEnabled
+  ? useGitHubFile(editorOwner, editorRepoName, editorPath, githubBranch as string)
+  : null
+
+const colorMode = useColorMode()
+const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'prez-light')
+
+const editorOpen = ref(false)
+const editorContent = ref('')
+const editorLoaded = ref(false)
+const saveMessage = ref('')
+const saveStatus = ref<'idle' | 'saving' | 'success' | 'error'>('idle')
+
+async function toggleEditor() {
+  editorOpen.value = !editorOpen.value
+  if (editorOpen.value && !editorLoaded.value) {
+    await loadEditor()
+  }
+}
+
+async function loadEditor() {
+  if (!githubFile || editorLoaded.value) return
+  await githubFile.load()
+  if (!githubFile.error.value) {
+    editorContent.value = githubFile.content.value
+    editorLoaded.value = true
+  }
+}
+
+async function saveEditor() {
+  if (!githubFile) return
+  saveStatus.value = 'saving'
+  const msg = saveMessage.value.trim() || `Update ${vocabSlug.value}.ttl`
+  const ok = await githubFile.save(editorContent.value, msg)
+  saveStatus.value = ok ? 'success' : 'error'
+  if (ok) saveMessage.value = ''
+  setTimeout(() => { saveStatus.value = 'idle' }, 3000)
+}
+
+
 const baseUrl = computed(() => {
   if (typeof window !== 'undefined') {
     return window.location.origin
@@ -178,7 +225,16 @@ async function loadPreview(format: ExportFormat) {
         </UBadge>
         <span v-if="vocab.modified">Updated {{ vocab.modified }}</span>
         <UButton
-          v-if="githubEditUrl"
+          v-if="isAuthenticated && githubFile"
+          size="xs"
+          variant="ghost"
+          :icon="editorOpen ? 'i-heroicons-x-mark' : 'i-heroicons-pencil-square'"
+          @click="toggleEditor"
+        >
+          {{ editorOpen ? 'Close Editor' : 'Edit' }}
+        </UButton>
+        <UButton
+          v-else-if="githubEditUrl"
           :to="githubEditUrl"
           target="_blank"
           size="xs"
@@ -187,6 +243,57 @@ async function loadPreview(format: ExportFormat) {
         >
           Edit on GitHub
         </UButton>
+      </div>
+
+      <!-- Inline Editor (toggle) -->
+      <div v-if="editorOpen && githubFile" class="mb-8">
+        <UAlert
+          v-if="githubFile.error.value"
+          color="error"
+          icon="i-heroicons-exclamation-circle"
+          :title="githubFile.error.value"
+          class="mb-4"
+        />
+
+        <template v-if="editorLoaded">
+          <div class="border border-default rounded-lg overflow-hidden">
+            <MonacoEditor
+              v-model="editorContent"
+              lang="turtle"
+              :options="{ theme: monacoTheme, minimap: { enabled: false }, wordWrap: 'on', scrollBeyondLastLine: false }"
+              class="h-[28rem]"
+            />
+          </div>
+
+          <div class="flex items-center gap-3 mt-3">
+            <input
+              v-model="saveMessage"
+              type="text"
+              placeholder="Commit message (optional)"
+              class="flex-1 px-3 py-1.5 text-sm border border-default rounded-md bg-default"
+            />
+            <UButton
+              icon="i-heroicons-check"
+              :loading="saveStatus === 'saving'"
+              :disabled="saveStatus === 'saving'"
+              @click="saveEditor"
+            >
+              Save to GitHub
+            </UButton>
+          </div>
+
+          <p v-if="saveStatus === 'success'" class="text-sm text-success mt-2">
+            Saved successfully.
+          </p>
+          <p v-if="saveStatus === 'error' && githubFile.error.value" class="text-sm text-error mt-2">
+            {{ githubFile.error.value }}
+          </p>
+        </template>
+
+        <div v-else-if="githubFile.loading.value" class="flex items-center gap-2 text-muted">
+          <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin" />
+          <span class="text-sm">Loading file from GitHub...</span>
+        </div>
       </div>
 
       <!-- Export Formats -->

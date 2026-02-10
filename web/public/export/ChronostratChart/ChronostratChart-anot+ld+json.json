@@ -1,9 +1,74 @@
 [
   {
-    "@id": "_:n3-373",
+    "@id": "_:n3-668",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/conformsTo",
+    "https://prez.dev/label": [
+      {
+        "@value": "Conforms To"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An established standard to which the described resource conforms."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/created",
+    "https://prez.dev/label": [
+      {
+        "@value": "Date Created"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Date of creation of the resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/creator",
+    "https://prez.dev/label": [
+      {
+        "@value": "Creator"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entity responsible for making the resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/modified",
+    "https://prez.dev/label": [
+      {
+        "@value": "Date Modified"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Date on which the resource was changed."
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/publisher",
+    "https://prez.dev/label": [
+      {
+        "@value": "Publisher"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An entity responsible for making the resource available."
       }
     ]
   },
@@ -292,10 +357,206 @@
     ]
   },
   {
+    "@id": "http://resource.geosciml.org/classifier/ics/ischart/2024-12",
+    "https://prez.dev/label": [
+      {
+        "@value": "2024-12"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "https://prez.dev/label": [
+      {
+        "@value": "URI"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#date",
+    "https://prez.dev/label": [
+      {
+        "@value": "date"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionIRI",
+    "https://prez.dev/label": [
+      {
+        "@value": "version IRI"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The property that identifies the version IRI of an ontology."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2002/07/owl#versionInfo",
+    "https://prez.dev/label": [
+      {
+        "@value": "versionInfo"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The annotation property that provides version information for an ontology or another OWL construct."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept Scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A set of concepts, optionally including statements about semantic relationships between those concepts"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+    "https://prez.dev/label": [
+      {
+        "@value": "has top concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#scopeNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "scope note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note that helps to clarify the meaning and/or the use of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#versionInfo",
+    "https://prez.dev/label": [
+      {
+        "@value": "version info"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "https://prez.dev/label": [
+      {
+        "@value": "was derived from"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."
+      }
+    ]
+  },
+  {
+    "@id": "https://creativecommons.org/licenses/by/4.0/",
+    "https://prez.dev/label": [
+      {
+        "@value": "Creative Commons BY 4.0"
+      }
+    ]
+  },
+  {
     "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
     "https://prez.dev/identifier": [
       {
         "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
       }
     ]
   },
@@ -312,6 +573,66 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/citation",
+    "https://prez.dev/label": [
+      {
+        "@value": "citation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/copyrightHolder",
+    "https://prez.dev/label": [
+      {
+        "@value": "copyright holder"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The party holding the legal copyright to the CreativeWork"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/copyrightNotice",
+    "https://prez.dev/label": [
+      {
+        "@value": "copyright notice"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/license",
+    "https://prez.dev/label": [
+      {
+        "@value": "license"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A license document that applies to this content, typically indicated by URL"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/profile/vocpub/4.6",
+    "https://prez.dev/label": [
+      {
+        "@value": "VocPub 4.6"
       }
     ]
   }

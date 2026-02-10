@@ -49,6 +49,7 @@ const navLinks = computed(() =>
       <UNavigationMenu :items="navLinks" />
 
       <template #right>
+        <GitHubAuthButton />
         <UColorModeButton variant="ghost" />
       </template>
 

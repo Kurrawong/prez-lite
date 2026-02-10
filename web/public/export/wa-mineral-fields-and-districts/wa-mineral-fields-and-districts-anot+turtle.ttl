@@ -22,18 +22,59 @@
     owl:versionInfo "1";
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral>, <https://linked.data.gov.au/def/gswa-vocabulary-themes/administration>;
-    prov:qualifiedAttribution _:n3-2960, _:n3-2961;
+    prov:qualifiedAttribution _:n3-3267, _:n3-3268;
     prez:identifier "ns4:wa-mineral-fields-and-districts";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:wa-mineral-fields-and-districts";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:wa-mineral-fields-and-districts/items";
     prez:type prez:FocusNode;
     prez:label "Western Australian mineral fields and districts"@en;
     prez:description "The State of Western Australia is divided into various Mineral Fields that represent administrative land subdivisions under which mining is administered in the State according to Section 16 of the Mining Act 1978. Some mineral fields are further subdivided into Districts. Mineral field and district boundaries can be changed by proclamation under the Mining Act 1978 — the listing provided is current as of June 2023. Each mineral field or district is characterized by a two-digit prefix code used for map representations and tenement indexing. Most districts and some mineral fields are also characterized by an upper case letter code: these are historical identifiers currently not applied, but are relevant for legacy mining tenement information. Field and district proclamations date back as far as the late 1890s; individual entities may have undergone several alterations of boundaries and even been changed from district to field (NB the gazetted date provided usually refers to the first entity). In gold-endowed areas, mineral fields were originally classified as 'Goldfields', but this categorisation stopped with the ratification of the Mining Act 1978. In terms of management, tenements under each mineral field are administered under a designated Mining Registrar (here expressed as collections). Information for this vocabulary was sourced from the Tengraph (Web) Help (https://www.dmp.wa.gov.au/tgwhelp/mineral-fields-and-district-codes-637.aspx), the Department of Mines, Industry Regulation and Safety (https://dmp.wa.gov.au/History-and-locations-of-the-12531.aspx) and a dedicated Wikipedia (https://en.wikipedia.org/wiki/Mineral_fields_of_Western_Australia) webpages, as well as the consolidated printed version of the 1904 Act and individual Western Australian Government Gazettes."@en.
-_:n3-2960 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+owl:versionInfo prez:label "versionInfo";
+    prez:description "The annotation property that provides version information for an ontology or another OWL construct.".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
+    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-3267 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
-_:n3-2961 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
+_:n3-3268 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-2962 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-3269 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+xsd:date prez:label "date".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".

@@ -1,0 +1,59 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<http://linked.data.gov.au/def/anzsic-2006> a owl:Ontology, skos:ConceptScheme;
+    dcterms:source "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument"^^xsd:anyURI;
+    skos:definition "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics."@en;
+    skos:prefLabel "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles"@en;
+    dcterms:created "2020-02-17"^^xsd:date;
+    dcterms:creator <https://linked.data.gov.au/org/gsq>;
+    dcterms:modified "2023-03-16"^^xsd:date;
+    dcterms:publisher <https://linked.data.gov.au/org/gsq>;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    prez:identifier "ns4:anzsic-2006";
+    prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:anzsic-2006";
+    prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:anzsic-2006/items";
+    prez:type prez:FocusNode;
+    prez:label "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles"@en;
+    prez:description "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics."@en.
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+dcterms:source prez:label "Source";
+    prez:description "A related resource from which the described resource is derived.".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+dcterms:created prez:label "Date Created";
+    prez:description "Date of creation of the resource.".
+dcterms:creator prez:label "Creator";
+    prez:description "An entity responsible for making the resource.".
+dcterms:modified prez:label "Date Modified";
+    prez:description "Date on which the resource was changed.".
+dcterms:publisher prez:label "Publisher";
+    prez:description "An entity responsible for making the resource available.".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
+    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
+_:n3-17 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+xsd:anyURI prez:label "URI".
+xsd:date prez:label "date".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".

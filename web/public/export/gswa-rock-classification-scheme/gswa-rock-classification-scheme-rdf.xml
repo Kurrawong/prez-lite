@@ -88,9 +88,9 @@ MAIN REFERENCES used for compilation:
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/gswa-rock-classification-scheme/igneous-volcanic"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/gswa-rock-classification-scheme/xenolith-or-inclusion-bearing"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/gswa-rock-classification-scheme/metamorphic-protolith-unknown"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1847"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1848"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1849"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2154"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2155"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-2156"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-28</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-12</sdo:dateModified>
@@ -99,15 +99,15 @@ MAIN REFERENCES used for compilation:
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1847">
+  <rdf:Description rdf:nodeID="n3-2154">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://www.linkedin.com/in/terry-farrell-3b501126/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1848">
+  <rdf:Description rdf:nodeID="n3-2155">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1849">
+  <rdf:Description rdf:nodeID="n3-2156">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://www.linkedin.com/in/davidmcbmartin/"/>
   </rdf:Description>

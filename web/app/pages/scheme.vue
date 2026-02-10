@@ -54,6 +54,91 @@ const githubEditUrl = computed(() => {
   return `https://github.dev/${githubRepo}/blob/${githubBranch}/${githubVocabPath}/${vocab.slug}.ttl`
 })
 
+// --- Inline Editor ---
+const { isAuthenticated, token } = useGitHubAuth()
+
+const vocabSlugForEditor = computed(() => getVocabByIri(uri.value)?.slug)
+const [editorOwner, editorRepoName] = (githubRepo as string).split('/')
+const editorAvailable = computed(() => !!(editorOwner && editorRepoName && isAuthenticated.value && vocabSlugForEditor.value))
+const editorFilePath = computed(() => `${githubVocabPath}/${vocabSlugForEditor.value}.ttl`)
+
+const colorMode = useColorMode()
+const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'prez-light')
+
+const editorOpen = ref(false)
+const editorContent = ref('')
+const editorLoaded = ref(false)
+const editorSha = ref('')
+const editorLoading = ref(false)
+const editorError = ref<string | null>(null)
+const saveMessage = ref('')
+const saveStatus = ref<'idle' | 'saving' | 'success' | 'error'>('idle')
+
+async function toggleEditor() {
+  editorOpen.value = !editorOpen.value
+  if (editorOpen.value && !editorLoaded.value) {
+    await loadEditor()
+  }
+}
+
+async function loadEditor() {
+  if (!token.value || !vocabSlugForEditor.value) return
+  editorLoading.value = true
+  editorError.value = null
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${editorOwner}/${editorRepoName}/contents/${editorFilePath.value}?ref=${githubBranch}`,
+      { headers: { Authorization: `Bearer ${token.value}` } },
+    )
+    if (!res.ok) {
+      editorError.value = res.status === 404 ? 'File not found' : `GitHub API error: ${res.status}`
+      return
+    }
+    const data = await res.json()
+    editorSha.value = data.sha
+    editorContent.value = new TextDecoder().decode(
+      Uint8Array.from(atob(data.content.replace(/\n/g, '')), (c) => c.charCodeAt(0)),
+    )
+    editorLoaded.value = true
+  } catch (e) {
+    editorError.value = e instanceof Error ? e.message : 'Failed to load file'
+  } finally {
+    editorLoading.value = false
+  }
+}
+
+async function saveEditor() {
+  if (!token.value || !vocabSlugForEditor.value) return
+  saveStatus.value = 'saving'
+  editorError.value = null
+  try {
+    const msg = saveMessage.value.trim() || `Update ${vocabSlugForEditor.value}.ttl`
+    const encoded = btoa(Array.from(new TextEncoder().encode(editorContent.value), (b) => String.fromCharCode(b)).join(''))
+    const res = await fetch(
+      `https://api.github.com/repos/${editorOwner}/${editorRepoName}/contents/${editorFilePath.value}`,
+      {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${token.value}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg, content: encoded, sha: editorSha.value, branch: githubBranch }),
+      },
+    )
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}))
+      editorError.value = (body as { message?: string }).message || `Save failed: ${res.status}`
+      saveStatus.value = 'error'
+      return
+    }
+    const data = await res.json()
+    editorSha.value = data.content.sha
+    saveMessage.value = ''
+    saveStatus.value = 'success'
+  } catch (e) {
+    editorError.value = e instanceof Error ? e.message : 'Failed to save'
+    saveStatus.value = 'error'
+  }
+  setTimeout(() => { saveStatus.value = 'idle' }, 3000)
+}
+
 // Tree controls
 const searchQuery = ref('')
 const expandAll = ref(false)
@@ -174,7 +259,16 @@ function copyIriToClipboard(iri: string) {
             aria-label="Share or embed this vocabulary"
           />
           <UButton
-            v-if="githubEditUrl"
+            v-if="editorAvailable"
+            :icon="editorOpen ? 'i-heroicons-x-mark' : 'i-heroicons-pencil-square'"
+            color="neutral"
+            variant="ghost"
+            size="xs"
+            :aria-label="editorOpen ? 'Close editor' : 'Edit vocabulary'"
+            @click="toggleEditor"
+          />
+          <UButton
+            v-else-if="githubEditUrl"
             :to="githubEditUrl"
             target="_blank"
             icon="i-heroicons-pencil-square"
@@ -201,6 +295,57 @@ function copyIriToClipboard(iri: string) {
           >
             {{ descriptionExpanded ? 'Show less' : 'Show more' }}
           </UButton>
+        </div>
+      </div>
+
+      <!-- Inline Editor (toggle) -->
+      <div v-if="editorOpen" class="mb-8">
+        <UAlert
+          v-if="editorError"
+          color="error"
+          icon="i-heroicons-exclamation-circle"
+          :title="editorError"
+          class="mb-4"
+        />
+
+        <template v-if="editorLoaded">
+          <div class="border border-default rounded-lg overflow-hidden">
+            <MonacoEditor
+              v-model="editorContent"
+              lang="turtle"
+              :options="{ theme: monacoTheme, minimap: { enabled: false }, wordWrap: 'on', scrollBeyondLastLine: false }"
+              class="h-[28rem]"
+            />
+          </div>
+
+          <div class="flex items-center gap-3 mt-3">
+            <input
+              v-model="saveMessage"
+              type="text"
+              placeholder="Commit message (optional)"
+              class="flex-1 px-3 py-1.5 text-sm border border-default rounded-md bg-default"
+            />
+            <UButton
+              icon="i-heroicons-check"
+              :loading="saveStatus === 'saving'"
+              :disabled="saveStatus === 'saving'"
+              @click="saveEditor"
+            >
+              Save to GitHub
+            </UButton>
+          </div>
+
+          <p v-if="saveStatus === 'success'" class="text-sm text-success mt-2">
+            Saved successfully.
+          </p>
+          <p v-if="saveStatus === 'error' && editorError" class="text-sm text-error mt-2">
+            {{ editorError }}
+          </p>
+        </template>
+
+        <div v-else-if="editorLoading" class="flex items-center gap-2 text-muted">
+          <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin" />
+          <span class="text-sm">Loading file from GitHub...</span>
         </div>
       </div>
 

@@ -16,7 +16,7 @@
     skos:prefLabel "CRIRSCO mineral resource reporting"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/accepted>;
     owl:versionIRI <https://linked.data.gov.au/def/CRIRSCO-mineral-resource-reporting/1.1>;
-    prov:qualifiedAttribution _:n3-1215, _:n3-1216;
+    prov:qualifiedAttribution _:n3-1522, _:n3-1523;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2023-11-01"^^xsd:date;
     sdo:dateModified "2023-12-04"^^xsd:date;
@@ -29,11 +29,53 @@
     prez:type prez:FocusNode;
     prez:label "CRIRSCO mineral resource reporting"@en;
     prez:description "Terminology defined by the Committee for Mineral Reserves International Reporting Standards (CRIRSCO; https://www.crirsco.com/) based on the International Reporting Template (IRT; https://www.crirsco.com/docs/CRIRSCO_International_Reporting_Template_November_2019.pdf). The IRT is a document that draws on the best of the CRIRSCO-style reporting standards, the JORC Code (Australasia), SAMREC Code (South Africa), Reporting Code (UK / Western Europe), CIM Guidelines (Canada), SME Guide (USA) and Certification Code (Chile). These reporting standards are recognized and adopted worldwide for market-related reporting and financial investment."@en.
-_:n3-1215 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/accepted> prez:label "accepted";
+    prez:description "An entry that has been accepted for use and is visible in the default register listing. Includes entries that have seen been retired or superseded.".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-1522 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-_:n3-1216 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
+_:n3-1523 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0009-0002-5543-2719>.
+<https://orcid.org/0009-0002-5543-2719> prez:label "Erin Marie Gray".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+sdo:version prez:label "version";
+    prez:description "The version of the CreativeWork embodied by a specified resource".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/resources-mineral> prez:label "Resources Mineral".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-1217 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-1524 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+xsd:date prez:label "date".

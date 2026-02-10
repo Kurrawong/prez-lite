@@ -26,8 +26,8 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/selective"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/unaltered"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-652"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-653"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-947"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-948"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</sdo:dateModified>
@@ -35,11 +35,11 @@
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-652">
+  <rdf:Description rdf:nodeID="n3-947">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-653">
+  <rdf:Description rdf:nodeID="n3-948">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0001-5888-5102"/>
   </rdf:Description>

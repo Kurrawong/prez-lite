@@ -16,7 +16,7 @@
     skos:prefLabel "Alteration type"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/alteration-type/1>;
-    prov:qualifiedAttribution _:n3-688, _:n3-689;
+    prov:qualifiedAttribution _:n3-983, _:n3-984;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-02"^^xsd:date;
     sdo:dateModified "2024-12-02"^^xsd:date;
@@ -29,11 +29,52 @@
     prez:type prez:FocusNode;
     prez:label "Alteration type"@en;
     prez:description "Compilation of terms that describe the classification of alteration in a rock, with a focus on hydrothermal processes (i.e. mineralogical, chemical and textural changes resulting from the interaction of hot aqueous fluids with the rocks through which they circulate, under evolving physico-chemical conditions), and excluding weathering, mineralization and direct metamorphic or magmatic processes. Classification is based on the identification of the most important alteration mineral, the distinctive mineral assemblage, or the chemical changes that have occurred during alteration. Definitions are largely from Pirajno (2009), the Glossary of geology (5th edition revised; Neuendorf et.al., 2011), Thompson et al. (1996), and Wikipedia."@en.
-_:n3-688 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+rdf:type prez:label "type";
+    prez:description "The subject is an instance of a class.".
+skos:ConceptScheme prez:label "Concept Scheme";
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
+skos:definition prez:label "definition";
+    prez:description "A statement or formal explanation of the meaning of a concept".
+skos:historyNote prez:label "history note";
+    prez:description "A note about the past state/use/meaning of a concept".
+skos:prefLabel prez:label "preferred label";
+    prez:description "The preferred lexical label for a resource, in a given language".
+reg:status prez:label "status";
+    prez:description "The status of this register entry".
+<https://linked.data.gov.au/def/reg-statuses/stable> prez:label "stable";
+    prez:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry.".
+owl:versionIRI prez:label "version IRI";
+    prez:description "The property that identifies the version IRI of an ontology.".
+prov:qualifiedAttribution prez:label "qualified attribution";
+    prez:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].".
+_:n3-983 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0001-5888-5102>.
-_:n3-689 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+prov:hadRole prez:label "role".
+<https://linked.data.gov.au/def/data-roles/custodian> prez:label "custodian".
+prov:agent prez:label "agent".
+<https://orcid.org/0000-0001-5888-5102> prez:label "Paul Duuring".
+_:n3-984 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
+<https://orcid.org/0000-0002-7645-5031> prez:label "Angela Riganti".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+<https://linked.data.gov.au/org/gswa> prez:label "Geological Survey of Western Australia".
+sdo:dateCreated prez:label "date created";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:dateModified prez:label "date modified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+sdo:keywords prez:label "keywords";
+    prez:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+sdo:version prez:label "version";
+    prez:description "The version of the CreativeWork embodied by a specified resource".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-690 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-985 prez:currentProfile prez:OGCSchemesObjectProfile.
+prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
+    prez:description "A profile for SKOS Concept Schemes".
+skos:hasTopConcept prez:label "has top concept";
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+xsd:date prez:label "date".

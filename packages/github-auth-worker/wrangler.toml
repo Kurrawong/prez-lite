@@ -1,0 +1,9 @@
+name = "prez-lite-auth"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGINS = "http://localhost:3000,https://prez-lite.app.dev.kurrawong.ai,https://suncorp.app.dev.kurrawong.ai"
+# Secrets (set via `wrangler secret put`):
+#   GITHUB_CLIENT_ID
+#   GITHUB_CLIENT_SECRET

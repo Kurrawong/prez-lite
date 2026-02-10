@@ -1,9 +1,330 @@
 [
   {
-    "@id": "_:n3-1182",
+    "@id": "_:n3-1477",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "All operations and activities are terminated. The operator has left the site with no intention of returning to the borehole/well. The borehole/well is not necessarily plugged, and its site may not have been properly rehabilitated/remediated (e.g., may include boreholes drilled prior to mandatory rehabilitation legislation coming into effect).",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-bogged",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned-Bogged",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Nil provided by NT",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-caving-broken-ground",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned-Caving/Broken Ground",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Nil provided by NT.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-mechanical-reason",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned—Mechanical Reason",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The label is self-explanatory.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-no-recovery",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned—No Recovery",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Nil provided by NT.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-too-deep",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned—Too Deep",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Nil provided by NT.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-too-hard",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned—Too Hard",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Nil provided by NT.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/abandoned-water-table",
+    "https://prez.dev/label": [
+      {
+        "@value": "Abandoned—Water Table",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Nil provided by NT.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/equipment-in-borehole",
+    "https://prez.dev/label": [
+      {
+        "@value": "Equipment in Borehole",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Equipment has been left in the borehole — the nature of the equipment and the depth should be recorded.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/hazard-in-borehole",
+    "https://prez.dev/label": [
+      {
+        "@value": "Hazard in Borehole",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An object has been left in the borehole which may need to be avoided, mitigated or removed prior to mining.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/borehole-status/prematurely-terminated-mineral",
+    "https://prez.dev/label": [
+      {
+        "@value": "Prematurely Terminated Mineral",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "All borehole operations and activities are prematurely terminated due to unforeseen circumstances, e.g., surface-ground failure or borehole collapse (with or without equipment being stuck in the borehole), bad weather, etc. The borehole should undergo necessary rehabilitation [After GSWA Borehole Status Vocabulary (April, 2023) for ‘abandoned – mineral’ borehole; and NT for ‘Terminated — Bad Weather].",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "alternative label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An alternative lexical label for a resource"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has exact match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#historyNote",
+    "https://prez.dev/label": [
+      {
+        "@value": "history note"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A note about the past state/use/meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrowMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#relatedMatch",
+    "https://prez.dev/label": [
+      {
+        "@value": "has related match"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes"
       }
     ]
   },
@@ -159,6 +480,56 @@
     ]
   },
   {
+    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus/abandoned",
+    "https://prez.dev/label": [
+      {
+        "@value": "abandoned"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "All operations and activities are terminated. The operator has left the site with no intention of returning to the borehole. The borehole is not necessarily plugged.  Similar to CoalLog status \"completed\"."
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
     "@id": "https://prez.dev/link",
     "https://prez.dev/label": [
       {
@@ -171,6 +542,14 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
       }
     ]
   }

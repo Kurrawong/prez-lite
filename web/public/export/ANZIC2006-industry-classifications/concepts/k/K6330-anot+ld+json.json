@@ -1,0 +1,305 @@
+[
+  {
+    "@id": "_:n3-283",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/anzsic-2006",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:anzsic-2006"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:anzsic-2006"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:anzsic-2006/items"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/anzsic-2006/K6330",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@value": "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006/K6300"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "An individual business entity whose predominant economic activity is Superannuation Funds.",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "K6330"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Superannuation Funds",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:K6330"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:anzsic-2006/items/ns1:K6330"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Superannuation Funds",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An individual business entity whose predominant economic activity is Superannuation Funds.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.org/dc/terms/source",
+    "https://prez.dev/label": [
+      {
+        "@value": "Source"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A related resource from which the described resource is derived."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The subject is an instance of a class."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "https://prez.dev/label": [
+      {
+        "@value": "is defined by"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The defininition of the subject resource."
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2001/XMLSchema#anyURI",
+    "https://prez.dev/label": [
+      {
+        "@value": "URI"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#broader",
+    "https://prez.dev/label": [
+      {
+        "@value": "has broader"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more general in meaning"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#notation",
+    "https://prez.dev/label": [
+      {
+        "@value": "notation"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A notation, also known as classification code, is a string of characters such as 'T58.5' or '303.4833' used to uniquely identify a concept within the scope of a given concept scheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/FocusNode",
+    "https://prez.dev/label": [
+      {
+        "@value": "Focus Node"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/OGCSchemesObjectProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "OGC Concept Scheme Object Profile"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A profile for SKOS Concept Schemes"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/currentProfile",
+    "https://prez.dev/label": [
+      {
+        "@value": "current profile"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/identifier",
+    "https://prez.dev/label": [
+      {
+        "@value": "identifier"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/type",
+    "https://prez.dev/label": [
+      {
+        "@value": "type"
+      }
+    ]
+  }
+]

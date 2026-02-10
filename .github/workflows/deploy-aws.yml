@@ -44,6 +44,8 @@ jobs:
           NUXT_PUBLIC_GITHUB_REPO: ${{ vars.GH_REPO_SLUG }}
           NUXT_PUBLIC_GITHUB_BRANCH: ${{ vars.GH_BRANCH || 'main' }}
           NUXT_PUBLIC_GITHUB_VOCAB_PATH: ${{ vars.GH_VOCAB_PATH || 'web/public/sample-data/vocabs' }}
+          NUXT_PUBLIC_GITHUB_CLIENT_ID: ${{ vars.GH_CLIENT_ID }}
+          NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL: ${{ vars.GH_AUTH_WORKER_URL }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4

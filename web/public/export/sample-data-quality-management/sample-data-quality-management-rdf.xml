@@ -39,9 +39,9 @@ Definitions compiled from:
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-data-quality-management/sample-split"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-data-quality-management/spike"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-data-quality-management/umpire-assay-sample"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2736"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2737"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2738"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3043"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3044"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3045"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-18</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-18</sdo:dateModified>
@@ -49,15 +49,15 @@ Definitions compiled from:
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1.0</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2736">
+  <rdf:Description rdf:nodeID="n3-3043">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2737">
+  <rdf:Description rdf:nodeID="n3-3044">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-2104-6601"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2738">
+  <rdf:Description rdf:nodeID="n3-3045">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-2280-1859"/>
   </rdf:Description>

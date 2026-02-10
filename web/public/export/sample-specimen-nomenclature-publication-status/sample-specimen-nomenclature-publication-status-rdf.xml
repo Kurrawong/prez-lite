@@ -32,8 +32,8 @@ GSWA distinguishes samples from specimens on the basis of the latter including b
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/reference-sample-specimen"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-meteorite"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/sample-nomenclature-publication-status/type-specimen-fossil"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2847"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-2848"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3154"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-3155"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</sdo:dateModified>
@@ -43,11 +43,11 @@ GSWA distinguishes samples from specimens on the basis of the latter including b
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2847">
+  <rdf:Description rdf:nodeID="n3-3154">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-2848">
+  <rdf:Description rdf:nodeID="n3-3155">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-5129-2467"/>
   </rdf:Description>

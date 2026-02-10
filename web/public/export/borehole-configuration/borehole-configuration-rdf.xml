@@ -30,14 +30,14 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-configuration/inclined"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-configuration/vertical"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-configuration/vertical-uphole"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1015"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1016"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1310"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1311"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1015">
+  <rdf:Description rdf:nodeID="n3-1310">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1016">
+  <rdf:Description rdf:nodeID="n3-1311">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>

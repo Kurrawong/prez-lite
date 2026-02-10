@@ -45,7 +45,10 @@ export default defineNuxtConfig({
       // Branch for edit links (default: main)
       githubBranch: 'main',
       // Path to vocab TTL files within the repo
-      githubVocabPath: 'web/public/sample-data/vocabs',
+      githubVocabPath: '',
+      // GitHub OAuth (for inline editing) — set via env vars
+      githubClientId: '',          // NUXT_PUBLIC_GITHUB_CLIENT_ID
+      githubAuthWorkerUrl: '',     // NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL
     }
   },
 

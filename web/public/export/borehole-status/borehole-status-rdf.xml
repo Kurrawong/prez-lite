@@ -24,8 +24,8 @@
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/post-operational"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/operational"/>
     <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-status-wa/unknown"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1178"/>
-    <prov:qualifiedAttribution rdf:nodeID="n3-1179"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1473"/>
+    <prov:qualifiedAttribution rdf:nodeID="n3-1474"/>
     <sdo:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-03</sdo:dateCreated>
     <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-03</sdo:dateModified>
@@ -33,11 +33,11 @@
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1178">
+  <rdf:Description rdf:nodeID="n3-1473">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="n3-1179">
+  <rdf:Description rdf:nodeID="n3-1474">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
   </rdf:Description>
