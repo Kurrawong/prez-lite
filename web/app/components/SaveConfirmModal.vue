@@ -140,7 +140,7 @@ function changeTypePrefix(type: 'added' | 'removed' | 'modified'): string {
     <div v-if="activeTab === 'diff'" class="border border-default rounded-lg overflow-hidden">
       <MonacoDiffEditor
         :original="originalTTL"
-        :modified="patchedTTL"
+        :model-value="patchedTTL"
         lang="turtle"
         :options="{
           theme: monacoTheme,
