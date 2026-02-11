@@ -42,6 +42,9 @@ while [[ $# -gt 0 ]]; do
             echo "                   (default: http://demo.dev.kurrawong.ai/sparql)"
             exit 0
             ;;
+        --)
+            shift
+            ;;
         *)
             echo "Unknown option: $1"
             exit 1
