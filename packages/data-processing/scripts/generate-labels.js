@@ -106,7 +106,13 @@ Example:
 
 async function parseTTLDirectory(dirPath) {
   const store = new Store();
-  const files = await readdir(dirPath);
+  let files;
+  try {
+    files = await readdir(dirPath);
+  } catch {
+    console.log(`  Warning: Background directory does not exist: ${dirPath}`);
+    return store;
+  }
 
   for (const file of files) {
     if (file.endsWith('.ttl')) {
