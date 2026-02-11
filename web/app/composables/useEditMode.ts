@@ -883,6 +883,18 @@ export function useEditMode(
   })
 
   /** Resolve an IRI to its prefLabel from the store */
+  /** Get the original and current TTL block for a single subject (for focused diffs).
+   *  Both sides are serialized identically so only data changes appear in the diff. */
+  function getSubjectDiffBlocks(iri: string): { original: string; current: string } {
+    const original = originalStore.value
+      ? (serializeSubjectBlock(originalStore.value, iri, originalPrefixes.value) ?? '').trim()
+      : ''
+    const current = store.value
+      ? (serializeSubjectBlock(store.value, iri, originalPrefixes.value) ?? '').trim()
+      : ''
+    return { original, current }
+  }
+
   function resolveLabel(iri: string): string {
     void storeVersion.value
     if (!store.value) return iri
@@ -922,6 +934,7 @@ export function useEditMode(
     saveSubject,
     serializeToTTL,
     serializeWithPatch,
+    getSubjectDiffBlocks,
     resolveLabel,
     getPropertiesForSubject,
 

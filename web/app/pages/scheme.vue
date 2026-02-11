@@ -182,10 +182,13 @@ const saveModalChangeSummary = computed<ChangeSummary>(() => {
   }
 })
 
-const saveModalOriginalTTL = computed(() => editMode?.originalTTL.value ?? '')
+const saveModalOriginalTTL = computed(() => {
+  if (!editMode || !saveModalSubjectIri.value) return editMode?.originalTTL.value ?? ''
+  return editMode.getSubjectDiffBlocks(saveModalSubjectIri.value).original
+})
 const saveModalPatchedTTL = computed(() => {
   if (!editMode || !saveModalSubjectIri.value) return ''
-  return editMode.serializeWithPatch(saveModalSubjectIri.value)
+  return editMode.getSubjectDiffBlocks(saveModalSubjectIri.value).current
 })
 
 async function handleSaveConfirm(commitMessage: string) {
@@ -234,13 +237,52 @@ const pendingChanges = computed(() => {
 })
 
 function truncateValue(val: string, max = 30): string {
-  // For IRIs, show last segment
   if (val.startsWith('http')) {
     const hashIdx = val.lastIndexOf('#')
     const slashIdx = val.lastIndexOf('/')
     val = val.substring(Math.max(hashIdx, slashIdx) + 1)
   }
   return val.length > max ? val.slice(0, max) + '...' : val
+}
+
+interface DiffParts {
+  before: string
+  oldPart: string
+  newPart: string
+  after: string
+}
+
+/** Find the changed region between two strings and return it with surrounding context. */
+function focusedDiff(oldStr: string, newStr: string, ctx = 15): DiffParts | null {
+  // Find common prefix
+  let prefixLen = 0
+  while (prefixLen < oldStr.length && prefixLen < newStr.length && oldStr[prefixLen] === newStr[prefixLen]) {
+    prefixLen++
+  }
+  // Find common suffix (not overlapping with prefix)
+  let suffixLen = 0
+  while (
+    suffixLen < oldStr.length - prefixLen
+    && suffixLen < newStr.length - prefixLen
+    && oldStr[oldStr.length - 1 - suffixLen] === newStr[newStr.length - 1 - suffixLen]
+  ) {
+    suffixLen++
+  }
+  // If very little in common, not useful as a focused diff
+  if (prefixLen + suffixLen < 5) return null
+
+  const ctxStart = Math.max(0, prefixLen - ctx)
+  const before = (ctxStart > 0 ? '...' : '') + oldStr.slice(ctxStart, prefixLen)
+
+  const oldPart = oldStr.slice(prefixLen, suffixLen > 0 ? oldStr.length - suffixLen : undefined)
+  const newPart = newStr.slice(prefixLen, suffixLen > 0 ? newStr.length - suffixLen : undefined)
+
+  const suffixEnd = Math.min(suffixLen, ctx)
+  const after = suffixLen > 0
+    ? oldStr.slice(oldStr.length - suffixLen, oldStr.length - suffixLen + suffixEnd) + (suffixEnd < suffixLen ? '...' : '')
+    : ''
+
+  return { before, oldPart: oldPart || '\u25BE', newPart: newPart || '\u25BE', after }
 }
 
 function formatChangeTooltip(prop: { predicateLabel: string; predicateIri: string; type: string; oldValues?: string[]; newValues?: string[] }): string {
@@ -535,12 +577,39 @@ function copyIriToClipboard(iri: string) {
                     :title="formatChangeTooltip(prop)"
                   >
                     <div class="font-medium text-muted">{{ prop.predicateLabel }}</div>
-                    <div v-if="prop.oldValues?.length" v-for="val in prop.oldValues" :key="'old-' + val" class="pl-2 text-error">
-                      <span class="select-none">- </span><span class="line-through">{{ truncateValue(val, 40) }}</span>
-                    </div>
-                    <div v-if="prop.newValues?.length" v-for="val in prop.newValues" :key="'new-' + val" class="pl-2 text-success">
-                      <span class="select-none">+ </span>{{ truncateValue(val, 40) }}
-                    </div>
+
+                    <!-- Focused diff: single old → single new with shared context -->
+                    <template v-if="prop.type === 'modified' && prop.oldValues?.length === 1 && prop.newValues?.length === 1">
+                      <template v-for="diff in [focusedDiff(prop.oldValues[0]!, prop.newValues[0]!)]" :key="'diff'">
+                        <template v-if="diff">
+                          <div class="pl-2 text-error">
+                            <span class="select-none">- </span><span class="text-muted">{{ diff.before }}</span><span class="font-semibold bg-error/10 rounded-sm px-0.5">{{ diff.oldPart }}</span><span class="text-muted">{{ diff.after }}</span>
+                          </div>
+                          <div class="pl-2 text-success">
+                            <span class="select-none">+ </span><span class="text-muted">{{ diff.before }}</span><span class="font-semibold bg-success/10 rounded-sm px-0.5">{{ diff.newPart }}</span><span class="text-muted">{{ diff.after }}</span>
+                          </div>
+                        </template>
+                        <!-- Strings too different for focused diff -->
+                        <template v-else>
+                          <div class="pl-2 text-error">
+                            <span class="select-none">- </span><span class="line-through">{{ truncateValue(prop.oldValues![0]!, 40) }}</span>
+                          </div>
+                          <div class="pl-2 text-success">
+                            <span class="select-none">+ </span>{{ truncateValue(prop.newValues![0]!, 40) }}
+                          </div>
+                        </template>
+                      </template>
+                    </template>
+
+                    <!-- Fallback: simple list of old/new values -->
+                    <template v-else>
+                      <div v-for="val in (prop.oldValues || [])" :key="'old-' + val" class="pl-2 text-error">
+                        <span class="select-none">- </span><span class="line-through">{{ truncateValue(val, 40) }}</span>
+                      </div>
+                      <div v-for="val in (prop.newValues || [])" :key="'new-' + val" class="pl-2 text-success">
+                        <span class="select-none">+ </span>{{ truncateValue(val, 40) }}
+                      </div>
+                    </template>
                   </div>
                 </div>
               </div>
