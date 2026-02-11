@@ -13,6 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: '🏷️ Release Please — Automated version bump & changelog'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  RELEASE PLEASE                                            ║"
+          echo "║                                                            ║"
+          echo "║  Analyses conventional commits since the last release and   ║"
+          echo "║  creates/updates a release PR with version bump +          ║"
+          echo "║  CHANGELOG. Merging that PR creates a GitHub Release +     ║"
+          echo "║  git tag.                                                  ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: push to main                                     ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
       - uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

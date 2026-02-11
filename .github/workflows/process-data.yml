@@ -15,6 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: '🔄 Process Data — Rebuild exports from source vocabularies'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  PROCESS DATA                                              ║"
+          echo "║                                                            ║"
+          echo "║  Rebuilds all export assets (JSON, JSON-LD, RDF/XML, CSV,  ║"
+          echo "║  HTML, search index, labels) from source TTL vocabularies.  ║"
+          echo "║  Commits the updated exports back to the repo.             ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: push to main (sample-data changes) or manual     ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
       - name: Checkout
         uses: actions/checkout@v4
 

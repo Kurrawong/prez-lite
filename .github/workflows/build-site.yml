@@ -30,6 +30,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: '🏗️ Build Site — Reusable workflow for gh-template repos'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  BUILD & DEPLOY PREZ LITE SITE                             ║"
+          echo "║                                                            ║"
+          echo "║  Reusable workflow for downstream gh-template repos.       ║"
+          echo "║  Fetches data-processing from prez-lite, processes vocabs, ║"
+          echo "║  generates system metadata, builds the Nuxt static site,   ║"
+          echo "║  and deploys to GitHub Pages.                              ║"
+          echo "║                                                            ║"
+          echo "║  prez-lite version: ${{ inputs.prez-lite-version }}        ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
       - name: Checkout
         uses: actions/checkout@v4
 

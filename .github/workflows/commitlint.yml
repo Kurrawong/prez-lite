@@ -9,6 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: '📝 Commitlint — Validate PR title format'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  COMMITLINT                                                ║"
+          echo "║                                                            ║"
+          echo "║  Validates that the PR title follows conventional commit    ║"
+          echo "║  format (e.g. feat: ..., fix: ..., docs: ...).             ║"
+          echo "║  This ensures release-please can generate accurate         ║"
+          echo "║  changelogs and version bumps.                             ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: PR opened/edited                                 ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
       - name: Validate PR title
         uses: amannn/action-semantic-pull-request@v5
         env:
