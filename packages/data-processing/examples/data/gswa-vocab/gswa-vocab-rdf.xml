@@ -35,23 +35,6 @@
     <sdo:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
     <sdo:version>1</sdo:version>
   </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/pervasive">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/selective">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/selectively-pervasive"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/unaltered">
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/non-pervasive">
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
   <rdf:Description rdf:nodeID="n3-2">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
@@ -59,100 +42,5 @@
   <rdf:Description rdf:nodeID="n3-3">
     <prov:hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
     <prov:agent rdf:resource="https://orcid.org/0000-0001-5888-5102"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/banding-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/layer-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/banding-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/bedding-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/unconformity-related"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/bedding-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/unconformity-related">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/breccia-vein">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/breccia-vein"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/fault-breccia">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/fault-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/fault-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/fracture-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/fault-breccia"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/structure-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/foliation-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/shear-zone-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/vein-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/vug-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/fracture-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/foliation-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/shear-zone-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/vein-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/vug-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/fracture-controlled">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/fault-controlled"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/selective"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/selectively-pervasive">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/selective"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned-central">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned-central"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned-inner"/>
-    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned-outer"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned-inner">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned-outer">
-    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
-    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
   </rdf:Description>
 </rdf:RDF>

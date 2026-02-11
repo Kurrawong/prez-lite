@@ -8,6 +8,20 @@ updated: 2025-02-08
 
 > Version history and completed features.
 
+## 2026-02-10
+
+### Authoring — GitHub OAuth & Inline Editing
+- GitHub OAuth flow via Cloudflare Worker (`@prez-lite/github-auth-worker`)
+- Inline Monaco editor on scheme and share pages for authenticated users
+- Custom prez-dark/prez-light Monaco themes matching site palette
+- `useGitHubAuth` composable for auth lifecycle (login, logout, token validation)
+- `GitHubAuthButton` header component with avatar and dropdown
+- "Edit on GitHub" fallback links for unauthenticated users
+- Feature-gated: all auth UI hidden when `githubClientId` env var is empty
+- Setup guide: `docs/3-features/github-oauth-setup.md`
+
+---
+
 ## 2026-02-09
 
 ### CI/CD

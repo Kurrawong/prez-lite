@@ -12,10 +12,12 @@ const props = defineProps<{
   expandAll?: boolean
   level?: number
   selectedId?: string
+  editMode?: boolean
 }>()
 
 const emit = defineEmits<{
   select: [id: string]
+  edit: [id: string]
 }>()
 
 const level = props.level ?? 0
@@ -29,7 +31,9 @@ const level = props.level ?? 0
         :expand-all="expandAll"
         :level="level"
         :selected-id="selectedId"
+        :edit-mode="editMode"
         @select="emit('select', $event)"
+        @edit="emit('edit', $event)"
       />
     </li>
   </ul>

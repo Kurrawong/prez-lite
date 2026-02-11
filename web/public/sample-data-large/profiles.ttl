@@ -1,0 +1,194 @@
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prez: <https://prez.dev/> .
+@prefix altr-ext: <http://www.w3.org/ns/dx/connegp/altr-ext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sdo: <https://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+
+# =============================================================================
+# GSWA Vocabularies Catalog Configuration
+# =============================================================================
+
+<https://linked.data.gov.au/catalogue/gswa-vocabs> a prez:Catalog ;
+    dcterms:identifier "catalogue:gswa-vocabs"^^xsd:token ;
+    dcterms:title "GSWA Vocabularies" ;
+    dcterms:description """Geological Survey of Western Australia's vocabularies of controlled terms.
+
+GSWA uses domain standards that are openly available, to provide a common language for communicating ideas and provide consistency of meaning of the data collected, research undertaken and products created.""" .
+
+# =============================================================================
+# OGC Concept Scheme Object Profile
+# Profile for rendering individual SKOS Concept Schemes (vocabularies)
+# =============================================================================
+
+prez:OGCSchemesObjectProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
+    dcterms:identifier "ogc-schemes-object"^^xsd:token ;
+    dcterms:title "OGC Concept Scheme Object Profile" ;
+    dcterms:description "A profile for SKOS Concept Schemes" ;
+    
+    # Target class this profile applies to
+    sh:targetClass skos:ConceptScheme ;
+    altr-ext:constrainsClass skos:ConceptScheme ;
+    
+    # Supported output formats
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasResourceFormat "application/ld+json" ;
+    altr-ext:hasResourceFormat "application/rdf+xml" ;
+    altr-ext:hasResourceFormat "text/turtle" ;
+    altr-ext:hasResourceFormat "text/csv" ;
+    altr-ext:hasResourceFormat "application/json" ;
+    altr-ext:hasResourceFormat "text/html" ;
+    
+    # Property shapes defining source predicates for prez annotations
+    # Using prez:sourcePredicate for clarity (alternative to complex SHACL paths)
+    prez:labelSource skos:prefLabel, dcterms:title, rdfs:label ;
+    prez:descriptionSource skos:definition, dcterms:description ;
+    prez:provenanceSource dcterms:provenance ;
+    
+    # Prez-specific annotations to generate
+    prez:generateIdentifier true ;
+    prez:generateLink true ;
+    prez:generateMembers true ;
+    prez:generateLabel true ;
+    prez:generateDescription true ;
+    prez:generateProvenance true ;
+    prez:generateFocusNode true ;
+    
+    # Property shapes defining expected properties on a ConceptScheme export
+    sh:property [ sh:path rdf:type ; sh:order 0 ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:order 1 ] ;
+    sh:property [ sh:path skos:definition ; sh:order 2 ] ;
+    sh:property [ sh:path skos:historyNote ; sh:order 3 ] ;
+    sh:property [ sh:path reg:status ; sh:order 4 ] ;
+    sh:property [ sh:path owl:versionIRI ; sh:order 5 ] ;
+    sh:property [ sh:path sdo:creator ; sh:order 6 ] ;
+    sh:property [ sh:path sdo:publisher ; sh:order 7 ] ;
+    sh:property [ sh:path sdo:dateCreated ; sh:order 8 ] ;
+    sh:property [ sh:path sdo:dateModified ; sh:order 9 ] ;
+    sh:property [ sh:path sdo:keywords ; sh:order 10 ] ;
+    sh:property [ sh:path sdo:version ; sh:order 11 ] ;
+    sh:property [ sh:path prov:qualifiedAttribution ; sh:order 12 ] ;
+    sh:property [ sh:path dcterms:provenance ; sh:order 13 ] ;
+
+    # Link templates
+    prez:linkTemplate "/catalogs/{catalogId}/collections/{schemeId}" ;
+    prez:membersTemplate "/catalogs/{catalogId}/collections/{schemeId}/items" .
+
+# =============================================================================
+# OGC Item Profile
+# Profile for rendering individual SKOS Concepts
+# =============================================================================
+
+prez:OGCItemProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
+    dcterms:identifier "ogc-item"^^xsd:token ;
+    dcterms:title "OGC Object Profile" ;
+    dcterms:description "A profile for individual OGC Records API items" ;
+    
+    # Target class this profile applies to
+    sh:targetClass skos:Concept ;
+    altr-ext:constrainsClass skos:Concept ;
+    
+    # Supported output formats
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasResourceFormat "application/ld+json" ;
+    altr-ext:hasResourceFormat "application/rdf+xml" ;
+    altr-ext:hasResourceFormat "text/turtle" ;
+    altr-ext:hasResourceFormat "text/html" ;
+    
+    # Property shapes defining source predicates for prez annotations
+    prez:labelSource skos:prefLabel, dcterms:title, rdfs:label ;
+    prez:descriptionSource skos:definition, dcterms:description ;
+    
+    # Prez-specific annotations to generate
+    prez:generateIdentifier true ;
+    prez:generateLink true ;
+    prez:generateMembers false ;
+    prez:generateLabel true ;
+    prez:generateDescription true ;
+    prez:generateProvenance false ;
+    prez:generateFocusNode true ;
+    
+    # Link template
+    prez:linkTemplate "/catalogs/{catalogId}/collections/{schemeId}/items/{conceptId}" .
+
+# =============================================================================
+# OGC DataCatalog Profile
+# Profile for rendering vocabulary listings as schema:DataCatalog
+# =============================================================================
+
+prez:OGCDataCatalogProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
+    dcterms:identifier "ogc-datacatalog"^^xsd:token ;
+    dcterms:title "OGC DataCatalog Profile" ;
+    dcterms:description "A profile for vocabulary listings represented as schema:DataCatalog" ;
+
+    # Target class this profile applies to
+    sh:targetClass schema:DataCatalog ;
+    altr-ext:constrainsClass schema:DataCatalog ;
+
+    # Supported output formats
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "text/anot+turtle" ;
+    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasResourceFormat "application/ld+json" ;
+    altr-ext:hasResourceFormat "application/rdf+xml" ;
+    altr-ext:hasResourceFormat "text/turtle" ;
+    altr-ext:hasResourceFormat "text/csv" ;
+    altr-ext:hasResourceFormat "application/json" ;
+    altr-ext:hasResourceFormat "text/html" ;
+
+    # Property shapes defining source predicates for prez annotations
+    prez:labelSource schema:name, dcterms:title, rdfs:label ;
+    prez:descriptionSource schema:description, dcterms:description ;
+
+    # Prez-specific annotations to generate
+    prez:generateIdentifier true ;
+    prez:generateLink true ;
+    prez:generateMembers true ;
+    prez:generateLabel true ;
+    prez:generateDescription true ;
+    prez:generateProvenance false ;
+    prez:generateFocusNode true .
+
+# =============================================================================
+# Umbrella Profile (like Prez's OGCRecordsProfile)
+# Defines default profiles for different resource types
+# =============================================================================
+
+prez:GSWAVocabsProfile a prof:Profile ;
+    dcterms:identifier "gswa-vocabs"^^xsd:token ;
+    dcterms:title "GSWA Vocabularies Profile" ;
+    dcterms:description "Profile configuration for Geological Survey of Western Australia vocabularies" ;
+
+    # Associated catalog
+    prez:catalog <https://linked.data.gov.au/catalogue/gswa-vocabs> ;
+
+    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+
+    # Define default profiles for each resource type
+    altr-ext:hasNodeShape [
+        a sh:NodeShape ;
+        sh:targetClass skos:ConceptScheme ;
+        altr-ext:hasDefaultProfile prez:OGCSchemesObjectProfile
+    ] ;
+    altr-ext:hasNodeShape [
+        a sh:NodeShape ;
+        sh:targetClass skos:Concept ;
+        altr-ext:hasDefaultProfile prez:OGCItemProfile
+    ] ;
+    altr-ext:hasNodeShape [
+        a sh:NodeShape ;
+        sh:targetClass schema:DataCatalog ;
+        altr-ext:hasDefaultProfile prez:OGCDataCatalogProfile
+    ] .

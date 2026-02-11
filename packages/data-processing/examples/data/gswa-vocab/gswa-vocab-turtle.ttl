@@ -24,59 +24,7 @@
     sdo:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral>;
     sdo:publisher <https://linked.data.gov.au/org/gswa>;
     sdo:version "1".
-<https://linked.data.gov.au/def/alteration-form/pervasive> skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/selective> skos:narrower <https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive>, <https://linked.data.gov.au/def/alteration-form/selectively-pervasive>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/unaltered> skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/non-pervasive> skos:narrower <https://linked.data.gov.au/def/alteration-form/layer-controlled>, <https://linked.data.gov.au/def/alteration-form/structure-controlled>, <https://linked.data.gov.au/def/alteration-form/zoned>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
 _:n3-2 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
 _:n3-3 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0001-5888-5102>.
-<https://linked.data.gov.au/def/alteration-form/banding-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/layer-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/layer-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/non-pervasive>;
-    skos:narrower <https://linked.data.gov.au/def/alteration-form/banding-controlled>, <https://linked.data.gov.au/def/alteration-form/bedding-controlled>, <https://linked.data.gov.au/def/alteration-form/unconformity-related>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/bedding-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/layer-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/unconformity-related> skos:broader <https://linked.data.gov.au/def/alteration-form/layer-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/breccia-vein> skos:broader <https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>;
-    skos:narrower <https://linked.data.gov.au/def/alteration-form/breccia-vein>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/fault-breccia> skos:broader <https://linked.data.gov.au/def/alteration-form/fault-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/fault-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/fracture-controlled>;
-    skos:narrower <https://linked.data.gov.au/def/alteration-form/fault-breccia>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/structure-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/non-pervasive>;
-    skos:narrower <https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled>, <https://linked.data.gov.au/def/alteration-form/foliation-controlled>, <https://linked.data.gov.au/def/alteration-form/shear-zone-controlled>, <https://linked.data.gov.au/def/alteration-form/vein-controlled>, <https://linked.data.gov.au/def/alteration-form/vug-controlled>, <https://linked.data.gov.au/def/alteration-form/fracture-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/foliation-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/shear-zone-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/vein-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/vug-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/fracture-controlled> skos:broader <https://linked.data.gov.au/def/alteration-form/structure-controlled>;
-    skos:narrower <https://linked.data.gov.au/def/alteration-form/fault-controlled>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive> skos:broader <https://linked.data.gov.au/def/alteration-form/selective>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/selectively-pervasive> skos:broader <https://linked.data.gov.au/def/alteration-form/selective>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/zoned-central> skos:broader <https://linked.data.gov.au/def/alteration-form/zoned>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/zoned> skos:broader <https://linked.data.gov.au/def/alteration-form/non-pervasive>;
-    skos:narrower <https://linked.data.gov.au/def/alteration-form/zoned-central>, <https://linked.data.gov.au/def/alteration-form/zoned-inner>, <https://linked.data.gov.au/def/alteration-form/zoned-outer>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/zoned-inner> skos:broader <https://linked.data.gov.au/def/alteration-form/zoned>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.
-<https://linked.data.gov.au/def/alteration-form/zoned-outer> skos:broader <https://linked.data.gov.au/def/alteration-form/zoned>;
-    skos:inScheme <https://linked.data.gov.au/def/alteration-form>.

@@ -15,8 +15,9 @@
 | Sprint 5: CI/CD & Data Pipeline | 1/1 | ✅ Complete |
 | Sprint 6: Labels, Data Types & Sharing | 4/4 | ✅ Complete |
 | Sprint 7: Export Cleanup & Share Page Fixes | 4/4 | ✅ Complete |
+| Sprint 8: GitHub OAuth & Inline Editing | 1/1 | ✅ Complete |
 
-**Overall:** 30 tasks completed across 7 sprints. Board clear — ready for new work.
+**Overall:** 31 tasks completed across 8 sprints. Board clear — ready for new work.
 
 ---
 
@@ -24,18 +25,18 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| Empty | Empty | Empty | Empty | Sprint 7 (4 items) |
+| Empty | Empty | Empty | Empty | Sprint 8 (1 item), Sprint 7 archived |
 
 ---
 
 ## Current Status
 
-All sprints complete. Board is clean and ready for Sprint 8.
+All sprints complete. Board is clean and ready for Sprint 9.
 
-**Project:** ~95% feature complete
+**Project:** ~97% feature complete
 - Phase 1 (Core Browser): ✅
 - Phase 2 (Sharing): ✅
-- Phase 3 (Authoring): 🔄 90%
+- Phase 3 (Authoring): ✅
 - Phase 4 (Data Processing): ✅
 
 **Security:** 🟢 SECURE (0 critical/high/medium, 3 low remaining)

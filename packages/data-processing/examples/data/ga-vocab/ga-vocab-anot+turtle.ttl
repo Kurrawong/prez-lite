@@ -44,350 +44,55 @@ prez:members prez:label "members".
 _:n3-2 prez:currentProfile prez:OGCSchemesObjectProfile.
 skos:hasTopConcept prez:label "has top concept"@en;
     prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector> a skos:Concept;
-    skos:prefLabel "airfall dust collector"@en;
-    prez:label "airfall dust collector"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector> prez:label "airfall dust collector"@en;
     prez:description "Sample of fine-grained solid material that is passively collected by airfall from the atmosphere."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling> a skos:Concept;
-    skos:prefLabel "drilling"@en;
-    prez:label "drilling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling> prez:label "drilling"@en;
     prez:description "Sampling by a hole drilled into the Earth by any method"@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling> a skos:Concept;
-    skos:prefLabel "borehole fluid sampling"@en;
-    prez:label "borehole fluid sampling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling> prez:label "borehole fluid sampling"@en;
     prez:description "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool> a skos:Concept;
-    skos:prefLabel "borehole logging tool"@en;
-    prez:label "borehole logging tool"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool> prez:label "borehole logging tool"@en;
     prez:description "Observation of measurement of physical properties down a borehole by an instrument in a continuous linear format.  (e.g. a gamma log)"@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation> a skos:Concept;
-    skos:prefLabel "bottle incubation"@en;
-    prez:label "bottle incubation"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation> prez:label "bottle incubation"@en;
     prez:description "A method to derive the oxygen consumption rate/respiration rates of organic matter conducted in a bottle or vial  under controlled light and temperature conditions."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation> a skos:Concept;
-    skos:prefLabel "chamber incubation"@en;
-    prez:label "chamber incubation"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation> prez:label "chamber incubation"@en;
     prez:description "A method that isolates sediment and overlying water in a benthic chamber. Water samples are collected from the benthic chamber during the incubation."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark> a skos:Concept;
-    skos:prefLabel "core incubation dark"@en;
-    prez:label "core incubation dark"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark> prez:label "core incubation dark"@en;
     prez:description "A method whereby a sediment core is collected along with overlying water. The sediment and water are incubated under no light and controlled temperature conditions."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight> a skos:Concept;
-    skos:prefLabel "core incubation light"@en;
-    prez:label "core incubation light"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight> prez:label "core incubation light"@en;
     prez:description "A method whereby a sediment core is collected along with overlying water. The sediment and water are incubated under controlled light and temperature conditions."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube> a skos:Concept;
-    skos:prefLabel "core Veihmeyer tube"@en;
-    prez:label "core Veihmeyer tube"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube> prez:label "core Veihmeyer tube"@en;
     prez:description "A tube that is pushed into the ground to obtain a soil sample. The Veihmeyer tube has a larger diameter at the cutting end than in the rest of the tube."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing> a skos:Concept;
-    skos:prefLabel "crushing"@en;
-    prez:label "crushing"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing> prez:label "crushing"@en;
     prez:description "Sample derived by crushing a rock or sediment"@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter> a skos:Concept;
-    skos:prefLabel "current meter"@en;
-    prez:label "current meter"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter> prez:label "current meter"@en;
     prez:description "A mooring deployed on the seabed for a finite time during a marine survey to measure sea-levels and current velocities near to the seafloor. Moorings may contain a suite of instruments measuring other parameters."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector> a skos:Concept;
-    skos:prefLabel "filtered dust collector"@en;
-    prez:label "filtered dust collector"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector> prez:label "filtered dust collector"@en;
     prez:description "Sample of fine-grained solid material that is actively collected from the atmosphere by pumping and filtration."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration> a skos:Concept;
-    skos:prefLabel "filtration"@en;
-    prez:label "filtration"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration> prez:label "filtration"@en;
     prez:description "Separation of undissolved sediment and biological particles collected from a water column by filtration. For total dissolved solids measurements the sample is filtered through a glass fibre filter under controlled conditions.  The type of filter is dependent on the method used and the purpose of the determination."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling> a skos:Concept;
-    skos:prefLabel "gas sampling"@en;
-    prez:label "gas sampling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling> prez:label "gas sampling"@en;
     prez:description "Sampling of gas by an unspecified method"@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation> a skos:Concept;
-    skos:prefLabel "grainsize separation"@en;
-    prez:label "grainsize separation"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation> prez:label "grainsize separation"@en;
     prez:description "Separation of various size fractions of mineral or rock particles from the original specimen. For example, by using a seive."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey> a skos:Concept;
-    skos:prefLabel "field mapping survey"@en;
-    prez:label "field mapping survey"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey> prez:label "field mapping survey"@en;
     prez:description "A mapping survey undertaken in a land environment. May include observations and/or sampling."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey> a skos:Concept;
-    skos:prefLabel "marine survey"@en;
-    prez:label "marine survey"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey> prez:label "marine survey"@en;
     prez:description "A mapping survey undertaken in a marine environment. May include observations and/or sampling."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation> a skos:Concept;
-    skos:prefLabel "mineral separation"@en;
-    prez:label "mineral separation"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation> prez:label "mineral separation"@en;
     prez:description "Separation of individual mineral type grains from a larger sample. Methods may include magnetic separation and various density separation methods."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling> a skos:Concept;
-    skos:prefLabel "water sampling"@en;
-    prez:label "water sampling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling> prez:label "water sampling"@en;
     prez:description "Sampling of water by an unspecified method"@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling> a skos:Concept;
-    skos:prefLabel "surface material sampling"@en;
-    prez:label "surface material sampling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling> prez:label "surface material sampling"@en;
     prez:description "Collection of earth materials at the ground surface on land."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap> a skos:Concept;
-    skos:prefLabel "sediment trap"@en;
-    prez:label "sediment trap"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap> prez:label "sediment trap"@en;
     prez:description "Sediment traps are containers placed in the water column to collect particles falling toward the sea floor. The traps collect tiny sediment or larger accumulations called marine snow - made up of organic matter, dead sea creatures, tiny shells, dust and minerals."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde> a skos:Concept;
-    skos:prefLabel "sonde"@en;
-    prez:label "sonde"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde> prez:label "sonde"@en;
     prez:description "A sonde (French for probe) is a water quality monitoring instrument, that may be stationary or may move up and down a water column, measuring, but not limited to, the following water attributes; temperature, conductivity, salinity, dissolved oxygen, pH, turbidity, light, flourescence and depth. This includes CTDs, light meters or any other probes. They may be lowered through the water column by hand, or mechanically (e.g. by a winch), and measurements can be taken continuously or at discrete depth intervals. The probes may be attached to a frame (e.g. a CTD frame) with other instruments (e.g. niskin bottles, cameras), or they may be stand-alone probes attached to a meter by a cable."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling> a skos:Concept;
-    skos:prefLabel "mine sampling"@en;
-    prez:label "mine sampling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling> prez:label "mine sampling"@en;
     prez:description "Collection of a sample at a mine, in surface or underground outcrop, or collected from ore or waste dumps."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown> a skos:Concept;
-    skos:prefLabel "unknown"@en;
-    prez:label "unknown"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown> prez:label "unknown"@en;
     prez:description "The sampling method is unknown."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera> a skos:Concept;
-    skos:prefLabel "camera"@en;
-    prez:label "camera"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera> prez:label "camera"@en;
     prez:description "The process of capturing a still image or moving scene of a feature by a video or still photographic camera"@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling> a skos:Concept;
-    skos:prefLabel "marine survey sampling"@en;
-    prez:label "marine survey sampling"@en;
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling> prez:label "marine survey sampling"@en;
     prez:description "Collection of materials from a marine or coastal survey by any method."@en.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift> a skos:Concept;
-    skos:prefLabel "airlift"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/auger> a skos:Concept;
-    skos:prefLabel "auger"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterStillPhotography> a skos:Concept;
-    skos:prefLabel "baited remote underwater still photograph"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography> a skos:Concept;
-    skos:prefLabel "underwater still photograph"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterVideo> a skos:Concept;
-    skos:prefLabel "baited remote underwater video"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo> a skos:Concept;
-    skos:prefLabel "underwater video"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest> a skos:Concept;
-    skos:prefLabel "borehole DST test"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest> a skos:Concept;
-    skos:prefLabel "borehole PROD test"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholePurgingUntilAnalyteStabilisation> a skos:Concept;
-    skos:prefLabel "borehole purging until analyte stabilisation"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow> a skos:Concept;
-    skos:prefLabel "pumping - high flow"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest> a skos:Concept;
-    skos:prefLabel "borehole WFT test"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationDark> a skos:Concept;
-    skos:prefLabel "bottle incubation dark"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationLight> a skos:Concept;
-    skos:prefLabel "bottle incubation light"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/cableToolDrilling> a skos:Concept;
-    skos:prefLabel "cable tool drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling> a skos:Concept;
-    skos:prefLabel "percussion drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationDark> a skos:Concept;
-    skos:prefLabel "chamber incubation dark"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationLight> a skos:Concept;
-    skos:prefLabel "chamber incubation light"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreAir> a skos:Concept;
-    skos:prefLabel "core air"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling> a skos:Concept;
-    skos:prefLabel "core drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreBox> a skos:Concept;
-    skos:prefLabel "core box"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCatcher> a skos:Concept;
-    skos:prefLabel "core catcher"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreConventional> a skos:Concept;
-    skos:prefLabel "core conventional"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCutter> a skos:Concept;
-    skos:prefLabel "core cutter"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDiamond> a skos:Concept;
-    skos:prefLabel "core diamond"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGeoprobe> a skos:Concept;
-    skos:prefLabel "core geoprobe"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGravity> a skos:Concept;
-    skos:prefLabel "core gravity"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreKasten> a skos:Concept;
-    skos:prefLabel "core Kasten"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreMackereth> a skos:Concept;
-    skos:prefLabel "core Mackereth"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePiston> a skos:Concept;
-    skos:prefLabel "core piston"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePush> a skos:Concept;
-    skos:prefLabel "core push"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreRov> a skos:Concept;
-    skos:prefLabel "core ROV"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSonic> a skos:Concept;
-    skos:prefLabel "core sonic"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSpike> a skos:Concept;
-    skos:prefLabel "core spike"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVibro> a skos:Concept;
-    skos:prefLabel "core vibro"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterStillPhotography> a skos:Concept;
-    skos:prefLabel "diver-operated underwater still photograph"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterVideo> a skos:Concept;
-    skos:prefLabel "diver-operated underwater video"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge> a skos:Concept;
-    skos:prefLabel "dredge"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeBenthic> a skos:Concept;
-    skos:prefLabel "dredge benthic"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeChainBag> a skos:Concept;
-    skos:prefLabel "dredge chain bag"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeDiamantina> a skos:Concept;
-    skos:prefLabel "dredge diamantina"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgePipe> a skos:Concept;
-    skos:prefLabel "dredge pipe"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled> a skos:Concept;
-    skos:prefLabel "epibenthic sled"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab> a skos:Concept;
-    skos:prefLabel "grab"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabEckman> a skos:Concept;
-    skos:prefLabel "grab Eckman"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabROV> a skos:Concept;
-    skos:prefLabel "grab ROV"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabShipek> a skos:Concept;
-    skos:prefLabel "grab Shipek"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabSmithMcintyre> a skos:Concept;
-    skos:prefLabel "grab Smith Mcintyre"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabVanVeen> a skos:Concept;
-    skos:prefLabel "grab Van Veen"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/handheldPortableDevice> a skos:Concept;
-    skos:prefLabel "handheld portable device - field observation"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation> a skos:Concept;
-    skos:prefLabel "liquid-gas separation"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/niskinBottle> a skos:Concept;
-    skos:prefLabel "Niskin Bottle"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/outcropSampling> a skos:Concept;
-    skos:prefLabel "outcrop sampling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/passiveWaterSampling> a skos:Concept;
-    skos:prefLabel "passive water sampling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pitOrTrenchSampling> a skos:Concept;
-    skos:prefLabel "pit or trench sampling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/plantobenthicSampler> a skos:Concept;
-    skos:prefLabel "plantobenthic sampler"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingCentrifugal> a skos:Concept;
-    skos:prefLabel "pore fluid sampling - centrifugal"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingSqueezing> a skos:Concept;
-    skos:prefLabel "pore fluid sampling - squeezing"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping> a skos:Concept;
-    skos:prefLabel "pumping"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingLowFlow> a skos:Concept;
-    skos:prefLabel "pumping - low flow"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/purgingOfThreeCaseVolumes> a skos:Concept;
-    skos:prefLabel "purging of three case volumes"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/RABDrilling> a skos:Concept;
-    skos:prefLabel "RAB drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rainGauge> a skos:Concept;
-    skos:prefLabel "rain gauge"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/reverseCirculationDrilling> a skos:Concept;
-    skos:prefLabel "reverse circulation drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryDrilling> a skos:Concept;
-    skos:prefLabel "rotary drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryHammerDrilling> a skos:Concept;
-    skos:prefLabel "rotary hammer drilling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore> a skos:Concept;
-    skos:prefLabel "sidewall core"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreBullet> a skos:Concept;
-    skos:prefLabel "sidewall core, bullet"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreMechanical> a skos:Concept;
-    skos:prefLabel "sidewall core, mechanical"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterStillPhotography> a skos:Concept;
-    skos:prefLabel "stereo towed underwater still photograph"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterVideo> a skos:Concept;
-    skos:prefLabel "stereo towed underwater video"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography> a skos:Concept;
-    skos:prefLabel "still photography"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterStillPhotography> a skos:Concept;
-    skos:prefLabel "towed underwater still photograph"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterVideo> a skos:Concept;
-    skos:prefLabel "towed underwater video"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/undergroundMineSampling> a skos:Concept;
-    skos:prefLabel "undergound mine sampling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera> a skos:Concept;
-    skos:prefLabel "underwater camera"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyAUV> a skos:Concept;
-    skos:prefLabel "underwater still photograph AUV"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyROV> a skos:Concept;
-    skos:prefLabel "underwater still photograph ROV"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography> a skos:Concept;
-    skos:prefLabel "video photography"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoAUV> a skos:Concept;
-    skos:prefLabel "underwater video AUV"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoROV> a skos:Concept;
-    skos:prefLabel "underwater video ROV"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo>.
-<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling> a skos:Concept;
-    skos:prefLabel "water grab sampling"@en;
-    skos:broader <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling>.

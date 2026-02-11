@@ -24,32 +24,7 @@
     prez:type prez:FocusNode;
     prez:label "Brand"@en;
     prez:description "Brands under Suncorp Group Limited."@en.
-rdf:type prez:label "type";
-    prez:description "The subject is an instance of a class.".
-skos:ConceptScheme prez:label "Concept Scheme";
-    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts".
-skos:definition prez:label "definition";
-    prez:description "A statement or formal explanation of the meaning of a concept".
-skos:prefLabel prez:label "preferred label";
-    prez:description "The preferred lexical label for a resource, in a given language".
-dcterms:created prez:label "Date Created";
-    prez:description "Date of creation of the resource.".
-dcterms:creator prez:label "Creator";
-    prez:description "An entity responsible for making the resource.".
-dcterms:modified prez:label "Date Modified";
-    prez:description "Date on which the resource was changed.".
-dcterms:publisher prez:label "Publisher";
-    prez:description "An entity responsible for making the resource available.".
-reg:status prez:label "status";
-    prez:description "The status of this register entry".
-<https://linked.data.gov.au/def/reg-statuses/experimental> prez:label "experimental";
-    prez:description "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-1510 prez:currentProfile prez:OGCSchemesObjectProfile.
-prez:OGCSchemesObjectProfile prez:label "OGC Concept Scheme Object Profile";
-    prez:description "A profile for SKOS Concept Schemes".
-xsd:date prez:label "date".
-skos:hasTopConcept prez:label "has top concept";
-    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies".
+_:n3-312 prez:currentProfile prez:OGCSchemesObjectProfile.

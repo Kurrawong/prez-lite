@@ -4,6 +4,45 @@
 
 ---
 
+## ✅ Completed Sprint: Sprint 8 - GitHub OAuth & Inline Editing
+
+**Duration:** 2026-02-10
+**Goal:** Enable authenticated users to edit TTL vocabulary files inline from the browser
+**Status:** ✅ **COMPLETE** — All items approved
+
+### Sprint Outcomes
+
+**Completed: 1 task (100%)**
+
+1. ✅ **GitHub OAuth integration with inline Monaco editor** (High)
+   - Cloudflare Worker for OAuth token exchange (CORS proxy)
+   - Nonce-based CSRF protection, token in localStorage
+   - `useGitHubAuth` composable for auth lifecycle
+   - `useGitHubFile` composable for GitHub Contents API
+   - `GitHubAuthButton` component in header (login/logout + avatar)
+   - Inline Monaco editor on scheme.vue and share/[vocab].vue
+   - Custom prez-dark/prez-light themes matching site palette
+   - Feature-gated: hidden when `githubClientId` is empty
+   - Setup guide: `docs/3-features/github-oauth-setup.md`
+
+### Sprint Velocity
+- **Planned:** 1 task
+- **Completed:** 1 task
+- **Success Rate:** 100%
+
+### Key Achievements
+- Full OAuth flow: login → GitHub → CF Worker → redirect with token → validated
+- Inline TTL editing with save-to-GitHub (optimistic concurrency via SHA)
+- Custom Monaco themes matching site's blue/slate design system
+- Zero-config for instances without GitHub editing (feature-gated)
+
+### Backlog Items Resolved
+- ✅ Implement TTL file viewer/editor UI
+- ✅ Implement GitHub save and rebuild trigger
+- ✅ Add "Edit on GitHub" links to vocab/concept pages
+
+---
+
 ## ✅ Completed Sprint: Sprint 7 - Export Cleanup & Share Page Fixes
 
 **Duration:** 2026-02-10

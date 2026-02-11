@@ -12,10 +12,12 @@ const props = defineProps<{
   expandAll?: boolean
   level?: number
   selectedId?: string
+  editMode?: boolean
 }>()
 
 const emit = defineEmits<{
   select: [id: string]
+  edit: [id: string]
 }>()
 
 const level = props.level ?? 0
@@ -38,6 +40,10 @@ function toggle() {
 
 function handleSelect() {
   emit('select', props.item.id)
+}
+
+function handleEdit() {
+  emit('edit', props.item.id)
 }
 </script>
 
@@ -79,6 +85,17 @@ function handleSelect() {
         {{ item.label }}
       </span>
 
+      <!-- Edit button (shown on hover in edit mode) -->
+      <UButton
+        v-if="editMode"
+        icon="i-heroicons-pencil-square"
+        color="neutral"
+        variant="ghost"
+        size="xs"
+        class="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+        @click.stop="handleEdit"
+      />
+
       <!-- Child count badge -->
       <UBadge
         v-if="hasChildren"
@@ -98,7 +115,9 @@ function handleSelect() {
         :expand-all="expandAll"
         :level="level + 1"
         :selected-id="selectedId"
+        :edit-mode="editMode"
         @select="emit('select', $event)"
+        @edit="emit('edit', $event)"
       />
     </div>
   </div>

@@ -199,33 +199,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/RABDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "RAB drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "airfall dust collector",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "airfall dust collector",
@@ -240,101 +214,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "airlift",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/auger",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "auger",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterStillPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "baited remote underwater still photograph",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterVideo",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "baited remote underwater video",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "borehole DST test",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "borehole fluid sampling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "borehole fluid sampling",
@@ -350,15 +230,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "borehole logging tool",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "borehole logging tool",
@@ -373,67 +244,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "borehole PROD test",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholePurgingUntilAnalyteStabilisation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "borehole purging until analyte stabilisation",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "borehole WFT test",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "bottle incubation",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "bottle incubation",
@@ -448,67 +259,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationDark",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "bottle incubation dark",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationLight",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "bottle incubation light",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/cableToolDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "cable tool drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "camera",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "camera",
@@ -524,15 +275,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "chamber incubation",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "chamber incubation",
@@ -547,203 +289,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationDark",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "chamber incubation dark",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationLight",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "chamber incubation light",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreAir",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core air",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreBox",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core box",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCatcher",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core catcher",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreConventional",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core conventional",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCutter",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core cutter",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDiamond",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core diamond",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGeoprobe",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core geoprobe",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGravity",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core gravity",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core incubation dark",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "core incubation dark",
@@ -759,15 +305,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core incubation light",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "core incubation light",
@@ -782,135 +319,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreKasten",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core Kasten",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreMackereth",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core Mackereth",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePiston",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core piston",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePush",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core push",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreRov",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core ROV",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSonic",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core sonic",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSpike",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core spike",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core Veihmeyer tube",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "core Veihmeyer tube",
@@ -925,33 +334,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVibro",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "core vibro",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "crushing",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "crushing",
@@ -967,15 +350,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "current meter",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "current meter",
@@ -990,135 +364,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterStillPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "diver-operated underwater still photograph",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterVideo",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "diver-operated underwater video",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "dredge",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeBenthic",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "dredge benthic",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeChainBag",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "dredge chain bag",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeDiamantina",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "dredge diamantina",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgePipe",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "dredge pipe",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "drilling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "drilling",
@@ -1133,33 +379,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "epibenthic sled",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "field mapping survey",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "field mapping survey",
@@ -1175,15 +395,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "filtered dust collector",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "filtered dust collector",
@@ -1199,15 +410,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "filtration",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "filtration",
@@ -1223,15 +425,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "gas sampling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "gas sampling",
@@ -1246,118 +439,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grab",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabEckman",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grab Eckman",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabROV",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grab ROV",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabShipek",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grab Shipek",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabSmithMcintyre",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grab Smith Mcintyre",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabVanVeen",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grab Van Veen",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "grainsize separation",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "grainsize separation",
@@ -1372,50 +454,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/handheldPortableDevice",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "handheld portable device - field observation",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "liquid-gas separation",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "marine survey",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "marine survey",
@@ -1431,15 +470,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "marine survey sampling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "marine survey sampling",
@@ -1455,15 +485,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "mine sampling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "mine sampling",
@@ -1479,15 +500,6 @@
   },
   {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "mineral separation",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "mineral separation",
@@ -1502,288 +514,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/niskinBottle",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "Niskin Bottle",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/outcropSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "outcrop sampling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/passiveWaterSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "passive water sampling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "percussion drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pitOrTrenchSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pit or trench sampling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/plantobenthicSampler",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "plantobenthic sampler",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingCentrifugal",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pore fluid sampling - centrifugal",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingSqueezing",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pore fluid sampling - squeezing",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pumping",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pumping - high flow",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingLowFlow",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "pumping - low flow",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/purgingOfThreeCaseVolumes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "purging of three case volumes",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rainGauge",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "rain gauge",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/reverseCirculationDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "reverse circulation drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "rotary drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryHammerDrilling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "rotary hammer drilling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sediment trap",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "sediment trap",
@@ -1798,67 +529,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sidewall core",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreBullet",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sidewall core, bullet",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreMechanical",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sidewall core, mechanical",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "sonde",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "sonde",
@@ -1873,67 +544,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterStillPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "stereo towed underwater still photograph",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterVideo",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "stereo towed underwater video",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "still photography",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "surface material sampling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "surface material sampling",
@@ -1948,186 +559,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterStillPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "towed underwater still photograph",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterVideo",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "towed underwater video",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/undergroundMineSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "undergound mine sampling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater camera",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater still photograph",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyAUV",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater still photograph AUV",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyROV",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater still photograph ROV",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater video",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoAUV",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater video AUV",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoROV",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "underwater video ROV",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "unknown",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "unknown",
@@ -2142,50 +574,7 @@
     ]
   },
   {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "video photography",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"
-      }
-    ]
-  },
-  {
-    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "water grab sampling",
-        "@language": "en"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
-      }
-    ]
-  },
-  {
     "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@value": "water sampling",
-        "@language": "en"
-      }
-    ],
     "https://prez.dev/label": [
       {
         "@value": "water sampling",

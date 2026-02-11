@@ -1,0 +1,852 @@
+[
+  {
+    "@id": "_:n3-6",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "An application for a licence, permit, or authority that has not been assessed or granted (GGIC); An application has been submitted and an outcome is pending (QLD); Application under consideration by the Department (SA)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Application",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "GGIC, QLD, NT, SA, VIC",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "1",
+        "@type": "http://resource.geoscience.gov.au/classifier/ggic/LocalHierarchyKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-pending"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-payment-confirmation"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application-issued"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate_of-public-notice-issued"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/competing-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/exploration-permit-proposal"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/for-grant"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/mining-permit-status"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current-unfinalised"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/on-hold-oil-shale-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/preferred-tenderer"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/priority-applicant"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proceed-with-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposal-accepted"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposed"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ranked"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/secondary-application"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/submitted"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/tribunal-recommendation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:application"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An application for a licence, permit, or authority that has not been assessed or granted (GGIC); An application has been submitted and an outcome is pending (QLD); Application under consideration by the Department (SA)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-pending",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:application-pending"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:application-pending"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Application Pending",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-payment-confirmation",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:awaiting-payment-confirmation"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:awaiting-payment-confirmation"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Awaiting payment confirmation",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:certificate-of-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:certificate-of-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Certificate of Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application-issued",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:certificate-of-application-issued"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:certificate-of-application-issued"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Certificate of Application issued",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate_of-public-notice-issued",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:certificate_of-public-notice-issued"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:certificate_of-public-notice-issued"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Certificate of Public Notice issued",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/competing-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:competing-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:competing-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Competing Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/exploration-permit-proposal",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:exploration-permit-proposal"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:exploration-permit-proposal"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Exploration Permit Proposal",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/for-grant",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:for-grant"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:for-grant"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "For Grant",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/mining-permit-status",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:mining-permit-status"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:mining-permit-status"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Mining Permit Status",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current-unfinalised",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:non-current-unfinalised"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:non-current-unfinalised"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Non-current unfinalised",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The Resource Authority is non-current but still has outstanding issues to be completed (e.g., rent and reports). (QLD)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/on-hold-oil-shale-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:on-hold-oil-shale-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:on-hold-oil-shale-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "On-hold Oil Shale Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:pending-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:pending-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Pending Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/preferred-tenderer",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:preferred-tenderer"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:preferred-tenderer"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Preferred Tenderer",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:prelodgement"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:prelodgement"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Prelodgement",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The application has been started in MyMinesOnline, but has not yet been lodged. (QLD)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/priority-applicant",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:priority-applicant"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:priority-applicant"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Priority Applicant",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proceed-with-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:proceed-with-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:proceed-with-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Proceed with Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposal-accepted",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:proposal-accepted"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:proposal-accepted"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Proposal accepted",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposed",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:proposed"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:proposed"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Proposed",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ranked",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ranked"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:ranked"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Ranked",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:replacement-permit-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:replacement-permit-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Replacement Permit Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/secondary-application",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:secondary-application"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:secondary-application"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Secondary Application",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/submitted",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:submitted"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:submitted"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Submitted",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An application has been started in MyMinesOnline, but has not yet been lodged. (QLD)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/tribunal-recommendation",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:tribunal-recommendation"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:tribunal-recommendation"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Tribunal Recommendation",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:petroleum-tenement-status"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Petroleum Tenement Status",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://vocabs.ga.gov.au/catalogue/ggic-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:ggic-vocabs"
+      }
+    ]
+  }
+]

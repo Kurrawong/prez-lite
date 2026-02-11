@@ -4,6 +4,14 @@
 
 ---
 
+## 📦 Archived: Sprint 7 - Export Cleanup & Share Page Fixes
+
+**Archived Date:** 2026-02-10
+**Status:** ✅ Complete — 4 tasks (trim exports, format preview, literal formatting, download links)
+**See:** `sprints.md` for full details
+
+---
+
 ## 📦 Archived: Sprint 6 - Labels, Data Types & Concept Sharing
 
 **Archived Date:** 2026-02-10
