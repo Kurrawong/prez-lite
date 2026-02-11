@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getLabel } from '~/composables/useVocabData'
 import type { ChangeSummary } from '~/composables/useEditMode'
+import { useDraggable } from '@vueuse/core'
 
 const route = useRoute()
 const router = useRouter()
@@ -379,16 +380,22 @@ const hasExpandableNodes = computed(() => {
 // Whether tree is in edit mode (show pencil icons on nodes)
 const treeEditMode = computed(() => editView.value !== 'none' && !!editMode?.isEditMode.value)
 
-// Edit panel positioning — align with breadcrumb, below the header
+// Edit panel positioning — draggable, initial position aligned with breadcrumb
 const breadcrumbRef = useTemplateRef<HTMLElement>('breadcrumbRef')
-const editPanelTop = ref(96) // fallback: header(64) + padding(32)
+const editPanelRef = useTemplateRef<HTMLElement>('editPanelRef')
+const editPanelHandleRef = useTemplateRef<HTMLElement>('editPanelHandleRef')
+
+const { position: editPanelPos, style: editPanelStyle } = useDraggable(editPanelRef, {
+  handle: editPanelHandleRef,
+  initialValue: { x: 0, y: 96 },
+})
+
 onMounted(() => {
   nextTick(() => {
     const el = (breadcrumbRef.value as any)?.$el ?? breadcrumbRef.value
-    if (el) {
-      // Fixed position top = element's document offset (viewport top when not scrolled)
-      editPanelTop.value = el.getBoundingClientRect().top + window.scrollY
-    }
+    const y = el ? el.getBoundingClientRect().top : 96
+    const x = window.innerWidth - 280 - 24 // right-6 (24px) with 280px width
+    editPanelPos.value = { x, y }
   })
 })
 
@@ -519,11 +526,12 @@ function copyIriToClipboard(iri: string) {
       <Teleport to="body">
         <div
           v-if="editorAvailable && editView !== 'none' && editMode"
-          class="fixed right-6 z-50 bg-elevated border border-default rounded-lg shadow-lg w-[280px] flex flex-col"
-          :style="{ top: `${editPanelTop}px` }"
+          ref="editPanelRef"
+          class="fixed z-50 bg-elevated border border-default rounded-lg shadow-lg w-[280px] flex flex-col"
+          :style="editPanelStyle"
         >
-          <!-- Panel header -->
-          <div class="flex items-center justify-between px-3 py-2.5">
+          <!-- Panel header (drag handle) -->
+          <div ref="editPanelHandleRef" class="flex items-center justify-between px-3 py-2.5 cursor-grab active:cursor-grabbing select-none">
             <div class="flex items-center gap-2 text-sm font-medium">
               <UIcon
                 :name="editView === 'full' ? 'i-heroicons-pencil-square' : 'i-heroicons-cursor-arrow-rays'"

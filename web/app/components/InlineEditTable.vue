@@ -93,12 +93,11 @@ function confirmDelete() {
   emit('delete')
 }
 
-// Close editing when clicking outside
-function handleClickOutside(event: MouseEvent) {
-  const target = event.target as HTMLElement
-  if (!target.closest('[data-inline-edit-row]')) {
-    stopEditing()
-  }
+// Close editing when clicking outside this component.
+// Internal clicks are stopped by @click.stop on the root <div>, so
+// this listener only fires for clicks truly outside the component.
+function handleClickOutside() {
+  stopEditing()
 }
 
 onMounted(() => {
@@ -111,7 +110,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div @click.stop>
     <!-- Subject IRI -->
     <div class="text-sm text-muted font-mono break-all bg-muted/30 px-3 py-2 rounded mb-3">
       {{ subjectIri }}

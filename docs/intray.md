@@ -1,4 +1,6 @@
 
+Issue: when the application is deployed on aws, it is lacking proper handling of spa routes. e.g. when you reload a page with a path, it doesn't properly handle the route that has been reloaded, just shows the root
+
 Issue: blank nodes don't allow you to edit children. Just shows the blank node ids. Add an example vocab that demonstrates the issue, using qualified attribution / agent.
 
 Here's an example of a vocpub validator
