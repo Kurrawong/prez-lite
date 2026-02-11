@@ -11,8 +11,8 @@
  *   node generate-vocablist.js --sourceDir <vocabs/> --output <catalog.ttl> [options]
  */
 
-import { readdir, readFile, writeFile } from 'fs/promises';
-import { join, isAbsolute, basename, resolve } from 'path';
+import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
+import { join, dirname, isAbsolute, basename, resolve } from 'path';
 import { Parser, Store, Writer, DataFactory } from 'n3';
 
 const { namedNode, literal, quad } = DataFactory;
@@ -51,9 +51,9 @@ function parseArgs() {
   const config = {
     sourceDir: null,
     output: null,
-    catalogIri: 'https://linked.data.gov.au/catalogue/gswa-vocabs',
-    catalogName: 'GSWA Vocabularies',
-    catalogDescription: 'Geological Survey of Western Australia\'s vocabularies of controlled terms.',
+    catalogIri: 'https://example.org/catalogue/vocabularies',
+    catalogName: 'Vocabularies',
+    catalogDescription: 'Published vocabularies.',
     pattern: '*.ttl',
   };
 
@@ -69,16 +69,16 @@ Usage:
 Options:
   --sourceDir <path>        Directory containing vocabulary TTL files (required)
   --output <path>           Output catalog TTL file path (required)
-  --catalogIri <iri>        Catalog IRI (default: https://linked.data.gov.au/catalogue/gswa-vocabs)
-  --catalogName <name>      Catalog name (default: GSWA Vocabularies)
+  --catalogIri <iri>        Catalog IRI (default: https://example.org/catalogue/vocabularies)
+  --catalogName <name>      Catalog name (default: Vocabularies)
   --catalogDescription <d>  Catalog description
   --pattern <glob>          File pattern to match (default: *.ttl)
   --help, -h                Show this help message
 
 Example:
   node generate-vocablist.js \\
-    --sourceDir web/public/data/vocabs \\
-    --output web/public/data/vocablist-source-catalog.ttl
+    --sourceDir data/vocabs \\
+    --output .cache/catalog.ttl
 `);
       process.exit(0);
     } else if (arg === '--sourceDir' && args[i + 1]) {
@@ -253,6 +253,7 @@ async function main() {
     });
   });
 
+  await mkdir(dirname(config.output), { recursive: true });
   await writeFile(config.output, output, 'utf-8');
   console.log(`\nWrote catalog to ${config.output}`);
 }

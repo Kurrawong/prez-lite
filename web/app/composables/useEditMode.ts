@@ -27,12 +27,19 @@ const { namedNode, literal, defaultGraph } = DataFactory
 // Types
 // ============================================================================
 
+export interface EditableNestedProperty {
+  predicate: string
+  label: string
+  values: EditableValue[]
+}
+
 export interface EditableValue {
   id: string
-  type: 'literal' | 'iri'
+  type: 'literal' | 'iri' | 'blank-node'
   value: string
   language?: string
   datatype?: string
+  nestedProperties?: EditableNestedProperty[]
 }
 
 export interface EditableProperty {
@@ -224,7 +231,7 @@ export function useEditMode(
       // Load profile config
       if (!profileConfig.value) {
         try {
-          const resp = await fetch('/export/_system/profile.json')
+          const resp = await fetch('/export/system/profile.json')
           profileConfig.value = await resp.json()
         } catch {
           // Non-fatal: forms still work without ordering
@@ -278,9 +285,9 @@ export function useEditMode(
     const seen = new Set<string>()
 
     for (const po of propertyOrder) {
-      // Skip nested property orders (prov:qualifiedAttribution) — shown readonly
+      // Nested property orders (e.g. prov:qualifiedAttribution) — extract blank node children, shown readonly
       if (po.propertyOrder) {
-        const values = quadValuesForPredicate(iri, po.path)
+        const values = quadValuesForPredicate(iri, po.path, po.propertyOrder)
         if (values.length > 0) {
           result.push({
             predicate: po.path,
@@ -332,10 +339,23 @@ export function useEditMode(
     return result
   }
 
-  function quadValuesForPredicate(subjectIri: string, predicateIri: string): EditableValue[] {
+  function quadValuesForPredicate(
+    subjectIri: string,
+    predicateIri: string,
+    nestedOrder?: ProfilePropertyOrder[],
+  ): EditableValue[] {
     if (!store.value) return []
     return (store.value.getQuads(subjectIri, predicateIri, null, null) as Quad[]).map((q: Quad) => {
       const obj = q.object
+      if (obj.termType === 'BlankNode') {
+        const nestedQuads = store.value!.getQuads(obj, null, null, null) as Quad[]
+        return {
+          id: nextValueId(),
+          type: 'blank-node' as const,
+          value: obj.value,
+          nestedProperties: extractBlankNodeProperties(nestedQuads, nestedOrder),
+        }
+      }
       if (obj.termType === 'Literal') {
         return {
           id: nextValueId(),
@@ -351,6 +371,67 @@ export function useEditMode(
         value: obj.value,
       }
     })
+  }
+
+  function extractBlankNodeProperties(
+    quads: Quad[],
+    nestedOrder?: ProfilePropertyOrder[],
+  ): EditableNestedProperty[] {
+    // Group quads by predicate
+    const grouped = new Map<string, Quad[]>()
+    for (const q of quads) {
+      const pred = q.predicate.value
+      if (!grouped.has(pred)) grouped.set(pred, [])
+      grouped.get(pred)!.push(q)
+    }
+
+    const result: EditableNestedProperty[] = []
+    const seen = new Set<string>()
+
+    // Add in profile order first
+    if (nestedOrder) {
+      for (const po of nestedOrder) {
+        const predQuads = grouped.get(po.path)
+        if (predQuads) {
+          result.push({
+            predicate: po.path,
+            label: getPredicateLabel(po.path),
+            values: predQuads.map(quadToEditableValue),
+          })
+        }
+        seen.add(po.path)
+      }
+    }
+
+    // Add remaining predicates
+    for (const [pred, predQuads] of grouped) {
+      if (seen.has(pred)) continue
+      result.push({
+        predicate: pred,
+        label: getPredicateLabel(pred),
+        values: predQuads.map(quadToEditableValue),
+      })
+    }
+
+    return result
+  }
+
+  function quadToEditableValue(q: Quad): EditableValue {
+    const obj = q.object
+    if (obj.termType === 'Literal') {
+      return {
+        id: nextValueId(),
+        type: 'literal' as const,
+        value: obj.value,
+        language: (obj as any).language || undefined,
+        datatype: (obj as any).datatype?.value || undefined,
+      }
+    }
+    return {
+      id: nextValueId(),
+      type: 'iri' as const,
+      value: obj.value,
+    }
   }
 
   // ---- Mutations ----

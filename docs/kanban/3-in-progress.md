@@ -4,4 +4,4 @@
 
 ---
 
-*No items in progress*
+*No tasks in progress*

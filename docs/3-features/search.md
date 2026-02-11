@@ -72,8 +72,8 @@ prez-lite provides client-side full-text search using [Orama](https://orama.com/
 
 | File | Purpose |
 |------|---------|
-| `_system/search/orama-index.json` | Pre-built Orama index (~30KB) |
-| `_system/vocabularies/index.json` | Fallback for index generation |
+| `system/search/orama-index.json` | Pre-built Orama index (~30KB) |
+| `system/vocabularies/index.json` | Fallback for index generation |
 
 ---
 
@@ -183,6 +183,6 @@ For very large vocabularies (100k+), consider chunked loading or server-side sea
 
 The search index is generated at build time by:
 1. `packages/data-processing/scripts/generate-search-index.js`
-2. Output to `web/public/export/_system/search/`
+2. Output to `web/public/export/system/search/`
 
 To customize indexed fields, modify the search index generation script.

@@ -92,14 +92,14 @@ jobs:
 
       - name: Process vocabularies
         run: |
-          ARGS="--sourceDir public/data/vocabs --outputBase public/export --pattern *.ttl"
+          ARGS="--sourceDir data/vocabs --outputBase public/export/vocabs --systemDir public/export/system --pattern *.ttl"
 
-          if [ -f "public/data/profiles.ttl" ]; then
-            ARGS="$ARGS --profiles public/data/profiles.ttl"
+          if [ -f "data/config/profiles.ttl" ]; then
+            ARGS="$ARGS --profiles data/config/profiles.ttl"
           fi
 
-          if [ -d "public/data/background" ]; then
-            ARGS="$ARGS --backgroundDir public/data/background"
+          if [ -d "data/background" ]; then
+            ARGS="$ARGS --backgroundDir data/background"
           fi
 
           node .prez-lite-cache/data-processing/scripts/process-vocab.js $ARGS
@@ -107,27 +107,27 @@ jobs:
 
       - name: Generate system metadata
         run: |
-          mkdir -p public/export/_system/vocabularies public/export/_system/search
+          mkdir -p public/export/system/vocabularies public/export/system/search
 
           # Vocabulary metadata index
-          ARGS="--sourceDir public/data/vocabs --output public/export/_system/vocabularies/index.json"
-          if [ -d "public/data/background" ]; then
-            ARGS="$ARGS --backgroundDir public/data/background"
+          ARGS="--sourceDir data/vocabs --output public/export/system/vocabularies/index.json"
+          if [ -d "data/background" ]; then
+            ARGS="$ARGS --backgroundDir data/background"
           fi
           node .prez-lite-cache/data-processing/scripts/generate-vocab-metadata.js $ARGS || echo "⚠ Vocab metadata generation skipped"
 
           # Labels (only if background dir has TTL files)
-          if ls public/data/background/*.ttl >/dev/null 2>&1; then
+          if ls data/background/*.ttl >/dev/null 2>&1; then
             node .prez-lite-cache/data-processing/scripts/generate-labels.js \
-              --backgroundDir public/data/background \
-              --output public/export/_system/labels.json || echo "⚠ Labels generation skipped"
+              --backgroundDir data/background \
+              --output public/export/system/labels.json || echo "⚠ Labels generation skipped"
           fi
 
           # Search index
           node .prez-lite-cache/data-processing/scripts/generate-search-index.js \
             --exportDir public/export \
-            --output public/export/_system/search \
-            --vocabMetadata public/export/_system/vocabularies/index.json || echo "⚠ Search index generation skipped"
+            --output public/export/system/search \
+            --vocabMetadata public/export/system/vocabularies/index.json || echo "⚠ Search index generation skipped"
 
           echo "✓ System metadata generated"
 

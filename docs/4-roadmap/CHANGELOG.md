@@ -8,6 +8,24 @@ updated: 2025-02-08
 
 > Version history and completed features.
 
+## 2026-02-11
+
+### Infrastructure & Data Hygiene
+- Moved source data from `web/public/data/` to top-level `/data/`
+- Restructured exports: `export/_system/` → `export/system/`, vocabs under `export/vocabs/`
+- Added `--systemDir` CLI parameter to `process-vocab.js`
+- Made `catalog.ttl` a transient build artifact in `.cache/` with generic defaults
+- Moved `profiles.ttl` to `data/config/profiles.ttl`
+- Fixed web component 404 after export restructure
+- Parked search config as future TTL-based configuration idea
+- CloudFront Function for AWS SPA URL rewriting
+- Extracted header/footer into overridable `SiteHeader.vue`/`SiteFooter.vue`
+- Added reusable `build-site.yml` workflow for gh-template repos
+- Added release-please for automated versioning
+- Added commitlint CI check for PR titles
+
+---
+
 ## 2026-02-10
 
 ### Authoring — GitHub OAuth & Inline Editing

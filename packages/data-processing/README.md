@@ -138,7 +138,7 @@ Process all vocabularies in a directory:
 node scripts/process-vocab.js \
   --profiles profiles/profiles.ttl \
   --sourceDir vocabs/ \
-  --outputBase public/data/ \
+  --outputBase export/ \
   --pattern "*-source-input.ttl" \
   --backgroundDir background/
 ```
@@ -146,7 +146,7 @@ node scripts/process-vocab.js \
 This will:
 1. Find all files matching the pattern in `vocabs/`
 2. Determine the type (vocab/concept/catalog) from the filename
-3. Create a subdirectory in `public/data/` for each vocab
+3. Create a subdirectory in `export/` for each vocab
 4. Generate all configured output formats
 
 ### npm Scripts
@@ -205,7 +205,7 @@ jobs:
         with:
           source-dir: vocabs/
           profiles: profiles/org-profile.ttl
-          output-dir: public/data/
+          output-dir: export/
           background-dir: background/
       
       # Or process a single file
@@ -213,7 +213,7 @@ jobs:
         with:
           source-file: vocabs/my-vocab-source-input.ttl
           profiles: profiles/org-profile.ttl
-          output-dir: public/data/my-vocab/
+          output-dir: export/my-vocab/
           type: vocab
       
       # Commit generated files
@@ -221,7 +221,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add public/data/
+          git add export/
           git commit -m "chore: regenerate vocab exports" || exit 0
           git push
 ```

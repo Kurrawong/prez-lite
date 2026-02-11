@@ -43,10 +43,11 @@ const PREZ_LITE_BRANCH = process.env.PREZ_LITE_BRANCH || 'main'
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 
 // Paths in the template project
-const SOURCE_DIR = join(ROOT_DIR, 'public', 'data', 'vocabs')
-const PROFILES_FILE = join(ROOT_DIR, 'public', 'data', 'profiles.ttl')
-const OUTPUT_DIR = join(ROOT_DIR, 'public', 'export')
-const BACKGROUND_DIR = join(ROOT_DIR, 'public', 'data', 'background')
+const SOURCE_DIR = join(ROOT_DIR, 'data', 'vocabs')
+const PROFILES_FILE = join(ROOT_DIR, 'data', 'config', 'profiles.ttl')
+const EXPORT_DIR = join(ROOT_DIR, 'public', 'export')
+const OUTPUT_DIR = join(EXPORT_DIR, 'vocabs')
+const BACKGROUND_DIR = join(ROOT_DIR, 'data', 'background')
 
 async function main() {
   console.log('🔧 prez-lite Vocabulary Processor')
@@ -156,7 +157,7 @@ async function processVocabularies() {
   // Check source directory exists
   if (!existsSync(SOURCE_DIR)) {
     console.error(`❌ Source directory not found: ${SOURCE_DIR}`)
-    console.error('   Create public/data/vocabs/ and add your .ttl files')
+    console.error('   Create data/vocabs/ and add your .ttl files')
     process.exit(1)
   }
 
@@ -170,6 +171,7 @@ async function processVocabularies() {
     processScript,
     '--sourceDir', SOURCE_DIR,
     '--outputBase', OUTPUT_DIR,
+    '--systemDir', join(EXPORT_DIR, 'system'),
     '--pattern', '*.ttl'
   ]
 
@@ -213,7 +215,7 @@ async function processVocabularies() {
 async function generateSystemFiles() {
   console.log('📊 Generating system metadata files...')
 
-  const SYSTEM_DIR = join(OUTPUT_DIR, '_system')
+  const SYSTEM_DIR = join(EXPORT_DIR, 'system')
   const VOCABULARIES_DIR = join(SYSTEM_DIR, 'vocabularies')
 
   // Create system directories
@@ -253,7 +255,7 @@ async function generateSystemFiles() {
   const searchDir = join(SYSTEM_DIR, 'search')
 
   try {
-    execSync(`node "${searchScript}" --exportDir "${OUTPUT_DIR}" --output "${searchDir}" --vocabMetadata "${join(VOCABULARIES_DIR, 'index.json')}"`, {
+    execSync(`node "${searchScript}" --exportDir "${EXPORT_DIR}" --output "${searchDir}" --vocabMetadata "${join(VOCABULARIES_DIR, 'index.json')}"`, {
       stdio: 'pipe',
       cwd: ROOT_DIR
     })

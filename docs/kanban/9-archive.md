@@ -4,6 +4,14 @@
 
 ---
 
+## 📦 Archived: Sprint 8 - GitHub OAuth & Inline Editing
+
+**Archived Date:** 2026-02-11
+**Status:** ✅ Complete — 1 task (GitHub OAuth flow with inline Monaco editor for TTL editing)
+**See:** `sprints.md` for full details
+
+---
+
 ## 📦 Archived: Sprint 7 - Export Cleanup & Share Page Fixes
 
 **Archived Date:** 2026-02-10

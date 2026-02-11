@@ -97,7 +97,24 @@ function formatIri(iri: string): string {
         <!-- readonly -->
         <template v-if="prop.fieldType === 'readonly'">
           <div v-for="val in prop.values" :key="val.id" class="text-sm text-muted py-1">
-            <template v-if="val.type === 'iri'">
+            <!-- Blank node: show nested properties -->
+            <template v-if="val.type === 'blank-node' && val.nestedProperties?.length">
+              <div class="bg-muted/30 rounded-lg px-3 py-2 space-y-1">
+                <div v-for="nested in val.nestedProperties" :key="nested.predicate" class="flex items-start gap-2">
+                  <span class="font-medium text-xs w-20 shrink-0">{{ nested.label }}</span>
+                  <span class="text-xs">
+                    <template v-for="(nv, nidx) in nested.values" :key="nv.id">
+                      <a v-if="nv.type === 'iri'" :href="nv.value" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
+                        {{ formatIri(nv.value) }}
+                      </a>
+                      <span v-else>{{ nv.value }}</span>
+                      <span v-if="nidx < nested.values.length - 1">, </span>
+                    </template>
+                  </span>
+                </div>
+              </div>
+            </template>
+            <template v-else-if="val.type === 'iri'">
               <span class="font-mono text-xs">{{ formatIri(val.value) }}</span>
             </template>
             <template v-else>

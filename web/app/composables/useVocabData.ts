@@ -1,13 +1,13 @@
 /**
  * Vocabulary data loading utilities
- * Fetches pre-generated JSON from /export/_system/
+ * Fetches pre-generated JSON from /export/system/
  */
 
 export interface LangMap {
   [lang: string]: string | string[]
 }
 
-// New format from _system/vocabularies/index.json
+// New format from system/vocabularies/index.json
 export interface VocabMetadata {
   iri: string
   slug: string
@@ -183,10 +183,10 @@ export async function fetchVocabMetadata(): Promise<VocabMetadata[]> {
 
   cachedVocabMetadataPromise = (async () => {
     try {
-      const data = await $fetch<{ vocabularies: VocabMetadata[] }>('/export/_system/vocabularies/index.json')
+      const data = await $fetch<{ vocabularies: VocabMetadata[] }>('/export/system/vocabularies/index.json')
       cachedVocabMetadata = Array.isArray(data?.vocabularies) ? data.vocabularies : []
     } catch (err) {
-      console.warn('[prez-lite] No vocabulary metadata found at /export/_system/vocabularies/index.json')
+      console.warn('[prez-lite] No vocabulary metadata found at /export/system/vocabularies/index.json')
       cachedVocabMetadata = []
     }
     return cachedVocabMetadata
@@ -207,20 +207,8 @@ export async function fetchSchemes(): Promise<Scheme[]> {
       return cachedSchemes
     }
 
-    // Fall back to legacy format
-    try {
-      const data = await $fetch<{ schemes: Scheme[] }>('/data/schemes.json')
-      cachedSchemes = Array.isArray(data?.schemes) ? data.schemes : []
-    } catch {
-      try {
-        console.info('[prez-lite] No org data found, using sample data.')
-        const data = await $fetch<{ schemes: Scheme[] }>('/data-sample/schemes.json')
-        cachedSchemes = Array.isArray(data?.schemes) ? data.schemes : []
-      } catch {
-        console.warn('[prez-lite] No schemes found.')
-        cachedSchemes = []
-      }
-    }
+    console.warn('[prez-lite] No schemes found.')
+    cachedSchemes = []
     return cachedSchemes
   })()
 
@@ -243,12 +231,12 @@ export async function fetchListConcepts(slug: string): Promise<ListConcept[]> {
     let result: ListConcept[]
     try {
       // Try new -concepts.json format first
-      const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/${slug}/${slug}-concepts.json`)
+      const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/vocabs/${slug}/${slug}-concepts.json`)
       result = data?.['@graph'] || []
     } catch {
       // Fall back to legacy -list.json format
       try {
-        const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/${slug}/${slug}-list.json`)
+        const data = await $fetch<{ '@graph': ListConcept[] }>(`/export/vocabs/${slug}/${slug}-list.json`)
         result = data?.['@graph'] || []
       } catch {
         result = []
@@ -283,57 +271,24 @@ export async function fetchConcepts(schemeIri: string): Promise<Concept[]> {
     }))
   }
 
-  // Fall back to legacy NDJSON format
-  const slug = schemeIri
-    .replace(/^https?:\/\//, '')
-    .replace(/[^a-zA-Z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .toLowerCase()
-    .substring(0, 100)
-
-  try {
-    const response = await $fetch<string>(`/data/concepts/${slug}.ndjson`, {
-      responseType: 'text'
-    })
-    return response
-      .split('\n')
-      .filter(line => line.trim())
-      .map(line => JSON.parse(line) as Concept)
-  } catch {
-    return []
-  }
+  return []
 }
 
-// Fetch search index (new format from _system/search/)
+// Fetch search index (new format from system/search/)
 export async function fetchSearchIndex(): Promise<SearchEntry[]> {
   try {
-    const data = await $fetch<{ concepts: SearchEntry[] }>('/export/_system/search/index.json')
+    const data = await $fetch<{ concepts: SearchEntry[] }>('/export/system/search/index.json')
     return data?.concepts || []
   } catch {
-    // Fall back to legacy format
-    try {
-      const data = await $fetch<SearchEntry[] | { concepts: SearchEntry[] }>('/data/search-index.json')
-      if (Array.isArray(data)) return data
-      if (data && 'concepts' in data) return data.concepts
-      return []
-    } catch {
-      try {
-        const data = await $fetch<SearchEntry[] | { concepts: SearchEntry[] }>('/data-sample/search-index.json')
-        if (Array.isArray(data)) return data
-        if (data && 'concepts' in data) return data.concepts
-        return []
-      } catch {
-        console.warn('[prez-lite] No search index found.')
-        return []
-      }
-    }
+    console.warn('[prez-lite] No search index found.')
+    return []
   }
 }
 
 // Fetch pre-computed search facets
 export async function fetchSearchFacets(): Promise<SearchFacets | null> {
   try {
-    return await $fetch<SearchFacets>('/export/_system/search/facets.json')
+    return await $fetch<SearchFacets>('/export/system/search/facets.json')
   } catch {
     return null
   }
@@ -346,13 +301,9 @@ export async function fetchLabels(): Promise<LabelsIndex> {
 
   cachedLabelsPromise = (async () => {
     try {
-      cachedLabels = await $fetch<LabelsIndex>('/export/_system/labels.json')
+      cachedLabels = await $fetch<LabelsIndex>('/export/system/labels.json')
     } catch {
-      try {
-        cachedLabels = await $fetch<LabelsIndex>('/data/labels.json')
-      } catch {
-        cachedLabels = {}
-      }
+      cachedLabels = {}
     }
     return cachedLabels
   })()
@@ -363,7 +314,7 @@ export async function fetchLabels(): Promise<LabelsIndex> {
 // Fetch collections
 export async function fetchCollections(): Promise<Collection[]> {
   try {
-    const data = await $fetch<{ collections: Collection[] }>('/data/collections.json')
+    const data = await $fetch<{ collections: Collection[] }>('/export/system/collections.json')
     return data.collections
   } catch {
     return []

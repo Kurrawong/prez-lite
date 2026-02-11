@@ -307,7 +307,7 @@ let cachedProfile: ProfileJsonConfig | undefined
 async function fetchProfile(): Promise<ProfileJsonConfig | undefined> {
   if (cachedProfile) return cachedProfile
   try {
-    cachedProfile = await $fetch<ProfileJsonConfig>('/export/_system/profile.json')
+    cachedProfile = await $fetch<ProfileJsonConfig>('/export/system/profile.json')
     return cachedProfile
   } catch {
     return undefined
@@ -324,7 +324,7 @@ export async function fetchAnnotatedProperties(
   try {
     // Fetch annotated JSON-LD and profile in parallel
     const [data, profile] = await Promise.all([
-      $fetch<JsonLdNode[]>(`/export/${slug}/${slug}-anot+ld+json.json`),
+      $fetch<JsonLdNode[]>(`/export/vocabs/${slug}/${slug}-anot+ld+json.json`),
       fetchProfile()
     ])
 
@@ -388,7 +388,7 @@ function conceptPrefix(conceptId: string): string {
 
 /**
  * Fetch and parse annotated JSON-LD for a specific concept
- * Expects file at: /export/{slug}/concepts/{prefix}/{concept-id}-anot+ld+json.json
+ * Expects file at: /export/vocabs/{slug}/concepts/{prefix}/{concept-id}-anot+ld+json.json
  */
 export async function fetchConceptAnnotatedProperties(
   slug: string,
@@ -400,7 +400,7 @@ export async function fetchConceptAnnotatedProperties(
 
     // Fetch concept's annotated JSON-LD and profile in parallel
     const [data, profile] = await Promise.all([
-      $fetch<JsonLdNode[]>(`/export/${slug}/concepts/${prefix}/${conceptId}-anot+ld+json.json`),
+      $fetch<JsonLdNode[]>(`/export/vocabs/${slug}/concepts/${prefix}/${conceptId}-anot+ld+json.json`),
       fetchProfile()
     ])
 

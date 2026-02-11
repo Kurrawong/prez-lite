@@ -14,8 +14,8 @@ node_modules/
 dist/
 !packages/web-components/dist/
 
-# Generated data (built from TTL at build time)
-#web/public/data/
+# Generated exports (built from source data at build time)
+#web/public/export/
 
 # IDE
 .idea/

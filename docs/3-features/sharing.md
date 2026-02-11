@@ -43,26 +43,25 @@ Annotated formats include:
 
 ```
 web/public/export/
-├── _system/
+├── system/
 │   ├── vocabularies/
 │   │   └── index.json          # Vocabulary metadata catalog
 │   ├── search/
 │   │   └── orama-index.json    # Pre-built search index
-│   ├── labels.json             # Global label cache (~400KB)
+│   ├── labels.json             # Global label cache
 │   └── profile.json            # Default field ordering
 │
-├── alteration-form/
-│   ├── alteration-form.ttl
-│   ├── alteration-form.ttl     # Annotated variant
-│   ├── alteration-form.jsonld
-│   ├── alteration-form.json
-│   ├── alteration-form.rdf
-│   ├── alteration-form.csv
-│   ├── alteration-form.html
-│   ├── profile.json            # Per-vocab field definitions
-│   └── concepts/               # Per-concept NDJSON files
-│
-└── [38 more vocabularies...]
+└── vocabs/
+    ├── alteration-form/
+    │   ├── alteration-form.ttl
+    │   ├── alteration-form-anot+turtle.ttl   # Annotated variant
+    │   ├── alteration-form-json+ld.json
+    │   ├── alteration-form-rdf.xml
+    │   ├── alteration-form-concepts.csv
+    │   ├── alteration-form-page.html
+    │   └── concepts/               # Per-concept JSON-LD files
+    │
+    └── [more vocabularies...]
 ```
 
 ---
@@ -288,7 +287,7 @@ The share pages include a live preview component that:
 ### Vocabulary Metadata
 
 ```
-GET /export/_system/vocabularies/index.json
+GET /export/system/vocabularies/index.json
 ```
 
 Returns catalog of all vocabularies with metadata.
@@ -296,7 +295,7 @@ Returns catalog of all vocabularies with metadata.
 ### Vocabulary Export
 
 ```
-GET /export/{vocab-slug}/{vocab-slug}.{format}
+GET /export/vocabs/{vocab-slug}/{vocab-slug}.{format}
 ```
 
 Direct access to any export format.
@@ -304,7 +303,7 @@ Direct access to any export format.
 ### Labels Cache
 
 ```
-GET /export/_system/labels.json
+GET /export/system/labels.json
 ```
 
 Global IRI-to-label mappings for display.

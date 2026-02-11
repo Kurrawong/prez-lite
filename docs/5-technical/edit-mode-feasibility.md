@@ -15,9 +15,9 @@ URL: /scheme?uri=<IRI>&concept=<IRI>
          │
          ▼
     useScheme(uri)
-    ├── fetchSchemes()     → /export/_system/vocabularies/index.json
+    ├── fetchSchemes()     → /export/system/vocabularies/index.json
     ├── fetchConcepts()    → /export/{slug}/{slug}-concepts.json
-    └── fetchLabels()      → /export/_system/labels.json
+    └── fetchLabels()      → /export/system/labels.json
          │
          ▼
     Tree Building (computed)

@@ -231,7 +231,31 @@ onUnmounted(() => {
               <!-- READ-ONLY DISPLAY -->
               <div v-else class="select-none" :class="{ 'cursor-pointer': isEditable(prop) }">
                 <template v-if="prop.values.length">
-                  <span class="inline">
+                  <!-- Blank node values: show as nested cards -->
+                  <template v-if="prop.values.some(v => v.type === 'blank-node')">
+                    <div class="space-y-2">
+                      <template v-for="val in prop.values" :key="val.id">
+                        <div v-if="val.type === 'blank-node' && val.nestedProperties?.length" class="bg-muted/30 rounded-lg px-3 py-2 space-y-1">
+                          <div v-for="nested in val.nestedProperties" :key="nested.predicate" class="flex items-start gap-2">
+                            <span class="font-medium text-xs w-20 shrink-0 text-muted">{{ nested.label }}</span>
+                            <span class="text-xs">
+                              <template v-for="(nv, nidx) in nested.values" :key="nv.id">
+                                <a v-if="nv.type === 'iri'" :href="nv.value" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
+                                  {{ formatIri(nv.value) }}
+                                </a>
+                                <span v-else>{{ nv.value }}</span>
+                                <span v-if="nidx < nested.values.length - 1">, </span>
+                              </template>
+                            </span>
+                          </div>
+                        </div>
+                        <span v-else-if="val.type === 'iri'" class="text-primary">{{ formatIri(val.value) }}</span>
+                        <span v-else>{{ val.value }}</span>
+                      </template>
+                    </div>
+                  </template>
+                  <!-- Simple values: inline display -->
+                  <span v-else class="inline">
                     <template v-for="(val, idx) in prop.values" :key="val.id">
                       <span v-if="val.type === 'iri'" class="inline-flex items-center gap-1">
                         <span class="text-primary">{{ formatIri(val.value) }}</span>

@@ -235,6 +235,7 @@ Batch Mode:
   --outputBase <path>    Base output directory (creates subdirs per vocab)
   --profiles <path>      Path to SHACL profiles.ttl file
   --pattern <glob>       File pattern to match (default: *-source-input.ttl)
+  --systemDir <path>     System output directory for profile.json (default: outputBase/../system)
 
 Common Options:
   --backgroundDir <path> Path to background labels directory
@@ -250,7 +251,7 @@ Examples:
   node process-vocab.js --profiles profiles.ttl --source vocab-source-input.ttl --outDir ./output
 
   # Batch mode - process all vocabs in a directory
-  node process-vocab.js --profiles profiles.ttl --sourceDir ./vocabs/ --outputBase ./public/data/
+  node process-vocab.js --profiles profiles.ttl --sourceDir ./vocabs/ --outputBase ./export/vocabs/ --systemDir ./export/system/
 `);
       process.exit(0);
     } else if (arg === '--source' && args[i + 1]) {
@@ -279,6 +280,8 @@ Examples:
       config.catalogIri = args[++i];
     } else if (arg === '--profileIri' && args[i + 1]) {
       config.profileIri = args[++i];
+    } else if (arg === '--systemDir' && args[i + 1]) {
+      config.systemDir = resolveCliPath(args[++i]);
     }
   }
 
@@ -369,8 +372,9 @@ async function processFileWithLoadedProfile(shaclConfig, profileConfig, fieldOrd
  * @param {string} outputBase - Base output directory
  * @param {string} pattern - Glob pattern for matching files
  * @param {string} backgroundDir - Background labels directory
+ * @param {string} [systemDir] - System output directory for profile.json (default: outputBase/../system)
  */
-async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-source-input.ttl', backgroundDir) {
+async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-source-input.ttl', backgroundDir, systemDir) {
   console.log('🔄 Batch Processing Mode');
   console.log(`   Source directory: ${sourceDir}`);
   console.log(`   Output base: ${outputBase}`);
@@ -423,11 +427,11 @@ async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-so
   }
   console.log('');
   
-  // Build and export profile.json ONCE to the _system directory
-  const systemDir = join(outputBase, '_system');
-  await mkdir(systemDir, { recursive: true });
-  console.log(`📄 Exporting profile.json to ${systemDir}/profile.json`);
-  const fieldOrderProfile = await exportProfileJson(shaclConfig, systemDir);
+  // Build and export profile.json ONCE to the system directory
+  const resolvedSystemDir = systemDir || join(outputBase, '..', 'system');
+  await mkdir(resolvedSystemDir, { recursive: true });
+  console.log(`📄 Exporting profile.json to ${resolvedSystemDir}/profile.json`);
+  const fieldOrderProfile = await exportProfileJson(shaclConfig, resolvedSystemDir);
   console.log('');
   
   const results = { processed: 0, errors: [] };
@@ -2751,7 +2755,8 @@ if (config.sourceDir && config.outputBase && config.profilesFile) {
     config.sourceDir,
     config.outputBase,
     config.pattern || '*-source-input.ttl',
-    config.backgroundDir
+    config.backgroundDir,
+    config.systemDir
   ).then(results => {
     if (results.errors.length > 0) {
       process.exit(1);

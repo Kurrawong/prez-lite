@@ -4,6 +4,126 @@
 
 ---
 
+## ✅ Completed Sprint: Sprint 11 - Blank Node Display
+
+**Duration:** 2026-02-11
+**Goal:** Fix blank node rendering in edit mode
+**Status:** ✅ **COMPLETE**
+
+### Sprint Outcomes
+
+**Completed: 1 task (100%)**
+
+1. ✅ **Handle blank nodes in edit mode** (High)
+   - Added `'blank-node'` type to `EditableValue` with nested property extraction
+   - Profile-driven ordering for nested properties (e.g. agent before role)
+   - Structured card rendering in both `ConceptForm.vue` and `InlineEditTable.vue`
+   - Blank nodes remain readonly (editing nested structures is future work)
+
+### Sprint Velocity
+- **Planned:** 1 task
+- **Completed:** 1 task
+- **Success Rate:** 100%
+
+---
+
+## ✅ Completed Sprint: Sprint 10 - Infrastructure & Data Hygiene
+
+**Duration:** 2026-02-11
+**Goal:** Fix AWS SPA routing, restructure source data and exports for cleaner separation
+**Status:** ✅ **COMPLETE** — All items approved
+
+### Sprint Outcomes
+
+**Completed: 6 tasks (100%)**
+
+1. ✅ **Fix SPA route handling on AWS deployment** (High)
+   - CloudFront Function for SSG URL rewriting
+   - Kept as reference code for Terraform integration
+
+2. ✅ **Move source data from web/public/data to top-level /data** (High)
+   - Migrated source TTL data and sample data out of web/public
+   - Updated all build scripts, CI workflows, gh-template paths
+   - Removed legacy `/data/` URL fallbacks
+
+3. ✅ **Restructure export directory layout** (High)
+   - `export/_system/` → `export/system/`, vocab root → `export/vocabs/`
+   - Added `--systemDir` CLI parameter to `process-vocab.js`
+   - Updated all composables, workflows, web components, CORS headers
+
+4. ✅ **Make catalog.ttl a transient build artifact** (Medium)
+   - Renamed from `vocablist-source-catalog.ttl`, generic defaults
+   - Generated to `.cache/` (gitignored) instead of committed source
+
+5. ✅ **Move profiles.ttl to data/config/** (Medium)
+   - Cleaner data directory structure
+   - Left validators and manifest in place intentionally
+
+6. ✅ **Fix web component 404 after export restructure** (Medium)
+   - Updated `base-url.ts` paths and rebuilt bundle
+
+### Sprint Velocity
+- **Planned:** 2 tasks (expanded to 6 during sprint)
+- **Completed:** 6 tasks
+- **Success Rate:** 100%
+
+### Key Achievements
+- Clean separation: source data in `/data/`, exports in `web/public/export/`
+- Export directory organized: `export/vocabs/` + `export/system/`
+- Catalog no longer committed — regenerated fresh on every build
+- Config files in `data/config/` subdirectory
+- All builds pass, web components working
+
+---
+
+## ✅ Completed Sprint: Sprint 9 - Layout Extraction & CI Infrastructure
+
+**Duration:** 2026-02-11
+**Goal:** Make the web app extensible via Nuxt layers and add CI infrastructure for downstream repos
+**Status:** ✅ **COMPLETE** — All items approved
+
+### Sprint Outcomes
+
+**Completed: 5 tasks (100%)**
+
+1. ✅ **Evaluate feasibility of edit mode on existing vocab pages** (High)
+   - Analysis of three data loading strategies for inline editing
+   - Recommended data adapter pattern
+   - Output: `docs/5-technical/edit-mode-feasibility.md`
+
+2. ✅ **Extract header/footer into overridable layout components** (High)
+   - SiteHeader.vue and SiteFooter.vue with slots for layer overrides
+   - useSiteConfig and useNavigation composables
+   - default.vue layout, site config in app.config.ts
+   - app.vue simplified from 110 lines to 7
+
+3. ✅ **Add reusable build-site workflow for gh-template repos** (High)
+   - Callable workflow handling full downstream pipeline
+   - Template deploy.yml reduced from 132 to 20 lines
+   - Includes system metadata generation (missing from old workflow)
+
+4. ✅ **Add release-please for automated versioning** (Medium)
+   - Conventional commit-based release automation
+   - Creates release PRs with CHANGELOG + version bump
+   - Tags created on merge, starting from v0.1.0
+
+5. ✅ **Add commitlint CI check for PR titles** (Medium)
+   - Zero-dependency PR title validation via GitHub Action
+   - Ready for branch protection enforcement
+
+### Sprint Velocity
+- **Planned:** 5 tasks
+- **Completed:** 5 tasks
+- **Success Rate:** 100%
+
+### Key Achievements
+- Web app now extensible via Nuxt layers (gh-templates can override header, footer, layout, branding)
+- Downstream repos use a 20-line workflow instead of 132 lines of inline CI
+- Automated release pipeline ready (conventional commits → release PR → tag)
+- Version pinning via `PREZ_LITE_VERSION` repo variable
+
+---
+
 ## ✅ Completed Sprint: Sprint 8 - GitHub OAuth & Inline Editing
 
 **Duration:** 2026-02-10

@@ -15,9 +15,10 @@ This guide explains how to create and publish SKOS vocabularies in Prez Lite.
 Prez Lite uses a file-based approach to vocabulary publishing. Vocabularies are authored as Turtle (TTL) files and placed in the data directory structure:
 
 ```
-web/public/data/
+data/
 ├── manifest.ttl          # Declares data sources
-├── profiles.ttl          # Prez profile configuration
+├── config/
+│   └── profiles.ttl      # Prez profile configuration
 ├── vocabs/               # Your vocabulary files
 │   └── my-vocabulary.ttl
 └── background/           # Labels for external IRIs
@@ -264,8 +265,8 @@ cs:
 
 ## Workflow Summary
 
-1. **Create vocabulary TTL file** in `web/public/data/vocabs/`
-2. **Add background labels** for any external IRIs in `web/public/data/background/`
+1. **Create vocabulary TTL file** in `data/vocabs/`
+2. **Add background labels** for any external IRIs in `data/background/`
 3. **Update profiles.ttl** if adding new resource types or changing display behavior
 4. **Run the build** to generate static exports
 5. **Deploy** to your hosting service

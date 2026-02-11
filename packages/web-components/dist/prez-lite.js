@@ -696,7 +696,7 @@ function et(t, e, r) {
   if (e) return e;
   if (!t) return null;
   const i = r || Ke();
-  return i ? `${i}/export/${t}/${t}-concepts.json` : null;
+  return i ? `${i}/export/vocabs/${t}/${t}-concepts.json` : null;
 }
 l(et, "resolveVocabUrl");
 const tt = [

@@ -73,24 +73,24 @@ packages/data-processing/
 
 ```
 web/public/export/
-├── _system/
+├── system/
 │   ├── vocabularies/index.json   # Vocabulary catalog
 │   ├── search/orama-index.json   # Pre-built search
 │   ├── labels.json               # Global label cache
 │   └── profile.json              # Default field ordering
 │
-├── {vocab-slug}/
-│   ├── {vocab}.ttl               # Turtle
-│   ├── {vocab}-annotated.ttl     # Annotated Turtle
-│   ├── {vocab}.jsonld            # JSON-LD
-│   ├── {vocab}-annotated.json    # Annotated JSON-LD
-│   ├── {vocab}.json              # Simple JSON
-│   ├── {vocab}.rdf               # RDF/XML
-│   ├── {vocab}.csv               # CSV
-│   ├── {vocab}.html              # HTML page
-│   ├── profile.json              # Field definitions
-│   └── concepts/                 # Per-concept NDJSON
-│       └── {scheme-slug}.ndjson
+└── vocabs/
+    └── {vocab-slug}/
+        ├── {vocab}.ttl               # Turtle
+        ├── {vocab}-annotated.ttl     # Annotated Turtle
+        ├── {vocab}.jsonld            # JSON-LD
+        ├── {vocab}-annotated.json    # Annotated JSON-LD
+        ├── {vocab}.json              # Simple JSON
+        ├── {vocab}.rdf               # RDF/XML
+        ├── {vocab}.csv               # CSV
+        ├── {vocab}.html              # HTML page
+        └── concepts/                 # Per-concept JSON-LD
+            └── {prefix}/{id}.json
 ```
 
 ---
@@ -185,7 +185,7 @@ const index = await create({
 ### Index Location
 
 ```
-web/public/export/_system/search/orama-index.json
+web/public/export/system/search/orama-index.json
 ```
 
 Size: ~30KB for typical vocabulary collections.
@@ -217,7 +217,7 @@ Generated catalog of all vocabularies:
 ### Location
 
 ```
-web/public/export/_system/vocabularies/index.json
+web/public/export/system/vocabularies/index.json
 ```
 
 ---

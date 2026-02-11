@@ -10,10 +10,10 @@ Click "Use this template" on GitHub to create your own repository.
 
 ### 2. Add your vocabularies
 
-Place your SKOS vocabulary TTL files in `public/data/vocabs/`:
+Place your SKOS vocabulary TTL files in `data/vocabs/`:
 
 ```
-public/data/vocabs/
+data/vocabs/
 ├── my-vocabulary.ttl
 └── another-vocab.ttl
 ```
@@ -82,11 +82,12 @@ pnpm dev
 ## Project Structure
 
 ```
+├── data/
+│   ├── vocabs/              # Your source TTL vocabularies
+│   ├── background/          # Optional: background label files
+│   └── config/
+│       └── profiles.ttl     # Optional: custom SHACL profiles
 ├── public/
-│   ├── data/
-│   │   ├── vocabs/          # Your source TTL vocabularies
-│   │   ├── background/      # Optional: background label files
-│   │   └── profiles.ttl     # Optional: custom SHACL profiles
 │   └── export/              # Generated: processed vocabulary exports
 ├── assets/
 │   └── css/
@@ -100,7 +101,7 @@ pnpm dev
 
 ### Custom Profiles
 
-Create `public/data/profiles.ttl` to customize how vocabularies are processed:
+Create `data/config/profiles.ttl` to customize how vocabularies are processed:
 
 ```turtle
 @prefix prez: <https://prez.dev/> .
@@ -231,7 +232,7 @@ The component lazily loads narrower concepts on expand and queries the endpoint 
 
 ### Background Labels
 
-Add TTL files to `public/data/background/` to provide labels for external IRIs referenced in your vocabularies.
+Add TTL files to `data/background/` to provide labels for external IRIs referenced in your vocabularies.
 
 ## Deployment
 

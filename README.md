@@ -24,14 +24,20 @@ cd web && pnpm preview
 
 ```
 prez-lite/
+├── data/
+│   ├── vocabs/             # Your TTL vocabulary files
+│   ├── background/         # Background label files
+│   ├── config/
+│   │   └── profiles.ttl    # SHACL profile configuration
+│   └── manifest.ttl        # Data manifest
 ├── web/                    # Nuxt 4 static site
 │   ├── app/                # Vue components and pages
-│   └── public/data/        # Generated JSON (gitignored)
-├── scripts/
-│   └── build-data.js       # TTL → JSON generator
-├── data/
-│   └── vocabs/             # Your TTL vocabulary files
-└── docs/                   # Additional documentation
+│   └── public/export/      # Generated exports (JSON, TTL, etc.)
+├── packages/
+│   ├── data-processing/    # TTL → JSON pipeline
+│   └── web-components/     # Lit-based embeddable components
+├── scripts/                # Build utilities
+└── docs/                   # Documentation
 ```
 
 ## How It Works

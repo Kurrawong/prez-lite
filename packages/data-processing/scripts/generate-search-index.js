@@ -8,12 +8,12 @@
  * 2. Pre-computed facet counts
  *
  * Output:
- *   _system/search/index.json       - Flat concept array for search
- *   _system/search/orama-index.json - Pre-built Orama index (optional)
- *   _system/search/facets.json      - Pre-computed facet counts
+ *   system/search/index.json       - Flat concept array for search
+ *   system/search/orama-index.json - Pre-built Orama index (optional)
+ *   system/search/facets.json      - Pre-computed facet counts
  *
  * Usage:
- *   node generate-search-index.js --exportDir <export/> --output <_system/search/>
+ *   node generate-search-index.js --exportDir <export/> --output <system/search/>
  */
 
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
@@ -73,8 +73,8 @@ Options:
 Example:
   node generate-search-index.js \\
     --exportDir web/public/export \\
-    --output web/public/export/_system/search \\
-    --vocabMetadata web/public/export/_system/vocabularies/index.json
+    --output web/public/export/system/search \\
+    --vocabMetadata web/public/export/system/vocabularies/index.json
 `);
       process.exit(0);
     } else if (arg === '--exportDir' && args[i + 1]) {
@@ -115,11 +115,22 @@ async function loadVocabMetadata(metadataPath) {
 
 async function findListJsonFiles(exportDir) {
   const files = [];
-  const entries = await readdir(exportDir, { withFileTypes: true });
+
+  // Look for vocab folders in exportDir/vocabs/ (new layout) or exportDir/ (legacy)
+  const vocabsDir = join(exportDir, 'vocabs');
+  let searchDir;
+  try {
+    await readdir(vocabsDir);
+    searchDir = vocabsDir;
+  } catch {
+    searchDir = exportDir;
+  }
+
+  const entries = await readdir(searchDir, { withFileTypes: true });
 
   for (const entry of entries) {
-    if (entry.isDirectory() && !entry.name.startsWith('_')) {
-      const vocabDir = join(exportDir, entry.name);
+    if (entry.isDirectory() && entry.name !== 'system') {
+      const vocabDir = join(searchDir, entry.name);
       const vocabFiles = await readdir(vocabDir);
       const listFile = vocabFiles.find(f => f.endsWith("-list.json") || f.endsWith("-concepts.json"));
       if (listFile) {

@@ -205,7 +205,7 @@ const index = await create({
 
 ```
 web/public/export/
-├── _system/
+├── system/
 │   ├── vocabularies/
 │   │   └── index.json          # Vocabulary catalog
 │   ├── search/

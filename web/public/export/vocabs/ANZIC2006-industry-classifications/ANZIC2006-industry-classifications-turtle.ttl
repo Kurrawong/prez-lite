@@ -1,0 +1,22 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<http://linked.data.gov.au/def/anzsic-2006> a owl:Ontology, skos:ConceptScheme;
+    dcterms:source "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument"^^xsd:anyURI;
+    skos:definition "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics."@en;
+    skos:prefLabel "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX"@en;
+    dcterms:created "2020-02-17"^^xsd:date;
+    dcterms:creator <https://linked.data.gov.au/org/gsq>;
+    dcterms:modified "2023-03-16"^^xsd:date;
+    dcterms:publisher <https://linked.data.gov.au/org/gsq>;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    skos:hasTopConcept <http://linked.data.gov.au/def/anzsic-2006/A0000>, <http://linked.data.gov.au/def/anzsic-2006/B0000>, <http://linked.data.gov.au/def/anzsic-2006/C0000>, <http://linked.data.gov.au/def/anzsic-2006/D0000>, <http://linked.data.gov.au/def/anzsic-2006/E0000>, <http://linked.data.gov.au/def/anzsic-2006/F0000>, <http://linked.data.gov.au/def/anzsic-2006/G0000>, <http://linked.data.gov.au/def/anzsic-2006/H0000>, <http://linked.data.gov.au/def/anzsic-2006/I0000>, <http://linked.data.gov.au/def/anzsic-2006/J0000>, <http://linked.data.gov.au/def/anzsic-2006/M0000>, <http://linked.data.gov.au/def/anzsic-2006/O0000>, <http://linked.data.gov.au/def/anzsic-2006/P0000>, <http://linked.data.gov.au/def/anzsic-2006/Q0000>, <http://linked.data.gov.au/def/anzsic-2006/R0000>, <http://linked.data.gov.au/def/anzsic-2006/S0000>, <http://linked.data.gov.au/def/anzsic-2006/X0000>, <http://linked.data.gov.au/def/anzsic-2006/K0000>, <http://linked.data.gov.au/def/anzsic-2006/L0000>, <http://linked.data.gov.au/def/anzsic-2006/N0000>.

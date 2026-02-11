@@ -26,7 +26,7 @@ prez-lite currently uses **functional but inconsistent** naming conventions that
 
 ```
 export/
-├── _system/
+├── system/
 │   ├── vocabularies/index.json      # Vocabulary catalog
 │   ├── search/orama-index.json      # Search index
 │   ├── labels.json                  # IRI-to-label cache
@@ -335,7 +335,7 @@ Item       = concepts/{prefix}/{id}
 **Standard:** `dcat:Dataset` with `dcat:Distribution` records
 
 **prez-lite current:**
-- ✅ Vocabulary metadata in `_system/vocabularies/index.json`
+- ✅ Vocabulary metadata in `system/vocabularies/index.json`
 - ❌ No formal `dcat:Distribution` records
 
 **Recommendation:** ✅ Add distribution metadata (Issue #4)

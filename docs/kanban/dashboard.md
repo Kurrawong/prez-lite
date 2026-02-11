@@ -1,6 +1,6 @@
 # Kanban Dashboard
 
-**Last Updated:** 2026-02-10
+**Last Updated:** 2026-02-11
 
 ---
 
@@ -8,16 +8,12 @@
 
 | Sprint | Tasks | Status |
 |--------|-------|--------|
-| Sprint 1: Web Components & Analysis | 8/8 | ✅ Complete |
-| Sprint 2: Security Remediation | 7/7 | ✅ Complete |
-| Sprint 3: SPARQL Dynamic Component | 3/3 | ✅ Complete |
-| Sprint 4: Performance & UX Fixes | 3/3 | ✅ Complete |
-| Sprint 5: CI/CD & Data Pipeline | 1/1 | ✅ Complete |
-| Sprint 6: Labels, Data Types & Sharing | 4/4 | ✅ Complete |
-| Sprint 7: Export Cleanup & Share Page Fixes | 4/4 | ✅ Complete |
-| Sprint 8: GitHub OAuth & Inline Editing | 1/1 | ✅ Complete |
+| Sprint 1–8 | 31/31 | ✅ Complete |
+| Sprint 9: Layout Extraction & CI Infrastructure | 5/5 | ✅ Complete |
+| Sprint 10: Infrastructure & Data Hygiene | 6/6 | ✅ Complete |
+| Sprint 11: Blank Node Display | 1/1 | ✅ Complete |
 
-**Overall:** 31 tasks completed across 8 sprints. Board clear — ready for new work.
+**Overall:** 43 tasks completed across 11 sprints.
 
 ---
 
@@ -25,21 +21,15 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| Empty | Empty | Empty | Empty | Sprint 8 (1 item), Sprint 7 archived |
+| 5 unprioritized | Empty | Empty | Empty | Sprint 11 (1 item) |
 
 ---
 
 ## Current Status
 
-All sprints complete. Board is clean and ready for Sprint 9.
+**Sprint 11 complete.** No active sprint.
 
-**Project:** ~97% feature complete
-- Phase 1 (Core Browser): ✅
-- Phase 2 (Sharing): ✅
-- Phase 3 (Authoring): ✅
-- Phase 4 (Data Processing): ✅
-
-**Security:** 🟢 SECURE (0 critical/high/medium, 3 low remaining)
+**Backlog:** 5 items remaining (VocPub validation, TDD, incremental deploys, collab presence, edit lifecycle)
 
 ---
 

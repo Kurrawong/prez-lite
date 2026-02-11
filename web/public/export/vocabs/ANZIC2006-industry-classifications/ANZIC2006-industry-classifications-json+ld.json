@@ -1,0 +1,116 @@
+[
+    {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology",
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://purl.org/dc/terms/source": [
+            {
+                "@value": "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument",
+                "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/created": [
+            {
+                "@value": "2020-02-17",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/gsq"
+            }
+        ],
+        "http://purl.org/dc/terms/modified": [
+            {
+                "@value": "2023-03-16",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/gsq"
+            }
+        ],
+        "http://purl.org/linked-data/registry#status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/A0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/B0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/C0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/D0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/E0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/F0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/G0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/H0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/I0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/J0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/M0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/O0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/P0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/Q0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/R0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/S0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/X0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/K0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/L0000"
+            },
+            {
+                "@id": "http://linked.data.gov.au/def/anzsic-2006/N0000"
+            }
+        ]
+    }
+]

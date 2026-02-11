@@ -6,7 +6,7 @@
  * Scans vocabulary TTL files and generates a comprehensive metadata index
  * with all scheme information needed by the frontend.
  *
- * Output: _system/vocabularies/index.json
+ * Output: system/vocabularies/index.json
  *
  * Usage:
  *   node generate-vocab-metadata.js --sourceDir <vocabs/> --output <index.json> [options]
@@ -79,9 +79,9 @@ Options:
 
 Example:
   node generate-vocab-metadata.js \\
-    --sourceDir web/public/data/vocabs \\
-    --backgroundDir web/public/data/background \\
-    --output web/public/export/_system/vocabularies/index.json
+    --sourceDir data/vocabs \\
+    --backgroundDir data/background \\
+    --output web/public/export/system/vocabularies/index.json
 `);
       process.exit(0);
     } else if (arg === '--sourceDir' && args[i + 1]) {

@@ -70,12 +70,12 @@ const DESCRIPTION_SOURCES = [
 ];
 
 // Default configuration
-// Note: backgroundDir uses web/public/data/background/ which is populated via prezmanifest (scripts/fetch-labels.sh)
+// Note: backgroundDir uses data/background/ which is populated via prezmanifest (scripts/fetch-labels.sh)
 const DEFAULT_CONFIG = {
   source: join(PACKAGE_DIR, 'examples/ga-vocab-ref/ga-vocab-turtle.ttl'),
   outDir: join(PACKAGE_DIR, 'examples/ga-vocab-output'),
   refDir: join(PACKAGE_DIR, 'examples/ga-vocab-ref'),
-  backgroundDir: join(ROOT_DIR, 'web/public/data/background'),
+  backgroundDir: join(ROOT_DIR, 'data/background'),
 };
 
 /**

@@ -1,0 +1,77 @@
+{
+  "https://data.suncorp.com.au/org/suncorp": {
+    "": "Suncorp Group"
+  },
+  "https://data.suncorp.com.au/person/david.crosswell": {
+    "": "David Crosswell"
+  },
+  "https://kurrawong.ai": {
+    "": "KurrawongAI"
+  },
+  "https://linked.data.gov.au/org/abs": {
+    "": "Australian Bureau of Statistics"
+  },
+  "https://orcid.org/0000-0002-8742-7730": {
+    "": "Nicholas Car"
+  },
+  "http://linked.data.gov.au/def/anzsic-2006": {
+    "": "Australian and New Zealand Standard Industrial Classification 2006"
+  },
+  "http://purl.org/dc/terms/isReplacedBy": {
+    "": "is replaced by"
+  },
+  "http://purl.org/dc/terms/replaces": {
+    "": "replaces"
+  },
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": {
+    "": "is defined by"
+  },
+  "http://www.w3.org/2004/02/skos/core#Concept": {
+    "": "Concept"
+  },
+  "http://www.w3.org/2004/02/skos/core#ConceptScheme": {
+    "": "ConceptScheme"
+  },
+  "http://www.w3.org/2004/02/skos/core#altLabel": {
+    "": "alt label"
+  },
+  "http://www.w3.org/2004/02/skos/core#broader": {
+    "": "broader"
+  },
+  "http://www.w3.org/2004/02/skos/core#definition": {
+    "": "definition"
+  },
+  "http://www.w3.org/2004/02/skos/core#hasTopConcept": {
+    "": "has top concept"
+  },
+  "http://www.w3.org/2004/02/skos/core#inScheme": {
+    "": "in scheme"
+  },
+  "http://www.w3.org/2004/02/skos/core#notation": {
+    "": "notation"
+  },
+  "http://www.w3.org/2004/02/skos/core#prefLabel": {
+    "": "pref label"
+  },
+  "http://www.w3.org/2004/02/skos/core#topConceptOf": {
+    "": "top concept of"
+  },
+  "https://schema.org/creator": {
+    "": "creator"
+  },
+  "https://schema.org/dateCreated": {
+    "": "date created"
+  },
+  "https://schema.org/dateModified": {
+    "": "date modified"
+  },
+  "https://schema.org/endTime": {
+    "": "end time"
+  },
+  "https://schema.org/startTime": {
+    "": "start time"
+  },
+  "https://schema.org/temporalCoverage": {
+    "": "temporal coverage"
+  }
+}

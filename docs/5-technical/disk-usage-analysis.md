@@ -18,7 +18,7 @@ date: 2026-02-09
 |--------|-------|
 | Total Size | 55 MB |
 | Total Files | 2,894 |
-| Vocabularies | 36 (excluding _system) |
+| Vocabularies | 36 (excluding system) |
 | Per-Concept Files | 2,529 |
 | Total Concepts | ~2,529 (1:1 file mapping) |
 | System Files | 11 MB |
@@ -57,7 +57,7 @@ Generated for each concept (2,529 concepts):
 
 ### System Files
 
-Located in `export/_system/`:
+Located in `export/system/`:
 
 | File | Size | Purpose |
 |------|------|---------|

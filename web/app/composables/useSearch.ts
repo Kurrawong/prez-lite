@@ -41,7 +41,7 @@ async function getOramaDb(): Promise<OramaDB> {
 
     // Try to load pre-built index
     try {
-      const prebuiltIndex = await $fetch<RawData>('/export/_system/search/orama-index.json')
+      const prebuiltIndex = await $fetch<RawData>('/export/system/search/orama-index.json')
       await load(db, prebuiltIndex)
       console.info('[prez-lite] Loaded pre-built Orama search index')
     } catch {

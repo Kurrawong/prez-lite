@@ -5,7 +5,7 @@
 # This script:
 # 1. Uses prezmanifest to find IRIs missing labels
 # 2. Fetches labels from a SPARQL endpoint (the authoritative source)
-# 3. Stores them in web/public/data/background/
+# 3. Stores them in data/background/
 #
 # Usage: ./scripts/fetch-labels.sh [--endpoint URL]
 #   --endpoint URL: SPARQL endpoint to fetch labels from (default: http://demo.dev.kurrawong.ai/sparql)
@@ -18,7 +18,7 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-DATA_DIR="$ROOT_DIR/web/public/data"
+DATA_DIR="$ROOT_DIR/data"
 BACKGROUND_DIR="$DATA_DIR/background"
 MANIFEST="$DATA_DIR/manifest.ttl"
 

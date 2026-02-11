@@ -85,8 +85,8 @@ Options:
 
 Example:
   node generate-labels.js \\
-    --backgroundDir web/public/data/background \\
-    --output web/public/export/_system/labels.json
+    --backgroundDir data/background \\
+    --output web/public/export/system/labels.json
 `);
       process.exit(0);
     } else if (arg === '--backgroundDir' && args[i + 1]) {

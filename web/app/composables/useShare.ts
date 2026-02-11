@@ -104,16 +104,16 @@ export function useShare() {
   function getConceptDownloadUrl(vocabSlug: string, conceptIri: string): string {
     const conceptId = conceptIri.split(/[#/]/).pop() || conceptIri
     const prefix = (conceptId.charAt(0) || '_').toLowerCase()
-    return `/export/${vocabSlug}/concepts/${prefix}/${conceptId}-anot+ld+json.json`
+    return `/export/vocabs/${vocabSlug}/concepts/${prefix}/${conceptId}-anot+ld+json.json`
   }
 
   function getDownloadUrl(slug: string, formatId: string): string {
     const format = EXPORT_FORMATS.find(f => f.id === formatId)
     if (format) {
-      return `/export/${slug}/${format.filename(slug)}`
+      return `/export/vocabs/${slug}/${format.filename(slug)}`
     }
     // Fallback for unknown formats
-    return `/export/${slug}/${slug}-${formatId}`
+    return `/export/vocabs/${slug}/${slug}-${formatId}`
   }
 
   function getFullDownloadUrl(slug: string, format: string): string {

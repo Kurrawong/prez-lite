@@ -1,0 +1,26 @@
+{
+  "schemes": [
+    {
+      "iri": "http://linked.data.gov.au/def/anzsic-2006",
+      "label": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX",
+      "count": 294
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form",
+      "label": "Alteration form",
+      "count": 24
+    },
+    {
+      "iri": "http://pid.suncorp.com.au/def/brand",
+      "label": "Brand",
+      "count": 11
+    }
+  ],
+  "publishers": [
+    {
+      "iri": "https://linked.data.gov.au/org/gswa",
+      "label": "gswa",
+      "count": 24
+    }
+  ]
+}
