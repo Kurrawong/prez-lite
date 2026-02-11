@@ -56,100 +56,36 @@ const githubEditUrl = computed(() => {
 })
 
 // --- Editor State ---
-const { isAuthenticated, token } = useGitHubAuth()
+const { isAuthenticated } = useGitHubAuth()
 
 const vocabSlugForEditor = computed(() => getVocabByIri(uri.value)?.slug)
 const [editorOwner, editorRepoName] = (githubRepo as string).split('/')
 const editorAvailable = computed(() => !!(editorOwner && editorRepoName && isAuthenticated.value && vocabSlugForEditor.value))
 const editorFilePath = computed(() => `${githubVocabPath}/${vocabSlugForEditor.value}.ttl`)
 
-// Edit view: 'none' | 'form' | 'code'
-const editView = ref<'none' | 'form' | 'code'>('none')
+// Edit view: 'none' | 'full' | 'inline'
+const editView = ref<'none' | 'full' | 'inline'>('none')
 
-// --- Code Editor (Monaco) ---
+// Monaco theme (used by TTL viewer modal and SaveConfirmModal)
 const colorMode = useColorMode()
 const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'prez-light')
-
-const editorContent = ref('')
-const editorLoaded = ref(false)
-const editorSha = ref('')
-const editorLoading = ref(false)
-const editorError = ref<string | null>(null)
-const saveMessage = ref('')
-const codeSaveStatus = ref<'idle' | 'saving' | 'success' | 'error'>('idle')
-
-async function loadEditor() {
-  if (!token.value || !vocabSlugForEditor.value) return
-  editorLoading.value = true
-  editorError.value = null
-  try {
-    const res = await fetch(
-      `https://api.github.com/repos/${editorOwner}/${editorRepoName}/contents/${editorFilePath.value}?ref=${githubBranch}`,
-      { headers: { Authorization: `Bearer ${token.value}` } },
-    )
-    if (!res.ok) {
-      editorError.value = res.status === 404 ? 'File not found' : `GitHub API error: ${res.status}`
-      return
-    }
-    const data = await res.json()
-    editorSha.value = data.sha
-    editorContent.value = new TextDecoder().decode(
-      Uint8Array.from(atob(data.content.replace(/\n/g, '')), (c) => c.charCodeAt(0)),
-    )
-    editorLoaded.value = true
-  } catch (e) {
-    editorError.value = e instanceof Error ? e.message : 'Failed to load file'
-  } finally {
-    editorLoading.value = false
-  }
-}
-
-async function saveEditor() {
-  if (!token.value || !vocabSlugForEditor.value) return
-  codeSaveStatus.value = 'saving'
-  editorError.value = null
-  try {
-    const msg = saveMessage.value.trim() || `Update ${vocabSlugForEditor.value}.ttl`
-    const encoded = btoa(Array.from(new TextEncoder().encode(editorContent.value), (b) => String.fromCharCode(b)).join(''))
-    const res = await fetch(
-      `https://api.github.com/repos/${editorOwner}/${editorRepoName}/contents/${editorFilePath.value}`,
-      {
-        method: 'PUT',
-        headers: { Authorization: `Bearer ${token.value}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, content: encoded, sha: editorSha.value, branch: githubBranch }),
-      },
-    )
-    if (!res.ok) {
-      const body = await res.json().catch(() => ({}))
-      editorError.value = (body as { message?: string }).message || `Save failed: ${res.status}`
-      codeSaveStatus.value = 'error'
-      return
-    }
-    const data = await res.json()
-    editorSha.value = data.content.sha
-    saveMessage.value = ''
-    codeSaveStatus.value = 'success'
-  } catch (e) {
-    editorError.value = e instanceof Error ? e.message : 'Failed to save'
-    codeSaveStatus.value = 'error'
-  }
-  setTimeout(() => { codeSaveStatus.value = 'idle' }, 3000)
-}
 
 // --- Structured Form Editor ---
 const editMode = (editorOwner && editorRepoName)
   ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, githubBranch as string, uri)
   : null
 
-// --- Edit mode state ---
-const editingConceptIri = ref<string | null>(null)
-const editingScheme = ref(false)
-const conceptFormMode = ref<'inline' | 'full'>('inline')
-const schemeFormMode = ref<'inline' | 'full'>('inline')
-
 // Save modal state
 const showSaveModal = ref(false)
 const saveModalSubjectIri = ref<string | null>(null)
+
+// TTL viewer modal state
+const showTTLViewer = ref(false)
+const ttlViewerContent = ref('')
+const ttlViewerTitle = ref('')
+
+// Auto-edit predicate for inline mode scroll-to-property
+const autoEditPredicate = ref<string | null>(null)
 
 // Add Concept dialog
 const showAddConcept = ref(false)
@@ -157,25 +93,21 @@ const newConceptLocalName = ref('')
 const newConceptLabel = ref('')
 const newConceptBroader = ref('')
 
+// --- Edit mode dropdown items ---
+
+const editModeItems = [[
+  { label: 'Full edit mode', icon: 'i-heroicons-pencil-square', onSelect: () => enterEdit('full') },
+  { label: 'Inline edit mode', icon: 'i-heroicons-cursor-arrow-rays', onSelect: () => enterEdit('inline') },
+]]
+
 // --- Edit mode navigation ---
 
-async function enterEdit() {
-  if (editView.value !== 'none') return
-  editView.value = 'form'
-  if (editMode) {
+async function enterEdit(mode: 'full' | 'inline' = 'full') {
+  const wasOff = editView.value === 'none'
+  editView.value = mode
+  if (wasOff && editMode) {
     await editMode.enterEditMode()
   }
-}
-
-async function switchEditView(view: 'form' | 'code') {
-  if (view === editView.value) return
-  if (view === 'code' && !editorLoaded.value) {
-    await loadEditor()
-  }
-  if (view === 'form' && editMode && !editMode.isEditMode.value) {
-    await editMode.enterEditMode()
-  }
-  editView.value = view
 }
 
 function exitEdit() {
@@ -184,65 +116,48 @@ function exitEdit() {
     if (!exited) return
   }
   editView.value = 'none'
-  editingConceptIri.value = null
-  editingScheme.value = false
 }
 
-// --- Concept editing ---
-
-function startEditingConcept(iri: string) {
-  editingConceptIri.value = iri
-  if (editMode) {
-    editMode.selectedConceptIri.value = iri
-  }
-  // Select in URL if not already selected
-  if (selectedConceptUri.value !== iri) {
-    router.replace({ path: '/scheme', query: { uri: uri.value, concept: iri } })
-  }
-}
+// --- Concept selection ---
 
 function selectConcept(conceptUri: string) {
-  editingConceptIri.value = null
   router.replace({
     path: '/scheme',
     query: { uri: uri.value, concept: conceptUri }
   })
+  if (editMode) {
+    editMode.selectedConceptIri.value = conceptUri
+  }
 }
 
 function clearConceptSelection() {
-  editingConceptIri.value = null
   router.replace({
     path: '/scheme',
     query: { uri: uri.value }
   })
 }
 
-// Properties for the concept being edited (respects inline/full mode)
-const editingConceptProperties = computed(() => {
-  if (!editMode || !editingConceptIri.value) return []
+// --- Editable properties ---
+
+// Properties for the selected concept (when in edit mode)
+const selectedConceptProperties = computed(() => {
+  if (!editMode || !selectedConceptUri.value || editView.value === 'none') return []
   void editMode.storeVersion.value
-  return editMode.getPropertiesForSubject(
-    editingConceptIri.value,
-    'concept',
-    conceptFormMode.value === 'inline',
-  )
+  return editMode.getPropertiesForSubject(selectedConceptUri.value, 'concept', false)
 })
 
-// Properties for the scheme being edited (respects inline/full mode)
-const editingSchemeProperties = computed(() => {
-  if (!editMode || !editingScheme.value) return []
+// Properties for the scheme (when in edit mode)
+const schemeProperties = computed(() => {
+  if (!editMode || editView.value === 'none') return []
   void editMode.storeVersion.value
-  return editMode.getPropertiesForSubject(
-    uri.value,
-    'conceptScheme',
-    schemeFormMode.value === 'inline',
-  )
+  return editMode.getPropertiesForSubject(uri.value, 'conceptScheme', false)
 })
 
 // --- Save modal ---
 
 function subjectHasChanges(iri: string): boolean {
   if (!editMode) return false
+  void editMode.storeVersion.value
   return editMode.getChangesForSubject(iri) !== null
 }
 
@@ -278,13 +193,75 @@ async function handleSaveConfirm(commitMessage: string) {
   const ok = await editMode.saveSubject(saveModalSubjectIri.value, commitMessage)
   if (ok) {
     showSaveModal.value = false
-    if (editingConceptIri.value === saveModalSubjectIri.value) {
-      editingConceptIri.value = null
-    }
-    if (saveModalSubjectIri.value === uri.value) {
-      editingScheme.value = false
-    }
     saveModalSubjectIri.value = null
+  }
+}
+
+// --- Save split button dropdown ---
+
+function saveDropdownItems(iri: string) {
+  const items: { label: string; icon: string; onSelect: () => void }[] = []
+  if (subjectHasChanges(iri)) {
+    items.push({ label: 'View differences', icon: 'i-heroicons-document-magnifying-glass', onSelect: () => openSaveModal(iri) })
+  }
+  items.push({ label: 'View original TTL', icon: 'i-heroicons-document-text', onSelect: () => openTTLViewer('original') })
+  if (editMode?.isDirty.value) {
+    items.push({ label: 'View new TTL', icon: 'i-heroicons-document-check', onSelect: () => openTTLViewer('patched', iri) })
+  }
+  return [items]
+}
+
+// --- TTL Viewer ---
+
+function openTTLViewer(type: 'original' | 'patched', iri?: string) {
+  if (type === 'original') {
+    ttlViewerTitle.value = 'Original TTL'
+    ttlViewerContent.value = editMode?.originalTTL.value ?? ''
+  } else {
+    ttlViewerTitle.value = 'New TTL'
+    ttlViewerContent.value = iri ? editMode!.serializeWithPatch(iri) : ''
+  }
+  showTTLViewer.value = true
+}
+
+// --- Floating edit toolbar ---
+
+const pendingChanges = computed(() => {
+  if (!editMode || editView.value === 'none') return []
+  void editMode.storeVersion.value
+  const summary = editMode.getChangeSummary()
+  return summary.subjects
+})
+
+function truncateValue(val: string, max = 30): string {
+  // For IRIs, show last segment
+  if (val.startsWith('http')) {
+    const hashIdx = val.lastIndexOf('#')
+    const slashIdx = val.lastIndexOf('/')
+    val = val.substring(Math.max(hashIdx, slashIdx) + 1)
+  }
+  return val.length > max ? val.slice(0, max) + '...' : val
+}
+
+function formatChangeTooltip(prop: { predicateLabel: string; predicateIri: string; type: string; oldValues?: string[]; newValues?: string[] }): string {
+  const lines = [prop.predicateLabel, prop.predicateIri, '']
+  if (prop.oldValues?.length) {
+    for (const v of prop.oldValues) lines.push(`- ${v}`)
+  }
+  if (prop.newValues?.length) {
+    if (prop.oldValues?.length) lines.push('')
+    for (const v of prop.newValues) lines.push(`+ ${v}`)
+  }
+  return lines.join('\n')
+}
+
+// --- Scroll to metadata property ---
+
+function scrollToMetadataProperty(predicateIri: string) {
+  document.getElementById('metadata-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  if (editView.value === 'inline') {
+    autoEditPredicate.value = predicateIri
+    nextTick(() => { autoEditPredicate.value = null })
   }
 }
 
@@ -298,7 +275,7 @@ function handleAddConcept() {
     newConceptBroader.value || undefined,
   )
   if (conceptIri) {
-    startEditingConcept(conceptIri)
+    selectConcept(conceptIri)
   }
   showAddConcept.value = false
   newConceptLocalName.value = ''
@@ -311,16 +288,16 @@ function handleAddConcept() {
 const searchQuery = ref('')
 const expandAll = ref(false)
 
-// Use edit mode tree items when in form edit mode, otherwise static
+// Use edit mode tree items when in edit mode, otherwise static
 const activeTreeItems = computed(() => {
-  if (editView.value === 'form' && editMode?.isEditMode.value) {
+  if (editView.value !== 'none' && editMode?.isEditMode.value) {
     return editMode!.treeItems.value
   }
   return displayTreeItems.value
 })
 
 const activeConceptCount = computed(() => {
-  if (editView.value === 'form' && editMode?.isEditMode.value) {
+  if (editView.value !== 'none' && editMode?.isEditMode.value) {
     return editMode!.concepts.value.length
   }
   return displayConcepts.value?.length ?? 0
@@ -358,7 +335,20 @@ const hasExpandableNodes = computed(() => {
 })
 
 // Whether tree is in edit mode (show pencil icons on nodes)
-const treeEditMode = computed(() => editView.value === 'form' && !!editMode?.isEditMode.value)
+const treeEditMode = computed(() => editView.value !== 'none' && !!editMode?.isEditMode.value)
+
+// Edit panel positioning — align with breadcrumb, below the header
+const breadcrumbRef = useTemplateRef<HTMLElement>('breadcrumbRef')
+const editPanelTop = ref(96) // fallback: header(64) + padding(32)
+onMounted(() => {
+  nextTick(() => {
+    const el = (breadcrumbRef.value as any)?.$el ?? breadcrumbRef.value
+    if (el) {
+      // Fixed position top = element's document offset (viewport top when not scrolled)
+      editPanelTop.value = el.getBoundingClientRect().top + window.scrollY
+    }
+  })
+})
 
 // Description expand/collapse
 const descriptionExpanded = ref(false)
@@ -390,7 +380,7 @@ function copyIriToClipboard(iri: string) {
 
 <template>
   <div class="py-8">
-    <UBreadcrumb :items="breadcrumbs" class="mb-6" />
+    <UBreadcrumb ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
 
     <div v-if="!uri" class="text-center py-12">
       <UAlert color="warning" title="No scheme selected" description="Please select a vocabulary from the vocabularies page" />
@@ -399,7 +389,28 @@ function copyIriToClipboard(iri: string) {
     <template v-else-if="displayScheme">
       <!-- Header -->
       <div class="mb-8">
-        <h1 class="text-3xl font-bold mb-2">{{ getLabel(displayScheme.prefLabel) }}</h1>
+        <div class="flex items-start justify-between gap-4 mb-2">
+          <h1 class="text-3xl font-bold">
+            {{ getLabel(displayScheme.prefLabel) }}
+            <UButton
+              v-if="editView !== 'none'"
+              icon="i-heroicons-arrow-down-circle"
+              variant="ghost"
+              size="xs"
+              class="ml-1 align-middle"
+              title="Edit this property in metadata"
+              @click="scrollToMetadataProperty('http://www.w3.org/2004/02/skos/core#prefLabel')"
+            />
+          </h1>
+
+          <!-- Edit button (not in edit mode) -->
+          <UFieldGroup v-if="editorAvailable && editView === 'none'" class="shrink-0">
+            <UButton color="neutral" variant="subtle" label="Edit" icon="i-heroicons-pencil-square" @click="enterEdit('full')" />
+            <UDropdownMenu :items="editModeItems">
+              <UButton color="neutral" variant="outline" icon="i-heroicons-chevron-down" />
+            </UDropdownMenu>
+          </UFieldGroup>
+        </div>
         <div class="flex items-center gap-2 text-sm text-muted mb-4">
           <a :href="displayScheme.iri" target="_blank" class="text-primary hover:underline break-all">
             {{ displayScheme.iri }}
@@ -421,51 +432,9 @@ function copyIriToClipboard(iri: string) {
             aria-label="Share or embed this vocabulary"
           />
 
-          <!-- Edit: single pencil when not in edit mode -->
-          <UButton
-            v-if="editorAvailable && editView === 'none'"
-            icon="i-heroicons-pencil-square"
-            color="neutral"
-            variant="ghost"
-            size="xs"
-            aria-label="Enter edit mode"
-            @click="enterEdit"
-          />
-
-          <!-- Edit mode toolbar -->
-          <template v-if="editorAvailable && editView !== 'none'">
-            <UButtonGroup size="xs">
-              <UButton
-                icon="i-heroicons-list-bullet"
-                :color="editView === 'form' ? 'primary' : 'neutral'"
-                :variant="editView === 'form' ? 'solid' : 'ghost'"
-                aria-label="Structured editor"
-                @click="switchEditView('form')"
-              />
-              <UButton
-                icon="i-heroicons-code-bracket"
-                :color="editView === 'code' ? 'primary' : 'neutral'"
-                :variant="editView === 'code' ? 'solid' : 'ghost'"
-                aria-label="Code editor"
-                @click="switchEditView('code')"
-              />
-            </UButtonGroup>
-            <UBadge v-if="editMode?.isDirty.value" color="warning" variant="subtle" size="sm">
-              Unsaved changes
-            </UBadge>
-            <UButton
-              icon="i-heroicons-x-mark"
-              color="neutral"
-              variant="ghost"
-              size="xs"
-              aria-label="Exit edit mode"
-              @click="exitEdit"
-            />
-          </template>
-
           <!-- Fallback: edit on GitHub.dev -->
           <UButton
-            v-else-if="!editorAvailable && githubEditUrl"
+            v-if="!editorAvailable && githubEditUrl"
             :to="githubEditUrl"
             target="_blank"
             icon="i-heroicons-pencil-square"
@@ -481,6 +450,15 @@ function copyIriToClipboard(iri: string) {
             :class="['text-lg text-muted', descriptionExpanded ? '' : 'line-clamp-[8]']"
           >
             {{ getLabel(displayScheme.definition) }}
+            <UButton
+              v-if="editView !== 'none'"
+              icon="i-heroicons-arrow-down-circle"
+              variant="ghost"
+              size="xs"
+              class="ml-1 align-middle"
+              title="Edit this property in metadata"
+              @click.stop="scrollToMetadataProperty('http://www.w3.org/2004/02/skos/core#definition')"
+            />
           </p>
           <UButton
             v-if="isDescriptionClamped || descriptionExpanded"
@@ -495,73 +473,121 @@ function copyIriToClipboard(iri: string) {
         </div>
       </div>
 
-      <!-- Edit mode loading -->
-      <div v-if="editView === 'form' && editMode?.loading.value" class="mb-4">
-        <div class="flex items-center gap-2 text-muted py-4">
-          <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin" />
-          <span class="text-sm">Loading vocabulary from GitHub...</span>
-        </div>
-      </div>
-
-      <!-- Edit mode error -->
-      <UAlert
-        v-if="editView === 'form' && editMode?.error.value"
-        color="error"
-        icon="i-heroicons-exclamation-circle"
-        :title="editMode.error.value"
-        class="mb-4"
-      />
-
-      <!-- Code Editor (Monaco) -->
-      <div v-if="editView === 'code'" class="mb-8">
-        <UAlert
-          v-if="editorError"
-          color="error"
-          icon="i-heroicons-exclamation-circle"
-          :title="editorError"
-          class="mb-4"
-        />
-
-        <template v-if="editorLoaded">
-          <div class="border border-default rounded-lg overflow-hidden">
-            <MonacoEditor
-              v-model="editorContent"
-              lang="turtle"
-              :options="{ theme: monacoTheme, minimap: { enabled: false }, wordWrap: 'on', scrollBeyondLastLine: false }"
-              class="h-[28rem]"
-            />
-          </div>
-
-          <div class="flex items-center gap-3 mt-3">
-            <input
-              v-model="saveMessage"
-              type="text"
-              placeholder="Commit message (optional)"
-              class="flex-1 px-3 py-1.5 text-sm border border-default rounded-md bg-default"
-            />
+      <!-- Fixed edit panel (top-right, always visible) -->
+      <Teleport to="body">
+        <div
+          v-if="editorAvailable && editView !== 'none' && editMode"
+          class="fixed right-6 z-50 bg-elevated border border-default rounded-lg shadow-lg w-[280px] flex flex-col"
+          :style="{ top: `${editPanelTop}px` }"
+        >
+          <!-- Panel header -->
+          <div class="flex items-center justify-between px-3 py-2.5">
+            <div class="flex items-center gap-2 text-sm font-medium">
+              <UIcon
+                :name="editView === 'full' ? 'i-heroicons-pencil-square' : 'i-heroicons-cursor-arrow-rays'"
+                class="size-4"
+              />
+              {{ editView === 'full' ? 'Full edit mode' : 'Inline edit mode' }}
+            </div>
             <UButton
-              icon="i-heroicons-check"
-              :loading="codeSaveStatus === 'saving'"
-              :disabled="codeSaveStatus === 'saving'"
-              @click="saveEditor"
-            >
-              Save to GitHub
-            </UButton>
+              icon="i-heroicons-x-mark"
+              color="neutral"
+              variant="ghost"
+              size="xs"
+              aria-label="Exit edit mode"
+              @click="exitEdit"
+            />
           </div>
 
-          <p v-if="codeSaveStatus === 'success'" class="text-sm text-success mt-2">
-            Saved successfully.
-          </p>
-          <p v-if="codeSaveStatus === 'error' && editorError" class="text-sm text-error mt-2">
-            {{ editorError }}
-          </p>
-        </template>
+          <USeparator />
 
-        <div v-else-if="editorLoading" class="flex items-center gap-2 text-muted">
-          <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin" />
-          <span class="text-sm">Loading file from GitHub...</span>
+          <!-- Body: changes list -->
+          <div class="px-3 py-3 flex-1">
+            <!-- Loading -->
+            <div v-if="editMode.loading.value" class="flex items-center gap-2 text-xs text-muted py-1">
+              <UIcon name="i-heroicons-arrow-path" class="size-3.5 animate-spin" />
+              Loading from GitHub...
+            </div>
+
+            <!-- Error -->
+            <div v-else-if="editMode.error.value" class="text-xs text-error py-1">
+              {{ editMode.error.value }}
+            </div>
+
+            <!-- Pending changes -->
+            <div v-else-if="pendingChanges.length" class="space-y-3 max-h-[320px] overflow-y-auto">
+              <div v-for="change in pendingChanges" :key="change.subjectIri">
+                <!-- Subject header -->
+                <div class="flex items-center gap-1.5 text-xs font-medium mb-1" :title="change.subjectIri">
+                  <UIcon
+                    :name="change.type === 'added' ? 'i-heroicons-plus-circle' : change.type === 'removed' ? 'i-heroicons-minus-circle' : 'i-heroicons-pencil'"
+                    :class="change.type === 'added' ? 'text-success' : change.type === 'removed' ? 'text-error' : 'text-warning'"
+                    class="size-3.5 shrink-0"
+                  />
+                  <span class="truncate">{{ change.subjectLabel }}</span>
+                </div>
+                <!-- Property changes -->
+                <div class="ml-5 space-y-1">
+                  <div
+                    v-for="prop in change.propertyChanges"
+                    :key="prop.predicateIri"
+                    class="text-[11px] leading-tight cursor-default"
+                    :title="formatChangeTooltip(prop)"
+                  >
+                    <div class="font-medium text-muted">{{ prop.predicateLabel }}</div>
+                    <div v-if="prop.oldValues?.length" v-for="val in prop.oldValues" :key="'old-' + val" class="pl-2 text-error">
+                      <span class="select-none">- </span><span class="line-through">{{ truncateValue(val, 40) }}</span>
+                    </div>
+                    <div v-if="prop.newValues?.length" v-for="val in prop.newValues" :key="'new-' + val" class="pl-2 text-success">
+                      <span class="select-none">+ </span>{{ truncateValue(val, 40) }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Empty state -->
+            <div v-else class="text-center py-4">
+              <UIcon name="i-heroicons-document-text" class="size-6 text-muted/40 mx-auto mb-1.5" />
+              <p class="text-xs text-muted/60">Changes you make will appear here</p>
+            </div>
+          </div>
+
+          <USeparator />
+
+          <!-- Action bar -->
+          <div class="px-3 py-2.5 flex items-center justify-between gap-2">
+            <UButton
+              size="xs"
+              color="neutral"
+              variant="link"
+              class="cursor-pointer"
+              :icon="editView === 'full' ? 'i-heroicons-cursor-arrow-rays' : 'i-heroicons-pencil-square'"
+              @click="enterEdit(editView === 'full' ? 'inline' : 'full')"
+            >
+              Switch to {{ editView === 'full' ? 'inline' : 'full' }}
+            </UButton>
+            <UFieldGroup>
+              <UButton
+                size="sm"
+                :disabled="!pendingChanges.length"
+                :loading="editMode.saveStatus.value === 'saving'"
+                label="Save"
+                @click="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
+              />
+              <UDropdownMenu :items="saveDropdownItems(selectedConceptUri || uri)">
+                <UButton
+                  size="sm"
+                  color="neutral"
+                  variant="outline"
+                  icon="i-heroicons-chevron-down"
+                  :disabled="editMode.saveStatus.value === 'saving'"
+                />
+              </UDropdownMenu>
+            </UFieldGroup>
+          </div>
         </div>
-      </div>
+      </Teleport>
 
       <!-- Concepts Tree with inline panel -->
       <UCard class="mb-8">
@@ -620,90 +646,71 @@ function copyIriToClipboard(iri: string) {
                 :selected-id="selectedConceptUri"
                 :edit-mode="treeEditMode"
                 @select="selectConcept"
-                @edit="startEditingConcept"
+                @edit="selectConcept"
               />
             </div>
 
             <!-- Concept detail panel -->
-            <div v-if="selectedConceptUri" class="lg:w-1/2 lg:border-l lg:border-default lg:pl-6 min-h-[200px] max-h-[600px] overflow-y-auto">
-              <!-- Editing this concept -->
-              <template v-if="editingConceptIri === selectedConceptUri && editMode?.isEditMode.value">
+            <div v-if="selectedConceptUri" class="lg:w-1/2 lg:border-l lg:border-default lg:pl-6 min-h-[200px] max-h-[600px] overflow-y-auto overflow-x-hidden">
+              <!-- Edit mode: full → ConceptForm -->
+              <template v-if="editView === 'full' && editMode?.isEditMode.value">
                 <div class="flex items-center justify-between mb-3">
                   <h3 class="font-semibold truncate mr-2">
-                    {{ editMode.resolveLabel(editingConceptIri) }}
+                    {{ editMode.resolveLabel(selectedConceptUri) }}
                   </h3>
-                  <div class="flex items-center gap-2 shrink-0">
-                    <UButtonGroup size="xs">
-                      <UButton
-                        :color="conceptFormMode === 'inline' ? 'primary' : 'neutral'"
-                        :variant="conceptFormMode === 'inline' ? 'solid' : 'ghost'"
-                        @click="conceptFormMode = 'inline'"
-                      >
-                        Inline
-                      </UButton>
-                      <UButton
-                        :color="conceptFormMode === 'full' ? 'primary' : 'neutral'"
-                        :variant="conceptFormMode === 'full' ? 'solid' : 'ghost'"
-                        @click="conceptFormMode = 'full'"
-                      >
-                        Full
-                      </UButton>
-                    </UButtonGroup>
-                    <UButton
-                      icon="i-heroicons-x-mark"
-                      variant="ghost"
-                      size="xs"
-                      @click="editingConceptIri = null"
-                    />
-                  </div>
+                  <UButton
+                    icon="i-heroicons-x-mark"
+                    variant="ghost"
+                    size="xs"
+                    @click="clearConceptSelection"
+                  />
                 </div>
 
                 <ConceptForm
-                  :subject-iri="editingConceptIri"
-                  :properties="editingConceptProperties"
+                  :subject-iri="selectedConceptUri"
+                  :properties="selectedConceptProperties"
                   :concepts="editMode.concepts.value"
-                  :mode="conceptFormMode"
-                  @update:value="(pred, oldVal, newVal) => editMode!.updateValue(editingConceptIri!, pred, oldVal, newVal)"
-                  @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(editingConceptIri!, pred, oldVal, newLang)"
-                  @add:value="(pred) => editMode!.addValue(editingConceptIri!, pred)"
-                  @remove:value="(pred, val) => editMode!.removeValue(editingConceptIri!, pred, val)"
-                  @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(editingConceptIri!, newIris, oldIris)"
-                  @update:related="(newIris, oldIris) => editMode!.syncRelated(editingConceptIri!, newIris, oldIris)"
-                  @delete="editMode!.deleteConcept(editingConceptIri!)"
+                  @update:value="(pred, oldVal, newVal) => editMode!.updateValue(selectedConceptUri!, pred, oldVal, newVal)"
+                  @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(selectedConceptUri!, pred, oldVal, newLang)"
+                  @add:value="(pred) => editMode!.addValue(selectedConceptUri!, pred)"
+                  @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
+                  @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
+                  @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
+                  @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
 
-                <!-- Per-concept save -->
-                <div class="mt-4 pt-3 border-t border-default flex items-center justify-between">
-                  <p v-if="editMode.saveStatus.value === 'success'" class="text-sm text-success">
-                    Saved successfully.
-                  </p>
-                  <p v-else-if="editMode.saveStatus.value === 'error' && editMode.error.value" class="text-sm text-error">
-                    {{ editMode.error.value }}
-                  </p>
-                  <span v-else />
-                  <UButton
-                    :disabled="!subjectHasChanges(editingConceptIri)"
-                    :loading="editMode.saveStatus.value === 'saving'"
-                    size="sm"
-                    @click="openSaveModal(editingConceptIri)"
-                  >
-                    Save
-                  </UButton>
-                </div>
               </template>
 
-              <!-- View mode (with Edit button when in edit mode) -->
-              <template v-else>
-                <div v-if="treeEditMode" class="flex justify-end mb-2">
+              <!-- Edit mode: inline → InlineEditTable -->
+              <template v-else-if="editView === 'inline' && editMode?.isEditMode.value">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="font-semibold truncate mr-2">
+                    {{ editMode.resolveLabel(selectedConceptUri) }}
+                  </h3>
                   <UButton
-                    icon="i-heroicons-pencil-square"
-                    variant="soft"
+                    icon="i-heroicons-x-mark"
+                    variant="ghost"
                     size="xs"
-                    @click="startEditingConcept(selectedConceptUri!)"
-                  >
-                    Edit
-                  </UButton>
+                    @click="clearConceptSelection"
+                  />
                 </div>
+
+                <InlineEditTable
+                  :subject-iri="selectedConceptUri"
+                  :properties="selectedConceptProperties"
+                  :concepts="editMode.concepts.value"
+                  @update:value="(pred, oldVal, newVal) => editMode!.updateValue(selectedConceptUri!, pred, oldVal, newVal)"
+                  @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(selectedConceptUri!, pred, oldVal, newLang)"
+                  @add:value="(pred) => editMode!.addValue(selectedConceptUri!, pred)"
+                  @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
+                  @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
+                  @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
+                  @delete="editMode!.deleteConcept(selectedConceptUri!)"
+                />
+              </template>
+
+              <!-- View mode -->
+              <template v-else>
                 <ConceptPanel
                   :uri="selectedConceptUri"
                   :scheme-uri="uri"
@@ -730,83 +737,41 @@ function copyIriToClipboard(iri: string) {
       </UCard>
 
       <!-- Metadata -->
-      <UCard class="mb-8">
+      <UCard id="metadata-section" class="mb-8">
         <template #header>
-          <div class="flex items-center justify-between">
-            <h2 class="font-semibold flex items-center gap-2">
-              <UIcon name="i-heroicons-information-circle" />
-              Metadata
-            </h2>
-            <!-- Edit button for scheme metadata (edit mode only) -->
-            <UButton
-              v-if="treeEditMode && !editingScheme"
-              icon="i-heroicons-pencil-square"
-              variant="soft"
-              size="xs"
-              @click="editingScheme = true"
-            >
-              Edit
-            </UButton>
-          </div>
+          <h2 class="font-semibold flex items-center gap-2">
+            <UIcon name="i-heroicons-information-circle" />
+            Metadata
+          </h2>
         </template>
 
-        <!-- Editing scheme properties -->
-        <template v-if="editingScheme && editMode?.isEditMode.value">
-          <div class="flex items-center justify-between mb-3">
-            <UButtonGroup size="xs">
-              <UButton
-                :color="schemeFormMode === 'inline' ? 'primary' : 'neutral'"
-                :variant="schemeFormMode === 'inline' ? 'solid' : 'ghost'"
-                @click="schemeFormMode = 'inline'"
-              >
-                Inline
-              </UButton>
-              <UButton
-                :color="schemeFormMode === 'full' ? 'primary' : 'neutral'"
-                :variant="schemeFormMode === 'full' ? 'solid' : 'ghost'"
-                @click="schemeFormMode = 'full'"
-              >
-                Full
-              </UButton>
-            </UButtonGroup>
-            <UButton
-              icon="i-heroicons-x-mark"
-              variant="ghost"
-              size="xs"
-              @click="editingScheme = false"
-            />
-          </div>
-
+        <!-- Edit mode: full → ConceptForm for scheme properties -->
+        <template v-if="editView === 'full' && editMode?.isEditMode.value">
           <ConceptForm
             :subject-iri="uri"
-            :properties="editingSchemeProperties"
+            :properties="schemeProperties"
             :concepts="editMode!.concepts.value"
             :is-scheme="true"
-            :mode="schemeFormMode"
             @update:value="(pred, oldVal, newVal) => editMode!.updateValue(uri, pred, oldVal, newVal)"
             @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(uri, pred, oldVal, newLang)"
             @add:value="(pred) => editMode!.addValue(uri, pred)"
             @remove:value="(pred, val) => editMode!.removeValue(uri, pred, val)"
           />
+        </template>
 
-          <!-- Per-scheme save -->
-          <div class="mt-4 pt-3 border-t border-default flex items-center justify-between">
-            <p v-if="editMode!.saveStatus.value === 'success'" class="text-sm text-success">
-              Saved successfully.
-            </p>
-            <p v-else-if="editMode!.saveStatus.value === 'error' && editMode!.error.value" class="text-sm text-error">
-              {{ editMode!.error.value }}
-            </p>
-            <span v-else />
-            <UButton
-              :disabled="!subjectHasChanges(uri)"
-              :loading="editMode!.saveStatus.value === 'saving'"
-              size="sm"
-              @click="openSaveModal(uri)"
-            >
-              Save
-            </UButton>
-          </div>
+        <!-- Edit mode: inline → InlineEditTable for scheme properties -->
+        <template v-else-if="editView === 'inline' && editMode?.isEditMode.value">
+          <InlineEditTable
+            :subject-iri="uri"
+            :properties="schemeProperties"
+            :concepts="editMode!.concepts.value"
+            :is-scheme="true"
+            :auto-edit-predicate="autoEditPredicate"
+            @update:value="(pred, oldVal, newVal) => editMode!.updateValue(uri, pred, oldVal, newVal)"
+            @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(uri, pred, oldVal, newLang)"
+            @add:value="(pred) => editMode!.addValue(uri, pred)"
+            @remove:value="(pred, val) => editMode!.removeValue(uri, pred, val)"
+          />
         </template>
 
         <!-- View mode -->
@@ -836,6 +801,23 @@ function copyIriToClipboard(iri: string) {
             @confirm="handleSaveConfirm"
             @cancel="showSaveModal = false"
           />
+        </template>
+      </UModal>
+
+      <!-- TTL Viewer Modal -->
+      <UModal v-model:open="showTTLViewer">
+        <template #header>
+          <h3 class="font-semibold">{{ ttlViewerTitle }}</h3>
+        </template>
+        <template #body>
+          <div class="border border-default rounded-lg overflow-hidden">
+            <MonacoEditor
+              :model-value="ttlViewerContent"
+              lang="turtle"
+              :options="{ theme: monacoTheme, readOnly: true, minimap: { enabled: false }, wordWrap: 'on', scrollBeyondLastLine: false }"
+              class="h-[28rem]"
+            />
+          </div>
         </template>
       </UModal>
 

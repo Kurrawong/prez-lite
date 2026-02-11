@@ -6,7 +6,6 @@ const props = defineProps<{
   properties: EditableProperty[]
   concepts: ConceptSummary[]
   isScheme?: boolean
-  mode?: 'inline' | 'full'
 }>()
 
 const emit = defineEmits<{
@@ -36,14 +35,6 @@ const languageOptions = [
 ]
 
 const showDeleteConfirm = ref(false)
-
-/** Filter properties based on mode: inline shows populated only, full shows all */
-const displayProperties = computed(() => {
-  if (props.mode === 'inline') {
-    return props.properties.filter(p => p.values.length > 0)
-  }
-  return props.properties
-})
 
 function handleValueUpdate(predicate: string, val: EditableValue, event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
@@ -80,7 +71,7 @@ function formatIri(iri: string): string {
 </script>
 
 <template>
-  <div class="max-h-[600px] overflow-y-auto">
+  <div class="max-h-[600px] overflow-y-auto overflow-x-hidden">
     <div class="space-y-5">
       <!-- Subject IRI -->
       <div class="text-sm text-muted font-mono break-all bg-muted/30 px-3 py-2 rounded">
@@ -88,7 +79,7 @@ function formatIri(iri: string): string {
       </div>
 
       <!-- Properties -->
-      <div v-for="prop in displayProperties" :key="prop.predicate" class="space-y-1.5">
+      <div v-for="prop in properties" :key="prop.predicate" class="space-y-1.5">
         <!-- Property label with link icon (matching RichMetadataTable pattern) -->
         <div class="flex items-center gap-1 text-sm font-medium text-muted">
           <span>{{ prop.label }}</span>

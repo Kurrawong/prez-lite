@@ -87,7 +87,7 @@ echo "🔍 Finding IRIs without labels..."
 cd "$DATA_DIR"
 
 MISSING_IRIS=$(uvx --from prezmanifest pm label iris manifest.ttl 2>/dev/null || true)
-MISSING_COUNT=$(echo "$MISSING_IRIS" | grep -c "^http" || echo "0")
+MISSING_COUNT=$(echo "$MISSING_IRIS" | grep -c "^http" || true)
 
 echo "   Found $MISSING_COUNT IRIs without labels"
 
@@ -121,7 +121,7 @@ echo ""
 echo "🔍 Checking remaining missing labels..."
 
 REMAINING_IRIS=$(uvx --from prezmanifest pm label iris manifest.ttl 2>/dev/null || true)
-REMAINING_COUNT=$(echo "$REMAINING_IRIS" | grep -c "^http" || echo "0")
+REMAINING_COUNT=$(echo "$REMAINING_IRIS" | grep -c "^http" || true)
 
 if [[ "$REMAINING_COUNT" -gt 0 ]]; then
     echo "   $REMAINING_COUNT IRIs still missing labels"

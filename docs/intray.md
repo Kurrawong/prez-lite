@@ -1,4 +1,6 @@
 
+Issue: blank nodes don't allow you to edit children. Just shows the blank node ids. Add an example vocab that demonstrates the issue, using qualified attribution / agent.
+
 Here's an example of a vocpub validator
 
 https://github.com/Geological-Survey-of-Western-Australia/Vocabularies/blob/main/validation/vocpub.ttl
@@ -23,3 +25,8 @@ Whos editing feature, and whos online.
 - this needs a realtime message system, so when you edit it should push a small message to the server for this domain for this vocab, which the server would broadcast to all other clients of the same github repo. 
 - assess which approach might be best, is there something available in cf that we can use already, supabase? might be good since cf already has auth.
 
+Edit flow:
+- Have a think about how we can make the edit flow make sense from not only an application lifecycle but data lifecycle perspective.
+- We need to be able to edit and prepare data for publishing in an environment we can test and see if it all works as expected.
+- Separately, we need to be able to manage updates to the ui for our application, and be able to push that out. We would have a dev area to work in, i assume a branch, then we can merge it into main. But that merge should not trigger a data rebuild, or use the data from dev. So, we might need to go from main to dev, and then back to main. And, from main to staging, and then to production (main). 
+- Applicationwise, we have our main prez-lite web application, this has our sample data, and this is base nuxt layer that other prez-lite projects will extend. Those prez-lite projects will have their own data, and their own variations of the ui through the extension. So, the data needs for this main prez-lite project are a bit different to the child prez-lite projects. Basically the data in this main prez-lite project just needs to plod along as assets in this application, data will be tested and changed locally, and also via the ui to test updates. Howver the prez-lite projects will mainly change their data through the ui, once stabilised it will be through that more formal staging to main lifecycle. The gh-templates folder will have the child prez-lite projects. So, that's the best place to look for a reference. 

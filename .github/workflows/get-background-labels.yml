@@ -1,0 +1,52 @@
+name: Get Background Labels
+
+on:
+  workflow_dispatch:
+    inputs:
+      endpoint:
+        description: 'SPARQL endpoint URL'
+        required: false
+        default: 'http://demo.dev.kurrawong.ai/sparql'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-labels:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+          cache: 'pnpm'
+
+      - name: Install Node dependencies
+        run: pnpm install
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ensure data directory
+        run: pnpm build:ensure-data
+
+      - name: Fetch background labels
+        run: pnpm build:get-labels -- --endpoint "${{ github.event.inputs.endpoint }}"
+
+      - name: Commit background labels
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/public/data/background/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update background labels"
+          git push
