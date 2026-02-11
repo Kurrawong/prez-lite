@@ -27,7 +27,18 @@ Add a GitHub repository secret named `PREZ_LITE_TOKEN` with a personal access to
 3. Name: `PREZ_LITE_TOKEN`
 4. Value: Your GitHub personal access token
 
-### 4. Deploy
+### 4. Configure variables (optional)
+
+You can set repository variables to control the build. Go to Settings > Secrets and variables > Actions > Variables tab.
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PREZ_LITE_VERSION` | prez-lite version/tag to use (e.g. `v0.2.0`) | `main` |
+| `PREZ_LITE_REPO` | prez-lite repository (if using a fork) | `hjohns/prez-lite` |
+
+Pinning to a release tag (e.g. `v0.2.0`) is recommended for production stability.
+
+### 5. Deploy
 
 Push to `main` branch. The GitHub Action will:
 1. Process your vocabularies into multiple formats (TTL, JSON-LD, RDF/XML, CSV, HTML)

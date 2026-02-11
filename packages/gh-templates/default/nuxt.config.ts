@@ -6,10 +6,11 @@ const localWebPath = resolve(__dirname, '../../../web')
 const useLocalLayer = process.env.LOCAL_LAYER || (existsSync(localWebPath) && existsSync(resolve(localWebPath, 'nuxt.config.ts')))
 
 // When inside prez-lite monorepo, use local layer for development
-// When deployed as standalone repo, use GitHub layer
+// When deployed as standalone repo, use GitHub layer (with optional version pinning)
+const version = process.env.PREZ_LITE_VERSION || 'main'
 const layer = useLocalLayer
   ? localWebPath
-  : ['github:hjohns/prez-lite/web', { auth: process.env.GITHUB_TOKEN }]
+  : [`github:hjohns/prez-lite/web#${version}`, { auth: process.env.GITHUB_TOKEN }]
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
