@@ -1,0 +1,32 @@
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://data.suncorp.com.au/org/suncorp>
+    a schema:Organization ;
+    schema:name "Suncorp Group" ;
+    schema:url "https://www.suncorp.com.au"^^xsd:anyURI ;
+.
+
+<https://data.suncorp.com.au/person/david.crosswell>
+    a schema:Person ;
+    schema:email "David.CROSSWELL@suncorp.com.au"^^xsd:anyURI ;
+    schema:name "David Crosswell" ;
+.
+
+<https://kurrawong.ai>
+    a schema:Organization ;
+    schema:name "KurrawongAI" ;
+    schema:url "https://kurrawong.ai"^^xsd:anyURI ;
+.
+
+<https://linked.data.gov.au/org/abs>
+    a schema:Organization ;
+    schema:name "Australian Bureau of Statistics" ;
+    schema:url "https://www.abs.gov.au"^^xsd:anyURI ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    a schema:Person ;
+    schema:email "nick@kurrawong.ai"^^xsd:anyURI ;
+    schema:name "Nicholas Car" ;
+.

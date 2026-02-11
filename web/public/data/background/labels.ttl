@@ -1,0 +1,26 @@
+PREFIX schema: <https://schema.org/>
+
+
+<http://linked.data.gov.au/def/anzsic-2006>
+    schema:name "Australian and New Zealand Standard Industrial Classification 2006" ;
+.
+
+<http://purl.org/dc/terms/isReplacedBy> schema:name "is replaced by" .
+<http://purl.org/dc/terms/replaces> schema:name "replaces" .
+<http://www.w3.org/2000/01/rdf-schema#isDefinedBy> schema:name "is defined by" .
+<http://www.w3.org/2004/02/skos/core#Concept> schema:name "Concept" .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> schema:name "ConceptScheme" .
+<http://www.w3.org/2004/02/skos/core#altLabel> schema:name "alt label" .
+<http://www.w3.org/2004/02/skos/core#broader> schema:name "broader" .
+<http://www.w3.org/2004/02/skos/core#definition> schema:name "definition" .
+<http://www.w3.org/2004/02/skos/core#hasTopConcept> schema:name "has top concept" .
+<http://www.w3.org/2004/02/skos/core#inScheme> schema:name "in scheme" .
+<http://www.w3.org/2004/02/skos/core#notation> schema:name "notation" .
+<http://www.w3.org/2004/02/skos/core#prefLabel> schema:name "pref label" .
+<http://www.w3.org/2004/02/skos/core#topConceptOf> schema:name "top concept of" .
+<https://schema.org/creator> schema:name "creator" .
+<https://schema.org/dateCreated> schema:name "date created" .
+<https://schema.org/dateModified> schema:name "date modified" .
+<https://schema.org/endTime> schema:name "end time" .
+<https://schema.org/startTime> schema:name "start time" .
+<https://schema.org/temporalCoverage> schema:name "temporal coverage" .
