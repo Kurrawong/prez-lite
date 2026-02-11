@@ -1291,7 +1291,7 @@ icat:H4400
     dcterms:source "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
     skos:broader icat:H0000 ;
-    skos:definition "An individual business entity whose predominant economic activity is Accommodation."@en ;
+    skos:definition "An individual business entity whose predominant economic activity is Accommodation. xxxx"@en ;
     skos:inScheme cs: ;
     skos:notation "H4400" ;
     skos:prefLabel "Accommodation"@en ;
