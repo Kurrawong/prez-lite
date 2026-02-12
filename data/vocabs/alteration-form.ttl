@@ -117,7 +117,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "not altered"@en ;
-    skos:definition "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged."@en ;
+    skos:definition "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged. XXXX"@en ;
     skos:exactMatch
         <https://linked.data.gov.au/def/alteration-intensity/unaltered> ,
         <https://linked.data.gov.au/def/alteration-type/unaltered> ;
