@@ -113,7 +113,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.",
+        "@value": "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.XXX",
         "@language": "en"
       }
     ],
@@ -175,7 +175,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.",
+        "@value": "A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.XXX",
         "@language": "en"
       }
     ]
