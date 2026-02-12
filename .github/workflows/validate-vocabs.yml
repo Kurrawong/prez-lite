@@ -44,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/validators/reports/ .cache/test-results.json
+          git add data/validators/reports/
           git diff --cached --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore: update validation reports"
           git push
