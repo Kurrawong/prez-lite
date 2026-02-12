@@ -15,6 +15,7 @@
 import { readdir, readFile, writeFile, mkdir } from 'fs/promises';
 import { join, dirname, isAbsolute, basename, resolve } from 'path';
 import { Parser, Store, DataFactory } from 'n3';
+import SHACLValidator from 'rdf-validate-shacl';
 
 const { namedNode } = DataFactory;
 
@@ -58,6 +59,8 @@ function parseArgs() {
     sourceDir: null,
     output: null,
     backgroundDir: null,
+    validatorsDir: null,
+    strict: false,
     pattern: '*.ttl',
   };
 
@@ -74,6 +77,8 @@ Options:
   --sourceDir <path>        Directory containing vocabulary TTL files (required)
   --output <path>           Output index.json file path (required)
   --backgroundDir <path>    Directory containing background label TTL files
+  --validators <path>       Directory containing SHACL validator TTL files
+  --strict                  Fail build if any vocab has validation violations
   --pattern <glob>          File pattern to match (default: *.ttl)
   --help, -h                Show this help message
 
@@ -90,6 +95,10 @@ Example:
       config.output = resolveCliPath(args[++i]);
     } else if (arg === '--backgroundDir' && args[i + 1]) {
       config.backgroundDir = resolveCliPath(args[++i]);
+    } else if (arg === '--validators' && args[i + 1]) {
+      config.validatorsDir = resolveCliPath(args[++i]);
+    } else if (arg === '--strict') {
+      config.strict = true;
     } else if (arg === '--pattern' && args[i + 1]) {
       config.pattern = args[++i];
     }
@@ -167,6 +176,67 @@ async function parseTTLDirectory(dirPath) {
   return store;
 }
 
+const SH = 'http://www.w3.org/ns/shacl#';
+
+async function loadValidators(validatorsDir) {
+  const store = new Store();
+  if (!validatorsDir) return null;
+
+  try {
+    const files = await readdir(validatorsDir);
+    const ttlFiles = files.filter(f => f.endsWith('.ttl'));
+    if (ttlFiles.length === 0) {
+      console.warn('  Warning: No .ttl files found in validators directory');
+      return null;
+    }
+    for (const file of ttlFiles) {
+      try {
+        const content = await readFile(join(validatorsDir, file), 'utf-8');
+        const parser = new Parser();
+        const quads = parser.parse(content);
+        store.addQuads(quads);
+        console.log(`  Loaded validator: ${file} (${quads.length} triples)`);
+      } catch (err) {
+        console.warn(`  Warning: Failed to parse validator ${file}: ${err.message}`);
+      }
+    }
+  } catch (err) {
+    console.warn(`  Warning: Could not read validators directory: ${err.message}`);
+    return null;
+  }
+  return store;
+}
+
+async function validateVocab(dataStore, shapesStore) {
+  const validator = new SHACLValidator(shapesStore);
+  const report = await validator.validate(dataStore);
+
+  const results = [];
+  for (const result of report.results) {
+    const severityIri = result.severity?.value || '';
+    let severity = 'Info';
+    if (severityIri.includes('Violation')) severity = 'Violation';
+    else if (severityIri.includes('Warning')) severity = 'Warning';
+
+    results.push({
+      severity,
+      message: result.message?.[0]?.value || '',
+      focusNode: result.focusNode?.value || undefined,
+      path: result.path?.value || undefined,
+    });
+  }
+
+  const errors = results.filter(r => r.severity === 'Violation').length;
+  const warnings = results.filter(r => r.severity === 'Warning').length;
+
+  return {
+    conforms: report.conforms,
+    errors,
+    warnings,
+    results: results.length > 0 ? results : undefined,
+  };
+}
+
 function getLiteral(store, subject, predicate, lang = null) {
   const quads = store.getQuads(subject, predicate, null, null);
   for (const q of quads) {
@@ -210,7 +280,7 @@ function getLabelForIRI(iri, backgroundStore) {
   return localName(iri);
 }
 
-async function extractSchemeMetadata(filePath, backgroundStore) {
+async function extractSchemeMetadata(filePath, backgroundStore, shapesStore) {
   const store = await parseTTLFile(filePath);
 
   // Find ConceptScheme
@@ -270,6 +340,9 @@ async function extractSchemeMetadata(filePath, backgroundStore) {
   // Available formats (fixed for now)
   const formats = ['ttl', 'json', 'jsonld', 'rdf', 'csv', 'html'];
 
+  // SHACL validation
+  const validation = shapesStore ? await validateVocab(store, shapesStore) : undefined;
+
   return {
     iri: schemeIri,
     slug,
@@ -290,6 +363,7 @@ async function extractSchemeMetadata(filePath, backgroundStore) {
     themes,
     themeLabels,
     formats,
+    validation,
   };
 }
 
@@ -303,6 +377,18 @@ async function main() {
   const backgroundStore = await parseTTLDirectory(config.backgroundDir);
   console.log(`  Loaded ${backgroundStore.size} background triples\n`);
 
+  // Load SHACL validators
+  let shapesStore = null;
+  if (config.validatorsDir) {
+    console.log('Loading SHACL validators...');
+    shapesStore = await loadValidators(config.validatorsDir);
+    if (shapesStore) {
+      console.log(`  Loaded ${shapesStore.size} shape triples\n`);
+    } else {
+      console.log('  No validators loaded\n');
+    }
+  }
+
   // Find all matching files
   const files = await readdir(config.sourceDir);
   const ttlFiles = files.filter(f => matchPattern(f, config.pattern));
@@ -313,10 +399,13 @@ async function main() {
   for (const file of ttlFiles) {
     const filePath = join(config.sourceDir, file);
     try {
-      const metadata = await extractSchemeMetadata(filePath, backgroundStore);
+      const metadata = await extractSchemeMetadata(filePath, backgroundStore, shapesStore);
       if (metadata) {
         vocabularies.push(metadata);
-        console.log(`  ✓ ${metadata.prefLabel} (${metadata.conceptCount} concepts)`);
+        const validationStatus = metadata.validation
+          ? (metadata.validation.conforms ? '✓ valid' : `✗ ${metadata.validation.errors} error(s), ${metadata.validation.warnings} warning(s)`)
+          : '';
+        console.log(`  ✓ ${metadata.prefLabel} (${metadata.conceptCount} concepts)${validationStatus ? ` [${validationStatus}]` : ''}`);
       }
     } catch (err) {
       console.warn(`  ✗ ${file}: ${err.message}`);
@@ -327,6 +416,18 @@ async function main() {
   vocabularies.sort((a, b) => a.prefLabel.localeCompare(b.prefLabel));
 
   console.log(`\nExtracted metadata for ${vocabularies.length} vocabularies`);
+
+  // Strict mode: fail if any vocab has violations
+  if (config.strict && shapesStore) {
+    const failing = vocabularies.filter(v => v.validation && !v.validation.conforms);
+    if (failing.length > 0) {
+      console.error(`\nStrict mode: ${failing.length} vocabulary(ies) failed validation:`);
+      for (const v of failing) {
+        console.error(`  - ${v.prefLabel}: ${v.validation.errors} error(s), ${v.validation.warnings} warning(s)`);
+      }
+      process.exit(1);
+    }
+  }
 
   // Write output
   await mkdir(dirname(config.output), { recursive: true });

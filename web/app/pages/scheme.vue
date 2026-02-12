@@ -15,8 +15,11 @@ const {
   treeItems,
   metadataRows,
   richMetadata,
+  validation,
   breadcrumbs
 } = useScheme(uri)
+
+const showValidationDetails = ref(false)
 
 // Keep track of last valid data to prevent flicker on back navigation
 const lastValidScheme = ref<typeof scheme.value>(null)
@@ -464,6 +467,34 @@ function copyIriToClipboard(iri: string) {
           <a :href="displayScheme.iri" target="_blank" class="text-primary hover:underline break-all">
             {{ displayScheme.iri }}
           </a>
+          <UBadge
+            v-if="validation?.conforms === true"
+            color="success"
+            variant="subtle"
+            size="xs"
+          >
+            Valid
+          </UBadge>
+          <UBadge
+            v-else-if="validation?.errors"
+            color="error"
+            variant="subtle"
+            size="xs"
+            class="cursor-pointer"
+            @click="showValidationDetails = !showValidationDetails"
+          >
+            {{ validation.errors }} error{{ validation.errors !== 1 ? 's' : '' }}
+          </UBadge>
+          <UBadge
+            v-else-if="validation?.warnings"
+            color="warning"
+            variant="subtle"
+            size="xs"
+            class="cursor-pointer"
+            @click="showValidationDetails = !showValidationDetails"
+          >
+            {{ validation.warnings }} warning{{ validation.warnings !== 1 ? 's' : '' }}
+          </UBadge>
           <UButton
             icon="i-heroicons-clipboard"
             color="neutral"
@@ -519,6 +550,34 @@ function copyIriToClipboard(iri: string) {
           >
             {{ descriptionExpanded ? 'Show less' : 'Show more' }}
           </UButton>
+        </div>
+
+        <!-- Validation details (expandable) -->
+        <div v-if="showValidationDetails && validation?.results?.length" class="mt-4">
+          <UAlert
+            :color="validation.errors ? 'error' : 'warning'"
+            :icon="validation.errors ? 'i-heroicons-exclamation-triangle' : 'i-heroicons-exclamation-circle'"
+            :title="`${validation.errors} error${validation.errors !== 1 ? 's' : ''}, ${validation.warnings} warning${validation.warnings !== 1 ? 's' : ''}`"
+          >
+            <template #description>
+              <ul class="mt-2 space-y-1 text-sm">
+                <li v-for="(result, i) in validation.results" :key="i" class="flex items-start gap-2">
+                  <UBadge
+                    :color="result.severity === 'Violation' ? 'error' : result.severity === 'Warning' ? 'warning' : 'info'"
+                    variant="subtle"
+                    size="xs"
+                    class="shrink-0 mt-0.5"
+                  >
+                    {{ result.severity }}
+                  </UBadge>
+                  <span>
+                    {{ result.message }}
+                    <span v-if="result.path" class="text-muted text-xs ml-1">({{ result.path }})</span>
+                  </span>
+                </li>
+              </ul>
+            </template>
+          </UAlert>
         </div>
       </div>
 

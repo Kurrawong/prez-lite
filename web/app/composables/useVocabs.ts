@@ -1,4 +1,4 @@
-import { fetchSchemes, getLabel, type Scheme } from '~/composables/useVocabData'
+import { fetchSchemes, fetchVocabMetadata, getLabel, type Scheme, type ValidationSummary } from '~/composables/useVocabData'
 
 export interface VocabTableRow {
   iri: string
@@ -17,6 +17,18 @@ export function useVocabs() {
   const route = useRoute()
   const router = useRouter()
   const { data: schemes, status } = useLazyAsyncData('schemes', fetchSchemes, { server: false })
+  const { data: vocabMetadata } = useLazyAsyncData('vocabMetadata', fetchVocabMetadata, { server: false })
+
+  // Map IRI → validation summary for quick lookup
+  const validationMap = computed(() => {
+    const map = new Map<string, ValidationSummary>()
+    if (vocabMetadata.value) {
+      for (const v of vocabMetadata.value) {
+        if (v.validation) map.set(v.iri, v.validation)
+      }
+    }
+    return map
+  })
 
   // Parse sort field from query
   const parseSortField = (value: unknown): 'name' | 'modified' | 'concepts' => {
@@ -111,7 +123,8 @@ export function useVocabs() {
       conceptCount: s.conceptCount,
       modified: s.modified,
       version: s.version,
-      publisher: s.publisherLabels?.[0] || s.publisher?.[0]
+      publisher: s.publisherLabels?.[0] || s.publisher?.[0],
+      validation: validationMap.value.get(s.iri)
     }))
   )
 
@@ -120,7 +133,8 @@ export function useVocabs() {
     { accessorKey: 'conceptCount', header: 'Concepts', sortField: 'concepts' as const },
     { accessorKey: 'modified', header: 'Modified', sortField: 'modified' as const },
     { accessorKey: 'version', header: 'Version' },
-    { accessorKey: 'publisher', header: 'Publisher' }
+    { accessorKey: 'publisher', header: 'Publisher' },
+    { accessorKey: 'validation', header: 'Validation' }
   ]
 
   // Build query object from current state (omit defaults)
@@ -196,6 +210,7 @@ export function useVocabs() {
     paginatedSchemes,
     tableData,
     tableColumns,
+    validationMap,
     toggleSort
   }
 }

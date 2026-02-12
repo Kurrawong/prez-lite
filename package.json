@@ -11,7 +11,7 @@
   "scripts": {
     "build:vocabs": "node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --sourceDir data/vocabs --outputBase web/public/export/vocabs --systemDir web/public/export/system --pattern \"*.ttl\" --backgroundDir data/background",
     "build:vocablist": "node packages/data-processing/scripts/generate-vocablist.js --sourceDir data/vocabs --output .cache/catalog.ttl && node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --source .cache/catalog.ttl --type catalog --outDir web/public/export/system/vocabularies --backgroundDir data/background",
-    "build:vocab-metadata": "node packages/data-processing/scripts/generate-vocab-metadata.js --sourceDir data/vocabs --backgroundDir data/background --output web/public/export/system/vocabularies/index.json",
+    "build:vocab-metadata": "node packages/data-processing/scripts/generate-vocab-metadata.js --sourceDir data/vocabs --backgroundDir data/background --validators data/validators --output web/public/export/system/vocabularies/index.json",
     "build:search": "node packages/data-processing/scripts/generate-search-index.js --exportDir web/public/export --output web/public/export/system/search --vocabMetadata web/public/export/system/vocabularies/index.json",
     "build:get-labels": "bash scripts/fetch-labels.sh",
     "build:labels": "node packages/data-processing/scripts/generate-labels.js --backgroundDir data/background --output web/public/export/system/labels.json",
@@ -24,11 +24,14 @@
     "dev": "pnpm --filter @prez-lite/web dev",
     "build": "pnpm build:data && pnpm build:site",
     "generate": "pnpm --filter @prez-lite/web generate",
-    "preview": "pnpm --filter @prez-lite/web preview"
+    "preview": "pnpm --filter @prez-lite/web preview",
+    "validate": "node scripts/run-validation-tests.js",
+    "ai-assess": "node --env-file=.env scripts/ai-assess-vocabs.js"
   },
   "dependencies": {
     "@fast-csv/format": "^5.0.2",
     "jsonld": "^8.3.3",
-    "n3": "^2.0.1"
+    "n3": "^2.0.1",
+    "rdf-validate-shacl": "^0.6.5"
   }
 }

@@ -15,6 +15,7 @@ const {
   paginatedSchemes,
   tableData,
   tableColumns,
+  validationMap,
   toggleSort
 } = useVocabs()
 
@@ -117,9 +118,35 @@ const sortOptions = [
 
           <template #footer>
             <div class="flex items-center justify-between text-sm">
-              <UBadge color="neutral" variant="subtle">
-                {{ scheme.conceptCount }} concepts
-              </UBadge>
+              <div class="flex items-center gap-2">
+                <UBadge color="neutral" variant="subtle">
+                  {{ scheme.conceptCount }} concepts
+                </UBadge>
+                <UBadge
+                  v-if="validationMap.get(scheme.iri)?.conforms === true"
+                  color="success"
+                  variant="subtle"
+                  size="xs"
+                >
+                  Valid
+                </UBadge>
+                <UBadge
+                  v-else-if="validationMap.get(scheme.iri)?.errors"
+                  color="error"
+                  variant="subtle"
+                  size="xs"
+                >
+                  {{ validationMap.get(scheme.iri)!.errors }} error{{ validationMap.get(scheme.iri)!.errors !== 1 ? 's' : '' }}
+                </UBadge>
+                <UBadge
+                  v-else-if="validationMap.get(scheme.iri)?.warnings"
+                  color="warning"
+                  variant="subtle"
+                  size="xs"
+                >
+                  {{ validationMap.get(scheme.iri)!.warnings }} warning{{ validationMap.get(scheme.iri)!.warnings !== 1 ? 's' : '' }}
+                </UBadge>
+              </div>
               <div class="flex items-center gap-2">
                 <UBadge v-if="scheme.version" color="primary" variant="subtle" size="xs">
                   v{{ scheme.version }}
@@ -202,6 +229,34 @@ const sortOptions = [
 
         <template #publisher-cell="{ row }">
           <span class="text-muted text-sm">{{ row.original.publisher || '-' }}</span>
+        </template>
+
+        <template #validation-cell="{ row }">
+          <UBadge
+            v-if="row.original.validation?.conforms === true"
+            color="success"
+            variant="subtle"
+            size="xs"
+          >
+            Valid
+          </UBadge>
+          <UBadge
+            v-else-if="row.original.validation?.errors"
+            color="error"
+            variant="subtle"
+            size="xs"
+          >
+            {{ row.original.validation.errors }} error{{ row.original.validation.errors !== 1 ? 's' : '' }}
+          </UBadge>
+          <UBadge
+            v-else-if="row.original.validation?.warnings"
+            color="warning"
+            variant="subtle"
+            size="xs"
+          >
+            {{ row.original.validation.warnings }} warning{{ row.original.validation.warnings !== 1 ? 's' : '' }}
+          </UBadge>
+          <span v-else class="text-muted text-sm">-</span>
         </template>
       </UTable>
     </UCard>

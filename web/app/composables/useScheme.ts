@@ -34,7 +34,9 @@ export function useScheme(uri: Ref<string>) {
 
   // Get slug for annotated properties lookup
   const { data: vocabMetadata } = useAsyncData('vocabMetadata', fetchVocabMetadata, { server: false })
-  const slug = computed(() => vocabMetadata.value?.find(v => v.iri === uri.value)?.slug)
+  const currentVocabMeta = computed(() => vocabMetadata.value?.find(v => v.iri === uri.value))
+  const slug = computed(() => currentVocabMeta.value?.slug)
+  const validation = computed(() => currentVocabMeta.value?.validation)
 
   const { data: concepts, status } = useAsyncData(
     () => `concepts-${uri.value}`,
@@ -152,6 +154,7 @@ export function useScheme(uri: Ref<string>) {
     metadataRows,
     richMetadata,
     slug,
+    validation,
     breadcrumbs
   }
 }

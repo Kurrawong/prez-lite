@@ -1,0 +1,91 @@
+# INVALID: New concept replaces an existing concept but is missing schema:creator.
+#
+# :gio-v2 uses dcterms:replaces to replace :gio, but does not declare
+# a schema:creator. The :revisionAuthor shape requires any subject of
+# dcterms:replaces or prov:wasRevisionOf to have exactly one schema:creator
+# pointing to a schema:Person or schema:Organization.
+#
+# Expected violation: "Each Concept that replaces or is a revision of another
+# MUST indicate a creator with schema:creator pointing to a Person or an Organisation"
+
+PREFIX : <http://pid.suncorp.com.au/def/brand/>
+PREFIX cs: <http://pid.suncorp.com.au/def/brand>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/org/suncorp>
+    a schema:Organization ;
+    schema:name "Suncorp Group Limited" ;
+    schema:url "http://www.suncorp.com.au"^^xsd:anyURI ;
+.
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Brand" ;
+    skos:definition "Brands under Suncorp Group Limited." ;
+    schema:dateCreated "2025-02-19"^^xsd:date ;
+    schema:dateModified "2026-02-12"^^xsd:date ;
+    schema:creator <https://linked.data.gov.au/org/suncorp> ;
+    skos:hasTopConcept
+        :aami ,
+        :gio ,
+        :suncorp ;
+.
+
+:aami
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for AAMI." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "AAMI" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.
+
+# Original concept being replaced — has endTime set correctly
+:gio
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for GIO." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "GIO" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+        schema:endTime "2026-02-12"^^xsd:date ;
+    ] ;
+.
+
+# INVALID: This concept replaces :gio but is MISSING schema:creator.
+:gio-v2
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    dcterms:replaces :gio ;
+    skos:definition "A revised definition for GIO." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "GIO" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2026-02-12"^^xsd:date ;
+    ] ;
+.
+
+:suncorp
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for Suncorp." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Suncorp" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.

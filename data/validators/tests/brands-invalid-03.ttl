@@ -1,0 +1,93 @@
+# INVALID: A concept has been added to the vocabulary but the ConceptScheme's
+# schema:dateModified has not been updated.
+#
+# The ConceptScheme should have schema:dateModified of "2026-02-12" (when
+# :bingle was added) but it has been removed entirely, simulating the editor
+# forgetting to update it.
+#
+# Expected violation: "Requirement 2.15 - modified date - violated"
+#
+# NOTE: The existing validator checks for the EXISTENCE of schema:dateModified,
+# not whether its value is current. Removing the date entirely is the simplest
+# way to demonstrate this failure with the current shapes.
+
+PREFIX : <http://pid.suncorp.com.au/def/brand/>
+PREFIX cs: <http://pid.suncorp.com.au/def/brand>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/org/suncorp>
+    a schema:Organization ;
+    schema:name "Suncorp Group Limited" ;
+    schema:url "http://www.suncorp.com.au"^^xsd:anyURI ;
+.
+
+# INVALID: ConceptScheme is missing schema:dateModified.
+# It was removed when a new concept was added but the editor forgot to update it.
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Brand" ;
+    skos:definition "Brands under Suncorp Group Limited." ;
+    schema:dateCreated "2025-02-19"^^xsd:date ;
+    # schema:dateModified is MISSING — should be "2026-02-12"^^xsd:date
+    schema:creator <https://linked.data.gov.au/org/suncorp> ;
+    skos:hasTopConcept
+        :aami ,
+        :gio ,
+        :suncorp ,
+        :bingle ;
+.
+
+:aami
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for AAMI." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "AAMI" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.
+
+:gio
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for GIO." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "GIO" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.
+
+:suncorp
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for Suncorp." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Suncorp" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.
+
+# Newly added concept — the addition that should have triggered a dateModified update
+:bingle
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for Bingle." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Bingle" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2026-02-12"^^xsd:date ;
+    ] ;
+.

@@ -1,0 +1,88 @@
+# INVALID: New concept replaces an existing concept but is missing schema:creator.
+#
+# icat:A0111 uses dcterms:replaces to replace icat:A0110, but does not declare
+# a schema:creator. The :revisionAuthor shape requires any subject of
+# dcterms:replaces or prov:wasRevisionOf to have exactly one schema:creator.
+#
+# Shape: :revisionAuthor
+# Expected: "Each Concept that replaces or is a revision of another MUST indicate
+# a creator with schema:creator..."
+
+PREFIX cs: <http://linked.data.gov.au/def/anzsic-2006>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX icat: <http://linked.data.gov.au/def/anzsic-2006/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/org/gsq>
+    a schema:Organization ;
+    schema:name "Geological Survey of Queensland" ;
+    schema:url "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq"^^xsd:anyURI ;
+.
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Australian and New Zealand Standard Industrial Classification 2006" ;
+    skos:definition "An industrial classification that organises data about business units into industry groups." ;
+    schema:dateCreated "2020-02-17"^^xsd:date ;
+    schema:dateModified "2026-02-12"^^xsd:date ;
+    schema:creator <https://linked.data.gov.au/org/gsq> ;
+    skos:hasTopConcept icat:A0000 ;
+.
+
+icat:A0000
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Agriculture, Forestry and Fishing." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agriculture, Forestry and Fishing" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2020-02-17"^^xsd:date ;
+    ] ;
+.
+
+icat:A0100
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Agriculture." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Agriculture" ;
+    skos:broader icat:A0000 ;
+    schema:temporalCoverage [
+        schema:startTime "2020-02-17"^^xsd:date ;
+    ] ;
+.
+
+icat:A0110
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Nursery and Floriculture Production." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Nursery and Floriculture Production" ;
+    skos:broader icat:A0100 ;
+    schema:temporalCoverage [
+        schema:startTime "2020-02-17"^^xsd:date ;
+        schema:endTime "2026-02-12"^^xsd:date ;
+    ] ;
+.
+
+# INVALID: missing schema:creator
+icat:A0111
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    dcterms:replaces icat:A0110 ;
+    skos:definition "Nursery, Floriculture and Turf Production." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Nursery, Floriculture and Turf Production" ;
+    skos:broader icat:A0100 ;
+    schema:temporalCoverage [
+        schema:startTime "2026-02-12"^^xsd:date ;
+    ] ;
+.

@@ -8,6 +8,20 @@ export interface LangMap {
 }
 
 // New format from system/vocabularies/index.json
+export interface ValidationResult {
+  severity: 'Violation' | 'Warning' | 'Info'
+  message: string
+  focusNode?: string
+  path?: string
+}
+
+export interface ValidationSummary {
+  conforms: boolean
+  errors: number
+  warnings: number
+  results?: ValidationResult[]
+}
+
 export interface VocabMetadata {
   iri: string
   slug: string
@@ -28,6 +42,7 @@ export interface VocabMetadata {
   themes?: string[]
   themeLabels?: string[]
   formats?: string[]
+  validation?: ValidationSummary
 }
 
 // Legacy Scheme interface for backwards compatibility

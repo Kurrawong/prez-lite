@@ -3,7 +3,7 @@
  * Fetches export manifest and provides download helpers
  */
 
-import { fetchVocabMetadata, type VocabMetadata } from '~/composables/useVocabData'
+import { fetchVocabMetadata, type VocabMetadata, type ValidationSummary } from '~/composables/useVocabData'
 
 export interface VocabExport {
   slug: string
@@ -14,6 +14,7 @@ export interface VocabExport {
   modified?: string
   version?: string
   formats: string[]
+  validation?: ValidationSummary
 }
 
 export interface ExportFormat {
@@ -64,7 +65,8 @@ function metadataToExport(meta: VocabMetadata): VocabExport {
     conceptCount: meta.conceptCount,
     modified: meta.modified,
     version: meta.version,
-    formats: meta.formats || ['ttl', 'json', 'jsonld', 'rdf', 'csv']
+    formats: meta.formats || ['ttl', 'json', 'jsonld', 'rdf', 'csv'],
+    validation: meta.validation
   }
 }
 

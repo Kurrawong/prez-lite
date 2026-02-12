@@ -1,0 +1,102 @@
+# INVALID: A new concept replaces an existing concept but the replaced concept's
+# temporal coverage has not been updated — it is missing schema:endTime.
+#
+# :gio-v2 replaces :gio with dcterms:replaces. The new concept has
+# schema:temporalCoverage with schema:startTime of 2026-02-12. However,
+# the replaced concept :gio has had its schema:temporalCoverage removed entirely
+# (simulating the omission of adding schema:endTime).
+#
+# Expected violation on :gio: "Each Concept MUST have a temporal coverage
+# indicated with the schema:temporalCoverage predicate..."
+#
+# NOTE: The existing validator checks for temporal coverage EXISTENCE on all
+# concepts. A more specific shape targeting objects of dcterms:replaces to
+# require schema:endTime specifically would better express this business rule.
+
+PREFIX : <http://pid.suncorp.com.au/def/brand/>
+PREFIX cs: <http://pid.suncorp.com.au/def/brand>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/org/suncorp>
+    a schema:Organization ;
+    schema:name "Suncorp Group Limited" ;
+    schema:url "http://www.suncorp.com.au"^^xsd:anyURI ;
+.
+
+<https://data.suncorp.com.au/person/test-editor>
+    a schema:Person ;
+    schema:name "Test Editor" ;
+    schema:email "test@example.com"^^xsd:anyURI ;
+.
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Brand" ;
+    skos:definition "Brands under Suncorp Group Limited." ;
+    schema:dateCreated "2025-02-19"^^xsd:date ;
+    schema:dateModified "2026-02-12"^^xsd:date ;
+    schema:creator <https://linked.data.gov.au/org/suncorp> ;
+    skos:hasTopConcept
+        :aami ,
+        :gio ,
+        :suncorp ;
+.
+
+:aami
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for AAMI." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "AAMI" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.
+
+# INVALID: This concept has been replaced by :gio-v2 but its temporal coverage
+# has been removed entirely. It should have schema:temporalCoverage with both
+# schema:startTime and schema:endTime set.
+:gio
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for GIO." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "GIO" ;
+    skos:topConceptOf cs: ;
+    # schema:temporalCoverage is MISSING — should have startTime + endTime
+.
+
+# Replacement concept — properly formed with creator and temporal coverage
+:gio-v2
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    dcterms:replaces :gio ;
+    schema:creator <https://data.suncorp.com.au/person/test-editor> ;
+    skos:definition "A revised definition for GIO." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "GIO" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2026-02-12"^^xsd:date ;
+    ] ;
+.
+
+:suncorp
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A definition for Suncorp." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Suncorp" ;
+    skos:topConceptOf cs: ;
+    schema:temporalCoverage [
+        schema:startTime "2025-02-19"^^xsd:date ;
+    ] ;
+.

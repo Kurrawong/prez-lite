@@ -21,15 +21,15 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| 5 unprioritized | Empty | Empty | Empty | Sprint 11 (1 item) |
+| 4 unprioritized | VocPub validation | Empty | Empty | Sprint 11 (1 item) |
 
 ---
 
 ## Current Status
 
-**Sprint 11 complete.** No active sprint.
+**Sprint 12: VocPub Validation** — Planning
 
-**Backlog:** 5 items remaining (VocPub validation, TDD, incremental deploys, collab presence, edit lifecycle)
+**Backlog:** 4 items remaining (TDD, incremental deploys, collab presence, edit lifecycle)
 
 ---
 

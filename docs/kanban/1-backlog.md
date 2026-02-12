@@ -4,7 +4,7 @@
 
 ---
 
-### Integrate VocPub validation into data processing and browser editing
+### 🎯 Integrate VocPub validation into data processing and browser editing
 Run SHACL validation (using GSWA's vocpub.ttl as reference) during `process-vocab` and on browser save; show a validity indicator on vocab pages with human-readable errors, expandable details, and links to VocPub documentation.
 
 ### Adopt test-driven development workflow

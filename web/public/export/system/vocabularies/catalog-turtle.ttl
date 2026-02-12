@@ -13,7 +13,7 @@
 <https://example.org/catalogue/vocabularies> a sdo:DataCatalog;
     sdo:name "Vocabularies"@en;
     sdo:description "Published vocabularies."@en;
-    sdo:dateModified "2026-02-11"^^xsd:date;
+    sdo:dateModified "2026-02-12"^^xsd:date;
     sdo:hasPart <https://linked.data.gov.au/def/alteration-form>, <http://linked.data.gov.au/def/anzsic-2006>, <http://pid.suncorp.com.au/def/brand>.
 <https://linked.data.gov.au/def/alteration-form> skos:prefLabel "Alteration form"@en.
 <http://linked.data.gov.au/def/anzsic-2006> skos:prefLabel "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX"@en.
