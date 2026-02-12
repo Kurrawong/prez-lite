@@ -43,7 +43,7 @@ jobs:
 
       - name: Run AI assessment
         env:
-          AI_WORKER_URL: ${{ secrets.AI_WORKER_URL }}
+          AI_WORKER_URL: ${{ vars.AI_WORKER_URL }}
           AI_WORKER_KEY: ${{ secrets.AI_WORKER_KEY }}
         run: node scripts/ai-assess-vocabs.js
 
