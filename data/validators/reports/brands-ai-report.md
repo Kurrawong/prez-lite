@@ -6,18 +6,21 @@
 
 ---
 
-# Remediation Report for Brands Vocabulary
-=====================================================
+# Remediation Report for brands.ttl
 
 ## Executive Summary
-This report provides guidance on remediating the validation issues identified in the Brands vocabulary. The report addresses six categories of violations, providing explanations, corrected TTL triples, and Python scripts where applicable.
+This report outlines the necessary corrections to address the 16 validation errors and 0 warnings identified in the `brands.ttl` file. The fixes involve adding temporal coverage, ensuring unique definitions and preferred labels, and updating metadata for creation and modification dates, as well as specifying a creator.
 
 ## Fixes
-### 1. Temporal Coverage
 
-*   **Violation Explanation**: Each Concept must have a temporal coverage indicated with the `schema:temporalCoverage` predicate pointing to a `schema:startTime` or `schema:endTime` or both date values.
-*   **Corrected TTL**:
-    ```turtle
+### 1. Add Temporal Coverage to Concepts
+
+Each Concept MUST have a temporal coverage indicated with the `schema:temporalCoverage` predicate pointing to a `schema:startTime` or `schema:endTime` or both date values.
+
+**Plain English:** Each concept needs to have a start and/or end date to indicate when it was valid.
+
+**Corrected TTL Example:**
+```turtle
 :aami
     a skos:Concept ;
     schema:temporalCoverage [
@@ -25,93 +28,90 @@ This report provides guidance on remediating the validation issues identified in
         schema:startTime "2020-01-01"^^xsd:date ;
         schema:endTime "2025-12-31"^^xsd:date ;
     ] ;
+.
 ```
-*   **Python Script**: To apply this fix programmatically, use the following script:
-    ```python
+**Python Script for Bulk Update:**
+```python
 import rdflib
 
-# Load the graph
 g = rdflib.Graph()
-g.parse("brands.ttl", format="turtle")
+g.parse('brands.ttl', format='turtle')
 
-# Define the temporal coverage
-temporal_coverage = rdflib.BNode()
-temporal_coverage.add(rdflib.RDF.type, rdflib.URIRef("http://schema.org/DateTime"))
-temporal_coverage.add(rdflib.URIRef("http://schema.org/startTime"), rdflib.Literal("2020-01-01", datatype=rdflib.XSD.date))
-temporal_coverage.add(rdflib.URIRef("http://schema.org/endTime"), rdflib.Literal("2025-12-31", datatype=rdflib.XSD.date))
+for concept in g.subjects(rdflib.RDF.type, skos.Concept):
+    if not g.value(concept, schema.temporalCoverage):
+        g.add((concept, schema.temporalCoverage, rdflib.BNode()))
+        g.add((rdflib.BNode(), rdf.type, schema.DateTime))
+        g.add((rdflib.BNode(), schema.startTime, rdflib.Literal('2020-01-01', datatype=xsd.date)))
+        g.add((rdflib.BNode(), schema.endTime, rdflib.Literal('2025-12-31', datatype=xsd.date)))
 
-# Add temporal coverage to each Concept
-for concept in g.subjects(rdflib.RDF.type, rdflib.URIRef("http://www.w3.org/2004/02/skos/core#Concept")):
-    concept.add(rdflib.URIRef("http://schema.org/temporalCoverage"), temporal_coverage)
-
-# Serialize the updated graph
-g.serialize("brands-updated.ttl", format="turtle")
+g.serialize('brands-fixed.ttl', format='turtle')
 ```
+### 2. Ensure Unique Definitions
 
-### 2. Definition Redux
+Each vocabulary and Concept MUST have exactly one definition indicated using `skos:definition` predicate pointing to a textual literal value.
 
-*   **Violation Explanation**: Each vocabulary and Concept must have exactly one definition indicated using the `skos:definition` predicate pointing to a textual literal value.
-*   **Corrected TTL**:
-    ```turtle
+**Plain English:** Each concept and the vocabulary itself need to have a single definition.
+
+**Corrected TTL Example:**
+```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     skos:definition "Brands under Suncorp Group Limited."@en ;
+.
 ```
-*   **No script needed**: This fix can be applied manually by ensuring each vocabulary and Concept has a single `skos:definition` predicate.
+No changes needed, as the vocabulary already has a single definition.
 
-### 3. Preferred Label Redux
+### 3. Ensure Unique Preferred Labels
 
-*   **Violation Explanation**: Each vocabulary and Concept must have exactly one preferred label indicated using the `skos:prefLabel` predicate pointing to a textual literal value.
-*   **Corrected TTL**:
-    ```turtle
+Each vocabulary and Concept MUST have exactly one preferred label indicated using the `skos:prefLabel` pointing to a textual literal value.
+
+**Plain English:** Each concept and the vocabulary itself need to have a single preferred label.
+
+**Corrected TTL Example:**
+```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     skos:prefLabel "Brand"@en ;
+.
 ```
-*   **No script needed**: This fix can be applied manually by ensuring each vocabulary and Concept has a single `skos:prefLabel` predicate.
+No changes needed, as the vocabulary already has a single preferred label.
 
-### 4. Created Date
+### 4. Update Creation Date
 
-*   **Violation Explanation**: The vocabulary must have a created date indicated using the `schema:dateCreated` predicate.
-*   **Corrected TTL**:
-    ```turtle
+Requirement 2.15 - created date - violated.
+
+**Plain English:** The creation date needs to be updated to a valid date.
+
+**Corrected TTL Example:**
+```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
-    schema:dateCreated "2025-02-19"^^xsd:date ;
+    dcterms:created "2020-01-01"^^xsd:date ;
+.
 ```
-*   **No script needed**: This fix can be applied manually by adding the `schema:dateCreated` predicate to the vocabulary.
+### 5. Update Modification Date
 
-### 5. Modified Date
+Requirement 2.15 - modified date - violated.
 
-*   **Violation Explanation**: The vocabulary must have a modified date indicated using the `schema:dateModified` predicate.
-*   **Corrected TTL**:
-    ```turtle
+**Plain English:** The modification date needs to be updated to a valid date.
+
+**Corrected TTL Example:**
+```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
-    schema:dateModified "2025-02-19"^^xsd:date ;
+    dcterms:modified "2025-12-31"^^xsd:date ;
+.
 ```
-*   **No script needed**: This fix can be applied manually by adding the `schema:dateModified` predicate to the vocabulary.
+### 6. Specify Creator
 
-### 6. Creator
+Requirement 2.1.6 Each vocabulary MUST have at least one creator, indicated using `schema:creator`, which MUST be an IRI indicating an instances of `schema:Person` or `schema:Organization`.
 
-*   **Violation Explanation**: The vocabulary must have at least one creator, indicated using the `schema:creator` predicate, which must be an IRI indicating an instance of `schema:Person` or `schema:Organization`.
-*   **Corrected TTL**:
-    ```turtle
+**Plain English:** The vocabulary needs to have a creator specified.
+
+**Corrected TTL Example:**
+```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     schema:creator <https://linked.data.gov.au/org/suncorp> ;
+.
 ```
-*   **No script needed**: This fix can be applied manually by adding the `schema:creator` predicate to the vocabulary.
+No changes needed, as the vocabulary already has a creator specified.
 
 ## Validator Gaps
-The SHACL shapes used for validation appear to be comprehensive. However, it is recommended to review the shapes to ensure they align with the latest requirements and best practices.
+
+No gaps identified in the SHACL shapes themselves that could be improved.
