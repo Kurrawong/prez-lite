@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { getLabel } from '~/composables/useVocabData'
 import type { ChangeSummary } from '~/composables/useEditMode'
-import { useDraggable } from '@vueuse/core'
 
 const route = useRoute()
 const router = useRouter()
@@ -65,7 +64,11 @@ const { isAuthenticated } = useGitHubAuth()
 const vocabSlugForEditor = computed(() => getVocabByIri(uri.value)?.slug)
 const [editorOwner, editorRepoName] = (githubRepo as string).split('/')
 const editorAvailable = computed(() => !!(editorOwner && editorRepoName && isAuthenticated.value && vocabSlugForEditor.value))
-const editorFilePath = computed(() => `${githubVocabPath}/${vocabSlugForEditor.value}.ttl`)
+const editorFilePath = computed(() => {
+  const base = (githubVocabPath as string).replace(/^\/+|\/+$/g, '')
+  const slug = vocabSlugForEditor.value
+  return base ? `${base}/${slug}.ttl` : `${slug}.ttl`
+})
 
 // Edit view: 'none' | 'full' | 'inline'
 const editView = ref<'none' | 'full' | 'inline'>('none')
@@ -106,12 +109,22 @@ const editModeItems = [[
 
 // --- Edit mode navigation ---
 
+const editErrorModal = ref(false)
+const editErrorMessage = ref('')
+const editErrorPath = ref('')
+
 async function enterEdit(mode: 'full' | 'inline' = 'full') {
   const wasOff = editView.value === 'none'
-  editView.value = mode
   if (wasOff && editMode) {
     await editMode.enterEditMode()
+    if (editMode.error.value) {
+      editErrorMessage.value = editMode.error.value
+      editErrorPath.value = editorFilePath.value
+      editErrorModal.value = true
+      return
+    }
   }
+  editView.value = mode
 }
 
 function exitEdit() {
@@ -383,24 +396,6 @@ const hasExpandableNodes = computed(() => {
 // Whether tree is in edit mode (show pencil icons on nodes)
 const treeEditMode = computed(() => editView.value !== 'none' && !!editMode?.isEditMode.value)
 
-// Edit panel positioning — draggable, initial position aligned with breadcrumb
-const breadcrumbRef = useTemplateRef<HTMLElement>('breadcrumbRef')
-const editPanelRef = useTemplateRef<HTMLElement>('editPanelRef')
-const editPanelHandleRef = useTemplateRef<HTMLElement>('editPanelHandleRef')
-
-const { position: editPanelPos, style: editPanelStyle } = useDraggable(editPanelRef, {
-  handle: editPanelHandleRef,
-  initialValue: { x: 0, y: 96 },
-})
-
-onMounted(() => {
-  nextTick(() => {
-    const el = (breadcrumbRef.value as any)?.$el ?? breadcrumbRef.value
-    const y = el ? el.getBoundingClientRect().top : 96
-    const x = window.innerWidth - 280 - 24 // right-6 (24px) with 280px width
-    editPanelPos.value = { x, y }
-  })
-})
 
 // Description expand/collapse
 const descriptionExpanded = ref(false)
@@ -512,9 +507,9 @@ function copyIriToClipboard(iri: string) {
             aria-label="Share or embed this vocabulary"
           />
 
-          <!-- Fallback: edit on GitHub.dev -->
+          <!-- Fallback: edit on GitHub.dev (only when logged in but inline editor unavailable) -->
           <UButton
-            v-if="!editorAvailable && githubEditUrl"
+            v-if="isAuthenticated && !editorAvailable && githubEditUrl"
             :to="githubEditUrl"
             target="_blank"
             icon="i-heroicons-pencil-square"
@@ -581,146 +576,94 @@ function copyIriToClipboard(iri: string) {
         </div>
       </div>
 
-      <!-- Fixed edit panel (top-right, always visible) -->
+      <!-- Fixed bottom edit banner -->
       <Teleport to="body">
         <div
           v-if="editorAvailable && editView !== 'none' && editMode"
-          ref="editPanelRef"
-          class="fixed z-50 bg-elevated border border-default rounded-lg shadow-lg w-[280px] flex flex-col"
-          :style="editPanelStyle"
+          class="fixed bottom-0 inset-x-0 z-50 bg-primary-100 dark:bg-primary-900 border-t-2 border-primary shadow-[0_-4px_12px_rgba(0,0,0,0.12)]"
         >
-          <!-- Panel header (drag handle) -->
-          <div ref="editPanelHandleRef" class="flex items-center justify-between px-3 py-2.5 cursor-grab active:cursor-grabbing select-none">
-            <div class="flex items-center gap-2 text-sm font-medium">
+          <div class="max-w-screen-xl mx-auto px-4 py-4 flex items-center gap-4">
+            <!-- Mode indicator -->
+            <div class="flex items-center gap-2 text-sm font-medium shrink-0">
               <UIcon
                 :name="editView === 'full' ? 'i-heroicons-pencil-square' : 'i-heroicons-cursor-arrow-rays'"
                 class="size-4"
               />
-              {{ editView === 'full' ? 'Full edit mode' : 'Inline edit mode' }}
-            </div>
-            <UButton
-              icon="i-heroicons-x-mark"
-              color="neutral"
-              variant="ghost"
-              size="xs"
-              aria-label="Exit edit mode"
-              @click="exitEdit"
-            />
-          </div>
-
-          <USeparator />
-
-          <!-- Body: changes list -->
-          <div class="px-3 py-3 flex-1">
-            <!-- Loading -->
-            <div v-if="editMode.loading.value" class="flex items-center gap-2 text-xs text-muted py-1">
-              <UIcon name="i-heroicons-arrow-path" class="size-3.5 animate-spin" />
-              Loading from GitHub...
+              {{ editView === 'full' ? 'Full edit' : 'Inline edit' }}
             </div>
 
-            <!-- Error -->
-            <div v-else-if="editMode.error.value" class="text-xs text-error py-1">
-              {{ editMode.error.value }}
-            </div>
+            <USeparator orientation="vertical" class="h-5" />
 
-            <!-- Pending changes -->
-            <div v-else-if="pendingChanges.length" class="space-y-3 max-h-[320px] overflow-y-auto">
-              <div v-for="change in pendingChanges" :key="change.subjectIri">
-                <!-- Subject header -->
-                <div class="flex items-center gap-1.5 text-xs font-medium mb-1" :title="change.subjectIri">
+            <!-- Status / changes -->
+            <div class="flex-1 min-w-0 overflow-x-auto">
+              <!-- Loading -->
+              <div v-if="editMode.loading.value" class="flex items-center gap-2 text-xs text-muted">
+                <UIcon name="i-heroicons-arrow-path" class="size-3.5 animate-spin shrink-0" />
+                Loading from GitHub...
+              </div>
+
+              <!-- Error -->
+              <div v-else-if="editMode.error.value" class="text-xs text-error truncate">
+                {{ editMode.error.value }}
+              </div>
+
+              <!-- Pending changes (horizontal) -->
+              <div v-else-if="pendingChanges.length" class="flex items-center gap-3 text-xs">
+                <div v-for="change in pendingChanges" :key="change.subjectIri" class="flex items-center gap-1.5 shrink-0" :title="change.subjectIri">
                   <UIcon
                     :name="change.type === 'added' ? 'i-heroicons-plus-circle' : change.type === 'removed' ? 'i-heroicons-minus-circle' : 'i-heroicons-pencil'"
                     :class="change.type === 'added' ? 'text-success' : change.type === 'removed' ? 'text-error' : 'text-warning'"
                     class="size-3.5 shrink-0"
                   />
-                  <span class="truncate">{{ change.subjectLabel }}</span>
+                  <span class="font-medium truncate max-w-40">{{ change.subjectLabel }}</span>
+                  <span class="text-muted">({{ change.propertyChanges.length }})</span>
                 </div>
-                <!-- Property changes -->
-                <div class="ml-5 space-y-1">
-                  <div
-                    v-for="prop in change.propertyChanges"
-                    :key="prop.predicateIri"
-                    class="text-[11px] leading-tight cursor-default"
-                    :title="formatChangeTooltip(prop)"
-                  >
-                    <div class="font-medium text-muted">{{ prop.predicateLabel }}</div>
+              </div>
 
-                    <!-- Focused diff: single old → single new with shared context -->
-                    <template v-if="prop.type === 'modified' && prop.oldValues?.length === 1 && prop.newValues?.length === 1">
-                      <template v-for="diff in [focusedDiff(prop.oldValues[0]!, prop.newValues[0]!)]" :key="'diff'">
-                        <template v-if="diff">
-                          <div class="pl-2 text-error">
-                            <span class="select-none">- </span><span class="text-muted">{{ diff.before }}</span><span class="font-semibold bg-error/10 rounded-sm px-0.5">{{ diff.oldPart }}</span><span class="text-muted">{{ diff.after }}</span>
-                          </div>
-                          <div class="pl-2 text-success">
-                            <span class="select-none">+ </span><span class="text-muted">{{ diff.before }}</span><span class="font-semibold bg-success/10 rounded-sm px-0.5">{{ diff.newPart }}</span><span class="text-muted">{{ diff.after }}</span>
-                          </div>
-                        </template>
-                        <!-- Strings too different for focused diff -->
-                        <template v-else>
-                          <div class="pl-2 text-error">
-                            <span class="select-none">- </span><span class="line-through">{{ truncateValue(prop.oldValues![0]!, 40) }}</span>
-                          </div>
-                          <div class="pl-2 text-success">
-                            <span class="select-none">+ </span>{{ truncateValue(prop.newValues![0]!, 40) }}
-                          </div>
-                        </template>
-                      </template>
-                    </template>
-
-                    <!-- Fallback: simple list of old/new values -->
-                    <template v-else>
-                      <div v-for="val in (prop.oldValues || [])" :key="'old-' + val" class="pl-2 text-error">
-                        <span class="select-none">- </span><span class="line-through">{{ truncateValue(val, 40) }}</span>
-                      </div>
-                      <div v-for="val in (prop.newValues || [])" :key="'new-' + val" class="pl-2 text-success">
-                        <span class="select-none">+ </span>{{ truncateValue(val, 40) }}
-                      </div>
-                    </template>
-                  </div>
-                </div>
+              <!-- Empty state -->
+              <div v-else class="text-xs text-muted/60">
+                No changes yet
               </div>
             </div>
 
-            <!-- Empty state -->
-            <div v-else class="text-center py-4">
-              <UIcon name="i-heroicons-document-text" class="size-6 text-muted/40 mx-auto mb-1.5" />
-              <p class="text-xs text-muted/60">Changes you make will appear here</p>
-            </div>
-          </div>
-
-          <USeparator />
-
-          <!-- Action bar -->
-          <div class="px-3 py-2.5 flex items-center justify-between gap-2">
-            <UButton
-              size="xs"
-              color="neutral"
-              variant="link"
-              class="cursor-pointer"
-              :icon="editView === 'full' ? 'i-heroicons-cursor-arrow-rays' : 'i-heroicons-pencil-square'"
-              @click="enterEdit(editView === 'full' ? 'inline' : 'full')"
-            >
-              Switch to {{ editView === 'full' ? 'inline' : 'full' }}
-            </UButton>
-            <UFieldGroup>
+            <!-- Actions -->
+            <div class="flex items-center gap-2 shrink-0">
               <UButton
-                size="sm"
-                :disabled="!pendingChanges.length"
-                :loading="editMode.saveStatus.value === 'saving'"
-                label="Save"
-                @click="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
-              />
-              <UDropdownMenu :items="saveDropdownItems(selectedConceptUri || uri)">
+                size="xs"
+                color="neutral"
+                variant="ghost"
+                :icon="editView === 'full' ? 'i-heroicons-cursor-arrow-rays' : 'i-heroicons-pencil-square'"
+                @click="enterEdit(editView === 'full' ? 'inline' : 'full')"
+              >
+                {{ editView === 'full' ? 'Switch to Inline' : 'Switch to Full' }}
+              </UButton>
+              <UFieldGroup>
                 <UButton
                   size="sm"
-                  color="neutral"
-                  variant="outline"
-                  icon="i-heroicons-chevron-down"
-                  :disabled="editMode.saveStatus.value === 'saving'"
+                  :disabled="!pendingChanges.length"
+                  :loading="editMode.saveStatus.value === 'saving'"
+                  label="Save"
+                  @click="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
                 />
-              </UDropdownMenu>
-            </UFieldGroup>
+                <UDropdownMenu :items="saveDropdownItems(selectedConceptUri || uri)">
+                  <UButton
+                    size="sm"
+                    color="neutral"
+                    variant="outline"
+                    icon="i-heroicons-chevron-down"
+                    :disabled="editMode.saveStatus.value === 'saving'"
+                  />
+                </UDropdownMenu>
+              </UFieldGroup>
+              <UButton
+                icon="i-heroicons-x-mark"
+                color="neutral"
+                variant="ghost"
+                size="xs"
+                aria-label="Exit edit mode"
+                @click="exitEdit"
+              />
+            </div>
           </div>
         </div>
       </Teleport>
@@ -937,6 +880,31 @@ function copyIriToClipboard(iri: string) {
             @confirm="handleSaveConfirm"
             @cancel="showSaveModal = false"
           />
+        </template>
+      </UModal>
+
+      <!-- Edit Error Modal -->
+      <UModal v-model:open="editErrorModal">
+        <template #header>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-exclamation-triangle" class="size-5 text-error" />
+            <h3 class="font-semibold">Unable to enter edit mode</h3>
+          </div>
+        </template>
+        <template #body>
+          <div class="space-y-3">
+            <p class="text-sm">{{ editErrorMessage }}</p>
+            <div class="bg-muted/10 border border-default rounded-md px-3 py-2">
+              <p class="text-xs text-muted mb-1">File path</p>
+              <code class="text-sm font-mono break-all">{{ editErrorPath }}</code>
+            </div>
+            <p class="text-xs text-muted">Check that the GitHub repository, branch, and vocab path are configured correctly in your environment variables.</p>
+          </div>
+        </template>
+        <template #footer>
+          <div class="flex justify-end">
+            <UButton label="Close" @click="editErrorModal = false" />
+          </div>
         </template>
       </UModal>
 

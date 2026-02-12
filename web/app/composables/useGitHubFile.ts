@@ -8,9 +8,11 @@
 export function useGitHubFile(
   owner: string,
   repo: string,
-  path: string,
+  rawPath: string,
   branch: string,
 ) {
+  // GitHub API rejects paths starting with /
+  const path = rawPath.replace(/^\/+/, '')
   const { token } = useGitHubAuth()
 
   const content = ref('')

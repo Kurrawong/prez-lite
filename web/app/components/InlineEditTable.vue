@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useDebounceFn } from '@vueuse/core'
 import type { EditableProperty, EditableValue, ConceptSummary } from '~/composables/useEditMode'
 
 const props = defineProps<{
@@ -56,9 +57,21 @@ function stopEditing() {
   editingPredicate.value = null
 }
 
-function handleValueUpdate(predicate: string, val: EditableValue, event: Event) {
+// Local input values to prevent cursor jumping when store re-renders
+const localValues = reactive(new Map<string, string>())
+
+function getLocalValue(val: EditableValue): string {
+  return localValues.get(val.id) ?? val.value
+}
+
+const debouncedEmitUpdate = useDebounceFn((predicate: string, val: EditableValue, newValue: string) => {
+  emit('update:value', predicate, val, newValue)
+}, 300)
+
+function handleValueInput(predicate: string, val: EditableValue, event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
-  emit('update:value', predicate, val, target.value)
+  localValues.set(val.id, target.value)
+  debouncedEmitUpdate(predicate, val, target.value)
 }
 
 function handleLanguageChange(predicate: string, val: EditableValue, newLang: string) {
@@ -174,23 +187,23 @@ onUnmounted(() => {
                     <div v-for="val in prop.values" :key="val.id" class="flex items-start gap-2 mb-2 min-w-0">
                       <UTextarea
                         v-if="prop.fieldType === 'textarea'"
-                        :model-value="val.value"
+                        :model-value="getLocalValue(val)"
                         :rows="3"
                         class="flex-1"
-                        @change="handleValueUpdate(prop.predicate, val, $event)"
+                        @input="handleValueInput(prop.predicate, val, $event)"
                       />
                       <UInput
                         v-else-if="prop.fieldType === 'date'"
                         type="date"
-                        :model-value="val.value"
+                        :model-value="getLocalValue(val)"
                         class="flex-1"
-                        @change="handleValueUpdate(prop.predicate, val, $event)"
+                        @input="handleValueInput(prop.predicate, val, $event)"
                       />
                       <UInput
                         v-else
-                        :model-value="val.value"
+                        :model-value="getLocalValue(val)"
                         class="flex-1"
-                        @change="handleValueUpdate(prop.predicate, val, $event)"
+                        @input="handleValueInput(prop.predicate, val, $event)"
                       />
 
                       <!-- Language tag selector -->

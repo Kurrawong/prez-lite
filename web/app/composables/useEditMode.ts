@@ -131,9 +131,10 @@ function getFieldType(predicate: string): EditableProperty['fieldType'] {
   return 'text'
 }
 
+/** Fallback counter for newly added empty values */
 let valueCounter = 0
 function nextValueId(): string {
-  return `ev-${++valueCounter}`
+  return `ev-new-${++valueCounter}`
 }
 
 // ============================================================================
@@ -345,12 +346,13 @@ export function useEditMode(
     nestedOrder?: ProfilePropertyOrder[],
   ): EditableValue[] {
     if (!store.value) return []
-    return (store.value.getQuads(subjectIri, predicateIri, null, null) as Quad[]).map((q: Quad) => {
+    return (store.value.getQuads(subjectIri, predicateIri, null, null) as Quad[]).map((q: Quad, idx: number) => {
+      const slotId = `ev-${subjectIri}|${predicateIri}|${idx}`
       const obj = q.object
       if (obj.termType === 'BlankNode') {
         const nestedQuads = store.value!.getQuads(obj, null, null, null) as Quad[]
         return {
-          id: nextValueId(),
+          id: slotId,
           type: 'blank-node' as const,
           value: obj.value,
           nestedProperties: extractBlankNodeProperties(nestedQuads, nestedOrder),
@@ -358,7 +360,7 @@ export function useEditMode(
       }
       if (obj.termType === 'Literal') {
         return {
-          id: nextValueId(),
+          id: slotId,
           type: 'literal' as const,
           value: obj.value,
           language: (obj as any).language || undefined,
@@ -366,7 +368,7 @@ export function useEditMode(
         }
       }
       return {
-        id: nextValueId(),
+        id: slotId,
         type: 'iri' as const,
         value: obj.value,
       }
@@ -416,6 +418,7 @@ export function useEditMode(
     return result
   }
 
+  /** Used for nested blank node properties (readonly) — stable IDs not needed */
   function quadToEditableValue(q: Quad): EditableValue {
     const obj = q.object
     if (obj.termType === 'Literal') {
