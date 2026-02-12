@@ -54,9 +54,9 @@ Generated assets include:
 | File | Description |
 |------|-------------|
 | `*-turtle.ttl` | Simplified TTL (scheme/concept only) |
-| `*-anot+turtle.ttl` | Annotated TTL with prez: predicates |
-| `*-anot+ld+json.json` | Annotated JSON-LD |
-| `*-json+ld.json` | Standard JSON-LD |
+| `*-anot-turtle.ttl` | Annotated TTL with prez: predicates |
+| `*-anot-ld-json.json` | Annotated JSON-LD |
+| `*-json-ld.json` | Standard JSON-LD |
 | `*-rdf.xml` | RDF/XML format |
 | `*-list.csv` | Concept list as CSV |
 | `*-list.json` | Concept list as JSON |
@@ -65,7 +65,7 @@ Generated assets include:
 
 Notes:
 - **`profile.json`** is generated when processing with SHACL (`--profiles ...`) and is written to the same output directory as the other exported assets (e.g. `examples/data/ga-vocab/profile.json`).
-- The HTML page generation can use the exported **annotated** asset (e.g. `*-anot+turtle.ttl`) plus `profile.json` to render in profile-defined order.
+- The HTML page generation can use the exported **annotated** asset (e.g. `*-anot-turtle.ttl`) plus `profile.json` to render in profile-defined order.
 
 ## Processing Pipeline
 

@@ -54,8 +54,8 @@ web/public/export/
 └── vocabs/
     ├── alteration-form/
     │   ├── alteration-form.ttl
-    │   ├── alteration-form-anot+turtle.ttl   # Annotated variant
-    │   ├── alteration-form-json+ld.json
+    │   ├── alteration-form-anot-turtle.ttl   # Annotated variant
+    │   ├── alteration-form-json-ld.json
     │   ├── alteration-form-rdf.xml
     │   ├── alteration-form-concepts.csv
     │   ├── alteration-form-page.html

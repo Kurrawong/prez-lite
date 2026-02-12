@@ -183,10 +183,10 @@ export function useOntologyProperties() {
 
   // Output formats supported by Prez
   const outputFormats = [
-    { id: 'text/anot+turtle', label: 'Annotated Turtle', extension: 'ttl' },
+    { id: 'text/anot-turtle', label: 'Annotated Turtle', extension: 'ttl' },
     { id: 'text/turtle', label: 'Turtle', extension: 'ttl' },
     { id: 'application/ld+json', label: 'JSON-LD', extension: 'jsonld' },
-    { id: 'application/anot+ld+json', label: 'Annotated JSON-LD', extension: 'jsonld' },
+    { id: 'application/anot-ld-json', label: 'Annotated JSON-LD', extension: 'jsonld' },
     { id: 'application/rdf+xml', label: 'RDF/XML', extension: 'rdf' },
     { id: 'text/csv', label: 'CSV', extension: 'csv' },
     { id: 'application/json', label: 'JSON', extension: 'json' },

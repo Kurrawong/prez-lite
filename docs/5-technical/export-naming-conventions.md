@@ -12,7 +12,7 @@ date: 2026-02-09
 
 prez-lite currently uses **functional but inconsistent** naming conventions that blend RDF-centric and web application approaches. While the implementation works well, there are opportunities for:
 - **Removing duplication** (list vs concepts files)
-- **Standardizing annotation marking** (anot+ vs -annotated)
+- **Standardizing annotation marking** (anot- vs -annotated)
 - **Aligning with standards** (OGC Records API, DCAT)
 - **Improving discoverability** (distribution metadata)
 
@@ -34,9 +34,9 @@ export/
 │
 └── {vocab-slug}/
     ├── {vocab}-turtle.ttl           # Simplified Turtle
-    ├── {vocab}-anot+turtle.ttl      # Annotated Turtle
-    ├── {vocab}-json+ld.json         # JSON-LD
-    ├── {vocab}-anot+ld+json.json    # Annotated JSON-LD
+    ├── {vocab}-anot-turtle.ttl      # Annotated Turtle
+    ├── {vocab}-json-ld.json         # JSON-LD
+    ├── {vocab}-anot-ld-json.json    # Annotated JSON-LD
     ├── {vocab}-rdf.xml              # RDF/XML
     ├── {vocab}-concepts.json        # ⚠️ DUPLICATE
     ├── {vocab}-concepts.csv         # ⚠️ DUPLICATE
@@ -44,7 +44,7 @@ export/
     ├── {vocab}-list.csv             # ⚠️ DUPLICATE
     ├── {vocab}-page.html            # Standalone HTML
     ├── profile.json                 # Per-vocab fields
-    └── concepts/{prefix}/{id}-anot+ld+json.json
+    └── concepts/{prefix}/{id}-anot-ld-json.json
 ```
 
 ### Naming Patterns
@@ -52,9 +52,9 @@ export/
 | Pattern | Purpose | Status |
 |---------|---------|--------|
 | `{vocab}-turtle.ttl` | Simplified RDF Turtle | ✅ Clear |
-| `{vocab}-anot+turtle.ttl` | Turtle with labels | ⚠️ Non-standard syntax |
-| `{vocab}-json+ld.json` | Standard JSON-LD | ✅ Clear |
-| `{vocab}-anot+ld+json.json` | JSON-LD with labels | ⚠️ Non-standard syntax |
+| `{vocab}-anot-turtle.ttl` | Turtle with labels | ⚠️ Non-standard syntax |
+| `{vocab}-json-ld.json` | Standard JSON-LD | ✅ Clear |
+| `{vocab}-anot-ld-json.json` | JSON-LD with labels | ⚠️ Non-standard syntax |
 | `{vocab}-rdf.xml` | RDF/XML format | ✅ Clear |
 | `{vocab}-concepts.json` | Simple JSON list | ✅ Clear |
 | `{vocab}-list.json` | Simple JSON list | ❌ DUPLICATE |
@@ -101,24 +101,24 @@ alteration-form-list.csv
 
 ### Issue 2: Non-Standard Annotation Syntax
 
-**Problem:** `anot+` prefix not IANA-registered media type
+**Problem:** `anot-` prefix not IANA-registered media type
 
 Current naming:
 ```bash
-alteration-form-anot+turtle.ttl      # text/anot+turtle (invalid MIME)
-alteration-form-anot+ld+json.json    # application/anot+ld+json (invalid)
+alteration-form-anot-turtle.ttl      # text/anot-turtle (invalid MIME)
+alteration-form-anot-ld-json.json    # application/anot-ld-json (invalid)
 ```
 
 IANA registered types:
 ```bash
 text/turtle                          # ✅ Standard
 application/ld+json                  # ✅ Standard
-text/anot+turtle                     # ❌ Not registered
-application/anot+ld+json             # ❌ Not registered
+text/anot-turtle                     # ❌ Not registered
+application/anot-ld-json             # ❌ Not registered
 ```
 
 **Impact:**
-- Content negotiation won't work (`Accept: application/anot+ld+json` is invalid)
+- Content negotiation won't work (`Accept: application/anot-ld-json` is invalid)
 - External tools don't recognize the format
 - Breaks HTTP standard practices
 
@@ -142,8 +142,8 @@ alteration-form-jsonld-annotated.json # With prez: annotations
 
 | File | Annotated? | Marked? |
 |------|------------|---------|
-| `*-anot+turtle.ttl` | Yes | ✅ Yes |
-| `*-anot+ld+json.json` | Yes | ✅ Yes |
+| `*-anot-turtle.ttl` | Yes | ✅ Yes |
+| `*-anot-ld-json.json` | Yes | ✅ Yes |
 | `*-concepts.json` | No | ⚠️ Unclear |
 | `*-rdf.xml` | No | ⚠️ Unclear |
 
@@ -262,11 +262,11 @@ API/URLs:
 ```
 concepts/
 ├── a/  (alphabetical prefix)
-│   └── alpine-meadow-anot+ld+json.json
+│   └── alpine-meadow-anot-ld-json.json
 ├── n/
-│   └── non-pervasive-anot+ld+json.json
+│   └── non-pervasive-anot-ld-json.json
 └── u/
-    └── unaltered-anot+ld+json.json
+    └── unaltered-anot-ld-json.json
 ```
 
 **Pros:**
@@ -285,7 +285,7 @@ Current strategy works for scale and simplicity. Document rationale:
 ```markdown
 ## Per-Concept Files
 
-- **Location:** `concepts/{prefix}/{concept-id}-anot+ld+json.json`
+- **Location:** `concepts/{prefix}/{concept-id}-anot-ld-json.json`
 - **Format:** JSON-LD with prez: annotations only
 - **Prefix:** First letter of slugified concept ID
 - **Purpose:** Web component data loading
@@ -346,7 +346,7 @@ Item       = concepts/{prefix}/{id}
 
 **prez-lite current:**
 - ✅ Uses standard types: `text/turtle`, `application/ld+json`
-- ❌ Custom types: `text/anot+turtle` (not registered)
+- ❌ Custom types: `text/anot-turtle` (not registered)
 
 **Recommendation:** ✅ Use standard types + annotation suffix (Issue #2)
 
@@ -426,13 +426,13 @@ Item       = concepts/{prefix}/{id}
 
 | Current | Proposed | Reason |
 |---------|----------|--------|
-| `-anot+turtle.ttl` | `-turtle-annotated.ttl` | Standard media type |
-| `-anot+ld+json.json` | `-jsonld-annotated.json` | Standard media type |
-| `-json+ld.json` | `-jsonld.json` | Shorter, clearer |
+| `-anot-turtle.ttl` | `-turtle-annotated.ttl` | Standard media type |
+| `-anot-ld-json.json` | `-jsonld-annotated.json` | Standard media type |
+| `-json-ld.json` | `-jsonld.json` | Shorter, clearer |
 | `-rdf.xml` | `-rdfxml.xml` | Consistent naming |
 | `-list.json` | DELETE | Remove duplicate |
 | `-list.csv` | DELETE | Remove duplicate |
-| `concepts/{id}-anot+ld+json.json` | `{id}-jsonld-annotated.json` | Consistent with above |
+| `concepts/{id}-anot-ld-json.json` | `{id}-jsonld-annotated.json` | Consistent with above |
 
 ### Migration Path
 
@@ -455,17 +455,17 @@ const EXPORT_FORMATS = [
   {
     id: 'turtle-annotated',
     filename: (s) => `${s}-turtle-annotated.ttl`,
-    deprecated: `${s}-anot+turtle.ttl`  // Keep old file for now
+    deprecated: `${s}-anot-turtle.ttl`  // Keep old file for now
   },
   {
     id: 'jsonld',
     filename: (s) => `${s}-jsonld.json`,
-    deprecated: `${s}-json+ld.json`
+    deprecated: `${s}-json-ld.json`
   },
   {
     id: 'jsonld-annotated',
     filename: (s) => `${s}-jsonld-annotated.json`,
-    deprecated: `${s}-anot+ld+json.json`
+    deprecated: `${s}-anot-ld-json.json`
   },
   {
     id: 'concepts',

@@ -1811,8 +1811,8 @@ function generateCatalogHTML(annotatedStore, sourceStore, items) {
 }
 
 /**
- * Generate concept HTML from a single annotated store (e.g. parsed from anot+turtle).
- * Use this when the only asset available is the anot+ttl (or anot+ld+json) export.
+ * Generate concept HTML from a single annotated store (e.g. parsed from anot-turtle).
+ * Use this when the only asset available is the anot-ttl (or anot-ld-json) export.
  * @param {Store} store - Annotated store (has focus concept quads + prez:label/prez:description)
  * @param {string} [conceptIri] - Focus concept IRI; if omitted, inferred from prez:FocusNode
  * @param {string} [schemeIri] - Scheme IRI; if omitted, inferred from skos:inScheme or skos:topConceptOf
@@ -1837,8 +1837,8 @@ function generateConceptHTMLFromAnotStore(store, conceptIri, schemeIri, profile)
 }
 
 /**
- * Generate vocab (scheme) HTML from a single annotated store (e.g. parsed from anot+turtle).
- * Use this when the only asset available is the anot+ttl export.
+ * Generate vocab (scheme) HTML from a single annotated store (e.g. parsed from anot-turtle).
+ * Use this when the only asset available is the anot-ttl export.
  * @param {Store} store - Annotated store (must include scheme quads + concept list + annotations)
  * @param {string} [schemeIri] - Scheme IRI; if omitted, inferred from prez:FocusNode
  * @returns {string} HTML
@@ -2162,11 +2162,11 @@ async function processVocab(config) {
     .replace(/-source$/, '')
     .replace(/-turtle$/, '');
 
-  if (profileAllowsFormat(config, 'text/anot+turtle')) {
+  if (profileAllowsFormat(config, 'text/anot-turtle')) {
     console.log('   Writing annotated turtle...');
     const annotatedTtl = await storeToTurtle(annotatedStore);
-    await writeFile(join(config.outDir, `${sourceName}-anot+turtle.ttl`), annotatedTtl, 'utf-8');
-    console.log(`   ✓ ${sourceName}-anot+turtle.ttl`);
+    await writeFile(join(config.outDir, `${sourceName}-anot-turtle.ttl`), annotatedTtl, 'utf-8');
+    console.log(`   ✓ ${sourceName}-anot-turtle.ttl`);
     outputFileCount++;
   }
 
@@ -2189,16 +2189,16 @@ async function processVocab(config) {
   if (profileAllowsFormat(config, 'application/ld+json')) {
     console.log('   Writing JSON-LD...');
     const jsonldDoc = await storeToJSONLD(simplifiedStore);
-    await writeFile(join(config.outDir, `${sourceName}-json+ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
-    console.log(`   ✓ ${sourceName}-json+ld.json`);
+    await writeFile(join(config.outDir, `${sourceName}-json-ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
+    console.log(`   ✓ ${sourceName}-json-ld.json`);
     outputFileCount++;
   }
 
-  if (profileAllowsFormat(config, 'application/anot+ld+json')) {
+  if (profileAllowsFormat(config, 'application/anot-ld-json')) {
     console.log('   Writing annotated JSON-LD...');
     const annotatedJsonldDoc = await storeToJSONLD(annotatedStore);
-    await writeFile(join(config.outDir, `${sourceName}-anot+ld+json.json`), JSON.stringify(annotatedJsonldDoc, null, 2), 'utf-8');
-    console.log(`   ✓ ${sourceName}-anot+ld+json.json`);
+    await writeFile(join(config.outDir, `${sourceName}-anot-ld-json.json`), JSON.stringify(annotatedJsonldDoc, null, 2), 'utf-8');
+    console.log(`   ✓ ${sourceName}-anot-ld-json.json`);
     outputFileCount++;
   }
 
@@ -2219,7 +2219,7 @@ async function processVocab(config) {
   }
 
   // Generate per-concept annotated files
-  if (profileAllowsFormat(config, 'application/anot+ld+json') && concepts.length > 0) {
+  if (profileAllowsFormat(config, 'application/anot-ld-json') && concepts.length > 0) {
     console.log('   Writing per-concept annotated JSON-LD...');
     const conceptsDir = join(config.outDir, 'concepts');
 
@@ -2248,7 +2248,7 @@ async function processVocab(config) {
 
       // Write the file
       const conceptJsonld = await storeToJSONLD(conceptAnnotatedStore);
-      const conceptFilePath = join(prefixDir, `${conceptId}-anot+ld+json.json`);
+      const conceptFilePath = join(prefixDir, `${conceptId}-anot-ld-json.json`);
       await writeFile(conceptFilePath, JSON.stringify(conceptJsonld, null, 2), 'utf-8');
     }
 
@@ -2367,11 +2367,11 @@ async function processConcept(config) {
     .replace(/-source$/, '')
     .replace(/-turtle$/, '');
 
-  if (profileAllowsFormat(config, 'text/anot+turtle')) {
+  if (profileAllowsFormat(config, 'text/anot-turtle')) {
     console.log('   Writing annotated turtle...');
     const annotatedTtl = await storeToTurtle(annotatedStore);
-    await writeFile(join(config.outDir, `${sourceName}-anot+turtle.ttl`), annotatedTtl, 'utf-8');
-    console.log(`   ✓ ${sourceName}-anot+turtle.ttl`);
+    await writeFile(join(config.outDir, `${sourceName}-anot-turtle.ttl`), annotatedTtl, 'utf-8');
+    console.log(`   ✓ ${sourceName}-anot-turtle.ttl`);
     outputFileCount++;
   }
 
@@ -2394,16 +2394,16 @@ async function processConcept(config) {
   if (profileAllowsFormat(config, 'application/ld+json')) {
     console.log('   Writing JSON-LD...');
     const jsonldDoc = await storeToJSONLD(sourceStore);
-    await writeFile(join(config.outDir, `${sourceName}-json+ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
-    console.log(`   ✓ ${sourceName}-json+ld.json`);
+    await writeFile(join(config.outDir, `${sourceName}-json-ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
+    console.log(`   ✓ ${sourceName}-json-ld.json`);
     outputFileCount++;
   }
 
-  if (profileAllowsFormat(config, 'application/anot+ld+json')) {
+  if (profileAllowsFormat(config, 'application/anot-ld-json')) {
     console.log('   Writing annotated JSON-LD...');
     const annotatedJsonldDoc = await storeToJSONLD(annotatedStore);
-    await writeFile(join(config.outDir, `${sourceName}-anot+ld+json.json`), JSON.stringify(annotatedJsonldDoc, null, 2), 'utf-8');
-    console.log(`   ✓ ${sourceName}-anot+ld+json.json`);
+    await writeFile(join(config.outDir, `${sourceName}-anot-ld-json.json`), JSON.stringify(annotatedJsonldDoc, null, 2), 'utf-8');
+    console.log(`   ✓ ${sourceName}-anot-ld-json.json`);
     outputFileCount++;
   }
 
@@ -2523,11 +2523,11 @@ async function processCatalog(config) {
     .replace(/-source$/, '')
     .replace(/-turtle$/, '');
 
-  if (profileAllowsFormat(config, 'text/anot+turtle')) {
+  if (profileAllowsFormat(config, 'text/anot-turtle')) {
     console.log('   Writing annotated turtle...');
     const annotatedTtl = await storeToTurtle(annotatedStore);
-    await writeFile(join(config.outDir, `${sourceName}-anot+turtle.ttl`), annotatedTtl, 'utf-8');
-    console.log(`   ✓ ${sourceName}-anot+turtle.ttl`);
+    await writeFile(join(config.outDir, `${sourceName}-anot-turtle.ttl`), annotatedTtl, 'utf-8');
+    console.log(`   ✓ ${sourceName}-anot-turtle.ttl`);
     outputFileCount++;
   }
 
@@ -2550,16 +2550,16 @@ async function processCatalog(config) {
   if (profileAllowsFormat(config, 'application/ld+json')) {
     console.log('   Writing JSON-LD...');
     const jsonldDoc = await storeToJSONLD(sourceStore);
-    await writeFile(join(config.outDir, `${sourceName}-json+ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
-    console.log(`   ✓ ${sourceName}-json+ld.json`);
+    await writeFile(join(config.outDir, `${sourceName}-json-ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
+    console.log(`   ✓ ${sourceName}-json-ld.json`);
     outputFileCount++;
   }
 
-  if (profileAllowsFormat(config, 'application/anot+ld+json')) {
+  if (profileAllowsFormat(config, 'application/anot-ld-json')) {
     console.log('   Writing annotated JSON-LD...');
     const annotatedJsonldDoc = await storeToJSONLD(annotatedStore);
-    await writeFile(join(config.outDir, `${sourceName}-anot+ld+json.json`), JSON.stringify(annotatedJsonldDoc, null, 2), 'utf-8');
-    console.log(`   ✓ ${sourceName}-anot+ld+json.json`);
+    await writeFile(join(config.outDir, `${sourceName}-anot-ld-json.json`), JSON.stringify(annotatedJsonldDoc, null, 2), 'utf-8');
+    console.log(`   ✓ ${sourceName}-anot-ld-json.json`);
     outputFileCount++;
   }
 

@@ -246,8 +246,8 @@ export function createDefaultBuilderState(): ProfileBuilderState {
       provenance: false,
       focusNode: true,
     },
-    defaultFormat: 'text/anot+turtle',
-    formats: ['text/anot+turtle', 'text/turtle', 'application/ld+json'],
+    defaultFormat: 'text/anot-turtle',
+    formats: ['text/anot-turtle', 'text/turtle', 'application/ld+json'],
     linkTemplate: '',
     membersTemplate: '',
   }
@@ -284,9 +284,9 @@ export function createExampleBuilderState(): ProfileBuilderState {
       provenance: true,
       focusNode: true,
     },
-    defaultFormat: 'text/anot+turtle',
+    defaultFormat: 'text/anot-turtle',
     formats: [
-      'text/anot+turtle',
+      'text/anot-turtle',
       'text/turtle',
       'application/ld+json',
       'application/rdf+xml',

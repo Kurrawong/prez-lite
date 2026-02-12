@@ -40,9 +40,9 @@ Generated for each vocabulary (36 vocabs):
 | File Type | Typical Size | Total (36×) |
 |-----------|--------------|-------------|
 | `-turtle.ttl` | 37 KB | 1.3 MB |
-| `-anot+turtle.ttl` | 32 KB | 1.2 MB |
-| `-json+ld.json` | 68 KB | 2.4 MB |
-| `-anot+ld+json.json` | 72 KB | 2.6 MB |
+| `-anot-turtle.ttl` | 32 KB | 1.2 MB |
+| `-json-ld.json` | 68 KB | 2.4 MB |
+| `-anot-ld-json.json` | 72 KB | 2.6 MB |
 | `-list.json` | 21 KB | 756 KB |
 | `-list.csv` | 17 KB | 612 KB |
 | **Subtotal per vocab** | ~247 KB | **8.9 MB** |
@@ -53,7 +53,7 @@ Generated for each concept (2,529 concepts):
 
 | File Type | Typical Size | Total (2,529×) |
 |-----------|--------------|-----------------|
-| `{concept}-anot+ld+json.json` | 12 KB | 30.3 MB |
+| `{concept}-anot-ld-json.json` | 12 KB | 30.3 MB |
 
 ### System Files
 

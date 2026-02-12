@@ -28,9 +28,9 @@ prez:OGCDataCatalogProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     sh:targetClass schema:DataCatalog ;
     altr-ext:constrainsClass schema:DataCatalog ;
 
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "application/anot-ld-json" ;
     altr-ext:hasResourceFormat "application/ld+json" ;
     altr-ext:hasResourceFormat "application/rdf+xml" ;
     altr-ext:hasResourceFormat "text/turtle" ;
@@ -58,7 +58,7 @@ prez:GAVocabListProfile a prof:Profile ;
     dcterms:title "GA Vocabularies Listing Profile" ;
     dcterms:description "Profile configuration for the GA vocabularies listing (catalog)" ;
     prez:catalog <http://pid.geoscience.gov.au/catalogue/ga-vocabs> ;
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
     altr-ext:hasNodeShape [
         a sh:NodeShape ;
         sh:targetClass schema:DataCatalog ;

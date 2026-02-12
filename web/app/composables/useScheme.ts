@@ -44,7 +44,7 @@ export function useScheme(uri: Ref<string>) {
 
   const { data: labelsIndex } = useAsyncData('labels', fetchLabels, { server: false })
 
-  // Get annotated properties from the anot+ld+json file
+  // Get annotated properties from the anot-ld-json file
   const { properties: annotatedProperties, status: annotatedStatus } = useAnnotatedProperties(slug, 'conceptScheme')
 
   const conceptMap = computed(() => concepts.value ? buildConceptMap(concepts.value) : new Map())

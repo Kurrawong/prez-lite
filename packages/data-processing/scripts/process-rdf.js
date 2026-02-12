@@ -9,9 +9,9 @@
  *
  * Outputs:
  * - *-turtle.ttl - Source Turtle
- * - *-anot+turtle.ttl - Annotated Turtle with prez:label/description
- * - *-json+ld.json - JSON-LD
- * - *-anot+json+ld.json - Annotated JSON-LD
+ * - *-anot-turtle.ttl - Annotated Turtle with prez:label/description
+ * - *-json-ld.json - JSON-LD
+ * - *-anot-json-ld.json - Annotated JSON-LD
  * - *-rdf.xml - RDF/XML
  * - *-page.html - HTML page (dark mode)
  *
@@ -564,18 +564,18 @@ async function processRDF(config) {
 
   console.log('   Writing annotated turtle...');
   const annotatedTtl = await storeToTurtle(annotatedStore);
-  await writeFile(join(config.outDir, `${sourceName}-anot+turtle.ttl`), annotatedTtl, 'utf-8');
-  console.log(`   ✓ ${sourceName}-anot+turtle.ttl`);
+  await writeFile(join(config.outDir, `${sourceName}-anot-turtle.ttl`), annotatedTtl, 'utf-8');
+  console.log(`   ✓ ${sourceName}-anot-turtle.ttl`);
 
   console.log('   Writing JSON-LD...');
   const jsonldDoc = await storeToJSONLD(sourceStore);
-  await writeFile(join(config.outDir, `${sourceName}-json+ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
-  console.log(`   ✓ ${sourceName}-json+ld.json`);
+  await writeFile(join(config.outDir, `${sourceName}-json-ld.json`), JSON.stringify(jsonldDoc, null, 4), 'utf-8');
+  console.log(`   ✓ ${sourceName}-json-ld.json`);
 
   console.log('   Writing annotated JSON-LD...');
   const annotatedJsonldDoc = await storeToJSONLD(annotatedStore);
-  await writeFile(join(config.outDir, `${sourceName}-anot+json+ld.json`), JSON.stringify(annotatedJsonldDoc, null, 4), 'utf-8');
-  console.log(`   ✓ ${sourceName}-anot+json+ld.json`);
+  await writeFile(join(config.outDir, `${sourceName}-anot-json-ld.json`), JSON.stringify(annotatedJsonldDoc, null, 4), 'utf-8');
+  console.log(`   ✓ ${sourceName}-anot-json-ld.json`);
 
   console.log('   Writing RDF/XML...');
   const rdfxml = storeToRDFXML(sourceStore);

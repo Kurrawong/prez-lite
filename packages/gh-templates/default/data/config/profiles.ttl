@@ -33,9 +33,9 @@ prez:DefaultSchemeProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     sh:targetClass skos:ConceptScheme ;
     altr-ext:constrainsClass skos:ConceptScheme ;
 
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "application/anot-ld-json" ;
     altr-ext:hasResourceFormat "application/ld+json" ;
     altr-ext:hasResourceFormat "application/rdf+xml" ;
     altr-ext:hasResourceFormat "text/turtle" ;
@@ -80,9 +80,9 @@ prez:DefaultConceptProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     sh:targetClass skos:Concept ;
     altr-ext:constrainsClass skos:Concept ;
 
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "application/anot-ld-json" ;
     altr-ext:hasResourceFormat "application/ld+json" ;
     altr-ext:hasResourceFormat "application/rdf+xml" ;
     altr-ext:hasResourceFormat "text/turtle" ;
@@ -109,7 +109,7 @@ prez:DefaultProfile a prof:Profile ;
     dcterms:description "Default profile configuration for vocabulary processing" ;
 
     prez:catalog <urn:catalog:default> ;
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
 
     altr-ext:hasNodeShape [
         a sh:NodeShape ;

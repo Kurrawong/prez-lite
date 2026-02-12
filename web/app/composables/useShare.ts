@@ -27,9 +27,9 @@ export interface ExportFormat {
 
 export const EXPORT_FORMATS: ExportFormat[] = [
   // Annotated RDF (most useful first)
-  { id: 'ttl-anot', label: 'Turtle (Annotated)', description: 'Turtle with resolved labels for all IRIs', extension: 'ttl', filename: (s) => `${s}-anot+turtle.ttl`, mimeType: 'text/turtle' },
+  { id: 'ttl-anot', label: 'Turtle (Annotated)', description: 'Turtle with resolved labels for all IRIs', extension: 'ttl', filename: (s) => `${s}-anot-turtle.ttl`, mimeType: 'text/turtle' },
   { id: 'ttl', label: 'Turtle', description: 'RDF Turtle - human-readable linked data format', extension: 'ttl', filename: (s) => `${s}-turtle.ttl`, mimeType: 'text/turtle' },
-  { id: 'jsonld', label: 'JSON-LD', description: 'JSON for Linked Data - RDF in JSON syntax', extension: 'jsonld', filename: (s) => `${s}-json+ld.json`, mimeType: 'application/ld+json' },
+  { id: 'jsonld', label: 'JSON-LD', description: 'JSON for Linked Data - RDF in JSON syntax', extension: 'jsonld', filename: (s) => `${s}-json-ld.json`, mimeType: 'application/ld+json' },
   { id: 'rdf', label: 'RDF/XML', description: 'RDF in XML format - for legacy systems', extension: 'rdf', filename: (s) => `${s}-rdf.xml`, mimeType: 'application/rdf+xml' },
 
   // Web/App formats
@@ -38,7 +38,7 @@ export const EXPORT_FORMATS: ExportFormat[] = [
   { id: 'html', label: 'HTML', description: 'Standalone HTML page for viewing', extension: 'html', filename: (s) => `${s}-page.html`, mimeType: 'text/html' },
 
   // Annotated JSON-LD (per-concept files use this)
-  { id: 'jsonld-anot', label: 'JSON-LD (Annotated)', description: 'JSON-LD with resolved labels for all IRIs', extension: 'json', filename: (s) => `${s}-anot+ld+json.json`, mimeType: 'application/ld+json' },
+  { id: 'jsonld-anot', label: 'JSON-LD (Annotated)', description: 'JSON-LD with resolved labels for all IRIs', extension: 'json', filename: (s) => `${s}-anot-ld-json.json`, mimeType: 'application/ld+json' },
 ]
 
 export type ComponentType = 'select' | 'list'
@@ -104,7 +104,7 @@ export function useShare() {
   function getConceptDownloadUrl(vocabSlug: string, conceptIri: string): string {
     const conceptId = conceptIri.split(/[#/]/).pop() || conceptIri
     const prefix = (conceptId.charAt(0) || '_').toLowerCase()
-    return `/export/vocabs/${vocabSlug}/concepts/${prefix}/${conceptId}-anot+ld+json.json`
+    return `/export/vocabs/${vocabSlug}/concepts/${prefix}/${conceptId}-anot-ld-json.json`
   }
 
   function getDownloadUrl(slug: string, formatId: string): string {

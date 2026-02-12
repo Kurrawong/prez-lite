@@ -120,7 +120,7 @@ This is a small change — the profile already defines the full property list wi
 ### Strategy B: Annotated TTL/JSON-LD Exports
 
 **How it works:**
-1. Fetch `{slug}-anot+ld+json.json` (scheme-level) and per-concept annotated files
+1. Fetch `{slug}-anot-ld-json.json` (scheme-level) and per-concept annotated files
 2. Display using existing `extractProperties()` pipeline
 3. Edit values in JSON-LD structure
 4. Serialize back to annotated format, then strip prez:* annotations for source TTL

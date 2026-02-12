@@ -28,9 +28,9 @@ Files generated per vocabulary:
 | File | Size | Contents |
 |------|------|----------|
 | `{vocab}-turtle.ttl` | ~37KB | ConceptScheme + minimal concept data (IRIs, labels, hierarchy) |
-| `{vocab}-anot+turtle.ttl` | ~32KB | Above + prez: annotations for rendering |
-| `{vocab}-json+ld.json` | ~68KB | JSON-LD format of simplified graph |
-| `{vocab}-anot+ld+json.json` | ~72KB | JSON-LD with prez: annotations |
+| `{vocab}-anot-turtle.ttl` | ~32KB | Above + prez: annotations for rendering |
+| `{vocab}-json-ld.json` | ~68KB | JSON-LD format of simplified graph |
+| `{vocab}-anot-ld-json.json` | ~72KB | JSON-LD with prez: annotations |
 | `{vocab}-list.json` | ~21KB | Flat concept list with scheme context |
 | `{vocab}-list.csv` | ~17KB | CSV export for spreadsheets |
 
@@ -47,7 +47,7 @@ Individual concept files:
 
 | File | Size | Contents |
 |------|------|----------|
-| `{concept-id}-anot+ld+json.json` | ~6KB | **Self-contained** concept + minimal scheme context |
+| `{concept-id}-anot-ld-json.json` | ~6KB | **Self-contained** concept + minimal scheme context |
 
 **Key Characteristic:** Each concept file includes:
 - Full concept properties (prefLabel, definition, broader, notation, altLabels)
@@ -87,12 +87,12 @@ Each per-concept file can render independently without fetching the main scheme 
 
 ### Separation of Concerns
 
-**Simplified Exports** (`-turtle.ttl`, `-json+ld.json`)
+**Simplified Exports** (`-turtle.ttl`, `-json-ld.json`)
 - For API consumption
 - ConceptScheme + structure only
 - Minimal concept data (IRIs, labels, hierarchy)
 
-**Annotated Exports** (`-anot+turtle.ttl`, `-anot+ld+json.json`)
+**Annotated Exports** (`-anot-turtle.ttl`, `-anot-ld-json.json`)
 - For HTML rendering
 - Includes prez: navigation predicates
 - Full concept metadata for display

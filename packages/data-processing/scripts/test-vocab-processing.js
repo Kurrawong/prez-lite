@@ -56,10 +56,10 @@ const cliConfig = parseArgs();
 
 // GA naming convention (current standard)
 const OUTPUT_FILES = {
-  annotatedTurtle: '-anot+turtle.ttl',
-  annotatedJsonLd: '-anot+ld+json.json',
+  annotatedTurtle: '-anot-turtle.ttl',
+  annotatedJsonLd: '-anot-ld-json.json',
   turtle: '-turtle.ttl',
-  jsonLd: '-json+ld.json',
+  jsonLd: '-json-ld.json',
   rdfXml: '-rdf.xml',
   listJson: '-list.json',
   listCsv: '-list.csv',
@@ -384,7 +384,7 @@ async function runVocabTests(name, refDir, outDir) {
 
   await runOutputTest(
     `${name}: Annotated TTL focus node predicates`,
-    join(outDir, `${name}-anot+turtle.ttl`),
+    join(outDir, `${name}-anot-turtle.ttl`),
     'annotated-focusnode'
   );
 
@@ -397,13 +397,13 @@ async function runVocabTests(name, refDir, outDir) {
 
   await runOutputTest(
     `${name}: JSON-LD parses`,
-    join(outDir, `${name}-json+ld.json`),
+    join(outDir, `${name}-json-ld.json`),
     'json-parse'
   );
 
   await runOutputTest(
     `${name}: Annotated JSON-LD parses`,
-    join(outDir, `${name}-anot+ld+json.json`),
+    join(outDir, `${name}-anot-ld-json.json`),
     'json-parse'
   );
 
@@ -434,7 +434,7 @@ async function runConceptTests(name, refDir, outDir) {
 
   await runOutputTest(
     `${name}: Annotated TTL focus node predicates`,
-    join(outDir, `${name}-anot+turtle.ttl`),
+    join(outDir, `${name}-anot-turtle.ttl`),
     'annotated-focusnode'
   );
 
@@ -447,13 +447,13 @@ async function runConceptTests(name, refDir, outDir) {
 
   await runOutputTest(
     `${name}: JSON-LD parses`,
-    join(outDir, `${name}-json+ld.json`),
+    join(outDir, `${name}-json-ld.json`),
     'json-parse'
   );
 
   await runOutputTest(
     `${name}: Annotated JSON-LD parses`,
-    join(outDir, `${name}-anot+ld+json.json`),
+    join(outDir, `${name}-anot-ld-json.json`),
     'json-parse'
   );
 
@@ -469,7 +469,7 @@ async function runCatalogTests(name, outDir) {
 
   await runOutputTest(
     `${name}: Annotated TTL focus node predicates`,
-    join(outDir, `${name}-anot+turtle.ttl`),
+    join(outDir, `${name}-anot-turtle.ttl`),
     'annotated-focusnode'
   );
 
@@ -482,13 +482,13 @@ async function runCatalogTests(name, outDir) {
 
   await runOutputTest(
     `${name}: JSON-LD parses`,
-    join(outDir, `${name}-json+ld.json`),
+    join(outDir, `${name}-json-ld.json`),
     'json-parse'
   );
 
   await runOutputTest(
     `${name}: Annotated JSON-LD parses`,
-    join(outDir, `${name}-anot+ld+json.json`),
+    join(outDir, `${name}-anot-ld-json.json`),
     'json-parse'
   );
 

@@ -29,7 +29,7 @@ flowchart TD
   listExport --> listJson[gswa-vocab-list.json]
   listExport --> listCsv[gswa-vocab-list.csv]
   
-  annotated --> anotTtl[gswa-vocab-anot+turtle.ttl]
+  annotated --> anotTtl[gswa-vocab-anot-turtle.ttl]
   annotated --> html[gswa-vocab-page.html]
   
   anotTtl --> tests[Semantic Tests vs Reference]
@@ -61,7 +61,7 @@ node scripts/process-vocab.js [options]
 **Generated Outputs:**
 | File | Description |
 |------|-------------|
-| `*-anot+turtle.ttl` | Annotated Turtle - ConceptScheme with resolved labels for predicates and objects |
+| `*-anot-turtle.ttl` | Annotated Turtle - ConceptScheme with resolved labels for predicates and objects |
 | `*-ttl.ttl` | Simplified Turtle - Full ConceptScheme + concept structural relations only |
 | `*-rdf.xml` | RDF/XML serialization of the simplified graph |
 | `*-json-ld.json` | JSON-LD (expanded form) of the simplified graph |

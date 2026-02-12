@@ -22,12 +22,12 @@ web/public/export/
 │   ├── profile.json                    # SHACL field ordering
 │   └── vocabularies/
 │       ├── vocablist-list.json         # All vocabularies listing
-│       ├── vocablist-anot+turtle.ttl   # Annotated catalog
+│       ├── vocablist-anot-turtle.ttl   # Annotated catalog
 │       └── ...other formats
 └── {vocab-name}/
     ├── {vocab-name}-list.json          # Concepts (iri, prefLabel, broader)
-    ├── {vocab-name}-anot+turtle.ttl    # Annotated vocab
-    ├── {vocab-name}-anot+ld+json.json  # Annotated JSON-LD
+    ├── {vocab-name}-anot-turtle.ttl    # Annotated vocab
+    ├── {vocab-name}-anot-ld-json.json  # Annotated JSON-LD
     └── ...other formats
 ```
 
@@ -46,7 +46,7 @@ web/public/export/
 **Gap:** Need enriched vocabulary listing with metadata. Options:
 - A. Enhance `vocablist-list.json` to include all metadata
 - B. Create separate `_system/vocabularies/metadata.json` with full scheme data
-- C. Client fetches scheme metadata from each `{vocab}-anot+ld+json.json`
+- C. Client fetches scheme metadata from each `{vocab}-anot-ld-json.json`
 
 **Recommendation:** Option B - generate `_system/vocabularies/metadata.json` during build
 
@@ -64,7 +64,7 @@ web/public/export/
 
 **Options:**
 - A. Enhance `-list.json` to include all fields
-- B. Client parses `-anot+ld+json.json` for full concept data
+- B. Client parses `-anot-ld-json.json` for full concept data
 - C. Generate additional `-concepts.json` with full data
 
 **Recommendation:** Option A for search, Option B for detail pages
@@ -110,7 +110,7 @@ web/public/export/
 
 **Current:** Maps external IRIs to labels for display
 
-**New:** Labels are embedded in `-anot+turtle.ttl` via `prez:label`
+**New:** Labels are embedded in `-anot-turtle.ttl` via `prez:label`
 
 **Gap:** Need aggregated labels file or extract from annotated files
 
@@ -133,10 +133,10 @@ web/public/export/
 │       └── facets.json                 # Pre-computed facet counts (5KB)
 └── {vocab-name}/
     ├── {vocab-name}-list.json          # Enhanced concepts (iri, prefLabel, altLabels, definition, notation, broader, scheme, schemeLabel)
-    ├── {vocab-name}-anot+turtle.ttl    # Annotated Turtle
-    ├── {vocab-name}-anot+ld+json.json  # Annotated JSON-LD
+    ├── {vocab-name}-anot-turtle.ttl    # Annotated Turtle
+    ├── {vocab-name}-anot-ld-json.json  # Annotated JSON-LD
     ├── {vocab-name}-turtle.ttl         # Simple Turtle
-    ├── {vocab-name}-json+ld.json       # JSON-LD
+    ├── {vocab-name}-json-ld.json       # JSON-LD
     ├── {vocab-name}-rdf.xml            # RDF/XML
     ├── {vocab-name}-list.csv           # CSV list
     └── {vocab-name}-page.html          # Standalone HTML

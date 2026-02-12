@@ -41,10 +41,10 @@ Each per-vocab folder contains these files:
 
 | File | Description |
 |------|-------------|
-| `*-anot+turtle.ttl` | Annotated Turtle with `prez:label`, `prez:description`, `prez:link`, etc. |
-| `*-anot+ld+json.json` | Annotated JSON-LD (same annotations as above) |
+| `*-anot-turtle.ttl` | Annotated Turtle with `prez:label`, `prez:description`, `prez:link`, etc. |
+| `*-anot-ld-json.json` | Annotated JSON-LD (same annotations as above) |
 | `*-turtle.ttl` | Simplified Turtle (scheme metadata + concept hierarchy) |
-| `*-json+ld.json` | Standard JSON-LD |
+| `*-json-ld.json` | Standard JSON-LD |
 | `*-rdf.xml` | RDF/XML format |
 | `*-list.json` | Concept list as JSON (IRI, prefLabel, broader) |
 | `*-list.csv` | Concept list as CSV |
@@ -130,7 +130,7 @@ These scripts read from `data/vocabs/` (the repo-root vocabs folder) and are unc
 
 ### Future Integration
 
-The new `packages/data-processing` outputs are intended for future integration with the main prez-lite web application. The annotated formats (`*-anot+turtle.ttl`, `*-anot+ld+json.json`) contain the same Prez predicates that a live Prez API would return, enabling:
+The new `packages/data-processing` outputs are intended for future integration with the main prez-lite web application. The annotated formats (`*-anot-turtle.ttl`, `*-anot-ld-json.json`) contain the same Prez predicates that a live Prez API would return, enabling:
 
 - Static file serving as a Prez API replacement
 - Consistent rendering using `profile.json` field ordering

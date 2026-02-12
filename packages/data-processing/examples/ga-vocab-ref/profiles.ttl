@@ -33,9 +33,9 @@ prez:OGCSchemesObjectProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     altr-ext:constrainsClass skos:ConceptScheme ;
     
     # Supported output formats
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "application/anot-ld-json" ;
     altr-ext:hasResourceFormat "application/ld+json" ;
     altr-ext:hasResourceFormat "application/rdf+xml" ;
     altr-ext:hasResourceFormat "text/turtle" ;
@@ -77,9 +77,9 @@ prez:OGCItemProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     altr-ext:constrainsClass skos:Concept ;
     
     # Supported output formats
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "text/anot+turtle" ;
-    altr-ext:hasResourceFormat "application/anot+ld+json" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "text/anot-turtle" ;
+    altr-ext:hasResourceFormat "application/anot-ld-json" ;
     altr-ext:hasResourceFormat "application/ld+json" ;
     altr-ext:hasResourceFormat "application/rdf+xml" ;
     altr-ext:hasResourceFormat "text/turtle" ;
@@ -114,7 +114,7 @@ prez:GAVocabsProfile a prof:Profile ;
     # Associated catalog
     prez:catalog <http://pid.geoscience.gov.au/catalogue/ga-vocabs> ;
     
-    altr-ext:hasDefaultResourceFormat "text/anot+turtle" ;
+    altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
     
     # Define default profiles for each resource type
     altr-ext:hasNodeShape [

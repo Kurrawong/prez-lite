@@ -67,7 +67,9 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync web/.output/public/ "s3://${{ vars.DEV_BUCKET_NAME }}/" --delete
+          echo "Syncing to s3://${{ vars.DEV_BUCKET_NAME }}/ ..."
+          aws s3 sync web/.output/public/ "s3://${{ vars.DEV_BUCKET_NAME }}/" --delete --quiet
+          echo "✓ Deploy complete"
 
       - name: Invalidate CloudFront cache
         if: vars.DEV_CDN_ID != ''
@@ -104,7 +106,9 @@ jobs:
 
       - name: Sync exports to S3
         run: |
-          aws s3 sync web/public/export/ "s3://${{ vars.DEV_BUCKET_NAME }}/export/" --delete
+          echo "Syncing exports to s3://${{ vars.DEV_BUCKET_NAME }}/export/ ..."
+          aws s3 sync web/public/export/ "s3://${{ vars.DEV_BUCKET_NAME }}/export/" --delete --quiet
+          echo "✓ Export sync complete"
 
       - name: Invalidate CloudFront cache
         if: vars.DEV_CDN_ID != ''
