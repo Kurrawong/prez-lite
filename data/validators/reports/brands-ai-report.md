@@ -13,20 +13,19 @@ The provided TTL file for the brands vocabulary contains several violations agai
 ### 1. Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values
 Current:
 ```turtle
-:aami
-    a skos:Concept ;
-    # ... other triples
+# No temporal coverage is defined for any concept
 ```
 Fix:
 ```turtle
 :aami
     a skos:Concept ;
+    # ... other triples
     schema:temporalCoverage [
         a schema:DateTime ;
         schema:startTime "2020-01-01"^^xsd:date ;
         schema:endTime "2025-12-31"^^xsd:date ;
     ] ;
-    # ... other triples
+.
 ```
 To apply this fix to all concepts, a Python script can be used:
 ```python
@@ -39,12 +38,10 @@ SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 g = Graph()
 g.parse("brands.ttl", format="turtle")
 
-for concept in g.subjects(RDF.type, SKOS.Concept):
-    g.add((concept, SCHEMA.temporalCoverage, BNode()))
-    temporal_coverage = g.value(concept, SCHEMA.temporalCoverage)
-    g.add((temporal_coverage, RDF.type, SCHEMA.DateTime))
-    g.add((temporal_coverage, SCHEMA.startTime, Literal("2020-01-01", datatype=XSD.date)))
-    g.add((temporal_coverage, SCHEMA.endTime, Literal("2025-12-31", datatype=XSD.date)))
+for concept in g.subjects(SKOS.Concept):
+    g.add((concept, SCHEMA.temporalCoverage, SCHEMA.DateTime()))
+    g.add((SCHEMA.DateTime(), SCHEMA.startTime, Literal("2020-01-01", datatype=XSD.date)))
+    g.add((SCHEMA.DateTime(), SCHEMA.endTime, Literal("2025-12-31", datatype=XSD.date)))
 
 g.serialize("brands-fixed.ttl", format="turtle")
 ```
@@ -53,116 +50,164 @@ g.serialize("brands-fixed.ttl", format="turtle")
 Current:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     skos:definition "Brands under Suncorp Group Limited."@en ;
-    # ... other triples
+.
 ```
 Fix:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     skos:definition "Brands under Suncorp Group Limited." ;
-    # ... other triples
+.
 ```
-The `@en` language tag needs to be removed to make the literal a plain string.
+To apply this fix, remove the language tag from all `skos:definition` literals:
+```python
+from rdflib import Graph, Namespace, Literal
+
+SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
+
+g = Graph()
+g.parse("brands.ttl", format="turtle")
+
+for s, p, o in g:
+    if p == SKOS.definition and isinstance(o, Literal) and o.language:
+        g.remove((s, p, o))
+        g.add((s, p, Literal(str(o))))
+
+g.serialize("brands-fixed.ttl", format="turtle")
+```
 
 ### 3. Requirement 2.1.4, 2.2.1 or 2.3.1 Each vocabulary and Concept MUST have exactly one preferred label indicated using the skos:prefLabel pointing to a textual literal value
 Current:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     skos:prefLabel "Brand"@en ;
-    # ... other triples
+.
 ```
 Fix:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     skos:prefLabel "Brand" ;
-    # ... other triples
+.
 ```
-The `@en` language tag needs to be removed to make the literal a plain string.
+To apply this fix, remove the language tag from all `skos:prefLabel` literals:
+```python
+from rdflib import Graph, Namespace, Literal
+
+SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
+
+g = Graph()
+g.parse("brands.ttl", format="turtle")
+
+for s, p, o in g:
+    if p == SKOS.prefLabel and isinstance(o, Literal) and o.language:
+        g.remove((s, p, o))
+        g.add((s, p, Literal(str(o))))
+
+g.serialize("brands-fixed.ttl", format="turtle")
+```
 
 ### 4. Requirement 2.15 - created date - violated
 Current:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     dcterms:created "2025-02-19"^^xsd:date ;
-    # ... other triples
+.
 ```
 Fix:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     schema:dateCreated "2025-02-19"^^xsd:date ;
-    # ... other triples
+.
 ```
-The `dcterms:created` predicate needs to be replaced with `schema:dateCreated`.
+To apply this fix, replace `dcterms:created` with `schema:dateCreated`:
+```python
+from rdflib import Graph, Namespace
+
+DCTERMS = Namespace("http://purl.org/dc/terms/")
+SCHEMA = Namespace("https://schema.org/")
+
+g = Graph()
+g.parse("brands.ttl", format="turtle")
+
+for s, p, o in g:
+    if p == DCTERMS.created:
+        g.remove((s, p, o))
+        g.add((s, SCHEMA.dateCreated, o))
+
+g.serialize("brands-fixed.ttl", format="turtle")
+```
 
 ### 5. Requirement 2.15 - modified date - violated
 Current:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     dcterms:modified "2025-02-19"^^xsd:date ;
-    # ... other triples
+.
 ```
 Fix:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     schema:dateModified "2025-02-19"^^xsd:date ;
-    # ... other triples
+.
 ```
-The `dcterms:modified` predicate needs to be replaced with `schema:dateModified`.
+To apply this fix, replace `dcterms:modified` with `schema:dateModified`:
+```python
+from rdflib import Graph, Namespace
+
+DCTERMS = Namespace("http://purl.org/dc/terms/")
+SCHEMA = Namespace("https://schema.org/")
+
+g = Graph()
+g.parse("brands.ttl", format="turtle")
+
+for s, p, o in g:
+    if p == DCTERMS.modified:
+        g.remove((s, p, o))
+        g.add((s, SCHEMA.dateModified, o))
+
+g.serialize("brands-fixed.ttl", format="turtle")
+```
 
 ### 6. Requirement 2.1.6 Each vocabulary MUST have at least one creator, indicated using schema:creator, which MUST be an IRI indicating an instances of schema:Person or schema:Organization
 Current:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     dcterms:creator <https://linked.data.gov.au/org/suncorp> ;
-    # ... other triples
+.
 ```
 Fix:
 ```turtle
 cs:
-    a
-        owl:Ontology ,
-        skos:ConceptScheme ;
     # ... other triples
     schema:creator <https://linked.data.gov.au/org/suncorp> ;
-    # ... other triples
+.
 ```
-The `dcterms:creator` predicate needs to be replaced with `schema:creator`.
+To apply this fix, replace `dcterms:creator` with `schema:creator`:
+```python
+from rdflib import Graph, Namespace
+
+DCTERMS = Namespace("http://purl.org/dc/terms/")
+SCHEMA = Namespace("https://schema.org/")
+
+g = Graph()
+g.parse("brands.ttl", format="turtle")
+
+for s, p, o in g:
+    if p == DCTERMS.creator:
+        g.remove((s, p, o))
+        g.add((s, SCHEMA.creator, o))
+
+g.serialize("brands-fixed.ttl", format="turtle")
+```
 
 ## Validator Gaps
-None identified. The provided validator shapes cover all the necessary requirements for the vocabulary. However, it is recommended to review the validator shapes regularly to ensure they are up-to-date and cover all the necessary requirements.
+None identified. The provided validator shapes cover all the necessary requirements for the brands vocabulary. However, it is recommended to review the validator shapes regularly to ensure they are up-to-date and cover all the necessary requirements.
