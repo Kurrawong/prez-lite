@@ -52,19 +52,20 @@ export default {
       messages.push({ role: 'user', content: prompt });
 
       // Use Cloudflare Workers AI
-      // @cf/meta/llama-3.1-70b-instruct is a good balance of quality and speed
-      // Can be changed to other models available in Workers AI
-      const result = await env.AI.run('@cf/meta/llama-3.1-70b-instruct', {
+      // Llama 3.3 70B fp8-fast: good quality with faster inference for free-tier timeouts
+      const model = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
+      const result = await env.AI.run(model, {
         messages,
-        max_tokens: 8192,
-        temperature: 0.3,
+        max_tokens: 16384,
+        temperature: 0.1,
+        top_p: 0.9,
       });
 
       return Response.json(
         {
           content: result.response,
           vocab,
-          model: '@cf/meta/llama-3.1-70b-instruct',
+          model,
         },
         {
           headers: {

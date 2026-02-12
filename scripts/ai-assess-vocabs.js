@@ -92,37 +92,77 @@ function sampleTtl(ttl, maxConcepts = 3) {
 }
 
 async function callWorker(vocabName, sourceTtl, validatorTtl, validationReport, testResults) {
-  const systemPrompt = `You are a SHACL validation expert reviewing RDF/SKOS vocabularies.
-You will receive a validation report and a sample of the source TTL showing the data patterns.
+  const systemPrompt = `You are a SHACL validation expert remediating RDF/SKOS vocabulary files.
 
-Your task is to produce a remediation report in markdown format. For each violation category:
-- Explain what the violation means in plain English
-- Provide the EXACT corrected TTL triples needed to fix it (show one example)
-- If the fix requires bulk changes across many nodes (e.g. adding schema:temporalCoverage to hundreds of concepts), provide a Python script using rdflib that can apply the fix programmatically
-- If neither raw TTL nor a script can fully resolve the issue (e.g. requires human judgement on dates), describe exactly what is needed
+You will receive a source TTL sample and a validation report. Your job is ROOT CAUSE ANALYSIS and CORRECT fixes.
 
-Format your response as a markdown document with these sections:
-1. Executive Summary (1-2 sentences)
-2. Fixes (one subsection per violation category, with TTL code blocks or Python scripts)
-3. Validator Gaps (any issues in the SHACL shapes themselves that could be improved)
+## Critical rules
 
-Use turtle code blocks (\`\`\`turtle) for TTL and python code blocks (\`\`\`python) for scripts.
-Do NOT include the full corrected file — only show the triples that need to change.
-Be concise.`;
+1. **Before/After**: For every fix, show the CURRENT triple from the source, then the CORRECTED triple. Use "Current:" and "Fix:" labels.
+2. **Root cause, not symptoms**: If the source uses \`dcterms:created\` but the validator requires \`schema:dateCreated\`, say that explicitly. Don't just say "add schema:dateCreated" — say "replace dcterms:created with schema:dateCreated".
+3. **Language tags matter**: The validator requires \`xsd:string\` (plain literals like \`"Brand"\`). Language-tagged literals (\`"Brand"@en\`) are \`rdf:langString\` and WILL FAIL. If the source has \`@en\` tags, the fix is to REMOVE them, not keep them.
+4. **Schema.org namespace**: The validator uses \`https://schema.org/\` (HTTPS). Never use \`http://schema.org/\` — it is a different namespace and will not match.
+5. **rdflib Python correctness**: When writing Python scripts:
+   - Use \`g.add((subject, predicate, object))\` — never \`node.add()\`
+   - Define namespaces: \`SCHEMA = Namespace("https://schema.org/")\` — note HTTPS
+   - Use \`BNode()\` correctly: create one per concept, add triples with \`g.add((bnode, pred, obj))\`
+   - Always bind prefixes: \`g.bind("schema", SCHEMA)\`
+6. **Address ALL violation categories**: The validation report groups violations. You must provide a fix for EVERY category listed, not just the first one.
+7. **Validator gaps**: Only mention gaps you can specifically identify (e.g., a shape references undefined property shapes, or a shape checks existence but not value currency). Do not write generic filler.
 
-  const sampledSource = sampleTtl(sourceTtl);
+## Predicate mapping (common issue)
+
+Source vocabularies often use Dublin Core Terms while the validator requires Schema.org:
+| Source predicate | Validator expects | Notes |
+|---|---|---|
+| dcterms:created | schema:dateCreated | Same datatype (xsd:date) |
+| dcterms:modified | schema:dateModified | Same datatype (xsd:date) |
+| dcterms:creator | schema:creator | Must point to schema:Person or schema:Organization |
+| dcterms:publisher | (no equivalent shape) | Not validated |
+| skos:prefLabel "X"@en | skos:prefLabel "X" | Remove @en tag |
+| skos:definition "X"@en | skos:definition "X" | Remove @en tag |
+
+## Output format
+
+Use these exact markdown sections:
+1. **Executive Summary** — 2-3 sentences covering the root causes
+2. **Fixes** — One subsection (###) per violation category. Each must have:
+   - What the source currently has (quote the actual triple)
+   - What it should be (corrected triple)
+   - For bulk changes (10+ nodes): a Python rdflib script
+   - For changes requiring human input: describe exactly what decisions are needed
+3. **Validator Gaps** — Specific issues only, or "None identified" if none found
+
+Use \`\`\`turtle for TTL and \`\`\`python for scripts. Be precise and concise.`;
+
+  // Llama 4 Scout has 131K context but free-plan workers timeout at 30s.
+  // Keep payload moderate to fit within inference time limits.
+  const sampledSource = sampleTtl(sourceTtl, 5);
+
+  // Trim the validation report: remove the long affected-nodes lists, keep category headers
+  const trimmedReport = (validationReport || 'No validation report available.')
+    .replace(/\*\*Affected nodes:\*\*\n(- `[^`]+`\n){5,}/g, (match) => {
+      const count = (match.match(/^- /gm) || []).length;
+      const first3 = match.split('\n').slice(0, 4).join('\n');
+      return `${first3}\n- ... and ${count - 3} more\n`;
+    });
 
   const userPrompt = `# Vocabulary: ${vocabName}
 
-## Source TTL (sample showing data patterns)
+## Source TTL (sample — showing the actual predicates used)
 \`\`\`turtle
-${truncate(sampledSource, 6000)}
+${truncate(sampledSource, 8000)}
+\`\`\`
+
+## SHACL Validator Shapes
+\`\`\`turtle
+${truncate(validatorTtl, 5000)}
 \`\`\`
 
 ## Current Validation Report
-${truncate(validationReport || 'No validation report available.', 8000)}
+${truncate(trimmedReport, 6000)}
 
-Please produce the remediation report.`;
+Produce the remediation report. Address every violation category. Show before/after for each fix.`;
 
   const headers = { 'Content-Type': 'application/json' };
   if (WORKER_KEY) headers['Authorization'] = `Bearer ${WORKER_KEY}`;

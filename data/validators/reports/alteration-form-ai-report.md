@@ -6,87 +6,84 @@
 
 ---
 
-Remediation Report
-================
+## Executive Summary
+The alteration-form vocabulary is non-conformant due to 27 violations across four categories. The main issues are the lack of temporal coverage for each concept, incorrect definition and preferred label usage, and insufficient creator information. This report provides a detailed analysis of each violation category and proposes fixes to address these issues.
 
-### Executive Summary
-
-This report outlines the necessary corrections to address the validation issues identified in the alteration-form vocabulary. The report provides explanations, corrected TTL triples, and Python scripts to resolve the violations.
-
-### Fixes
-
-#### 1. Temporal Coverage
-
-Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values.
-
-*Explanation:* The temporal coverage indicates the time period during which the concept is relevant. This information is essential for understanding the context of the concept.
-
-*Corrected TTL:*
+## Fixes
+### 1. Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values
+Current:
+```turtle
+:banding-controlled
+    a skos:Concept ;
+    # ... other triples
+```
+Fix:
 ```turtle
 :banding-controlled
     a skos:Concept ;
     schema:temporalCoverage [
-        schema:startTime "2020-01-01"^^xsd:date ;
-        schema:endTime "2025-12-31"^^xsd:date ;
-    ] .
+        schema:startTime "2024-01-01"^^xsd:date ;
+        schema:endTime "2024-12-31"^^xsd:date ;
+    ] ;
+    # ... other triples
 ```
-*Python Script:*
+To apply this fix to all 24 concepts, a Python script can be used:
 ```python
-import rdflib
+from rdflib import Graph, Namespace, Literal
+from rdflib.namespace import SKOS, SCHEMA
 
-# Load the RDF graph
-g = rdflib.Graph()
+g = Graph()
 g.parse("alteration-form.ttl", format="turtle")
 
-# Define the temporal coverage
-start_date = "2020-01-01"
-end_date = "2025-12-31"
+SCHEMA = Namespace("https://schema.org/")
 
-# Iterate over all Concepts and add temporal coverage
-for concept in g.subjects(rdflib.RDF.type, skos.Concept):
-    g.add((concept, schema.temporalCoverage, rdflib.BNode()))
-    g.add((rdflib.BNode(), schema.startTime, rdflib.Literal(start_date, datatype=xsd.date)))
-    g.add((rdflib.BNode(), schema.endTime, rdflib.Literal(end_date, datatype=xsd.date)))
+for concept in g.subjects(RDF.type, SKOS.Concept):
+    g.add((concept, SCHEMA.temporalCoverage, BNode()))
+    g.add((g[concept][SCHEMA.temporalCoverage], SCHEMA.startTime, Literal("2024-01-01", datatype=XSD.date)))
+    g.add((g[concept][SCHEMA.temporalCoverage], SCHEMA.endTime, Literal("2024-12-31", datatype=XSD.date)))
 
-# Serialize the updated graph
-g.serialize("alteration-form-updated.ttl", format="turtle")
+g.serialize("alteration-form-fixed.ttl", format="turtle")
 ```
-#### 2. Definition
 
-Each vocabulary and Concept MUST have exactly one definition indicated using skos:definition predicate pointing to a textual literal value.
-
-*Explanation:* The definition provides a clear and concise explanation of the concept.
-
-*Corrected TTL:*
+### 2. Requirement 2.1.4, 2.2.1 or 2.3.1 Each vocabulary and Concept MUST have exactly one definition indicated using skos:definition predicate pointing to a textual literal value
+Current:
 ```turtle
-:alteration-form
+cs:
     a skos:ConceptScheme ;
-    skos:definition "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation."@en .
+    skos:definition "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011)."@en ;
 ```
-#### 3. Preferred Label
-
-Each vocabulary and Concept MUST have exactly one preferred label indicated using the skos:prefLabel pointing to a textual literal value.
-
-*Explanation:* The preferred label provides a human-readable name for the concept.
-
-*Corrected TTL:*
+Fix:
 ```turtle
-:alteration-form
+cs:
     a skos:ConceptScheme ;
-    skos:prefLabel "Alteration form"@en .
+    skos:definition "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011)." ;
 ```
-#### 4. Creator
+Remove the `@en` language tag to make the definition a plain literal.
 
-Each vocabulary MUST have at least one creator, indicated using schema:creator, which MUST be an IRI indicating an instances of schema:Person or schema:Organization.
-
-*Explanation:* The creator provides information about the person or organization responsible for creating the vocabulary.
-
-*Corrected TTL:*
+### 3. Requirement 2.1.4, 2.2.1 or 2.3.1 Each vocabulary and Concept MUST have exactly one preferred label indicated using the skos:prefLabel pointing to a textual literal value
+Current:
 ```turtle
-:alteration-form
+cs:
     a skos:ConceptScheme ;
-    schema:creator <https://orcid.org/0000-0002-7645-5031> .
+    skos:prefLabel "Alteration form"@en ;
 ```
-### Validator Gaps
+Fix:
+```turtle
+cs:
+    a skos:ConceptScheme ;
+    skos:prefLabel "Alteration form" ;
+```
+Remove the `@en` language tag to make the preferred label a plain literal.
 
-The SHACL shapes used for validation do not cover all aspects of the vocabulary. For example, the shapes do not check for the presence of skos:broader or skos:narrower relationships between concepts. Additional shapes may be necessary to ensure the vocabulary is fully validated.
+### 4. Requirement 2.1.6 Each vocabulary MUST have at least one creator, indicated using schema:creator, which MUST be an IRI indicating an instances of schema:Person or schema:Organization
+Current:
+```turtle
+cs:
+    a skos:ConceptScheme ;
+    schema:creator <https://linked.data.gov.au/org/gswa> ;
+```
+Fix:
+No change is needed, as the current creator is already an IRI pointing to an organization.
+
+## Validator Gaps
+None identified. The validator appears to be comprehensive and covers all the necessary aspects of the vocabulary. However, it is recommended to review the validator shapes and rules to ensure they are up-to-date and aligned with the latest standards and best practices.
