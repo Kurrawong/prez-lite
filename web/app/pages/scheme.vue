@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getLabel } from '~/composables/useVocabData'
+import { getLabel, clearCaches } from '~/composables/useVocabData'
 import type { ChangeSummary } from '~/composables/useEditMode'
 
 const route = useRoute()
@@ -38,6 +38,19 @@ watch([scheme, treeItems, concepts], () => {
 const displayScheme = computed(() => scheme.value ?? lastValidScheme.value)
 const displayTreeItems = computed(() => treeItems.value.length ? treeItems.value : lastValidTreeItems.value)
 const displayConcepts = computed(() => concepts.value?.length ? concepts.value : lastValidConcepts.value)
+
+// Live header from N3 store in edit mode
+const editModeTitle = computed(() => {
+  if (editView.value === 'none' || !editMode?.isEditMode.value) return null
+  return editMode.resolveLabel(uri.value)
+})
+
+const editModeDefinition = computed(() => {
+  if (editView.value === 'none' || !editMode?.isEditMode.value || !editMode.store.value) return null
+  void editMode.storeVersion.value
+  const quads = editMode.store.value.getQuads(uri.value, 'http://www.w3.org/2004/02/skos/core#definition', null, null)
+  return quads.length > 0 ? quads[0].object.value : null
+})
 
 const isLoading = computed(() => status.value === 'idle' || status.value === 'pending')
 // Only show skeleton on initial load (no previous data)
@@ -214,6 +227,7 @@ async function handleSaveConfirm(commitMessage: string) {
   if (ok) {
     showSaveModal.value = false
     saveModalSubjectIri.value = null
+    clearCaches()
   }
 }
 
@@ -438,7 +452,7 @@ function copyIriToClipboard(iri: string) {
       <div class="mb-8">
         <div class="flex items-start justify-between gap-4 mb-2">
           <h1 class="text-3xl font-bold">
-            {{ getLabel(displayScheme.prefLabel) }}
+            {{ editModeTitle ?? getLabel(displayScheme.prefLabel) }}
             <UButton
               v-if="editView !== 'none'"
               icon="i-heroicons-arrow-down-circle"
@@ -519,12 +533,12 @@ function copyIriToClipboard(iri: string) {
             aria-label="Edit source on GitHub"
           />
         </div>
-        <div v-if="displayScheme.definition">
+        <div v-if="editModeDefinition ?? displayScheme.definition">
           <p
             ref="descriptionRef"
             :class="['text-lg text-muted', descriptionExpanded ? '' : 'line-clamp-[8]']"
           >
-            {{ getLabel(displayScheme.definition) }}
+            {{ editModeDefinition ?? getLabel(displayScheme.definition) }}
             <UButton
               v-if="editView !== 'none'"
               icon="i-heroicons-arrow-down-circle"

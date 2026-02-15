@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useDebounceFn } from '@vueuse/core'
 import type { EditableProperty, EditableValue, ConceptSummary } from '~/composables/useEditMode'
 
 const props = defineProps<{
@@ -64,14 +63,15 @@ function getLocalValue(val: EditableValue): string {
   return localValues.get(val.id) ?? val.value
 }
 
-const debouncedEmitUpdate = useDebounceFn((predicate: string, val: EditableValue, newValue: string) => {
-  emit('update:value', predicate, val, newValue)
-}, 300)
+let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 function handleValueInput(predicate: string, val: EditableValue, event: Event) {
   const target = event.target as HTMLInputElement | HTMLTextAreaElement
   localValues.set(val.id, target.value)
-  debouncedEmitUpdate(predicate, val, target.value)
+  if (debounceTimer) clearTimeout(debounceTimer)
+  debounceTimer = setTimeout(() => {
+    emit('update:value', predicate, val, target.value)
+  }, 300)
 }
 
 function handleLanguageChange(predicate: string, val: EditableValue, newLang: string) {

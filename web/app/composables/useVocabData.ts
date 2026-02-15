@@ -191,6 +191,18 @@ let cachedSchemesPromise: Promise<Scheme[]> | undefined
 let cachedLabels: LabelsIndex | undefined
 let cachedLabelsPromise: Promise<LabelsIndex> | undefined
 
+// Reset all module-scope caches so next fetch gets fresh data
+export function clearCaches() {
+  cachedVocabMetadata = undefined
+  cachedVocabMetadataPromise = undefined
+  cachedSchemes = undefined
+  cachedSchemesPromise = undefined
+  cachedLabels = undefined
+  cachedLabelsPromise = undefined
+  listConceptsCache.clear()
+  listConceptsPromiseCache.clear()
+}
+
 // Fetch vocabulary metadata (new format) — cached
 export async function fetchVocabMetadata(): Promise<VocabMetadata[]> {
   if (cachedVocabMetadata) return cachedVocabMetadata
