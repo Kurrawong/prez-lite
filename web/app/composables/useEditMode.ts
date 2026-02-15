@@ -17,6 +17,7 @@ import {
   patchTTL,
   computeQuadDiff,
   getModifiedSubjects,
+  buildChangeSummary,
   type ParsedTTL,
 } from '~/utils/ttl-patch'
 import type { TreeItem } from '~/composables/useScheme'
@@ -652,81 +653,10 @@ export function useEditMode(
   }
 
   function getChangeSummary(): ChangeSummary {
-    const { added, removed } = computeDiff()
-    const modifiedSubjects = getModifiedSubjects(added, removed)
-
-    // Determine which subjects exist in original vs current
-    const origSubjects = new Set<string>()
-    if (originalStore.value) {
-      for (const q of originalStore.value.getQuads(null, null, null, null) as Quad[]) {
-        origSubjects.add(q.subject.value)
-      }
+    if (!store.value || !originalStore.value) {
+      return { subjects: [], totalAdded: 0, totalRemoved: 0, totalModified: 0 }
     }
-    const currSubjects = new Set<string>()
-    if (store.value) {
-      for (const q of store.value.getQuads(null, null, null, null) as Quad[]) {
-        currSubjects.add(q.subject.value)
-      }
-    }
-
-    const subjects: SubjectChange[] = []
-    let totalAdded = 0
-    let totalRemoved = 0
-    let totalModified = 0
-
-    for (const subjectIri of modifiedSubjects) {
-      const inOrig = origSubjects.has(subjectIri)
-      const inCurr = currSubjects.has(subjectIri)
-
-      let changeType: SubjectChange['type']
-      if (!inOrig && inCurr) {
-        changeType = 'added'
-        totalAdded++
-      } else if (inOrig && !inCurr) {
-        changeType = 'removed'
-        totalRemoved++
-      } else {
-        changeType = 'modified'
-        totalModified++
-      }
-
-      const subjectAdded = added.filter(q => q.subject.value === subjectIri)
-      const subjectRemoved = removed.filter(q => q.subject.value === subjectIri)
-
-      // Group by predicate
-      const predicates = new Set([
-        ...subjectAdded.map(q => q.predicate.value),
-        ...subjectRemoved.map(q => q.predicate.value),
-      ])
-
-      const propertyChanges: PropertyChange[] = []
-      for (const pred of predicates) {
-        const predAdded = subjectAdded.filter(q => q.predicate.value === pred)
-        const predRemoved = subjectRemoved.filter(q => q.predicate.value === pred)
-
-        let propType: PropertyChange['type']
-        if (predRemoved.length === 0) propType = 'added'
-        else if (predAdded.length === 0) propType = 'removed'
-        else propType = 'modified'
-
-        propertyChanges.push({
-          predicateIri: pred,
-          predicateLabel: getPredicateLabel(pred),
-          type: propType,
-          oldValues: predRemoved.map(q => q.object.value),
-          newValues: predAdded.map(q => q.object.value),
-        })
-      }
-
-      subjects.push({
-        subjectIri,
-        subjectLabel: resolveLabel(subjectIri),
-        type: changeType,
-        propertyChanges,
-      })
-    }
-
-    return { subjects, totalAdded, totalRemoved, totalModified }
+    return buildChangeSummary(originalStore.value, store.value, resolveLabel, getPredicateLabel)
   }
 
   function getChangesForSubject(iri: string): SubjectChange | null {

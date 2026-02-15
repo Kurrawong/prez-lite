@@ -7,6 +7,7 @@
  */
 
 import { Writer, DataFactory, type Store, type Quad } from 'n3'
+import type { ChangeSummary, SubjectChange, PropertyChange } from '~/composables/useEditMode'
 
 // ============================================================================
 // Types
@@ -566,4 +567,94 @@ export function getModifiedSubjects(
   for (const q of added) subjects.add(q.subject.value)
   for (const q of removed) subjects.add(q.subject.value)
   return subjects
+}
+
+// ============================================================================
+// Change summary builder (standalone, no composable state needed)
+// ============================================================================
+
+/**
+ * Build a ChangeSummary comparing two N3 stores.
+ * Reusable from both useEditMode (live edits) and useVocabHistory (historical diffs).
+ *
+ * @param olderStore - The baseline store
+ * @param newerStore - The updated store
+ * @param labelResolver - Function to resolve an IRI to a human-readable label
+ * @param predicateLabelResolver - Function to resolve a predicate IRI to a label
+ */
+export function buildChangeSummary(
+  olderStore: Store,
+  newerStore: Store,
+  labelResolver: (iri: string) => string,
+  predicateLabelResolver: (iri: string) => string,
+): ChangeSummary {
+  const { added, removed } = computeQuadDiff(olderStore, newerStore)
+  const modifiedSubjects = getModifiedSubjects(added, removed)
+
+  const origSubjects = new Set<string>()
+  for (const q of olderStore.getQuads(null, null, null, null) as Quad[]) {
+    origSubjects.add(q.subject.value)
+  }
+  const currSubjects = new Set<string>()
+  for (const q of newerStore.getQuads(null, null, null, null) as Quad[]) {
+    currSubjects.add(q.subject.value)
+  }
+
+  const subjects: SubjectChange[] = []
+  let totalAdded = 0
+  let totalRemoved = 0
+  let totalModified = 0
+
+  for (const subjectIri of modifiedSubjects) {
+    const inOrig = origSubjects.has(subjectIri)
+    const inCurr = currSubjects.has(subjectIri)
+
+    let changeType: SubjectChange['type']
+    if (!inOrig && inCurr) {
+      changeType = 'added'
+      totalAdded++
+    } else if (inOrig && !inCurr) {
+      changeType = 'removed'
+      totalRemoved++
+    } else {
+      changeType = 'modified'
+      totalModified++
+    }
+
+    const subjectAdded = added.filter(q => q.subject.value === subjectIri)
+    const subjectRemoved = removed.filter(q => q.subject.value === subjectIri)
+
+    const predicates = new Set([
+      ...subjectAdded.map(q => q.predicate.value),
+      ...subjectRemoved.map(q => q.predicate.value),
+    ])
+
+    const propertyChanges: PropertyChange[] = []
+    for (const pred of predicates) {
+      const predAdded = subjectAdded.filter(q => q.predicate.value === pred)
+      const predRemoved = subjectRemoved.filter(q => q.predicate.value === pred)
+
+      let propType: PropertyChange['type']
+      if (predRemoved.length === 0) propType = 'added'
+      else if (predAdded.length === 0) propType = 'removed'
+      else propType = 'modified'
+
+      propertyChanges.push({
+        predicateIri: pred,
+        predicateLabel: predicateLabelResolver(pred),
+        type: propType,
+        oldValues: predRemoved.map(q => q.object.value),
+        newValues: predAdded.map(q => q.object.value),
+      })
+    }
+
+    subjects.push({
+      subjectIri,
+      subjectLabel: labelResolver(subjectIri),
+      type: changeType,
+      propertyChanges,
+    })
+  }
+
+  return { subjects, totalAdded, totalRemoved, totalModified }
 }

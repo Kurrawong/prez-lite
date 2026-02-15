@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { Store, Parser, type Quad } from 'n3'
 import { getLabel, clearCaches } from '~/composables/useVocabData'
+import { getPredicateLabel } from '~/utils/vocab-labels'
 import type { ChangeSummary } from '~/composables/useEditMode'
+import type { HistoryCommit, HistoryDiff } from '~/composables/useVocabHistory'
 
 const route = useRoute()
 const router = useRouter()
 const uri = computed(() => route.query.uri as string)
 const selectedConceptUri = computed(() => route.query.concept as string | undefined)
+const historySha = computed(() => route.query.sha as string | undefined)
 
 const {
   scheme,
@@ -72,7 +76,7 @@ const githubEditUrl = computed(() => {
 })
 
 // --- Editor State ---
-const { isAuthenticated } = useGitHubAuth()
+const { isAuthenticated, token: authToken } = useGitHubAuth()
 
 const vocabSlugForEditor = computed(() => getVocabByIri(uri.value)?.slug)
 const [editorOwner, editorRepoName] = (githubRepo as string).split('/')
@@ -83,8 +87,14 @@ const editorFilePath = computed(() => {
   return base ? `${base}/${slug}.ttl` : `${slug}.ttl`
 })
 
-// Edit view: 'none' | 'full' | 'inline'
-const editView = ref<'none' | 'full' | 'inline'>('none')
+// Edit view driven by URL param `edit` (full | inline | absent=none)
+const editQueryParam = computed(() => route.query.edit as string | undefined)
+const editView = computed(() => {
+  // History mode forces read-only
+  if (historySha.value) return 'none'
+  if (editQueryParam.value === 'full' || editQueryParam.value === 'inline') return editQueryParam.value
+  return 'none'
+})
 
 // Monaco theme (used by TTL viewer modal and SaveConfirmModal)
 const colorMode = useColorMode()
@@ -94,6 +104,270 @@ const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'p
 const editMode = (editorOwner && editorRepoName)
   ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, githubBranch as string, uri)
   : null
+
+// Build status polling
+const buildStatus = (editorOwner && editorRepoName)
+  ? useBuildStatus(editorOwner, editorRepoName)
+  : null
+
+// --- History ---
+const historyPopoverOpen = ref(false)
+const showDiffModal = ref(false)
+const diffModalData = ref<HistoryDiff | null>(null)
+const diffModalLoading = ref(false)
+const diffModalCommitMsg = ref('')
+
+// History composable (created lazily)
+const vocabHistory = (editorOwner && editorRepoName)
+  ? useVocabHistory(editorOwner, editorRepoName, editorFilePath as Ref<string>, githubBranch as string)
+  : null
+
+// Load commits when popover opens or when page loads with a sha param
+watch(historyPopoverOpen, (open) => {
+  if (open && vocabHistory && !vocabHistory.commits.value.length) {
+    vocabHistory.fetchCommits()
+  }
+})
+watch([historySha, authToken, vocabSlugForEditor], ([sha, token, slug]) => {
+  if (sha && token && slug && vocabHistory && !vocabHistory.commits.value.length) {
+    vocabHistory.fetchCommits()
+  }
+}, { immediate: true })
+
+// Version label from scheme metadata
+const versionLabel = computed(() => displayScheme.value?.version ?? null)
+
+// --- Historical version browsing ---
+const SKOS = 'http://www.w3.org/2004/02/skos/core#'
+const RDF_TYPE = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+
+const historyStore = shallowRef<Store | null>(null)
+const historyLoading = ref(false)
+const historyError = ref<string | null>(null)
+
+interface HistoryConcept {
+  iri: string
+  prefLabel: string
+  broader: string[]
+}
+
+// Load historical version when sha changes (waits for auth token on fresh page load)
+watch([historySha, authToken, vocabSlugForEditor], async ([sha, token, slug]) => {
+  if (!sha || !vocabHistory) {
+    historyStore.value = null
+    return
+  }
+  if (!token || !slug) return // Wait for auth + vocab data to be ready
+  historyLoading.value = true
+  historyError.value = null
+  try {
+    const ttl = await vocabHistory.fetchVersionContent(sha)
+    const parser = new Parser({ format: 'Turtle' })
+    const s = new Store()
+    s.addQuads(parser.parse(ttl))
+    historyStore.value = s
+  } catch (e) {
+    historyError.value = e instanceof Error ? e.message : 'Failed to load version'
+    historyStore.value = null
+  } finally {
+    historyLoading.value = false
+  }
+}, { immediate: true })
+
+const historyConcepts = computed<HistoryConcept[]>(() => {
+  const s = historyStore.value
+  if (!s) return []
+  const conceptQuads = s.getQuads(null, RDF_TYPE, `${SKOS}Concept`, null) as Quad[]
+  return conceptQuads.map((q: Quad) => {
+    const iri = q.subject.value
+    const labelQuads = s.getQuads(iri, `${SKOS}prefLabel`, null, null) as Quad[]
+    const prefLabel = labelQuads.length > 0 ? labelQuads[0]!.object.value : iri
+    const broaderQuads = s.getQuads(iri, `${SKOS}broader`, null, null) as Quad[]
+    return { iri, prefLabel, broader: broaderQuads.map((bq: Quad) => bq.object.value) }
+  }).sort((a, b) => a.prefLabel.localeCompare(b.prefLabel))
+})
+
+const historyTreeItems = computed(() => {
+  if (!historyConcepts.value.length) return []
+  const narrowerMap = new Map<string, HistoryConcept[]>()
+  for (const c of historyConcepts.value) {
+    for (const b of c.broader) {
+      if (!narrowerMap.has(b)) narrowerMap.set(b, [])
+      narrowerMap.get(b)!.push(c)
+    }
+  }
+  const hasParent = new Set(historyConcepts.value.filter(c => c.broader.length > 0).map(c => c.iri))
+  const topConcepts = historyConcepts.value.filter(c => !hasParent.has(c.iri))
+
+  function buildNode(concept: HistoryConcept, depth = 0): any {
+    const children = narrowerMap.get(concept.iri) || []
+    return {
+      id: concept.iri,
+      label: concept.prefLabel,
+      icon: children.length > 0 ? 'i-heroicons-folder' : 'i-heroicons-document',
+      defaultExpanded: depth === 0 && children.length < 10,
+      children: children.length > 0
+        ? children.sort((a, b) => a.prefLabel.localeCompare(b.prefLabel)).map(c => buildNode(c, depth + 1))
+        : undefined,
+    }
+  }
+  return topConcepts.sort((a, b) => a.prefLabel.localeCompare(b.prefLabel)).map(c => buildNode(c))
+})
+
+const historySelectedConcept = computed(() => historySha.value ? selectedConceptUri.value : undefined)
+
+// Predicates to hide in history property views (structural, not informative)
+const HISTORY_HIDDEN_PREDICATES = new Set([
+  RDF_TYPE,
+  `${SKOS}inScheme`,
+  `${SKOS}topConceptOf`,
+  `${SKOS}hasTopConcept`,
+])
+
+/** Resolve an RDF object value to a label using the history store */
+function resolveHistoryValue(s: Store, val: string): string {
+  if (!val.startsWith('http')) return val
+  const labelQuads = s.getQuads(val, `${SKOS}prefLabel`, null, null) as Quad[]
+  if (labelQuads.length > 0) return labelQuads[0]!.object.value
+  // Fallback: local name
+  const hashIdx = val.lastIndexOf('#')
+  const slashIdx = val.lastIndexOf('/')
+  return val.substring(Math.max(hashIdx, slashIdx) + 1)
+}
+
+function buildHistoryProperties(s: Store, subjectIri: string) {
+  const quads = s.getQuads(subjectIri, null, null, null) as Quad[]
+  const grouped = new Map<string, { predicate: string; values: string[] }>()
+  for (const q of quads) {
+    const pred = q.predicate.value
+    if (HISTORY_HIDDEN_PREDICATES.has(pred)) continue
+    if (!grouped.has(pred)) grouped.set(pred, { predicate: pred, values: [] })
+    grouped.get(pred)!.values.push(resolveHistoryValue(s, q.object.value))
+  }
+  return Array.from(grouped.values()).map(g => ({
+    ...g,
+    label: getPredicateLabel(g.predicate),
+  }))
+}
+
+const historyConceptProperties = computed(() => {
+  const s = historyStore.value
+  const iri = historySelectedConcept.value
+  if (!s || !iri) return []
+  return buildHistoryProperties(s, iri)
+})
+
+const historySchemeTitle = computed(() => {
+  const s = historyStore.value
+  if (!s || !uri.value) return null
+  const quads = s.getQuads(uri.value, `${SKOS}prefLabel`, null, null) as Quad[]
+  return quads.length > 0 ? quads[0]!.object.value : null
+})
+
+const historySchemeDefinition = computed(() => {
+  const s = historyStore.value
+  if (!s || !uri.value) return null
+  const quads = s.getQuads(uri.value, `${SKOS}definition`, null, null) as Quad[]
+  return quads.length > 0 ? quads[0]!.object.value : null
+})
+
+const historySchemeProperties = computed(() => {
+  const s = historyStore.value
+  if (!s || !uri.value) return []
+  return buildHistoryProperties(s, uri.value)
+})
+
+// Track the commit metadata for the version being browsed
+const selectedHistoryCommit = ref<HistoryCommit | null>(null)
+
+// Resolve commit metadata from loaded commits when navigating directly to a sha URL
+const activeHistoryCommit = computed(() => {
+  if (!historySha.value) return null
+  if (selectedHistoryCommit.value?.sha === historySha.value) return selectedHistoryCommit.value
+  return vocabHistory?.commits.value.find(c => c.sha === historySha.value) ?? null
+})
+
+function browseVersion(commit: HistoryCommit) {
+  selectedHistoryCommit.value = commit
+  historyPopoverOpen.value = false
+  router.push({ path: '/scheme', query: { uri: uri.value, sha: commit.sha } })
+}
+
+function exitHistoryView() {
+  selectedHistoryCommit.value = null
+  router.push({ path: '/scheme', query: { uri: uri.value } })
+}
+
+function formatHistoryDate(dateStr: string): string {
+  if (!dateStr) return ''
+  const d = new Date(dateStr)
+  const now = new Date()
+  const diffMs = now.getTime() - d.getTime()
+  const diffDays = Math.floor(diffMs / 86_400_000)
+  if (diffDays === 0) {
+    const diffHours = Math.floor(diffMs / 3_600_000)
+    if (diffHours === 0) return `${Math.floor(diffMs / 60_000)}m ago`
+    return `${diffHours}h ago`
+  }
+  if (diffDays === 1) return 'yesterday'
+  if (diffDays < 30) return `${diffDays}d ago`
+  return d.toLocaleDateString()
+}
+
+function truncateCommitMsg(msg: string, max = 60): string {
+  const firstLine = msg.split('\n')[0] ?? msg
+  return firstLine.length > max ? firstLine.slice(0, max) + '...' : firstLine
+}
+
+async function openDiffModal(commit: { sha: string; message: string }, index: number) {
+  if (!vocabHistory) return
+  historyPopoverOpen.value = false
+  diffModalLoading.value = true
+  diffModalCommitMsg.value = commit.message
+  showDiffModal.value = true
+  diffModalData.value = null
+
+  try {
+    const commits = vocabHistory.commits.value
+    const olderCommit = index < commits.length - 1 ? commits[index + 1]! : null
+
+    if (!olderCommit) {
+      const newerTTL = await vocabHistory.fetchVersionContent(commit.sha)
+      const parser = new Parser({ format: 'Turtle' })
+      const newerStore = new Store()
+      newerStore.addQuads(parser.parse(newerTTL))
+      const { buildChangeSummary } = await import('~/utils/ttl-patch')
+      const emptyStore = new Store()
+      const labelResolver = (iri: string): string => {
+        const quads = newerStore.getQuads(iri, `${SKOS}prefLabel`, null, null) as Quad[]
+        if (quads.length > 0) return quads[0]!.object.value
+        const hashIdx = iri.lastIndexOf('#')
+        const slashIdx = iri.lastIndexOf('/')
+        return iri.substring(Math.max(hashIdx, slashIdx) + 1)
+      }
+      diffModalData.value = {
+        changeSummary: buildChangeSummary(emptyStore, newerStore, labelResolver, getPredicateLabel),
+        olderTTL: '',
+        newerTTL,
+      }
+    } else {
+      diffModalData.value = await vocabHistory.fetchDiff(olderCommit.sha, commit.sha)
+    }
+  } catch {
+    diffModalData.value = null
+  } finally {
+    diffModalLoading.value = false
+  }
+}
+
+function truncateIriValue(val: string, max = 80): string {
+  if (val.startsWith('http')) {
+    const hashIdx = val.lastIndexOf('#')
+    const slashIdx = val.lastIndexOf('/')
+    val = val.substring(Math.max(hashIdx, slashIdx) + 1)
+  }
+  return val.length > max ? val.slice(0, max) + '...' : val
+}
 
 // Save modal state
 const showSaveModal = ref(false)
@@ -137,7 +411,9 @@ async function enterEdit(mode: 'full' | 'inline' = 'full') {
       return
     }
   }
-  editView.value = mode
+  const query: Record<string, string> = { uri: uri.value, edit: mode }
+  if (selectedConceptUri.value) query.concept = selectedConceptUri.value
+  router.push({ path: '/scheme', query })
 }
 
 function exitEdit() {
@@ -145,26 +421,40 @@ function exitEdit() {
     const exited = editMode.exitEditMode()
     if (!exited) return
   }
-  editView.value = 'none'
+  const query: Record<string, string> = { uri: uri.value }
+  if (selectedConceptUri.value) query.concept = selectedConceptUri.value
+  router.push({ path: '/scheme', query })
 }
+
+// Sync edit mode composable with URL param changes
+watch(editView, async (view, oldView) => {
+  if (view !== 'none' && oldView === 'none' && editMode && !editMode.isEditMode.value) {
+    await editMode.enterEditMode()
+  }
+})
 
 // --- Concept selection ---
 
+function buildQuery(extra: Record<string, string | undefined> = {}): Record<string, string> {
+  const q: Record<string, string> = { uri: uri.value }
+  if (historySha.value) q.sha = historySha.value
+  if (editQueryParam.value) q.edit = editQueryParam.value
+  for (const [k, v] of Object.entries(extra)) {
+    if (v) q[k] = v
+    else delete q[k]
+  }
+  return q
+}
+
 function selectConcept(conceptUri: string) {
-  router.replace({
-    path: '/scheme',
-    query: { uri: uri.value, concept: conceptUri }
-  })
-  if (editMode) {
+  router.push({ path: '/scheme', query: buildQuery({ concept: conceptUri }) })
+  if (editMode && !historySha.value) {
     editMode.selectedConceptIri.value = conceptUri
   }
 }
 
 function clearConceptSelection() {
-  router.replace({
-    path: '/scheme',
-    query: { uri: uri.value }
-  })
+  router.push({ path: '/scheme', query: buildQuery({ concept: undefined }) })
 }
 
 // --- Editable properties ---
@@ -228,6 +518,7 @@ async function handleSaveConfirm(commitMessage: string) {
     showSaveModal.value = false
     saveModalSubjectIri.value = null
     clearCaches()
+    buildStatus?.startPolling()
   }
 }
 
@@ -361,8 +652,11 @@ function handleAddConcept() {
 const searchQuery = ref('')
 const expandAll = ref(false)
 
-// Use edit mode tree items when in edit mode, otherwise static
+// Use edit mode tree items when in edit mode, history store when browsing, otherwise static
 const activeTreeItems = computed(() => {
+  if (historySha.value && historyTreeItems.value.length) {
+    return historyTreeItems.value
+  }
   if (editView.value !== 'none' && editMode?.isEditMode.value) {
     return editMode!.treeItems.value
   }
@@ -370,6 +664,9 @@ const activeTreeItems = computed(() => {
 })
 
 const activeConceptCount = computed(() => {
+  if (historySha.value) {
+    return historyConcepts.value.length
+  }
   if (editView.value !== 'none' && editMode?.isEditMode.value) {
     return editMode!.concepts.value.length
   }
@@ -452,7 +749,7 @@ function copyIriToClipboard(iri: string) {
       <div class="mb-8">
         <div class="flex items-start justify-between gap-4 mb-2">
           <h1 class="text-3xl font-bold">
-            {{ editModeTitle ?? getLabel(displayScheme.prefLabel) }}
+            {{ historySchemeTitle ?? editModeTitle ?? getLabel(displayScheme.prefLabel) }}
             <UButton
               v-if="editView !== 'none'"
               icon="i-heroicons-arrow-down-circle"
@@ -464,8 +761,8 @@ function copyIriToClipboard(iri: string) {
             />
           </h1>
 
-          <!-- Edit button (not in edit mode) -->
-          <UFieldGroup v-if="editorAvailable && editView === 'none'" class="shrink-0">
+          <!-- Edit button (not in edit mode, not in history mode) -->
+          <UFieldGroup v-if="editorAvailable && editView === 'none' && !historySha" class="shrink-0">
             <UButton color="neutral" variant="subtle" label="Edit" icon="i-heroicons-pencil-square" @click="enterEdit('full')" />
             <UDropdownMenu :items="editModeItems">
               <UButton color="neutral" variant="outline" icon="i-heroicons-chevron-down" />
@@ -520,6 +817,71 @@ function copyIriToClipboard(iri: string) {
             size="xs"
             aria-label="Share or embed this vocabulary"
           />
+          <UPopover v-if="isAuthenticated && vocabSlugForEditor" v-model:open="historyPopoverOpen" :content="{ align: 'end', side: 'bottom' }">
+            <UButton
+              icon="i-heroicons-clock"
+              color="neutral"
+              variant="ghost"
+              size="xs"
+              aria-label="View edit history"
+            />
+            <template #content>
+              <div class="w-96 max-h-96 overflow-y-auto p-2">
+                <p class="text-xs font-medium text-muted px-2 mb-2">Edit history</p>
+
+                <div v-if="vocabHistory?.loading.value" class="py-6 text-center">
+                  <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin text-muted" />
+                </div>
+
+                <div v-else-if="!vocabHistory?.commits.value.length" class="py-6 text-center text-xs text-muted">
+                  No history found
+                </div>
+
+                <div v-else class="space-y-0.5">
+                  <div
+                    v-for="(commit, index) in vocabHistory!.commits.value"
+                    :key="commit.sha"
+                    class="flex items-center gap-2.5 px-2 py-2 rounded-md hover:bg-muted/10 transition-colors group"
+                  >
+                    <img
+                      v-if="commit.author.avatar"
+                      :src="commit.author.avatar"
+                      :alt="commit.author.login"
+                      class="size-6 rounded-full shrink-0"
+                    />
+                    <UIcon v-else name="i-heroicons-user-circle" class="size-6 text-muted shrink-0" />
+
+                    <div class="flex-1 min-w-0">
+                      <p class="text-xs font-medium truncate">{{ truncateCommitMsg(commit.message) }}</p>
+                      <p class="text-[10px] text-muted">
+                        {{ commit.author.login }} &middot; {{ formatHistoryDate(commit.date) }}
+                        <span v-if="index === 0" class="ml-1 text-primary font-medium">current</span>
+                      </p>
+                    </div>
+
+                    <div class="flex items-center gap-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <UButton size="xs" variant="soft" @click="openDiffModal(commit, index)">Diff</UButton>
+                      <UButton size="xs" variant="ghost" @click="browseVersion(commit)">Browse</UButton>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </UPopover>
+          <span v-if="historySha" class="inline-flex items-center gap-1.5 text-xs text-warning-500 dark:text-warning-400 bg-warning-50 dark:bg-warning-950/30 rounded-md px-2 py-0.5">
+            <UIcon name="i-heroicons-clock" class="size-3 shrink-0" />
+            <span class="truncate max-w-52">
+              <template v-if="activeHistoryCommit">
+                {{ formatHistoryDate(activeHistoryCommit.date) }} &middot; {{ activeHistoryCommit.author.login }} &middot; {{ truncateCommitMsg(activeHistoryCommit.message, 30) }}
+              </template>
+              <template v-else>
+                {{ historySha.slice(0, 7) }}
+              </template>
+            </span>
+            <button type="button" class="shrink-0 hover:text-warning-700 dark:hover:text-warning-300" @click="exitHistoryView">
+              <UIcon name="i-heroicons-x-mark" class="size-3.5" />
+            </button>
+          </span>
 
           <!-- Fallback: edit on GitHub.dev (only when logged in but inline editor unavailable) -->
           <UButton
@@ -538,7 +900,7 @@ function copyIriToClipboard(iri: string) {
             ref="descriptionRef"
             :class="['text-lg text-muted', descriptionExpanded ? '' : 'line-clamp-[8]']"
           >
-            {{ editModeDefinition ?? getLabel(displayScheme.definition) }}
+            {{ historySchemeDefinition ?? editModeDefinition ?? getLabel(displayScheme.definition) }}
             <UButton
               v-if="editView !== 'none'"
               icon="i-heroicons-arrow-down-circle"
@@ -590,10 +952,73 @@ function copyIriToClipboard(iri: string) {
         </div>
       </div>
 
+      <!-- Build status banner -->
+      <div v-if="buildStatus && buildStatus.status.value !== 'idle'" class="mb-4">
+        <UAlert
+          v-if="buildStatus.status.value === 'running'"
+          color="info"
+          icon="i-heroicons-arrow-path"
+          title="Rebuilding exports..."
+        >
+          <template #description>
+            <span class="text-sm">
+              The data processing pipeline is running.
+              <a
+                v-if="buildStatus.runUrl.value"
+                :href="buildStatus.runUrl.value"
+                target="_blank"
+                class="underline ml-1"
+              >View run</a>
+            </span>
+          </template>
+        </UAlert>
+        <UAlert
+          v-else-if="buildStatus.status.value === 'completed'"
+          color="success"
+          icon="i-heroicons-check-circle"
+          title="Exports updated"
+        />
+        <UAlert
+          v-else-if="buildStatus.status.value === 'failed'"
+          color="error"
+          icon="i-heroicons-exclamation-triangle"
+          title="Build failed"
+        >
+          <template #description>
+            <span class="text-sm">
+              The pipeline encountered an error.
+              <a
+                v-if="buildStatus.runUrl.value"
+                :href="buildStatus.runUrl.value"
+                target="_blank"
+                class="underline ml-1"
+              >View details</a>
+            </span>
+          </template>
+        </UAlert>
+      </div>
+
+      <!-- Historical version loading/error -->
+      <div v-if="historySha && historyLoading" class="mb-4 flex items-center gap-2 text-sm text-muted">
+        <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin" />
+        Loading version...
+      </div>
+      <div v-else-if="historySha && historyError" class="mb-4">
+        <UAlert
+          color="error"
+          icon="i-heroicons-exclamation-triangle"
+          :title="historyError"
+        >
+          <template #actions>
+            <UButton size="xs" variant="soft" @click="exitHistoryView">Back to current</UButton>
+          </template>
+        </UAlert>
+      </div>
+
       <!-- Fixed bottom edit banner -->
       <Teleport to="body">
         <div
-          v-if="editorAvailable && editView !== 'none' && editMode"
+          v-if="editorAvailable && editView !== 'none' && editMode && !historySha"
           class="fixed bottom-0 inset-x-0 z-50 bg-primary-100 dark:bg-primary-900 border-t-2 border-primary shadow-[0_-4px_12px_rgba(0,0,0,0.12)]"
         >
           <div class="max-w-screen-xl mx-auto px-4 py-4 flex items-center gap-4">
@@ -647,7 +1072,7 @@ function copyIriToClipboard(iri: string) {
                 color="neutral"
                 variant="ghost"
                 :icon="editView === 'full' ? 'i-heroicons-cursor-arrow-rays' : 'i-heroicons-pencil-square'"
-                @click="enterEdit(editView === 'full' ? 'inline' : 'full')"
+                @click="router.push({ path: '/scheme', query: buildQuery({ edit: editView === 'full' ? 'inline' : 'full' }) })"
               >
                 {{ editView === 'full' ? 'Switch to Inline' : 'Switch to Full' }}
               </UButton>
@@ -802,6 +1227,24 @@ function copyIriToClipboard(iri: string) {
                 />
               </template>
 
+              <!-- Historical version: read-only properties from store -->
+              <template v-else-if="historySha && historyStore">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="font-semibold truncate mr-2">
+                    {{ historyConcepts.find(c => c.iri === selectedConceptUri)?.prefLabel ?? selectedConceptUri }}
+                  </h3>
+                  <UButton icon="i-heroicons-x-mark" variant="ghost" size="xs" @click="clearConceptSelection" />
+                </div>
+                <div class="space-y-3">
+                  <div v-for="prop in historyConceptProperties" :key="prop.predicate" class="text-sm">
+                    <p class="text-xs font-medium text-muted">{{ prop.label }}</p>
+                    <p v-for="(val, i) in prop.values" :key="i" class="break-all">
+                      {{ truncateIriValue(val, 120) }}
+                    </p>
+                  </div>
+                </div>
+              </template>
+
               <!-- View mode -->
               <template v-else>
                 <ConceptPanel
@@ -865,6 +1308,18 @@ function copyIriToClipboard(iri: string) {
             @add:value="(pred) => editMode!.addValue(uri, pred)"
             @remove:value="(pred, val) => editMode!.removeValue(uri, pred, val)"
           />
+        </template>
+
+        <!-- Historical version: read-only properties from store -->
+        <template v-else-if="historySha && historyStore">
+          <div class="space-y-3">
+            <div v-for="prop in historySchemeProperties" :key="prop.predicate" class="text-sm">
+              <p class="text-xs font-medium text-muted">{{ prop.label }}</p>
+              <p v-for="(val, i) in prop.values" :key="i" class="break-all">
+                {{ truncateIriValue(val, 120) }}
+              </p>
+            </div>
+          </div>
         </template>
 
         <!-- View mode -->
@@ -985,6 +1440,18 @@ function copyIriToClipboard(iri: string) {
               Add
             </UButton>
           </div>
+        </template>
+      </UModal>
+
+      <!-- History Diff Modal -->
+      <UModal v-model:open="showDiffModal" :ui="{ width: 'max-w-4xl' }">
+        <template #body>
+          <VocabHistoryDiff
+            :loading="diffModalLoading"
+            :diff="diffModalData"
+            :commit-message="diffModalCommitMsg"
+            @close="showDiffModal = false"
+          />
         </template>
       </UModal>
     </template>
