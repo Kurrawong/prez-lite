@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-111",
+    "@id": "_:n3-21",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -59,7 +59,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "An individual business entity whose predominant economic activity is Administrative Services.",
+        "@value": "An individual business entity whose predominant economic activity is Administrative Services. For the joy of it.",
         "@language": "en"
       }
     ],
@@ -102,7 +102,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "An individual business entity whose predominant economic activity is Administrative Services.",
+        "@value": "An individual business entity whose predominant economic activity is Administrative Services. For the joy of it.",
         "@language": "en"
       }
     ]
