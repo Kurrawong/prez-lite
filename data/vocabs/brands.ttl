@@ -172,5 +172,6 @@ cs:
         :suncorp ,
         :terri-scheer ;
     skos:prefLabel "BrandXXYY"@en ;
+    sdo:dateCreated "2026-02-06" ;
 .
 
