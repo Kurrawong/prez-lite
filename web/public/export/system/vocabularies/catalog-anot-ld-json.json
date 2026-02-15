@@ -17,7 +17,7 @@
     "@id": "http://pid.suncorp.com.au/def/brand",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@value": "Brand",
+        "@value": "BrandXXYY",
         "@language": "en"
       }
     ]
@@ -41,7 +41,7 @@
     ],
     "https://schema.org/dateModified": [
       {
-        "@value": "2026-02-12",
+        "@value": "2026-02-15",
         "@type": "http://www.w3.org/2001/XMLSchema#date"
       }
     ],
@@ -93,7 +93,7 @@
     "@id": "https://linked.data.gov.au/def/alteration-form",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@value": "Alteration form",
+        "@value": "Alteration form XXX",
         "@language": "en"
       }
     ]

@@ -12,7 +12,7 @@
 
 <http://pid.suncorp.com.au/def/brand> a owl:Ontology, skos:ConceptScheme;
     skos:definition "Brands under Suncorp Group Limited."@en;
-    skos:prefLabel "Brand"@en;
+    skos:prefLabel "BrandXXYY"@en;
     dcterms:created "2025-02-19"^^xsd:date;
     dcterms:creator <https://linked.data.gov.au/org/suncorp>;
     dcterms:modified "2025-02-19"^^xsd:date;
@@ -22,7 +22,7 @@
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:brand";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:brand/items";
     prez:type prez:FocusNode;
-    prez:label "Brand"@en;
+    prez:label "BrandXXYY"@en;
     prez:description "Brands under Suncorp Group Limited."@en.
 skos:ConceptScheme prez:label "ConceptScheme".
 skos:definition prez:label "definition".
@@ -30,5 +30,5 @@ skos:prefLabel prez:label "pref label".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-339 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-17 prez:currentProfile prez:OGCSchemesObjectProfile.
 skos:hasTopConcept prez:label "has top concept".

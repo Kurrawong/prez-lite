@@ -3,7 +3,7 @@
     {
       "iri": "https://linked.data.gov.au/def/alteration-form",
       "slug": "alteration-form",
-      "prefLabel": "Alteration form",
+      "prefLabel": "Alteration form XXX",
       "definition": "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011).",
       "conceptCount": 24,
       "topConcepts": [
@@ -1755,7 +1755,7 @@
     {
       "iri": "http://pid.suncorp.com.au/def/brand",
       "slug": "brands",
-      "prefLabel": "Brand",
+      "prefLabel": "BrandXXYY",
       "definition": "Brands under Suncorp Group Limited.",
       "conceptCount": 11,
       "topConcepts": [

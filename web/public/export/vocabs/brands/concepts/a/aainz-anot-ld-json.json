@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-340",
+    "@id": "_:n3-18",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -21,7 +21,7 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Brand",
+        "@value": "BrandXXYY",
         "@language": "en"
       }
     ],

@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-339",
+    "@id": "_:n3-17",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -21,7 +21,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@value": "Brand",
+        "@value": "BrandXXYY",
         "@language": "en"
       }
     ],
@@ -74,7 +74,7 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Brand",
+        "@value": "BrandXXYY",
         "@language": "en"
       }
     ],
