@@ -9,7 +9,7 @@
     "node": ">=22.5.0"
   },
   "scripts": {
-    "build:vocabs": "node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --sourceDir data/vocabs --outputBase web/public/export/vocabs --systemDir web/public/export/system --pattern \"*.ttl\" --backgroundDir data/background",
+    "build:vocabs": "node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --sourceDir data/vocabs --outputBase web/public/export/vocabs --systemDir web/public/export/system --pattern \"*.ttl\" --backgroundDir data/background --validators data/validators",
     "build:vocablist": "node packages/data-processing/scripts/generate-vocablist.js --sourceDir data/vocabs --output .cache/catalog.ttl && node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --source .cache/catalog.ttl --type catalog --outDir web/public/export/system/vocabularies --backgroundDir data/background",
     "build:vocab-metadata": "node packages/data-processing/scripts/generate-vocab-metadata.js --sourceDir data/vocabs --backgroundDir data/background --validators data/validators --output web/public/export/system/vocabularies/index.json",
     "build:search": "node packages/data-processing/scripts/generate-search-index.js --exportDir web/public/export --output web/public/export/system/search --vocabMetadata web/public/export/system/vocabularies/index.json",

@@ -4,6 +4,44 @@
 
 ---
 
+## ✅ Completed Sprint: Sprint 12 - Build Status & Vocab History
+
+**Duration:** 2026-02-15
+**Goal:** Add post-save build status polling and vocab edit history with version browsing
+**Status:** ✅ **COMPLETE**
+
+### Sprint Outcomes
+
+**Completed: 2 tasks (100%)**
+
+1. ✅ **Add build status polling after save** (Medium)
+   - `useBuildStatus.ts` composable polls GitHub Actions API every 15s
+   - Banner shows running/completed/failed states
+   - Auto-dismisses on completion, clears caches
+   - Safety timeout at 5 minutes
+
+2. ✅ **Add vocab edit history with version browsing** (High)
+   - History popover with commit list (avatar, author, date, message)
+   - Diff modal: Summary tab (subject/property changes) + TTL Diff tab (MonacoDiffEditor)
+   - Browse historical versions read-only via `?sha=` URL param
+   - URL-driven state: `edit`, `sha`, `concept` params with `router.push` for back/forward
+   - Extracted `buildChangeSummary()` to `ttl-patch.ts` for reuse between save modal and history diffs
+   - History labels resolved from N3 store (prefLabels, filtered structural predicates)
+   - Waits for auth token + vocab slug before fetching (handles page refresh)
+
+### Sprint Velocity
+- **Planned:** 2 tasks
+- **Completed:** 2 tasks
+- **Success Rate:** 100%
+
+### Key Achievements
+- Post-save feedback loop: users see when exports are rebuilding
+- Full edit history with human-readable diffs reusing save modal patterns
+- Read-only historical version browsing from any commit
+- URL-driven state management for browser back/forward
+
+---
+
 ## ✅ Completed Sprint: Sprint 11 - Blank Node Display
 
 **Duration:** 2026-02-11

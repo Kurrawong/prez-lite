@@ -2,6 +2,86 @@
 
 ---
 
+## SHACL Cardinality Enforcement in Edit Mode
+
+### ✅ Enforce SHACL cardinality constraints in edit mode
+**Completed:** 2026-02-15
+
+**Summary:** The edit UI now respects `sh:minCount`/`sh:maxCount` from the SHACL validator shapes (`data/validators/vocabs.ttl`). At build time, `parseValidatorCardinality()` extracts cardinality constraints and merges them into `profile.json`. The frontend hides "Add value" when `maxCount` is reached and hides the remove button when at `minCount`. Properties not in the validator behave as before (unlimited).
+
+**Key files:**
+- `packages/data-processing/scripts/process-vocab.js` — `--validators` CLI arg, `parseValidatorCardinality()`, enriched `buildProfileJson()`
+- `package.json` — `--validators data/validators` added to `build:vocabs`
+- `web/app/composables/useEditMode.ts` — `minCount`/`maxCount` on `ProfilePropertyOrder` and `EditableProperty` types
+- `web/app/components/ConceptForm.vue` — conditional `v-if` on add/remove buttons
+- `web/app/components/InlineEditTable.vue` — conditional `v-if` on add/remove buttons
+
+---
+
+## Retrospective: Incremental Data Deployments
+
+### ✅ Implement incremental data deployments
+**Completed:** 2026-02-15 (retrospective — implemented across earlier commits)
+
+**Summary:** The `process-data.yml` CI workflow already implements incremental vocab processing. It detects changed `.ttl` files via `git diff HEAD~1`, runs `process-vocab.js` only on those files, then regenerates global assets (vocab list, metadata, labels, search index). Manual dispatch triggers a full rebuild. At the current scale (3 vocabs, ~15s full rebuild) this is sufficient.
+
+**Remaining future optimizations (when vocab count exceeds ~50):**
+- Skip `build:labels` when `data/background/` unchanged
+- Orphan cleanup for deleted vocab export directories
+- Broader trigger paths (`data/background/**`, `data/config/**`)
+- Local incremental build command
+
+**Key files:**
+- `.github/workflows/process-data.yml` — incremental detection, per-vocab processing, global asset regeneration
+
+---
+
+## Retrospective: SHACL Validation
+
+### ✅ Integrate SHACL validation into data processing and browser
+**Completed:** 2026-02-15 (retrospective — implemented across earlier commits)
+
+**Summary:** Generic SHACL validation already fully implemented. The `generate-vocab-metadata.js` script accepts `--validators <dir>`, loads all `.ttl` SHACL shapes from that directory via `rdf-validate-shacl`, validates each vocab, and outputs results into `index.json`. The browser shows validation badges (green check / error count / warning count) on the vocabs list page and individual scheme pages with expandable error details. A `--strict` flag fails the build on violations. The build script is wired to `data/validators/` which contains a custom SHACL shapes file (`vocabs.ttl`).
+
+**Key files:**
+- `packages/data-processing/scripts/generate-vocab-metadata.js` — `loadValidators()`, `validateVocab()`, `--validators` CLI flag, `--strict` mode
+- `data/validators/vocabs.ttl` — custom SHACL shapes
+- `web/app/composables/useVocabData.ts` — `ValidationSummary`, `ValidationResult` types
+- `web/app/pages/vocabs.vue` — validation badges in vocab list
+- `web/app/pages/scheme.vue` — validation badge + expandable error details
+- `package.json` — `build:vocab-metadata` passes `--validators data/validators`
+
+---
+
+## Sprint 12: Build Status & Vocab History
+
+### ✅ Add build status polling after save
+**Completed:** 2026-02-15
+
+**Summary:** After saving edits, polls the GitHub Actions API (`process-data.yml` workflow) every 15s to show rebuild progress. Auto-dismisses on completion, clears caches so the page reflects updated exports. Safety timeout at 5 minutes.
+
+**Files Created:**
+- `web/app/composables/useBuildStatus.ts` — polling composable with `startPolling()`/`stopPolling()`
+
+**Files Modified:**
+- `web/app/pages/scheme.vue` — build status banner (info/success/error) below header, triggered after save
+
+### ✅ Add vocab edit history with version browsing
+**Completed:** 2026-02-15
+
+**Summary:** History popover (clock icon) shows commit list with avatars, author, date, and commit message. Each commit has Diff and Browse actions. Diff opens a modal with Summary tab (human-readable subject/property changes) and TTL Diff tab (MonacoDiffEditor). Browse navigates to the same page with `?sha=` URL param for read-only historical viewing — tree, properties, and labels all rendered from the N3 store at that SHA. URL params drive all state (`edit`, `sha`, `concept`) with `router.push` for back/forward support.
+
+**Files Created:**
+- `web/app/composables/useVocabHistory.ts` — commit history, version content fetch, diff computation
+- `web/app/components/VocabHistoryDiff.vue` — diff modal with Summary + TTL Diff tabs
+
+**Files Modified:**
+- `web/app/utils/ttl-patch.ts` — extracted standalone `buildChangeSummary()` function
+- `web/app/composables/useEditMode.ts` — refactored `getChangeSummary()` to delegate to `buildChangeSummary()`
+- `web/app/pages/scheme.vue` — history popover, URL-driven edit/history state, historical version rendering, build status banner, resolved history labels from N3 store
+
+---
+
 ## Sprint 11: Blank Node Display
 
 ### ✅ Handle blank nodes in edit mode

@@ -217,8 +217,9 @@ onUnmounted(() => {
                         @update:model-value="handleLanguageChange(prop.predicate, val, $event as string)"
                       />
 
-                      <!-- Remove button -->
+                      <!-- Remove button (hidden when at minCount) -->
                       <UButton
+                        v-if="prop.minCount == null || prop.values.length > prop.minCount"
                         icon="i-heroicons-x-mark"
                         color="error"
                         variant="ghost"
@@ -229,7 +230,9 @@ onUnmounted(() => {
 
                     <div v-if="!prop.values.length" class="text-sm text-muted italic py-1">&mdash;</div>
 
+                    <!-- Add value button (hidden when at maxCount) -->
                     <UButton
+                      v-if="prop.maxCount == null || prop.values.length < prop.maxCount"
                       icon="i-heroicons-plus"
                       variant="ghost"
                       size="xs"

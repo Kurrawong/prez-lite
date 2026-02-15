@@ -7,11 +7,15 @@
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "order": 1
+        "order": 1,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#definition",
-        "order": 2
+        "order": 2,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#historyNote",
@@ -27,7 +31,8 @@
       },
       {
         "path": "https://schema.org/creator",
-        "order": 6
+        "order": 6,
+        "minCount": 1
       },
       {
         "path": "https://schema.org/publisher",
@@ -35,11 +40,15 @@
       },
       {
         "path": "https://schema.org/dateCreated",
-        "order": 8
+        "order": 8,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "path": "https://schema.org/dateModified",
-        "order": 9
+        "order": 9,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "path": "https://schema.org/keywords",
@@ -93,7 +102,9 @@
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#inScheme",
-        "order": 5
+        "order": 5,
+        "minCount": 1,
+        "maxCount": 1
       },
       {
         "path": "http://purl.org/dc/terms/identifier",

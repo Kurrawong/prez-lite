@@ -50,6 +50,8 @@ export interface EditableProperty {
   order: number
   values: EditableValue[]
   fieldType: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly'
+  minCount?: number
+  maxCount?: number
 }
 
 export interface ConceptSummary {
@@ -84,6 +86,8 @@ interface ProfilePropertyOrder {
   path: string
   order: number
   propertyOrder?: ProfilePropertyOrder[]
+  minCount?: number
+  maxCount?: number
 }
 
 interface ProfileConfig {
@@ -319,6 +323,8 @@ export function useEditMode(
         order: po.order,
         values,
         fieldType: getFieldType(po.path),
+        ...(po.minCount != null && { minCount: po.minCount }),
+        ...(po.maxCount != null && { maxCount: po.maxCount }),
       })
       seen.add(po.path)
     }

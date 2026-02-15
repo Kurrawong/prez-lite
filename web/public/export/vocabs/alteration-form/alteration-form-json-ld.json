@@ -1,6 +1,6 @@
 [
     {
-        "@id": "_:n3-312",
+        "@id": "_:n3-357",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "@id": "_:n3-313",
+        "@id": "_:n3-358",
         "http://www.w3.org/ns/prov#hadRole": [
             {
                 "@id": "https://linked.data.gov.au/def/data-roles/custodian"
@@ -44,7 +44,7 @@
         ],
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
-                "@value": "Alteration form",
+                "@value": "Alteration form XXX",
                 "@language": "en"
             }
         ],
@@ -74,10 +74,10 @@
         ],
         "http://www.w3.org/ns/prov#qualifiedAttribution": [
             {
-                "@id": "_:n3-312"
+                "@id": "_:n3-357"
             },
             {
-                "@id": "_:n3-313"
+                "@id": "_:n3-358"
             }
         ],
         "https://schema.org/creator": [

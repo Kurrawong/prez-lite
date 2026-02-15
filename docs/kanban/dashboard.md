@@ -1,6 +1,6 @@
 # Kanban Dashboard
 
-**Last Updated:** 2026-02-11
+**Last Updated:** 2026-02-15
 
 ---
 
@@ -12,8 +12,12 @@
 | Sprint 9: Layout Extraction & CI Infrastructure | 5/5 | ✅ Complete |
 | Sprint 10: Infrastructure & Data Hygiene | 6/6 | ✅ Complete |
 | Sprint 11: Blank Node Display | 1/1 | ✅ Complete |
+| Sprint 12: Build Status & Vocab History | 2/2 | ✅ Complete |
+| SHACL Validation (retrospective) | 1/1 | ✅ Complete |
+| Incremental Deploys (retrospective) | 1/1 | ✅ Complete |
+| SHACL Cardinality Enforcement | 1/1 | ✅ Complete |
 
-**Overall:** 43 tasks completed across 11 sprints.
+**Overall:** 48 tasks completed across 12 sprints.
 
 ---
 
@@ -21,15 +25,15 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| 4 unprioritized | VocPub validation | Empty | Empty | Sprint 11 (1 item) |
+| 3 unprioritized | Empty | Empty | Empty | Sprint 12 (2) + SHACL (1) + Incremental (1) + Cardinality (1) |
 
 ---
 
 ## Current Status
 
-**Sprint 12: VocPub Validation** — Planning
+No active sprint. Ready to prioritize next work.
 
-**Backlog:** 4 items remaining (TDD, incremental deploys, collab presence, edit lifecycle)
+**Backlog:** 3 items remaining (TDD, collab presence, edit lifecycle)
 
 ---
 

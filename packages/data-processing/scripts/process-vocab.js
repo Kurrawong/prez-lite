@@ -72,6 +72,7 @@ const REG = 'http://purl.org/linked-data/registry#';
 const XSD = 'http://www.w3.org/2001/XMLSchema#';
 const PREZ = 'https://prez.dev/';
 const DCAT = 'http://www.w3.org/ns/dcat#';
+const SH = 'http://www.w3.org/ns/shacl#';
 
 // Prez annotation predicates
 const PREZ_LABEL = `${PREZ}label`;
@@ -238,6 +239,7 @@ Batch Mode:
   --systemDir <path>     System output directory for profile.json (default: outputBase/../system)
 
 Common Options:
+  --validators <path>    Path to validators directory (extracts sh:minCount/maxCount for profile.json)
   --backgroundDir <path> Path to background labels directory
   --refDir <path>        Reference directory for comparison
   --schemeIri <iri>      Parent scheme IRI (required for concept type)
@@ -282,6 +284,8 @@ Examples:
       config.profileIri = args[++i];
     } else if (arg === '--systemDir' && args[i + 1]) {
       config.systemDir = resolveCliPath(args[++i]);
+    } else if (arg === '--validators' && args[i + 1]) {
+      config.validatorsDir = resolveCliPath(args[++i]);
     }
   }
 
@@ -374,7 +378,7 @@ async function processFileWithLoadedProfile(shaclConfig, profileConfig, fieldOrd
  * @param {string} backgroundDir - Background labels directory
  * @param {string} [systemDir] - System output directory for profile.json (default: outputBase/../system)
  */
-async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-source-input.ttl', backgroundDir, systemDir) {
+async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-source-input.ttl', backgroundDir, systemDir, validatorsDir) {
   console.log('🔄 Batch Processing Mode');
   console.log(`   Source directory: ${sourceDir}`);
   console.log(`   Output base: ${outputBase}`);
@@ -427,11 +431,18 @@ async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-so
   }
   console.log('');
   
+  // Parse validator cardinality if validators directory provided
+  let cardinalityMap;
+  if (validatorsDir) {
+    console.log('📏 Loading validator cardinality from:', validatorsDir);
+    cardinalityMap = await parseValidatorCardinality(validatorsDir);
+  }
+
   // Build and export profile.json ONCE to the system directory
   const resolvedSystemDir = systemDir || join(outputBase, '..', 'system');
   await mkdir(resolvedSystemDir, { recursive: true });
   console.log(`📄 Exporting profile.json to ${resolvedSystemDir}/profile.json`);
-  const fieldOrderProfile = await exportProfileJson(shaclConfig, resolvedSystemDir);
+  const fieldOrderProfile = await exportProfileJson(shaclConfig, resolvedSystemDir, cardinalityMap);
   console.log('');
   
   const results = { processed: 0, errors: [] };
@@ -2605,12 +2616,93 @@ async function processCatalog(config) {
 }
 
 /**
+ * Parse SHACL validator files to extract sh:minCount / sh:maxCount cardinality constraints.
+ * Returns a map: { targetClass → { path → { minCount?, maxCount? } } }
+ * @param {string} validatorsDir - Path to directory containing validator .ttl files
+ * @returns {Promise<Map<string, Map<string, { minCount?: number, maxCount?: number }>>>}
+ */
+async function parseValidatorCardinality(validatorsDir) {
+  const cardinality = new Map();
+  const files = await readdir(validatorsDir);
+  const ttlFiles = files.filter(f => f.endsWith('.ttl'));
+
+  for (const file of ttlFiles) {
+    const content = await readFile(join(validatorsDir, file), 'utf-8');
+    const store = new Store();
+    const parser = new Parser();
+    const quads = parser.parse(content);
+    store.addQuads(quads);
+
+    // Find all sh:NodeShape subjects with sh:targetClass
+    const nodeShapes = store.getQuads(null, namedNode(`${RDF}type`), namedNode(`${SH}NodeShape`), null);
+
+    for (const shapeQuad of nodeShapes) {
+      const shape = shapeQuad.subject;
+
+      // Get target classes for this shape
+      const targetClasses = store.getQuads(shape, namedNode(`${SH}targetClass`), null, null)
+        .map(q => q.object.value);
+
+      if (targetClasses.length === 0) continue;
+
+      // Get property shapes via sh:property
+      const propLinks = store.getQuads(shape, namedNode(`${SH}property`), null, null);
+
+      for (const propLink of propLinks) {
+        const propNode = propLink.object;
+
+        // Get sh:path — only handle direct IRI paths (skip complex paths like sequences)
+        const pathQuads = store.getQuads(propNode, namedNode(`${SH}path`), null, null);
+        if (pathQuads.length !== 1) continue;
+        const pathObj = pathQuads[0].object;
+        if (pathObj.termType !== 'NamedNode') continue;
+        const path = pathObj.value;
+
+        // Get sh:minCount and sh:maxCount
+        const minQuads = store.getQuads(propNode, namedNode(`${SH}minCount`), null, null);
+        const maxQuads = store.getQuads(propNode, namedNode(`${SH}maxCount`), null, null);
+
+        if (minQuads.length === 0 && maxQuads.length === 0) continue;
+
+        const constraint = {};
+        if (minQuads.length > 0) constraint.minCount = parseInt(minQuads[0].object.value, 10);
+        if (maxQuads.length > 0) constraint.maxCount = parseInt(maxQuads[0].object.value, 10);
+
+        // Apply to each target class
+        for (const tc of targetClasses) {
+          if (!cardinality.has(tc)) cardinality.set(tc, new Map());
+          const classMap = cardinality.get(tc);
+          // Merge: keep the tightest constraint if same path appears in multiple shapes
+          if (classMap.has(path)) {
+            const existing = classMap.get(path);
+            if (constraint.minCount != null) {
+              existing.minCount = Math.max(existing.minCount ?? 0, constraint.minCount);
+            }
+            if (constraint.maxCount != null) {
+              existing.maxCount = existing.maxCount != null
+                ? Math.min(existing.maxCount, constraint.maxCount)
+                : constraint.maxCount;
+            }
+          } else {
+            classMap.set(path, { ...constraint });
+          }
+        }
+      }
+    }
+  }
+
+  return cardinality;
+}
+
+/**
  * Build profile.json object (field ordering for front-end) from parsed SHACL config.
  * Order follows sh:property order in SHACL, or DEFAULT_FIELD_ORDER.
+ * Optionally merges cardinality constraints (minCount/maxCount) from validator shapes.
  * @param {object} shaclConfig - Result of parseProfilesFile (ProfileConfig)
+ * @param {Map} [cardinalityMap] - Optional cardinality constraints from parseValidatorCardinality
  * @returns {object} The profile.json object
  */
-function buildProfileJson(shaclConfig) {
+function buildProfileJson(shaclConfig, cardinalityMap) {
   const result = {
     conceptScheme: { propertyOrder: [] },
     concept: { propertyOrder: [] },
@@ -2657,6 +2749,29 @@ function buildProfileJson(shaclConfig) {
     });
   }
 
+  // Merge cardinality constraints from validator shapes (minCount/maxCount)
+  if (cardinalityMap) {
+    const sectionToClass = {
+      conceptScheme: `${SKOS}ConceptScheme`,
+      concept: `${SKOS}Concept`,
+      catalog: `${SCHEMA}DataCatalog`,
+    };
+    for (const [section, targetClass] of Object.entries(sectionToClass)) {
+      const classConstraints = cardinalityMap.get(targetClass);
+      if (!classConstraints) continue;
+      const arr = result[section]?.propertyOrder;
+      if (!Array.isArray(arr)) continue;
+      result[section].propertyOrder = arr.map((entry) => {
+        const constraint = entry?.path ? classConstraints.get(entry.path) : undefined;
+        if (!constraint) return entry;
+        const merged = { ...entry };
+        if (constraint.minCount != null) merged.minCount = constraint.minCount;
+        if (constraint.maxCount != null) merged.maxCount = constraint.maxCount;
+        return merged;
+      });
+    }
+  }
+
   return result;
 }
 
@@ -2665,10 +2780,11 @@ function buildProfileJson(shaclConfig) {
  * Writes to outDir/profile.json.
  * @param {object} shaclConfig - Result of parseProfilesFile (ProfileConfig)
  * @param {string} outDir - Output directory
+ * @param {Map} [cardinalityMap] - Optional cardinality constraints from parseValidatorCardinality
  * @returns {object} The profile.json object
  */
-async function exportProfileJson(shaclConfig, outDir) {
-  const result = buildProfileJson(shaclConfig);
+async function exportProfileJson(shaclConfig, outDir, cardinalityMap) {
+  const result = buildProfileJson(shaclConfig, cardinalityMap);
   await mkdir(outDir, { recursive: true });
   await writeFile(join(outDir, 'profile.json'), JSON.stringify(result, null, 2), 'utf-8');
   return result;
@@ -2756,7 +2872,8 @@ if (config.sourceDir && config.outputBase && config.profilesFile) {
     config.outputBase,
     config.pattern || '*-source-input.ttl',
     config.backgroundDir,
-    config.systemDir
+    config.systemDir,
+    config.validatorsDir
   ).then(results => {
     if (results.errors.length > 0) {
       process.exit(1);
