@@ -171,6 +171,6 @@ cs:
         :shannons ,
         :suncorp ,
         :terri-scheer ;
-    skos:prefLabel "BrandXX"@en ;
+    skos:prefLabel "BrandXXYY"@en ;
 .
 
