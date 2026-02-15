@@ -1,0 +1,193 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "reg": "http://purl.org/linked-data/registry#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@graph": [
+    {
+      "@id": "skos:ConceptScheme",
+      "label": "ConceptScheme",
+      "properties": [
+        {
+          "path": "skos:definition",
+          "name": "definition",
+          "description": "Requirement 2.1.4, 2.2.1 or 2.3.1 Each vocabulary and Concept MUST have exactly one definition indicated using skos:definition predicate pointing to a textual literal value",
+          "minCount": 1,
+          "maxCount": 1,
+          "datatypes": [
+            "xsd:string"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "skos:prefLabel",
+          "name": "prefLabel",
+          "description": "Requirement 2.1.4, 2.2.1 or 2.3.1 Each vocabulary and Concept MUST have exactly one preferred label indicated using the skos:prefLabel pointing to a textual literal value",
+          "minCount": 1,
+          "maxCount": 1,
+          "datatypes": [
+            "xsd:string"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "schema:dateCreated",
+          "name": "dateCreated",
+          "description": "Requirement 2.15 - created date - violated",
+          "minCount": 1,
+          "maxCount": 1,
+          "datatypes": [
+            "xsd:dateTime",
+            "xsd:date",
+            "xsd:dateTimeStamp"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "schema:dateModified",
+          "name": "dateModified",
+          "description": "Requirement 2.15 - modified date - violated",
+          "minCount": 1,
+          "maxCount": 1,
+          "datatypes": [
+            "xsd:dateTime",
+            "xsd:date",
+            "xsd:dateTimeStamp"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "schema:creator",
+          "name": "creator",
+          "description": "Requirement 2.1.6 Each vocabulary MUST have at least one creator, indicated using schema:creator, which MUST be an IRI indicating an instances of schema:Person or schema:Organization",
+          "minCount": 1,
+          "classes": [
+            "schema:Organization",
+            "schema:Person"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "skos:hasTopConcept",
+          "name": "hasTopConcept",
+          "description": "Requirement 2.1.9 Each vocabulary's Concept Scheme MUST link to at least one Concept within the vocabulary with the skos:hasTopConcept predicate",
+          "minCount": 1,
+          "classes": [
+            "skos:Concept"
+          ],
+          "nodeKind": "sh:IRI",
+          "severity": "sh:Violation"
+        }
+      ]
+    },
+    {
+      "@id": "skos:Concept",
+      "label": "Concept",
+      "properties": [
+        {
+          "path": "skos:inScheme",
+          "name": "inScheme",
+          "description": "Requirement 2.1.8 All Concept instances within a Concept Scheme MUST be contained in a single term hierarchy using skos:hasTopConcept / skos:topConceptOf predicates indicating the broadest Concepts in the vocabulary and then skos:broader and/or skos:narrower predicates for all non-broadest Concepts in a hierarchy that contains no cycles",
+          "minCount": 1,
+          "maxCount": 1,
+          "classes": [
+            "skos:ConceptScheme"
+          ],
+          "severity": "sh:Violation",
+          "nodeKind": "sh:IRI"
+        },
+        {
+          "path": "rdfs:isDefinedBy",
+          "name": "isDefinedBy",
+          "maxCount": 1,
+          "nodeKind": "sh:IRI",
+          "severity": "sh:Violation"
+        }
+      ]
+    },
+    {
+      "@id": "skos:Collection",
+      "label": "Collection",
+      "properties": [
+        {
+          "path": "skos:inScheme",
+          "name": "inScheme",
+          "description": "Requirement 2.2.3 A Collection exists within a vocabulary SHOULD indicate that it is within the vocabulary by use of the skos:inScheme predicate. If it is defined for the first time in the vocabulary, it SHOULD also indicate this with the rdfs:isDefinedBy predicate",
+          "minCount": 1,
+          "maxCount": 1,
+          "severity": "sh:Warning"
+        },
+        {
+          "path": "skos:member",
+          "name": "member",
+          "description": "Requirement 2.2.4 A Collection MUST indicate at least one Concept instance that is within the collection with use of the skos:member predicate. The Concept need not be defined by the Concept Scheme that defines the Collection",
+          "minCount": 1,
+          "nodeKind": "sh:IRI",
+          "severity": "sh:Violation"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Organization",
+      "label": "Organization",
+      "properties": [
+        {
+          "path": "schema:name",
+          "name": "name",
+          "description": "Requirement 2.4.2 Each Agent MUST give exactly one name with the schema:name predicate indicating a literal text value",
+          "minCount": 1,
+          "maxCount": 1,
+          "datatypes": [
+            "xsd:string"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "schema:url",
+          "name": "url",
+          "description": "Requirement 2.4.3 Each Agent MUST indicate either a schema:url (for organizations) or a schema:email (for people) predicate with a URL or email value. This error message is for Organizations",
+          "minCount": 1,
+          "datatypes": [
+            "xsd:anyURI"
+          ],
+          "severity": "sh:Violation"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Person",
+      "label": "Person",
+      "properties": [
+        {
+          "path": "schema:name",
+          "name": "name",
+          "description": "Requirement 2.4.2 Each Agent MUST give exactly one name with the schema:name predicate indicating a literal text value",
+          "minCount": 1,
+          "maxCount": 1,
+          "datatypes": [
+            "xsd:string"
+          ],
+          "severity": "sh:Violation"
+        },
+        {
+          "path": "schema:email",
+          "name": "email",
+          "description": "Requirement 2.4.3 Each Agent MUST indicate either a schema:url (for organizations) or a schema:email (for people) predicate with a URL or email value. This error message is for Persons",
+          "minCount": 1,
+          "datatypes": [
+            "xsd:anyURI"
+          ],
+          "severity": "sh:Violation"
+        }
+      ]
+    }
+  ]
+}

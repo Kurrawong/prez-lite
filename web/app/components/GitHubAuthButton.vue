@@ -15,7 +15,7 @@ onMounted(() => init())
       <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin" />
     </UButton>
 
-    <UDropdownMenu v-else-if="isAuthenticated && user" :items="[[{ label: 'Sign out', icon: 'i-heroicons-arrow-right-on-rectangle', onSelect: logout }]]">
+    <UDropdownMenu v-else-if="isAuthenticated && user" :items="[[{ label: 'Sign out', icon: 'i-heroicons-arrow-right-on-rectangle', onSelect: logout }]]" :ui="{ content: 'z-50' }">
       <UButton variant="ghost" size="sm" class="gap-2">
         <img :src="user.avatar_url" :alt="user.login" class="size-5 rounded-full" />
         <span class="hidden sm:inline text-sm">{{ user.login }}</span>

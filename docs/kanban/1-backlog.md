@@ -7,6 +7,24 @@
 ### ✅ Integrate SHACL validation into data processing and browser
 Generic SHACL validation using any validator files in `data/validators/`. Already implemented: `--validators` CLI flag, `rdf-validate-shacl`, validation badges on vocabs list and scheme pages, expandable error details, `--strict` mode.
 
+### Fix sign-in redirect to return to current page
+Clicking sign in on a vocab/concept page redirects to home instead of returning to the same page after OAuth flow completes.
+
+### ✅ Evaluate concept ordering in vocabularies
+Research whether ordering of concepts within a vocabulary is important, possible, or necessary — and if so, what mechanism to use (e.g. `skos:notation`, `sh:order`, custom predicate). Analysis complete: alphabetical sufficient for most cases; notation-based sorting recommended as opt-in feature for classifications.
+
+### Enable editing of concept label and IRI
+Users can't update the label or IRI when editing a concept. Add editable support for these core fields in the edit form, with appropriate validation.
+
+### Add concept move/reparent capability
+Provide an intuitive way to move a concept from one parent node to another in the hierarchy — e.g. a move button or drag-and-drop, updating `skos:broader`/`skos:narrower` relationships.
+
+### Redesign edit mode chrome (toolbar, save, panels)
+Replace the bottom save banner with a more intuitive UX: top ribbon when logged in, edit mode toggle, save button on changes, toggle panels for change summary, TTL diffs, and history. The history icon is too easy to miss.
+
+### Add simplified/expert view toggle for properties
+Hide RDF-specific properties (like `hasTopConcept`, `inScheme`) behind an "expert" toggle, showing a friendlier default view for non-RDF users. Derived properties should not be editable in simple mode.
+
 ### Adopt test-driven development workflow
 Update the sprint skill to incorporate TDD practices; audit existing features for test coverage; review and update existing tests so regressions are caught early when code changes.
 
@@ -18,6 +36,9 @@ Detect which vocabs have changed and only rebuild those exports, plus dependent 
 - Orphan cleanup: remove `web/public/export/vocabs/{name}/` when source `.ttl` is deleted
 - Add `data/background/**` and `data/config/**` to workflow trigger paths (changes there require full rebuild)
 - Local `pnpm build:data:incremental` command using git status to detect changed vocabs
+
+### 👀 Export constraints.jsonld from SHACL validator
+Export full SHACL shapes as JSON-LD for frontend validation consumption. Includes `sh:or` flattening, cardinality, datatypes, classes, severity, messages. Also documented shacl-ui library evaluation.
 
 ### ✅ Enforce SHACL cardinality constraints in edit mode
 Extract `sh:minCount`/`sh:maxCount` from `data/validators/vocabs.ttl` at build time, merge into `profile.json`, and use in the edit UI to control add/remove button visibility.

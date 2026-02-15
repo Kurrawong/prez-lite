@@ -582,6 +582,30 @@ export function useEditMode(
     bumpVersion()
   }
 
+  // ---- Subject rename ----
+
+  function renameSubject(oldIri: string, newIri: string) {
+    if (!store.value || oldIri === newIri) return
+    const oldNode = namedNode(oldIri)
+    const newNode = namedNode(newIri)
+
+    // Rewrite all quads where oldIri appears as subject
+    const asSubject = store.value.getQuads(oldIri, null, null, null) as Quad[]
+    for (const q of asSubject) {
+      store.value.removeQuad(q)
+      store.value.addQuad(newNode, q.predicate, q.object, q.graph)
+    }
+
+    // Rewrite all quads where oldIri appears as object
+    const asObject = store.value.getQuads(null, null, oldNode, null) as Quad[]
+    for (const q of asObject) {
+      store.value.removeQuad(q)
+      store.value.addQuad(q.subject, q.predicate, newNode, q.graph)
+    }
+
+    bumpVersion()
+  }
+
   // ---- Concept CRUD ----
 
   function addConcept(localName: string, prefLabel: string, broaderIri?: string) {
@@ -948,6 +972,7 @@ export function useEditMode(
     removeValue,
     syncBroaderNarrower,
     syncRelated,
+    renameSubject,
     addConcept,
     deleteConcept,
     save,

@@ -76,7 +76,7 @@ const githubEditUrl = computed(() => {
 })
 
 // --- Editor State ---
-const { isAuthenticated, token: authToken } = useGitHubAuth()
+const { isAuthenticated, isEnabled: authEnabled, token: authToken, login: authLogin } = useGitHubAuth()
 
 const vocabSlugForEditor = computed(() => getVocabByIri(uri.value)?.slug)
 const [editorOwner, editorRepoName] = (githubRepo as string).split('/')
@@ -387,12 +387,37 @@ const newConceptLocalName = ref('')
 const newConceptLabel = ref('')
 const newConceptBroader = ref('')
 
-// --- Edit mode dropdown items ---
+// --- View mode (simple/expert) ---
 
-const editModeItems = [[
-  { label: 'Full edit mode', icon: 'i-heroicons-pencil-square', onSelect: () => enterEdit('full') },
-  { label: 'Inline edit mode', icon: 'i-heroicons-cursor-arrow-rays', onSelect: () => enterEdit('inline') },
-]]
+const VIEW_MODE_KEY = 'prez_view_mode'
+const SIMPLE_HIDDEN_PREDICATES = new Set([
+  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+  'http://www.w3.org/2004/02/skos/core#inScheme',
+  'http://www.w3.org/2004/02/skos/core#topConceptOf',
+  'http://www.w3.org/2004/02/skos/core#hasTopConcept',
+  'http://www.w3.org/2004/02/skos/core#narrower',
+  'http://www.w3.org/2004/02/skos/core#broader',
+])
+
+const viewMode = ref<'simple' | 'expert'>('simple')
+
+onMounted(() => {
+  const stored = localStorage.getItem(VIEW_MODE_KEY)
+  if (stored === 'expert' || stored === 'simple') {
+    viewMode.value = stored
+  }
+})
+
+function toggleViewMode() {
+  viewMode.value = viewMode.value === 'simple' ? 'expert' : 'simple'
+  localStorage.setItem(VIEW_MODE_KEY, viewMode.value)
+}
+
+/** Filter properties based on view mode */
+function filterByViewMode<T extends { predicate: string }>(properties: T[]): T[] {
+  if (viewMode.value === 'expert') return properties
+  return properties.filter(p => !SIMPLE_HIDDEN_PREDICATES.has(p.predicate))
+}
 
 // --- Edit mode navigation ---
 
@@ -426,9 +451,11 @@ function exitEdit() {
   router.push({ path: '/scheme', query })
 }
 
-// Sync edit mode composable with URL param changes
-watch(editView, async (view, oldView) => {
-  if (view !== 'none' && oldView === 'none' && editMode && !editMode.isEditMode.value) {
+// Sync edit mode composable with URL param changes (including page reload).
+// On reload the URL already has ?edit=full but auth token and vocab metadata
+// aren't available yet, so watch all three dependencies.
+watch([editView, authToken, vocabSlugForEditor], async ([view]) => {
+  if (view !== 'none' && editMode && !editMode.isEditMode.value && vocabSlugForEditor.value) {
     await editMode.enterEditMode()
   }
 })
@@ -463,14 +490,24 @@ function clearConceptSelection() {
 const selectedConceptProperties = computed(() => {
   if (!editMode || !selectedConceptUri.value || editView.value === 'none') return []
   void editMode.storeVersion.value
-  return editMode.getPropertiesForSubject(selectedConceptUri.value, 'concept', false)
+  const props = editMode.getPropertiesForSubject(selectedConceptUri.value, 'concept', false)
+  return filterByViewMode(props)
 })
 
 // Properties for the scheme (when in edit mode)
 const schemeProperties = computed(() => {
   if (!editMode || editView.value === 'none') return []
   void editMode.storeVersion.value
-  return editMode.getPropertiesForSubject(uri.value, 'conceptScheme', false)
+  const props = editMode.getPropertiesForSubject(uri.value, 'conceptScheme', false)
+  return filterByViewMode(props)
+})
+
+// Filtered rich metadata for read-only view (respects view mode)
+const filteredRichMetadata = computed(() => {
+  if (viewMode.value === 'expert') return richMetadata.value
+  return richMetadata.value.filter((p: { predicate?: string }) =>
+    !p.predicate || !SIMPLE_HIDDEN_PREDICATES.has(p.predicate),
+  )
 })
 
 // --- Save modal ---
@@ -647,10 +684,71 @@ function handleAddConcept() {
   newConceptBroader.value = ''
 }
 
+// --- Concept move (reparent) ---
+const showMovePicker = ref(false)
+
+const currentBroaderIris = computed(() => {
+  if (!editMode || !selectedConceptUri.value) return []
+  void editMode.storeVersion.value
+  const props = editMode.getPropertiesForSubject(selectedConceptUri.value, 'concept', false)
+  const broaderProp = props.find(p => p.predicate === 'http://www.w3.org/2004/02/skos/core#broader')
+  return broaderProp?.values.map(v => v.value) ?? []
+})
+
+function handleMoveConfirm(newBroaderIris: string[]) {
+  if (!editMode || !selectedConceptUri.value) return
+  editMode.syncBroaderNarrower(selectedConceptUri.value, newBroaderIris, currentBroaderIris.value)
+}
+
+const moveConceptLabel = computed(() => {
+  if (!editMode || !selectedConceptUri.value) return ''
+  return editMode.resolveLabel(selectedConceptUri.value)
+})
+
+// --- Inline label editing ---
+const editingLabel = ref(false)
+const editLabelValue = ref('')
+
+const SKOS_PREFLABEL = 'http://www.w3.org/2004/02/skos/core#prefLabel'
+
+function startLabelEdit() {
+  if (!editMode || !selectedConceptUri.value) return
+  const label = editMode.resolveLabel(selectedConceptUri.value)
+  editLabelValue.value = label
+  editingLabel.value = true
+}
+
+function commitLabelEdit() {
+  if (!editMode || !selectedConceptUri.value) return
+  editingLabel.value = false
+  const currentLabel = editMode.resolveLabel(selectedConceptUri.value)
+  if (editLabelValue.value.trim() && editLabelValue.value !== currentLabel) {
+    // Find the prefLabel value object from the properties
+    const props = editMode.getPropertiesForSubject(selectedConceptUri.value, 'concept', false)
+    const prefLabelProp = props.find(p => p.predicate === SKOS_PREFLABEL)
+    if (prefLabelProp?.values.length) {
+      editMode.updateValue(selectedConceptUri.value, SKOS_PREFLABEL, prefLabelProp.values[0]!, editLabelValue.value.trim())
+    }
+  }
+}
+
+function cancelLabelEdit() {
+  editingLabel.value = false
+}
+
+// Reset label editing when concept selection changes
+watch(() => selectedConceptUri.value, () => {
+  editingLabel.value = false
+})
+
 // --- Tree ---
 
 const searchQuery = ref('')
 const expandAll = ref(false)
+
+// Collapsible panels
+const conceptsPanelOpen = ref(true)
+const metadataPanelOpen = ref(true)
 
 // Use edit mode tree items when in edit mode, history store when browsing, otherwise static
 const activeTreeItems = computed(() => {
@@ -738,6 +836,33 @@ function copyIriToClipboard(iri: string) {
 
 <template>
   <div class="py-8">
+    <!-- Edit Toolbar (always visible, fixed at top below header) -->
+    <EditToolbar
+      v-if="displayScheme && !historySha"
+      :edit-view="editView"
+      :editor-available="editorAvailable"
+      :is-authenticated="isAuthenticated"
+      :auth-enabled="authEnabled"
+      :is-edit-mode="!!editMode?.isEditMode.value"
+      :is-dirty="!!editMode?.isDirty.value"
+      :loading="!!editMode?.loading.value"
+      :saving="editMode?.saveStatus.value === 'saving'"
+      :error="editMode?.error.value ?? null"
+      :pending-changes="pendingChanges"
+      :view-mode="viewMode"
+      :history-commits="vocabHistory?.commits.value ?? []"
+      :history-loading="!!vocabHistory?.loading.value"
+      @enter-edit="enterEdit"
+      @exit-edit="exitEdit"
+      @toggle-mode="router.push({ path: '/scheme', query: buildQuery({ edit: editView === 'full' ? 'inline' : 'full' }) })"
+      @save="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
+      @toggle-view-mode="toggleViewMode"
+      @sign-in="authLogin"
+      @load-history="vocabHistory?.fetchCommits()"
+      @browse-version="browseVersion"
+      @open-diff="(commit, index) => openDiffModal(commit, index)"
+    />
+
     <UBreadcrumb ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
 
     <div v-if="!uri" class="text-center py-12">
@@ -761,13 +886,7 @@ function copyIriToClipboard(iri: string) {
             />
           </h1>
 
-          <!-- Edit button (not in edit mode, not in history mode) -->
-          <UFieldGroup v-if="editorAvailable && editView === 'none' && !historySha" class="shrink-0">
-            <UButton color="neutral" variant="subtle" label="Edit" icon="i-heroicons-pencil-square" @click="enterEdit('full')" />
-            <UDropdownMenu :items="editModeItems">
-              <UButton color="neutral" variant="outline" icon="i-heroicons-chevron-down" />
-            </UDropdownMenu>
-          </UFieldGroup>
+          <!-- Edit button moved to EditToolbar -->
         </div>
         <div class="flex items-center gap-2 text-sm text-muted mb-4">
           <a :href="displayScheme.iri" target="_blank" class="text-primary hover:underline break-all">
@@ -817,57 +936,7 @@ function copyIriToClipboard(iri: string) {
             size="xs"
             aria-label="Share or embed this vocabulary"
           />
-          <UPopover v-if="isAuthenticated && vocabSlugForEditor" v-model:open="historyPopoverOpen" :content="{ align: 'end', side: 'bottom' }">
-            <UButton
-              icon="i-heroicons-clock"
-              color="neutral"
-              variant="ghost"
-              size="xs"
-              aria-label="View edit history"
-            />
-            <template #content>
-              <div class="w-96 max-h-96 overflow-y-auto p-2">
-                <p class="text-xs font-medium text-muted px-2 mb-2">Edit history</p>
-
-                <div v-if="vocabHistory?.loading.value" class="py-6 text-center">
-                  <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin text-muted" />
-                </div>
-
-                <div v-else-if="!vocabHistory?.commits.value.length" class="py-6 text-center text-xs text-muted">
-                  No history found
-                </div>
-
-                <div v-else class="space-y-0.5">
-                  <div
-                    v-for="(commit, index) in vocabHistory!.commits.value"
-                    :key="commit.sha"
-                    class="flex items-center gap-2.5 px-2 py-2 rounded-md hover:bg-muted/10 transition-colors group"
-                  >
-                    <img
-                      v-if="commit.author.avatar"
-                      :src="commit.author.avatar"
-                      :alt="commit.author.login"
-                      class="size-6 rounded-full shrink-0"
-                    />
-                    <UIcon v-else name="i-heroicons-user-circle" class="size-6 text-muted shrink-0" />
-
-                    <div class="flex-1 min-w-0">
-                      <p class="text-xs font-medium truncate">{{ truncateCommitMsg(commit.message) }}</p>
-                      <p class="text-[10px] text-muted">
-                        {{ commit.author.login }} &middot; {{ formatHistoryDate(commit.date) }}
-                        <span v-if="index === 0" class="ml-1 text-primary font-medium">current</span>
-                      </p>
-                    </div>
-
-                    <div class="flex items-center gap-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <UButton size="xs" variant="soft" @click="openDiffModal(commit, index)">Diff</UButton>
-                      <UButton size="xs" variant="ghost" @click="browseVersion(commit)">Browse</UButton>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </template>
-          </UPopover>
+          <!-- History popover moved to EditToolbar -->
           <span v-if="historySha" class="inline-flex items-center gap-1.5 text-xs text-warning-500 dark:text-warning-400 bg-warning-50 dark:bg-warning-950/30 rounded-md px-2 py-0.5">
             <UIcon name="i-heroicons-clock" class="size-3 shrink-0" />
             <span class="truncate max-w-52">
@@ -894,6 +963,44 @@ function copyIriToClipboard(iri: string) {
             size="xs"
             aria-label="Edit source on GitHub"
           />
+
+          <!-- Build status indicator -->
+          <UTooltip
+            v-if="buildStatus && buildStatus.status.value === 'running'"
+            text="Data pipeline running"
+          >
+            <a
+              v-if="buildStatus.runUrl.value"
+              :href="buildStatus.runUrl.value"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center"
+            >
+              <UIcon name="i-heroicons-arrow-path" class="size-4 animate-spin text-info" />
+            </a>
+            <UIcon v-else name="i-heroicons-arrow-path" class="size-4 animate-spin text-info" />
+          </UTooltip>
+          <UTooltip
+            v-else-if="buildStatus && buildStatus.status.value === 'completed'"
+            text="Exports updated"
+          >
+            <UIcon name="i-heroicons-check-circle" class="size-4 text-success" />
+          </UTooltip>
+          <UTooltip
+            v-else-if="buildStatus && buildStatus.status.value === 'failed'"
+            text="Pipeline failed"
+          >
+            <a
+              v-if="buildStatus.runUrl.value"
+              :href="buildStatus.runUrl.value"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center"
+            >
+              <UIcon name="i-heroicons-exclamation-triangle" class="size-4 text-error" />
+            </a>
+            <UIcon v-else name="i-heroicons-exclamation-triangle" class="size-4 text-error" />
+          </UTooltip>
         </div>
         <div v-if="editModeDefinition ?? displayScheme.definition">
           <p
@@ -952,51 +1059,6 @@ function copyIriToClipboard(iri: string) {
         </div>
       </div>
 
-      <!-- Build status banner -->
-      <div v-if="buildStatus && buildStatus.status.value !== 'idle'" class="mb-4">
-        <UAlert
-          v-if="buildStatus.status.value === 'running'"
-          color="info"
-          icon="i-heroicons-arrow-path"
-          title="Rebuilding exports..."
-        >
-          <template #description>
-            <span class="text-sm">
-              The data processing pipeline is running.
-              <a
-                v-if="buildStatus.runUrl.value"
-                :href="buildStatus.runUrl.value"
-                target="_blank"
-                class="underline ml-1"
-              >View run</a>
-            </span>
-          </template>
-        </UAlert>
-        <UAlert
-          v-else-if="buildStatus.status.value === 'completed'"
-          color="success"
-          icon="i-heroicons-check-circle"
-          title="Exports updated"
-        />
-        <UAlert
-          v-else-if="buildStatus.status.value === 'failed'"
-          color="error"
-          icon="i-heroicons-exclamation-triangle"
-          title="Build failed"
-        >
-          <template #description>
-            <span class="text-sm">
-              The pipeline encountered an error.
-              <a
-                v-if="buildStatus.runUrl.value"
-                :href="buildStatus.runUrl.value"
-                target="_blank"
-                class="underline ml-1"
-              >View details</a>
-            </span>
-          </template>
-        </UAlert>
-      </div>
 
       <!-- Historical version loading/error -->
       <div v-if="historySha && historyLoading" class="mb-4 flex items-center gap-2 text-sm text-muted">
@@ -1015,110 +1077,27 @@ function copyIriToClipboard(iri: string) {
         </UAlert>
       </div>
 
-      <!-- Fixed bottom edit banner -->
-      <Teleport to="body">
-        <div
-          v-if="editorAvailable && editView !== 'none' && editMode && !historySha"
-          class="fixed bottom-0 inset-x-0 z-50 bg-primary-100 dark:bg-primary-900 border-t-2 border-primary shadow-[0_-4px_12px_rgba(0,0,0,0.12)]"
-        >
-          <div class="max-w-screen-xl mx-auto px-4 py-4 flex items-center gap-4">
-            <!-- Mode indicator -->
-            <div class="flex items-center gap-2 text-sm font-medium shrink-0">
-              <UIcon
-                :name="editView === 'full' ? 'i-heroicons-pencil-square' : 'i-heroicons-cursor-arrow-rays'"
-                class="size-4"
-              />
-              {{ editView === 'full' ? 'Full edit' : 'Inline edit' }}
-            </div>
-
-            <USeparator orientation="vertical" class="h-5" />
-
-            <!-- Status / changes -->
-            <div class="flex-1 min-w-0 overflow-x-auto">
-              <!-- Loading -->
-              <div v-if="editMode.loading.value" class="flex items-center gap-2 text-xs text-muted">
-                <UIcon name="i-heroicons-arrow-path" class="size-3.5 animate-spin shrink-0" />
-                Loading from GitHub...
-              </div>
-
-              <!-- Error -->
-              <div v-else-if="editMode.error.value" class="text-xs text-error truncate">
-                {{ editMode.error.value }}
-              </div>
-
-              <!-- Pending changes (horizontal) -->
-              <div v-else-if="pendingChanges.length" class="flex items-center gap-3 text-xs">
-                <div v-for="change in pendingChanges" :key="change.subjectIri" class="flex items-center gap-1.5 shrink-0" :title="change.subjectIri">
-                  <UIcon
-                    :name="change.type === 'added' ? 'i-heroicons-plus-circle' : change.type === 'removed' ? 'i-heroicons-minus-circle' : 'i-heroicons-pencil'"
-                    :class="change.type === 'added' ? 'text-success' : change.type === 'removed' ? 'text-error' : 'text-warning'"
-                    class="size-3.5 shrink-0"
-                  />
-                  <span class="font-medium truncate max-w-40">{{ change.subjectLabel }}</span>
-                  <span class="text-muted">({{ change.propertyChanges.length }})</span>
-                </div>
-              </div>
-
-              <!-- Empty state -->
-              <div v-else class="text-xs text-muted/60">
-                No changes yet
-              </div>
-            </div>
-
-            <!-- Actions -->
-            <div class="flex items-center gap-2 shrink-0">
-              <UButton
-                size="xs"
-                color="neutral"
-                variant="ghost"
-                :icon="editView === 'full' ? 'i-heroicons-cursor-arrow-rays' : 'i-heroicons-pencil-square'"
-                @click="router.push({ path: '/scheme', query: buildQuery({ edit: editView === 'full' ? 'inline' : 'full' }) })"
-              >
-                {{ editView === 'full' ? 'Switch to Inline' : 'Switch to Full' }}
-              </UButton>
-              <UFieldGroup>
-                <UButton
-                  size="sm"
-                  :disabled="!pendingChanges.length"
-                  :loading="editMode.saveStatus.value === 'saving'"
-                  label="Save"
-                  @click="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
-                />
-                <UDropdownMenu :items="saveDropdownItems(selectedConceptUri || uri)">
-                  <UButton
-                    size="sm"
-                    color="neutral"
-                    variant="outline"
-                    icon="i-heroicons-chevron-down"
-                    :disabled="editMode.saveStatus.value === 'saving'"
-                  />
-                </UDropdownMenu>
-              </UFieldGroup>
-              <UButton
-                icon="i-heroicons-x-mark"
-                color="neutral"
-                variant="ghost"
-                size="xs"
-                aria-label="Exit edit mode"
-                @click="exitEdit"
-              />
-            </div>
-          </div>
-        </div>
-      </Teleport>
+      <!-- Bottom banner replaced by EditToolbar above -->
 
       <!-- Concepts Tree with inline panel -->
       <UCard class="mb-8">
         <template #header>
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <h2 class="font-semibold flex items-center gap-2">
+            <h2
+              class="font-semibold flex items-center gap-2 cursor-pointer select-none"
+              @click="conceptsPanelOpen = !conceptsPanelOpen"
+            >
+              <UIcon
+                :name="conceptsPanelOpen ? 'i-heroicons-chevron-down' : 'i-heroicons-chevron-right'"
+                class="size-4"
+              />
               <UIcon name="i-heroicons-list-bullet" />
               Concepts
               <UBadge color="primary" variant="subtle">{{ activeConceptCount }} total</UBadge>
               <UIcon v-if="isTreeLoading" name="i-heroicons-arrow-path" class="size-4 text-primary animate-spin" />
             </h2>
 
-            <div class="flex items-center gap-2">
+            <div v-if="conceptsPanelOpen" class="flex items-center gap-2">
               <UInput
                 v-model="searchQuery"
                 icon="i-heroicons-magnifying-glass"
@@ -1150,6 +1129,10 @@ function copyIriToClipboard(iri: string) {
           </div>
         </template>
 
+        <p v-if="!conceptsPanelOpen" class="text-sm text-muted">
+          {{ activeConceptCount }} concepts — click header to expand
+        </p>
+        <div v-show="conceptsPanelOpen">
         <div v-if="showTreeSkeleton" class="space-y-2">
           <USkeleton class="h-8 w-full" v-for="i in 5" :key="i" />
         </div>
@@ -1172,16 +1155,40 @@ function copyIriToClipboard(iri: string) {
             <div v-if="selectedConceptUri" class="lg:w-1/2 lg:border-l lg:border-default lg:pl-6 min-h-[200px] max-h-[600px] overflow-y-auto overflow-x-hidden">
               <!-- Edit mode: full → ConceptForm -->
               <template v-if="editView === 'full' && editMode?.isEditMode.value">
-                <div class="flex items-center justify-between mb-3">
-                  <h3 class="font-semibold truncate mr-2">
+                <div class="flex items-center justify-between mb-3 gap-2">
+                  <!-- Inline-editable label -->
+                  <div v-if="editingLabel" class="flex items-center gap-1.5 flex-1 min-w-0">
+                    <UInput
+                      v-model="editLabelValue"
+                      class="flex-1 font-semibold"
+                      size="sm"
+                      autofocus
+                      @keydown.enter="commitLabelEdit"
+                      @keydown.escape="cancelLabelEdit"
+                      @blur="commitLabelEdit"
+                    />
+                  </div>
+                  <h3 v-else class="font-semibold truncate mr-2 flex items-center gap-1.5 cursor-pointer group" @click="startLabelEdit">
                     {{ editMode.resolveLabel(selectedConceptUri) }}
+                    <UIcon name="i-heroicons-pencil" class="size-3.5 text-muted opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                   </h3>
-                  <UButton
-                    icon="i-heroicons-x-mark"
-                    variant="ghost"
-                    size="xs"
-                    @click="clearConceptSelection"
-                  />
+                  <div class="flex items-center gap-1 shrink-0">
+                    <UButton
+                      icon="i-heroicons-arrow-up-right"
+                      variant="ghost"
+                      size="xs"
+                      title="Move to different parent"
+                      @click="showMovePicker = true"
+                    >
+                      Move
+                    </UButton>
+                    <UButton
+                      icon="i-heroicons-x-mark"
+                      variant="ghost"
+                      size="xs"
+                      @click="clearConceptSelection"
+                    />
+                  </div>
                 </div>
 
                 <ConceptForm
@@ -1194,6 +1201,7 @@ function copyIriToClipboard(iri: string) {
                   @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
                   @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
                   @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
+                  @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectedConceptUri = newIri }"
                   @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
 
@@ -1201,16 +1209,40 @@ function copyIriToClipboard(iri: string) {
 
               <!-- Edit mode: inline → InlineEditTable -->
               <template v-else-if="editView === 'inline' && editMode?.isEditMode.value">
-                <div class="flex items-center justify-between mb-3">
-                  <h3 class="font-semibold truncate mr-2">
+                <div class="flex items-center justify-between mb-3 gap-2">
+                  <!-- Inline-editable label -->
+                  <div v-if="editingLabel" class="flex items-center gap-1.5 flex-1 min-w-0">
+                    <UInput
+                      v-model="editLabelValue"
+                      class="flex-1 font-semibold"
+                      size="sm"
+                      autofocus
+                      @keydown.enter="commitLabelEdit"
+                      @keydown.escape="cancelLabelEdit"
+                      @blur="commitLabelEdit"
+                    />
+                  </div>
+                  <h3 v-else class="font-semibold truncate mr-2 flex items-center gap-1.5 cursor-pointer group" @click="startLabelEdit">
                     {{ editMode.resolveLabel(selectedConceptUri) }}
+                    <UIcon name="i-heroicons-pencil" class="size-3.5 text-muted opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                   </h3>
-                  <UButton
-                    icon="i-heroicons-x-mark"
-                    variant="ghost"
-                    size="xs"
-                    @click="clearConceptSelection"
-                  />
+                  <div class="flex items-center gap-1 shrink-0">
+                    <UButton
+                      icon="i-heroicons-arrow-up-right"
+                      variant="ghost"
+                      size="xs"
+                      title="Move to different parent"
+                      @click="showMovePicker = true"
+                    >
+                      Move
+                    </UButton>
+                    <UButton
+                      icon="i-heroicons-x-mark"
+                      variant="ghost"
+                      size="xs"
+                      @click="clearConceptSelection"
+                    />
+                  </div>
                 </div>
 
                 <InlineEditTable
@@ -1270,17 +1302,29 @@ function copyIriToClipboard(iri: string) {
           icon="i-heroicons-information-circle"
           description="No concepts found in this scheme"
         />
+        </div>
       </UCard>
 
       <!-- Metadata -->
       <UCard id="metadata-section" class="mb-8">
         <template #header>
-          <h2 class="font-semibold flex items-center gap-2">
+          <h2
+            class="font-semibold flex items-center gap-2 cursor-pointer select-none"
+            @click="metadataPanelOpen = !metadataPanelOpen"
+          >
+            <UIcon
+              :name="metadataPanelOpen ? 'i-heroicons-chevron-down' : 'i-heroicons-chevron-right'"
+              class="size-4"
+            />
             <UIcon name="i-heroicons-information-circle" />
             Metadata
           </h2>
         </template>
 
+        <p v-if="!metadataPanelOpen" class="text-sm text-muted">
+          Vocabulary metadata — click header to expand
+        </p>
+        <div v-show="metadataPanelOpen">
         <!-- Edit mode: full → ConceptForm for scheme properties -->
         <template v-if="editView === 'full' && editMode?.isEditMode.value">
           <ConceptForm
@@ -1325,7 +1369,7 @@ function copyIriToClipboard(iri: string) {
         <!-- View mode -->
         <template v-else>
           <!-- Rich metadata from annotated JSON-LD -->
-          <RichMetadataTable v-if="richMetadata.length" :properties="richMetadata" />
+          <RichMetadataTable v-if="filteredRichMetadata.length" :properties="filteredRichMetadata" />
 
           <!-- Fallback to simple table -->
           <UTable
@@ -1337,6 +1381,7 @@ function copyIriToClipboard(iri: string) {
             ]"
           />
         </template>
+        </div>
       </UCard>
 
       <!-- Save Confirm Modal -->
@@ -1442,6 +1487,19 @@ function copyIriToClipboard(iri: string) {
           </div>
         </template>
       </UModal>
+
+      <!-- Move Concept Modal -->
+      <MoveConceptModal
+        v-if="editMode && selectedConceptUri"
+        :open="showMovePicker"
+        :concept-iri="selectedConceptUri"
+        :concept-label="moveConceptLabel"
+        :current-broader-iris="currentBroaderIris"
+        :tree-items="activeTreeItems"
+        :resolve-label="editMode.resolveLabel"
+        @update:open="showMovePicker = $event"
+        @confirm="handleMoveConfirm"
+      />
 
       <!-- History Diff Modal -->
       <UModal v-model:open="showDiffModal" :ui="{ width: 'max-w-4xl' }">

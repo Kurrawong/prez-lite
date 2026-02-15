@@ -15,6 +15,7 @@ const emit = defineEmits<{
   'remove:value': [predicate: string, value: EditableValue]
   'update:broader': [newIris: string[], oldIris: string[]]
   'update:related': [newIris: string[], oldIris: string[]]
+  'rename': [oldIri: string, newIri: string]
   'delete': []
   'save': []
 }>()
@@ -35,6 +36,25 @@ const languageOptions = [
 ]
 
 const showDeleteConfirm = ref(false)
+const editingIri = ref(false)
+const editIriValue = ref('')
+
+function startIriEdit() {
+  editIriValue.value = props.subjectIri
+  editingIri.value = true
+}
+
+function commitIriEdit() {
+  const newIri = editIriValue.value.trim()
+  if (newIri && newIri !== props.subjectIri) {
+    emit('rename', props.subjectIri, newIri)
+  }
+  editingIri.value = false
+}
+
+function cancelIriEdit() {
+  editingIri.value = false
+}
 
 // Local input values to prevent cursor jumping when store re-renders
 const localValues = reactive(new Map<string, string>())
@@ -84,11 +104,28 @@ function formatIri(iri: string): string {
 </script>
 
 <template>
-  <div class="max-h-[600px] overflow-y-auto overflow-x-hidden">
+  <div class="max-h-[600px] overflow-y-auto">
     <div class="space-y-5">
       <!-- Subject IRI -->
-      <div class="text-sm text-muted font-mono break-all bg-muted/30 px-3 py-2 rounded">
-        {{ subjectIri }}
+      <div v-if="editingIri" class="flex items-center gap-2">
+        <UInput
+          v-model="editIriValue"
+          class="flex-1 font-mono text-sm"
+          size="sm"
+          autofocus
+          @keydown.enter="commitIriEdit"
+          @keydown.escape="cancelIriEdit"
+        />
+        <UButton size="xs" @click="commitIriEdit">Apply</UButton>
+        <UButton size="xs" variant="ghost" @click="cancelIriEdit">Cancel</UButton>
+      </div>
+      <div
+        v-else
+        class="text-sm text-muted font-mono break-all bg-muted/30 px-3 py-2 rounded cursor-pointer group flex items-center gap-2 hover:bg-muted/50 transition-colors"
+        @click="startIriEdit"
+      >
+        <span class="flex-1">{{ subjectIri }}</span>
+        <UIcon name="i-heroicons-pencil" class="size-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
 
       <!-- Properties -->
@@ -186,6 +223,7 @@ function formatIri(iri: string): string {
               value-key="value"
               class="w-20"
               size="sm"
+              :ui="{ content: 'z-50' }"
               @update:model-value="handleLanguageChange(prop.predicate, val, $event as string)"
             />
 

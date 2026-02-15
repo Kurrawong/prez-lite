@@ -16,7 +16,7 @@
     skos:prefLabel "Alteration form XXX"@en;
     reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
     owl:versionIRI <https://linked.data.gov.au/def/alteration-form/1>;
-    prov:qualifiedAttribution _:n3-357, _:n3-358;
+    prov:qualifiedAttribution _:n3-402, _:n3-403;
     sdo:creator <https://linked.data.gov.au/org/gswa>;
     sdo:dateCreated "2024-12-02"^^xsd:date;
     sdo:dateModified "2024-12-02"^^xsd:date;
@@ -32,9 +32,9 @@
 skos:ConceptScheme prez:label "ConceptScheme".
 skos:definition prez:label "definition".
 skos:prefLabel prez:label "pref label".
-_:n3-357 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-402 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0002-7645-5031>.
-_:n3-358 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
+_:n3-403 prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian>;
     prov:agent <https://orcid.org/0000-0001-5888-5102>.
 sdo:creator prez:label "creator".
 sdo:dateCreated prez:label "date created".
@@ -42,5 +42,5 @@ sdo:dateModified prez:label "date modified".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-359 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-404 prez:currentProfile prez:OGCSchemesObjectProfile.
 skos:hasTopConcept prez:label "has top concept".

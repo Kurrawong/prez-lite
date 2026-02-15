@@ -16,6 +16,7 @@ export interface GitHubUser {
 
 const TOKEN_KEY = 'gh_token'
 const NONCE_KEY = 'gh_auth_nonce'
+const RETURN_KEY = 'gh_auth_return'
 
 export function useGitHubAuth() {
   const { githubClientId, githubAuthWorkerUrl } = useRuntimeConfig().public
@@ -30,6 +31,9 @@ export function useGitHubAuth() {
   /** Redirect to GitHub OAuth authorize endpoint */
   function login() {
     if (!githubClientId || !githubAuthWorkerUrl) return
+
+    // Save current path so we can return after OAuth completes
+    sessionStorage.setItem(RETURN_KEY, window.location.pathname + window.location.search)
 
     const nonce = crypto.randomUUID()
     sessionStorage.setItem(NONCE_KEY, nonce)
@@ -119,6 +123,15 @@ export function useGitHubAuth() {
       const fetched = await fetchUser(token.value)
       if (fetched) {
         user.value = fetched
+
+        // After successful OAuth callback, return to the page the user was on
+        if (wasCallback) {
+          const returnPath = sessionStorage.getItem(RETURN_KEY)
+          sessionStorage.removeItem(RETURN_KEY)
+          if (returnPath && returnPath !== window.location.pathname + window.location.search) {
+            navigateTo(returnPath)
+          }
+        }
       } else {
         // Token invalid — clear it
         logout()

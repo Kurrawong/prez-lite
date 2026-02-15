@@ -36,7 +36,7 @@ export function useGitHubFile(
       )
 
       if (!res.ok) {
-        error.value = res.status === 404 ? 'File not found' : `GitHub API error: ${res.status}`
+        error.value = res.status === 404 ? `File not found: ${path}` : `GitHub API error ${res.status}: ${path}`
         return
       }
 

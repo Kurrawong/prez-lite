@@ -441,6 +441,11 @@ async function processBatch(profilesPath, sourceDir, outputBase, pattern = '*-so
   // Build and export profile.json ONCE to the system directory
   const resolvedSystemDir = systemDir || join(outputBase, '..', 'system');
   await mkdir(resolvedSystemDir, { recursive: true });
+
+  // Export full SHACL constraints as JSON-LD
+  if (validatorsDir) {
+    await exportConstraintsJsonLd(validatorsDir, resolvedSystemDir);
+  }
   console.log(`📄 Exporting profile.json to ${resolvedSystemDir}/profile.json`);
   const fieldOrderProfile = await exportProfileJson(shaclConfig, resolvedSystemDir, cardinalityMap);
   console.log('');
@@ -2613,6 +2618,224 @@ async function processCatalog(config) {
     items,
     config,
   };
+}
+
+/**
+ * Walk an RDF list (rdf:first/rdf:rest) from a starting blank node and return items.
+ * @param {Store} store - N3 Store containing the list triples
+ * @param {import('n3').Term} head - The head node of the RDF list
+ * @returns {import('n3').Term[]} The items in the list
+ */
+function collectRdfList(store, head) {
+  const items = [];
+  let current = head;
+  const nilValue = `${RDF}nil`;
+  while (current && current.value !== nilValue) {
+    const firstQuads = store.getQuads(current, namedNode(`${RDF}first`), null, null);
+    if (firstQuads.length > 0) items.push(firstQuads[0].object);
+    const restQuads = store.getQuads(current, namedNode(`${RDF}rest`), null, null);
+    if (restQuads.length === 0) break;
+    current = restQuads[0].object;
+  }
+  return items;
+}
+
+/**
+ * Compact a full IRI to a prefixed form using the given prefix map.
+ * Returns the original IRI if no prefix matches.
+ * @param {string} iri
+ * @param {Record<string, string>} prefixMap - { prefix: namespaceIri }
+ * @returns {string}
+ */
+function compactIri(iri, prefixMap) {
+  for (const [prefix, ns] of Object.entries(prefixMap)) {
+    if (iri.startsWith(ns)) return `${prefix}:${iri.slice(ns.length)}`;
+  }
+  return iri;
+}
+
+/**
+ * Build a JSON-LD constraints document from SHACL validator files.
+ * Extracts full property shape constraints including sh:or unions, datatypes, classes,
+ * cardinality, severity, and messages.
+ * @param {string} validatorsDir - Path to directory containing validator .ttl files
+ * @returns {Promise<object>} JSON-LD object with @context and @graph
+ */
+async function buildConstraintsJsonLd(validatorsDir) {
+  const prefixMap = {
+    sh: SH,
+    skos: SKOS,
+    schema: SCHEMA,
+    xsd: XSD,
+    dcterms: DCTERMS,
+    rdfs: RDFS,
+    owl: OWL,
+    reg: REG,
+    rdf: RDF,
+    prov: PROV,
+  };
+
+  // Load all validator TTL files into a single store
+  const store = new Store();
+  const files = await readdir(validatorsDir);
+  for (const file of files.filter(f => f.endsWith('.ttl'))) {
+    const content = await readFile(join(validatorsDir, file), 'utf-8');
+    store.addQuads(new Parser().parse(content));
+  }
+
+  // Find all sh:NodeShape subjects
+  const nodeShapes = store.getQuads(null, namedNode(`${RDF}type`), namedNode(`${SH}NodeShape`), null);
+
+  // Group properties by target class
+  const classMap = new Map(); // targetClassIri → Map<pathIri, propertyObj>
+
+  for (const shapeQuad of nodeShapes) {
+    const shape = shapeQuad.subject;
+
+    // Get target classes
+    const targetClasses = store.getQuads(shape, namedNode(`${SH}targetClass`), null, null)
+      .map(q => q.object.value);
+    if (targetClasses.length === 0) continue;
+
+    // Shape-level severity (default sh:Violation)
+    const shapeSeverityQuads = store.getQuads(shape, namedNode(`${SH}severity`), null, null);
+    const shapeSeverity = shapeSeverityQuads.length > 0 ? shapeSeverityQuads[0].object.value : null;
+
+    // Get property shapes
+    const propLinks = store.getQuads(shape, namedNode(`${SH}property`), null, null);
+
+    for (const propLink of propLinks) {
+      const propNode = propLink.object;
+
+      // Get sh:path — only IRI paths (skip complex paths like sequences, inverses)
+      const pathQuads = store.getQuads(propNode, namedNode(`${SH}path`), null, null);
+      if (pathQuads.length !== 1) continue;
+      const pathObj = pathQuads[0].object;
+      if (pathObj.termType !== 'NamedNode') continue;
+      const pathIri = pathObj.value;
+
+      // Extract constraint fields
+      const minQuads = store.getQuads(propNode, namedNode(`${SH}minCount`), null, null);
+      const maxQuads = store.getQuads(propNode, namedNode(`${SH}maxCount`), null, null);
+      const dtQuads = store.getQuads(propNode, namedNode(`${SH}datatype`), null, null);
+      const clsQuads = store.getQuads(propNode, namedNode(`${SH}class`), null, null);
+      const nodeKindQuads = store.getQuads(propNode, namedNode(`${SH}nodeKind`), null, null);
+      const msgQuads = store.getQuads(propNode, namedNode(`${SH}message`), null, null);
+      const sevQuads = store.getQuads(propNode, namedNode(`${SH}severity`), null, null);
+      const orQuads = store.getQuads(propNode, namedNode(`${SH}or`), null, null);
+
+      // Collect datatypes and classes from sh:or lists
+      const datatypes = new Set();
+      const classes = new Set();
+
+      if (dtQuads.length > 0) datatypes.add(dtQuads[0].object.value);
+      if (clsQuads.length > 0) {
+        for (const q of clsQuads) classes.add(q.object.value);
+      }
+
+      for (const orQuad of orQuads) {
+        const listItems = collectRdfList(store, orQuad.object);
+        for (const item of listItems) {
+          // Each list item is a blank node with sh:datatype or sh:class
+          const orDt = store.getQuads(item, namedNode(`${SH}datatype`), null, null);
+          const orCls = store.getQuads(item, namedNode(`${SH}class`), null, null);
+          for (const q of orDt) datatypes.add(q.object.value);
+          for (const q of orCls) classes.add(q.object.value);
+        }
+      }
+
+      // Determine severity: property-level > shape-level > default
+      const severity = sevQuads.length > 0
+        ? sevQuads[0].object.value
+        : (shapeSeverity || `${SH}Violation`);
+
+      const description = msgQuads.length > 0 ? msgQuads[0].object.value : undefined;
+      const nodeKind = nodeKindQuads.length > 0 ? nodeKindQuads[0].object.value : undefined;
+
+      // Build property constraint object
+      const prop = {
+        path: pathIri,
+        name: pathIri.includes('#') ? pathIri.split('#').pop() : pathIri.split('/').pop(),
+      };
+      if (description) prop.description = description;
+      if (minQuads.length > 0) prop.minCount = parseInt(minQuads[0].object.value, 10);
+      if (maxQuads.length > 0) prop.maxCount = parseInt(maxQuads[0].object.value, 10);
+      if (datatypes.size > 0) prop.datatypes = [...datatypes];
+      if (classes.size > 0) prop.classes = [...classes];
+      if (nodeKind) prop.nodeKind = nodeKind;
+      prop.severity = severity;
+
+      // Merge into classMap for each target class
+      for (const tc of targetClasses) {
+        if (!classMap.has(tc)) classMap.set(tc, new Map());
+        const propsMap = classMap.get(tc);
+
+        if (propsMap.has(pathIri)) {
+          // Merge: tightest cardinality, union of datatypes/classes
+          const existing = propsMap.get(pathIri);
+          if (prop.minCount != null) {
+            existing.minCount = Math.max(existing.minCount ?? 0, prop.minCount);
+          }
+          if (prop.maxCount != null) {
+            existing.maxCount = existing.maxCount != null
+              ? Math.min(existing.maxCount, prop.maxCount)
+              : prop.maxCount;
+          }
+          if (prop.datatypes) {
+            existing.datatypes = [...new Set([...(existing.datatypes || []), ...prop.datatypes])];
+          }
+          if (prop.classes) {
+            existing.classes = [...new Set([...(existing.classes || []), ...prop.classes])];
+          }
+          if (prop.description && !existing.description) existing.description = prop.description;
+          if (prop.nodeKind && !existing.nodeKind) existing.nodeKind = prop.nodeKind;
+        } else {
+          propsMap.set(pathIri, { ...prop });
+        }
+      }
+    }
+  }
+
+  // Build @graph entries, compacting IRIs
+  const graph = [];
+  for (const [classIri, propsMap] of classMap) {
+    const label = classIri.includes('#') ? classIri.split('#').pop() : classIri.split('/').pop();
+    const properties = [...propsMap.values()].map(p => {
+      const compacted = { ...p };
+      compacted.path = compactIri(compacted.path, prefixMap);
+      if (compacted.datatypes) compacted.datatypes = compacted.datatypes.map(d => compactIri(d, prefixMap));
+      if (compacted.classes) compacted.classes = compacted.classes.map(c => compactIri(c, prefixMap));
+      if (compacted.nodeKind) compacted.nodeKind = compactIri(compacted.nodeKind, prefixMap);
+      compacted.severity = compactIri(compacted.severity, prefixMap);
+      return compacted;
+    });
+
+    graph.push({
+      '@id': compactIri(classIri, prefixMap),
+      label,
+      properties,
+    });
+  }
+
+  // Build @context (prefix → namespace, without rdf since it's only used internally)
+  const context = {};
+  for (const [prefix, ns] of Object.entries(prefixMap)) {
+    context[prefix] = ns;
+  }
+
+  return { '@context': context, '@graph': graph };
+}
+
+/**
+ * Export constraints.jsonld from SHACL validator files to the system directory.
+ * @param {string} validatorsDir - Path to directory containing validator .ttl files
+ * @param {string} systemDir - System output directory
+ */
+async function exportConstraintsJsonLd(validatorsDir, systemDir) {
+  const constraints = await buildConstraintsJsonLd(validatorsDir);
+  const outPath = join(systemDir, 'constraints.jsonld');
+  await writeFile(outPath, JSON.stringify(constraints, null, 2), 'utf-8');
+  console.log(`📋 Exported constraints.jsonld to ${outPath}`);
 }
 
 /**
