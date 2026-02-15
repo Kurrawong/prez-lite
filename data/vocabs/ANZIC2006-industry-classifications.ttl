@@ -2878,7 +2878,7 @@ icat:N7200
     dcterms:source "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
     skos:broader icat:N0000 ;
-    skos:definition "An individual business entity whose predominant economic activity is Administrative Services."@en ;
+    skos:definition "An individual business entity whose predominant economic activity is Administrative Services. For the joy of it."@en ;
     skos:inScheme cs: ;
     skos:notation "N7200" ;
     skos:prefLabel "Administrative Services"@en ;
