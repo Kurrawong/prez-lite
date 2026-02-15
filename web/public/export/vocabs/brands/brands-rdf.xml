@@ -33,5 +33,6 @@
     <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/aainz"/>
     <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/ctp"/>
     <skos:hasTopConcept rdf:resource="http://pid.suncorp.com.au/def/brand/terri-scheer"/>
+    <sdo:dateCreated>2026-02-06</sdo:dateCreated>
   </rdf:Description>
 </rdf:RDF>

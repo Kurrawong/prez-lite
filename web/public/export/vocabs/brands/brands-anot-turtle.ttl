@@ -18,6 +18,7 @@
     dcterms:modified "2025-02-19"^^xsd:date;
     dcterms:publisher <https://linked.data.gov.au/org/suncorp>;
     reg:status <https://linked.data.gov.au/def/reg-statuses/experimental>;
+    sdo:dateCreated "2026-02-06";
     prez:identifier "ns4:brand";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:brand";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:brand/items";
@@ -27,6 +28,7 @@
 skos:ConceptScheme prez:label "ConceptScheme".
 skos:definition prez:label "definition".
 skos:prefLabel prez:label "pref label".
+sdo:dateCreated prez:label "date created".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".

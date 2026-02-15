@@ -52,6 +52,11 @@
         "@id": "https://linked.data.gov.au/def/reg-statuses/experimental"
       }
     ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2026-02-06"
+      }
+    ],
     "https://prez.dev/identifier": [
       {
         "@value": "ns4:brand"
@@ -138,6 +143,14 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/dateCreated",
+    "https://prez.dev/label": [
+      {
+        "@value": "date created"
       }
     ]
   }

@@ -18,4 +18,5 @@
     dcterms:modified "2025-02-19"^^xsd:date;
     dcterms:publisher <https://linked.data.gov.au/org/suncorp>;
     reg:status <https://linked.data.gov.au/def/reg-statuses/experimental>;
-    skos:hasTopConcept <http://pid.suncorp.com.au/def/brand/aami>, <http://pid.suncorp.com.au/def/brand/gio>, <http://pid.suncorp.com.au/def/brand/suncorp>, <http://pid.suncorp.com.au/def/brand/apia>, <http://pid.suncorp.com.au/def/brand/bingle>, <http://pid.suncorp.com.au/def/brand/shannons>, <http://pid.suncorp.com.au/def/brand/cil>, <http://pid.suncorp.com.au/def/brand/essentials>, <http://pid.suncorp.com.au/def/brand/aainz>, <http://pid.suncorp.com.au/def/brand/ctp>, <http://pid.suncorp.com.au/def/brand/terri-scheer>.
+    skos:hasTopConcept <http://pid.suncorp.com.au/def/brand/aami>, <http://pid.suncorp.com.au/def/brand/gio>, <http://pid.suncorp.com.au/def/brand/suncorp>, <http://pid.suncorp.com.au/def/brand/apia>, <http://pid.suncorp.com.au/def/brand/bingle>, <http://pid.suncorp.com.au/def/brand/shannons>, <http://pid.suncorp.com.au/def/brand/cil>, <http://pid.suncorp.com.au/def/brand/essentials>, <http://pid.suncorp.com.au/def/brand/aainz>, <http://pid.suncorp.com.au/def/brand/ctp>, <http://pid.suncorp.com.au/def/brand/terri-scheer>;
+    sdo:dateCreated "2026-02-06".

@@ -78,6 +78,11 @@
             {
                 "@id": "http://pid.suncorp.com.au/def/brand/terri-scheer"
             }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2026-02-06"
+            }
         ]
     }
 ]
