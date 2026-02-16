@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-430",
+    "@id": "_:n3-18",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -56,7 +56,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@value": "A definition for AAI NZ.",
-        "@language": "en"
+        "@language": "pt"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -73,6 +73,14 @@
     "http://www.w3.org/2004/02/skos/core#topConceptOf": [
       {
         "@id": "http://pid.suncorp.com.au/def/brand"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#related": [
+      {
+        "@id": "http://pid.suncorp.com.au/def/brand/gio"
+      },
+      {
+        "@id": "http://pid.suncorp.com.au/def/brand/ctp"
       }
     ],
     "https://prez.dev/identifier": [
@@ -99,7 +107,7 @@
     "https://prez.dev/description": [
       {
         "@value": "A definition for AAI NZ.",
-        "@language": "en"
+        "@language": "pt"
       }
     ]
   },
