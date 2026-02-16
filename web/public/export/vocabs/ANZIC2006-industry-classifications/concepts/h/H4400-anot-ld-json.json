@@ -59,7 +59,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "An individual business entity whose predominant economic activity is Accommodation.",
+        "@value": "An individual business entity whose predominant economic activity is Accommodation. My place is the best accom around.",
         "@language": "en"
       }
     ],
@@ -102,7 +102,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "An individual business entity whose predominant economic activity is Accommodation.",
+        "@value": "An individual business entity whose predominant economic activity is Accommodation. My place is the best accom around.",
         "@language": "en"
       }
     ]
