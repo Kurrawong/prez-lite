@@ -74,12 +74,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         "massive"@en ,
         "ubiquitous"@en ,
         "widespread"@en ;
-    skos:definition "Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation."@en ;
+    skos:definition """Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.
+
+Lots more info here..."""@en ;
     skos:historyNote """Definition from:
 1) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p. (p. 95)
 2) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals, St. John's, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p. (p. 3).""" ;
     skos:inScheme cs: ;
-    skos:prefLabel "pervasiveXX"@en ;
+    skos:prefLabel "pervasive"@en ;
     skos:topConceptOf cs: ;
 .
 
