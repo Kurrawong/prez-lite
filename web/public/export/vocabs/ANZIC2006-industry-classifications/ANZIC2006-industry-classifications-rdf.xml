@@ -32,7 +32,7 @@
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/E0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/F0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/G0000"/>
-    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/H0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/N0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/I0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/J0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/M0000"/>
@@ -44,6 +44,6 @@
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/X0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/K0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/L0000"/>
-    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/N0000"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/H0000"/>
   </rdf:Description>
 </rdf:RDF>

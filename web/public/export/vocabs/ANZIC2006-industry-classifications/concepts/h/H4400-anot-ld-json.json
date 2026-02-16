@@ -54,7 +54,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "http://linked.data.gov.au/def/anzsic-2006/H0000"
+        "@id": "http://linked.data.gov.au/def/anzsic-2006/N0000"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
