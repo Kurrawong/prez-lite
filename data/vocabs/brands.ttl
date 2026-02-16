@@ -94,9 +94,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "Automobile Association Insurance New Zealand"@en ;
-    skos:definition "A definition for AAI NZ."@en ;
+    skos:definition "A definition for AAI NZ."@pt ;
     skos:inScheme cs: ;
     skos:prefLabel "AAI NZ"@en ;
+    skos:related
+        :ctp ,
+        :gio ;
     skos:topConceptOf cs: ;
 .
 
