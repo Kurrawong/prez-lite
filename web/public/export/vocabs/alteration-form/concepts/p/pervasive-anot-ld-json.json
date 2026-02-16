@@ -113,7 +113,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.",
+        "@value": "Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.\n\nLots more info here...",
         "@language": "en"
       }
     ],
@@ -129,7 +129,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@value": "pervasiveXX",
+        "@value": "pervasive",
         "@language": "en"
       }
     ],
@@ -185,13 +185,13 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "pervasiveXX",
+        "@value": "pervasive",
         "@language": "en"
       }
     ],
     "https://prez.dev/description": [
       {
-        "@value": "Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.",
+        "@value": "Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.\n\nLots more info here...",
         "@language": "en"
       }
     ]
