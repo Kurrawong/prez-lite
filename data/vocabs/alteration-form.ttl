@@ -79,7 +79,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 1) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p. (p. 95)
 2) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals, St. John's, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p. (p. 3).""" ;
     skos:inScheme cs: ;
-    skos:prefLabel "pervasive"@en ;
+    skos:prefLabel "pervasiveXX"@en ;
     skos:topConceptOf cs: ;
 .
 
