@@ -23,6 +23,10 @@ const emit = defineEmits<{
 const SKOS_BROADER = 'http://www.w3.org/2004/02/skos/core#broader'
 const SKOS_RELATED = 'http://www.w3.org/2004/02/skos/core#related'
 
+// Reka UI SelectItem rejects empty-string values, so we use a sentinel
+// for "no language tag" and convert at the model-value boundary.
+const LANG_NONE = '_none'
+
 const languageOptions = [
   { label: 'en', value: 'en' },
   { label: 'es', value: 'es' },
@@ -32,7 +36,7 @@ const languageOptions = [
   { label: 'pt', value: 'pt' },
   { label: 'zh', value: 'zh' },
   { label: 'ja', value: 'ja' },
-  { label: '(none)', value: '' },
+  { label: '(none)', value: LANG_NONE },
 ]
 
 const showDeleteConfirm = ref(false)
@@ -75,7 +79,7 @@ function handleValueInput(predicate: string, val: EditableValue, event: Event) {
 }
 
 function handleLanguageChange(predicate: string, val: EditableValue, newLang: string) {
-  emit('update:language', predicate, val, newLang)
+  emit('update:language', predicate, val, newLang === LANG_NONE ? '' : newLang)
 }
 
 function handleBroaderUpdate(prop: EditableProperty, newIris: string[]) {
@@ -218,7 +222,7 @@ function formatIri(iri: string): string {
             <!-- Language tag selector (for literals) -->
             <USelect
               v-if="val.type === 'literal' && prop.fieldType !== 'date'"
-              :model-value="val.language || ''"
+              :model-value="val.language || LANG_NONE"
               :items="languageOptions"
               value-key="value"
               class="w-20"
@@ -237,9 +241,6 @@ function formatIri(iri: string): string {
               @click="emit('remove:value', prop.predicate, val)"
             />
           </div>
-
-          <!-- Empty state for unpopulated properties in full mode -->
-          <div v-if="!prop.values.length" class="text-sm text-muted italic py-1">&mdash;</div>
 
           <!-- Add value button (hidden when at maxCount) -->
           <UButton

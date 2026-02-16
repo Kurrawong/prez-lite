@@ -18,6 +18,7 @@ import {
   computeQuadDiff,
   getModifiedSubjects,
   buildChangeSummary,
+  quadKey,
   type ParsedTTL,
 } from '~/utils/ttl-patch'
 import type { TreeItem } from '~/composables/useScheme'
@@ -80,6 +81,13 @@ export interface PropertyChange {
   type: 'added' | 'removed' | 'modified'
   oldValues?: string[]
   newValues?: string[]
+}
+
+export interface HistoryEntry {
+  label: string
+  removed: Quad[]
+  added: Quad[]
+  timestamp: number
 }
 
 interface ProfilePropertyOrder {
@@ -182,11 +190,38 @@ export function useEditMode(
     return githubFile
   }
 
+  // ---- History (undo/redo) ----
+
+  const undoStack = ref<HistoryEntry[]>([])
+  const redoStack = ref<HistoryEntry[]>([])
+  const MAX_HISTORY = 50
+  const canUndo = computed(() => undoStack.value.length > 0)
+  const canRedo = computed(() => redoStack.value.length > 0)
+
   // ---- Store mutation helpers ----
 
   function bumpVersion() {
     storeVersion.value++
     isDirty.value = true
+  }
+
+  /** Wrap a mutation to capture quad delta for undo/redo. */
+  function recordMutation(label: string, fn: () => void) {
+    if (!store.value) return
+    const beforeKeys = new Map(
+      (store.value.getQuads(null, null, null, null) as Quad[]).map(q => [quadKey(q), q]),
+    )
+    fn()
+    const afterQuads = store.value.getQuads(null, null, null, null) as Quad[]
+    const afterKeys = new Set(afterQuads.map(quadKey))
+
+    const removed = [...beforeKeys.entries()].filter(([k]) => !afterKeys.has(k)).map(([, q]) => q)
+    const added = afterQuads.filter(q => !beforeKeys.has(quadKey(q)))
+
+    if (removed.length === 0 && added.length === 0) return
+    undoStack.value = [...undoStack.value, { label, removed, added, timestamp: Date.now() }].slice(-MAX_HISTORY)
+    redoStack.value = []
+    bumpVersion()
   }
 
   // ---- Clone a store (for originalStore snapshot) ----
@@ -264,6 +299,7 @@ export function useEditMode(
     selectedConceptIri.value = null
     error.value = null
     saveStatus.value = 'idle'
+    clearHistory()
     // Reset GitHub file so it reloads fresh next time
     githubFile = null
     return true
@@ -447,163 +483,160 @@ export function useEditMode(
   // ---- Mutations ----
 
   function updateValue(subjectIri: string, predicateIri: string, oldValue: EditableValue, newValue: string) {
-    if (!store.value) return
-    const s = namedNode(subjectIri)
-    const p = namedNode(predicateIri)
+    recordMutation(`Update ${getPredicateLabel(predicateIri)}`, () => {
+      if (!store.value) return
+      const s = namedNode(subjectIri)
+      const p = namedNode(predicateIri)
 
-    // Remove old quad
-    const oldObj = oldValue.type === 'iri'
-      ? namedNode(oldValue.value)
-      : oldValue.language
+      // Remove old quad
+      const oldObj = oldValue.type === 'iri'
+        ? namedNode(oldValue.value)
+        : oldValue.language
+          ? literal(oldValue.value, oldValue.language)
+          : oldValue.datatype
+            ? literal(oldValue.value, namedNode(oldValue.datatype))
+            : literal(oldValue.value)
+      store.value.removeQuad(s, p, oldObj, defaultGraph())
+
+      // Add new quad
+      const newObj = oldValue.type === 'iri'
+        ? namedNode(newValue)
+        : oldValue.language
+          ? literal(newValue, oldValue.language)
+          : oldValue.datatype
+            ? literal(newValue, namedNode(oldValue.datatype))
+            : literal(newValue)
+      store.value.addQuad(s, p, newObj, defaultGraph())
+    })
+  }
+
+  function updateValueLanguage(subjectIri: string, predicateIri: string, oldValue: EditableValue, newLang: string) {
+    recordMutation(`Update ${getPredicateLabel(predicateIri)} language`, () => {
+      if (!store.value) return
+      const s = namedNode(subjectIri)
+      const p = namedNode(predicateIri)
+
+      // Remove old quad
+      const oldObj = oldValue.language
         ? literal(oldValue.value, oldValue.language)
         : oldValue.datatype
           ? literal(oldValue.value, namedNode(oldValue.datatype))
           : literal(oldValue.value)
-    store.value.removeQuad(s, p, oldObj, defaultGraph())
+      store.value.removeQuad(s, p, oldObj, defaultGraph())
 
-    // Add new quad
-    const newObj = oldValue.type === 'iri'
-      ? namedNode(newValue)
-      : oldValue.language
-        ? literal(newValue, oldValue.language)
-        : oldValue.datatype
-          ? literal(newValue, namedNode(oldValue.datatype))
-          : literal(newValue)
-    store.value.addQuad(s, p, newObj, defaultGraph())
-
-    bumpVersion()
-  }
-
-  function updateValueLanguage(subjectIri: string, predicateIri: string, oldValue: EditableValue, newLang: string) {
-    if (!store.value) return
-    const s = namedNode(subjectIri)
-    const p = namedNode(predicateIri)
-
-    // Remove old quad
-    const oldObj = oldValue.language
-      ? literal(oldValue.value, oldValue.language)
-      : oldValue.datatype
-        ? literal(oldValue.value, namedNode(oldValue.datatype))
-        : literal(oldValue.value)
-    store.value.removeQuad(s, p, oldObj, defaultGraph())
-
-    // Add new quad with new language
-    const newObj = newLang ? literal(oldValue.value, newLang) : literal(oldValue.value)
-    store.value.addQuad(s, p, newObj, defaultGraph())
-
-    bumpVersion()
+      // Add new quad with new language
+      const newObj = newLang ? literal(oldValue.value, newLang) : literal(oldValue.value)
+      store.value.addQuad(s, p, newObj, defaultGraph())
+    })
   }
 
   function addValue(subjectIri: string, predicateIri: string, type: 'literal' | 'iri' = 'literal') {
-    if (!store.value) return
-    const s = namedNode(subjectIri)
-    const p = namedNode(predicateIri)
-
     if (type === 'iri') {
       // Don't add empty IRI — caller should use iri-picker
       return
     }
-
-    // Add empty literal (user fills in via form)
-    store.value.addQuad(s, p, literal(''), defaultGraph())
-    bumpVersion()
+    recordMutation(`Add ${getPredicateLabel(predicateIri)}`, () => {
+      if (!store.value) return
+      const s = namedNode(subjectIri)
+      const p = namedNode(predicateIri)
+      store.value.addQuad(s, p, literal(''), defaultGraph())
+    })
   }
 
   function removeValue(subjectIri: string, predicateIri: string, val: EditableValue) {
-    if (!store.value) return
-    const s = namedNode(subjectIri)
-    const p = namedNode(predicateIri)
+    recordMutation(`Remove ${getPredicateLabel(predicateIri)}`, () => {
+      if (!store.value) return
+      const s = namedNode(subjectIri)
+      const p = namedNode(predicateIri)
 
-    const obj = val.type === 'iri'
-      ? namedNode(val.value)
-      : val.language
-        ? literal(val.value, val.language)
-        : val.datatype
-          ? literal(val.value, namedNode(val.datatype))
-          : literal(val.value)
-    store.value.removeQuad(s, p, obj, defaultGraph())
-
-    bumpVersion()
+      const obj = val.type === 'iri'
+        ? namedNode(val.value)
+        : val.language
+          ? literal(val.value, val.language)
+          : val.datatype
+            ? literal(val.value, namedNode(val.datatype))
+            : literal(val.value)
+      store.value.removeQuad(s, p, obj, defaultGraph())
+    })
   }
 
   // ---- Broader/Narrower sync ----
 
   function syncBroaderNarrower(conceptIri: string, newBroaderIris: string[], oldBroaderIris: string[]) {
-    if (!store.value) return
-    const s = namedNode(conceptIri)
-    const schemeNode = namedNode(schemeIri.value)
+    recordMutation('Update broader', () => {
+      if (!store.value) return
+      const s = namedNode(conceptIri)
+      const schemeNode = namedNode(schemeIri.value)
 
-    // Remove old broader quads and their inverse narrower
-    for (const oldB of oldBroaderIris) {
-      store.value.removeQuad(s, namedNode(`${SKOS}broader`), namedNode(oldB), defaultGraph())
-      store.value.removeQuad(namedNode(oldB), namedNode(`${SKOS}narrower`), s, defaultGraph())
-    }
-
-    // Add new broader quads and their inverse narrower
-    for (const newB of newBroaderIris) {
-      store.value.addQuad(s, namedNode(`${SKOS}broader`), namedNode(newB), defaultGraph())
-      store.value.addQuad(namedNode(newB), namedNode(`${SKOS}narrower`), s, defaultGraph())
-    }
-
-    // Manage topConceptOf/hasTopConcept
-    if (newBroaderIris.length === 0) {
-      // No broader -> this is a top concept
-      if (!store.value.getQuads(conceptIri, `${SKOS}topConceptOf`, schemeIri.value, null).length) {
-        store.value.addQuad(s, namedNode(`${SKOS}topConceptOf`), schemeNode, defaultGraph())
+      // Remove old broader quads and their inverse narrower
+      for (const oldB of oldBroaderIris) {
+        store.value.removeQuad(s, namedNode(`${SKOS}broader`), namedNode(oldB), defaultGraph())
+        store.value.removeQuad(namedNode(oldB), namedNode(`${SKOS}narrower`), s, defaultGraph())
       }
-      if (!store.value.getQuads(schemeIri.value, `${SKOS}hasTopConcept`, conceptIri, null).length) {
-        store.value.addQuad(schemeNode, namedNode(`${SKOS}hasTopConcept`), s, defaultGraph())
-      }
-    } else {
-      // Has broader -> remove topConceptOf/hasTopConcept
-      store.value.removeQuads(store.value.getQuads(conceptIri, `${SKOS}topConceptOf`, schemeIri.value, null))
-      store.value.removeQuads(store.value.getQuads(schemeIri.value, `${SKOS}hasTopConcept`, conceptIri, null))
-    }
 
-    bumpVersion()
+      // Add new broader quads and their inverse narrower
+      for (const newB of newBroaderIris) {
+        store.value.addQuad(s, namedNode(`${SKOS}broader`), namedNode(newB), defaultGraph())
+        store.value.addQuad(namedNode(newB), namedNode(`${SKOS}narrower`), s, defaultGraph())
+      }
+
+      // Manage topConceptOf/hasTopConcept
+      if (newBroaderIris.length === 0) {
+        if (!store.value.getQuads(conceptIri, `${SKOS}topConceptOf`, schemeIri.value, null).length) {
+          store.value.addQuad(s, namedNode(`${SKOS}topConceptOf`), schemeNode, defaultGraph())
+        }
+        if (!store.value.getQuads(schemeIri.value, `${SKOS}hasTopConcept`, conceptIri, null).length) {
+          store.value.addQuad(schemeNode, namedNode(`${SKOS}hasTopConcept`), s, defaultGraph())
+        }
+      } else {
+        store.value.removeQuads(store.value.getQuads(conceptIri, `${SKOS}topConceptOf`, schemeIri.value, null))
+        store.value.removeQuads(store.value.getQuads(schemeIri.value, `${SKOS}hasTopConcept`, conceptIri, null))
+      }
+    })
   }
 
   function syncRelated(conceptIri: string, newRelatedIris: string[], oldRelatedIris: string[]) {
-    if (!store.value) return
-    const s = namedNode(conceptIri)
+    recordMutation('Update related', () => {
+      if (!store.value) return
+      const s = namedNode(conceptIri)
 
-    // Remove old related quads (both directions)
-    for (const oldR of oldRelatedIris) {
-      store.value.removeQuad(s, namedNode(`${SKOS}related`), namedNode(oldR), defaultGraph())
-      store.value.removeQuad(namedNode(oldR), namedNode(`${SKOS}related`), s, defaultGraph())
-    }
+      // Remove old related quads (both directions)
+      for (const oldR of oldRelatedIris) {
+        store.value.removeQuad(s, namedNode(`${SKOS}related`), namedNode(oldR), defaultGraph())
+        store.value.removeQuad(namedNode(oldR), namedNode(`${SKOS}related`), s, defaultGraph())
+      }
 
-    // Add new related quads (both directions)
-    for (const newR of newRelatedIris) {
-      store.value.addQuad(s, namedNode(`${SKOS}related`), namedNode(newR), defaultGraph())
-      store.value.addQuad(namedNode(newR), namedNode(`${SKOS}related`), s, defaultGraph())
-    }
-
-    bumpVersion()
+      // Add new related quads (both directions)
+      for (const newR of newRelatedIris) {
+        store.value.addQuad(s, namedNode(`${SKOS}related`), namedNode(newR), defaultGraph())
+        store.value.addQuad(namedNode(newR), namedNode(`${SKOS}related`), s, defaultGraph())
+      }
+    })
   }
 
   // ---- Subject rename ----
 
   function renameSubject(oldIri: string, newIri: string) {
-    if (!store.value || oldIri === newIri) return
-    const oldNode = namedNode(oldIri)
-    const newNode = namedNode(newIri)
+    if (oldIri === newIri) return
+    recordMutation('Rename subject', () => {
+      if (!store.value) return
+      const oldNode = namedNode(oldIri)
+      const newNode = namedNode(newIri)
 
-    // Rewrite all quads where oldIri appears as subject
-    const asSubject = store.value.getQuads(oldIri, null, null, null) as Quad[]
-    for (const q of asSubject) {
-      store.value.removeQuad(q)
-      store.value.addQuad(newNode, q.predicate, q.object, q.graph)
-    }
+      // Rewrite all quads where oldIri appears as subject
+      const asSubject = store.value.getQuads(oldIri, null, null, null) as Quad[]
+      for (const q of asSubject) {
+        store.value.removeQuad(q)
+        store.value.addQuad(newNode, q.predicate, q.object, q.graph)
+      }
 
-    // Rewrite all quads where oldIri appears as object
-    const asObject = store.value.getQuads(null, null, oldNode, null) as Quad[]
-    for (const q of asObject) {
-      store.value.removeQuad(q)
-      store.value.addQuad(q.subject, q.predicate, newNode, q.graph)
-    }
-
-    bumpVersion()
+      // Rewrite all quads where oldIri appears as object
+      const asObject = store.value.getQuads(null, null, oldNode, null) as Quad[]
+      for (const q of asObject) {
+        store.value.removeQuad(q)
+        store.value.addQuad(q.subject, q.predicate, newNode, q.graph)
+      }
+    })
   }
 
   // ---- Concept CRUD ----
@@ -616,63 +649,121 @@ export function useEditMode(
       ? schemeIri.value
       : `${schemeIri.value}/`
     const conceptIri = `${base}${localName}`
-    const s = namedNode(conceptIri)
-    const schemeNode = namedNode(schemeIri.value)
 
-    // Add core quads
-    store.value.addQuad(s, namedNode(`${RDF}type`), namedNode(`${SKOS}Concept`), defaultGraph())
-    store.value.addQuad(s, namedNode(`${SKOS}prefLabel`), literal(prefLabel, 'en'), defaultGraph())
-    store.value.addQuad(s, namedNode(`${SKOS}inScheme`), schemeNode, defaultGraph())
+    recordMutation(`Add concept "${prefLabel}"`, () => {
+      if (!store.value) return
+      const s = namedNode(conceptIri)
+      const schemeNode = namedNode(schemeIri.value)
 
-    if (broaderIri) {
-      store.value.addQuad(s, namedNode(`${SKOS}broader`), namedNode(broaderIri), defaultGraph())
-      store.value.addQuad(namedNode(broaderIri), namedNode(`${SKOS}narrower`), s, defaultGraph())
-    } else {
-      // Top concept
-      store.value.addQuad(s, namedNode(`${SKOS}topConceptOf`), schemeNode, defaultGraph())
-      store.value.addQuad(schemeNode, namedNode(`${SKOS}hasTopConcept`), s, defaultGraph())
-    }
+      store.value.addQuad(s, namedNode(`${RDF}type`), namedNode(`${SKOS}Concept`), defaultGraph())
+      store.value.addQuad(s, namedNode(`${SKOS}prefLabel`), literal(prefLabel, 'en'), defaultGraph())
+      store.value.addQuad(s, namedNode(`${SKOS}inScheme`), schemeNode, defaultGraph())
 
-    bumpVersion()
+      if (broaderIri) {
+        store.value.addQuad(s, namedNode(`${SKOS}broader`), namedNode(broaderIri), defaultGraph())
+        store.value.addQuad(namedNode(broaderIri), namedNode(`${SKOS}narrower`), s, defaultGraph())
+      } else {
+        store.value.addQuad(s, namedNode(`${SKOS}topConceptOf`), schemeNode, defaultGraph())
+        store.value.addQuad(schemeNode, namedNode(`${SKOS}hasTopConcept`), s, defaultGraph())
+      }
+    })
+
     return conceptIri
   }
 
   function deleteConcept(iri: string) {
-    if (!store.value) return
+    const label = resolveLabel(iri)
+    recordMutation(`Delete concept "${label}"`, () => {
+      if (!store.value) return
 
-    // Get broader parents before deletion (to reparent children)
-    const broaderIris = (store.value.getQuads(iri, `${SKOS}broader`, null, null) as Quad[]).map((q: Quad) => q.object.value)
+      // Get broader parents before deletion (to reparent children)
+      const broaderIris = (store.value.getQuads(iri, `${SKOS}broader`, null, null) as Quad[]).map((q: Quad) => q.object.value)
 
-    // Get children
-    const childIris = (store.value.getQuads(iri, `${SKOS}narrower`, null, null) as Quad[]).map((q: Quad) => q.object.value)
+      // Get children
+      const childIris = (store.value.getQuads(iri, `${SKOS}narrower`, null, null) as Quad[]).map((q: Quad) => q.object.value)
 
-    // Remove all quads where this concept is the subject
-    store.value.removeQuads(store.value.getQuads(iri, null, null, null))
+      // Remove all quads where this concept is the subject
+      store.value.removeQuads(store.value.getQuads(iri, null, null, null))
 
-    // Remove all quads where this concept is the object
-    store.value.removeQuads(store.value.getQuads(null, null, iri, null))
+      // Remove all quads where this concept is the object
+      store.value.removeQuads(store.value.getQuads(null, null, iri, null))
 
-    // Reparent children to the deleted concept's broader (or make them top concepts)
-    for (const childIri of childIris) {
-      if (broaderIris.length > 0) {
-        for (const parentIri of broaderIris) {
-          store.value.addQuad(namedNode(childIri), namedNode(`${SKOS}broader`), namedNode(parentIri), defaultGraph())
-          store.value.addQuad(namedNode(parentIri), namedNode(`${SKOS}narrower`), namedNode(childIri), defaultGraph())
+      // Reparent children to the deleted concept's broader (or make them top concepts)
+      for (const childIri of childIris) {
+        if (broaderIris.length > 0) {
+          for (const parentIri of broaderIris) {
+            store.value.addQuad(namedNode(childIri), namedNode(`${SKOS}broader`), namedNode(parentIri), defaultGraph())
+            store.value.addQuad(namedNode(parentIri), namedNode(`${SKOS}narrower`), namedNode(childIri), defaultGraph())
+          }
+        } else {
+          const schemeNode = namedNode(schemeIri.value)
+          store.value.addQuad(namedNode(childIri), namedNode(`${SKOS}topConceptOf`), schemeNode, defaultGraph())
+          store.value.addQuad(schemeNode, namedNode(`${SKOS}hasTopConcept`), namedNode(childIri), defaultGraph())
         }
-      } else {
-        // No parent -> make child a top concept
-        const schemeNode = namedNode(schemeIri.value)
-        store.value.addQuad(namedNode(childIri), namedNode(`${SKOS}topConceptOf`), schemeNode, defaultGraph())
-        store.value.addQuad(schemeNode, namedNode(`${SKOS}hasTopConcept`), namedNode(childIri), defaultGraph())
       }
-    }
+    })
 
-    // Clear selection if deleted concept was selected
+    // Clear selection if deleted concept was selected (outside recordMutation for clarity)
     if (selectedConceptIri.value === iri) {
       selectedConceptIri.value = null
     }
+  }
 
+  // ---- Undo / Redo / Revert ----
+
+  function recomputeDirty() {
+    if (!store.value || !originalStore.value) { isDirty.value = false; return }
+    const { added, removed } = computeQuadDiff(originalStore.value, store.value)
+    isDirty.value = added.length > 0 || removed.length > 0
+  }
+
+  function undo() {
+    if (!store.value || !undoStack.value.length) return
+    const entry = undoStack.value[undoStack.value.length - 1]!
+    undoStack.value = undoStack.value.slice(0, -1)
+    for (const q of entry.added) store.value.removeQuad(q)
+    for (const q of entry.removed) store.value.addQuad(q)
+    redoStack.value = [...redoStack.value, entry]
     bumpVersion()
+    recomputeDirty()
+  }
+
+  function redo() {
+    if (!store.value || !redoStack.value.length) return
+    const entry = redoStack.value[redoStack.value.length - 1]!
+    redoStack.value = redoStack.value.slice(0, -1)
+    for (const q of entry.removed) store.value.removeQuad(q)
+    for (const q of entry.added) store.value.addQuad(q)
+    undoStack.value = [...undoStack.value, entry]
+    bumpVersion()
+    recomputeDirty()
+  }
+
+  function revertSubject(subjectIri: string) {
+    recordMutation(`Revert "${resolveLabel(subjectIri)}"`, () => {
+      if (!store.value || !originalStore.value) return
+      // Remove current quads for subject
+      store.value.removeQuads(store.value.getQuads(subjectIri, null, null, null) as Quad[])
+      // Restore original quads for subject
+      store.value.addQuads(originalStore.value.getQuads(subjectIri, null, null, null) as Quad[])
+      // Clean up inverse quads that differ from original
+      const origAsObj = new Set(
+        (originalStore.value.getQuads(null, null, subjectIri, null) as Quad[]).map(quadKey),
+      )
+      for (const q of store.value.getQuads(null, null, subjectIri, null) as Quad[]) {
+        if (!origAsObj.has(quadKey(q))) store.value.removeQuad(q)
+      }
+      for (const q of originalStore.value.getQuads(null, null, subjectIri, null) as Quad[]) {
+        if (!store.value.getQuads(q.subject, q.predicate, q.object, null).length) {
+          store.value.addQuad(q)
+        }
+      }
+    })
+  }
+
+  function clearHistory() {
+    undoStack.value = []
+    redoStack.value = []
   }
 
   // ---- Diff computation ----
@@ -773,6 +864,15 @@ export function useEditMode(
 
   // ---- Save ----
 
+  /** Ensure commit message follows conventional commit format (type: description) */
+  function ensureConventionalCommit(msg: string, fallback: string): string {
+    const trimmed = msg.trim()
+    if (!trimmed) return fallback
+    // Already has a conventional type prefix (e.g. "fix:", "feat:", "chore:")
+    if (/^[a-z]+(\(.+\))?!?:/.test(trimmed)) return trimmed
+    return `chore: ${trimmed}`
+  }
+
   async function save(commitMessage?: string) {
     if (!store.value) return false
     saveStatus.value = 'saving'
@@ -781,7 +881,7 @@ export function useEditMode(
     try {
       const ttl = serializeWithPatch()
       const ghFile = getGitHubFile()
-      const msg = commitMessage?.trim() || `Update vocabulary`
+      const msg = ensureConventionalCommit(commitMessage ?? '', 'chore: update vocabulary')
       const ok = await ghFile.save(ttl, msg)
 
       if (!ok) {
@@ -793,6 +893,7 @@ export function useEditMode(
       // Update originals after successful save
       refreshOriginals(ttl)
       isDirty.value = false
+      clearHistory()
       saveStatus.value = 'success'
       setTimeout(() => { saveStatus.value = 'idle' }, 3000)
       return true
@@ -816,7 +917,7 @@ export function useEditMode(
       const ttl = serializeWithPatch(iri)
       const ghFile = getGitHubFile()
       const label = resolveLabel(iri)
-      const msg = commitMessage?.trim() || `Update ${label}`
+      const msg = ensureConventionalCommit(commitMessage ?? '', `chore: update ${label}`)
       const ok = await ghFile.save(ttl, msg)
 
       if (!ok) {
@@ -827,6 +928,7 @@ export function useEditMode(
 
       // Update originals after successful save
       refreshOriginals(ttl)
+      clearHistory()
 
       // Check if there are still other dirty subjects
       const { added, removed } = computeDiff()
@@ -982,6 +1084,15 @@ export function useEditMode(
     getSubjectDiffBlocks,
     resolveLabel,
     getPropertiesForSubject,
+
+    // Undo/Redo
+    undo,
+    redo,
+    revertSubject,
+    canUndo,
+    canRedo,
+    undoStack: readonly(undoStack),
+    redoStack: readonly(redoStack),
 
     // Diff
     computeDiff,

@@ -17,17 +17,15 @@ const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'p
 
 const activeTab = ref<'summary' | 'diff'>('summary')
 
-/** Auto-generate a commit message from the change summary */
+/** Auto-generate a commit message from the change summary (conventional commit format) */
 const autoMessage = computed(() => {
   const parts: string[] = []
   const { totalAdded, totalRemoved, totalModified } = props.changeSummary
   if (totalAdded > 0) parts.push(`add ${totalAdded} subject${totalAdded > 1 ? 's' : ''}`)
   if (totalModified > 0) parts.push(`update ${totalModified} subject${totalModified > 1 ? 's' : ''}`)
   if (totalRemoved > 0) parts.push(`remove ${totalRemoved} subject${totalRemoved > 1 ? 's' : ''}`)
-  if (parts.length === 0) return 'Update vocabulary'
-  // Capitalize first part
-  const msg = parts.join(', ')
-  return msg.charAt(0).toUpperCase() + msg.slice(1)
+  if (parts.length === 0) return 'chore: update vocabulary'
+  return `chore: ${parts.join(', ')}`
 })
 
 const commitMessage = ref('')

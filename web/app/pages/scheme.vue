@@ -373,6 +373,27 @@ function truncateIriValue(val: string, max = 80): string {
 const showSaveModal = ref(false)
 const saveModalSubjectIri = ref<string | null>(null)
 
+// Change detail modal state
+const showChangeDetail = ref(false)
+const changeDetailIri = ref<string | null>(null)
+
+const changeDetailData = computed(() => {
+  if (!editMode || !changeDetailIri.value) return null
+  return editMode.getChangesForSubject(changeDetailIri.value)
+})
+
+// Undo/redo labels for toolbar tooltips
+const undoLabel = computed(() => {
+  if (!editMode) return ''
+  const stack = editMode.undoStack.value
+  return stack.length > 0 ? stack[stack.length - 1]!.label : ''
+})
+const redoLabel = computed(() => {
+  if (!editMode) return ''
+  const stack = editMode.redoStack.value
+  return stack.length > 0 ? stack[stack.length - 1]!.label : ''
+})
+
 // TTL viewer modal state
 const showTTLViewer = ref(false)
 const ttlViewerContent = ref('')
@@ -401,11 +422,29 @@ const SIMPLE_HIDDEN_PREDICATES = new Set([
 
 const viewMode = ref<'simple' | 'expert'>('simple')
 
+function handleKeyboardShortcut(e: KeyboardEvent) {
+  if (!editMode?.isEditMode.value) return
+  const mod = e.metaKey || e.ctrlKey
+  if (!mod) return
+  if (e.key === 'z' && !e.shiftKey) {
+    e.preventDefault()
+    editMode.undo()
+  } else if ((e.key === 'z' && e.shiftKey) || e.key === 'y') {
+    e.preventDefault()
+    editMode.redo()
+  }
+}
+
 onMounted(() => {
   const stored = localStorage.getItem(VIEW_MODE_KEY)
   if (stored === 'expert' || stored === 'simple') {
     viewMode.value = stored
   }
+  window.addEventListener('keydown', handleKeyboardShortcut)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyboardShortcut)
 })
 
 function toggleViewMode() {
@@ -584,6 +623,17 @@ function openTTLViewer(type: 'original' | 'patched', iri?: string) {
     ttlViewerContent.value = iri ? editMode!.serializeWithPatch(iri) : ''
   }
   showTTLViewer.value = true
+}
+
+// --- Change detail modal ---
+
+function handleShowChangeDetail(subjectIri: string) {
+  changeDetailIri.value = subjectIri
+  showChangeDetail.value = true
+}
+
+function handleRevertSubject(subjectIri: string) {
+  editMode?.revertSubject(subjectIri)
 }
 
 // --- Floating edit toolbar ---
@@ -852,6 +902,10 @@ function copyIriToClipboard(iri: string) {
       :view-mode="viewMode"
       :history-commits="vocabHistory?.commits.value ?? []"
       :history-loading="!!vocabHistory?.loading.value"
+      :can-undo="!!editMode?.canUndo.value"
+      :can-redo="!!editMode?.canRedo.value"
+      :undo-label="undoLabel"
+      :redo-label="redoLabel"
       @enter-edit="enterEdit"
       @exit-edit="exitEdit"
       @toggle-mode="router.push({ path: '/scheme', query: buildQuery({ edit: editView === 'full' ? 'inline' : 'full' }) })"
@@ -861,6 +915,10 @@ function copyIriToClipboard(iri: string) {
       @load-history="vocabHistory?.fetchCommits()"
       @browse-version="browseVersion"
       @open-diff="(commit, index) => openDiffModal(commit, index)"
+      @undo="editMode?.undo()"
+      @redo="editMode?.redo()"
+      @revert-subject="handleRevertSubject"
+      @show-change-detail="handleShowChangeDetail"
     />
 
     <UBreadcrumb ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
@@ -1393,6 +1451,18 @@ function copyIriToClipboard(iri: string) {
             :patched-t-t-l="saveModalPatchedTTL"
             @confirm="handleSaveConfirm"
             @cancel="showSaveModal = false"
+          />
+        </template>
+      </UModal>
+
+      <!-- Change Detail Modal -->
+      <UModal v-model:open="showChangeDetail">
+        <template #body>
+          <ChangeDetailModal
+            v-if="changeDetailData"
+            :change="changeDetailData"
+            @revert="handleRevertSubject"
+            @close="showChangeDetail = false"
           />
         </template>
       </UModal>

@@ -4,6 +4,25 @@
 
 ---
 
+## 🔄 Current Sprint: Sprint 13 - Edit Mode Polish
+
+**Start:** 2026-02-16
+**Goal:** Clear quick-win editing bugs and fill the core label/IRI editing gap
+
+**Planned Tasks:**
+- ✅ Fix empty property display in edit mode (High)
+- ✅ Add loading state to sign-in flow (High) — redirect already works, just needs loading UX
+- 🎯 Enable editing of concept label and IRI (Medium)
+
+**Completed:**
+- ✅ Fix empty property display in edit mode — removed "---" dash from editable empty properties in ConceptForm and InlineEditTable
+- ✅ Add loading state to sign-in flow — inline head script hides pre-rendered HTML during OAuth callback; Vue shows spinner until redirect completes
+
+**Progress:**
+- Track in dashboard.md
+
+---
+
 ## ✅ Completed Sprint: Sprint 12 - Build Status & Vocab History
 
 **Duration:** 2026-02-15

@@ -1,6 +1,6 @@
 # Kanban Dashboard
 
-**Last Updated:** 2026-02-15
+**Last Updated:** 2026-02-16
 
 ---
 
@@ -16,8 +16,9 @@
 | SHACL Validation (retrospective) | 1/1 | ✅ Complete |
 | Incremental Deploys (retrospective) | 1/1 | ✅ Complete |
 | SHACL Cardinality Enforcement | 1/1 | ✅ Complete |
+| Export constraints.jsonld | 1/1 | ✅ Complete |
 
-**Overall:** 48 tasks completed across 12 sprints.
+**Overall:** 49 tasks completed across 12 sprints + standalone items.
 
 ---
 
@@ -25,15 +26,22 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| 3 unprioritized | Empty | Empty | Empty | Sprint 12 (2) + SHACL (1) + Incremental (1) + Cardinality (1) |
+| 7 open items | Sprint 13 (4 tasks) | Empty | Empty | constraints.jsonld + Sprint 12 items |
 
 ---
 
 ## Current Status
 
-No active sprint. Ready to prioritize next work.
+**Sprint 13: Edit Mode Polish** (started 2026-02-16)
 
-**Backlog:** 3 items remaining (TDD, collab presence, edit lifecycle)
+**Done:**
+1. ✅ Fix empty property display in edit mode (High)
+2. ✅ Add loading state to sign-in redirect (High)
+
+**Todo:**
+1. Enable editing of concept label and IRI (Medium)
+
+**Remaining backlog:** concept reparent, edit UX redesign, simplified/expert view, TDD, edit-to-publish lifecycle, collab presence, IRI base config
 
 ---
 

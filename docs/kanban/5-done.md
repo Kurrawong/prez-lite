@@ -2,6 +2,47 @@
 
 ---
 
+## Fix Empty Property Display in Edit Mode
+
+### ✅ Fix empty property display in edit mode
+**Completed:** 2026-02-16
+
+**Summary:** Removed the "---" dash from empty editable properties so only the "Add value" button shows. Readonly properties and non-editing inline rows still display the dash.
+
+**Files Modified:**
+- `web/app/components/ConceptForm.vue` — removed empty-state dash div (line 246)
+- `web/app/components/InlineEditTable.vue` — removed empty-state dash div (line 249)
+
+---
+
+## Add Loading State to Sign-In Flow
+
+### ✅ Add loading state to sign-in redirect
+**Completed:** 2026-02-16
+
+**Summary:** Eliminated the home page flash during OAuth sign-in redirect. An inline head script hides pre-rendered HTML instantly when `#gh_token=` is detected in the URL hash (before hydration). Vue hydrates with a spinner instead of `<NuxtPage />`, then `onMounted` restores visibility and runs `init()` which processes the token and redirects to the return path. Normal page loads are unaffected.
+
+**Files Modified:**
+- `web/app/app.vue` — added inline head script, OAuth callback detection via `import.meta.client`, spinner gate on `<NuxtPage />`
+- `web/app/components/GitHubAuthButton.vue` — removed `onMounted(() => init())` (moved to app.vue)
+
+---
+
+## Export constraints.jsonld from SHACL Validator
+
+### ✅ Export constraints.jsonld from SHACL validator
+**Completed:** 2026-02-16
+
+**Summary:** Exported full SHACL constraint shapes as JSON-LD (`constraints.jsonld`) for future frontend validation consumption. The build pipeline extracts shapes from `data/validators/vocabs.ttl`, flattens `sh:or` unions into datatype/class arrays, extracts cardinality, severity, and `sh:message` descriptions. Output covers 5 target classes (ConceptScheme, Concept, Collection, Organization, Person) with 14 property constraints total.
+
+**Key files:**
+- `web/public/export/system/constraints.jsonld` — exported constraints (6.8KB)
+- `docs/5-technical/shacl-ui-evaluation.md` — library research findings
+
+**Verified:** `sh:or` flattening (dateModified has 3 datatypes), cardinality (prefLabel min:1 max:1), `sh:message` as descriptions, no blank-node paths.
+
+---
+
 ## SHACL Cardinality Enforcement in Edit Mode
 
 ### ✅ Enforce SHACL cardinality constraints in edit mode

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { isAuthenticated, isEnabled, user, loading, login, logout, init } = useGitHubAuth()
-
-onMounted(() => init())
+const { isAuthenticated, isEnabled, user, loading, login, logout } = useGitHubAuth()
 </script>
 
 <template>

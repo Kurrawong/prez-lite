@@ -17,6 +17,11 @@ const props = defineProps<{
   // History
   historyCommits: HistoryCommit[]
   historyLoading: boolean
+  // Undo/Redo
+  canUndo?: boolean
+  canRedo?: boolean
+  undoLabel?: string
+  redoLabel?: string
 }>()
 
 const emit = defineEmits<{
@@ -30,6 +35,11 @@ const emit = defineEmits<{
   'load-history': []
   'browse-version': [commit: HistoryCommit]
   'open-diff': [commit: HistoryCommit, index: number]
+  // Undo/Redo
+  'undo': []
+  'redo': []
+  'revert-subject': [subjectIri: string]
+  'show-change-detail': [subjectIri: string]
 }>()
 
 // Panel state
@@ -175,6 +185,26 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <USeparator orientation="vertical" class="h-5" />
 
+        <!-- Undo/Redo -->
+        <UButton
+          icon="i-heroicons-arrow-uturn-left"
+          variant="ghost"
+          size="xs"
+          :disabled="!canUndo"
+          :title="canUndo ? `Undo: ${undoLabel}` : 'Nothing to undo'"
+          @click="emit('undo')"
+        />
+        <UButton
+          icon="i-heroicons-arrow-uturn-right"
+          variant="ghost"
+          size="xs"
+          :disabled="!canRedo"
+          :title="canRedo ? `Redo: ${redoLabel}` : 'Nothing to redo'"
+          @click="emit('redo')"
+        />
+
+        <USeparator orientation="vertical" class="h-5" />
+
         <!-- Loading state -->
         <div v-if="loading" class="flex items-center gap-2 text-xs text-muted">
           <UIcon name="i-heroicons-arrow-path" class="size-3.5 animate-spin shrink-0" />
@@ -203,7 +233,8 @@ function truncateCommitMsg(msg: string, max = 50): string {
                 <div
                   v-for="change in pendingChanges"
                   :key="change.subjectIri"
-                  class="px-2 py-1.5 rounded-md hover:bg-muted/10 text-sm"
+                  class="px-2 py-1.5 rounded-md hover:bg-muted/10 text-sm cursor-pointer group/row"
+                  @click="emit('show-change-detail', change.subjectIri)"
                 >
                   <div class="flex items-center gap-1.5">
                     <UIcon
@@ -212,7 +243,15 @@ function truncateCommitMsg(msg: string, max = 50): string {
                       class="size-3.5 shrink-0"
                     />
                     <span class="font-medium truncate">{{ change.subjectLabel }}</span>
-                    <span class="text-muted text-xs ml-auto shrink-0">({{ change.propertyChanges.length }})</span>
+                    <span class="text-muted text-xs ml-auto shrink-0 group-hover/row:hidden">({{ change.propertyChanges.length }})</span>
+                    <UButton
+                      icon="i-heroicons-arrow-uturn-left"
+                      variant="ghost"
+                      size="xs"
+                      class="ml-auto shrink-0 hidden group-hover/row:inline-flex"
+                      title="Revert changes to this subject"
+                      @click.stop="emit('revert-subject', change.subjectIri)"
+                    />
                   </div>
                   <div v-for="pc in change.propertyChanges" :key="pc.predicateIri" class="text-xs text-muted ml-5 mt-0.5">
                     {{ pc.predicateLabel }}: {{ pc.type }}

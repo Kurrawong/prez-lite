@@ -23,6 +23,10 @@ const emit = defineEmits<{
 const SKOS_BROADER = 'http://www.w3.org/2004/02/skos/core#broader'
 const SKOS_RELATED = 'http://www.w3.org/2004/02/skos/core#related'
 
+// Reka UI SelectItem rejects empty-string values, so we use a sentinel
+// for "no language tag" and convert at the model-value boundary.
+const LANG_NONE = '_none'
+
 const languageOptions = [
   { label: 'en', value: 'en' },
   { label: 'es', value: 'es' },
@@ -32,7 +36,7 @@ const languageOptions = [
   { label: 'pt', value: 'pt' },
   { label: 'zh', value: 'zh' },
   { label: 'ja', value: 'ja' },
-  { label: '(none)', value: '' },
+  { label: '(none)', value: LANG_NONE },
 ]
 
 const editingPredicate = ref<string | null>(null)
@@ -75,7 +79,7 @@ function handleValueInput(predicate: string, val: EditableValue, event: Event) {
 }
 
 function handleLanguageChange(predicate: string, val: EditableValue, newLang: string) {
-  emit('update:language', predicate, val, newLang)
+  emit('update:language', predicate, val, newLang === LANG_NONE ? '' : newLang)
 }
 
 function handleBroaderUpdate(prop: EditableProperty, newIris: string[]) {
@@ -107,9 +111,23 @@ function confirmDelete() {
 }
 
 // Close editing when clicking outside this component.
-// Internal clicks are stopped by @click.stop on the root <div>, so
-// this listener only fires for clicks truly outside the component.
-function handleClickOutside() {
+// Uses click (not pointerdown) so Reka UI's SelectTrigger can process
+// pointerdown first and open the dropdown before we decide to close.
+// The rootRef containment check is the primary guard — @click.stop on
+// the root div is a secondary propagation barrier.
+const rootRef = useTemplateRef<HTMLElement>('rootRef')
+
+function handleClickOutside(event: MouseEvent) {
+  const target = event.target as HTMLElement | null
+  if (!target) return
+  // Inside this component's own DOM tree — never close
+  if (rootRef.value?.contains(target)) return
+  // Inside Reka UI teleported content (dropdowns, popovers, select panels)
+  if (target.closest('[data-reka-select-content], [data-reka-combobox-content], [data-reka-popover-content], [role="listbox"], [role="option"]')) return
+  // A DismissableLayer overlay is active (e.g. Select dropdown) —
+  // body has pointer-events: none, so click targets may be wrong.
+  // Let the overlay close first; the next click will close editing.
+  if (document.body.style.pointerEvents === 'none') return
   stopEditing()
 }
 
@@ -123,7 +141,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div @click.stop>
+  <div ref="rootRef" @click.stop>
     <!-- Subject IRI -->
     <div class="text-sm text-muted font-mono break-all bg-muted/30 px-3 py-2 rounded mb-3">
       {{ subjectIri }}
@@ -165,7 +183,7 @@ onUnmounted(() => {
               <template v-if="editingPredicate === prop.predicate && isEditable(prop)">
                 <!-- iri-picker (broader / related) -->
                 <template v-if="prop.fieldType === 'iri-picker'">
-                  <div @click.stop>
+                  <div @click.stop @pointerdown.stop>
                     <BroaderPicker
                       :model-value="prop.values.map(v => v.value)"
                       :concepts="concepts"
@@ -183,7 +201,7 @@ onUnmounted(() => {
 
                 <!-- text / textarea / date -->
                 <template v-else>
-                  <div @click.stop>
+                  <div @click.stop @pointerdown.stop>
                     <div v-for="val in prop.values" :key="val.id" class="flex items-start gap-2 mb-2 min-w-0">
                       <UTextarea
                         v-if="prop.fieldType === 'textarea'"
@@ -209,7 +227,7 @@ onUnmounted(() => {
                       <!-- Language tag selector -->
                       <USelect
                         v-if="val.type === 'literal' && prop.fieldType !== 'date'"
-                        :model-value="val.language || ''"
+                        :model-value="val.language || LANG_NONE"
                         :items="languageOptions"
                         value-key="value"
                         class="w-20"
@@ -227,8 +245,6 @@ onUnmounted(() => {
                         @click.stop="emit('remove:value', prop.predicate, val)"
                       />
                     </div>
-
-                    <div v-if="!prop.values.length" class="text-sm text-muted italic py-1">&mdash;</div>
 
                     <!-- Add value button (hidden when at maxCount) -->
                     <UButton
