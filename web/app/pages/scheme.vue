@@ -838,7 +838,7 @@ function copyIriToClipboard(iri: string) {
   <div class="py-8">
     <!-- Edit Toolbar (always visible, fixed at top below header) -->
     <EditToolbar
-      v-if="displayScheme && !historySha"
+      v-if="displayScheme && !historySha && isAuthenticated"
       :edit-view="editView"
       :editor-available="editorAvailable"
       :is-authenticated="isAuthenticated"
@@ -1152,7 +1152,7 @@ function copyIriToClipboard(iri: string) {
             </div>
 
             <!-- Concept detail panel -->
-            <div v-if="selectedConceptUri" class="lg:w-1/2 lg:border-l lg:border-default lg:pl-6 min-h-[200px] max-h-[600px] overflow-y-auto overflow-x-hidden">
+            <div v-if="selectedConceptUri" class="lg:w-1/2 lg:border-l lg:border-default lg:pl-6 min-h-[200px] max-h-[600px] overflow-y-auto">
               <!-- Edit mode: full → ConceptForm -->
               <template v-if="editView === 'full' && editMode?.isEditMode.value">
                 <div class="flex items-center justify-between mb-3 gap-2">

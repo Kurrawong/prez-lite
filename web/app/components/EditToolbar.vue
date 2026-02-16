@@ -77,37 +77,9 @@ function truncateCommitMsg(msg: string, max = 50): string {
         <div class="bg-muted/30 dark:bg-muted/10 border border-default rounded-lg px-4 py-2 flex items-center gap-3 flex-wrap">
 
       <!-- ============================================================ -->
-      <!-- NOT AUTHENTICATED: view toggle + sign-in -->
-      <!-- ============================================================ -->
-      <template v-if="!isAuthenticated">
-        <!-- View mode toggle -->
-        <UButton
-          :icon="viewMode === 'simple' ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'"
-          variant="ghost"
-          size="xs"
-          @click="emit('toggle-view-mode')"
-        >
-          {{ viewMode === 'simple' ? 'Simple' : 'Expert' }}
-        </UButton>
-
-        <div class="flex-1" />
-
-        <!-- Sign in -->
-        <UButton
-          v-if="authEnabled"
-          variant="ghost"
-          size="sm"
-          icon="i-simple-icons-github"
-          @click="emit('sign-in')"
-        >
-          Sign in to edit
-        </UButton>
-      </template>
-
-      <!-- ============================================================ -->
       <!-- AUTHENTICATED, NOT EDITING -->
       <!-- ============================================================ -->
-      <template v-else-if="editView === 'none'">
+      <template v-if="editView === 'none'">
         <UDropdownMenu
           v-if="editorAvailable"
           :items="[[

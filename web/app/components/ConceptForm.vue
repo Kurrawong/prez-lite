@@ -104,7 +104,7 @@ function formatIri(iri: string): string {
 </script>
 
 <template>
-  <div class="max-h-[600px] overflow-y-auto">
+  <div>
     <div class="space-y-5">
       <!-- Subject IRI -->
       <div v-if="editingIri" class="flex items-center gap-2">

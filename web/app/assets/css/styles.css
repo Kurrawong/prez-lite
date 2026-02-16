@@ -82,3 +82,8 @@
 .prose blockquote {
   @apply border-l-4 border-primary pl-4 italic text-muted my-4;
 }
+
+/* Ensure Reka UI portaled content (popovers, selects, dropdowns) renders above the fixed edit toolbar */
+[data-reka-popper-content-wrapper] {
+  z-index: 50 !important;
+}

@@ -14,12 +14,18 @@
     "dev": "nuxt dev --port 3123",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "test": "vitest",
+    "test:unit": "vitest run --config vitest.config.ts",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@nuxt/content": "^3.11.0",
     "@nuxt/ui": "^4.4.0",
-            "@orama/orama": "^3.1.18",
+    "@orama/orama": "^3.1.18",
     "monaco-editor": "^0.52.0",
     "n3": "^2.0.1",
     "nuxt": "^4.3.0",
@@ -31,7 +37,14 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
     "@iconify-json/lucide": "^1.2.87",
-    "mermaid": "^11.12.2"
+    "@nuxt/test-utils": "^4.0.0",
+    "@playwright/test": "^1.58.2",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.6.1",
+    "mermaid": "^11.12.2",
+    "playwright-core": "^1.58.2",
+    "vitest": "^4.0.18"
   },
   "peerDependencies": {
     "@iconify-json/heroicons": "^1.2.0",

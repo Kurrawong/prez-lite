@@ -1,0 +1,15 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cs: <http://example.com/vocab/> .
+
+cs: a skos:ConceptScheme ;
+    skos:prefLabel "Test Vocabulary"@en .
+
+cs:concept-a a skos:Concept ;
+    skos:prefLabel "Concept A"@en ;
+    skos:definition "Definition of concept A"@en ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: .
+
+cs: skos:hasTopConcept cs:concept-a .

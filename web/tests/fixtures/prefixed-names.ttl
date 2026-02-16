@@ -1,0 +1,19 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix cs: <http://example.com/vocab/> .
+@prefix schema: <https://schema.org/> .
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+cs: a skos:ConceptScheme ;
+    skos:prefLabel "Prefixed Names Test"@en ;
+    owl:versionIRI cs: ;
+    schema:dateCreated "2025-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+cs:alpha a skos:Concept ;
+    skos:prefLabel "Alpha"@en ;
+    skos:notation "A"^^<http://www.w3.org/2001/XMLSchema#string> ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: .
+
+cs: skos:hasTopConcept cs:alpha .
