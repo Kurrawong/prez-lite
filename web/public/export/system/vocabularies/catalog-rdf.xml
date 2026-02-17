@@ -16,7 +16,7 @@
     <rdf:type rdf:resource="https://schema.org/DataCatalog"/>
     <sdo:name xml:lang="en">Vocabularies</sdo:name>
     <sdo:description xml:lang="en">Published vocabularies.</sdo:description>
-    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-16</sdo:dateModified>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-17</sdo:dateModified>
     <sdo:hasPart rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
     <sdo:hasPart rdf:resource="http://linked.data.gov.au/def/anzsic-2006"/>
     <sdo:hasPart rdf:resource="http://pid.suncorp.com.au/def/brand"/>

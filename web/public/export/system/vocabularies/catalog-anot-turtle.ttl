@@ -13,7 +13,7 @@
 <https://example.org/catalogue/vocabularies> a sdo:DataCatalog;
     sdo:name "Vocabularies"@en;
     sdo:description "Published vocabularies."@en;
-    sdo:dateModified "2026-02-16"^^xsd:date;
+    sdo:dateModified "2026-02-17"^^xsd:date;
     sdo:hasPart <https://linked.data.gov.au/def/alteration-form>, <http://linked.data.gov.au/def/anzsic-2006>, <http://pid.suncorp.com.au/def/brand>;
     prez:type prez:FocusNode;
     prez:identifier "catalogue:gswa-vocabs";
