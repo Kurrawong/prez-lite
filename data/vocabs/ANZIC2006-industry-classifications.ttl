@@ -2401,6 +2401,7 @@ icat:X9900
     skos:altLabel "Unknown Industry"@en ;
     skos:broader icat:X9800 ;
     skos:definition "An individual business entity whose predominant economic activity is unknown."@en ;
+    skos:historyNote "In testing the ability to change hierarchy, I moved this concept from under Undefined Industry to under Unspecified Industry. Easy peasy." ;
     skos:inScheme cs: ;
     skos:notation "X9900" ;
     skos:prefLabel "Unknown"@en ;
