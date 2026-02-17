@@ -89,6 +89,11 @@
         "@language": "en"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006/X9900"
+      }
+    ],
     "https://prez.dev/identifier": [
       {
         "@value": "ns1:X9800"
@@ -113,6 +118,31 @@
     "https://prez.dev/description": [
       {
         "@value": "An individual business entity whose predominant economic activity is unspecified or is not available for selection with provided list. This typically applies to a known industrial classification that is not relevant to a high degree of specificity in a specific use case.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://linked.data.gov.au/def/anzsic-2006/X9900",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:X9900"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns1:anzsic-2006/items/ns1:X9900"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Unknown",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An individual business entity whose predominant economic activity is unknown.",
         "@language": "en"
       }
     ]
