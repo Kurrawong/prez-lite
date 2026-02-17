@@ -85,6 +85,11 @@
         "@language": "en"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "In testing the ability to change hierarchy, I moved this concept from under Undefined Industry to under Unspecified Industry. Easy peasy."
+      }
+    ],
     "https://prez.dev/identifier": [
       {
         "@value": "ns1:X9900"
