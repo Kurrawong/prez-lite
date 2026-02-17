@@ -4,60 +4,69 @@
 
 ---
 
-## Sprint 13: Edit Mode Polish
+## Sprint 14: Edit Dialog Polish
 
-**Goal:** Clear quick-win editing bugs and fill the core label/IRI editing gap.
+**Goal:** Fix dialog/popup UX issues in edit mode — language diff display, dropdown stability, dialog titles, draggable dialogs.
 
 ---
 
-### 1. Fix empty property display in edit mode (High)
+### 1. Show language changes clearly in edit diff (High)
 
-**What:** When a property has no value, the "---" dash and "Add" button stack vertically. Clean up the layout so edit mode shows only the add button, and view/inline mode handles the dash appropriately.
+**What:** When editing a language tag (e.g. `@en` → `@en-AU`), the diff feedback only shows text changed, not the language tag difference.
 
 **Requirements:**
-- Full edit mode (ConceptForm): show only the "Add" button when value is empty (no "---" dash)
-- Inline edit mode (InlineEditTable): show "---" in view state, swap to "Add" button when editing that row
-- View mode (not editing): continue showing "---" as today
+- The change summary / diff display should clearly show when a language tag has changed
+- Show the old and new language tags explicitly (not just the text value)
+- Applies to both the save changes dialog and the history diff view
 
 **Done criteria:**
-- [ ] Empty properties in full edit mode show add button only, no dash
-- [ ] Inline edit mode shows dash in view, add button when editing
-- [ ] Non-edit view mode unchanged
+- [ ] Language tag changes are visually distinct in diff/change summary
+- [ ] Works in save dialog and history diff
 - [ ] Build passes
 
 ---
 
-### 2. Add loading state to sign-in flow (High)
+### 2. Fix history dropdown height shift on hover (High)
 
-**What:** The sign-in redirect logic already works (saves return path, navigates back after OAuth). But clicking sign in briefly renders the home page content before the redirect completes. Show a loading indicator instead.
+**What:** Mousing over entries in the history edit dropdown causes the row height to jump when the undo icon appears.
 
 **Requirements:**
-- After clicking sign in, show a loading/spinner state instead of rendering page content
-- The `loading` ref in `useGitHubAuth` is already set during `init()` — use it to gate page rendering
-- Maintain loading state until the OAuth redirect completes and `navigateTo(returnPath)` fires
+- The undo icon space should be reserved even when hidden (fixed height rows)
+- No layout shift on hover
 
 **Done criteria:**
-- [ ] No home page flash during sign-in flow
-- [ ] Loading indicator visible during OAuth redirect/callback
-- [ ] Returns to original page after sign-in (already works)
+- [ ] History dropdown rows maintain stable height on hover
+- [ ] Undo icon appears without shifting layout
 - [ ] Build passes
 
 ---
 
-### 3. Enable editing of concept label and IRI (Medium)
+### 3. Add titles to diff and save changes dialogs (Medium)
 
-**What:** Users currently can't edit the prefLabel or IRI of a concept. Add editable support for these core fields.
+**What:** Both the diff popup and save changes popup have blank title areas.
 
 **Requirements:**
-- Make `skos:prefLabel` editable in the concept form (currently shown as heading, not in the editable property list)
-- Allow IRI editing with validation (must be valid IRI, unique within scheme)
-- IRI change should trigger `renameSubject()` to update all references
-- Label change should update the tree view in real-time
+- Add descriptive title to the diff dialog (e.g. "Changes" or "Review Changes")
+- Add descriptive title to the save changes dialog (e.g. "Save Changes")
+- Titles should be concise and informative
 
 **Done criteria:**
-- [ ] prefLabel is editable in concept edit form
-- [ ] IRI is editable with validation (valid IRI format, no duplicates)
-- [ ] IRI rename updates all broader/narrower/inScheme references
-- [ ] Tree view updates when label changes
-- [ ] Undo/redo works for both operations
+- [ ] Diff dialog has a visible, descriptive title
+- [ ] Save changes dialog has a visible, descriptive title
+- [ ] Build passes
+
+---
+
+### 4. Make diff and save dialogs draggable (Medium)
+
+**What:** Both dialog boxes should be repositionable by dragging the title bar.
+
+**Requirements:**
+- User can drag the dialog by its header/title area
+- Dialog stays within viewport bounds
+- Position resets on close/reopen
+
+**Done criteria:**
+- [ ] Both dialogs are draggable by title bar
+- [ ] Dialogs stay within viewport
 - [ ] Build passes

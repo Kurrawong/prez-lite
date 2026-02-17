@@ -61,8 +61,6 @@ function changeTypePrefix(type: 'added' | 'removed' | 'modified'): string {
 
 <template>
   <div class="space-y-4">
-    <h3 class="text-lg font-semibold">Save Changes</h3>
-
     <!-- Tabs -->
     <div class="flex gap-1 border-b border-default">
       <button

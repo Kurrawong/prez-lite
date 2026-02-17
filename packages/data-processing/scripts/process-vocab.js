@@ -1315,6 +1315,79 @@ function profileAllowsFormat(config, mediaType) {
 }
 
 /**
+ * Extract collections from store for list exports
+ * @param {Store} sourceStore - The RDF store containing collections
+ */
+function extractCollectionsForList(sourceStore) {
+  const collections = [];
+  const collectionQuads = sourceStore.getQuads(null, `${RDF}type`, `${SKOS}Collection`, null);
+  const seenIris = new Set();
+
+  for (const q of collectionQuads) {
+    const iri = q.subject.value;
+    if (seenIris.has(iri)) continue;
+    seenIris.add(iri);
+
+    // prefLabel
+    const prefLabelQuads = sourceStore.getQuads(iri, `${SKOS}prefLabel`, null, null);
+    let prefLabel = '';
+    for (const plq of prefLabelQuads) {
+      if (plq.object.termType === 'Literal') {
+        prefLabel = plq.object.value;
+        break;
+      }
+    }
+
+    // definition
+    const defQuads = sourceStore.getQuads(iri, `${SKOS}definition`, null, null);
+    let definition = null;
+    for (const dq of defQuads) {
+      if (dq.object.termType === 'Literal') {
+        definition = dq.object.value;
+        break;
+      }
+    }
+
+    // members
+    const memberQuads = sourceStore.getQuads(iri, `${SKOS}member`, null, null);
+    const members = memberQuads
+      .filter(mq => mq.object.termType === 'NamedNode')
+      .map(mq => mq.object.value);
+
+    const collection = { iri, prefLabel, members };
+    if (definition) collection.definition = definition;
+
+    collections.push(collection);
+  }
+
+  collections.sort((a, b) => a.prefLabel.localeCompare(b.prefLabel));
+  return collections;
+}
+
+/**
+ * Generate collections JSON with context
+ */
+function generateCollectionsJSON(collections) {
+  return {
+    '@context': {
+      iri: '@id',
+      prefLabel: `${SKOS}prefLabel`,
+      definition: `${SKOS}definition`,
+      members: `${SKOS}member`,
+    },
+    '@graph': collections.map(c => {
+      const entry = {
+        iri: c.iri,
+        prefLabel: c.prefLabel,
+        members: c.members,
+      };
+      if (c.definition) entry.definition = c.definition;
+      return entry;
+    }),
+  };
+}
+
+/**
  * Generate list JSON with context
  * Includes additional fields for search: altLabels, definition, notation, scheme
  */
@@ -2168,6 +2241,10 @@ async function processVocab(config) {
   const concepts = extractConceptsForList(sourceStore, schemeIri, schemeLabel);
   console.log(`   Found ${concepts.length} concepts\n`);
 
+  console.log('📋 Extracting collections...');
+  const collections = extractCollectionsForList(sourceStore);
+  console.log(`   Found ${collections.length} collections\n`);
+
   console.log('💾 Generating output files...\n');
   let outputFileCount = 0;
 
@@ -2223,6 +2300,14 @@ async function processVocab(config) {
     const listJson = generateListJSON(concepts);
     await writeFile(join(config.outDir, `${sourceName}-concepts.json`), JSON.stringify(listJson), 'utf-8');
     console.log(`   ✓ ${sourceName}-concepts.json`);
+    outputFileCount++;
+  }
+
+  if (collections.length > 0 && profileAllowsFormat(config, 'application/json')) {
+    console.log('   Writing collections JSON...');
+    const collectionsJson = generateCollectionsJSON(collections);
+    await writeFile(join(config.outDir, `${sourceName}-collections.json`), JSON.stringify(collectionsJson), 'utf-8');
+    console.log(`   ✓ ${sourceName}-collections.json`);
     outputFileCount++;
   }
 
@@ -2298,6 +2383,7 @@ async function processVocab(config) {
   console.log(`  - Annotated triples: ${annotatedStore.size}`);
   console.log(`  - Simplified triples: ${simplifiedStore.size}`);
   console.log(`  - Concepts: ${concepts.length}`);
+  console.log(`  - Collections: ${collections.length}`);
   console.log(`  - Top concepts: ${topConceptCount}`);
   console.log(`  - Output files: ${outputFileCount}`);
 

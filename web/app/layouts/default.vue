@@ -1,8 +1,12 @@
+<script setup lang="ts">
+const fluid = provideFluidLayout()
+</script>
+
 <template>
   <div>
     <SiteHeader />
     <UMain class="min-h-[calc(100vh-12rem)]">
-      <UContainer>
+      <UContainer :class="{ 'max-w-full': fluid }">
         <slot />
       </UContainer>
     </UMain>

@@ -127,6 +127,21 @@ Clones reference repositories into `resources/` for local development.
 ./scripts/clone-resources.sh
 ```
 
+### `skip-export-worktree.sh` / `unskip-export-worktree.sh`
+
+Keep `web/public/export/` in the repo (so CI can update it) while ignoring your local changes. Uses `git update-index --skip-worktree` so local edits and build outputs under that folder are not committed.
+
+**Usage:**
+```bash
+# After clone (or when you want to stop committing export changes)
+./scripts/skip-export-worktree.sh
+
+# When you need to pull CI updates or commit export changes
+./scripts/unskip-export-worktree.sh
+```
+
+After running `unskip-export-worktree.sh`, pull or merge, then run `skip-export-worktree.sh` again if you want to keep local export changes ignored.
+
 ## Design Decisions
 
 ### Technology Stack
@@ -220,13 +235,15 @@ prez-lite/
 │           ├── gswa-vocab-ref/     # Reference outputs for testing
 │           └── gswa-vocab-output/  # Generated outputs
 └── scripts/
-    ├── README.md            # This file
-    ├── process-vocab.js     # Main processing pipeline
-    ├── test-vocab-processing.js  # Test harness
-    ├── build-data.js        # Web app data generator
-    ├── export-vocabs.js     # Multi-format exporter
-    ├── fetch-labels.sh      # Background label fetcher
-    └── clone-resources.sh   # Reference repo cloner
+    ├── README.md                  # This file
+    ├── process-vocab.js           # Main processing pipeline
+    ├── test-vocab-processing.js   # Test harness
+    ├── build-data.js              # Web app data generator
+    ├── export-vocabs.js           # Multi-format exporter
+    ├── fetch-labels.sh            # Background label fetcher
+    ├── clone-resources.sh         # Reference repo cloner
+    ├── skip-export-worktree.sh    # Ignore local export/ changes
+    └── unskip-export-worktree.sh  # Resume tracking export/
 ```
 
 ## Example Workflow

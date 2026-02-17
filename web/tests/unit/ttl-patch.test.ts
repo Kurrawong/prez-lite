@@ -598,4 +598,46 @@ describe('buildChangeSummary', () => {
     const propChange = summary.subjects[0]!.propertyChanges.find(p => p.predicateIri === `${SKOS}altLabel`)
     expect(propChange!.type).toBe('added')
   })
+
+  it('includes language tag in change summary values', () => {
+    const SKOS_PREF = 'http://www.w3.org/2004/02/skos/core#prefLabel'
+    const older = new Store()
+    older.addQuad(namedNode('http://ex/a'), namedNode(SKOS_PREF), literal('Hello', 'en'))
+    const newer = new Store()
+    newer.addQuad(namedNode('http://ex/a'), namedNode(SKOS_PREF), literal('Hello', 'en-au'))
+
+    const summary = buildChangeSummary(older, newer, identityLabel, identityPredLabel)
+    expect(summary.totalModified).toBe(1)
+
+    const propChange = summary.subjects[0]!.propertyChanges[0]!
+    expect(propChange.type).toBe('modified')
+    expect(propChange.oldValues).toEqual(['Hello @en'])
+    expect(propChange.newValues).toEqual(['Hello @en-au'])
+  })
+
+  it('shows language tag on values that have one', () => {
+    const SKOS_PREF = 'http://www.w3.org/2004/02/skos/core#prefLabel'
+    const older = new Store()
+    older.addQuad(namedNode('http://ex/a'), namedNode(SKOS_PREF), literal('Cat', 'en'))
+    const newer = new Store()
+    newer.addQuad(namedNode('http://ex/a'), namedNode(SKOS_PREF), literal('Chat', 'fr'))
+
+    const summary = buildChangeSummary(older, newer, identityLabel, identityPredLabel)
+    const propChange = summary.subjects[0]!.propertyChanges[0]!
+    expect(propChange.oldValues).toEqual(['Cat @en'])
+    expect(propChange.newValues).toEqual(['Chat @fr'])
+  })
+
+  it('omits language tag for plain literals', () => {
+    const SKOS_PREF = 'http://www.w3.org/2004/02/skos/core#prefLabel'
+    const older = new Store()
+    older.addQuad(namedNode('http://ex/a'), namedNode(SKOS_PREF), literal('Old'))
+    const newer = new Store()
+    newer.addQuad(namedNode('http://ex/a'), namedNode(SKOS_PREF), literal('New'))
+
+    const summary = buildChangeSummary(older, newer, identityLabel, identityPredLabel)
+    const propChange = summary.subjects[0]!.propertyChanges[0]!
+    expect(propChange.oldValues).toEqual(['Old'])
+    expect(propChange.newValues).toEqual(['New'])
+  })
 })

@@ -573,6 +573,15 @@ export function getModifiedSubjects(
 // Change summary builder (standalone, no composable state needed)
 // ============================================================================
 
+/** Format a quad object for display, including language tag if present */
+function formatObjectValue(obj: Quad['object']): string {
+  if (obj.termType === 'Literal') {
+    const lang = (obj as any).language
+    if (lang) return `${obj.value} @${lang}`
+  }
+  return obj.value
+}
+
 /**
  * Build a ChangeSummary comparing two N3 stores.
  * Reusable from both useEditMode (live edits) and useVocabHistory (historical diffs).
@@ -643,8 +652,8 @@ export function buildChangeSummary(
         predicateIri: pred,
         predicateLabel: predicateLabelResolver(pred),
         type: propType,
-        oldValues: predRemoved.map(q => q.object.value),
-        newValues: predAdded.map(q => q.object.value),
+        oldValues: predRemoved.map(q => formatObjectValue(q.object)),
+        newValues: predAdded.map(q => formatObjectValue(q.object)),
       })
     }
 

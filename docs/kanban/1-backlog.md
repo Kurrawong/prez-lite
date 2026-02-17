@@ -13,8 +13,11 @@ Already implemented in `useGitHubAuth` — saves return path to sessionStorage, 
 ### ✅ Evaluate concept ordering in vocabularies
 Research whether ordering of concepts within a vocabulary is important, possible, or necessary — and if so, what mechanism to use (e.g. `skos:notation`, `sh:order`, custom predicate). Analysis complete: alphabetical sufficient for most cases; notation-based sorting recommended as opt-in feature for classifications.
 
-### 🎯 Enable editing of concept label and IRI
-Users can't update the label or IRI when editing a concept. Add editable support for these core fields in the edit form, with appropriate validation.
+### ✅ Add new concept creation in edit mode
+Users cannot add a new concept to a vocabulary. Provide a way to create a new concept (with label and parent) from the edit UI, inserting the necessary triples (rdf:type, skos:prefLabel, skos:inScheme, skos:broader/narrower).
+
+### Enable editing of concept label and IRI
+Users can't update the label when editing a concept. Add editable support for prefLabel in the edit form. IRI editing should only be allowed for newly created concepts (not existing ones), with validation for format and uniqueness.
 
 ### Add concept move/reparent capability
 Provide an intuitive way to move a concept from one parent node to another in the hierarchy — e.g. a move button or drag-and-drop, updating `skos:broader`/`skos:narrower` relationships.
@@ -63,3 +66,36 @@ Clicking sign in briefly renders the home page before redirecting back to the or
 
 ### Configure default IRI base pattern for vocabs and concepts
 Define a configurable IRI template (e.g. `https://linked.data.gov.au/pid/gswa/{vocab-id}/{concept-id}`) so new vocabs and concepts auto-generate IRIs following an org's PID pattern. Determine where to configure (manifest.ttl, app.config, profile?) and how it drives IRI generation in the edit UI.
+
+### ✅ Show language changes clearly in edit diff
+When editing a language tag (e.g. `@en` → `@en-AU`), the diff feedback only shows the text changed, not that the language tag itself changed.
+
+### ✅ Fix history dropdown height shift on hover
+Mousing over a history edit dropdown entry causes the row height to change when the undo icon appears — layout should remain stable.
+
+### ✅ Add titles to diff and save changes dialogs
+Both the diff popup and save changes popup have blank title areas — add descriptive titles.
+
+### ✅ Make diff and save dialogs draggable
+Both dialog boxes should be repositionable by dragging.
+
+### Preserve concept context when switching edit modes
+Switching between inline and full edit mode loses the currently selected concept context.
+
+### Make concept detail panel resizable
+The concept panel should be ~20% wider by default and user-resizable (wider or narrower), with the preference retained across sessions.
+
+### Show error when invalid narrower concept selected
+Picking an invalid item as a narrower concept sometimes silently does nothing — provide clear error feedback when the selection is invalid.
+
+### Add tree selector with search for relationship picking
+Replace the current dropdown for broader/narrower/related concept selection with a reusable tree+search picker, similar to the existing concept tree. Design for reuse across relationship types.
+
+### Show mandatory field indicators in edit mode
+Display a red asterisk (or similar) next to properties that require one or more values (`sh:minCount >= 1`) to clearly indicate mandatory fields.
+
+### Design SHACL validation feedback in edit mode
+Research and design how SHACL validator results should surface during editing — inline validation errors, field-level badges, save-time checks, etc.
+
+### Design and implement SKOS collections support
+Create, list, share, and manage SKOS collections within vocabularies. Covers: listing UX, data model, build pipeline for collection exports, search index integration, sharing assets, web component support, and collection management UI.

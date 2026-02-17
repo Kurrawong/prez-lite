@@ -1,4 +1,4 @@
-import { fetchSchemes, fetchConcepts, fetchLabels, fetchVocabMetadata, getLabel, buildConceptMap, resolveLabel, type Scheme, type Concept, type LabelsIndex } from '~/composables/useVocabData'
+import { fetchSchemes, fetchConcepts, fetchLabels, fetchVocabMetadata, fetchListCollections, getLabel, buildConceptMap, resolveLabel, type Scheme, type Concept, type LabelsIndex, type CollectionListItem } from '~/composables/useVocabData'
 import { useAnnotatedProperties, type RenderedProperty, type PropertyValue } from '~/utils/annotated-properties'
 
 export interface TreeItem {
@@ -45,6 +45,13 @@ export function useScheme(uri: Ref<string>) {
   )
 
   const { data: labelsIndex } = useAsyncData('labels', fetchLabels, { server: false })
+
+  // Fetch collections for this vocab (only when slug is available)
+  const { data: collections } = useAsyncData(
+    () => `collections-${slug.value}`,
+    () => slug.value ? fetchListCollections(slug.value) : Promise.resolve([]),
+    { server: false, watch: [slug] }
+  )
 
   // Get annotated properties from the anot-ld-json file
   const { properties: annotatedProperties, status: annotatedStatus } = useAnnotatedProperties(slug, 'conceptScheme')
@@ -147,6 +154,7 @@ export function useScheme(uri: Ref<string>) {
     scheme,
     schemes,
     concepts,
+    collections,
     status,
     labelsIndex,
     conceptMap,

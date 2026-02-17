@@ -335,6 +335,10 @@ async function extractSchemeMetadata(filePath, backgroundStore, shapesStore) {
   const conceptQuads = store.getQuads(null, `${RDF}type`, `${SKOS}Concept`, null);
   const conceptCount = new Set(conceptQuads.map(q => q.subject.value)).size;
 
+  // Collections
+  const collectionQuads = store.getQuads(null, `${RDF}type`, `${SKOS}Collection`, null);
+  const collectionCount = new Set(collectionQuads.map(q => q.subject.value)).size;
+
   const topConcepts = getIRIs(store, schemeIri, `${SKOS}hasTopConcept`);
 
   // Available formats (fixed for now)
@@ -349,6 +353,7 @@ async function extractSchemeMetadata(filePath, backgroundStore, shapesStore) {
     prefLabel,
     definition,
     conceptCount,
+    collectionCount: collectionCount > 0 ? collectionCount : undefined,
     topConcepts,
     modified,
     created,
@@ -405,7 +410,8 @@ async function main() {
         const validationStatus = metadata.validation
           ? (metadata.validation.conforms ? '✓ valid' : `✗ ${metadata.validation.errors} error(s), ${metadata.validation.warnings} warning(s)`)
           : '';
-        console.log(`  ✓ ${metadata.prefLabel} (${metadata.conceptCount} concepts)${validationStatus ? ` [${validationStatus}]` : ''}`);
+        const collectionInfo = metadata.collectionCount ? `, ${metadata.collectionCount} collections` : '';
+        console.log(`  ✓ ${metadata.prefLabel} (${metadata.conceptCount} concepts${collectionInfo})${validationStatus ? ` [${validationStatus}]` : ''}`);
       }
     } catch (err) {
       console.warn(`  ✗ ${file}: ${err.message}`);

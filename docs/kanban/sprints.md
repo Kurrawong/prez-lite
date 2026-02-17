@@ -4,22 +4,37 @@
 
 ---
 
-## 🔄 Current Sprint: Sprint 13 - Edit Mode Polish
+## ✅ Completed Sprint: Sprint 14 - Edit Dialog Polish
 
-**Start:** 2026-02-16
+**Duration:** 2026-02-17
+**Goal:** Fix dialog/popup UX issues in edit mode
+**Status:** ✅ **COMPLETE** (4/4 completed)
+
+**Completed:**
+- ✅ Show language changes clearly in edit diff — `formatObjectValue()` appends `@lang` to literals in diffs
+- ✅ Fix history dropdown height shift on hover — opacity toggling instead of display toggling
+- ✅ Add titles to diff and save changes dialogs — proper `#header` slots on three UModals
+- ✅ Make diff and save dialogs draggable — `useDraggableModal` composable with CSS `translate`
+
+**Velocity:** 4 tasks completed
+
+---
+
+## ✅ Completed Sprint: Sprint 13 - Edit Mode Polish
+
+**Duration:** 2026-02-16 to 2026-02-17
 **Goal:** Clear quick-win editing bugs and fill the core label/IRI editing gap
-
-**Planned Tasks:**
-- ✅ Fix empty property display in edit mode (High)
-- ✅ Add loading state to sign-in flow (High) — redirect already works, just needs loading UX
-- 🎯 Enable editing of concept label and IRI (Medium)
+**Status:** ✅ **COMPLETE** (3/3 completed, 1 deferred)
 
 **Completed:**
 - ✅ Fix empty property display in edit mode — removed "---" dash from editable empty properties in ConceptForm and InlineEditTable
 - ✅ Add loading state to sign-in flow — inline head script hides pre-rendered HTML during OAuth callback; Vue shows spinner until redirect completes
+- ✅ Add new concept creation in edit mode — "Add" button creates concepts with proper triples; tree auto-expands to reveal new node and scrolls into view; page refresh also expands to URL concept
 
-**Progress:**
-- Track in dashboard.md
+**Deferred:**
+- Enable editing of concept label and IRI — moved back to backlog (IRI editing scoped to new items only)
+
+**Velocity:** 3 tasks completed
 
 ---
 

@@ -13,6 +13,7 @@ const props = defineProps<{
   level?: number
   selectedId?: string
   editMode?: boolean
+  expandToId?: string
 }>()
 
 const emit = defineEmits<{
@@ -34,6 +35,33 @@ watch(() => props.expandAll, (newVal) => {
   }
 }, { immediate: true })
 
+// Auto-expand to reveal a target node
+function hasDescendant(children: TreeItem[] | undefined, id: string): boolean {
+  if (!children) return false
+  for (const child of children) {
+    if (child.id === id) return true
+    if (hasDescendant(child.children, id)) return true
+  }
+  return false
+}
+
+watch(() => props.expandToId, (id) => {
+  if (id && hasChildren.value && hasDescendant(props.item.children, id)) {
+    isExpanded.value = true
+  }
+}, { immediate: true })
+
+// Scroll selected node into view when it matches expandToId
+const nodeRef = useTemplateRef<HTMLElement>('nodeRef')
+
+watch(() => props.expandToId, (id) => {
+  if (id && id === props.item.id) {
+    nextTick(() => {
+      nodeRef.value?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+    })
+  }
+}, { immediate: true })
+
 function toggle() {
   isExpanded.value = !isExpanded.value
 }
@@ -50,6 +78,7 @@ function handleEdit() {
 <template>
   <div>
     <div
+      ref="nodeRef"
       class="flex items-center gap-2 py-1.5 px-2 rounded-md transition-colors group cursor-pointer"
       :class="[
         isSelected ? 'bg-primary/10 ring-2 ring-primary ring-inset' : 'hover:bg-muted/50',
@@ -116,6 +145,7 @@ function handleEdit() {
         :level="level + 1"
         :selected-id="selectedId"
         :edit-mode="editMode"
+        :expand-to-id="expandToId"
         @select="emit('select', $event)"
         @edit="emit('edit', $event)"
       />

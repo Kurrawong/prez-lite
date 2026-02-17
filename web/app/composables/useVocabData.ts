@@ -28,6 +28,7 @@ export interface VocabMetadata {
   prefLabel: string
   definition?: string
   conceptCount: number
+  collectionCount?: number
   topConcepts?: string[]
   modified?: string
   created?: string
@@ -338,11 +339,31 @@ export async function fetchLabels(): Promise<LabelsIndex> {
   return cachedLabelsPromise
 }
 
-// Fetch collections
+// Fetch collections (legacy system-level — unused)
 export async function fetchCollections(): Promise<Collection[]> {
   try {
     const data = await $fetch<{ collections: Collection[] }>('/export/system/collections.json')
     return data.collections
+  } catch {
+    return []
+  }
+}
+
+// Per-vocab collection list item (from {slug}-collections.json)
+export interface CollectionListItem {
+  iri: string
+  prefLabel: string
+  definition?: string
+  members: string[]
+}
+
+// Fetch collections for a specific vocab by slug
+export async function fetchListCollections(slug: string): Promise<CollectionListItem[]> {
+  try {
+    const data = await $fetch<{ '@graph': CollectionListItem[] }>(
+      `/export/vocabs/${slug}/${slug}-collections.json`
+    )
+    return data?.['@graph'] || []
   } catch {
     return []
   }

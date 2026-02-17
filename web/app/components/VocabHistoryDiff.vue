@@ -51,11 +51,6 @@ function truncateValue(val: string, max = 60): string {
 
 <template>
   <div class="space-y-4">
-    <div class="flex items-center justify-between">
-      <h3 class="text-lg font-semibold">Commit Changes</h3>
-      <UButton icon="i-heroicons-x-mark" variant="ghost" size="xs" @click="emit('close')" />
-    </div>
-
     <p v-if="commitMessage" class="text-sm text-muted truncate">{{ commitMessage }}</p>
 
     <div v-if="loading" class="py-8 text-center">

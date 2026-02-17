@@ -1,6 +1,6 @@
 # Kanban Dashboard
 
-**Last Updated:** 2026-02-16
+**Last Updated:** 2026-02-17
 
 ---
 
@@ -13,12 +13,11 @@
 | Sprint 10: Infrastructure & Data Hygiene | 6/6 | ✅ Complete |
 | Sprint 11: Blank Node Display | 1/1 | ✅ Complete |
 | Sprint 12: Build Status & Vocab History | 2/2 | ✅ Complete |
-| SHACL Validation (retrospective) | 1/1 | ✅ Complete |
-| Incremental Deploys (retrospective) | 1/1 | ✅ Complete |
-| SHACL Cardinality Enforcement | 1/1 | ✅ Complete |
-| Export constraints.jsonld | 1/1 | ✅ Complete |
+| Sprint 13: Edit Mode Polish | 3/3 | ✅ Complete (1 deferred) |
+| Standalone items (retrospective) | 4/4 | ✅ Complete |
+| Sprint 14: Edit Dialog Polish | 4/4 | ✅ Complete |
 
-**Overall:** 49 tasks completed across 12 sprints + standalone items.
+**Overall:** 56 tasks completed across 14 sprints + standalone items.
 
 ---
 
@@ -26,22 +25,15 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| 7 open items | Sprint 13 (4 tasks) | Empty | Empty | constraints.jsonld + Sprint 12 items |
+| 18 open items | Empty | Empty | Empty | Sprint 14 (4 tasks) |
 
 ---
 
 ## Current Status
 
-**Sprint 13: Edit Mode Polish** (started 2026-02-16)
+**Sprint 14: Edit Dialog Polish** — ✅ Complete (4/4)
 
-**Done:**
-1. ✅ Fix empty property display in edit mode (High)
-2. ✅ Add loading state to sign-in redirect (High)
-
-**Todo:**
-1. Enable editing of concept label and IRI (Medium)
-
-**Remaining backlog:** concept reparent, edit UX redesign, simplified/expert view, TDD, edit-to-publish lifecycle, collab presence, IRI base config
+**Remaining backlog:** label/IRI editing, concept reparent, edit UX redesign, simplified/expert view, TDD, edit-to-publish lifecycle, collab presence, IRI base config, panel resizing, tree selector, mandatory indicators, SHACL feedback, collections, concept context switch, invalid narrower error
 
 ---
 

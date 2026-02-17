@@ -376,6 +376,8 @@ If pages show no data:
 2. Run data processing scripts
 3. Or use sample data fallback
 
+To keep local changes under `web/public/export/` from being committed (folder is updated by the Process Data GitHub Action), run `./scripts/skip-export-worktree.sh` once after clone. See `scripts/README.md`.
+
 ### Layer Not Resolving
 
 Check `GIGET_AUTH` token if using private repos:

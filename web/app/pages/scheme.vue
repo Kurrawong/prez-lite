@@ -8,12 +8,17 @@ import type { HistoryCommit, HistoryDiff } from '~/composables/useVocabHistory'
 const route = useRoute()
 const router = useRouter()
 const uri = computed(() => route.query.uri as string)
+
+// Fluid layout: full-width when immersive or spreadsheet mode
+const fluid = useFluidLayout()
+
 const selectedConceptUri = computed(() => route.query.concept as string | undefined)
 const historySha = computed(() => route.query.sha as string | undefined)
 
 const {
   scheme,
   concepts,
+  collections,
   status,
   treeItems,
   metadataRows,
@@ -57,8 +62,15 @@ const editModeDefinition = computed(() => {
 })
 
 const isLoading = computed(() => status.value === 'idle' || status.value === 'pending')
-// Only show skeleton on initial load (no previous data)
-const showTreeSkeleton = computed(() => isLoading.value && !lastValidTreeItems.value.length)
+// Edit mode requested but store not ready yet (loading TTL from GitHub)
+const editModeInitializing = computed(() =>
+  editView.value !== 'none' && editMode != null && !editMode.isEditMode.value,
+)
+// Only show tree skeleton when NOT in spreadsheet mode (spreadsheet has its own skeleton)
+const showTreeSkeleton = computed(() => {
+  if (conceptViewModeParam.value === 'spreadsheet') return false
+  return (isLoading.value && !lastValidTreeItems.value.length) || editModeInitializing.value
+})
 // Show loading indicator when refreshing existing data
 const isTreeLoading = computed(() => isLoading.value && lastValidTreeItems.value.length > 0)
 
@@ -377,6 +389,11 @@ const saveModalSubjectIri = ref<string | null>(null)
 const showChangeDetail = ref(false)
 const changeDetailIri = ref<string | null>(null)
 
+// Draggable modals
+const { handleRef: saveDragHandle } = useDraggableModal(showSaveModal)
+const { handleRef: diffDragHandle } = useDraggableModal(showDiffModal)
+const { handleRef: changeDetailDragHandle } = useDraggableModal(showChangeDetail)
+
 const changeDetailData = computed(() => {
   if (!editMode || !changeDetailIri.value) return null
   return editMode.getChangesForSubject(changeDetailIri.value)
@@ -402,11 +419,7 @@ const ttlViewerTitle = ref('')
 // Auto-edit predicate for inline mode scroll-to-property
 const autoEditPredicate = ref<string | null>(null)
 
-// Add Concept dialog
-const showAddConcept = ref(false)
-const newConceptLocalName = ref('')
-const newConceptLabel = ref('')
-const newConceptBroader = ref('')
+// Add Concept — inline creation (no modal)
 
 // --- View mode (simple/expert) ---
 
@@ -423,6 +436,12 @@ const SIMPLE_HIDDEN_PREDICATES = new Set([
 const viewMode = ref<'simple' | 'expert'>('simple')
 
 function handleKeyboardShortcut(e: KeyboardEvent) {
+  // Escape exits immersive mode
+  if (e.key === 'Escape' && immersiveMode.value) {
+    e.preventDefault()
+    immersiveMode.value = false
+    return
+  }
   if (!editMode?.isEditMode.value) return
   const mod = e.metaKey || e.ctrlKey
   if (!mod) return
@@ -475,9 +494,7 @@ async function enterEdit(mode: 'full' | 'inline' = 'full') {
       return
     }
   }
-  const query: Record<string, string> = { uri: uri.value, edit: mode }
-  if (selectedConceptUri.value) query.concept = selectedConceptUri.value
-  router.push({ path: '/scheme', query })
+  router.push({ path: '/scheme', query: buildQuery({ edit: mode }) })
 }
 
 function exitEdit() {
@@ -505,6 +522,16 @@ function buildQuery(extra: Record<string, string | undefined> = {}): Record<stri
   const q: Record<string, string> = { uri: uri.value }
   if (historySha.value) q.sha = historySha.value
   if (editQueryParam.value) q.edit = editQueryParam.value
+  // Preserve view mode param if set
+  const currentView = route.query.view as string | undefined
+  if (currentView && VALID_VIEW_MODES.includes(currentView as ConceptViewMode) && currentView !== 'tree') {
+    q.view = currentView
+  }
+  // Preserve sort params
+  const sf = route.query.sortField as string | undefined
+  if (sf) q.sortField = sf
+  const so = route.query.sortOrder as string | undefined
+  if (so) q.sortOrder = so
   for (const [k, v] of Object.entries(extra)) {
     if (v) q[k] = v
     else delete q[k]
@@ -719,19 +746,27 @@ function scrollToMetadataProperty(predicateIri: string) {
 // --- Add Concept ---
 
 function handleAddConcept() {
-  if (!editMode || !newConceptLocalName.value.trim() || !newConceptLabel.value.trim()) return
-  const conceptIri = editMode.addConcept(
-    newConceptLocalName.value.trim(),
-    newConceptLabel.value.trim(),
-    newConceptBroader.value || undefined,
-  )
+  if (!editMode) return
+
+  // Generate a unique local name
+  const existingIris = new Set(editMode.concepts.value.map(c => c.iri))
+  const schemeBase = uri.value.endsWith('/') || uri.value.endsWith('#')
+    ? uri.value
+    : `${uri.value}/`
+  let counter = 1
+  while (existingIris.has(`${schemeBase}new-concept-${counter}`)) {
+    counter++
+  }
+
+  const localName = `new-concept-${counter}`
+  const broaderIri = selectedConceptUri.value || undefined
+  const conceptIri = editMode.addConcept(localName, 'New Concept', broaderIri)
   if (conceptIri) {
     selectConcept(conceptIri)
+    expandToId.value = conceptIri
+    // Clear after the tree has had time to react
+    setTimeout(() => { expandToId.value = undefined }, 500)
   }
-  showAddConcept.value = false
-  newConceptLocalName.value = ''
-  newConceptLabel.value = ''
-  newConceptBroader.value = ''
 }
 
 // --- Concept move (reparent) ---
@@ -791,22 +826,69 @@ watch(() => selectedConceptUri.value, () => {
   editingLabel.value = false
 })
 
+// --- Immersive explorer mode ---
+const immersiveMode = ref(false)
+
+// --- Concept view mode (tree / spreadsheet) — synced with URL ---
+type ConceptViewMode = 'tree' | 'spreadsheet'
+const VALID_VIEW_MODES: ConceptViewMode[] = ['tree', 'spreadsheet']
+
+const conceptViewModeParam = computed(() => {
+  const v = route.query.view as string | undefined
+  return v && VALID_VIEW_MODES.includes(v as ConceptViewMode) ? v as ConceptViewMode : 'tree'
+})
+
+const conceptViewMode = computed({
+  get: () => conceptViewModeParam.value,
+  set: (val: ConceptViewMode) => {
+    // Auto-enter inline edit mode when switching to spreadsheet
+    if (val === 'spreadsheet' && editView.value === 'none' && editorAvailable.value) {
+      enterEdit('inline')
+    }
+    router.push({ path: '/scheme', query: buildQuery({ view: val === 'tree' ? undefined : val }) })
+  },
+})
+
+// Toggle fluid layout when entering/exiting immersive mode
+watch(immersiveMode, (imm) => {
+  fluid.value = imm
+}, { immediate: true })
+
+// --- Spreadsheet sort (synced with URL) ---
+const spreadsheetSortField = computed(() => (route.query.sortField as string) || 'tree')
+const spreadsheetSortOrder = computed(() => (route.query.sortOrder as 'asc' | 'desc') || 'asc')
+
+function updateSpreadsheetSort(field: string, order: 'asc' | 'desc') {
+  router.replace({
+    path: '/scheme',
+    query: buildQuery({
+      sortField: field === 'tree' ? undefined : field,
+      sortOrder: order === 'asc' ? undefined : order,
+    }),
+  })
+}
+
 // --- Tree ---
 
 const searchQuery = ref('')
 const expandAll = ref(false)
+const expandToId = ref<string | undefined>()
 
 // Collapsible panels
 const conceptsPanelOpen = ref(true)
 const metadataPanelOpen = ref(true)
 
 // Use edit mode tree items when in edit mode, history store when browsing, otherwise static
+// When edit mode is requested but not yet ready, return empty to avoid flashing stale exports
 const activeTreeItems = computed(() => {
   if (historySha.value && historyTreeItems.value.length) {
     return historyTreeItems.value
   }
   if (editView.value !== 'none' && editMode?.isEditMode.value) {
     return editMode!.treeItems.value
+  }
+  if (editModeInitializing.value) {
+    return []
   }
   return displayTreeItems.value
 })
@@ -855,6 +937,21 @@ const hasExpandableNodes = computed(() => {
 // Whether tree is in edit mode (show pencil icons on nodes)
 const treeEditMode = computed(() => editView.value !== 'none' && !!editMode?.isEditMode.value)
 
+// Expand to concept from URL on page load (once tree data is ready)
+const initialExpandDone = ref(false)
+watch(activeTreeItems, (items) => {
+  if (!initialExpandDone.value && items.length > 0 && selectedConceptUri.value) {
+    expandToId.value = selectedConceptUri.value
+    initialExpandDone.value = true
+    setTimeout(() => { expandToId.value = undefined }, 500)
+  }
+}, { immediate: true })
+
+// Collections the selected concept belongs to (reverse lookup)
+const conceptCollections = computed(() => {
+  if (!selectedConceptUri.value || !collections.value?.length) return []
+  return collections.value.filter(c => c.members.includes(selectedConceptUri.value!))
+})
 
 // Description expand/collapse
 const descriptionExpanded = ref(false)
@@ -885,7 +982,7 @@ function copyIriToClipboard(iri: string) {
 </script>
 
 <template>
-  <div class="py-8">
+  <div :class="immersiveMode ? 'py-2' : 'py-8'">
     <!-- Edit Toolbar (always visible, fixed at top below header) -->
     <EditToolbar
       v-if="displayScheme && !historySha && isAuthenticated"
@@ -921,7 +1018,7 @@ function copyIriToClipboard(iri: string) {
       @show-change-detail="handleShowChangeDetail"
     />
 
-    <UBreadcrumb ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
+    <UBreadcrumb v-if="!immersiveMode" ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
 
     <div v-if="!uri" class="text-center py-12">
       <UAlert color="warning" title="No scheme selected" description="Please select a vocabulary from the vocabularies page" />
@@ -929,7 +1026,7 @@ function copyIriToClipboard(iri: string) {
 
     <template v-else-if="displayScheme">
       <!-- Header -->
-      <div class="mb-8">
+      <div v-if="!immersiveMode" class="mb-8">
         <div class="flex items-start justify-between gap-4 mb-2">
           <h1 class="text-3xl font-bold">
             {{ historySchemeTitle ?? editModeTitle ?? getLabel(displayScheme.prefLabel) }}
@@ -1138,7 +1235,10 @@ function copyIriToClipboard(iri: string) {
       <!-- Bottom banner replaced by EditToolbar above -->
 
       <!-- Concepts Tree with inline panel -->
-      <UCard class="mb-8">
+      <UCard
+        class="mb-8"
+        :ui="immersiveMode ? { root: 'border-0 ring-0 shadow-none rounded-none' } : {}"
+      >
         <template #header>
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <h2
@@ -1146,6 +1246,7 @@ function copyIriToClipboard(iri: string) {
               @click="conceptsPanelOpen = !conceptsPanelOpen"
             >
               <UIcon
+                v-if="!immersiveMode"
                 :name="conceptsPanelOpen ? 'i-heroicons-chevron-down' : 'i-heroicons-chevron-right'"
                 class="size-4"
               />
@@ -1156,33 +1257,14 @@ function copyIriToClipboard(iri: string) {
             </h2>
 
             <div v-if="conceptsPanelOpen" class="flex items-center gap-2">
-              <UInput
-                v-model="searchQuery"
-                icon="i-heroicons-magnifying-glass"
-                placeholder="Search concepts..."
-                size="sm"
-                class="w-48"
-              />
               <UButton
-                v-if="hasExpandableNodes"
-                :icon="expandAll ? 'i-heroicons-minus' : 'i-heroicons-plus'"
+                :icon="immersiveMode ? 'i-heroicons-arrows-pointing-in' : 'i-heroicons-arrows-pointing-out'"
                 color="neutral"
                 variant="ghost"
                 size="sm"
-                @click="expandAll = !expandAll"
-              >
-                {{ expandAll ? 'Collapse' : 'Expand' }}
-              </UButton>
-              <!-- Add concept (edit mode only) -->
-              <UButton
-                v-if="treeEditMode"
-                icon="i-heroicons-plus"
-                size="sm"
-                variant="soft"
-                @click="showAddConcept = true"
-              >
-                Add
-              </UButton>
+                :title="immersiveMode ? 'Exit immersive (Esc)' : 'Immersive explorer'"
+                @click="immersiveMode = !immersiveMode"
+              />
             </div>
           </div>
         </template>
@@ -1191,26 +1273,155 @@ function copyIriToClipboard(iri: string) {
           {{ activeConceptCount }} concepts — click header to expand
         </p>
         <div v-show="conceptsPanelOpen">
+        <!-- Search + toolbar row -->
+        <div class="flex items-center gap-2 mb-3">
+          <UInput
+            v-model="searchQuery"
+            icon="i-heroicons-magnifying-glass"
+            placeholder="Search concepts..."
+            size="sm"
+            class="flex-1"
+          />
+
+          <!-- Expand/Collapse (stable position, always occupies space) -->
+          <UButton
+            v-if="conceptViewMode === 'tree'"
+            :icon="expandAll ? 'i-heroicons-minus' : 'i-heroicons-plus'"
+            color="neutral"
+            variant="ghost"
+            size="sm"
+            :disabled="!hasExpandableNodes"
+            @click="expandAll = !expandAll"
+          >
+            {{ expandAll ? 'Collapse' : 'Expand' }}
+          </UButton>
+
+          <!-- View mode toggle (tree / spreadsheet, only when authenticated) -->
+          <div v-if="isAuthenticated" class="inline-flex rounded-md shadow-sm">
+            <UButton
+              icon="i-lucide-list-tree"
+              :color="conceptViewMode === 'tree' ? 'primary' : 'neutral'"
+              :variant="conceptViewMode === 'tree' ? 'solid' : 'ghost'"
+              size="sm"
+              class="rounded-r-none"
+              title="Tree view"
+              @click="conceptViewMode = 'tree'"
+            />
+            <UButton
+              icon="i-heroicons-table-cells"
+              :color="conceptViewMode === 'spreadsheet' ? 'primary' : 'neutral'"
+              :variant="conceptViewMode === 'spreadsheet' ? 'solid' : 'ghost'"
+              size="sm"
+              class="rounded-l-none -ml-px"
+              title="Spreadsheet view"
+              @click="conceptViewMode = 'spreadsheet'"
+            />
+          </div>
+
+          <!-- Add concept (edit mode) -->
+          <UButton
+            v-if="treeEditMode"
+            icon="i-heroicons-plus"
+            size="sm"
+            variant="soft"
+            @click="handleAddConcept"
+          >
+            Add
+          </UButton>
+        </div>
+
         <div v-if="showTreeSkeleton" class="space-y-2">
           <USkeleton class="h-8 w-full" v-for="i in 5" :key="i" />
         </div>
 
+        <!-- Spreadsheet view: loading skeleton while data or edit mode initialises -->
+        <div v-else-if="conceptViewMode === 'spreadsheet' && isAuthenticated && (isLoading || !editMode?.isEditMode.value)" class="space-y-2">
+          <div class="flex items-center gap-2 mb-2">
+            <USkeleton class="h-5 w-24" />
+            <USkeleton class="h-7 w-7 ml-auto rounded" />
+          </div>
+          <div class="border border-default rounded-lg overflow-hidden">
+            <div class="grid grid-cols-5 gap-px bg-muted/20">
+              <USkeleton v-for="i in 5" :key="'h'+i" class="h-9" />
+            </div>
+            <div v-for="r in 8" :key="r" class="grid grid-cols-5 gap-px bg-muted/10">
+              <USkeleton v-for="c in 5" :key="c" class="h-8" />
+            </div>
+          </div>
+        </div>
+
         <template v-else-if="filteredTreeItems.length || activeTreeItems.length">
-          <div class="flex gap-6" :class="selectedConceptUri ? 'flex-col lg:flex-row' : ''">
+          <!-- Spreadsheet view (full width, no detail panel) -->
+          <template v-if="conceptViewMode === 'spreadsheet' && isAuthenticated && editMode?.isEditMode.value">
+            <ConceptSpreadsheet
+              :tree-items="filteredTreeItems"
+              :edit-mode="editMode"
+              :selected-concept-iri="selectedConceptUri"
+              :search-query="searchQuery"
+              :view-mode="viewMode"
+              :sort-field="spreadsheetSortField"
+              :sort-order="spreadsheetSortOrder"
+              :scheme-iri="uri"
+              :immersive="immersiveMode"
+              @select="selectConcept"
+              @update:sort="updateSpreadsheetSort"
+            />
+          </template>
+
+          <!-- Tree view with detail panel -->
+          <template v-else>
+          <div
+            class="flex gap-6"
+            :class="[
+              selectedConceptUri ? 'flex-col lg:flex-row' : '',
+              immersiveMode ? 'h-[calc(100dvh-10rem)]' : '',
+            ]"
+          >
             <!-- Tree panel -->
-            <div :class="selectedConceptUri ? 'lg:w-1/2' : 'w-full'" class="max-h-[600px] overflow-auto">
-              <ConceptTree
-                :items="filteredTreeItems"
-                :expand-all="expandAll || !!searchQuery"
-                :selected-id="selectedConceptUri"
-                :edit-mode="treeEditMode"
-                @select="selectConcept"
-                @edit="selectConcept"
-              />
+            <div
+              :class="[
+                selectedConceptUri
+                  ? (immersiveMode ? 'lg:w-1/3' : 'lg:w-1/2')
+                  : 'w-full',
+                immersiveMode ? 'h-full' : 'max-h-[600px]',
+              ]"
+              class="flex flex-col"
+            >
+              <div class="overflow-auto flex-1 min-h-0">
+                <ConceptTree
+                  :items="filteredTreeItems"
+                  :expand-all="expandAll || !!searchQuery"
+                  :selected-id="selectedConceptUri"
+                  :edit-mode="treeEditMode"
+                  :expand-to-id="expandToId"
+                  @select="selectConcept"
+                  @edit="selectConcept"
+                />
+              </div>
             </div>
 
             <!-- Concept detail panel -->
-            <div v-if="selectedConceptUri" class="lg:w-1/2 lg:border-l lg:border-default lg:pl-6 min-h-[200px] max-h-[600px] overflow-y-auto">
+            <div
+              v-if="selectedConceptUri"
+              :class="[
+                immersiveMode ? 'lg:w-2/3 h-full' : 'lg:w-1/2 max-h-[600px]',
+              ]"
+              class="lg:border-l lg:border-default lg:pl-6 min-h-[200px] overflow-y-auto"
+            >
+              <!-- Collection membership badges -->
+              <div v-if="conceptCollections.length" class="flex items-center gap-1.5 flex-wrap mb-2">
+                <UIcon name="i-heroicons-rectangle-stack" class="size-3.5 text-muted shrink-0" />
+                <UBadge
+                  v-for="col in conceptCollections"
+                  :key="col.iri"
+                  color="neutral"
+                  variant="subtle"
+                  size="xs"
+                >
+                  {{ col.prefLabel }}
+                </UBadge>
+              </div>
+
               <!-- Edit mode: full → ConceptForm -->
               <template v-if="editView === 'full' && editMode?.isEditMode.value">
                 <div class="flex items-center justify-between mb-3 gap-2">
@@ -1259,7 +1470,7 @@ function copyIriToClipboard(iri: string) {
                   @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
                   @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
                   @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
-                  @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectedConceptUri = newIri }"
+                  @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectConcept(newIri) }"
                   @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
 
@@ -1313,6 +1524,7 @@ function copyIriToClipboard(iri: string) {
                   @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
                   @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
                   @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
+                  @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectConcept(newIri) }"
                   @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
               </template>
@@ -1345,6 +1557,7 @@ function copyIriToClipboard(iri: string) {
               </template>
             </div>
           </div>
+          </template>
         </template>
 
         <UAlert
@@ -1363,8 +1576,24 @@ function copyIriToClipboard(iri: string) {
         </div>
       </UCard>
 
+      <!-- Collections -->
+      <UCard v-if="!immersiveMode && collections?.length" class="mb-8">
+        <template #header>
+          <h2 class="font-semibold flex items-center gap-2">
+            <UIcon name="i-heroicons-rectangle-stack" />
+            Collections
+            <UBadge color="primary" variant="subtle">{{ collections.length }}</UBadge>
+          </h2>
+        </template>
+        <CollectionList
+          :collections="collections"
+          :concepts="displayConcepts ?? []"
+          @select-concept="selectConcept"
+        />
+      </UCard>
+
       <!-- Metadata -->
-      <UCard id="metadata-section" class="mb-8">
+      <UCard v-if="!immersiveMode" id="metadata-section" class="mb-8">
         <template #header>
           <h2
             class="font-semibold flex items-center gap-2 cursor-pointer select-none"
@@ -1444,6 +1673,11 @@ function copyIriToClipboard(iri: string) {
 
       <!-- Save Confirm Modal -->
       <UModal v-model:open="showSaveModal">
+        <template #header>
+          <div ref="saveDragHandle" class="flex-1">
+            <h3 class="font-semibold">Save Changes</h3>
+          </div>
+        </template>
         <template #body>
           <SaveConfirmModal
             :change-summary="saveModalChangeSummary"
@@ -1457,6 +1691,11 @@ function copyIriToClipboard(iri: string) {
 
       <!-- Change Detail Modal -->
       <UModal v-model:open="showChangeDetail">
+        <template #header>
+          <div ref="changeDetailDragHandle" class="flex-1">
+            <h3 class="font-semibold">Change Detail</h3>
+          </div>
+        </template>
         <template #body>
           <ChangeDetailModal
             v-if="changeDetailData"
@@ -1509,54 +1748,6 @@ function copyIriToClipboard(iri: string) {
         </template>
       </UModal>
 
-      <!-- Add Concept Modal -->
-      <UModal v-model:open="showAddConcept">
-        <template #header>
-          <h3 class="font-semibold">Add Concept</h3>
-        </template>
-
-        <template #body>
-          <div class="space-y-4">
-            <UFormField label="Local name" required help="Will be appended to the scheme IRI to form the concept IRI">
-              <UInput
-                v-model="newConceptLocalName"
-                placeholder="my-concept"
-                class="font-mono text-sm"
-              />
-            </UFormField>
-
-            <UFormField label="Preferred label" required>
-              <UInput
-                v-model="newConceptLabel"
-                placeholder="My Concept"
-              />
-            </UFormField>
-
-            <UFormField label="Broader concept (optional)">
-              <USelect
-                v-model="newConceptBroader"
-                :items="[
-                  { label: '(none — top concept)', value: '' },
-                  ...(editMode?.concepts.value ?? []).map(c => ({ label: c.prefLabel, value: c.iri }))
-                ]"
-                value-key="value"
-              />
-            </UFormField>
-          </div>
-        </template>
-
-        <template #footer>
-          <div class="flex justify-end gap-2">
-            <UButton variant="ghost" @click="showAddConcept = false">Cancel</UButton>
-            <UButton
-              :disabled="!newConceptLocalName.trim() || !newConceptLabel.trim()"
-              @click="handleAddConcept"
-            >
-              Add
-            </UButton>
-          </div>
-        </template>
-      </UModal>
 
       <!-- Move Concept Modal -->
       <MoveConceptModal
@@ -1573,6 +1764,11 @@ function copyIriToClipboard(iri: string) {
 
       <!-- History Diff Modal -->
       <UModal v-model:open="showDiffModal" :ui="{ width: 'max-w-4xl' }">
+        <template #header>
+          <div ref="diffDragHandle" class="flex-1">
+            <h3 class="font-semibold">Commit Diff</h3>
+          </div>
+        </template>
         <template #body>
           <VocabHistoryDiff
             :loading="diffModalLoading"
@@ -1582,6 +1778,7 @@ function copyIriToClipboard(iri: string) {
           />
         </template>
       </UModal>
+
     </template>
 
     <div v-else-if="(status === 'idle' || status === 'pending') && !lastValidScheme" class="space-y-4">
@@ -1593,3 +1790,4 @@ function copyIriToClipboard(iri: string) {
     <UAlert v-else-if="status !== 'pending' && status !== 'idle'" color="error" title="Scheme not found" :description="`No scheme found with IRI: ${uri}`" />
   </div>
 </template>
+

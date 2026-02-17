@@ -2,6 +2,62 @@
 
 ---
 
+## Sprint 14: Edit Dialog Polish
+
+### ✅ Show language changes clearly in edit diff
+**Completed:** 2026-02-17
+
+**Summary:** Language tag changes now display clearly in save and history diffs. Added `formatObjectValue()` helper in `ttl-patch.ts` that appends `@lang` to literal values with language tags. Changes like `@en` → `@fr` are now visible instead of appearing as identical text.
+
+**Files Modified:**
+- `web/app/utils/ttl-patch.ts` — added `formatObjectValue()`, updated `buildChangeSummary()`
+- `web/tests/unit/ttl-patch.test.ts` — 3 new tests (40/40 pass)
+
+### ✅ Fix history dropdown height shift on hover
+**Completed:** 2026-02-17
+
+**Summary:** Changed the revert button in the changes dropdown from `hidden`/`inline-flex` display toggling to `opacity` toggling. Row height now stays stable on hover, matching the pattern used by the history dropdown's Diff/Browse buttons.
+
+**Files Modified:**
+- `web/app/components/EditToolbar.vue` — opacity-based toggling for revert button and count badge
+
+### ✅ Add titles to diff and save changes dialogs
+**Completed:** 2026-02-17
+
+**Summary:** Added proper `#header` slots with descriptive titles to three UModals: "Save Changes", "Commit Diff", and "Change Detail". Removed duplicate inline titles from component bodies. Also removed the manual close button from VocabHistoryDiff (UModal's built-in close handles it).
+
+**Files Modified:**
+- `web/app/pages/scheme.vue` — added `#header` slots to three UModals
+- `web/app/components/SaveConfirmModal.vue` — removed inline title
+- `web/app/components/VocabHistoryDiff.vue` — removed inline title and close button
+
+### ✅ Make diff and save dialogs draggable
+**Completed:** 2026-02-17
+
+**Summary:** Created `useDraggableModal` composable that makes UModal dialogs repositionable by dragging the header. Uses CSS `translate` property (independent of `transform`) so close animations aren't disrupted. Position resets on reopen. Applied to Save, Change Detail, and Commit Diff dialogs.
+
+**Files Created:**
+- `web/app/composables/useDraggableModal.ts`
+
+**Files Modified:**
+- `web/app/pages/scheme.vue` — wired drag handles to three modal headers
+
+---
+
+## Add New Concept Creation in Edit Mode
+
+### ✅ Add new concept creation in edit mode
+**Completed:** 2026-02-17
+
+**Summary:** Users can now add new concepts from the edit UI via the "Add" button in the tree header. New concepts are created with `rdf:type`, `skos:prefLabel`, `skos:inScheme`, and optionally `skos:broader`/`skos:narrower` triples. After adding, the tree auto-expands ancestors to reveal the new node, selects it, and scrolls it into view. On page refresh with a `?concept=` URL param, the tree also expands to reveal the selected concept.
+
+**Files Modified:**
+- `web/app/components/ConceptTreeNode.vue` — added `expandToId` prop with recursive `hasDescendant()` check, auto-expand watchers, and `scrollIntoView` on target node
+- `web/app/components/ConceptTree.vue` — added `expandToId` prop passthrough
+- `web/app/pages/scheme.vue` — `expandToId` ref, set after `handleAddConcept()`, initial expand on page load when concept is in URL
+
+---
+
 ## Fix Empty Property Display in Edit Mode
 
 ### ✅ Fix empty property display in edit mode

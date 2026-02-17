@@ -833,6 +833,15 @@ export function useEditMode(
       for (const s of allModified) modifiedSubjects.add(s)
     }
 
+    // Include deleted subjects (exist in original but have zero quads in current store).
+    // This ensures renames are saved atomically: the new IRI is added and the old IRI is removed.
+    const allModifiedFromDiff = getModifiedSubjects(added, removed)
+    for (const sIri of allModifiedFromDiff) {
+      if (store.value.getQuads(sIri, null, null, null).length === 0) {
+        modifiedSubjects.add(sIri)
+      }
+    }
+
     const patches = new Map<string, string | null>()
     const newBlocks: string[] = []
 

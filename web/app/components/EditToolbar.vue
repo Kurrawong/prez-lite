@@ -81,10 +81,10 @@ function truncateCommitMsg(msg: string, max = 50): string {
   <!-- Spacer to prevent content from hiding behind fixed toolbar -->
   <div class="h-12" />
 
-  <Teleport to="body">
-    <div class="fixed top-(--ui-header-height) inset-x-0 z-30 bg-[var(--ui-bg)]/95 backdrop-blur-sm">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 py-2">
-        <div class="bg-muted/30 dark:bg-muted/10 border border-default rounded-lg px-4 py-2 flex items-center gap-3 flex-wrap">
+  <Teleport to="header">
+    <div class="absolute top-full inset-x-0 z-50 bg-muted border-y border-default">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 py-1.5">
+        <div class="flex items-center gap-3 flex-wrap">
 
       <!-- ============================================================ -->
       <!-- AUTHENTICATED, NOT EDITING -->
@@ -243,12 +243,12 @@ function truncateCommitMsg(msg: string, max = 50): string {
                       class="size-3.5 shrink-0"
                     />
                     <span class="font-medium truncate">{{ change.subjectLabel }}</span>
-                    <span class="text-muted text-xs ml-auto shrink-0 group-hover/row:hidden">({{ change.propertyChanges.length }})</span>
+                    <span class="text-muted text-xs ml-auto shrink-0 group-hover/row:opacity-0 transition-opacity">({{ change.propertyChanges.length }})</span>
                     <UButton
                       icon="i-heroicons-arrow-uturn-left"
                       variant="ghost"
                       size="xs"
-                      class="ml-auto shrink-0 hidden group-hover/row:inline-flex"
+                      class="shrink-0 opacity-0 group-hover/row:opacity-100 transition-opacity"
                       title="Revert changes to this subject"
                       @click.stop="emit('revert-subject', change.subjectIri)"
                     />

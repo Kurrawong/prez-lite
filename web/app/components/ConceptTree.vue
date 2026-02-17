@@ -13,6 +13,7 @@ const props = defineProps<{
   level?: number
   selectedId?: string
   editMode?: boolean
+  expandToId?: string
 }>()
 
 const emit = defineEmits<{
@@ -32,6 +33,7 @@ const level = props.level ?? 0
         :level="level"
         :selected-id="selectedId"
         :edit-mode="editMode"
+        :expand-to-id="expandToId"
         @select="emit('select', $event)"
         @edit="emit('edit', $event)"
       />
