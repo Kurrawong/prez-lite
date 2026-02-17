@@ -2389,6 +2389,7 @@ icat:X9800
     skos:broader icat:X0000 ;
     skos:definition "An individual business entity whose predominant economic activity is unspecified or is not available for selection with provided list. This typically applies to a known industrial classification that is not relevant to a high degree of specificity in a specific use case."@en ;
     skos:inScheme cs: ;
+    skos:narrower icat:X9900 ;
     skos:notation "X9800" ;
     skos:prefLabel "Unspecified Industry"@en ;
 .
