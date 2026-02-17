@@ -3316,3 +3316,12 @@ icat:my-concept
 .
 
 
+icat:my-concept-renamed
+    a skos:Concept ;
+    dcterms:identifier "fred-renamed" ;
+    skos:broader icat:H4500 ;
+    skos:inScheme cs: ;
+    skos:prefLabel "My Concept Renamed"@en ;
+.
+
+
