@@ -59,7 +59,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "An individual business entity whose predominant economic activity is Administrative Services. For the joy of it.",
+        "@value": "An individual business entity whose predominant economic activity is Administrative Services.",
         "@language": "en"
       }
     ],
@@ -77,6 +77,11 @@
       {
         "@value": "Administrative Services",
         "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "Previous comment \"For the joy of it.\" added 16-Feb was removed."
       }
     ],
     "https://prez.dev/identifier": [
@@ -102,7 +107,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "An individual business entity whose predominant economic activity is Administrative Services. For the joy of it.",
+        "@value": "An individual business entity whose predominant economic activity is Administrative Services.",
         "@language": "en"
       }
     ]
