@@ -3308,3 +3308,11 @@ cs:
     skos:prefLabel "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX"@en ;
 .
 
+icat:my-concept
+    a skos:Concept ;
+    skos:broader icat:H4500 ;
+    skos:inScheme cs: ;
+    skos:prefLabel "My Concept"@en ;
+.
+
+
