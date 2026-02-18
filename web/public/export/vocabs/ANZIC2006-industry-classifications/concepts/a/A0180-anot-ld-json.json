@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-172",
+    "@id": "_:n3-82",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -55,6 +55,9 @@
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "http://linked.data.gov.au/def/anzsic-2006/A0100"
+      },
+      {
+        "@id": "http://linked.data.gov.au/def/anzsic-2006/A0520"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
