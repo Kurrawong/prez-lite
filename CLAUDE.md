@@ -129,6 +129,34 @@ pnpm --filter web nuxt typecheck
 pnpm --filter data-processing process
 ```
 
+## Template Repositories (`packages/gh-templates/`)
+
+### Location & Workspace
+- `packages/gh-templates/default/` — standard vocabulary template
+- **Not in pnpm workspace** — has its own `package.json` and `node_modules/`
+- Synced to `hjohns/prez-lite-template-default` via git subtree
+
+### Local Development
+```bash
+cd packages/gh-templates/default
+pnpm install        # independent install
+pnpm process        # regenerate vocab exports (auto-detects monorepo)
+pnpm dev            # start dev server
+```
+
+### Key Design
+- `nuxt.config.ts` auto-detects monorepo vs standalone (GitHub layer)
+- `nitro:config` hook filters parent layer's `public/` dirs so only template data is served
+- `process-vocabs.js` uses local `packages/data-processing/` in monorepo, downloads from GitHub when standalone
+- `public/export/` is gitignored — CI regenerates it
+- Never commit `.env` (contains `GITHUB_TOKEN`)
+
+### Subtree Sync
+```bash
+./scripts/sync-template-push.sh   # push to prez-lite-template-default
+./scripts/sync-template-pull.sh   # pull changes back (squashed)
+```
+
 ## Important Principles
 
 1. **Static-First**: No runtime SPARQL dependencies

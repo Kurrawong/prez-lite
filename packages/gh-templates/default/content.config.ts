@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig } from '@nuxt/content'
+import { z } from 'zod'
 
 export default defineContentConfig({
   collections: {
@@ -6,9 +7,16 @@ export default defineContentConfig({
       type: 'page',
       source: {
         include: '**/*.md',
-        // Explicitly use template's content directory
-        cwd: './content'
+        cwd: './content',
       },
+      schema: z.object({
+        navTitle: z.string().optional(),
+        order: z.number().optional(),
+        icon: z.string().optional(),
+        description: z.string().optional(),
+        navigation: z.boolean().optional(),
+        redirect: z.string().optional(),
+      }),
     }),
   },
 })

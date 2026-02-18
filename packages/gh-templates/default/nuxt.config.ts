@@ -16,4 +16,17 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   extends: [layer],
   css: ['~/assets/css/main.css'],
+
+  hooks: {
+    // Prevent parent layer's public/ dirs from leaking into this app's build.
+    // Without this, Nuxt merges web/public/export/ (36 vocabs), archive/, etc.
+    'nitro:config': (config) => {
+      if (config.publicAssets) {
+        config.publicAssets = config.publicAssets.filter(asset => {
+          const isParentLayer = asset.dir?.includes('/web/public/')
+          return !isParentLayer
+        })
+      }
+    },
+  },
 })

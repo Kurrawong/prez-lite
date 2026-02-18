@@ -1,6 +1,7 @@
 export function useNavigation() {
   const { data: navigation } = useAsyncData('navigation', () =>
-    queryCollectionNavigation('pages', ['navTitle', 'order', 'icon', 'description', 'redirect']),
+    queryCollectionNavigation('pages', ['navTitle', 'order', 'icon', 'description', 'redirect'])
+      .catch(() => queryCollectionNavigation('pages')),
   )
 
   // Transform Nuxt Content navigation tree into UNavigationMenu items

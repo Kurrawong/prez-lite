@@ -13,13 +13,17 @@
 
 import { execSync, spawn } from 'node:child_process'
 import { existsSync, mkdirSync, rmSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs'
-import { join, dirname } from 'node:path'
+import { join, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = join(__dirname, '..')
 const CACHE_DIR = join(ROOT_DIR, '.prez-lite-cache')
-const DATA_PROCESSING_DIR = join(CACHE_DIR, 'data-processing')
+
+// Detect monorepo: if packages/data-processing exists alongside this template
+const LOCAL_DATA_PROCESSING = resolve(ROOT_DIR, '../../data-processing')
+const IS_MONOREPO = existsSync(resolve(LOCAL_DATA_PROCESSING, 'scripts', 'process-vocab.js'))
+const DATA_PROCESSING_DIR = IS_MONOREPO ? LOCAL_DATA_PROCESSING : join(CACHE_DIR, 'data-processing')
 
 // Load .env file if it exists
 const envPath = join(ROOT_DIR, '.env')
@@ -53,18 +57,23 @@ async function main() {
   console.log('🔧 prez-lite Vocabulary Processor')
   console.log('==================================\n')
 
-  // Check for GITHUB_TOKEN
-  if (!GITHUB_TOKEN) {
-    console.error('❌ GITHUB_TOKEN environment variable is required')
-    console.error('   Set it in .env or export GITHUB_TOKEN=ghp_xxx')
-    process.exit(1)
+  if (IS_MONOREPO) {
+    console.log('📦 Monorepo detected — using local data-processing package')
+    console.log(`   ${DATA_PROCESSING_DIR}\n`)
+  } else {
+    // Check for GITHUB_TOKEN (only needed in standalone mode)
+    if (!GITHUB_TOKEN) {
+      console.error('❌ GITHUB_TOKEN environment variable is required')
+      console.error('   Set it in .env or export GITHUB_TOKEN=ghp_xxx')
+      process.exit(1)
+    }
+
+    // Step 1: Download/update data-processing from prez-lite
+    await fetchDataProcessing()
+
+    // Step 2: Install dependencies for data-processing
+    await installDependencies()
   }
-
-  // Step 1: Download/update data-processing from prez-lite
-  await fetchDataProcessing()
-
-  // Step 2: Install dependencies for data-processing
-  await installDependencies()
 
   // Step 3: Run the processing
   await processVocabularies()
