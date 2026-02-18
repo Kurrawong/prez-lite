@@ -16,6 +16,11 @@ const { data: page, status } = await useAsyncData(
   () => queryCollection('pages').path(contentPath.value).first()
 )
 
+// Handle redirect frontmatter
+if (page.value?.redirect) {
+  await navigateTo(page.value.redirect, { redirectCode: 301 })
+}
+
 // Show 404 if page not found
 if (status.value === 'success' && !page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })

@@ -82,10 +82,21 @@ function stopEditing() {
 
 // Local input values to prevent cursor jumping when store re-renders
 const localValues = reactive(new Map<string, string>())
+// Track whether we caused the latest prop change (via our own debounced emit)
+let selfEmitted = false
 
 function getLocalValue(val: EditableValue): string {
   return localValues.get(val.id) ?? val.value
 }
+
+// Clear local cache when properties change from outside (e.g. undo/redo)
+watch(() => props.properties, () => {
+  if (selfEmitted) {
+    selfEmitted = false
+    return
+  }
+  localValues.clear()
+}, { deep: true })
 
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -94,6 +105,7 @@ function handleValueInput(predicate: string, val: EditableValue, event: Event) {
   localValues.set(val.id, target.value)
   if (debounceTimer) clearTimeout(debounceTimer)
   debounceTimer = setTimeout(() => {
+    selfEmitted = true
     emit('update:value', predicate, val, target.value)
   }, 300)
 }

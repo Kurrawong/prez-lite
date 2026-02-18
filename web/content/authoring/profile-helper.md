@@ -1,9 +1,7 @@
 ---
 title: Profile Helper
 description: Build and validate prez:ObjectProfile definitions
-navigation: true
-navTitle: Profile Helper
-order: 4
+navigation: false
 ---
 
 # Profile Helper

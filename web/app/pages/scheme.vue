@@ -876,6 +876,7 @@ const expandToId = ref<string | undefined>()
 
 // Collapsible panels
 const conceptsPanelOpen = ref(true)
+const collectionsPanelOpen = ref(true)
 const metadataPanelOpen = ref(true)
 
 // Use edit mode tree items when in edit mode, history store when browsing, otherwise static
@@ -1579,13 +1580,24 @@ function copyIriToClipboard(iri: string) {
       <!-- Collections -->
       <UCard v-if="!immersiveMode && collections?.length" class="mb-8">
         <template #header>
-          <h2 class="font-semibold flex items-center gap-2">
+          <h2
+            class="font-semibold flex items-center gap-2 cursor-pointer select-none"
+            @click="collectionsPanelOpen = !collectionsPanelOpen"
+          >
+            <UIcon
+              :name="collectionsPanelOpen ? 'i-heroicons-chevron-down' : 'i-heroicons-chevron-right'"
+              class="size-4"
+            />
             <UIcon name="i-heroicons-rectangle-stack" />
             Collections
             <UBadge color="primary" variant="subtle">{{ collections.length }}</UBadge>
           </h2>
         </template>
+        <p v-if="!collectionsPanelOpen" class="text-sm text-muted">
+          {{ collections.length }} collection{{ collections.length !== 1 ? 's' : '' }} — click header to expand
+        </p>
         <CollectionList
+          v-show="collectionsPanelOpen"
           :collections="collections"
           :concepts="displayConcepts ?? []"
           @select-concept="selectConcept"

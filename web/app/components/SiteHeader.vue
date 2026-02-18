@@ -24,11 +24,18 @@ const { navLinks } = useNavigation()
     </template>
 
     <slot name="navigation">
-      <UNavigationMenu :items="navLinks" />
+      <UNavigationMenu :items="navLinks" :ui="{ content: 'z-[60]' }" />
     </slot>
 
     <template #right>
       <slot name="actions">
+        <UButton
+          to="/search"
+          icon="i-heroicons-magnifying-glass"
+          color="neutral"
+          variant="ghost"
+          aria-label="Search vocabularies"
+        />
         <GitHubAuthButton />
         <UColorModeButton variant="ghost" />
       </slot>

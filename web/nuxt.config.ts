@@ -70,7 +70,8 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
-      failOnError: false
+      failOnError: false,
+      routes: ['/authoring', '/authoring/getting-started', '/authoring/collections', '/authoring/profiles', '/authoring/vocabularies']
     },
     routeRules: {
       // CORS headers for dev server only

@@ -21,8 +21,8 @@ export default defineNuxtPlugin(() => {
       theme: 'base',
       themeVariables: {
         darkMode: isDark,
-        primaryColor: isDark ? BLUE_PRIMARY_DARK : BLUE_PRIMARY,
-        primaryTextColor: isDark ? TEXT_LIGHT : TEXT_DARK,
+        primaryColor: isDark ? '#334155' : BLUE_PRIMARY,
+        primaryTextColor: isDark ? TEXT_LIGHT : '#ffffff',
         primaryBorderColor: isDark ? BLUE_PRIMARY_DARK : BLUE_PRIMARY,
         lineColor: isDark ? LINE_DARK : LINE_LIGHT,
         secondaryColor: isDark ? '#334155' : '#f1f5f9',
@@ -59,8 +59,12 @@ export default defineNuxtPlugin(() => {
         const codeEl = block.querySelector('code')
         if (!codeEl) continue
 
-        // Extract text content, removing any HTML tags
-        const code = codeEl.textContent?.trim()
+        // Extract code preserving newlines — Shiki wraps each line in <span class="line">
+        // so textContent concatenates them without line breaks
+        const lineSpans = codeEl.querySelectorAll('.line')
+        const code = lineSpans.length > 0
+          ? Array.from(lineSpans).map(s => s.textContent).join('\n').trim()
+          : codeEl.textContent?.trim()
         if (!code) continue
 
         // Create a container for the diagram (store code for re-render on theme change)
