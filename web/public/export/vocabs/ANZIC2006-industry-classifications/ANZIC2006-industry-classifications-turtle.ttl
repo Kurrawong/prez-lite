@@ -18,5 +18,5 @@
     dcterms:creator <https://linked.data.gov.au/org/gsq>;
     dcterms:modified "2023-03-16"^^xsd:date;
     dcterms:publisher <https://linked.data.gov.au/org/gsq>;
-    reg:status <https://linked.data.gov.au/def/reg-statuses/stable>;
+    reg:status "experimental"@en, <https://linked.data.gov.au/def/reg-statuses/stable>;
     skos:hasTopConcept <http://linked.data.gov.au/def/anzsic-2006/A0000>, <http://linked.data.gov.au/def/anzsic-2006/B0000>, <http://linked.data.gov.au/def/anzsic-2006/C0000>, <http://linked.data.gov.au/def/anzsic-2006/D0000>, <http://linked.data.gov.au/def/anzsic-2006/E0000>, <http://linked.data.gov.au/def/anzsic-2006/F0000>, <http://linked.data.gov.au/def/anzsic-2006/G0000>, <http://linked.data.gov.au/def/anzsic-2006/N0000>, <http://linked.data.gov.au/def/anzsic-2006/I0000>, <http://linked.data.gov.au/def/anzsic-2006/J0000>, <http://linked.data.gov.au/def/anzsic-2006/M0000>, <http://linked.data.gov.au/def/anzsic-2006/O0000>, <http://linked.data.gov.au/def/anzsic-2006/P0000>, <http://linked.data.gov.au/def/anzsic-2006/Q0000>, <http://linked.data.gov.au/def/anzsic-2006/R0000>, <http://linked.data.gov.au/def/anzsic-2006/S0000>, <http://linked.data.gov.au/def/anzsic-2006/X0000>, <http://linked.data.gov.au/def/anzsic-2006/K0000>, <http://linked.data.gov.au/def/anzsic-2006/L0000>, <http://linked.data.gov.au/def/anzsic-2006/H0000>.
