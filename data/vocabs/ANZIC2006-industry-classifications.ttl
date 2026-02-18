@@ -3286,7 +3286,7 @@ cs:
     dcterms:publisher <https://linked.data.gov.au/org/gsq> ;
     dcterms:source "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument"^^xsd:anyURI ;
     reg:status
-        "experimental"@en ,
+        "" ,
         agldwgstatus:stable ;
     skos:definition """An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r
     An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r
