@@ -25,7 +25,7 @@
 
 | Backlog | Todo | In Progress | Reviewing | Done |
 |---------|------|-------------|-----------|------|
-| 18 open items | Empty | Empty | Empty | Sprint 14 (4 tasks) |
+| 15 items (6 ✅ pending clearance, 9 open) | Empty | Empty | Empty | Sprint 14 (4 tasks) |
 
 ---
 
@@ -33,7 +33,7 @@
 
 **Sprint 14: Edit Dialog Polish** — ✅ Complete (4/4)
 
-**Remaining backlog:** label/IRI editing, concept reparent, edit UX redesign, simplified/expert view, TDD, edit-to-publish lifecycle, collab presence, IRI base config, panel resizing, tree selector, mandatory indicators, SHACL feedback, collections, concept context switch, invalid narrower error
+**Remaining backlog (open):** label/IRI editing, concept reparent, edit UX redesign, simplified/expert view, TDD, edit-to-publish lifecycle, collab presence, IRI base config, panel resizing, tree selector, mandatory indicators, SHACL feedback, collections, concept context switch, invalid narrower error
 
 ---
 

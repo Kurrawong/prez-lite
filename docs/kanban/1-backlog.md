@@ -7,12 +7,6 @@
 ### ✅ Integrate SHACL validation into data processing and browser
 Generic SHACL validation using any validator files in `data/validators/`. Already implemented: `--validators` CLI flag, `rdf-validate-shacl`, validation badges on vocabs list and scheme pages, expandable error details, `--strict` mode.
 
-### ✅ Fix sign-in redirect to return to current page
-Already implemented in `useGitHubAuth` — saves return path to sessionStorage, navigates back after OAuth callback. Remaining UX issue (loading flash) tracked separately.
-
-### ✅ Evaluate concept ordering in vocabularies
-Research whether ordering of concepts within a vocabulary is important, possible, or necessary — and if so, what mechanism to use (e.g. `skos:notation`, `sh:order`, custom predicate). Analysis complete: alphabetical sufficient for most cases; notation-based sorting recommended as opt-in feature for classifications.
-
 ### ✅ Add new concept creation in edit mode
 Users cannot add a new concept to a vocabulary. Provide a way to create a new concept (with label and parent) from the edit UI, inserting the necessary triples (rdf:type, skos:prefLabel, skos:inScheme, skos:broader/narrower).
 
@@ -52,32 +46,11 @@ Assess real-time presence system (avatars, editing indicators) similar to Google
 ### ✅ Add build status polling after save
 Poll GitHub Actions API after saving edits to show rebuild progress; auto-dismiss on completion and clear caches.
 
-### ✅ Add vocab edit history with version browsing
-History popover showing commit list (author, date, message); diff view between versions; browse any historical version read-only via URL param.
-
 ### Design edit-to-publish data lifecycle
 Define the branching and staging strategy for data changes vs UI changes across both the base prez-lite project and child gh-template projects — covering dev/staging/production environments, when data rebuilds trigger, and how the two project types differ in their edit-to-publish flow. Includes approval workflow design: staging branch vs user branches, PR-based approve/reject/comment on pending changes, and a user-friendly UX for non-Git users. Document potential flows.
 
-### ✅ Fix empty property display in edit mode
-When a property has no value, the "---" dash and "Add" button appear on separate lines. In full edit mode, show only the add button (no dash). In inline edit mode, show the dash but swap to the add button when editing that field.
-
-### ✅ Add loading state to sign-in redirect
-Clicking sign in briefly renders the home page before redirecting back to the original page. Show a loading indicator during the OAuth flow instead of flashing the home page content.
-
 ### Configure default IRI base pattern for vocabs and concepts
 Define a configurable IRI template (e.g. `https://linked.data.gov.au/pid/gswa/{vocab-id}/{concept-id}`) so new vocabs and concepts auto-generate IRIs following an org's PID pattern. Determine where to configure (manifest.ttl, app.config, profile?) and how it drives IRI generation in the edit UI.
-
-### ✅ Show language changes clearly in edit diff
-When editing a language tag (e.g. `@en` → `@en-AU`), the diff feedback only shows the text changed, not that the language tag itself changed.
-
-### ✅ Fix history dropdown height shift on hover
-Mousing over a history edit dropdown entry causes the row height to change when the undo icon appears — layout should remain stable.
-
-### ✅ Add titles to diff and save changes dialogs
-Both the diff popup and save changes popup have blank title areas — add descriptive titles.
-
-### ✅ Make diff and save dialogs draggable
-Both dialog boxes should be repositionable by dragging.
 
 ### Preserve concept context when switching edit modes
 Switching between inline and full edit mode loses the currently selected concept context.
@@ -99,3 +72,14 @@ Research and design how SHACL validator results should surface during editing �
 
 ### Design and implement SKOS collections support
 Create, list, share, and manage SKOS collections within vocabularies. Covers: listing UX, data model, build pipeline for collection exports, search index integration, sharing assets, web component support, and collection management UI.
+
+### Set up gh-template/default as a testable standalone application
+Make the `packages/gh-templates/default/` template a fully functional, independently deployable application checked into `hjohns/prez-lite-template-default`. Covers several sub-tasks:
+
+1. **Data isolation** — Ensure the template does NOT inherit the base layer's `web/public/export/` directory during build. Add a build step (Nuxt hook or script) that strips the parent layer's data/export folders so only the template's own vocabulary data is served.
+2. **Update stale paths** — The template still uses pre-Sprint 10 paths (`export/_system/` instead of `export/system/`, flat vocab dirs instead of `export/vocabs/`). Align `process-vocabs.js` and any hardcoded paths with current conventions.
+3. **Secrets hygiene** — The `.env` file contains a real GitHub PAT. Ensure `.env` is gitignored, `.env.example` documents required vars without real values, and README explains setup.
+4. **Separate repo setup** — Initialize `hjohns/prez-lite-template-default`, set up git subtree (or similar) to sync `packages/gh-templates/default/` to the separate repo while allowing independent commits in both.
+5. **Local development workflow** — Document how to run the template locally against the monorepo's `web/` layer, and how to develop/commit changes in both projects independently.
+6. **Verify template builds and runs** — End-to-end test: install, process vocabs, generate static site, verify pages render correctly with only template data (no base layer data leaking through).
+7. **Skill or CLAUDE.md guidance** — Add working instructions for the dual-repo workflow so future sessions handle template work correctly (e.g. which directory to commit from, how to sync, layer conventions).

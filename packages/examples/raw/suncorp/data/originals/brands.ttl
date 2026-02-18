@@ -1,0 +1,175 @@
+PREFIX : <http://pid.suncorp.com.au/def/brand/>
+PREFIX agldwgstatus: <https://linked.data.gov.au/def/reg-statuses/>
+PREFIX cs: <http://pid.suncorp.com.au/def/brand>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX reg: <http://purl.org/linked-data/registry#>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+:aami
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Australian Associated Motor Insurers Limited"@en ;
+    skos:definition "A definition for AAMI."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "AAMI"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:gio
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "GIO alternate label"@en ;
+    skos:definition "A definition for GIO."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "GIO"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:suncorp
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Suncorp Australia"@en ;
+    skos:definition "A definition for Suncorp."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Suncorp"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:apia
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Australian Pensioners Insurance Agency"@en ;
+    skos:definition "Insurance options for seniors, over 50s and retirees."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "APIA"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:bingle
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Bingle Insurance"@en ;
+    skos:definition "A definition for Bingle."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Bingle"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:shannons
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Shannons Insurance"@en ;
+    skos:definition "Shannons is Australia's leading insurance provider for motoring enthusiasts."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Shannons"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:cil
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "CIL Insurance"@en ;
+    skos:definition "Caravan and RV insurance."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "CIL"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:essentials
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Essentials by AAI"@en ;
+    skos:definition "Our insurance is designed for people who are unable to access mainstream insurance products due to their financial circumstances and/or poor insurance, claims or criminal history."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Essentials"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:aainz
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Automobile Association Insurance New Zealand"@en ;
+    skos:definition "A definition for AAI NZ."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "AAI NZ"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:ctp
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Compulsory Third Party"@en ;
+    skos:definition "A definition for CTP."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "CTP"@en ;
+    skos:topConceptOf cs: ;
+.
+
+:terri-scheer
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "TSI"@en ;
+    skos:definition "A definition for Terri Scheer."@en ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Terri Scheer"@en ;
+    skos:topConceptOf cs: ;
+.
+
+<https://linked.data.gov.au/org/suncorp>
+    a sdo:Organization ;
+    sdo:name "Suncorp Group Limited" ;
+    sdo:url "http://www.suncorp.com.au"^^xsd:anyURI ;
+.
+
+<https://linked.data.gov.au/def/mass-brands>
+    a skos:Collection ;
+    skos:definition "Suncorp mass brands." ;
+    skos:inScheme cs: ;
+    skos:member
+        :aami,
+        :gio,
+        :suncorp,
+        :apia;
+    skos:prefLabel "Mass brands" ;
+    prov:wasDerivedFrom cs: ;
+.
+
+<https://linked.data.gov.au/def/nz-brands>
+    a skos:Collection ;
+    skos:definition "New Zealand brands." ;
+    skos:inScheme cs: ;
+    skos:member
+        :aainz;
+    skos:prefLabel "New Zealand brands" ;
+    prov:wasDerivedFrom cs: ;
+.
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    dcterms:created "2025-02-19"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/suncorp> ;
+    dcterms:modified "2025-02-19"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/suncorp> ;
+    reg:status agldwgstatus:experimental ;
+    skos:definition "Brands under Suncorp Group Limited."@en ;
+    skos:hasTopConcept
+        :aami,
+        :gio,
+        :suncorp,
+        :apia,
+        :bingle,
+        :shannons,
+        :cil,
+        :essentials,
+        :aainz,
+        :ctp,
+        :terri-scheer;
+    skos:prefLabel "Brand"@en ;
+.

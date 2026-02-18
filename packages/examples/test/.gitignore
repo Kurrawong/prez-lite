@@ -1,0 +1,5 @@
+# Generated test apps (recreate with ./create-app.sh)
+*/
+!.gitignore
+!README.md
+!create-app.sh
