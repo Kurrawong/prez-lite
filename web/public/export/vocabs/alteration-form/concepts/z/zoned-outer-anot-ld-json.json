@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-430",
+    "@id": "_:n3-43",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -77,7 +77,7 @@
     ],
     "https://prez.dev/label": [
       {
-        "@value": "Alteration form XXX",
+        "@value": "Alteration form",
         "@language": "en"
       }
     ],

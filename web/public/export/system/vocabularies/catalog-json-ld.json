@@ -56,7 +56,7 @@
         "@id": "https://linked.data.gov.au/def/alteration-form",
         "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
-                "@value": "Alteration form XXX",
+                "@value": "Alteration form",
                 "@language": "en"
             }
         ]

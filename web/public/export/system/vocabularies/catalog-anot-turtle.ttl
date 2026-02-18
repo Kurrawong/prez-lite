@@ -21,7 +21,7 @@
     prez:members "/catalogs/catalogue:gswa-vocabs/collections";
     prez:label "Vocabularies"@en;
     prez:description "Published vocabularies."@en.
-<https://linked.data.gov.au/def/alteration-form> skos:prefLabel "Alteration form XXX"@en.
+<https://linked.data.gov.au/def/alteration-form> skos:prefLabel "Alteration form"@en.
 <http://linked.data.gov.au/def/anzsic-2006> skos:prefLabel "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX"@en;
     prez:label "Australian and New Zealand Standard Industrial Classification 2006".
 <http://pid.suncorp.com.au/def/brand> skos:prefLabel "BrandXXYY"@en.
