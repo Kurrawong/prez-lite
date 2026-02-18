@@ -340,7 +340,7 @@ cs:
 1) Neuendorf, KKE, Mehl Jr, JP and Jackson, JA (editors) 2011, Glossary of geology (5th edition, revised): American Geosciences Institute, Alexandria, Virginia, USA, 800p.
 2) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p.
 3) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals, St. John's, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p."""@en ;
-    skos:prefLabel "Alteration form XXX"@en ;
+    skos:prefLabel "Alteration form"@en ;
     prov:qualifiedAttribution
         [
   prov:hadRole isoroles:custodian;
