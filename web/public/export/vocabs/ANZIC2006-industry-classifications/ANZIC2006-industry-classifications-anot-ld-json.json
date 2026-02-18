@@ -61,6 +61,16 @@
         "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
       }
     ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@value": ""
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@value": "https://linked.data.gov.au/org/abs"
+      }
+    ],
     "https://prez.dev/identifier": [
       {
         "@value": "ns4:anzsic-2006"
@@ -147,6 +157,14 @@
     "https://prez.dev/label": [
       {
         "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://schema.org/creator",
+    "https://prez.dev/label": [
+      {
+        "@value": "creator"
       }
     ]
   }

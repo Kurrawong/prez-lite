@@ -19,6 +19,8 @@
     dcterms:modified "2023-03-16"^^xsd:date;
     dcterms:publisher <https://linked.data.gov.au/org/gsq>;
     reg:status "", <https://linked.data.gov.au/def/reg-statuses/stable>;
+    owl:versionIRI "";
+    sdo:creator "https://linked.data.gov.au/org/abs";
     prez:identifier "ns4:anzsic-2006";
     prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:anzsic-2006";
     prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:anzsic-2006/items";
@@ -28,6 +30,7 @@
 skos:ConceptScheme prez:label "ConceptScheme".
 skos:definition prez:label "definition".
 skos:prefLabel prez:label "pref label".
+sdo:creator prez:label "creator".
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".

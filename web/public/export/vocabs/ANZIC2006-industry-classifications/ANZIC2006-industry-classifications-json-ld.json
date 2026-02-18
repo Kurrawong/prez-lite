@@ -53,6 +53,11 @@
                 "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
             }
         ],
+        "http://www.w3.org/2002/07/owl#versionIRI": [
+            {
+                "@value": ""
+            }
+        ],
         "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
             {
                 "@id": "http://linked.data.gov.au/def/anzsic-2006/A0000"
@@ -113,6 +118,11 @@
             },
             {
                 "@id": "http://linked.data.gov.au/def/anzsic-2006/H0000"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@value": "https://linked.data.gov.au/org/abs"
             }
         ]
     }

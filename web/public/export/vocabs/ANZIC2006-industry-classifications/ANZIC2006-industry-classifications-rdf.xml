@@ -26,6 +26,7 @@
     <dcterms:publisher rdf:resource="https://linked.data.gov.au/org/gsq"/>
     <reg:status></reg:status>
     <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <owl:versionIRI></owl:versionIRI>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/A0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/B0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/C0000"/>
@@ -46,5 +47,6 @@
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/K0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/L0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/H0000"/>
+    <sdo:creator>https://linked.data.gov.au/org/abs</sdo:creator>
   </rdf:Description>
 </rdf:RDF>
