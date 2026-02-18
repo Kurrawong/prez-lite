@@ -193,7 +193,7 @@
     {
       "iri": "http://linked.data.gov.au/def/anzsic-2006",
       "slug": "ANZIC2006-industry-classifications",
-      "prefLabel": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX",
+      "prefLabel": "Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles",
       "definition": "An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.\r\n    An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).\r\n    At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics.",
       "conceptCount": 296,
       "collectionCount": 1,

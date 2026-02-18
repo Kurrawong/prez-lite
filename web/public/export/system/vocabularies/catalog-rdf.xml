@@ -25,7 +25,7 @@
     <skos:prefLabel xml:lang="en">Alteration form</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="http://linked.data.gov.au/def/anzsic-2006">
-    <skos:prefLabel xml:lang="en">Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="http://pid.suncorp.com.au/def/brand">
     <skos:prefLabel xml:lang="en">BrandXXYY</skos:prefLabel>

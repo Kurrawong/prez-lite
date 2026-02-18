@@ -19,7 +19,7 @@
     <skos:definition xml:lang="en">An industrial classification organises data about business units. It provides a standard framework under which business units carrying out similar production activities can be grouped together, with each resultant group referred to as an industry.
     An individual business entity is assigned to an industry based on its predominant economic activity. The term business entity is used in its widest sense to include any organisation undertaking productive activities, including companies, non-profit organisations, government departments and enterprises. ANZSIC has four hierarchic levels: Divisions (the broadest level), Subdivisions, Groups and Classes (the finest level).
     At the Divisional level, the main purpose is to provide a limited number of categories which provide a broad overall picture of the economy and are suitable for the publication of summary tables in official statistics. The Subdivision, Group and Class levels provide increasingly detailed dissections of these categories for the compilation of more specific and detailed statistics.</skos:definition>
-    <skos:prefLabel xml:lang="en">Australian and New Zealand Standard Industrial Classification 2006 - Codes and TitlesXX</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Australian and New Zealand Standard Industrial Classification 2006 - Codes and Titles</skos:prefLabel>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-02-17</dcterms:created>
     <dcterms:creator rdf:resource="https://linked.data.gov.au/org/gsq"/>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-16</dcterms:modified>
