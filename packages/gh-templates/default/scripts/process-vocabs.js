@@ -20,9 +20,20 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = join(__dirname, '..')
 const CACHE_DIR = join(ROOT_DIR, '.prez-lite-cache')
 
-// Detect monorepo: if packages/data-processing exists alongside this template
-const LOCAL_DATA_PROCESSING = resolve(ROOT_DIR, '../../data-processing')
-const IS_MONOREPO = existsSync(resolve(LOCAL_DATA_PROCESSING, 'scripts', 'process-vocab.js'))
+// Detect monorepo: walk up looking for packages/data-processing
+function findLocalDataProcessing() {
+  let dir = ROOT_DIR
+  for (let i = 0; i < 6; i++) {
+    const candidate = resolve(dir, 'packages/data-processing')
+    if (existsSync(resolve(candidate, 'scripts', 'process-vocab.js'))) return candidate
+    const parent = dirname(dir)
+    if (parent === dir) break
+    dir = parent
+  }
+  return null
+}
+const LOCAL_DATA_PROCESSING = findLocalDataProcessing()
+const IS_MONOREPO = LOCAL_DATA_PROCESSING !== null
 const DATA_PROCESSING_DIR = IS_MONOREPO ? LOCAL_DATA_PROCESSING : join(CACHE_DIR, 'data-processing')
 
 // Load .env file if it exists

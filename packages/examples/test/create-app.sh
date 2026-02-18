@@ -52,8 +52,9 @@ fi
 echo "Copying template '$TEMPLATE' -> test/$APP_NAME/"
 cp -R "$TEMPLATE_DIR" "$APP_DIR"
 
-# Step 2: Remove template's data and exports (replaced by example data)
-rm -rf "$APP_DIR/data" "$APP_DIR/public/export"
+# Step 2: Remove template-specific data, keep generic config/manifest
+# Raw example overlays on top — anything it provides wins
+rm -rf "$APP_DIR/data/vocabs" "$APP_DIR/data/background" "$APP_DIR/public/export"
 
 # Also remove template-specific artifacts that shouldn't carry over
 rm -rf "$APP_DIR/node_modules" "$APP_DIR/.nuxt" "$APP_DIR/.data" "$APP_DIR/.output" "$APP_DIR/.prez-lite-cache"

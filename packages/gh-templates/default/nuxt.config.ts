@@ -17,6 +17,18 @@ export default defineNuxtConfig({
   extends: [layer],
   css: ['~/assets/css/main.css'],
 
+  // n3 depends on the buffer polyfill (CJS) — ensure Vite pre-bundles it correctly
+  vite: {
+    optimizeDeps: {
+      include: ['n3', 'buffer', 'readable-stream'],
+    },
+    resolve: {
+      alias: {
+        buffer: 'buffer/',
+      },
+    },
+  },
+
   hooks: {
     // Prevent parent layer's public/ dirs from leaking into this app's build.
     // Without this, Nuxt merges web/public/export/ (36 vocabs), archive/, etc.
