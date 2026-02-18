@@ -91,7 +91,9 @@ icat:A0180
     a skos:Concept ;
     dcterms:source "https://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1292.02006%20(Revision%202.0)?OpenDocument"^^xsd:anyURI ;
     rdfs:isDefinedBy cs: ;
-    skos:broader icat:A0100 ;
+    skos:broader
+        icat:A0100 ,
+        icat:A0520 ;
     skos:definition "An individual business entity whose predominant economic activity is Deer Farming."@en ;
     skos:inScheme cs: ;
     skos:notation "A0180" ;

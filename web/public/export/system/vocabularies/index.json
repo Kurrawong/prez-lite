@@ -292,6 +292,11 @@
           {
             "severity": "Violation",
             "message": "Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values x",
+            "focusNode": "http://linked.data.gov.au/def/anzsic-2006/A0520"
+          },
+          {
+            "severity": "Violation",
+            "message": "Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values x",
             "focusNode": "http://linked.data.gov.au/def/anzsic-2006/A0190"
           },
           {
@@ -333,11 +338,6 @@
             "severity": "Violation",
             "message": "Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values x",
             "focusNode": "http://linked.data.gov.au/def/anzsic-2006/A0500"
-          },
-          {
-            "severity": "Violation",
-            "message": "Each Concept MUST have a temporal coverage indicated with the schema:temporalCoverage predicate pointing to a schema:startTime or schema:endTime or both date values x",
-            "focusNode": "http://linked.data.gov.au/def/anzsic-2006/A0520"
           },
           {
             "severity": "Violation",
