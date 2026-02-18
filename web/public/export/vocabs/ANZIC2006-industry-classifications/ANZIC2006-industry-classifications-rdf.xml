@@ -24,7 +24,7 @@
     <dcterms:creator rdf:resource="https://linked.data.gov.au/org/gsq"/>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-16</dcterms:modified>
     <dcterms:publisher rdf:resource="https://linked.data.gov.au/org/gsq"/>
-    <reg:status xml:lang="en">experimental</reg:status>
+    <reg:status></reg:status>
     <reg:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/A0000"/>
     <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/anzsic-2006/B0000"/>

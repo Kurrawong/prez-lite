@@ -47,8 +47,7 @@
         ],
         "http://purl.org/linked-data/registry#status": [
             {
-                "@value": "experimental",
-                "@language": "en"
+                "@value": ""
             },
             {
                 "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
