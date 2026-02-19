@@ -108,6 +108,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build vocabulary data
+        run: pnpm build:all-export
+
+      - name: Prepare Nuxt
+        run: npx nuxt prepare
+        working-directory: web
+
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
         working-directory: web
