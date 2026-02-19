@@ -1,6 +1,6 @@
 [
   {
-    "@id": "_:n3-46",
+    "@id": "_:n3-19",
     "https://prez.dev/currentProfile": [
       {
         "@id": "https://prez.dev/OGCSchemesObjectProfile"
@@ -49,7 +49,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "The most populous state, located on the east coast. Capital: Sydney."
+        "@value": "The most populous state, located on the east coast. Capital: Sydney. XX"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -62,14 +62,14 @@
         "@id": "https://example.com/def/australian-states"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://example.com/def/australian-states/states"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#altLabel": [
       {
         "@value": "NSW"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://example.com/def/australian-states/states"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#notation": [
@@ -99,7 +99,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "The most populous state, located on the east coast. Capital: Sydney."
+        "@value": "The most populous state, located on the east coast. Capital: Sydney. XX"
       }
     ]
   },

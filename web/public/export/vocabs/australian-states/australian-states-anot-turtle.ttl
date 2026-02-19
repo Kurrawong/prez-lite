@@ -25,4 +25,4 @@
 prez:link prez:label "link".
 prez:members prez:label "members".
 <https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
-_:n3-44 prez:currentProfile prez:OGCSchemesObjectProfile.
+_:n3-17 prez:currentProfile prez:OGCSchemesObjectProfile.
