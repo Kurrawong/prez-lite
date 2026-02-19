@@ -37,7 +37,8 @@ jobs:
         run: pnpm install
 
       - name: Prepare Nuxt
-        run: pnpm --filter @prez-lite/web nuxt prepare
+        run: npx nuxt prepare
+        working-directory: web
 
       - name: Run unit tests
         run: pnpm --filter @prez-lite/web test:unit
