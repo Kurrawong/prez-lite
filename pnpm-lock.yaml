@@ -38,6 +38,9 @@ importers:
       n3:
         specifier: ^2.0.1
         version: 2.0.1
+      rdf-validate-shacl:
+        specifier: ^0.6.5
+        version: 0.6.5
 
   packages/github-auth-worker:
     devDependencies:
