@@ -684,7 +684,7 @@ function bt(t) {
 }
 l(bt, "clearCache");
 function Ke() {
-  const t = document.querySelectorAll('script[src*="prez-vocab"]');
+  const t = document.querySelectorAll('script[src*="prez-vocab"], script[src*="prez-lite"]');
   if (t.length > 0) {
     const e = t[t.length - 1].src, r = new URL(e), i = r.pathname.split("/");
     return i.pop(), i.pop(), r.pathname = i.join("/") || "/", r.origin + r.pathname.replace(/\/$/, "");

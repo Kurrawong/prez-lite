@@ -3,7 +3,7 @@
  */
 export function detectBaseUrl(): string | null {
   // Try to find the script tag that loaded this component
-  const scripts = document.querySelectorAll('script[src*="prez-vocab"]')
+  const scripts = document.querySelectorAll('script[src*="prez-vocab"], script[src*="prez-lite"]')
   if (scripts.length > 0) {
     const src = (scripts[scripts.length - 1] as HTMLScriptElement).src
     // Extract base URL (remove /web-components/prez-lite.min.js)
