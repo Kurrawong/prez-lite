@@ -1,0 +1,10 @@
+iri,broader,prefLabel
+https://example.com/def/project-status/active,,Active
+https://example.com/def/project-status/blocked,https://example.com/def/project-status/on-hold,Blocked
+https://example.com/def/project-status/cancelled,,Cancelled
+https://example.com/def/project-status/completed,,Completed
+https://example.com/def/project-status/draft,,Draft
+https://example.com/def/project-status/in-progress,https://example.com/def/project-status/active,In Progress
+https://example.com/def/project-status/in-review,https://example.com/def/project-status/active,In Review
+https://example.com/def/project-status/on-hold,,On Hold
+https://example.com/def/project-status/pending-approval,https://example.com/def/project-status/on-hold,Pending Approval

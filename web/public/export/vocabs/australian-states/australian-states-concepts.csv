@@ -1,0 +1,11 @@
+iri,broader,prefLabel
+https://example.com/def/australian-states/act,https://example.com/def/australian-states/territories,Australian Capital Territory
+https://example.com/def/australian-states/nsw,https://example.com/def/australian-states/states,New South Wales
+https://example.com/def/australian-states/nt,https://example.com/def/australian-states/territories,Northern Territory
+https://example.com/def/australian-states/qld,https://example.com/def/australian-states/states,Queensland
+https://example.com/def/australian-states/sa,https://example.com/def/australian-states/states,South Australia
+https://example.com/def/australian-states/states,,States
+https://example.com/def/australian-states/tas,https://example.com/def/australian-states/states,Tasmania
+https://example.com/def/australian-states/territories,,Territories
+https://example.com/def/australian-states/vic,https://example.com/def/australian-states/states,Victoria
+https://example.com/def/australian-states/wa,https://example.com/def/australian-states/states,Western Australia

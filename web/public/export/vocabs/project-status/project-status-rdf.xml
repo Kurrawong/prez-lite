@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="https://example.com/def/project-status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:prefLabel>Project Status</skos:prefLabel>
+    <skos:definition>Status codes for tracking project lifecycle stages.</skos:definition>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-01</sdo:dateCreated>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-02-19</sdo:dateModified>
+    <sdo:creator rdf:resource="https://example.com/org/example"/>
+    <skos:hasTopConcept rdf:resource="https://example.com/def/project-status/draft"/>
+    <skos:hasTopConcept rdf:resource="https://example.com/def/project-status/active"/>
+    <skos:hasTopConcept rdf:resource="https://example.com/def/project-status/on-hold"/>
+    <skos:hasTopConcept rdf:resource="https://example.com/def/project-status/completed"/>
+    <skos:hasTopConcept rdf:resource="https://example.com/def/project-status/cancelled"/>
+  </rdf:Description>
+</rdf:RDF>

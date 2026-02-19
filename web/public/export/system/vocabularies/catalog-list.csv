@@ -1,0 +1,5 @@
+iri,label,link
+https://linked.data.gov.au/def/alteration-form,Alteration form,/catalogs/catalogue:gswa-vocabs/collections/alteration-form
+https://example.com/def/australian-states,Australian States and Territories,/catalogs/catalogue:gswa-vocabs/collections/australian-states
+https://example.com/def/colours,Colour,/catalogs/catalogue:gswa-vocabs/collections/colours
+https://example.com/def/project-status,Project Status,/catalogs/catalogue:gswa-vocabs/collections/project-status

@@ -1,0 +1,53 @@
+[
+    {
+        "@id": "https://example.com/def/project-status",
+        "@type": [
+            "http://www.w3.org/2002/07/owl#Ontology",
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Project Status"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Status codes for tracking project lifecycle stages."
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2026-02-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2026-02-19",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://example.com/org/example"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://example.com/def/project-status/draft"
+            },
+            {
+                "@id": "https://example.com/def/project-status/active"
+            },
+            {
+                "@id": "https://example.com/def/project-status/on-hold"
+            },
+            {
+                "@id": "https://example.com/def/project-status/completed"
+            },
+            {
+                "@id": "https://example.com/def/project-status/cancelled"
+            }
+        ]
+    }
+]

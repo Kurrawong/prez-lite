@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocabularies</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    html, body { background-color: #1a1a2e; color: #eaeaea; }
+    .box { background-color: #16213e; border: 1px solid #0f3460; }
+    .table { background-color: #16213e; color: #eaeaea; }
+    .table th, .table td { color: #eaeaea; border-color: #0f3460; background-color: #16213e; }
+    .table thead th { color: #94a3b8; background-color: #0f3460; }
+    .table.is-striped tbody tr:nth-child(odd) td { background-color: #16213e; }
+    .table.is-striped tbody tr:nth-child(even) td { background-color: #1a1a2e; }
+    .table.is-hoverable tbody tr:hover td { background-color: #0f3460 !important; }
+    .title, .subtitle { color: #eaeaea; }
+    a { color: #60a5fa; }
+    a:hover { color: #93c5fd; }
+    .iri-link { word-break: break-all; }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Vocabularies</h1>
+      <p class="subtitle">
+        <a href="https://example.org/catalogue/vocabularies" class="iri-link" target="_blank">https://example.org/catalogue/vocabularies</a>
+      </p>
+
+      
+      <div class="box">
+        <h2 class="title is-4">Metadata</h2>
+        <table class="table is-fullwidth metadata-table">
+          <tbody>
+            <tr><th>Date Modified</th><td>2026-02-19</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box concept-table">
+        <h2 class="title is-4">Vocabularies (4)</h2>
+        <table class="table is-fullwidth is-striped is-hoverable">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>IRI</th>
+              <th>API link</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>Alteration form</td>
+              <td><a href="https://linked.data.gov.au/def/alteration-form" class="iri-link" target="_blank">https://linked.data.gov.au/def/alteration-form</a></td>
+              <td><code>/catalogs/catalogue:gswa-vocabs/collections/alteration-form</code></td>
+            </tr>
+            <tr>
+              <td>Australian States and Territories</td>
+              <td><a href="https://example.com/def/australian-states" class="iri-link" target="_blank">https://example.com/def/australian-states</a></td>
+              <td><code>/catalogs/catalogue:gswa-vocabs/collections/australian-states</code></td>
+            </tr>
+            <tr>
+              <td>Colour</td>
+              <td><a href="https://example.com/def/colours" class="iri-link" target="_blank">https://example.com/def/colours</a></td>
+              <td><code>/catalogs/catalogue:gswa-vocabs/collections/colours</code></td>
+            </tr>
+            <tr>
+              <td>Project Status</td>
+              <td><a href="https://example.com/def/project-status" class="iri-link" target="_blank">https://example.com/def/project-status</a></td>
+              <td><code>/catalogs/catalogue:gswa-vocabs/collections/project-status</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

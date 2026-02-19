@@ -1,0 +1,98 @@
+[
+  {
+    "@id": "_:n3-55",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "https://example.com/def/colours",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology",
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Colour"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A simple vocabulary of colours organised by primary, secondary, and tertiary groupings."
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2026-01-15",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2026-02-19",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://example.com/org/example"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns4:colours"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:colours"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:gswa-vocabs/collections/ns4:colours/items"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Colour"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A simple vocabulary of colours organised by primary, secondary, and tertiary groupings."
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/catalogue/gswa-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:gswa-vocabs"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  }
+]

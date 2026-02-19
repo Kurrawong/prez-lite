@@ -1,0 +1,28 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://example.com/def/australian-states> a owl:Ontology, skos:ConceptScheme;
+    skos:prefLabel "Australian States and Territories";
+    skos:definition "The states and territories of the Commonwealth of Australia, including their capital cities.";
+    sdo:dateCreated "2026-01-01"^^xsd:date;
+    sdo:dateModified "2026-02-19"^^xsd:date;
+    sdo:creator <https://example.com/org/example>;
+    prez:identifier "ns4:australian-states";
+    prez:link "/catalogs/catalogue:gswa-vocabs/collections/ns4:australian-states";
+    prez:members "/catalogs/catalogue:gswa-vocabs/collections/ns4:australian-states/items";
+    prez:type prez:FocusNode;
+    prez:label "Australian States and Territories";
+    prez:description "The states and territories of the Commonwealth of Australia, including their capital cities.".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://linked.data.gov.au/catalogue/gswa-vocabs> prez:identifier "catalogue:gswa-vocabs".
+_:n3-44 prez:currentProfile prez:OGCSchemesObjectProfile.

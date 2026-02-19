@@ -1,0 +1,31 @@
+{
+  "schemes": [
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form",
+      "label": "Alteration form",
+      "count": 24
+    },
+    {
+      "iri": "https://example.com/def/colours",
+      "label": "Colour",
+      "count": 15
+    },
+    {
+      "iri": "https://example.com/def/australian-states",
+      "label": "Australian States and Territories",
+      "count": 10
+    },
+    {
+      "iri": "https://example.com/def/project-status",
+      "label": "Project Status",
+      "count": 9
+    }
+  ],
+  "publishers": [
+    {
+      "iri": "https://linked.data.gov.au/org/gswa",
+      "label": "gswa",
+      "count": 24
+    }
+  ]
+}

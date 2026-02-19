@@ -1,0 +1,16 @@
+iri,broader,prefLabel
+https://example.com/def/colours/amber,https://example.com/def/colours/tertiary,Amber
+https://example.com/def/colours/blue,https://example.com/def/colours/primary,Blue
+https://example.com/def/colours/chartreuse,https://example.com/def/colours/tertiary,Chartreuse
+https://example.com/def/colours/green,https://example.com/def/colours/secondary,Green
+https://example.com/def/colours/indigo,https://example.com/def/colours/tertiary,Indigo
+https://example.com/def/colours/magenta,https://example.com/def/colours/tertiary,Magenta
+https://example.com/def/colours/orange,https://example.com/def/colours/secondary,Orange
+https://example.com/def/colours/primary,,Primary colour
+https://example.com/def/colours/purple,https://example.com/def/colours/secondary,Purple
+https://example.com/def/colours/red,https://example.com/def/colours/primary,Red
+https://example.com/def/colours/secondary,,Secondary colour
+https://example.com/def/colours/teal,https://example.com/def/colours/tertiary,Teal
+https://example.com/def/colours/tertiary,,Tertiary colour
+https://example.com/def/colours/vermilion,https://example.com/def/colours/tertiary,Vermilion
+https://example.com/def/colours/yellow,https://example.com/def/colours/primary,Yellow

@@ -1,0 +1,158 @@
+{
+  "vocabularies": [
+    {
+      "iri": "https://linked.data.gov.au/def/alteration-form",
+      "slug": "alteration-form",
+      "prefLabel": "Alteration form",
+      "definition": "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011).",
+      "conceptCount": 24,
+      "topConcepts": [
+        "https://linked.data.gov.au/def/alteration-form/pervasive",
+        "https://linked.data.gov.au/def/alteration-form/selective",
+        "https://linked.data.gov.au/def/alteration-form/unaltered",
+        "https://linked.data.gov.au/def/alteration-form/non-pervasive"
+      ],
+      "modified": "2024-12-02",
+      "created": "2024-12-02",
+      "version": "1",
+      "versionIRI": "https://linked.data.gov.au/def/alteration-form/1",
+      "status": "https://linked.data.gov.au/def/reg-statuses/stable",
+      "statusLabel": "stable",
+      "publisher": [
+        "https://linked.data.gov.au/org/gswa"
+      ],
+      "publisherLabels": [
+        "gswa"
+      ],
+      "creator": [
+        "https://linked.data.gov.au/org/gswa"
+      ],
+      "creatorLabels": [
+        "gswa"
+      ],
+      "themes": [
+        "https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"
+      ],
+      "themeLabels": [
+        "mineral"
+      ],
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv",
+        "html"
+      ]
+    },
+    {
+      "iri": "https://example.com/def/australian-states",
+      "slug": "australian-states",
+      "prefLabel": "Australian States and Territories",
+      "definition": "The states and territories of the Commonwealth of Australia, including their capital cities.",
+      "conceptCount": 10,
+      "topConcepts": [
+        "https://example.com/def/australian-states/states",
+        "https://example.com/def/australian-states/territories"
+      ],
+      "modified": "2026-02-19",
+      "created": "2026-01-01",
+      "version": null,
+      "versionIRI": null,
+      "status": null,
+      "statusLabel": null,
+      "publisher": [],
+      "publisherLabels": [],
+      "creator": [
+        "https://example.com/org/example"
+      ],
+      "creatorLabels": [
+        "example"
+      ],
+      "themes": [],
+      "themeLabels": [],
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv",
+        "html"
+      ]
+    },
+    {
+      "iri": "https://example.com/def/colours",
+      "slug": "colours",
+      "prefLabel": "Colour",
+      "definition": "A simple vocabulary of colours organised by primary, secondary, and tertiary groupings.",
+      "conceptCount": 15,
+      "topConcepts": [
+        "https://example.com/def/colours/primary",
+        "https://example.com/def/colours/secondary",
+        "https://example.com/def/colours/tertiary"
+      ],
+      "modified": "2026-02-19",
+      "created": "2026-01-15",
+      "version": null,
+      "versionIRI": null,
+      "status": null,
+      "statusLabel": null,
+      "publisher": [],
+      "publisherLabels": [],
+      "creator": [
+        "https://example.com/org/example"
+      ],
+      "creatorLabels": [
+        "example"
+      ],
+      "themes": [],
+      "themeLabels": [],
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv",
+        "html"
+      ]
+    },
+    {
+      "iri": "https://example.com/def/project-status",
+      "slug": "project-status",
+      "prefLabel": "Project Status",
+      "definition": "Status codes for tracking project lifecycle stages.",
+      "conceptCount": 9,
+      "topConcepts": [
+        "https://example.com/def/project-status/draft",
+        "https://example.com/def/project-status/active",
+        "https://example.com/def/project-status/on-hold",
+        "https://example.com/def/project-status/completed",
+        "https://example.com/def/project-status/cancelled"
+      ],
+      "modified": "2026-02-19",
+      "created": "2026-02-01",
+      "version": null,
+      "versionIRI": null,
+      "status": null,
+      "statusLabel": null,
+      "publisher": [],
+      "publisherLabels": [],
+      "creator": [
+        "https://example.com/org/example"
+      ],
+      "creatorLabels": [
+        "example"
+      ],
+      "themes": [],
+      "themeLabels": [],
+      "formats": [
+        "ttl",
+        "json",
+        "jsonld",
+        "rdf",
+        "csv",
+        "html"
+      ]
+    }
+  ]
+}

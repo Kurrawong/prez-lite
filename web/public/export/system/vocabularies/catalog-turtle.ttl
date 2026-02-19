@@ -1,0 +1,21 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://example.org/catalogue/vocabularies> a sdo:DataCatalog;
+    sdo:name "Vocabularies"@en;
+    sdo:description "Published vocabularies."@en;
+    sdo:dateModified "2026-02-19"^^xsd:date;
+    sdo:hasPart <https://linked.data.gov.au/def/alteration-form>, <https://example.com/def/australian-states>, <https://example.com/def/colours>, <https://example.com/def/project-status>.
+<https://linked.data.gov.au/def/alteration-form> skos:prefLabel "Alteration form"@en.
+<https://example.com/def/australian-states> skos:prefLabel "Australian States and Territories"@en.
+<https://example.com/def/colours> skos:prefLabel "Colour"@en.
+<https://example.com/def/project-status> skos:prefLabel "Project Status"@en.

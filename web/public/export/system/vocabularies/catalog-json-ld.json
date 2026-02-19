@@ -1,0 +1,76 @@
+[
+    {
+        "@id": "https://example.com/def/australian-states",
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Australian States and Territories",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "https://example.com/def/colours",
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Colour",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "https://example.com/def/project-status",
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Project Status",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "https://example.org/catalogue/vocabularies",
+        "@type": [
+            "https://schema.org/DataCatalog"
+        ],
+        "https://schema.org/name": [
+            {
+                "@value": "Vocabularies",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/description": [
+            {
+                "@value": "Published vocabularies.",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2026-02-19",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/hasPart": [
+            {
+                "@id": "https://linked.data.gov.au/def/alteration-form"
+            },
+            {
+                "@id": "https://example.com/def/australian-states"
+            },
+            {
+                "@id": "https://example.com/def/colours"
+            },
+            {
+                "@id": "https://example.com/def/project-status"
+            }
+        ]
+    },
+    {
+        "@id": "https://linked.data.gov.au/def/alteration-form",
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Alteration form",
+                "@language": "en"
+            }
+        ]
+    }
+]
