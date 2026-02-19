@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   validate:
-    uses: hjohns/prez-lite/.github/workflows/site-validate-vocabs.yml@main
+    uses: Kurrawong/prez-lite/.github/workflows/site-validate-vocabs.yml@main
     with:
       prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}
     secrets:

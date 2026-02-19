@@ -10,7 +10,7 @@ const useLocalLayer = process.env.LOCAL_LAYER || (existsSync(localWebPath) && ex
 const version = process.env.PREZ_LITE_VERSION || 'main'
 const layer = useLocalLayer
   ? localWebPath
-  : [`github:hjohns/prez-lite/web#${version}`, { auth: process.env.GITHUB_TOKEN }]
+  : [`github:Kurrawong/prez-lite/web#${version}`, { auth: process.env.GITHUB_TOKEN }]
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',

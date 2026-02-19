@@ -31,7 +31,7 @@ jobs:
 
       - name: Fetch prez-lite tools
         id: tools
-        uses: hjohns/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
         with:
           prez-lite-ref: ${{ inputs.prez-lite-ref }}
           prez-lite-token: ${{ secrets.prez-lite-token }}

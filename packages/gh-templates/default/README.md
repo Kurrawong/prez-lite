@@ -1,6 +1,6 @@
 # prez-lite Vocabulary Publisher
 
-A static site for publishing SKOS vocabularies, powered by [prez-lite](https://github.com/hjohns/prez-lite).
+A static site for publishing SKOS vocabularies, powered by [prez-lite](https://github.com/Kurrawong/prez-lite).
 
 ## Quick Start
 
@@ -34,7 +34,7 @@ You can set repository variables to control the build. Go to Settings > Secrets 
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PREZ_LITE_VERSION` | prez-lite version/tag to use (e.g. `v0.2.0`) | `main` |
-| `PREZ_LITE_REPO` | prez-lite repository (if using a fork) | `hjohns/prez-lite` |
+| `PREZ_LITE_REPO` | prez-lite repository (if using a fork) | `Kurrawong/prez-lite` |
 
 Pinning to a release tag (e.g. `v0.2.0`) is recommended for production stability.
 
@@ -228,7 +228,7 @@ Connect the web component directly to a live SPARQL endpoint instead of static f
 ></prez-list>
 ```
 
-The component lazily loads narrower concepts on expand and queries the endpoint for search. The SPARQL endpoint must support CORS. See the [sharing documentation](https://github.com/hjohns/prez-lite/blob/main/docs/3-features/sharing.md) for full SPARQL configuration options.
+The component lazily loads narrower concepts on expand and queries the endpoint for search. The SPARQL endpoint must support CORS. See the [sharing documentation](https://github.com/Kurrawong/prez-lite/blob/main/docs/3-features/sharing.md) for full SPARQL configuration options.
 
 ### Background Labels
 

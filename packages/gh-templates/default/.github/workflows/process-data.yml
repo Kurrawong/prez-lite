@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   process:
-    uses: hjohns/prez-lite/.github/workflows/site-process-data.yml@main
+    uses: Kurrawong/prez-lite/.github/workflows/site-process-data.yml@main
     with:
       prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}
     secrets:

@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build-deploy:
-    uses: hjohns/prez-lite/.github/workflows/build-site.yml@main
+    uses: Kurrawong/prez-lite/.github/workflows/build-site.yml@main
     with:
       prez-lite-version: ${{ vars.PREZ_LITE_VERSION || 'main' }}
     secrets:

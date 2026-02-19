@@ -8,7 +8,7 @@ inputs:
     default: 'main'
   prez-lite-repo:
     description: 'prez-lite repository (owner/repo)'
-    default: 'hjohns/prez-lite'
+    default: 'Kurrawong/prez-lite'
   prez-lite-token:
     description: 'GitHub PAT for accessing prez-lite repo (required if private)'
     required: false

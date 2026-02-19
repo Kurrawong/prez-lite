@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   fetch-labels:
-    uses: hjohns/prez-lite/.github/workflows/site-get-background-labels.yml@main
+    uses: Kurrawong/prez-lite/.github/workflows/site-get-background-labels.yml@main
     with:
       prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}
       endpoint: ${{ github.event.inputs.endpoint || 'http://demo.dev.kurrawong.ai/sparql' }}

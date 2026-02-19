@@ -53,7 +53,7 @@ if (existsSync(envPath)) {
 }
 
 // Configuration
-const PREZ_LITE_REPO = process.env.PREZ_LITE_REPO || 'hjohns/prez-lite'
+const PREZ_LITE_REPO = process.env.PREZ_LITE_REPO || 'Kurrawong/prez-lite'
 const PREZ_LITE_BRANCH = process.env.PREZ_LITE_BRANCH || 'main'
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 
