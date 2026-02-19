@@ -72,6 +72,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Prepare Nuxt
+        run: npx nuxt prepare
+        working-directory: web
+
       - name: Run integration tests
         run: pnpm --filter @prez-lite/web test:integration
 
