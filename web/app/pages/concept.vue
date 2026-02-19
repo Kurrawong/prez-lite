@@ -22,6 +22,8 @@ const {
 const { getConceptShareUrl } = useShare()
 const shareUrl = computed(() => scheme.value && uri.value ? getConceptShareUrl(scheme.value.iri, uri.value) : undefined)
 
+const site = useSiteConfig()
+
 function copyUriToClipboard() {
   if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
     navigator.clipboard.writeText(uri.value).catch(() => {})
@@ -31,7 +33,7 @@ function copyUriToClipboard() {
 
 <template>
   <div class="py-8">
-    <UBreadcrumb :items="breadcrumbs" class="mb-6" />
+    <UBreadcrumb v-if="!site.siteHeaderBreadcrumbs" :items="breadcrumbs" class="mb-6" />
 
     <div v-if="!uri" class="text-center py-12">
       <UAlert color="warning" title="No concept selected" description="Please select a concept from a vocabulary" />

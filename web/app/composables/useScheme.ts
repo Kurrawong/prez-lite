@@ -46,11 +46,12 @@ export function useScheme(uri: Ref<string>) {
 
   const { data: labelsIndex } = useAsyncData('labels', fetchLabels, { server: false })
 
-  // Fetch collections for this vocab (only when slug is available)
+  // Fetch collections for this vocab (only when slug is available and collections exist)
+  const hasCollections = computed(() => (currentVocabMeta.value?.collectionCount ?? 0) > 0)
   const { data: collections } = useAsyncData(
     () => `collections-${slug.value}`,
-    () => slug.value ? fetchListCollections(slug.value) : Promise.resolve([]),
-    { server: false, watch: [slug] }
+    () => slug.value && hasCollections.value ? fetchListCollections(slug.value) : Promise.resolve([]),
+    { server: false, watch: [slug, hasCollections] }
   )
 
   // Get annotated properties from the anot-ld-json file

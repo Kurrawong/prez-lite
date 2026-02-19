@@ -7,6 +7,7 @@ export function useSiteConfig() {
     tagline: 'Vocabulary Publishing Platform',
     footerText: 'An open source vocabulary publishing system',
     footerLinks: [] as Array<{ label: string; href: string }>,
+    siteHeaderBreadcrumbs: false,
     ...appConfig.site
   }))
 }

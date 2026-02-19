@@ -27,6 +27,7 @@ const {
   breadcrumbs
 } = useScheme(uri)
 
+const site = useSiteConfig()
 const showValidationDetails = ref(false)
 
 // Keep track of last valid data to prevent flicker on back navigation
@@ -1019,7 +1020,7 @@ function copyIriToClipboard(iri: string) {
       @show-change-detail="handleShowChangeDetail"
     />
 
-    <UBreadcrumb v-if="!immersiveMode" ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
+    <UBreadcrumb v-if="!immersiveMode && !site.siteHeaderBreadcrumbs" ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
 
     <div v-if="!uri" class="text-center py-12">
       <UAlert color="warning" title="No scheme selected" description="Please select a vocabulary from the vocabularies page" />
