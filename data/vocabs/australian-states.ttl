@@ -1,0 +1,133 @@
+PREFIX : <https://example.com/def/australian-states/>
+PREFIX cs: <https://example.com/def/australian-states>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Australian States and Territories" ;
+    skos:definition "The states and territories of the Commonwealth of Australia, including their capital cities." ;
+    schema:dateCreated "2026-01-01"^^xsd:date ;
+    schema:dateModified "2026-02-19"^^xsd:date ;
+    schema:creator <https://example.com/org/example> ;
+    skos:hasTopConcept
+        :states ,
+        :territories ;
+.
+
+<https://example.com/org/example>
+    a schema:Organization ;
+    schema:name "Example Organisation" ;
+    schema:url "https://example.com"^^xsd:anyURI ;
+.
+
+:states
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The six federated states of Australia." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "States" ;
+    skos:topConceptOf cs: ;
+.
+
+:nsw
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :states ;
+    skos:definition "The most populous state, located on the east coast. Capital: Sydney." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "New South Wales" ;
+    skos:altLabel "NSW" ;
+    skos:notation "NSW"^^xsd:string ;
+.
+
+:vic
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :states ;
+    skos:definition "A southeastern state and the smallest on the mainland. Capital: Melbourne." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Victoria" ;
+    skos:altLabel "VIC" ;
+    skos:notation "VIC"^^xsd:string ;
+.
+
+:qld
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :states ;
+    skos:definition "The second-largest state, occupying the northeast. Capital: Brisbane." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Queensland" ;
+    skos:altLabel "QLD" ;
+    skos:notation "QLD"^^xsd:string ;
+.
+
+:wa
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :states ;
+    skos:definition "The largest state by area, covering the western third of the continent. Capital: Perth." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Western Australia" ;
+    skos:altLabel "WA" ;
+    skos:notation "WA"^^xsd:string ;
+.
+
+:sa
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :states ;
+    skos:definition "A southern state bordered by all other mainland states and the Northern Territory. Capital: Adelaide." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "South Australia" ;
+    skos:altLabel "SA" ;
+    skos:notation "SA"^^xsd:string ;
+.
+
+:tas
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :states ;
+    skos:definition "An island state south of the mainland. Capital: Hobart." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tasmania" ;
+    skos:altLabel "TAS" ;
+    skos:notation "TAS"^^xsd:string ;
+.
+
+:territories
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "The major self-governing internal territories of Australia." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Territories" ;
+    skos:topConceptOf cs: ;
+.
+
+:act
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :territories ;
+    skos:definition "An enclave within New South Wales containing the national capital, Canberra." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Australian Capital Territory" ;
+    skos:altLabel "ACT" ;
+    skos:notation "ACT"^^xsd:string ;
+.
+
+:nt
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :territories ;
+    skos:definition "A territory in the centre and central north of the continent. Capital: Darwin." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Northern Territory" ;
+    skos:altLabel "NT" ;
+    skos:notation "NT"^^xsd:string ;
+.

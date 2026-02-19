@@ -1,0 +1,176 @@
+PREFIX : <https://example.com/def/colours/>
+PREFIX cs: <https://example.com/def/colours>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Colour" ;
+    skos:definition "A simple vocabulary of colours organised by primary, secondary, and tertiary groupings." ;
+    schema:dateCreated "2026-01-15"^^xsd:date ;
+    schema:dateModified "2026-02-19"^^xsd:date ;
+    schema:creator <https://example.com/org/example> ;
+    skos:hasTopConcept
+        :primary ,
+        :secondary ,
+        :tertiary ;
+.
+
+<https://example.com/org/example>
+    a schema:Organization ;
+    schema:name "Example Organisation" ;
+    schema:url "https://example.com"^^xsd:anyURI ;
+.
+
+:primary
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A colour that cannot be made by mixing other colours." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Primary colour" ;
+    skos:topConceptOf cs: ;
+.
+
+:red
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :primary ;
+    skos:definition "A warm primary colour at the long-wavelength end of the visible spectrum." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Red" ;
+    skos:notation "R"^^xsd:string ;
+.
+
+:blue
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :primary ;
+    skos:definition "A cool primary colour between green and violet in the visible spectrum." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Blue" ;
+    skos:notation "B"^^xsd:string ;
+.
+
+:yellow
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :primary ;
+    skos:definition "A warm primary colour between green and orange in the visible spectrum." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Yellow" ;
+    skos:notation "Y"^^xsd:string ;
+.
+
+:secondary
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A colour made by mixing two primary colours." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Secondary colour" ;
+    skos:topConceptOf cs: ;
+.
+
+:green
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :secondary ;
+    skos:definition "A secondary colour made by mixing blue and yellow." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Green" ;
+    skos:notation "G"^^xsd:string ;
+.
+
+:orange
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :secondary ;
+    skos:definition "A secondary colour made by mixing red and yellow." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Orange" ;
+    skos:notation "O"^^xsd:string ;
+.
+
+:purple
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Violet" ;
+    skos:broader :secondary ;
+    skos:definition "A secondary colour made by mixing red and blue." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Purple" ;
+    skos:notation "P"^^xsd:string ;
+.
+
+:tertiary
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "A colour made by mixing a primary colour with a neighbouring secondary colour." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Tertiary colour" ;
+    skos:topConceptOf cs: ;
+.
+
+:vermilion
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Red-orange" ;
+    skos:broader :tertiary ;
+    skos:definition "A tertiary colour between red and orange." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Vermilion" ;
+.
+
+:amber
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Yellow-orange" ;
+    skos:broader :tertiary ;
+    skos:definition "A tertiary colour between yellow and orange." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Amber" ;
+.
+
+:chartreuse
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Yellow-green" ;
+    skos:broader :tertiary ;
+    skos:definition "A tertiary colour between yellow and green." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Chartreuse" ;
+.
+
+:teal
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Blue-green" ;
+    skos:broader :tertiary ;
+    skos:definition "A tertiary colour between blue and green." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Teal" ;
+.
+
+:indigo
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Blue-purple" ;
+    skos:broader :tertiary ;
+    skos:definition "A tertiary colour between blue and purple." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Indigo" ;
+.
+
+:magenta
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:altLabel "Red-purple" ;
+    skos:broader :tertiary ;
+    skos:definition "A tertiary colour between red and purple." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Magenta" ;
+.

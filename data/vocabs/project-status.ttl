@@ -1,0 +1,121 @@
+PREFIX : <https://example.com/def/project-status/>
+PREFIX cs: <https://example.com/def/project-status>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+cs:
+    a
+        owl:Ontology ,
+        skos:ConceptScheme ;
+    skos:prefLabel "Project Status" ;
+    skos:definition "Status codes for tracking project lifecycle stages." ;
+    schema:dateCreated "2026-02-01"^^xsd:date ;
+    schema:dateModified "2026-02-19"^^xsd:date ;
+    schema:creator <https://example.com/org/example> ;
+    skos:hasTopConcept
+        :draft ,
+        :active ,
+        :on-hold ,
+        :completed ,
+        :cancelled ;
+.
+
+<https://example.com/org/example>
+    a schema:Organization ;
+    schema:name "Example Organisation" ;
+    schema:url "https://example.com"^^xsd:anyURI ;
+.
+
+:draft
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Project has been proposed but not yet approved or started." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Draft" ;
+    skos:notation "DRAFT"^^xsd:string ;
+    skos:topConceptOf cs: ;
+.
+
+:active
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Project is approved and work is in progress." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Active" ;
+    skos:notation "ACTIVE"^^xsd:string ;
+    skos:topConceptOf cs: ;
+.
+
+:in-progress
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :active ;
+    skos:definition "Tasks are currently being worked on." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "In Progress" ;
+    skos:notation "IN_PROGRESS"^^xsd:string ;
+.
+
+:in-review
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :active ;
+    skos:definition "Deliverables are under review by stakeholders." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "In Review" ;
+    skos:notation "IN_REVIEW"^^xsd:string ;
+.
+
+:on-hold
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Project is temporarily paused pending resolution of blockers." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "On Hold" ;
+    skos:notation "ON_HOLD"^^xsd:string ;
+    skos:topConceptOf cs: ;
+.
+
+:blocked
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :on-hold ;
+    skos:definition "Project is paused due to an external dependency or unresolved issue." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Blocked" ;
+    skos:notation "BLOCKED"^^xsd:string ;
+.
+
+:pending-approval
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:broader :on-hold ;
+    skos:definition "Project is paused while waiting for approval to proceed." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Pending Approval" ;
+    skos:notation "PENDING_APPROVAL"^^xsd:string ;
+.
+
+:completed
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "All project deliverables have been finished and accepted." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Completed" ;
+    skos:notation "COMPLETE"^^xsd:string ;
+    skos:topConceptOf cs: ;
+.
+
+:cancelled
+    a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
+    skos:definition "Project has been permanently stopped before completion." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Cancelled" ;
+    skos:altLabel "Abandoned" ;
+    skos:notation "CANCELLED"^^xsd:string ;
+    skos:topConceptOf cs: ;
+.
