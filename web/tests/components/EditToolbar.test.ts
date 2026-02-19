@@ -5,12 +5,14 @@
  * 1. Authenticated, not editing — edit button + history
  * 2. Editing — mode switch, changes, save, exit
  *
- * The component uses <Teleport to="body"> so we read from document.body
- * rather than the wrapper element.
+ * The component uses <Teleport to="header"> so we create a <header>
+ * element and query from there.
  */
-import { describe, it, expect, afterEach } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import EditToolbar from '~/components/EditToolbar.vue'
+
+let header: HTMLElement
 
 const baseProps = {
   editView: 'none' as const,
@@ -28,36 +30,40 @@ const baseProps = {
   historyLoading: false,
 }
 
-/** Read teleported text from body */
-function bodyText(): string {
-  return document.body.textContent ?? ''
+beforeEach(() => {
+  header = document.createElement('header')
+  document.body.appendChild(header)
+})
+
+afterEach(() => {
+  header.remove()
+})
+
+/** Read teleported text from the header element */
+function headerText(): string {
+  return header.textContent ?? ''
 }
 
-/** Find buttons in body (including teleported content) */
-function bodyButtons(): HTMLButtonElement[] {
-  return Array.from(document.body.querySelectorAll('button'))
+/** Find buttons in header (teleported content) */
+function headerButtons(): HTMLButtonElement[] {
+  return Array.from(header.querySelectorAll('button'))
 }
 
 describe('EditToolbar', () => {
-  afterEach(() => {
-    // Clean up teleported content
-    document.body.innerHTML = ''
-  })
-
   describe('authenticated, not editing state', () => {
     it('renders edit button', async () => {
       await mountSuspended(EditToolbar, { props: baseProps })
-      expect(bodyText()).toContain('Edit')
+      expect(headerText()).toContain('Edit')
     })
 
     it('renders history button', async () => {
       await mountSuspended(EditToolbar, { props: baseProps })
-      expect(bodyText()).toContain('History')
+      expect(headerText()).toContain('History')
     })
 
     it('does not show save button', async () => {
       await mountSuspended(EditToolbar, { props: baseProps })
-      const saveBtn = bodyButtons().find(b => b.textContent?.includes('Save'))
+      const saveBtn = headerButtons().find(b => b.textContent?.includes('Save'))
       expect(saveBtn).toBeUndefined()
     })
   })
@@ -72,7 +78,7 @@ describe('EditToolbar', () => {
 
     it('renders save button', async () => {
       await mountSuspended(EditToolbar, { props: editProps })
-      const saveBtn = bodyButtons().find(b => b.textContent?.trim() === 'Save')
+      const saveBtn = headerButtons().find(b => b.textContent?.trim() === 'Save')
       expect(saveBtn).toBeDefined()
     })
 
@@ -80,7 +86,7 @@ describe('EditToolbar', () => {
       await mountSuspended(EditToolbar, {
         props: { ...editProps, pendingChanges: [] },
       })
-      const saveBtn = bodyButtons().find(b => b.textContent?.trim() === 'Save')
+      const saveBtn = headerButtons().find(b => b.textContent?.trim() === 'Save')
       expect(saveBtn?.disabled).toBe(true)
     })
 
@@ -102,7 +108,7 @@ describe('EditToolbar', () => {
           }],
         },
       })
-      const saveBtn = bodyButtons().find(b => b.textContent?.trim() === 'Save')
+      const saveBtn = headerButtons().find(b => b.textContent?.trim() === 'Save')
       expect(saveBtn?.disabled).toBe(false)
     })
 
@@ -116,18 +122,18 @@ describe('EditToolbar', () => {
           ],
         },
       })
-      expect(bodyText()).toContain('2')
-      expect(bodyText()).toContain('changes')
+      expect(headerText()).toContain('2')
+      expect(headerText()).toContain('changes')
     })
 
     it('shows "No changes yet" when no changes', async () => {
       await mountSuspended(EditToolbar, { props: editProps })
-      expect(bodyText()).toContain('No changes yet')
+      expect(headerText()).toContain('No changes yet')
     })
 
     it('shows exit button with aria-label', async () => {
       await mountSuspended(EditToolbar, { props: editProps })
-      const closeBtn = bodyButtons().find(b =>
+      const closeBtn = headerButtons().find(b =>
         b.getAttribute('aria-label') === 'Exit edit mode',
       )
       expect(closeBtn).toBeDefined()
