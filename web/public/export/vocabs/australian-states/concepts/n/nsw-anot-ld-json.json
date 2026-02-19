@@ -49,7 +49,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "The most populous state, located on the east coast. Capital: Sydney. XX"
+        "@value": "The most populous state, located on the east coast. Capital: Sydney."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -99,7 +99,7 @@
     ],
     "https://prez.dev/description": [
       {
-        "@value": "The most populous state, located on the east coast. Capital: Sydney. XX"
+        "@value": "The most populous state, located on the east coast. Capital: Sydney."
       }
     ]
   },
