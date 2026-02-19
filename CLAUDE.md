@@ -15,19 +15,34 @@ prez-lite generates static websites from SKOS vocabulary files (TTL format), fea
 
 ```
 prez-lite/
-├── web/                    # Nuxt 4 application
-│   ├── app/               # Vue components, pages, composables
+├── .github/
+│   ├── actions/           # Composite actions (fetch-prez-lite-tools, process-vocabs)
+│   └── workflows/         # CI/CD workflows (build, deploy, test, validate)
+│       ├── *.yml          # Internal workflows (build-site, deploy-aws, test, etc.)
+│       └── site-*.yml     # Reusable workflows for client repos
+├── data/                  # Vocabulary source data
+│   ├── vocabs/            # TTL vocabulary files
+│   ├── config/            # SHACL profiles configuration
+│   ├── background/        # Background label TTL files
+│   └── validators/        # SHACL validation shapes
+├── web/                   # Nuxt 4 application (base layer)
+│   ├── app/               # Vue components, pages, composables, app.config
 │   ├── content/           # Nuxt Content markdown pages
-│   └── public/            # Static assets, exports
+│   ├── public/            # Static assets (export/ is generated, gitignored)
+│   └── tests/             # Vitest unit, component, integration, e2e tests
 ├── packages/
-│   ├── data-processing/   # TTL → JSON pipeline
-│   ├── web-components/    # Lit-based embeddable components
-│   └── gh-templates/      # GitHub template repositories
-│       ├── default/       # Standard vocabulary template
-│       ├── catalog/       # Vocab + catalogs (planned)
-│       └── spatial/       # Vocab + maps (planned)
+│   ├── data-processing/   # TTL → JSON pipeline (N3.js, SHACL profiles)
+│   ├── web-components/    # Lit-based embeddable components (prez-lite.min.js)
+│   ├── github-auth-worker/# Cloudflare Worker for GitHub OAuth (inline editing)
+│   ├── sites/             # Client site implementations
+│   │   └── suncorp-vpp/   # Suncorp VPP (extends web/ as Nuxt layer)
+│   ├── gh-templates/      # GitHub template repositories
+│   │   └── default/       # Standard vocabulary template (subtree sync)
+│   └── examples/          # Example data and configurations
+├── sample-data/           # Fallback sample vocabs (used when data/ is empty)
 ├── docs/                  # Project documentation
-└── scripts/               # Build utilities
+├── scripts/               # Build utilities (deploy, sync, labels, validation)
+└── resources/             # Static resources
 ```
 
 ## Documentation Structure
@@ -113,46 +128,55 @@ Use these in document headers and inline:
 
 See `docs/4-roadmap/milestones.md` for detailed status.
 
-## Testing Commands
+## Commands
 
 ```bash
 # Development
-pnpm --filter web dev
+pnpm --filter web dev                          # Start Nuxt dev server (port 3123)
 
-# Build static site
-pnpm --filter web generate
+# Process vocabulary data (TTL → JSON exports)
+pnpm build:all-export                          # Full pipeline: clean, process, metadata, search index
+pnpm build:vocabs                              # Process vocab TTL files only
+pnpm build:vocab-metadata                      # Generate vocabulary metadata index
+pnpm build:search                              # Generate search index
+
+# Build & deploy
+pnpm --filter web generate                     # Build static site
+pnpm --filter @prez-lite/web-components build  # Build web components bundle
+
+# Testing
+pnpm --filter @prez-lite/web test:unit         # Run unit + component tests
+pnpm --filter @prez-lite/web test:integration  # Run integration tests
 
 # Type check
 pnpm --filter web nuxt typecheck
-
-# Process vocabularies
-pnpm --filter data-processing process
 ```
 
-## Template Repositories (`packages/gh-templates/`)
+## Reusable Workflows
 
-### Location & Workspace
-- `packages/gh-templates/default/` — standard vocabulary template
+The `site-*.yml` workflows in `.github/workflows/` are reusable by client repos (e.g. `suncorp-vpp`). They use composite actions in `.github/actions/` to clone prez-lite tools. The repo must be public for cross-repo workflow access.
+
+## Client Sites (`packages/sites/`)
+
+Client sites extend `web/` as a Nuxt layer, overriding components, content, and config:
+- `nuxt.config.ts` auto-detects monorepo vs standalone (GitHub layer)
+- `app/app.config.ts` overrides site name, branding, breadcrumb behavior
+- `app/components/` overrides SiteHeader, SiteFooter, etc.
+- Caller workflows in `.github/workflows/` invoke prez-lite's reusable workflows
+- `public/export/` is gitignored — CI regenerates it
+
+## Template Repository (`packages/gh-templates/default/`)
+
 - **Not in pnpm workspace** — has its own `package.json` and `node_modules/`
 - Synced to `Kurrawong/prez-lite-template-default` via git subtree
 
-### Local Development
 ```bash
 cd packages/gh-templates/default
 pnpm install        # independent install
 pnpm process        # regenerate vocab exports (auto-detects monorepo)
 pnpm dev            # start dev server
-```
 
-### Key Design
-- `nuxt.config.ts` auto-detects monorepo vs standalone (GitHub layer)
-- `nitro:config` hook filters parent layer's `public/` dirs so only template data is served
-- `process-vocabs.js` uses local `packages/data-processing/` in monorepo, downloads from GitHub when standalone
-- `public/export/` is gitignored — CI regenerates it
-- Never commit `.env` (contains `GITHUB_TOKEN`)
-
-### Subtree Sync
-```bash
+# Subtree sync
 ./scripts/sync-template-push.sh   # push to prez-lite-template-default
 ./scripts/sync-template-pull.sh   # pull changes back (squashed)
 ```
