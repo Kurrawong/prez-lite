@@ -30,79 +30,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: '🏗️ Build Site — Reusable workflow for gh-template repos'
-        run: |
-          echo "╔══════════════════════════════════════════════════════════════╗"
-          echo "║  BUILD & DEPLOY PREZ LITE SITE                             ║"
-          echo "║                                                            ║"
-          echo "║  Reusable workflow for downstream gh-template repos.       ║"
-          echo "║  Fetches data-processing from prez-lite, processes vocabs, ║"
-          echo "║  generates system metadata, builds the Nuxt static site,   ║"
-          echo "║  and deploys to GitHub Pages.                              ║"
-          echo "║                                                            ║"
-          echo "║  prez-lite version: ${{ inputs.prez-lite-version }}        ║"
-          echo "╚══════════════════════════════════════════════════════════════╝"
-
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: hjohns/prez-lite/.github/actions/fetch-prez-lite-tools@main
         with:
+          prez-lite-ref: ${{ inputs.prez-lite-version }}
+          prez-lite-token: ${{ secrets.prez-lite-token }}
           node-version: ${{ inputs.node-version }}
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Fetch data-processing from prez-lite
-        env:
-          GITHUB_TOKEN: ${{ secrets.prez-lite-token }}
-          PREZ_LITE_REPO: ${{ vars.PREZ_LITE_REPO || 'hjohns/prez-lite' }}
-          PREZ_LITE_VERSION: ${{ inputs.prez-lite-version }}
-        run: |
-          mkdir -p .prez-lite-cache
-
-          # Build clone URL (with or without token)
-          if [ -n "$GITHUB_TOKEN" ]; then
-            CLONE_URL="https://${GITHUB_TOKEN}@github.com/${PREZ_LITE_REPO}.git"
-          else
-            CLONE_URL="https://github.com/${PREZ_LITE_REPO}.git"
-          fi
-
-          git clone --depth 1 --filter=blob:none --sparse \
-            -b "$PREZ_LITE_VERSION" \
-            "$CLONE_URL" \
-            .prez-lite-cache/repo
-
-          cd .prez-lite-cache/repo
-          git sparse-checkout set packages/data-processing web/app/utils
-          cd ../..
-
-          # Move data-processing to expected location
-          mv .prez-lite-cache/repo/packages/data-processing .prez-lite-cache/data-processing
-
-          # Copy shared utility into data-processing
-          cp .prez-lite-cache/repo/web/app/utils/shacl-profile-parser.ts \
-            .prez-lite-cache/data-processing/scripts/shacl-profile-parser.ts
-
-          rm -rf .prez-lite-cache/repo
-
-          # Patch: remove workspace dependency on @prez-lite/web
-          cd .prez-lite-cache/data-processing
-          jq 'del(.dependencies["@prez-lite/web"])' package.json > tmp.json && mv tmp.json package.json
-
-          # Patch: rewrite import to use local copy
-          sed -i 's|@prez-lite/web/utils/shacl-profile-parser|./shacl-profile-parser.ts|g' scripts/process-vocab.js
-
-          echo "✓ Fetched data-processing from ${PREZ_LITE_REPO}@${PREZ_LITE_VERSION}"
-
-      - name: Install data-processing dependencies
-        run: |
-          cd .prez-lite-cache/data-processing
-          npm install
 
       - name: Process vocabularies
         run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+
           ARGS="--sourceDir data/vocabs --outputBase public/export/vocabs --systemDir public/export/system --pattern *.ttl"
 
           if [ -f "data/config/profiles.ttl" ]; then
@@ -113,11 +55,11 @@ jobs:
             ARGS="$ARGS --backgroundDir data/background"
           fi
 
-          node .prez-lite-cache/data-processing/scripts/process-vocab.js $ARGS
-          echo "✓ Vocabularies processed"
+          node "$DP/scripts/process-vocab.js" $ARGS
 
       - name: Generate system metadata
         run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
           mkdir -p public/export/system/vocabularies public/export/system/search
 
           # Vocabulary metadata index
@@ -125,22 +67,20 @@ jobs:
           if [ -d "data/background" ]; then
             ARGS="$ARGS --backgroundDir data/background"
           fi
-          node .prez-lite-cache/data-processing/scripts/generate-vocab-metadata.js $ARGS || echo "⚠ Vocab metadata generation skipped"
+          node "$DP/scripts/generate-vocab-metadata.js" $ARGS || echo "Vocab metadata skipped"
 
           # Labels (only if background dir has TTL files)
           if ls data/background/*.ttl >/dev/null 2>&1; then
-            node .prez-lite-cache/data-processing/scripts/generate-labels.js \
+            node "$DP/scripts/generate-labels.js" \
               --backgroundDir data/background \
-              --output public/export/system/labels.json || echo "⚠ Labels generation skipped"
+              --output public/export/system/labels.json || echo "Labels skipped"
           fi
 
           # Search index
-          node .prez-lite-cache/data-processing/scripts/generate-search-index.js \
+          node "$DP/scripts/generate-search-index.js" \
             --exportDir public/export \
             --output public/export/system/search \
-            --vocabMetadata public/export/system/vocabularies/index.json || echo "⚠ Search index generation skipped"
-
-          echo "✓ System metadata generated"
+            --vocabMetadata public/export/system/vocabularies/index.json || echo "Search index skipped"
 
       - name: Get pnpm store directory
         shell: bash

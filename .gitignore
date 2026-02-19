@@ -81,3 +81,6 @@ temp/
 
 # Test layer (local testing only)
 webtest/
+
+# Site repos (each subdirectory is its own git repo)
+packages/sites/

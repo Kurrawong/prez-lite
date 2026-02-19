@@ -1,0 +1,115 @@
+name: 'Fetch prez-lite tools'
+description: 'Sparse-checkout prez-lite data-processing, scripts, and shared utils for use in client repos'
+author: 'prez-lite'
+
+inputs:
+  prez-lite-ref:
+    description: 'prez-lite branch, tag, or commit (e.g. main, v0.2.0)'
+    default: 'main'
+  prez-lite-repo:
+    description: 'prez-lite repository (owner/repo)'
+    default: 'hjohns/prez-lite'
+  prez-lite-token:
+    description: 'GitHub PAT for accessing prez-lite repo (required if private)'
+    required: false
+  node-version:
+    description: 'Node.js version'
+    default: '22'
+
+outputs:
+  tools-dir:
+    description: 'Root of the fetched prez-lite tools (.prez-lite-tools)'
+    value: ${{ steps.fetch.outputs.tools-dir }}
+  data-processing-dir:
+    description: 'Path to data-processing package'
+    value: ${{ steps.fetch.outputs.data-processing-dir }}
+  scripts-dir:
+    description: 'Path to prez-lite scripts'
+    value: ${{ steps.fetch.outputs.scripts-dir }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: latest
+
+    - name: Sparse-checkout prez-lite tools
+      id: fetch
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.prez-lite-token }}
+        PREZ_LITE_REPO: ${{ inputs.prez-lite-repo }}
+        PREZ_LITE_REF: ${{ inputs.prez-lite-ref }}
+      run: |
+        TOOLS_DIR="${GITHUB_WORKSPACE}/.prez-lite-tools"
+        mkdir -p "$TOOLS_DIR"
+
+        # Build clone URL (with or without token)
+        if [ -n "$GITHUB_TOKEN" ]; then
+          CLONE_URL="https://${GITHUB_TOKEN}@github.com/${PREZ_LITE_REPO}.git"
+        else
+          CLONE_URL="https://github.com/${PREZ_LITE_REPO}.git"
+        fi
+
+        git clone --depth 1 --filter=blob:none --sparse \
+          -b "$PREZ_LITE_REF" \
+          "$CLONE_URL" \
+          "$TOOLS_DIR/repo"
+
+        cd "$TOOLS_DIR/repo"
+        git sparse-checkout set packages/data-processing scripts web/app/utils
+        cd "$GITHUB_WORKSPACE"
+
+        # Move to clean layout
+        mv "$TOOLS_DIR/repo/packages/data-processing" "$TOOLS_DIR/data-processing"
+        mv "$TOOLS_DIR/repo/scripts" "$TOOLS_DIR/scripts"
+
+        # Copy shared utility into data-processing
+        cp "$TOOLS_DIR/repo/web/app/utils/shacl-profile-parser.ts" \
+           "$TOOLS_DIR/data-processing/scripts/shacl-profile-parser.ts"
+
+        rm -rf "$TOOLS_DIR/repo"
+
+        # Patch: remove workspace dependency on @prez-lite/web
+        cd "$TOOLS_DIR/data-processing"
+        jq 'del(.dependencies["@prez-lite/web"])' package.json > tmp.json && mv tmp.json package.json
+
+        # Patch: rewrite import to use local copy
+        sed -i 's|@prez-lite/web/utils/shacl-profile-parser|./shacl-profile-parser.ts|g' scripts/process-vocab.js
+
+        echo "tools-dir=$TOOLS_DIR" >> "$GITHUB_OUTPUT"
+        echo "data-processing-dir=$TOOLS_DIR/data-processing" >> "$GITHUB_OUTPUT"
+        echo "scripts-dir=$TOOLS_DIR/scripts" >> "$GITHUB_OUTPUT"
+
+    - name: Install data-processing dependencies
+      shell: bash
+      run: |
+        cd "${{ steps.fetch.outputs.data-processing-dir }}"
+        npm install
+
+    - name: Configure scripts for standalone use
+      shell: bash
+      run: |
+        SCRIPTS_DIR="${{ steps.fetch.outputs.scripts-dir }}"
+        DP_DIR="${{ steps.fetch.outputs.data-processing-dir }}"
+
+        # Scripts use ESM imports — need "type": "module" so Node treats .js as ESM
+        echo '{"type":"module"}' > "$SCRIPTS_DIR/package.json"
+
+        # Scripts import n3 and rdf-validate-shacl. Symlink data-processing's
+        # node_modules so Node resolves them from the scripts directory.
+        ln -s "$DP_DIR/node_modules" "$SCRIPTS_DIR/node_modules"
+
+    - name: Verify tools
+      shell: bash
+      run: |
+        echo "prez-lite tools fetched from ${{ inputs.prez-lite-repo }}@${{ inputs.prez-lite-ref }}"
+        echo "  data-processing: ${{ steps.fetch.outputs.data-processing-dir }}"
+        echo "  scripts: ${{ steps.fetch.outputs.scripts-dir }}"

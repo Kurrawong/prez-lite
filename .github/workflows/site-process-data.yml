@@ -1,0 +1,118 @@
+name: 'Site: Process Data'
+
+on:
+  workflow_call:
+    inputs:
+      prez-lite-ref:
+        description: 'prez-lite branch, tag, or commit'
+        type: string
+        default: 'main'
+      node-version:
+        description: 'Node.js version'
+        type: string
+        default: '22'
+    secrets:
+      prez-lite-token:
+        description: 'GitHub PAT for accessing prez-lite repo (required if private)'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: hjohns/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        with:
+          prez-lite-ref: ${{ inputs.prez-lite-ref }}
+          prez-lite-token: ${{ secrets.prez-lite-token }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Detect changed vocabs
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+          else
+            CHANGED=$(git diff --name-only HEAD~1 -- 'data/vocabs/*.ttl' || true)
+            if [ -z "$CHANGED" ]; then
+              echo "mode=none" >> "$GITHUB_OUTPUT"
+            else
+              echo "mode=incremental" >> "$GITHUB_OUTPUT"
+              echo "files<<EOF" >> "$GITHUB_OUTPUT"
+              echo "$CHANGED" >> "$GITHUB_OUTPUT"
+              echo "EOF" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Full rebuild (manual dispatch)
+        if: steps.changed.outputs.mode == 'full'
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+
+          ARGS="--sourceDir data/vocabs --outputBase public/export/vocabs --systemDir public/export/system --pattern *.ttl"
+          [ -f "data/config/profiles.ttl" ] && ARGS="$ARGS --profiles data/config/profiles.ttl"
+          [ -d "data/background" ] && ARGS="$ARGS --backgroundDir data/background"
+          [ -d "data/validators" ] && ARGS="$ARGS --validators data/validators"
+
+          node "$DP/scripts/process-vocab.js" $ARGS
+
+      - name: Process changed vocabs (incremental)
+        if: steps.changed.outputs.mode == 'incremental'
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+
+          echo "${{ steps.changed.outputs.files }}" | while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            echo "Processing: $file"
+
+            ARGS="--source $file --type vocab --outDir public/export/vocabs/$(basename "$file" .ttl)"
+            [ -f "data/config/profiles.ttl" ] && ARGS="$ARGS --profiles data/config/profiles.ttl"
+            [ -d "data/background" ] && ARGS="$ARGS --backgroundDir data/background"
+
+            node "$DP/scripts/process-vocab.js" $ARGS
+          done
+
+      - name: Regenerate global assets
+        if: steps.changed.outputs.mode != 'none'
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+          mkdir -p public/export/system/vocabularies public/export/system/search
+
+          # Vocabulary metadata
+          ARGS="--sourceDir data/vocabs --output public/export/system/vocabularies/index.json"
+          [ -d "data/background" ] && ARGS="$ARGS --backgroundDir data/background"
+          [ -d "data/validators" ] && ARGS="$ARGS --validators data/validators"
+          node "$DP/scripts/generate-vocab-metadata.js" $ARGS || echo "Vocab metadata skipped"
+
+          # Labels
+          if ls data/background/*.ttl >/dev/null 2>&1; then
+            node "$DP/scripts/generate-labels.js" \
+              --backgroundDir data/background \
+              --output public/export/system/labels.json || echo "Labels skipped"
+          fi
+
+          # Search index
+          node "$DP/scripts/generate-search-index.js" \
+            --exportDir public/export \
+            --output public/export/system/search \
+            --vocabMetadata public/export/system/vocabularies/index.json || echo "Search index skipped"
+
+      - name: Commit updated exports
+        if: steps.changed.outputs.mode != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/export/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update processed exports"
+          git push

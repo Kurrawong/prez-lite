@@ -18,7 +18,8 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-DATA_DIR="$ROOT_DIR/data"
+# DATA_DIR can be set externally for client repo context (where data/ is at repo root)
+DATA_DIR="${DATA_DIR:-$ROOT_DIR/data}"
 BACKGROUND_DIR="$DATA_DIR/background"
 MANIFEST="$DATA_DIR/manifest.ttl"
 

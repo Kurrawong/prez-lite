@@ -1,0 +1,15 @@
+name: Validate Vocabularies
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    uses: hjohns/prez-lite/.github/workflows/site-validate-vocabs.yml@main
+    with:
+      prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}
+    secrets:
+      prez-lite-token: ${{ secrets.PREZ_LITE_TOKEN }}

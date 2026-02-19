@@ -1,0 +1,61 @@
+name: 'Site: Validate Vocabularies'
+
+on:
+  workflow_call:
+    inputs:
+      prez-lite-ref:
+        description: 'prez-lite branch, tag, or commit'
+        type: string
+        default: 'main'
+      vocabs-dir:
+        description: 'Directory containing source TTL vocabularies'
+        type: string
+        default: 'data/vocabs'
+      validators-dir:
+        description: 'Directory containing SHACL validator shapes'
+        type: string
+        default: 'data/validators'
+      node-version:
+        description: 'Node.js version'
+        type: string
+        default: '22'
+    secrets:
+      prez-lite-token:
+        description: 'GitHub PAT for accessing prez-lite repo (required if private)'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: hjohns/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        with:
+          prez-lite-ref: ${{ inputs.prez-lite-ref }}
+          prez-lite-token: ${{ secrets.prez-lite-token }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Run validation tests
+        run: |
+          node ${{ steps.tools.outputs.scripts-dir }}/run-validation-tests.js \
+            --vocabs-dir "${{ inputs.vocabs-dir }}" \
+            --validators-dir "${{ inputs.validators-dir }}" \
+            --tests-dir "${{ inputs.validators-dir }}/tests" \
+            --reports-dir "${{ inputs.validators-dir }}/reports"
+
+      - name: Commit updated reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ inputs.validators-dir }}/reports/"
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update validation reports"
+          git push
