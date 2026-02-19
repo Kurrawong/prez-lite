@@ -134,7 +134,7 @@ pnpm --filter data-processing process
 ### Location & Workspace
 - `packages/gh-templates/default/` — standard vocabulary template
 - **Not in pnpm workspace** — has its own `package.json` and `node_modules/`
-- Synced to `hjohns/prez-lite-template-default` via git subtree
+- Synced to `Kurrawong/prez-lite-template-default` via git subtree
 
 ### Local Development
 ```bash

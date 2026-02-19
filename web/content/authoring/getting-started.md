@@ -33,7 +33,7 @@ The fastest way to start is from the GitHub template:
 
 ```bash
 # Clone the template repository
-gh repo create my-vocabs --template hjohns/prez-lite-template --public
+gh repo create my-vocabs --template Kurrawong/prez-lite-template --public
 cd my-vocabs
 ```
 

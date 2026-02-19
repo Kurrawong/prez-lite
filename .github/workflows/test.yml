@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Prepare Nuxt
+        run: pnpm --filter @prez-lite/web nuxt prepare
+
       - name: Run unit tests
         run: pnpm --filter @prez-lite/web test:unit
 

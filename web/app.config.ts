@@ -13,7 +13,7 @@ export default defineAppConfig({
     tagline: 'Vocabulary Publishing Platform',
     footerText: 'An open source vocabulary publishing system',
     footerLinks: [
-      { label: 'GitHub', href: 'https://github.com/hjohns/prez-lite' },
+      { label: 'GitHub', href: 'https://github.com/Kurrawong/prez-lite' },
       { label: 'Documentation', href: '/about' }
     ]
   }

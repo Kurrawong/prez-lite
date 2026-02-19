@@ -46,7 +46,7 @@ flowchart LR
 
 ```bash
 # 1. Create from template
-gh repo create my-vocabs --template hjohns/prez-lite-template --public
+gh repo create my-vocabs --template Kurrawong/prez-lite-template --public
 cd my-vocabs
 
 # 2. Add your vocabulary

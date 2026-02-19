@@ -74,12 +74,12 @@ Research and design how SHACL validator results should surface during editing �
 Create, list, share, and manage SKOS collections within vocabularies. Covers: listing UX, data model, build pipeline for collection exports, search index integration, sharing assets, web component support, and collection management UI.
 
 ### Set up gh-template/default as a testable standalone application
-Make the `packages/gh-templates/default/` template a fully functional, independently deployable application checked into `hjohns/prez-lite-template-default`. Covers several sub-tasks:
+Make the `packages/gh-templates/default/` template a fully functional, independently deployable application checked into `Kurrawong/prez-lite-template-default`. Covers several sub-tasks:
 
 1. **Data isolation** — Ensure the template does NOT inherit the base layer's `web/public/export/` directory during build. Add a build step (Nuxt hook or script) that strips the parent layer's data/export folders so only the template's own vocabulary data is served.
 2. **Update stale paths** — The template still uses pre-Sprint 10 paths (`export/_system/` instead of `export/system/`, flat vocab dirs instead of `export/vocabs/`). Align `process-vocabs.js` and any hardcoded paths with current conventions.
 3. **Secrets hygiene** — The `.env` file contains a real GitHub PAT. Ensure `.env` is gitignored, `.env.example` documents required vars without real values, and README explains setup.
-4. **Separate repo setup** — Initialize `hjohns/prez-lite-template-default`, set up git subtree (or similar) to sync `packages/gh-templates/default/` to the separate repo while allowing independent commits in both.
+4. **Separate repo setup** — Initialize `Kurrawong/prez-lite-template-default`, set up git subtree (or similar) to sync `packages/gh-templates/default/` to the separate repo while allowing independent commits in both.
 5. **Local development workflow** — Document how to run the template locally against the monorepo's `web/` layer, and how to develop/commit changes in both projects independently.
 6. **Verify template builds and runs** — End-to-end test: install, process vocabs, generate static site, verify pages render correctly with only template data (no base layer data leaking through).
 7. **Skill or CLAUDE.md guidance** — Add working instructions for the dual-repo workflow so future sessions handle template work correctly (e.g. which directory to commit from, how to sync, layer conventions).

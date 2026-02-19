@@ -9,7 +9,7 @@ REMOTE="template-default"
 
 if ! git remote get-url "$REMOTE" &>/dev/null; then
   echo "Remote '$REMOTE' not found. Adding it..."
-  git remote add "$REMOTE" git@github.com:hjohns/prez-lite-template-default.git
+  git remote add "$REMOTE" git@github.com:Kurrawong/prez-lite-template-default.git
 fi
 
 echo "Pulling $REMOTE/$BRANCH -> $PREFIX"
