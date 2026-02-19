@@ -1,0 +1,17 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-deploy:
+    uses: Kurrawong/prez-lite/.github/workflows/build-site.yml@main
+    with:
+      prez-lite-version: ${{ vars.PREZ_LITE_VERSION || 'main' }}

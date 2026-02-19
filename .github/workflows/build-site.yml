@@ -1,0 +1,115 @@
+name: Build and Deploy Prez Lite Site
+
+on:
+  workflow_call:
+    inputs:
+      prez-lite-version:
+        description: 'prez-lite version, branch, or tag (e.g. v0.2.0, main)'
+        type: string
+        default: 'main'
+      node-version:
+        description: 'Node.js version'
+        type: string
+        default: '22'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        with:
+          prez-lite-ref: ${{ inputs.prez-lite-version }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Process vocabularies
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+
+          ARGS="--sourceDir data/vocabs --outputBase public/export/vocabs --systemDir public/export/system --pattern *.ttl"
+
+          if [ -f "data/config/profiles.ttl" ]; then
+            ARGS="$ARGS --profiles data/config/profiles.ttl"
+          fi
+
+          if [ -d "data/background" ]; then
+            ARGS="$ARGS --backgroundDir data/background"
+          fi
+
+          node "$DP/scripts/process-vocab.js" $ARGS
+
+      - name: Generate system metadata
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+          mkdir -p public/export/system/vocabularies public/export/system/search
+
+          # Vocabulary metadata index
+          ARGS="--sourceDir data/vocabs --output public/export/system/vocabularies/index.json"
+          if [ -d "data/background" ]; then
+            ARGS="$ARGS --backgroundDir data/background"
+          fi
+          node "$DP/scripts/generate-vocab-metadata.js" $ARGS || echo "Vocab metadata skipped"
+
+          # Labels (only if background dir has TTL files)
+          if ls data/background/*.ttl >/dev/null 2>&1; then
+            node "$DP/scripts/generate-labels.js" \
+              --backgroundDir data/background \
+              --output public/export/system/labels.json || echo "Labels skipped"
+          fi
+
+          # Search index
+          node "$DP/scripts/generate-search-index.js" \
+            --exportDir public/export \
+            --output public/export/system/search \
+            --vocabMetadata public/export/system/vocabularies/index.json || echo "Search index skipped"
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Generate static site
+        run: pnpm generate
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

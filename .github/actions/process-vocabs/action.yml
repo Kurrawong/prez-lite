@@ -1,0 +1,117 @@
+name: 'Process Vocabularies'
+description: 'Process SKOS vocabularies using SHACL profiles to generate multiple export formats'
+author: 'prez-lite'
+
+inputs:
+  source-dir:
+    description: 'Directory containing source TTL files (batch mode)'
+    required: false
+  source-file:
+    description: 'Single source TTL file to process'
+    required: false
+  profiles:
+    description: 'Path to SHACL profiles.ttl file'
+    required: true
+  output-dir:
+    description: 'Output directory for generated files'
+    required: true
+  background-dir:
+    description: 'Directory containing background label TTL files'
+    required: false
+  type:
+    description: 'Processing type: vocab, concept, or catalog (single file mode only)'
+    default: 'vocab'
+  pattern:
+    description: 'File pattern to match in batch mode'
+    default: '*-source-input.ttl'
+  node-version:
+    description: 'Node.js version to use'
+    default: '22'
+
+outputs:
+  files-processed:
+    description: 'Number of files successfully processed'
+    value: ${{ steps.process.outputs.files_processed }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Get pnpm store directory
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+    - name: Setup pnpm cache
+      uses: actions/cache@v4
+      with:
+        path: ${{ env.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        cd ${{ github.action_path }}/../../..
+        pnpm install --frozen-lockfile
+
+    - name: Process vocabularies
+      id: process
+      shell: bash
+      run: |
+        cd ${{ github.action_path }}/../../..
+        
+        # Build arguments
+        ARGS="--profiles ${{ inputs.profiles }}"
+        
+        # Batch mode or single file mode
+        if [ -n "${{ inputs.source-dir }}" ]; then
+          # Batch mode
+          ARGS="$ARGS --sourceDir ${{ inputs.source-dir }}"
+          ARGS="$ARGS --outputBase ${{ inputs.output-dir }}"
+          ARGS="$ARGS --pattern '${{ inputs.pattern }}'"
+        else
+          # Single file mode
+          ARGS="$ARGS --source ${{ inputs.source-file }}"
+          ARGS="$ARGS --outDir ${{ inputs.output-dir }}"
+          ARGS="$ARGS --type ${{ inputs.type }}"
+        fi
+        
+        # Add background dir if specified
+        if [ -n "${{ inputs.background-dir }}" ]; then
+          ARGS="$ARGS --backgroundDir ${{ inputs.background-dir }}"
+        fi
+        
+        echo "Running: node packages/data-processing/scripts/process-vocab.js $ARGS"
+        
+        # Run processing and capture output
+        OUTPUT=$(eval node packages/data-processing/scripts/process-vocab.js $ARGS 2>&1) || {
+          echo "Processing failed!"
+          echo "$OUTPUT"
+          exit 1
+        }
+        
+        echo "$OUTPUT"
+        
+        # Extract files processed count from output
+        if [[ "$OUTPUT" =~ Files\ processed:\ ([0-9]+) ]]; then
+          FILES_PROCESSED="${BASH_REMATCH[1]}"
+        else
+          # Single file mode - count as 1 if successful
+          FILES_PROCESSED=1
+        fi
+        
+        echo "files_processed=$FILES_PROCESSED" >> $GITHUB_OUTPUT
+        echo "Successfully processed $FILES_PROCESSED file(s)"
+
+branding:
+  icon: 'database'
+  color: 'blue'

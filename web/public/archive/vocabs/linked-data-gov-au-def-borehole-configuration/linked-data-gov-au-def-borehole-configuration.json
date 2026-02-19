@@ -1,0 +1,151 @@
+{
+  "iri": "https://linked.data.gov.au/def/borehole-configuration",
+  "label": "Borehole configuration",
+  "description": "A description of the intended configuration and trajectory of a borehole, covering concepts from the energy and mineral resources industry. Note that most of the concepts in this vocabulary apply to both the process of drilling (e.g. directional drilling), as well as to an actual borehole (e.g. directional well), even if the definitions in this vocabulary focus specifically on the latter.",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/directional",
+      "label": "directional",
+      "definition": "A borehole intentionally drilled at controlled departures from the vertical or parent borehole trajectory and at controlled azimuths, achieved with the use of geosteering equipment or via other methods (e.g. directional wedge). The main purpose is usually to establish multiple boreholes from a single location and/or to intersect a target or zone of interest. Note that the term 'deviated' is not recommended as an alternate label of 'directional', as it can be used to refer to a borehole that unintentionally deviates from the intended trajectory...",
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-configuration/extended-reach",
+        "https://linked.data.gov.au/def/borehole-configuration/lateral"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/extended-reach",
+      "label": "extended-reach",
+      "definition": "A directional well in which the ratio of the measured depth (MD) to the true vertical depth (TVD) is at least 2:1."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/lateral",
+      "label": "lateral",
+      "definition": "A borehole drilled with geosteering equipment with the intent of controlling the trajectory to drill laterally within a targeted stratigraphic interval or intervals. Usually, but not always, drilled close to horizontal and for relatively short distances."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/horizontal",
+      "label": "horizontal",
+      "definition": "A borehole drilled in a horizontal direction. In the energy industry, this is achieved with geosteering equipment and applies to boreholes where the departure from vertical exceeds about 80°. In the mineral industry, horizontal drilling is typically carried out from an underground location or on the wall of an open pit."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined",
+      "label": "inclined",
+      "definition": "A borehole drilled from the start point at a pre-set nonvertical angle above or below horizontal.",
+      "altLabels": [
+        "angled"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-configuration/inclined-down",
+        "https://linked.data.gov.au/def/borehole-configuration/inclined-up"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined-down",
+      "label": "inclined down",
+      "definition": "A borehole drilled from the start point at a pre-set nonvertical angle below horizontal (drilled downwards).",
+      "altLabels": [
+        "downhole"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined-up",
+      "label": "inclined up",
+      "definition": "A borehole drilled from the start point at a pre-set nonvertical angle above horizontal (drilled upwards).",
+      "altLabels": [
+        "uphole"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/vertical",
+      "label": "vertical",
+      "definition": "A borehole drilled in a vertical downwards direction with the intent of maintaining a vertical trajectory. Deviations up to 2° from the vertical line are usually accepted as 'vertical’."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/vertical-uphole",
+      "label": "vertical uphole",
+      "definition": "A borehole drilled underground from the start point in a pre-set vertical upwards direction."
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/directional",
+      "label": "directional",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-configuration/extended-reach",
+          "label": "extended-reach",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-configuration/lateral",
+          "label": "lateral",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/extended-reach",
+      "label": "extended-reach",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/horizontal",
+      "label": "horizontal",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined",
+      "label": "inclined",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined-down",
+          "label": "inclined down",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined-up",
+          "label": "inclined up",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined-down",
+      "label": "inclined down",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/inclined-up",
+      "label": "inclined up",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/lateral",
+      "label": "lateral",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/vertical",
+      "label": "vertical",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-configuration/vertical-uphole",
+      "label": "vertical uphole",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

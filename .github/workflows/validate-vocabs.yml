@@ -1,0 +1,50 @@
+name: Validate Vocabularies
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '🔍 Validate Vocabularies — Run SHACL validation and compile reports'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  VALIDATE VOCABULARIES                                     ║"
+          echo "║                                                            ║"
+          echo "║  Runs SHACL validation on all source vocabularies,         ║"
+          echo "║  executes test fixtures, and generates markdown reports.   ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: manual (workflow_dispatch)                       ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run validation tests
+        run: node scripts/run-validation-tests.js
+
+      - name: Commit updated reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/validators/reports/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update validation reports"
+          git push

@@ -1,0 +1,44 @@
+name: Commitlint
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '📝 Commitlint — Validate PR title format'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  COMMITLINT                                                ║"
+          echo "║                                                            ║"
+          echo "║  Validates that the PR title follows conventional commit    ║"
+          echo "║  format (e.g. feat: ..., fix: ..., docs: ...).             ║"
+          echo "║  This ensures release-please can generate accurate         ║"
+          echo "║  changelogs and version bumps.                             ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: PR opened/edited                                 ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
+      - name: Validate PR title
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            perf
+            test
+            build
+            ci
+            chore
+            revert
+          requireScope: false
+          subjectPattern: ^.+$
+          subjectPatternError: 'The PR title "{title}" must follow conventional commit format: type: description'

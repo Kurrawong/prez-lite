@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/intense">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">advanced</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">complete</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">comprehensive</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">extreme</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">major</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">massive</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">pronounced</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">severe</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">significant</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Intense alteration refers to an almost complete to complete replacement of the primary minerals and obliteration of original textures.</skos:definition>
+    <skos:historyNote>Definition from Pirajno (2009; Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">intense</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A compilation of terms that describe the degree to which (i.e. how much) a rock or a mineral has been affected by alteration. Alteration in this context is considered as a modification of the original lithology caused by meteoric, connate, metamorphic or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. These concepts are generally used as convenient field or petrographic descriptive terms. Definitions are largely from Pirajno (2009) and the Glossary of geology (5th edition revised; Neuendorf et. al., 2011).</skos:definition>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Derived from GSWA&apos;s WAROX database&apos;s table [GEOLOGY].[Warox_REF].[Intensity]. Definitions compiled from:
+1) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p.
+2) Neuendorf, KKE, Mehl Jr, JP and Jackson, JA (editors) 2011, Glossary of geology (5th edition, revised): American Geosciences Institute, Alexandria, Virginia, USA, 800p.</skos:historyNote>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration intensity</skos:prefLabel>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/alteration-intensity/1"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-intensity/intense"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-intensity/moderate"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-intensity/strong"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-intensity/unaltered"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-intensity/unknown"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-intensity/weak"/>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</schema:dateCreated>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</schema:dateModified>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"/>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:version>1</schema:version>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/moderate">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">medium</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Moderate intensity indicates alteration in which several of the primary mineral species have been replaced, with some modification of the original textures.</skos:definition>
+    <skos:historyNote>Definition from Pirajno (2009; Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">moderate</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/strong">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">heavy</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">high</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Strong intensity indicates alteration in which the majority of the primary minerals have been replaced, with considerable modification of the original textures.</skos:definition>
+    <skos:historyNote>Definition from Pirajno (2009; Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">strong</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/unaltered">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">not altered</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.</skos:definition>
+    <skos:historyNote>Compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">unaltered</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:exactMatch rdf:resource="https://linked.data.gov.au/def/alteration-form/unaltered"/>
+    <skos:exactMatch rdf:resource="https://linked.data.gov.au/def/alteration-type/unaltered"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/unknown">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration intensity not specified.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">unknown</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/weak">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">incipient</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">insignificant</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">light</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">low</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">minor</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">negligible</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">slight</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">traces</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Weak, or low, intensity indicates alteration in which only a few of the primary mineral species have been replaced, with little or no modification of the original textures.</skos:definition>
+    <skos:historyNote>Definition from Pirajno (2009; Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">weak</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-intensity"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-intensity/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-359">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-360">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0001-5888-5102"/>
+  </rdf:Description>
+
+</rdf:RDF>

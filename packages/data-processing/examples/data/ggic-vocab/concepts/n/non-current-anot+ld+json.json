@@ -1,0 +1,740 @@
+[
+  {
+    "@id": "_:n3-38",
+    "https://prez.dev/currentProfile": [
+      {
+        "@id": "https://prez.dev/OGCSchemesObjectProfile"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-lapsed",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:application-lapsed"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:application-lapsed"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Application lapsed",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cancelled",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:cancelled"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:cancelled"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Cancelled",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Application was granted but was Cancelled by the Department (VIC)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ceased"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:ceased"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Ceased",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased-to-operate",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:ceased-to-operate"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:ceased-to-operate"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Ceased to Operate",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cessation",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:cessation"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:cessation"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Cessation",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/consolidation-cancellation",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:consolidation-cancellation"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:consolidation-cancellation"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Consolidation cancellation",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/deemed-abandoned",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:deemed-abandoned"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:deemed-abandoned"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Deemed abandoned",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:discarded"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:discarded"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Discarded",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The application has been discarded from the system.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:expired"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:expired"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Expired",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Authority was Granted but Expired (SA, VIC)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/finalised",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:finalised"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:finalised"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Finalised",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A licence, permit, or authority that is not current (eg, expired, cancelled, superseded) (GGIC); The Resource Authority has been terminated in the system and is longer current. (QLD)",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Non-current",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@value": "GGIC, QLD",
+        "@language": "en"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "4",
+        "@type": "http://resource.geoscience.gov.au/classifier/ggic/LocalHierarchyKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-lapsed"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cancelled"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased-to-operate"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cessation"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/consolidation-cancellation"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/deemed-abandoned"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/finalised"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/rejected"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-application-rejected"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/revoked"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/sub-blocks-all-relinquished"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/surrendered"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/suspended-condition"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/terminated"
+      },
+      {
+        "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unfinalised"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:non-current"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:non-current"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Non-current",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A licence, permit, or authority that is not current (eg, expired, cancelled, superseded) (GGIC); The Resource Authority has been terminated in the system and is longer current. (QLD)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/rejected",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:rejected"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:rejected"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Rejected",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-application-rejected",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:renewal-application-rejected"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:renewal-application-rejected"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Renewal Application rejected",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:replacement-permit"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:replacement-permit"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Replacement Permit",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/revoked",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:revoked"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:revoked"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Revoked",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/sub-blocks-all-relinquished",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:sub-blocks-all-relinquished"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:sub-blocks-all-relinquished"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Sub-blocks all relinquished",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/surrendered",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:surrendered"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:surrendered"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Surrendered",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Authority was Granted, but was Surrendered (SA, VIC)",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/suspended-condition",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:suspended-condition"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:suspended-condition"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Suspended Condition",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/terminated",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:terminated"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:terminated"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Terminated",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unfinalised",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:unfinalised"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items/ns1:unfinalised"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Unfinalised",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Not given",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "ns1:petroleum-tenement-status"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "Petroleum Tenement Status",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification.",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:ggic-vocabs/collections/ns1:petroleum-tenement-status/items"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+    "https://prez.dev/label": [
+      {
+        "@value": "Concept",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "An idea or notion; a unit of thought.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#definition",
+    "https://prez.dev/label": [
+      {
+        "@value": "definition",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "A statement or formal explanation of the meaning of a concept.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#inScheme",
+    "https://prez.dev/label": [
+      {
+        "@value": "is in scheme",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a resource (for example a concept) to a concept scheme in which it is included.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#narrower",
+    "https://prez.dev/label": [
+      {
+        "@value": "has narrower",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Relates a concept to a concept that is more specific in meaning.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://prez.dev/label": [
+      {
+        "@value": "preferred label",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "The preferred lexical label for a resource, in a given language.",
+        "@language": "en"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/link",
+    "https://prez.dev/label": [
+      {
+        "@value": "link"
+      }
+    ]
+  },
+  {
+    "@id": "https://prez.dev/members",
+    "https://prez.dev/label": [
+      {
+        "@value": "members"
+      }
+    ]
+  },
+  {
+    "@id": "https://vocabs.ga.gov.au/catalogue/ggic-vocabs",
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:ggic-vocabs"
+      }
+    ]
+  }
+]

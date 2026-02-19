@@ -1,0 +1,52 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status> a skos:ConceptScheme;
+    skos:definition "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification."@en;
+    skos:historyNote "This file contains the 2021.01 SKOS-RDF version of the GGIC Petroleum Tenement Type vocabulary; adopted April 2021; converted to MS Excel XML for SKOS generation using SKOS_from_XLS_2019.01.xslt"@en;
+    skos:prefLabel "Petroleum Tenement Status"@en;
+    sdo:dateCreated "2021-06-14"^^xsd:date;
+    sdo:creator <https://linked.data.gov.au/org/agson>;
+    sdo:dateModified "2025-06-04"^^xsd:date;
+    sdo:status <https://linked.data.gov.au/def/reg-statuses/experimental>;
+    sdo:publisher <https://linked.data.gov.au/org/agson>;
+    skos:changeNote "2025-08-25 NJC: Added status experimental to ConceptScheme for status testing", "2024-10-16 NJC: update to be VocPub 4.10 valid", "2021-06-14 OLR: Original SKOS implementation", "2021-07-05 Nicholas Car & Vaughan Edgell: SKOS implementation aligned with VocPub vocabulary profile for display", "2025-06-04 NJC Updates metadata to meet the VocPub 5.1 profile"@en;
+    prez:identifier "ns4:petroleum-tenement-status";
+    prez:link "/catalogs/catalogue:ggic-vocabs/collections/ns4:petroleum-tenement-status";
+    prez:members "/catalogs/catalogue:ggic-vocabs/collections/ns4:petroleum-tenement-status/items";
+    prez:type prez:FocusNode;
+    prez:label "Petroleum Tenement Status"@en;
+    prez:description "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification."@en.
+skos:ConceptScheme prez:label "Concept Scheme"@en;
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts."@en.
+skos:definition prez:label "definition"@en;
+    prez:description "A statement or formal explanation of the meaning of a concept."@en.
+skos:historyNote prez:label "history note"@en;
+    prez:description "A note about the past state/use/meaning of a concept."@en.
+skos:prefLabel prez:label "preferred label"@en;
+    prez:description "The preferred lexical label for a resource, in a given language."@en.
+sdo:dateCreated prez:label "dateCreated";
+    prez:description "The date on which the CreativeWork was created or the item was added to a DataFeed".
+sdo:creator prez:label "creator";
+    prez:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork".
+sdo:dateModified prez:label "dateModified";
+    prez:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed".
+<https://linked.data.gov.au/def/reg-statuses/experimental> prez:label "experimental";
+    prez:description "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.".
+sdo:publisher prez:label "publisher";
+    prez:description "The publisher of the creative work".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<https://vocabs.ga.gov.au/catalogue/ggic-vocabs> prez:identifier "catalogue:ggic-vocabs".
+_:n3-2 prez:currentProfile prez:OGCSchemesObjectProfile.
+skos:hasTopConcept prez:label "has top concept"@en;
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies."@en.

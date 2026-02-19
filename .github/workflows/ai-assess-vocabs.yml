@@ -1,0 +1,57 @@
+name: AI Assess Vocabularies
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '🤖 AI Assessment — Generate remediation reports via Cloudflare Worker'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  AI VOCABULARY ASSESSMENT                                  ║"
+          echo "║                                                            ║"
+          echo "║  Runs SHACL validation, then sends source TTL and reports  ║"
+          echo "║  to a Cloudflare Workers AI endpoint for analysis.         ║"
+          echo "║  Generates *-ai-report.md with remediation guidance.       ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: manual (workflow_dispatch)                       ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run validation first
+        run: node scripts/run-validation-tests.js
+
+      - name: Run AI assessment
+        env:
+          AI_WORKER_URL: ${{ vars.AI_WORKER_URL }}
+          AI_WORKER_KEY: ${{ secrets.AI_WORKER_KEY }}
+        run: node scripts/ai-assess-vocabs.js
+
+      - name: Commit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/validators/reports/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update validation and AI assessment reports"
+          git push

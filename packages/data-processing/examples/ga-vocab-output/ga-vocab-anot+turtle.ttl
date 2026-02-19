@@ -1,0 +1,98 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix sdo: <https://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix reg: <http://purl.org/linked-data/registry#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix prez: <https://prez.dev/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod> a skos:ConceptScheme;
+    dcterms:identifier "BoreholesSamplingMethod"^^xsd:token;
+    skos:definition "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "@en;
+    skos:prefLabel "General Geology - Sampling Method"@en;
+    dcterms:created "2022-08-09"^^xsd:date;
+    dcterms:creator <https://linked.data.gov.au/org/ga>;
+    dcterms:modified "2022-08-09"^^xsd:date;
+    dcterms:provenance "Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)"@en;
+    dcterms:publisher <https://linked.data.gov.au/org/ga>;
+    rdfs:seeAlso <https://pid.geoscience.gov.au/dataset/ga/148553>;
+    owl:versionInfo "1";
+    dcat:contactPoint "Team Lead - Information Services; Energy, Minerals and Groundwater Division";
+    sdo:status <https://linked.data.gov.au/def/reg-statuses/experimental>;
+    prez:identifier "ns4:BoreholesSamplingMethod";
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns4:BoreholesSamplingMethod";
+    prez:members "/catalogs/catalogue:ga-vocabs/collections/ns4:BoreholesSamplingMethod/items";
+    prez:type prez:FocusNode;
+    prez:label "General Geology - Sampling Method"@en;
+    prez:description "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "@en;
+    prez:provenance "Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)"@en.
+skos:ConceptScheme prez:label "Concept Scheme"@en;
+    prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts."@en.
+skos:definition prez:label "definition"@en;
+    prez:description "A statement or formal explanation of the meaning of a concept."@en.
+skos:prefLabel prez:label "preferred label"@en;
+    prez:description "The preferred lexical label for a resource, in a given language."@en.
+<https://linked.data.gov.au/def/reg-statuses/experimental> prez:label "experimental";
+    prez:description "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal.".
+prez:link prez:label "link".
+prez:members prez:label "members".
+<http://pid.geoscience.gov.au/catalogue/ga-vocabs> prez:identifier "catalogue:ga-vocabs".
+_:n3-2 prez:currentProfile prez:OGCSchemesObjectProfile.
+skos:hasTopConcept prez:label "has top concept"@en;
+    prez:description "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector> prez:label "airfall dust collector"@en;
+    prez:description "Sample of fine-grained solid material that is passively collected by airfall from the atmosphere."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling> prez:label "drilling"@en;
+    prez:description "Sampling by a hole drilled into the Earth by any method"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling> prez:label "borehole fluid sampling"@en;
+    prez:description "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool> prez:label "borehole logging tool"@en;
+    prez:description "Observation of measurement of physical properties down a borehole by an instrument in a continuous linear format.  (e.g. a gamma log)"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation> prez:label "bottle incubation"@en;
+    prez:description "A method to derive the oxygen consumption rate/respiration rates of organic matter conducted in a bottle or vial  under controlled light and temperature conditions."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation> prez:label "chamber incubation"@en;
+    prez:description "A method that isolates sediment and overlying water in a benthic chamber. Water samples are collected from the benthic chamber during the incubation."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark> prez:label "core incubation dark"@en;
+    prez:description "A method whereby a sediment core is collected along with overlying water. The sediment and water are incubated under no light and controlled temperature conditions."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight> prez:label "core incubation light"@en;
+    prez:description "A method whereby a sediment core is collected along with overlying water. The sediment and water are incubated under controlled light and temperature conditions."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube> prez:label "core Veihmeyer tube"@en;
+    prez:description "A tube that is pushed into the ground to obtain a soil sample. The Veihmeyer tube has a larger diameter at the cutting end than in the rest of the tube."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing> prez:label "crushing"@en;
+    prez:description "Sample derived by crushing a rock or sediment"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter> prez:label "current meter"@en;
+    prez:description "A mooring deployed on the seabed for a finite time during a marine survey to measure sea-levels and current velocities near to the seafloor. Moorings may contain a suite of instruments measuring other parameters."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector> prez:label "filtered dust collector"@en;
+    prez:description "Sample of fine-grained solid material that is actively collected from the atmosphere by pumping and filtration."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration> prez:label "filtration"@en;
+    prez:description "Separation of undissolved sediment and biological particles collected from a water column by filtration. For total dissolved solids measurements the sample is filtered through a glass fibre filter under controlled conditions.  The type of filter is dependent on the method used and the purpose of the determination."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling> prez:label "gas sampling"@en;
+    prez:description "Sampling of gas by an unspecified method"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation> prez:label "grainsize separation"@en;
+    prez:description "Separation of various size fractions of mineral or rock particles from the original specimen. For example, by using a seive."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey> prez:label "field mapping survey"@en;
+    prez:description "A mapping survey undertaken in a land environment. May include observations and/or sampling."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey> prez:label "marine survey"@en;
+    prez:description "A mapping survey undertaken in a marine environment. May include observations and/or sampling."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation> prez:label "mineral separation"@en;
+    prez:description "Separation of individual mineral type grains from a larger sample. Methods may include magnetic separation and various density separation methods."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling> prez:label "water sampling"@en;
+    prez:description "Sampling of water by an unspecified method"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling> prez:label "surface material sampling"@en;
+    prez:description "Collection of earth materials at the ground surface on land."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap> prez:label "sediment trap"@en;
+    prez:description "Sediment traps are containers placed in the water column to collect particles falling toward the sea floor. The traps collect tiny sediment or larger accumulations called marine snow - made up of organic matter, dead sea creatures, tiny shells, dust and minerals."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde> prez:label "sonde"@en;
+    prez:description "A sonde (French for probe) is a water quality monitoring instrument, that may be stationary or may move up and down a water column, measuring, but not limited to, the following water attributes; temperature, conductivity, salinity, dissolved oxygen, pH, turbidity, light, flourescence and depth. This includes CTDs, light meters or any other probes. They may be lowered through the water column by hand, or mechanically (e.g. by a winch), and measurements can be taken continuously or at discrete depth intervals. The probes may be attached to a frame (e.g. a CTD frame) with other instruments (e.g. niskin bottles, cameras), or they may be stand-alone probes attached to a meter by a cable."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling> prez:label "mine sampling"@en;
+    prez:description "Collection of a sample at a mine, in surface or underground outcrop, or collected from ore or waste dumps."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown> prez:label "unknown"@en;
+    prez:description "The sampling method is unknown."@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera> prez:label "camera"@en;
+    prez:description "The process of capturing a still image or moving scene of a feature by a video or still photographic camera"@en.
+<https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling> prez:label "marine survey sampling"@en;
+    prez:description "Collection of materials from a marine or coastal survey by any method."@en.

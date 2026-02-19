@@ -1,0 +1,19 @@
+@prefix boreholessamplingmethod: <https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns4: <https://pid.geoscience.gov.au/def/voc/ga/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+boreholessamplingmethod:boreholeFluidSampling a skos:Concept ;
+    dcterms:identifier "boreholeFluidSampling"^^xsd:token ;
+    skos:definition "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."@en ;
+    skos:inScheme ns4:BoreholesSamplingMethod ;
+    skos:narrower boreholessamplingmethod:airlift,
+        boreholessamplingmethod:boreholeDstTest,
+        boreholessamplingmethod:boreholeProdTest,
+        boreholessamplingmethod:boreholeWftTest,
+        boreholessamplingmethod:liquidGasSeparation,
+        boreholessamplingmethod:pumping,
+        boreholessamplingmethod:waterGrabSampling ;
+    skos:prefLabel "borehole fluid sampling"@en ;
+    skos:topConceptOf ns4:BoreholesSamplingMethod .

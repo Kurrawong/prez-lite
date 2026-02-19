@@ -1,0 +1,791 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@language": "en"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@language": "en"
+    },
+    "definition": {
+      "@id": "skos:definition",
+      "@language": "en"
+    },
+    "notation": "skos:notation",
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@type": "@id"
+    },
+    "related": {
+      "@id": "skos:related",
+      "@type": "@id"
+    },
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "topConceptOf": {
+      "@id": "skos:topConceptOf",
+      "@type": "@id"
+    },
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "_:n3-365",
+      "http://www.w3.org/ns/prov#agent": {
+        "@id": "https://orcid.org/0009-0002-5543-2719"
+      },
+      "http://www.w3.org/ns/prov#hadRole": {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    },
+    {
+      "@id": "_:n3-366",
+      "http://www.w3.org/ns/prov#agent": {
+        "@id": "https://orcid.org/0000-0002-7645-5031"
+      },
+      "http://www.w3.org/ns/prov#hadRole": {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/depth-reference/mean-sea-level",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:5100"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/5100-datum"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/depth-reference/water-bottom",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/depth-reference"
+      },
+      "altLabel": [
+        "WB",
+        "sea floor",
+        "seafloor"
+      ],
+      "definition": "The depth of the interface between water and solid substrate, such as the seabed or the bottom of a terrestrial body of water.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "water bottom",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://linked.data.gov.au/def/depth-reference/water-bottom"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/depth-reference/well-head",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/depth-reference"
+      },
+      "altLabel": [
+        "WH",
+        "well head"
+      ],
+      "definition": "A wellhead (WH) is the component at the surface of an oil or gas well that provides the structural and pressure-containing interface for the drilling and production equipment. Depth is commonly referenced from the valve or outlet point from which samples are extracted.",
+      "historyNote": "Energy industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "wellhead",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/well-head"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "http://www.oilfieldwiki.com/wiki/Wellhead"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Wellhead"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "@type": "ConceptScheme",
+      "http://purl.org/linked-data/registry#status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      },
+      "http://www.w3.org/2002/07/owl#versionIRI": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/1"
+      },
+      "http://www.w3.org/2002/07/owl#versionInfo": "1",
+      "definition": "The point or level from which heights and depths are measured and referenced to for an entity or activity. Typically these are expressed relative to a common global or regional reference datum such as the Australian Height Datum (AHD) or can be related to local reference systems. Specific emphasis is placed on elevation references used by resource exploration and drilling programs, whereby depths are measured relative to local reference datums or specific parts of a borehole/drilling platform. Concepts in this vocabulary include both reference datums (e.g. mean sea level) and how depths are expressed relative to them (e.g. mean sea level height).",
+      "hasTopConcept": [
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum-TAS83",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-vertical-working-surface",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-systems-drilling",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-unknown",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/mean-sea-level",
+        "https://linked.data.gov.au/def/depth-reference/water-bottom",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/reduced-level",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/seismic-reference-datum"
+      ],
+      "historyNote": {
+        "@language": "en",
+        "@value": "Derived from [WAPIMS].[dbo].[WellPermanentDatumType], [WAPIMS].[dbo].[BoreholeVerticalReferenceType], and [WAPIMS].[dbo].[WellDepthReferenceType] with additions from the unpublished Geoscience Australia's Depth Reference Type vocabulary. Also refers to Geological Survey of Queensland's Depth Reference vocabulary (https://linked.data.gov.au/def/depth-reference), with considerably expanded definitions."
+      },
+      "prefLabel": "Vertical/depth reference systems",
+      "http://www.w3.org/ns/prov#qualifiedAttribution": [
+        {
+          "@id": "_:n3-365"
+        },
+        {
+          "@id": "_:n3-366"
+        }
+      ],
+      "schema:creator": {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      },
+      "schema:dateCreated": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-09-06"
+      },
+      "schema:dateModified": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-09-06"
+      },
+      "schema:keywords": {
+        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-mapping"
+      },
+      "schema:publisher": {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/1",
+      "rdfs:label": "1"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/above-ground-level",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "AGL",
+        "HAGL"
+      ],
+      "definition": "Above ground level (AGL) or height above ground level (HAGL) is the distance of an object or point from the ground below it.",
+      "historyNote": "Mineral industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "above ground level",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://dronelaunchacademy.com/the-difference-between-msl-and-agl/"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Height_above_ground_level"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "AHD",
+        "AHD71"
+      ],
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/australian-height-datum"
+      },
+      "definition": "The Australian Height Datum (AHD) is the vertical datum to which all height measurements are referred to in Australia. Adopted in 1971, the datum surface is that which passes through mean sea level (MSL) at the 30 tide gauges around the coast of the Australian continent as determined in 1966–68. AHD is considered fit for purpose for tasks over short distances (less than about 10 km) for projects such as cadastral, civil engineering, construction and mining; however, the Australian Vertical Working Surface (AVWS) has been defined to assist users working over larger areas (greater than about 10 km) for environmental studies (e.g. flood, storm modelling), LiDAR surveys, geodesy, hydrography.",
+      "historyNote": "Official height datum in Australia",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "Australian Height Datum",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.icsm.gov.au/australian-height-datum"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/australian-height-datum"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.ga.gov.au/scientific-topics/positioning-navigation/geodesy/datums-projections/australian-height-datum-ahd"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum-TAS83",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "AHD",
+        "AHD–TAS83"
+      ],
+      "definition": "The 'Australian Height Datum (Tasmania) 1983' (AHD–TAS83) zero reference is fixed to mean sea level (MSL) observed for 1972 only at tides gauges in Hobart and Burnie, and was propagated throughout Tasmania on 17 October 1983. Because AHD (mainland) and AHD (Tas) are referenced to MSL observed at different times and locations, there is a vertical offset between the two datums (variably estimated at about 10 cm, between 12 cm and 26 cm, and about 1 cm (https://www.icsm.gov.au/australian-height-datum). Note that the term AHD is used to refer to both the Australian Height Datum 1971 (AHD71; Australian mainland) and Australian Height Datum (Tasmania) 1983 (AHD–TAS83).",
+      "historyNote": "Height datum in Tasmania (Australia)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "Australian Height Datum (Tasmania) 1983",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://www.icsm.gov.au/australian-height-datum"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-vertical-working-surface",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "AVWS",
+      "definition": "The Australian Vertical Working Surface (AVWS) is a reference surface for heights in Australia, introduced on 1 January 2020 to allow more accurate height computations where needed. Due to biases and distortions of the AHD, Global Navigation Satellite System (GNSS) users are only capable of deriving AHD heights with accuracy of 6–13 cm across Australia, which is inappropriate for some applications that require a more accurate reference surface. AVWS heights can be computed directly from GNSS without needing to connect to survey mark infrastructure with accuracy of 4–8 cm. AHD is considered fit for purpose for tasks over short distances (less than about 10 km) for projects such as cadastral, civil engineering, construction and mining, whereas the Australian Vertical Working Surface (AVWS) has been defined to assist users working over larger areas (greater than about 10 km) for environmental studies (e.g. flood, storm modelling), LiDAR surveys, geodesy and hydrography.",
+      "historyNote": "Based on the recommendation of the 'https://www.icsm.gov.au/publications/australian-vertical-working-surface-technical-implementation-plan-v16' study to adopt a 'two-frame' approach similar to that done with GDA2020 and Australian Terrestrial Reference Frame.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "Australian Vertical Working Surface",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.icsm.gov.au/australian-vertical-working-surface"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.icsm.gov.au/publications/australian-vertical-working-surface-technical-implementation-plan-v16"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-systems-drilling",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "definition": "In the resources industry,the depth of any point in a borehole/drillhole/well is the measurement of the distance between a reference point or elevation and that point. It is the most common method of reference for locations in a borehole. In the minerals industry, it usually refers to the distance from the drill collar. Inthe oil industry, 'depth' also refers to the location itself. By extension, depth can refer to locations below, or distances from, a reference point or elevation, even when there is no well. In that sense, depth is a concept related toelevation, albeit in the opposite direction. Depth in a borehole is not necessarily measured vertically or along a straight line. Because boreholes are not always drilled vertically, there may be two 'depths' for every given point in a borehole: themeasured depth(MD)measured along the path of theborehole, and thetrue vertical depth(TVD), the absolute vertical distance between thereference datumand the point in theborehole. In perfectly vertical holes, the TVD equals the MD; otherwise, the TVD is less than the MD measured from the same datum. Common references used are reduced level (RL), drill collar, ground level (GL),drilling rigfloor (DF),rotary table(RT),kelly bushing(KB or RKB) andmean sea level(MSL).",
+      "historyNote": "An umbrella term for resources industry concepts related to the reference points from which depth is measured in boreholes/wells.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "narrower": [
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-collar",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-floor",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/ground-level",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/kelly-bushing",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/mudline",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/precollar",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/rotary-table",
+        "https://linked.data.gov.au/def/depth-reference/well-head"
+      ],
+      "prefLabel": "depth reference systems — drilling",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://en.wikipedia.org/wiki/Depth_in_a_well"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-unknown",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "definition": "The exact depth reference datum, surface, or point (e.g. for a borehole) is not known.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "unknown",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-collar",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/drill-collar"
+      },
+      "definition": "In the mineral resources industry, 'drill collar' is referred to as the location (in an x, y, z coordinate system) as well as the start point of a borehole from which depths are measured. Drill collars are tubular pieces of material, usually metal or plastic, to aid in keeping the hole entry from collapsing.",
+      "historyNote": "Mineral industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "drill collar",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://linked.data.gov.au/def/depth-reference/drill-collar"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-floor",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "BDF – Below rig derrick floor",
+        "DF",
+        "derrick floor",
+        "drilling floor",
+        "rig drill floor",
+        "rig floor"
+      ],
+      "definition": "The drill floor (DF), also known as derrick floor, is the working area in which the rig crew conducts drilling operations, and is often used as a reference point for downhole/depth measurements. Depth measurements are commonly referenced to the DF, with notations like 2538 m DF or 2358 m BDF, indicating 2538 m below the drill/derrick floor.",
+      "historyNote": "Energy industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "drill floor",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://glossary.slb.com/en/terms/r/rig_floor"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/ground-level",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "GL",
+        "ground surface"
+      ],
+      "definition": "The height or level of the natural ground or the level of the exposed surface of the ground. This may be at the Earth's surface (ground surface) or below (e.g. bottom of a mine shaft or floor of an open pit). Ground level can be used as a reference point for vertical measurements (especially in drilling), without reference to any equipment used during drilling (cf. rotary table, kelly bushing).",
+      "historyNote": "Mineral industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "narrower": "https://linked.data.gov.au/def/vertical-depth-reference-systems/above-ground-level",
+      "prefLabel": "ground level",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://www.hopgoodganim.com.au/page/knowledge-centre/blog/ground-level-calculating-building-height"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "ISLW",
+        "Indian tide plane"
+      ],
+      "definition": "A tidal low water datum, originally developed by Sir G Darwin for parts of the Indian Ocean. Designed for regions of mixed tides, the datum is depressed below mean sea level by the sum of the amplitudes of the principal semidiurnal lunar and solar tides and the principal diurnal tides (M2 + S2 + K1 + O1). Area of use: World. Users are advised to not use this generic vertical datum but to define explicit realizations of Indian Spring Low Water (ISLW) by specifying location and epoch, for instance 'ISLW at xxx during yyyy-yyyy'.",
+      "historyNote": "Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "narrower": "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw-depth",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:1085"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/1085-datum"
+        }
+      ],
+      "prefLabel": "Indian Spring Low Water",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://epsg.io/1085-datum"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.ametsoc.org/wiki/Indian_spring_low_water"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.hydro.gov.au/prodserv/data/tides/tidal-glossary.htm"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/islw-depth",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "Indian Spring Low Water depth",
+      "definition": "A depth measured relative to the Indian Spring Low Water (ISLW) datum. Area of use: World.",
+      "historyNote": "Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:5863"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/5863"
+        }
+      ],
+      "prefLabel": "ISLW depth",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.hydro.gov.au/prodserv/data/tides/tidal-glossary.htm"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://epsg.io/5863"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/kelly-bushing",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "BKB",
+        "KB",
+        "RKB"
+      ],
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/kelly-bushing"
+      },
+      "definition": "In drilling, the kelly bushing (KB) or rotary kelly bushing (RKB) is an adapter that serves to connect the rotary table to the kelly (a long square or hexagonal steel bar with a hole drilled through the middle for a fluid path). Depth measurements are commonly referenced to the KB, such as 2538 m KB, meaning 2538 metres below the kelly bushing (BKB).",
+      "historyNote": "Energy industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "kelly bushing",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/kelly-bushing"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.slb.com/en/terms/k/kelly_bushing"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "LAT",
+      "definition": "The lowest tide level that can be predicted to occur under average meteorological conditions and under any combination of astronomical conditions. It can only be obtained properly by studying tidal predictions covering, ideally, 19 years. Area of use: World. Users are advised to not use this generic vertical datum but to define explicit realizations of Lowest Astronomical Tide (LAT) by specifying location and epoch, for instance 'LAT at xxx during yyyy-yyyy'.",
+      "historyNote": "Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "narrower": "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat-depth",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:1080"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/1080-datum"
+        }
+      ],
+      "prefLabel": "Lowest Astronomical Tide",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://epsg.io/1080-datum"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.icsm.gov.au/education/tidal-interface-compendium-related-terms"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/lat-depth",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "definition": "A depth measured relative to the Lowest Astronomical Tide (LAT) datum. Area of use: World.",
+      "historyNote": "Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:5861"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/5861"
+        }
+      ],
+      "prefLabel": "LAT depth",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://epsg.io/5861"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/mean-sea-level",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "MSL",
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/mean-sea-level"
+      },
+      "definition": "A global datum of the average surface of Earth's coastal bodies of water used as a reference to measure elevation (on the ground), altitude (in the air), or depth (below sea level) of an object or point. Derived from the arithmetic mean of hourly heights of the sea at the tidal station observed over a period of time (usually 19 years). Areas of use: World. Users are advised to not use this generic vertical datum but to define explicit realizations of mean sea level (MSL) by specifying location and epoch, for instance 'MSL at xxx during yyyy-yyyy'.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "narrower": [
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-depth",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-height",
+        "https://linked.data.gov.au/def/vertical-depth-reference-systems/metres-sub-sea"
+      ],
+      "prefLabel": "mean sea level",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://www.icsm.gov.au/education/tidal-interface-compendium-related-terms"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "http://www.iho-ohi.net/S32/engView.php"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://epsg.io/5100-datum"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://gcmd.earthdata.nasa.gov/kms/concept/f3ea8884-87a8-4a12-96d5-98e21a9fa2c7"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/mean-sea-level"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/metres-sub-sea",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "MSS",
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/metres-sub-sea"
+      },
+      "definition": "The distance below mean sea level, the inverse of measurements to mean sea level (MSL). The term 'subsea' (SS) by itself should not be used, as it is ambiguous. It could mean: below sea floor or bottom, below mean sea level (MSL), below Lowest Astronomical Tide (LAT), etc.",
+      "historyNote": "Energy industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "metres subsea",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Depth_in_a_well"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/metres-sub-sea"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-depth",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "below sea level",
+        "mean sea level depth"
+      ],
+      "definition": "The depth in metres measured below the mean sea level (MSL). Area of use: World. Not specific to any location or epoch.",
+      "historyNote": "Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:5715"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/5715"
+        }
+      ],
+      "prefLabel": "MSL depth",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://epsg.io/5715"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-height",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "ASL",
+        "above mean sea level (AMSL)",
+        "above sea level (ASL",
+        "asl",
+        "asl)",
+        "height above mean sea level (HAMSL)",
+        "mASL (metres above sea level)",
+        "mean sea level height"
+      ],
+      "definition": "The height in metres measured above the mean sea level (MSL). Area of use: World. Not specific to any location or epoch.",
+      "historyNote": "Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "notation": [
+        {
+          "@type": "https://epsg.io/",
+          "@value": "EPSG:5714"
+        },
+        {
+          "@type": "https://epsg.io/",
+          "@value": "https://epsg.io/5714"
+        }
+      ],
+      "prefLabel": "MSL height",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://epsg.io/5714"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/mudline",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "ML",
+      "definition": "Mudline as referenced in subsea operations refers to the seafloor or water bottom.",
+      "historyNote": "Energy industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "mudline",
+      "relatedMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/water-bottom"
+      },
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://iadclexicon.org/mudline/"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/precollar",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "definition": "The point at depth where the pre-collar hole ends and the diamond tail (i.e. diamond drilling) starts, and from which the length/depth of the diamond core is referenced.",
+      "historyNote": "Mineral industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "pre-collar",
+      "schema:citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://develop.com.au/mining-glossary/"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/reduced-level",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "RL",
+        "relative level"
+      ],
+      "definition": "Reduced level (or relative level, RL)insurveyingrefers to equating elevations of survey points with reference to a common assumeddatum (usually AHD). It is a vertical distance between survey point and adopted datum plane, thus it is considered as the base elevation that is used as reference to reckon heights or depths of other important places.Reduced here means equating and level means elevations. Datum may be a real or imaginary location, commonly with a nominated elevation of straightzero.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "reduced level",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "http://www.thirdistudio.com.au/HowToWorkOutReducedLevels.html"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://en.wikipedia.org/wiki/Reduced_level"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/rotary-table",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": [
+        "BRT",
+        "RT"
+      ],
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/rotary-table"
+      },
+      "definition": "The revolving or spinning section of the drill floor that provides power to turn the drillstring in a clockwise direction (as viewed from above), often used as a starting point for measurement of borehole depth (below rotary table or BRT).",
+      "historyNote": "Energy industry concept",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "rotary table",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/rotary-table"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://glossary.slb.com/en/terms/r/rotary_table"
+        }
+      ]
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems/seismic-reference-datum",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/vertical-depth-reference-systems"
+      },
+      "altLabel": "SRD",
+      "closeMatch": {
+        "@id": "https://linked.data.gov.au/def/depth-reference/seismic-reference-datum"
+      },
+      "definition": "A seismic reference datum (SRD) is used in land seismic projects as a reference surface to counteract the fact that elevation on land is variable. An SRD is a plane that sits above the highest elevation in the data. In a land project with a seismic reference datum set, the SRD will have a time of 0 ms. All time data, for example seismic and velocities, will start at this datum. Marine seismic is usually referenced to mean sea level (MSL), a global datum for measuring height. In a marine project, zero elevation (the mean sea level) will have a time of 0 ms.",
+      "inScheme": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "prefLabel": "seismic reference datum",
+      "topConceptOf": "https://linked.data.gov.au/def/vertical-depth-reference-systems",
+      "schema:citation": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://linked.data.gov.au/def/depth-reference/seismic-reference-datum"
+        },
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "@value": "https://help.dugeo.com/m/faq/l/1022116-seismic-reference-datums"
+        }
+      ]
+    }
+  ]
+}

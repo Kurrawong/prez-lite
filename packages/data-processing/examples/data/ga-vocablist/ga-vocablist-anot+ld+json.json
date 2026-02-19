@@ -1,0 +1,235 @@
+[
+  {
+    "@id": "http://pid.geoscience.gov.au/catalogue/ga-vocabs",
+    "@type": [
+      "https://schema.org/DataCatalog"
+    ],
+    "https://schema.org/hasPart": [
+      {
+        "@id": "http://qudt.org/community/ga/voc"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/CDCS"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/ContactCharacter"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/ContactType"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/CountryCodes"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DateQualifier"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyAzimuth"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyClass"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyRecordingMode"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/LandformTypes"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/Legislation"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/LocationMethod"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStatus"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStorageType"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/QaStatusCode"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/associationtype"
+      },
+      {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/materialtype"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#historyNote": [
+      {
+        "@value": "This catalogue was was created in 2024 from pre-existing vocabularies",
+        "@language": "en"
+      }
+    ],
+    "https://schema.org/codeRepository": [
+      {
+        "@value": "https://github.com/GeoscienceAustralia/ga-vocabs"
+      }
+    ],
+    "https://schema.org/contributor": [
+      {
+        "@id": "https://kurrawong.ai"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://linked.data.gov.au/org/ga"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@value": "2017",
+        "@type": "http://www.w3.org/2001/XMLSchema#gYear"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@value": "2024-12-30",
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "Geoscience Australia's vocabularies of controlled terms.\n\nGeoscience Australia uses domain standards that are openly available, to provide a common language for communicating ideas and provide consistency of meaning of the data collected, research undertaken and products created. Part of the use of standards is the use of controlled terms - vocabularies - and this system contains those vocabularies created by Geosceince Australia.\n\nThese vocabularies must be used in concert with international geo-domain vocabularies from the Commission for Geoscience Information (CGI), the Open Geospatial Consortium (OGC) and the International Organization for Standardization (ISO) and with Australian national vocabularies from the Government Geoscience Information Committee (GGIC) and the Intergovernmental Committee on Surveying and Mapping (ICSM)."
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "GA Vocabularies"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://linked.data.gov.au/org/ga"
+      }
+    ],
+    "https://prez.dev/type": [
+      {
+        "@id": "https://prez.dev/FocusNode"
+      }
+    ],
+    "https://prez.dev/identifier": [
+      {
+        "@value": "catalogue:ga-vocabs"
+      }
+    ],
+    "https://prez.dev/link": [
+      {
+        "@value": "/catalogs/catalogue:ga-vocabs"
+      }
+    ],
+    "https://prez.dev/members": [
+      {
+        "@value": "/catalogs/catalogue:ga-vocabs/collections"
+      }
+    ],
+    "https://prez.dev/label": [
+      {
+        "@value": "GA Vocabularies"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Geoscience Australia's vocabularies of controlled terms.\n\nGeoscience Australia uses domain standards that are openly available, to provide a common language for communicating ideas and provide consistency of meaning of the data collected, research undertaken and products created. Part of the use of standards is the use of controlled terms - vocabularies - and this system contains those vocabularies created by Geosceince Australia.\n\nThese vocabularies must be used in concert with international geo-domain vocabularies from the Commission for Geoscience Information (CGI), the Open Geospatial Consortium (OGC) and the International Organization for Standardization (ISO) and with Australian national vocabularies from the Government Geoscience Information Committee (GGIC) and the Intergovernmental Committee on Surveying and Mapping (ICSM)."
+      }
+    ]
+  },
+  {
+    "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod",
+    "https://prez.dev/label": [
+      {
+        "@value": "General Geology - Sampling Method",
+        "@language": "en"
+      }
+    ],
+    "https://prez.dev/description": [
+      {
+        "@value": "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. ",
+        "@language": "en"
+      }
+    ]
+  }
+]

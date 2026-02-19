@@ -1,0 +1,19 @@
+name: Get Background Labels
+
+on:
+  workflow_dispatch:
+    inputs:
+      endpoint:
+        description: 'SPARQL endpoint URL'
+        required: false
+        default: 'http://demo.dev.kurrawong.ai/sparql'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-labels:
+    uses: Kurrawong/prez-lite/.github/workflows/site-get-background-labels.yml@main
+    with:
+      prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}
+      endpoint: ${{ github.event.inputs.endpoint || 'http://demo.dev.kurrawong.ai/sparql' }}

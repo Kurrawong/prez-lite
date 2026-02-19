@@ -1,0 +1,88 @@
+# Reference repos (cloned for local searching only)
+resources/
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Nuxt dev/build outputs
+.output/
+.nuxt/
+.nitro/
+.cache/
+.data/
+dist/
+!packages/web-components/dist/
+
+# Generated exports (built from source data at build time)
+#web/public/export/
+
+# IDE
+.idea/
+.vscode/
+.cursor/
+.codex/
+.fleet/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment & Secrets (SECURITY CRITICAL)
+.env
+.env.*
+!.env.example
+*.env
+*.env.local
+*.env.production
+*.env.development
+.env.backup
+.env.old
+
+# Security-sensitive files
+secrets.*
+secret.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+id_rsa
+id_rsa.*
+*.asc
+*.gpg
+*.token
+*_token
+*-token
+credentials.*
+auth.*
+password.*
+*.secret
+
+# GitHub tokens and credentials
+github_pat_*
+ghp_*
+gho_*
+ghs_*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Temp
+tmp/
+temp/
+*.tmp
+
+# Test layer (local testing only)
+webtest/
+
+# Site repos (each subdirectory is its own git repo)
+packages/sites/

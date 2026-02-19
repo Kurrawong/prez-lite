@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/gswa-offices">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Office locations where functions of the Geological Survey of Western Australia (GSWA) are carried out, including metropolitan and regional locations.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/carlisle"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mineral-house"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/perth-core-library"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">GSWA offices</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Names and physical locations of metropolitan and regional offices of the Department of Energy, Mines, Industry Regulation and Safety (DEMIRS). The list includes venues with or without public access or information facilities, and highlights the location of Western Australia core libraries and offices of the Geological Survey of Western Australia (GSWA), as well as Mine Inspectorate and Mining Registrar offices. </skos:definition>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">DEMIRS offices</skos:prefLabel>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Administrative compilation based on Department of Energy, Mines, Industry Regulation and Safety office locations (https://www.dmirs.wa.gov.au/content/administrative-office)</skos:historyNote>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/accepted"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/dmirs-offices/1.1"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/dmirs-offices/dmirs-regional"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries"/>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-13</schema:dateCreated>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-01</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:version>1.1</schema:version>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/administration"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/carlisle">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Carlisle is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. The site includes several buildings encompassing separate functions of the Geological Survey of Western Australia, including the Perth Core Library, and is located at 37 Harris St, Carlisle WA 6101.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Carlisle</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The JH (Joe) Lord Core Library is one of two Geological Survey storage and viewing facilities housing geological exploration materials (predominantly drillcores and samples) and related media. The building is on the Kalgoorlie site at the corner of Hunter and Broadwood Streets, West Kalgoorlie WA 6430.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">JH (Joe) Lord Core Library</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Joe Lord Core Library</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Kalgoorlie Core Library</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dmp.wa.gov.au/Geological-Survey/Core-library-services-and-1391.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Kalgoorlie office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Goldfields and Esperance regions. In addition to administrative functions of the Department and of the Geological Survey of Western Australia, the Kalgoorlie office houses the Joe (JH) Lord Core Library, East Mine Inspectorate and Kalgoorlie Mining Registrar. The office is at the corner of Hunter and Broadwood Streets, West Kalgoorlie WA 6430.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Goldfields–Esperance (Kalgoorlie) regional office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Kalgoorlie office</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmp.wa.gov.au/Safety/Regional-inspectorate-boundaries-9872.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</schema:citation>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/gswa-collection-facilities/kalgoorlie-regional-office"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mineral-house">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mineral House is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It is the department&apos;s main administrative office, housing the Geological Survey and Resource Strategy, Resource and Environmental Compliance, Resource Tenure and Aboriginal Empowerment Petroleum, Mineral Titles Divisions of the Department, the West Mine Inspectorate and the Perth Mining Registrar. The building is at 100 Plain St, East Perth WA 6004.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mineral House</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MH</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmp.wa.gov.au/Safety/Regional-inspectorate-boundaries-9872.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/perth-core-library">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Perth Core Library is one of two Geological Survey storage and viewing facilities housing geological exploration materials (predominantly drillcores and samples) and related media. The building is on the Carlisle site at 37 Harris Street, Carlisle WA 6101.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Perth Core Library</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Carlisle</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Carlisle core library</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dmp.wa.gov.au/Geological-Survey/Core-library-services-and-1391.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mine-inspectorate-offices-wa">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mining operations in Western Australia are administered and regulated under the boundaries of four regional inspectorates: North, East, West and South.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mineral-house"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/collie-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/karratha-office"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mine Inspectorate offices - WA</skos:prefLabel>
+    <skos:historyNote>https://www.dmp.wa.gov.au/Safety/Regional-inspectorate-boundaries-9872.aspx</skos:historyNote>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/collie-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Collie office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the South Mine Inspectorate, and is at 66 Wittenoom Street, Collie WA 6225.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Collie office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmp.wa.gov.au/Safety/Regional-inspectorate-boundaries-9872.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/karratha-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Karratha office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the North West region. The office houses the Karratha Mining Registrar and North Mine Inspectorate, and is located at Level 2, The Quarter, 20 Sharpe Avenue, Karratha WA 6714.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">North West (Karratha) regional office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Karratha office</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mining-registrar-offices-wa">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A Mining Registrar&apos;s office is responsible for administering various mineral fields and districts located throughout Western Australia, i.e. overseeing and managing mining rights, licenses, and leases in their nominated jurisdiction. Services provided by each of these offices include the receival of mining tenement applications and dealings, public access to Mineral Titles Online (MTO) and TENGRAPH®, and Warden’s Court functions.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mineral-house"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/karratha-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/leonora-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office"/>
+    <skos:member rdf:resource="https://linked.data.gov.au/def/dmirs-offices/southern-cross-office"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mining Registrar offices - WA</skos:prefLabel>
+    <skos:historyNote>http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</skos:historyNote>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/leonora-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Leonora office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Leonora Mining Registrar, and is at the corner of Tower (Goldfield Highway) and Rochester Streets, Leonora WA 6438.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Leonora office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Mount Magnet office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Mount Magnet Mining Registrar, and is at the corner of Hepburn and Richardson Streets, Mount Magnet WA 6638.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mount Magnet office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/southern-cross-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Southern Cross office, one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, houses the Southern Cross Mining Registrar, and is located at 75 Canopus Street, Southern Cross WA 6426.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Southern Cross office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.dmp.wa.gov.au/History-and-locations-of-the-12531.aspx</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">1 Adelaide Terrace is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Resources Safety and Dangerous Goods Divisions, and both Private and Public Sector Labour Relations subdivisions of the Department. The office is located at Level 3, 1 Adelaide Terrace, East Perth WA 6004.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">1 Adelaide Terrace</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">1AT</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/albany-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Albany office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Great Southern region. The office is at 2/129 Aberdeen St, Albany WA 6331.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Great Southern (Albany) regional office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Albany office</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/broome-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Broome office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Kimberley region. The office is at Level 1, Woody&apos;s Arcade, 6/15 Dampier Terrace, Broome WA 6725.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Kimberley (Broome) regional office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Broome office</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/bunbury-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Bunbury office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the South West region. The office is located at Level 8, 61 Victoria Street, Bunbury WA 6230.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">South West (Bunbury) regional office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/dmirs-metropolitan">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Offices of the Department of Energy, Mines, Industry Regulation and Safety located in the Perth metropolitan area (Western Australia).</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metropolitan offices</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Metro offices</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/carlisle"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mineral-house"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/adelaide-terrace"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mason-bird"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace"/>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/gordon-stephenson-house">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Gordon Stephenson House is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Consumer Protection Group of the department. The building is in the Perth CBD at 140 William Street, Perth WA 6000.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Gordon Stephenson House</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">GSH</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/mason-bird">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mason Bird Building is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Building and Energy and WorkSafe Divisions of the Department. The building is at 303 Sevenoaks Street, Cannington WA 6107.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mason Bird Building</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MBB</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/stgeorges-terrace">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">66 St Georges Terrace is one of several offices maintained by the Department of Energy, Mines, Industry Regulation and Safety within the Perth metropolitan area. It houses the Energy Policy WA subdivision of the Department. The building is in the Perth CBD at Level 1, 66 St Georges Terrace, Perth WA 6000.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">66 St Georges Terrace</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/metropolitan-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/dmirs-regional">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Department of Energy, Mines, Industry Regulation and Safety has representative offices in a number of regional centres in Western Australia.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Regional offices</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/collie-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/karratha-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/leonora-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/southern-cross-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/albany-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/broome-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/bunbury-office"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/geraldton-office"/>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/geraldton-office">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Geraldton office is one of several regional offices maintained by the Department of Energy, Mines, Industry Regulation and Safety, representing the department in the Mid-West region. The office is in the Post Office Plaza at 50–52 Durlacher Street, Geraldton WA 6531.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mid-West (Geraldton) regional office</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Geraldton office</skos:altLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://waresources.sharepoint.com/sites/intranet/sitepages/regional-offices-&amp;-indian-ocean-territories.aspx</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.dmirs.wa.gov.au/content/regional-offices</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/wa-core-libraries">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Western Australia has two purpose-built core libraries: the Perth Core Library, located in Carlisle, and the Joe Lord Core Library in Kalgoorlie. The core libraries archive drillcore acquired during mineral and petroleum exploration in the State. They include viewing and sampling facilities to assist subsequent exploration activity. Both facilities are administered by the Geological Survey.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Core libraries</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dmp.wa.gov.au/Geological-Survey/Core-library-services-and-1391.aspx</schema:citation>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/dmirs-offices/perth-core-library"/>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/dmirs-offices"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/dmirs-offices/1.1">
+    <rdfs:label>1.1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-381">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-382">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+</rdf:RDF>

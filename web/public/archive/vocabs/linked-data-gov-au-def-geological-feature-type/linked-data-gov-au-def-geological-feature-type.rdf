@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/formal-unit">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">lithostratigraphic unit</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">lithstrat unit</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Stratigraphic and lithodemic units that are formally defined and named in the Australian Stratigraphic Units Database (https://www.ga.gov.au/data-pubs/datastandards/reference-databases/stratigraphic-units) following conventions set out in the International Stratigraphic Guide (Salvador, 1994; an abridged version of the guide is available at https://stratigraphy.org/guide/index.html).</skos:definition>
+    <skos:historyNote>One of the foundation elements in GSWA&apos;s Explanatory Notes System, used to define the geological framework of an area.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">formal unit</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">This vocabulary lists the fundamental types of geological features that are used to define the geological framework/4D evolution of Western Australia and are relevant to the duties of the Geological Survey of Western Australia. A geological feature is a physical or conceptual feature that is hypothesized to exist coherently in the Earth and that results from geological processes (definition largely derived from SWEET ontology http://sweetontology.net/realmGeol#geologicfeature).</skos:definition>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Largely derived from the structure GSWA&apos;s ENS (Explanatory Notes System) database.</skos:historyNote>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Geological feature type</skos:prefLabel>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</schema:dateCreated>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/geological-feature-type/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-framework"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/geological-event"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/georesources"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/landform-feature"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/lithstrat-unit"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/metallogenic-province"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/mineral-system"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/petroleum-supersystem"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/physiographic-unit"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/regolith-unit"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/structural-feature"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/tectonic-feature"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/geological-feature-type/tectonic-unit"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/geological-event">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A temporally and conceivably spatially defined episode in Earth&apos;s history that leads/contributes to the modification of any of the Earth&apos;s systems (geosphere, hydrosphere, cryosphere, atmosphere and biosphere).</skos:definition>
+    <skos:historyNote>One of the foundation elements in GSWA&apos;s Explanatory Notes System, used to define the geological framework of an area.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">geological event</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/georesources">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Concentrations of naturally occurring solid, gas, and liquid geological materials within the earth’s crust (both on and below the surface) that occur in sufficient masses or volumes to have existing or potential economic and societal value. These resources include, but are not limited to, rock, metal and non-metal mineral resources, oil, natural gas, and geothermal energy resources; and environmental resources (water and soil).</skos:definition>
+    <skos:historyNote>Definition compiled from American Geosciences Institute Glossary of Geology (5th edition).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">georesources</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/resources</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/landform-feature">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Any physical, recognizable form and feature of the Earth&apos;s surface having a characteristic shape and produced by natural causes. It includes major forms such as plain, plateau and mountain, and minor forms such as hill, valley, slope, esker and dune. Taken together, the landforms make up the surface configuration of the Earth.</skos:definition>
+    <skos:historyNote>Definition compiled from American Geosciences Institute Glossary of Geology (5th edition).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">landform feature</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/landform</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/lithotectonic-unit">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">An assemblage of rocks that is unified on the basis  of structural or deformational features, mutual relations, origin or historical evolution. It may be igneous, sedimentary, metamorphic or mixed.</skos:definition>
+    <skos:historyNote>American Geosciences Institute Glossary of Geology (5th edition).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">lithotectonic unit</skos:prefLabel>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/lithotectonicunit</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/lithstrat-unit">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A named body of rock (sedimentary, igneous, metamorphic or mixed), that is defined and characterized on the basis of its observable and distinctive lithological properties or combination of lithological properties and stratigraphic/field relations. It represents the basic unit of geological mapping and includes formally defined stratigraphic and lithodemic units (cf Australian Stratigraphic Units Database, www.ga.gov.au/data-pubs/datastandards/stratigraphic-units) as well as lithotectonic units defined solely on the basis of lithologic properties and inclusion within a tectonic unit.</skos:definition>
+    <skos:historyNote>One of the foundation elements in GSWA&apos;s Explanatory Notes System, used to define the geological framework of an area. Definition adapted from American Geosciences Institute Glossary of Geology (5th edition).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">lithostratigraphic unit</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/lithostratigraphicunit</schema:citation>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/geological-feature-type/formal-unit"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/geological-feature-type/lithotectonic-unit"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/metallogenic-province">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A geographic area or section of the Earth&apos;s crust characterized by a particular assemblage ofmineral deposits, or by one or more distinctive types/styles of mineralization. The concept underscores the genesis and regional-to-global distribution of mineral deposits, with emphasis on their relationship in space and time to regional petrological and tectonic features of the Earth&apos;s crust.</skos:definition>
+    <skos:historyNote>Petrascheck WE, 1965. Typical features of metallogenic provinces: Economic Geology and the Bulletin of the Society of Economic Geologists (December 1965), v. 60 (8), p. 1620–1634.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">metallogenic province</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Metallogeny</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/metallogenicprovince</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://pubs.geoscienceworld.org/segweb/economicgeology/article/60/8/1620/17535/Typical-features-of-metallogenic-provinces</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.britannica.com/science/metallogenic-province</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/mineral-system">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A unifying model comprising all of the geological and geodynamic factors, at all scales, that control the inception, evolution and preservation of an ore deposit. Critical components of a mineral system include a source of metals, a mode of transport, a site of deposition or accumulation where commodities become concentrated and are preserved to enable economically viable extraction during a given period. A mineral system model permits classification of known deposit types or styles into a genetically related family based on their association with the above factors.</skos:definition>
+    <skos:historyNote>McCuaig, TC, Beresford, S and Hronsky, J 2010, Translating the mineral systems approach into an effective exploration targeting system: Ore Geology Reviews, v. 38, p. 128–138.
+Wyborn, LAI, Heinrich, CA and Jaques, AL 1994, Australian Proterozoic mineral systems: Essential ingredients and mappable criteria: Proceedings of the Australasian Institute of Mining and Metallurgy Annual Conference, Darwin, 5–9 August 1994, p.109–115.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mineral system</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/petroleum-supersystem">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The petroleum supersystem concept, introduced by Bradshaw (1993), is a methodology to understand hydrocarbon occurrences throughout Australia at a continental-scale. The petroleum supersystem links sedimentary packages of similar age, structural history, depositional environment and hydrocarbon potential, both within and between basins. Thus, the petroleum supersystems approach can potentially be a powerful exploration tool for predicting the petroleum systems elements in frontier basins with limited datasets (Bradshaw et al 1994).</skos:definition>
+    <skos:historyNote>Bradshaw MT, 1993. Australian petroleum systems. The PESA Journal 21, 43–53.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">petroleum supersystem</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.publish.csiro.au/AJ/fulltext/AJ21018</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/physiographic-unit">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A named geomorphological entity with internal coherence in its landform characteristics and landform evolutionary history. At the lowest levels, physiographic units reflect the underlying geology and have similar groupings of regolith materials that are related to the landform types, their evolution, and the underlying bedrock.</skos:definition>
+    <skos:historyNote>One of the foundation elements in GSWA&apos;s Explanatory Notes System, used to define the geological framework of an area. GSWA has adopted the classification scheme of Pain, C, Gregory, L, Wilson, P and McKenzie, N 2011, The physiographic regions of Australia — Explanatory notes: Australian Collaborative Land Evaluation Program and National Committee on Soil and Terrain, Canberra, Australian Capital Territory, 36p.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">physiographic unit</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/regolith-unit">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A body of unconsolidated to secondarily recemented materials that overlies more coherent bedrock, and that has been formed and shaped by weathering, erosion, transport and/or deposition of older material. It includes the weathered component of the underlying bedrock.</skos:definition>
+    <skos:historyNote>One of the foundation elements in GSWA&apos;s Explanatory Notes System, used to define the geological framework of an area. Definition adapted from Eggleton, RA (ed.) 2001, The regolith glossary: surficial geology, soils and landscapes: Cooperative Research Centre for Landscape Evolution and Mineral Exploration (CRC LEME), Canberra, Australian Capital Territory, 144p.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">regolith unit</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/structural-feature">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A feature that describes the geometric relationship of rocks and geological features in general. Structural features are divided into two broad classes: those acquired during the genesis of a rock mass (primary structure, e.g. bedding) or by later deformation or displacement of primary structures and of the rocks (secondary structures, e.g. a fold or fault).</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">structural feature</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.americangeosciences.org/term/structuralfeature</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.britannica.com/science/geology/Structural-geology</schema:citation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/tectonic-feature">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A regional- to continental-scale element of the solid Earth that is the result of lithosphere or crustal-scale deformation, including magmatic and gravity-driven near-surface processes.</skos:definition>
+    <skos:historyNote>One of the foundation elements used to define the geological framework of an area. Tectonic features are rarely captured in GSWA&apos;s Explanatory Systems, but they are held in a spatial digital layer that captures the combined interpretation from remote sensing and ground observations.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">tectonic feature</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/tectonic-unit">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A named body of rock with distinct geological or geophysical characteristics (e.g. structure, stratigraphy, magmatic activity, metamorphism, seismic velocity, electrical conductivity) that reflect a different interpreted tectonic setting and geological history from that of surrounding bodies of rock.</skos:definition>
+    <skos:historyNote>One of the foundation elements in GSWA&apos;s Explanatory Notes System, used to define the geological framework of an area.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">tectonic unit</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/geological-feature-type"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/geological-feature-type/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-385">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-386">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://www.linkedin.com/in/davidmcbmartin/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-387">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+
+</rdf:RDF>

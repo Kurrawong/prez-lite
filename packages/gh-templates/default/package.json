@@ -1,0 +1,43 @@
+{
+  "name": "prez-lite-template",
+  "version": "1.0.0",
+  "description": "Template for publishing SKOS vocabularies with prez-lite",
+  "type": "module",
+  "scripts": {
+    "process": "node scripts/process-vocabs.js",
+    "dev": "nuxt dev",
+    "build": "npm run process && nuxt build",
+    "generate": "npm run process && nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "keywords": ["skos", "vocabulary", "rdf", "linked-data"],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@9.0.0",
+  "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.87",
+    "nuxt": "^4.3.0"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.11.0",
+    "@nuxt/fonts": "^0.13.0",
+    "@nuxt/icon": "^2.2.1",
+    "@nuxt/ui": "^4.4.0",
+    "@nuxtjs/color-mode": "^4.0.0",
+    "mermaid": "^11.12.2",
+    "monaco-editor": "^0.52.0",
+    "nuxt-monaco-editor": "^1.4.0",
+    "buffer": "^6.0.3",
+    "@orama/orama": "^3.1.18",
+    "@tanstack/vue-table": "^8.21.0",
+    "@vueuse/core": "^13.0.0",
+    "n3": "^2.0.1",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.27",
+    "vue-router": "^4.6.4",
+    "zod": "^3.24.0",
+    "zod-to-json-schema": "^3.24.0"
+  }
+}

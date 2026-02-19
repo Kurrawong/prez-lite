@@ -1,0 +1,59 @@
+[
+    {
+      "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling",
+      "@type": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "http://purl.org/dc/terms/identifier": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#token",
+          "@value": "boreholeFluidSampling"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#definition": [
+        {
+          "@language": "en",
+          "@value": "Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method."
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#inScheme": [
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#narrower": [
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation"
+        },
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        {
+          "@language": "en",
+          "@value": "borehole fluid sampling"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+        {
+          "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"
+        }
+      ]
+    }
+  ]

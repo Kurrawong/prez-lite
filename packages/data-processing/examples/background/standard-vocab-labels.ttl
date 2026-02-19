@@ -1,0 +1,87 @@
+# Standard vocabulary labels for RDF/SKOS/Schema predicates
+# These provide human-readable labels and descriptions for common predicates
+# used in SKOS vocabularies, matching the Prez annotation style.
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+
+# RDF/RDFS predicates
+rdfs:label rdfs:label "label" .
+
+# SKOS predicates
+skos:prefLabel rdfs:label "preferred label"@en ;
+    skos:definition "The preferred lexical label for a resource, in a given language."@en .
+
+skos:definition rdfs:label "definition"@en ;
+    skos:definition "A statement or formal explanation of the meaning of a concept."@en .
+
+skos:historyNote rdfs:label "history note"@en ;
+    skos:definition "A note about the past state/use/meaning of a concept."@en .
+
+skos:hasTopConcept rdfs:label "has top concept"@en ;
+    skos:definition "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies."@en .
+
+skos:broader rdfs:label "has broader"@en ;
+    skos:definition "Relates a concept to a concept that is more general in meaning."@en .
+
+skos:narrower rdfs:label "has narrower"@en ;
+    skos:definition "Relates a concept to a concept that is more specific in meaning."@en .
+
+skos:inScheme rdfs:label "is in scheme"@en ;
+    skos:definition "Relates a resource (for example a concept) to a concept scheme in which it is included."@en .
+
+# SKOS classes
+skos:ConceptScheme rdfs:label "Concept Scheme"@en ;
+    skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
+
+skos:Concept rdfs:label "Concept"@en ;
+    skos:definition "An idea or notion; a unit of thought."@en .
+
+# OWL predicates
+owl:versionIRI rdfs:label "version IRI" ;
+    schema:description "The property that identifies the version IRI of an ontology." .
+
+# Registry predicates
+reg:status rdfs:label "status" ;
+    schema:description "The status of this register entry" .
+
+# Provenance predicates
+prov:agent rdfs:label "agent" .
+
+prov:hadRole rdfs:label "role" .
+
+prov:qualifiedAttribution rdfs:label "qualified attribution" ;
+    schema:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]." .
+
+# Schema.org predicates
+schema:creator rdfs:label "creator" ;
+    schema:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork" .
+
+schema:publisher rdfs:label "publisher" ;
+    schema:description "The publisher of the creative work" .
+
+schema:dateCreated rdfs:label "dateCreated" ;
+    schema:description "The date on which the CreativeWork was created or the item was added to a DataFeed" .
+
+schema:dateModified rdfs:label "dateModified" ;
+    schema:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed" .
+
+schema:version rdfs:label "version" ;
+    schema:description "The version of the CreativeWork embodied by a specified resource" .
+
+schema:keywords rdfs:label "keywords" ;
+    schema:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property" .
+
+schema:name rdfs:label "name" ;
+    schema:description "The name of the item" .
+
+# Note: schema:description has both rdfs:label and a self-referential schema:description
+schema:description rdfs:label "description" ;
+    schema:description "A description of the item" .
+
+# Common objects that may need labels
+<https://linked.data.gov.au/def/alteration-form/1> rdfs:label "1" .

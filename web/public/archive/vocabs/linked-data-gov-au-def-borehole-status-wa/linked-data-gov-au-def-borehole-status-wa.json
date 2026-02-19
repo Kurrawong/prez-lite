@@ -1,0 +1,588 @@
+{
+  "iri": "https://linked.data.gov.au/def/borehole-status-wa",
+  "label": "Borehole status",
+  "description": "The stage of a borehole in relation to the lifecycle of the borehole, from proposal and operational stages through to completion and rehabilitation, and with a focus on terminology as applied in the Geological Survey of Western Australia (GSWA) databases. The vocabulary focuses on standard terminology from the energy and mineral resources sectors, highlighting instances where the same term carries different meaning in different fields. In the context of this vocabulary, the term fluid energy refers to sources such as gas, petroleum and geothermal, as covered by the Petroleum Legislation Amendment Act 2024, and is exclusive of mineral sources of energy (e.g. coal, uranium). Note that the currency of borehole status data in GSWA's databases is time-stamped, reflecting information gathered from a borehole operator’s well completion report or from a responsible regulatory authority at a specific point in time; subsequent changes are unlikely to be recorded.",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral",
+      "label": "abandoned - mineral",
+      "definition": "All borehole operations and activities are prematurely terminated due to unforeseen circumstances, e.g. surface ground failure or borehole collapse (with or without equipment being stuck). Borehole should undergo necessary rehabilitation.",
+      "altLabels": [
+        "failed"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational",
+      "label": "drilling completed - post-operational",
+      "definition": "Drilling of the borehole is complete and no further activity (other than decommissioning/rehabilitation) is planned. Note that in the Australian Coal Logging Standards v3.1 (CoalLog), 'completed' status is closer in meaning to 'abandoned' in this vocabulary).",
+      "altLabels": [
+        "drilled"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/approved",
+      "label": "approved",
+      "definition": "Drilling of a borehole has been approved by the relevant authorities, whether within a resource company, a government regulatory agency (e.g. as part of government-supported exploration drilling initiatives or for research purposes), indigenous representative groups, a research organisation, or as part of geotechnical investigations and/or infrastructure programs. Drilling has not yet commenced.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval",
+      "label": "planning and approval",
+      "definition": "Planning and approval include all stages from the initial conception of a borehole through to obtaining necessary approval(s) from the relevant authorities, whether within a resource company, a government regulatory agency, indigenous representative groups, a research organisation, or as part of geotechnical investigations and/or infrastructure programs.",
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/approved",
+        "https://linked.data.gov.au/def/borehole-status-wa/not-drilled",
+        "https://linked.data.gov.au/def/borehole-status-wa/planned",
+        "https://linked.data.gov.au/def/borehole-status-wa/proposed"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/capped",
+      "label": "capped",
+      "definition": "A borehole where a cap (usually a PVC cap secured with a screw) or a plug have been put temporarily in place during interim rehabilitation or to allow for the possibility of re-entering the hole (e.g. during a pause in operations and/or maintenance), e.g. to prevent fauna from falling into the hole. A permanent rehabilitation should follow at the completion of the operations.",
+      "altLabels": [
+        "plugged above ground",
+        "temporarily plugged"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended",
+      "label": "operational - suspended",
+      "definition": "A borehole where drilling has been halted but for which operations/activities are not completed, and the borehole has not been fully decommissioned/rehabilitated. This stage includes the potential resumption of drilling.",
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/capped",
+        "https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended",
+        "https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended",
+        "https://linked.data.gov.au/def/borehole-status-wa/shut-in",
+        "https://linked.data.gov.au/def/borehole-status-wa/suspended",
+        "https://linked.data.gov.au/def/borehole-status-wa/workover"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended",
+      "label": "cased and suspended",
+      "definition": "A well in which casing has been installed, but is suspended and inactive pending installation of completion, monitoring or other equipment.",
+      "altLabels": [
+        "C&S"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/decommissioned",
+      "label": "decommissioned",
+      "definition": "Decommissioning is a broad stage that involves the timely, safe, and environmentally responsible removal of, or otherwise satisfactorily dealing with, drilling-related property, equipment or infrastructure that is not in use, has not been maintained in working order such that it can be used, and has no demonstrable future use (i.e. has no associated permissioning documents allowing for and outlining plans for future use). The term is predominantly used in the energy industry.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/post-operational",
+      "label": "post-operational",
+      "definition": "A borehole that is no longer operating and for which activities are completed, i.e. the borehole is fully decommissioned/rehabilitated.",
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational",
+        "https://linked.data.gov.au/def/borehole-status-wa/decommissioned",
+        "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy",
+        "https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated",
+        "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational",
+      "label": "drilling completed - operational",
+      "definition": "Drilling of the borehole is completed, but operations involving the borehole are continuing (e.g. installation of production infrastructure, wirelogging, etc.). Note that in the Australian Coal Logging Standards v3.1 (CoalLog), 'completed' status is closer in meaning to 'abandoned' in this vocabulary).",
+      "altLabels": [
+        "completed",
+        "drilled"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/operational",
+      "label": "operational",
+      "definition": "The status of a borehole from the commencement to the completion of drilling operations, and including the production/investigation stages.",
+      "altLabels": [
+        "in progress"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational",
+        "https://linked.data.gov.au/def/borehole-status-wa/injecting",
+        "https://linked.data.gov.au/def/borehole-status-wa/monitoring",
+        "https://linked.data.gov.au/def/borehole-status-wa/producing",
+        "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting",
+        "https://linked.data.gov.au/def/borehole-status-wa/in-progress"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended",
+      "label": "drilling suspended",
+      "definition": "Drilling operations have been temporarily suspended (e.g. due to adverse weather conditions, maintenance, or other reasons).",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/injecting-gas",
+      "label": "injecting gas",
+      "definition": "A reservoir maintenance or secondary recovery method that uses injected gas to supplement the pressure in an oil reservoir or field. This concept includes injecting for the purpose of permanent gas storage (e.g. CO₂).",
+      "altLabels": [
+        "gas injection"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/injecting"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/injecting",
+      "label": "injecting",
+      "notation": "IN",
+      "definition": "The status of a borehole during which fluids (commonly gas and water) are injected rather than produced, typically with the primary objective of maintaining/increasing reservoir pressure to enhance production. Injection wells are also used to dispose of treated wastewater, recharge aquifers, tap geothermal energy, and in environmental remediation for the cleanup of contaminated soil or groundwater; the concept includes injecting for permanent storage. Boreholes/wells are specifically designed/drilled for this purpose, although a production well can be converted into an injection well and vice versa.",
+      "altLabels": [
+        "injecting"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/injecting-gas",
+        "https://linked.data.gov.au/def/borehole-status-wa/injecting-water"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/injecting-water",
+      "label": "injecting water",
+      "notation": "WI",
+      "definition": "Waterflooding or water injection is where water is injected into the oil reservoir, to maintain the pressure (also known as voidage replacement) or to drive oil towards the wells, and thereby increase production. Water-injection wells are common offshore, where filtered and treated seawater is injected into a lower water-bearing section of the reservoir. The concept includes water recharge of aquifers.",
+      "altLabels": [
+        "water injection",
+        "waterflooding"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/injecting"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/monitoring",
+      "label": "monitoring",
+      "definition": "A borehole/well that is actively monitoring reservoir, aquifer or other geological parameters, such as water level, water quality, fluid pressure.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/not-drilled",
+      "label": "not drilled",
+      "definition": "A borehole that was proposed in concept and/or approved on application, but was never drilled. This does not include the circumstance where the status is 'unknown'.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/planned",
+      "label": "planned",
+      "definition": "Refers to the stated intention of drilling a borehole that has yet to be submitted for approval from the relevant authorities.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned",
+      "label": "plugged and abandoned",
+      "notation": "P&A",
+      "definition": "An abandoned borehole that has also been plugged. The extent of seal may vary from just plugged near the surface (e.g. many coal boreholes) to plugged to prevent the migration of oil, gas, water or other substance from one stratum to another (i.e. PPDM definition). Note that 'plugged and abandoned ' is similar to 'plugged' as used by the mineral resources industry.",
+      "altLabels": [
+        "P&A"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy",
+      "label": "abandoned - energy",
+      "notation": "A",
+      "definition": "All borehole operations and activities are terminated. The operator has left the site with no intention of returning to the borehole. Note that this is similar to 'completed' status in the Australian Coal Logging Standards v3.1 (CoalLog). Also note that 'abandoned - energy' is similar to 'rehabilitated' as used by the mineral resources industry.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled",
+      "label": "plugged and backfilled",
+      "definition": "A borehole that has been securely plugged below ground, with the remaining void backfilled to the surface with low permeability material, and with a mound of low permeability material (approximately 250 mm high by 800 mm wide and up to 2 m for large diameter drillholes) covered with topsoil to facilitate water shedding away from the drillhole and prevent subsidence.",
+      "altLabels": [
+        "backfilled",
+        "drillhole",
+        "mounded"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/plugged"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/plugged",
+      "label": "plugged",
+      "definition": "A permanently, securely plugged borehole, usually at a prescribed distance below the ground. Note that 'plugged' is similar to the PPDM definitions of 'plugged and abandoned' as used by the energy industry. Under current regulation, backfilling is a mandatory requirement.",
+      "altLabels": [
+        "permanently plugged",
+        "plugged below ground",
+        "plugged drill collar"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/producing",
+      "label": "producing",
+      "notation": "PR",
+      "definition": "The status of a borehole during which liquids or gas are being extracted from the borehole.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting",
+      "label": "producing and injecting",
+      "notation": "PR/IN",
+      "definition": "The status of a borehole that alternately produces and injects liquid or gas into a borehole.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/proposed",
+      "label": "proposed",
+      "definition": "An application exists to drill a borehole, but drilling has not yet commenced or been approved.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/reaming",
+      "label": "reaming",
+      "definition": "The process of enlarging a borehole, for example when a drilling bit has worn down from its original size or lithological plastic flow into the wellbore requires the reinstating of the original hole size.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/drilling"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling",
+      "label": "drilling",
+      "definition": "A stage referring to the collection of activities that specifically occur while a borehole is being drilled, from groundbreaking to reaching the intended depth/zone.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/in-progress"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/reaming"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/shut-in",
+      "label": "shut in",
+      "notation": "SI",
+      "definition": "A borehole/well with one or more valves temporarily closed in the direction of flow.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/suspended",
+      "label": "suspended",
+      "notation": "SUSP",
+      "definition": "Borehole operations have been halted for a significant period of time or in a manner that requires significant effort for the resumption of activities. The borehole can be plugged downhole and fluids injected on top of the plug in order to create a temporary seal to prevent hydrocarbon leakage. The surface equipment remains in place. Suspended is never the final status of a borehole.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/unknown",
+      "label": "unknown",
+      "definition": "The status of the borehole is unknown (or has not been recorded)."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated",
+      "label": "unrehabilitated",
+      "definition": "A borehole that is not rehabilitated. Typically this includes boreholes drilled prior to mandatory rehabilitation legislation coming into effect.",
+      "altLabels": [
+        "drillhole",
+        "open drillhole",
+        "unplugged"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/workover",
+      "label": "workover",
+      "definition": "Activities relating to production wells, for example logging activities, recompletion, testing, repairs, maintenance, plug and abandonment and demobilisation.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/in-progress",
+      "label": "in progress",
+      "definition": "The status of a borehole commencing from the rig being moved onsite up until the time that drilling is completed. Note that this stage does not include any operations at the drillsite and within the borehole that follow the completion of drilling the hole. Note that this corresponds to the status of 'drilling' in the PPDM Wellbore Status vocabulary 2014.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/operational"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/drilling"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated",
+      "label": "rehabilitated",
+      "definition": "In the mineral industry, the borehole site has been fully rehabilitated. Note that this status is similar to the PPDM definitions of 'abandoned' as used by the energy industry.",
+      "broader": [
+        "https://linked.data.gov.au/def/borehole-status-wa/post-operational"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-status-wa/plugged"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/operational",
+      "label": "operational",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-operational",
+          "label": "drilling completed - operational",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/in-progress",
+          "label": "in progress",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling",
+              "label": "drilling",
+              "notation": null,
+              "children": [
+                {
+                  "iri": "https://linked.data.gov.au/def/borehole-status-wa/reaming",
+                  "label": "reaming",
+                  "notation": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/injecting",
+          "label": "injecting",
+          "notation": "IN",
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-status-wa/injecting-gas",
+              "label": "injecting gas",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-status-wa/injecting-water",
+              "label": "injecting water",
+              "notation": "WI",
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/monitoring",
+          "label": "monitoring",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/producing",
+          "label": "producing",
+          "notation": "PR",
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/producing-and-injecting",
+          "label": "producing and injecting",
+          "notation": "PR/IN",
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/operational-suspended",
+      "label": "operational - suspended",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/capped",
+          "label": "capped",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/cased-and-suspended",
+          "label": "cased and suspended",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling-suspended",
+          "label": "drilling suspended",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/shut-in",
+          "label": "shut in",
+          "notation": "SI",
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/suspended",
+          "label": "suspended",
+          "notation": "SUSP",
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/workover",
+          "label": "workover",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/planning-and-approval",
+      "label": "planning and approval",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/approved",
+          "label": "approved",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/not-drilled",
+          "label": "not drilled",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/planned",
+          "label": "planned",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/proposed",
+          "label": "proposed",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/post-operational",
+      "label": "post-operational",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-energy",
+          "label": "abandoned - energy",
+          "notation": "A",
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-abandoned",
+              "label": "plugged and abandoned",
+              "notation": "P&A",
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/decommissioned",
+          "label": "decommissioned",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/drilling-completed-post-operational",
+          "label": "drilling completed - post-operational",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-status-wa/abandoned-mineral",
+              "label": "abandoned - mineral",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/rehabilitated",
+          "label": "rehabilitated",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/borehole-status-wa/plugged",
+              "label": "plugged",
+              "notation": null,
+              "children": [
+                {
+                  "iri": "https://linked.data.gov.au/def/borehole-status-wa/plugged-and-backfilled",
+                  "label": "plugged and backfilled",
+                  "notation": null,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-status-wa/unrehabilitated",
+          "label": "unrehabilitated",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-status-wa/unknown",
+      "label": "unknown",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "collections": [
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/Ages",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Ages"
+      },
+      "definition": {
+        "en": "An age is the smallest hierarchical geochronologic unit and is equivalent to a chronostratigraphic stage. These are thousands to millions of years in length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Aalenian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Aeronian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Albian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Anisian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Aptian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Aquitanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Artinskian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Asselian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Bajocian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Barremian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Bartonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Bashkirian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Bathonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Berriasian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Burdigalian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Calabrian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Callovian",
+        "http://resource.geosciml.org/classifier/ics/ischart/CambrianStage10",
+        "http://resource.geosciml.org/classifier/ics/ischart/CambrianStage2",
+        "http://resource.geosciml.org/classifier/ics/ischart/CambrianStage3",
+        "http://resource.geosciml.org/classifier/ics/ischart/CambrianStage4",
+        "http://resource.geosciml.org/classifier/ics/ischart/Campanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Capitanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Carnian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Cenomanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Changhsingian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Chattian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Chibanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Coniacian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Danian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Dapingian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Darriwilian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Drumian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Eifelian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Emsian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Famennian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Floian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Fortunian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Frasnian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Gelasian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Givetian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Gorstian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Greenlandian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Guzhangian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Gzhelian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Hauterivian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Hettangian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Hirnantian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Homerian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Induan",
+        "http://resource.geosciml.org/classifier/ics/ischart/Jiangshanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Kasimovian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Katian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Kimmeridgian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Kungurian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ladinian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Langhian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Lochkovian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ludfordian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Lutetian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Maastrichtian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Meghalayan",
+        "http://resource.geosciml.org/classifier/ics/ischart/Messinian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Moscovian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Norian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Northgrippian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Olenekian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Oxfordian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Paibian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Piacenzian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Pliensbachian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Pragian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Priabonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Pridoli",
+        "http://resource.geosciml.org/classifier/ics/ischart/Rhaetian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Rhuddanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Roadian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Rupelian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Sakmarian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Sandbian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Santonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Selandian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Serravallian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Sheinwoodian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Sinemurian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Telychian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Thanetian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Tithonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Toarcian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Tortonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Tournaisian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Tremadocian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Turonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperPleistocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Valanginian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Visean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Wordian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Wuchiapingian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Wuliuan",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ypresian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Zanclean"
+      ]
+    },
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/Eons",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Eons"
+      },
+      "definition": {
+        "en": "An eon is the largest formal geochronologic time unit and is equivalent to a chronostratigraphic eonothem. These are several hundred million years to two billion years in length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Archean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Hadean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"
+      ]
+    },
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/Epochs",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Epochs"
+      },
+      "definition": {
+        "en": "An epoch is the second smallest geochronologic unit. It is equivalent to a chronostratigraphic series. These are hundreds of thousands to tens of millions of years length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Pridoli",
+        "http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2",
+        "http://resource.geosciml.org/classifier/ics/ischart/Cisuralian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Eocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Furongian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Guadalupian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Holocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Llandovery",
+        "http://resource.geosciml.org/classifier/ics/ischart/Lopingian",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerCretaceous",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerDevonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerJurassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerMississippian",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerOrdovician",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerPennsylvanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/LowerTriassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ludlow",
+        "http://resource.geosciml.org/classifier/ics/ischart/Miaolingian",
+        "http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/MiddleMississippian",
+        "http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician",
+        "http://resource.geosciml.org/classifier/ics/ischart/MiddlePennsylvanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Miocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Oligocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Paleocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Pleistocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Pliocene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperCretaceous",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperDevonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperJurassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperMississippian",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperOrdovician",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperPennsylvanian",
+        "http://resource.geosciml.org/classifier/ics/ischart/UpperTriassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Wenlock"
+      ]
+    },
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/Eras",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Eras"
+      },
+      "definition": {
+        "en": "An era is the second largest geochronologic time unit and is equivalent to a chronostratigraphic erathem. These are tens to hundreds of millions of years in length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Cenozoic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Eoarchean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Mesoarchean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Mesozoic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Neoarchean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Paleoarchean",
+        "http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"
+      ]
+    },
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/Periods",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Periods"
+      },
+      "definition": {
+        "en": "A period is equivalent to a chronostratigraphic system. These are millions to tens of millions of years in length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Calymmian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Cambrian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Carboniferous",
+        "http://resource.geosciml.org/classifier/ics/ischart/Cretaceous",
+        "http://resource.geosciml.org/classifier/ics/ischart/Cryogenian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Devonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ectasian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ediacaran",
+        "http://resource.geosciml.org/classifier/ics/ischart/Jurassic",
+        "http://resource.geosciml.org/classifier/ics/ischart/Neogene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Ordovician",
+        "http://resource.geosciml.org/classifier/ics/ischart/Orosirian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Paleogene",
+        "http://resource.geosciml.org/classifier/ics/ischart/Permian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Quaternary",
+        "http://resource.geosciml.org/classifier/ics/ischart/Rhyacian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Siderian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Silurian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Statherian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Stenian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Tonian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Triassic"
+      ]
+    },
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/SubPeriod",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Sub Periods"
+      },
+      "definition": {
+        "en": "A sub-period an informal geochronologic time unit that is only defined for the Carboniferous Period. the two instances are tens of millions of years in length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Mississippian",
+        "http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"
+      ]
+    },
+    {
+      "iri": "http://resource.geosciml.org/classifier/ics/ischart/SuperEons",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Super Eons"
+      },
+      "definition": {
+        "en": "A super eon is an informal time unit that contains all of the eons before any evidence of life. The sole supereon is about two billion years in length"
+      },
+      "members": [
+        "http://resource.geosciml.org/classifier/ics/ischart/Precambrian"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/gswa-offices",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "GSWA offices"
+      },
+      "definition": {
+        "en": "Office locations where functions of the Geological Survey of Western Australia (GSWA) are carried out, including metropolitan and regional locations."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/dmirs-offices/carlisle",
+        "https://linked.data.gov.au/def/dmirs-offices/joe-lord-core-library",
+        "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+        "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+        "https://linked.data.gov.au/def/dmirs-offices/perth-core-library"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mine-inspectorate-offices-wa",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Mine Inspectorate offices - WA"
+      },
+      "definition": {
+        "en": "Mining operations in Western Australia are administered and regulated under the boundaries of four regional inspectorates: North, East, West and South."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+        "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+        "https://linked.data.gov.au/def/dmirs-offices/collie-office",
+        "https://linked.data.gov.au/def/dmirs-offices/karratha-office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/dmirs-offices/mining-registrar-offices-wa",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Mining Registrar offices - WA"
+      },
+      "definition": {
+        "en": "A Mining Registrar's office is responsible for administering various mineral fields and districts located throughout Western Australia, i.e. overseeing and managing mining rights, licenses, and leases in their nominated jurisdiction. Services provided by each of these offices include the receival of mining tenement applications and dealings, public access to Mineral Titles Online (MTO) and TENGRAPH®, and Warden’s Court functions."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/dmirs-offices/kalgoorlie-office",
+        "https://linked.data.gov.au/def/dmirs-offices/mineral-house",
+        "https://linked.data.gov.au/def/dmirs-offices/karratha-office",
+        "https://linked.data.gov.au/def/dmirs-offices/leonora-office",
+        "https://linked.data.gov.au/def/dmirs-offices/mount-magnet-office",
+        "https://linked.data.gov.au/def/dmirs-offices/southern-cross-office"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/geographic",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Geographic coordinate systems"
+      },
+      "definition": {
+        "en": "A geographic coordinate system (GCS) is a coordinate system that uses a three-dimensional (spherical or ellipsoidal) surface  to define locations on the Earth. Any location on Earth can be referenced by a point with longitude and latitude coordinates."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/Clarke1858",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd66",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/agd84",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda2020",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/gda94",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/projected",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Projected coordinate systems"
+      },
+      "definition": {
+        "en": "Projected coordinate systems that apply to the State of Western Australia. A projected coordinate system (PCS) is a projection of the geographic coordinates on a flat, two-dimensional surface (a map). The projection currently used to convert between Australian Geodetic Data and their projected equivalents is the Universal Transverse Mercator (UTM) projection. Unlike ageographic coordinate system, a projected coordinate system has constant lengths, angles and areas across the two dimensions. In a projected coordinate system, locations are identified by x, y coordinates on a grid, with the origin at the centre of the grid. Each position has two values that reference it to that central location. One specifies its horizontal position and the other its vertical position. The two values are called the x-coordinate and y-coordinate. Using this notation, the coordinates at the origin are x = 0 and y = 0."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z49",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z50",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z51",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg66-z52",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z49",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z50",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z51",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/amg84-z52",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z49",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z50",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z51",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga2020-z52",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z49",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z50",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z51",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/mga94-z52",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z49s",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z50s",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z51s",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wgs84-utm-z52s"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-coordinate-reference-systems/wa-utm-zones",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Western Australian UTM zones"
+      },
+      "definition": {
+        "en": "The Universal Transverse Mercator (UTM) zones used and referred to within Western Australia. The UTM system divides the Earth into 60 zones, each 6°  longitude in width. Zone 1 covers longitudes 180–174°W; zone numbering increases eastward to zone 60, which covers longitudes 174–180°E. The polar regions south of 80°S and north of 84°N are excluded."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z49",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z50",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z51",
+        "https://linked.data.gov.au/def/wa-coordinate-reference-systems/utm-z52"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kalgoorlie-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Kalgoorlie Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the city of Kalgoorlie that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/broadarrow-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/bulong-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/dundas-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/eastcoolgardie-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kanowna-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kurnalpi-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/menzies-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/ularring-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yerilla-mineral-district"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/karratha-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Karratha Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the city of Karratha that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/ashburton-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/gascoyne-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kimberley-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/westkimberley-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/westpilbara-mineral-field"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/leonora-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Leonora Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the town of Leonora that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/lawlers-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmalcolm-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmargaret-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmorgan-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/niagara-mineral-district"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/marblebar-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Marble Bar Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the city of Perth that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/marblebar-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/nullagine-mineral-district"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/meekatharra-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Meekatharra Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the city of Perth that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/meekatharra-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/peakhill-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/wiluna-mineral-district"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mountmagnet-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Mount Magnet Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the town of Mount Magnet that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/blackrange-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/cue-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/daydawn-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/mtmagnet-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yalgoo-mineral-field"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/perth-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Perth Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the city of Perth that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/collieriver-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/greenbushes-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/northampton-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/phillipsriver-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/southwest-mineral-field",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/warburton-mineral-field"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/southern-cross-mining-registrar",
+      "type": "Collection",
+      "prefLabel": {
+        "en": "Southern Cross Mining Registrar"
+      },
+      "definition": {
+        "en": "A function of the Department of Mines, Industry Regulation and Safety (DMIRS) located in the town of Southern Cross that is responsible for administering exploration and mining activities throughout nominated mineral fields and districts in Western Australia."
+      },
+      "members": [
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/coolgardie-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/kunnanalling-mineral-district",
+        "https://linked.data.gov.au/def/wa-mineral-fields-and-districts/yilgarn-mineral-field"
+      ]
+    }
+  ]
+}

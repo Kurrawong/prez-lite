@@ -1,0 +1,16 @@
+name: Process Data
+
+on:
+  push:
+    branches: [main, master]
+    paths: ['data/vocabs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    uses: Kurrawong/prez-lite/.github/workflows/site-process-data.yml@main
+    with:
+      prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}

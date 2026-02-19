@@ -1,0 +1,913 @@
+{
+  "iri": "https://linked.data.gov.au/def/sample-condition",
+  "label": "Sample/specimen condition",
+  "description": "List of terms describing the condition, completeness and risk/hazard profile of individual samples/specimens, including any specific requirements needed for the preservation of the object.",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/arsenic-bearing",
+      "label": "arsenic-bearing",
+      "definition": "A sample or specimen containing inorganic arsenic, either as an element or a compound (e.g. in sulfide minerals), and forming naturally or as part of storage (e.g. concentration of toxic vapours in enclosed spaces). Inorganic arsenic is a highly toxic and carcinogenic component, known to be harmful to human health if inhaled, ingested or absorbed.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poisonous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/poisonous",
+      "label": "poisonous",
+      "definition": "A sample or specimen that contains minerals harmful to human health when breathed, touched or ingested.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/arsenic-bearing",
+        "https://linked.data.gov.au/def/sample-condition/mercury-bearing"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/asbestos-bearing",
+      "label": "asbestos-bearing",
+      "definition": "A sample or specimen containing acicular or fibrous asbestos (serpentine or amphibole) minerals, either naturally or as part of storage materials, which can cause internal damage if breathed or ingested.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/fibrous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/fibrous",
+      "label": "fibrous",
+      "definition": "A sample or specimen consisting of or containing fibres, i.e. threads or filaments that can easily break off during handling and potentially be inhaled, absorbed or ingested.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/asbestos-bearing"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/biohazard",
+      "label": "biohazard",
+      "definition": "A sample or specimen containing biologically hazardous materials, whether naturally, as part of storage materials, or due to a fault.",
+      "altLabels": [
+        "contaminated",
+        "mouldy"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/hazardous",
+      "label": "hazardous",
+      "definition": "A sample or specimen that presents some form of hazard to humans or the storage environment.",
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/poisonous",
+        "https://linked.data.gov.au/def/sample-condition/fibrous",
+        "https://linked.data.gov.au/def/sample-condition/biohazard",
+        "https://linked.data.gov.au/def/sample-condition/dusty",
+        "https://linked.data.gov.au/def/sample-condition/flammable",
+        "https://linked.data.gov.au/def/sample-condition/heavy",
+        "https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing",
+        "https://linked.data.gov.au/def/sample-condition/radioactive",
+        "https://linked.data.gov.au/def/sample-condition/salty",
+        "https://linked.data.gov.au/def/sample-condition/sharp",
+        "https://linked.data.gov.au/def/sample-condition/unwieldy"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/broken",
+      "label": "broken",
+      "definition": "A sample or specimen where the object has been broken during collection, storage or analysis. This differs from multi-part or segmented specimens or samples in that the damage and disaggregation of the object is human-caused and accidental.",
+      "altLabels": [
+        "fractured"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/poor",
+      "label": "poor",
+      "definition": "A sample or specimen considered of poor preservation, quality and/or usefulness, i.e. it is no longer performing its intended purpose, shows signs of imminent failure or breakdown and/or requires major repair/replacement.",
+      "altLabels": [
+        "low-quality"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/broken",
+        "https://linked.data.gov.au/def/sample-condition/chipped",
+        "https://linked.data.gov.au/def/sample-condition/degraded",
+        "https://linked.data.gov.au/def/sample-condition/flaking",
+        "https://linked.data.gov.au/def/sample-condition/incomplete",
+        "https://linked.data.gov.au/def/sample-condition/corroded",
+        "https://linked.data.gov.au/def/sample-condition/worn"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/chemically-vulnerable",
+      "label": "chemically vulnerable",
+      "definition": "A sample or specimen that is vulnerable to damage when exposed to specific chemical compounds. This vulnerability may include one specific chemical class/type, or a wide range of compounds.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/vulnerable",
+      "label": "vulnerable",
+      "definition": "A sample or specimen that is vulnerable to specific forms of non-physical degradation, such as humidity or temperature fluctuations, light conditions, and contacting chemicals or treatments.",
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/chemically-vulnerable",
+        "https://linked.data.gov.au/def/sample-condition/fragile",
+        "https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic",
+        "https://linked.data.gov.au/def/sample-condition/oxygen-sensitive",
+        "https://linked.data.gov.au/def/sample-condition/photosensitive",
+        "https://linked.data.gov.au/def/sample-condition/thermally-vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/chipped",
+      "label": "chipped",
+      "definition": "A sample or specimen damaged by having a small piece broken off at the edge or on the surface.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/coated",
+      "label": "coated",
+      "definition": "A sample or specimen partially covered with a thin layer of a chemical or compound selected for the purposes of improved visualisation (e.g. resin), analysis (e.g. carbon, oil or quartz coating) or protection (e.g. glass)",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/enhanced"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/enhanced",
+      "label": "enhanced",
+      "definition": "A sample or specimen altered in any way to improve its quality or value, or to emphasize its aesthetic appeal.",
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/coated",
+        "https://linked.data.gov.au/def/sample-condition/mounted",
+        "https://linked.data.gov.au/def/sample-condition/polished",
+        "https://linked.data.gov.au/def/sample-condition/shaped",
+        "https://linked.data.gov.au/def/sample-condition/cleaned"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/consolidated",
+      "label": "consolidated",
+      "definition": "A sample or specimen which has undergone past repair by impregnating weakened, crumbling or porous surfaces or sections with a consolidant (e.g. paraloid, resin), where the area of repair may become a future vulnerability or hazard or may impede future study or repair processes.",
+      "altLabels": [
+        "impregnated"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/repaired"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/repaired",
+      "label": "repaired",
+      "definition": "A sample or specimen which has undergone some form of past restoration, where the point of repair may become a future vulnerability or hazard, or detract from the value (monetary or other) of the sample/specimen.",
+      "altLabels": [
+        "fixed",
+        "reassembled",
+        "reconstituted"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/consolidated",
+        "https://linked.data.gov.au/def/sample-condition/glued"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/degraded",
+      "label": "degraded",
+      "definition": "A sample or specimen where the loss of object integrity occurs after collection and is due to intrinsic specimen/sample vulnerabilities or improper collection or storage processes.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/dusty",
+      "label": "dusty",
+      "definition": "A sample or specimen that is naturally crumbly or granular and forms fine-grained, abrasive or poisonous particles when disturbed, whether naturally or as part of storage materials.",
+      "altLabels": [
+        "crumbly"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/embedded",
+      "label": "embedded",
+      "definition": "A sample or specimen fixed firmly and deeply within a supporting/enclosing material. The term can be used to describe specimens embedded in mounting media such as wax, epoxies, acrylics and polyesters, or in thermosetting resins or thermoplastics.",
+      "altLabels": [
+        "enclosed",
+        "sealed"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/preserved"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/preserved",
+      "label": "preserved",
+      "definition": "A sample or specimen, often core, that has been wrapped, sealed, immersed or otherwise conserved separate from other materials, either in preparation for specific analyses or to preserve a specific component or condition.",
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/embedded",
+        "https://linked.data.gov.au/def/sample-condition/refrigerated",
+        "https://linked.data.gov.au/def/sample-condition/submerged",
+        "https://linked.data.gov.au/def/sample-condition/under-vacuum"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/fair",
+      "label": "fair",
+      "definition": "A sample or specimen considered of average preservation, quality and/or usefulness, i.e. has early signs of wear or deterioration, though the element is generally structurally sound and performing its intended purpose.",
+      "altLabels": [
+        "average"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/flaking",
+      "label": "flaking",
+      "definition": "A sample or specimen with smaller parts peeling off from its surface. The term may also refer to the breakage of storage materials (e.g. plastic bags).",
+      "altLabels": [
+        "peeling"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/flammable",
+      "label": "flammable",
+      "definition": "A sample or specimen containing inflammable, flammable or flame-sustaining materials, whether naturally, or as part of treatment or storage materials.",
+      "altLabels": [
+        "inflammable"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/fragile",
+      "label": "fragile",
+      "definition": "A sample or specimen that is physically vulnerable or prone to breakage, whether due to material, form, shape, or condition.",
+      "altLabels": [
+        "delicate"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/framed",
+      "label": "framed",
+      "definition": "A sample or specimen mounted on and surrounded by a rigid structure that supports it.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/mounted"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/mounted",
+      "label": "mounted",
+      "definition": "A sample or specimen fixed permanently or semi-permanently to a surface, pedestal or wall, or in a frame, or encapsulated within a suitable medium.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/enhanced"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/framed"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/glued",
+      "label": "glued",
+      "definition": "A sample or specimen which has undergone past repair by gluing on broken elements or sections, where the area of repair may become a future vulnerability or hazard",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/repaired"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/good",
+      "label": "good",
+      "definition": "A sample or specimen considered of good preservation, quality and/or usefulness, i.e. is intact, structurally sound and performing its intended purpose, with few or no cosmetic imperfections, and needing no repair other than minor/routine maintenance.",
+      "altLabels": [
+        "good",
+        "high-quality"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/heavy",
+      "label": "heavy",
+      "definition": "A sample or specimen which requires special tools or multiple persons to move due to its mass, or a sample or specimen of greater density than commonly anticipated based on its dimensions, potentially complicating its safe movement.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing",
+      "label": "hydrocarbon bearing",
+      "definition": "A sample or specimen (usually core or cuttings) containing natural hydrocarbon (e.g. oil) that can leak while in storage or during handling.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic",
+      "label": "hygroscopic or hydrophilic",
+      "definition": "A sample or specimen that is vulnerable to humidity fluctuations, or which has a propensity to absorb or attract water or other fluids from the surrounding environment, resulting in specimen damage.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/incomplete",
+      "label": "incomplete",
+      "definition": "A sample or specimen representing part of an original whole, due to the loss of part of the object.",
+      "altLabels": [
+        "partial"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/mercury-bearing",
+      "label": "mercury-bearing",
+      "definition": "A sample or specimen containing mercury, either as an element or a compound (e.g. in sulfide minerals), and forming naturally or as part of storage (e.g. concentration of toxic vapours in enclosed spaces). Mercury is harmful to human health if inhaled, ingested or absorbed.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poisonous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/oxygen-sensitive",
+      "label": "oxygen sensitive",
+      "definition": "A sample or specimen likely to react (tarnish) and lose its lustre if exposed to air.",
+      "altLabels": [
+        "oxidation prone"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/photosensitive",
+      "label": "photosensitive",
+      "definition": "A sample or specimen that is vulnerable to degradation when exposed to long-term light or UV exposure.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/polished",
+      "label": "polished",
+      "definition": "A sample or specimen whose surface is made smooth and shiny to improve its aesthetics, enhance details of its external/internal texture or in preparation for analytical work.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/enhanced"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/radioactive",
+      "label": "radioactive",
+      "definition": "A sample or specimen with radiation dose quantities greater than 50 μSv/h, requiring assessment for storage suitability and precautionary measures. Samples with readings greater than 100 μSv/h will not be stored in a GSWA collection.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/refrigerated",
+      "label": "refrigerated",
+      "definition": "A sample or specimen needing to be preserved at low temperatures, i.e. below room temperature or in freezing conditions (e.g. organic specimens or ice cores).",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/preserved"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/salty",
+      "label": "salty",
+      "definition": "A sample or specimen containing high levels of salt minerals, including halite or gypsum. Halite can have a corrosive effect on storage materials.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/segmented",
+      "label": "segmented",
+      "definition": "A sample or specimen which has been divided into multiple associated parts as part of collection, storage or analysis. This differs from multi-part samples or specimens in that the segmentation of the object is unnatural; and from broken samples or specimens in that segmentation is intentional and for a stated purpose. Segmentation of material does not necessarily correspond to a degradation of specimen usefulness, and therefore a transition from fair to poor general condition may apply.",
+      "altLabels": [
+        "cut",
+        "dissected"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/separated",
+      "label": "separated",
+      "definition": "A sample or specimen representing part of an original whole, where some parts or components have been split from the item and reside with other individuals or organizations.",
+      "altLabels": [
+        "split"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/multi-part"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/multi-part",
+      "label": "multi-part",
+      "definition": "A sample or specimen that consists of several associated but distinct parts, which should be stored and/or assessed together as a single whole. This differs from broken or segmented samples or specimens in that the multi-part nature is a standard presentation of the object in question, such as disarticulated bones of a single skeleton.",
+      "altLabels": [
+        "disaggregated",
+        "disarticulated"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/separated"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/shaped",
+      "label": "shaped",
+      "definition": "A sample or specimen whose original shape (or form) has been modified/altered via one or multiple processes, usually to improve its appearance or increase its value. These includes procedures such as faceting, tumbling, or carving.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/enhanced"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/sharp",
+      "label": "sharp",
+      "definition": "A sample or specimen with pointed, sharp or abrasive surfaces, which may become a hazard when contacted without protective equipment.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/shielded",
+      "label": "shielded",
+      "definition": "A sample or specimen that is kept behind a protective surface/enclosure due to its hazardous nature. Typically used for radioactive specimens protected by a lead shield to minimize exposure to radiation, or isolated to contain degassing."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/submerged",
+      "label": "submerged",
+      "definition": "A sample or specimen stored entirely within a liquid (e.g. fresh water or brine) in order to maintain its form, chemistry or physical properties",
+      "altLabels": [
+        "immersed"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/preserved"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/tarnished",
+      "label": "tarnished",
+      "definition": "A sample or specimen that has lost some of its lustre, usually as a result of exposure to air and moisture. Tarnish is a thin layer of corrosion that forms over some metals and minerals as their outermost layer undergoes a chemical reaction when exposed to non-metallic compounds (e.g. oxygen or sulfur dioxide). Tarnish is commonly a metal oxide, and can be referred to as patina when applied to copper-based metals and toning when referring to coins.",
+      "altLabels": [
+        "oxidised",
+        "oxidized"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/corroded"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/corroded",
+      "label": "corroded",
+      "definition": "A sample or specimen weakened or damaged by chemical reaction. Corrosion occurs whenever a gas or liquid chemically attacks an exposed surface, often a metal, and is accelerated by warm temperatures and/or specific chemical compounds such as acids and salts.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/tarnished"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/thermally-vulnerable",
+      "label": "thermally vulnerable",
+      "definition": "A sample or specimen that is vulnerable to temperature fluctuations, or which has a propensity to dry out or freeze in extreme temperature environments, resulting in specimen damage.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/vulnerable"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/to-be-retrayed",
+      "label": "to be retrayed",
+      "definition": "A core whose trays have been flagged for one-off, periodic or scheduled replacement. One-off replacement is generally required when samples/specimens are transported within trays unsuitable for long-term storage or are difficult to maintain. Periodic or scheduled replacement of trays may be required when the sample/specimen has a property that accelerates the decay of storage materials (such as salty core).",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/to-be-repackaged"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/to-be-repackaged",
+      "label": "to be repackaged",
+      "definition": "A sample or specimen whose packaging or storage materials have been flagged for one-off, periodic or scheduled replacement. One-off replacement is generally required when samples/specimens are transported within materials unsuitable for long-term storage. Periodic or scheduled replacement of storage materials may be required when the sample/specimen has a property that accelerates the decay of storage materials (such as salty core), or for storage materials that are known to degrade over time.",
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/to-be-retrayed"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/uncleaned",
+      "label": "uncleaned",
+      "definition": "A sample or specimen that has not undergone any cleaning or purification process.",
+      "altLabels": [
+        "unwashed"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/under-vacuum",
+      "label": "under vacuum",
+      "definition": "A sample or specimen that needs to be preserved in a space devoid of matter, commonly to avoid sample contamination.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/preserved"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/unwieldy",
+      "label": "unwieldy",
+      "definition": "A sample or specimen of unusual proportions which may require special tools, multiple persons or careful planning to move safely.",
+      "altLabels": [
+        "awkward"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/hazardous"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/washed-and-dried",
+      "label": "washed and dried",
+      "definition": "A sample or specimen that has been cleaned or purified by rinsing (usually with water), and subsequently dried. The process is typically applied to drillcores and ditch cuttings to remove mud, dirt and dust, but can also refer to the removal of impurities and contaminants from a sample/specimen using a solvent (often water, distilled water or a detergent) in preparation for analysis or further usage.",
+      "altLabels": [
+        "cleaned"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/cleaned"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/cleaned",
+      "label": "cleaned",
+      "definition": "A sample or specimen that has been treated to remove dirt, mud and other extraneous particles/substances in preparation for analysis or further usage.",
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/enhanced"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/sample-condition/washed-and-dried"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/worn",
+      "label": "worn",
+      "definition": "A sample or specimen where the loss in object integrity is due to physical abrasion either intrinsically, during the collection process, or during storage or analysis procedures.",
+      "altLabels": [
+        "abraded"
+      ],
+      "broader": [
+        "https://linked.data.gov.au/def/sample-condition/poor"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/enhanced",
+      "label": "enhanced",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/cleaned",
+          "label": "cleaned",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/sample-condition/washed-and-dried",
+              "label": "washed and dried",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/coated",
+          "label": "coated",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/mounted",
+          "label": "mounted",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/sample-condition/framed",
+              "label": "framed",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/polished",
+          "label": "polished",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/shaped",
+          "label": "shaped",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/fair",
+      "label": "fair",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/good",
+      "label": "good",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/hazardous",
+      "label": "hazardous",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/biohazard",
+          "label": "biohazard",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/dusty",
+          "label": "dusty",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/fibrous",
+          "label": "fibrous",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/sample-condition/asbestos-bearing",
+              "label": "asbestos-bearing",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/flammable",
+          "label": "flammable",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/heavy",
+          "label": "heavy",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/hydrocarbon-bearing",
+          "label": "hydrocarbon bearing",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/poisonous",
+          "label": "poisonous",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/sample-condition/arsenic-bearing",
+              "label": "arsenic-bearing",
+              "notation": null,
+              "children": []
+            },
+            {
+              "iri": "https://linked.data.gov.au/def/sample-condition/mercury-bearing",
+              "label": "mercury-bearing",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/radioactive",
+          "label": "radioactive",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/salty",
+          "label": "salty",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/sharp",
+          "label": "sharp",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/unwieldy",
+          "label": "unwieldy",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/multi-part",
+      "label": "multi-part",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/separated",
+          "label": "separated",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/poor",
+      "label": "poor",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/broken",
+          "label": "broken",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/chipped",
+          "label": "chipped",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/corroded",
+          "label": "corroded",
+          "notation": null,
+          "children": [
+            {
+              "iri": "https://linked.data.gov.au/def/sample-condition/tarnished",
+              "label": "tarnished",
+              "notation": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/degraded",
+          "label": "degraded",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/flaking",
+          "label": "flaking",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/incomplete",
+          "label": "incomplete",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/worn",
+          "label": "worn",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/preserved",
+      "label": "preserved",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/embedded",
+          "label": "embedded",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/refrigerated",
+          "label": "refrigerated",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/submerged",
+          "label": "submerged",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/under-vacuum",
+          "label": "under vacuum",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/repaired",
+      "label": "repaired",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/consolidated",
+          "label": "consolidated",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/glued",
+          "label": "glued",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/segmented",
+      "label": "segmented",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/shielded",
+      "label": "shielded",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/to-be-repackaged",
+      "label": "to be repackaged",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/to-be-retrayed",
+          "label": "to be retrayed",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/uncleaned",
+      "label": "uncleaned",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/sample-condition/vulnerable",
+      "label": "vulnerable",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/chemically-vulnerable",
+          "label": "chemically vulnerable",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/fragile",
+          "label": "fragile",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/hygroscopic-or-hydrophilic",
+          "label": "hygroscopic or hydrophilic",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/oxygen-sensitive",
+          "label": "oxygen sensitive",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/photosensitive",
+          "label": "photosensitive",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/sample-condition/thermally-vulnerable",
+          "label": "thermally vulnerable",
+          "notation": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+name = "prez-lite-auth"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Default for local development only. Set production origins in Cloudflare dashboard.
+ALLOWED_ORIGINS = "http://localhost:3123"
+# Secrets (set via `wrangler secret put`):
+#   GITHUB_CLIENT_ID
+#   GITHUB_CLIENT_SECRET

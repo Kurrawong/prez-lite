@@ -1,0 +1,115 @@
+@prefix catalogue: <http://pid.geoscience.gov.au/catalogue/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns2: <https://linked.data.gov.au/org/> .
+@prefix ns4: <https://pid.geoscience.gov.au/def/voc/ga/> .
+@prefix ns5: <https://pid.geoscience.gov.au/dataset/ga/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prez: <https://prez.dev/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+catalogue:ga-vocabs prez:description """Geoscience Australia's vocabularies of controlled terms.
+
+Geoscience Australia uses domain standards that are openly available, to provide a common language for communicating ideas and provide consistency of meaning of the data collected, research undertaken and products created. Part of the use of standards is the use of controlled terms - vocabularies - and this system contains those vocabularies created by Geosceince Australia.
+
+These vocabularies must be used in concert with international geo-domain vocabularies from the Commission for Geoscience Information (CGI), the Open Geospatial Consortium (OGC) and the International Organization for Standardization (ISO) and with Australian national vocabularies from the Government Geoscience Information Committee (GGIC) and the Intergovernmental Committee on Surveying and Mapping (ICSM).""" ;
+    prez:identifier "catalogue:ga-vocabs" ;
+    prez:label "GA Vocabularies" .
+
+dcterms:created prez:description "Date of creation of the resource."@en,
+        "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+    prez:label "Date Created"@en .
+
+dcterms:creator prez:description "An entity responsible for making the resource."@en,
+        "Recommended practice is to identify the creator with a URI.  If this is not possible or feasible, a literal value that identifies the creator may be provided."@en ;
+    prez:label "Creator"@en .
+
+dcterms:identifier prez:description "An unambiguous reference to the resource within a given context."@en,
+        "Recommended practice is to identify the resource by means of a string conforming to an identification system. Examples include International Standard Book Number (ISBN), Digital Object Identifier (DOI), and Uniform Resource Name (URN).  Persistent identifiers should be provided as HTTP URIs."@en ;
+    prez:label "Identifier"@en .
+
+dcterms:modified prez:description "Date on which the resource was changed."@en,
+        "Recommended practice is to describe the date, date/time, or period of time as recommended for the property Date, of which this is a subproperty."@en ;
+    prez:label "Date Modified"@en .
+
+dcterms:provenance prez:description "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en,
+        "The statement may include a description of any changes successive custodians made to the resource."@en ;
+    prez:label "Provenance"@en .
+
+dcterms:publisher prez:description "An entity responsible for making the resource available."@en ;
+    prez:label "Publisher"@en .
+
+rdf:type prez:description "The subject is an instance of a class." ;
+    prez:label "type" .
+
+rdfs:seeAlso prez:description "Further information about the subject resource." ;
+    prez:label "see also" .
+
+xsd:date prez:label "date" .
+
+xsd:token prez:label "token" .
+
+owl:versionInfo prez:description "The annotation property that provides version information for an ontology or another OWL construct." ;
+    prez:label "versionInfo" .
+
+skos:definition prez:description "A statement or formal explanation of the meaning of a concept."@en ;
+    prez:label "definition"@en .
+
+skos:prefLabel prez:description "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag."@en,
+        "The preferred lexical label for a resource, in a given language."@en,
+        "The range of skos:prefLabel is the class of RDF plain literals."@en,
+        """skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise
+      disjoint properties."""@en ;
+    prez:label "preferred label"@en .
+
+dcat:contactPoint prez:description "Relevant contact information for the catalogued resource. Use of vCard is recommended."@en ;
+    prez:label "contact point"@en .
+
+ns4:BoreholesSamplingMethod a skos:ConceptScheme ;
+    dcterms:created "2022-08-09"^^xsd:date ;
+    dcterms:creator ns2:ga ;
+    dcterms:identifier "BoreholesSamplingMethod"^^xsd:token ;
+    dcterms:modified "2022-08-09"^^xsd:date ;
+    dcterms:provenance "Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)"@en ;
+    dcterms:publisher ns2:ga ;
+    rdfs:seeAlso ns5:148553 ;
+    owl:versionInfo "1" ;
+    skos:definition "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "@en ;
+    skos:prefLabel "General Geology - Sampling Method"@en ;
+    dcat:contactPoint "Team Lead - Information Services; Energy, Minerals and Groundwater Division" ;
+    prez:description "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. "@en ;
+    prez:identifier "ns4:BoreholesSamplingMethod" ;
+    prez:label "General Geology - Sampling Method"@en ;
+    prez:link "/catalogs/catalogue:ga-vocabs/collections/ns4:BoreholesSamplingMethod" ;
+    prez:members "/catalogs/catalogue:ga-vocabs/collections/ns4:BoreholesSamplingMethod/items" ;
+    prez:provenance "Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)"@en ;
+    prez:type prez:FocusNode ;
+    sdo:status <https://linked.data.gov.au/def/reg-statuses/experimental> .
+
+prez:link prez:label "link" .
+
+prez:members prez:label "members" .
+
+sdo:status prez:description "The status of the study (enumerated)." ;
+    prez:label "status" .
+
+skos:ConceptScheme prez:description "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
+    prez:label "Concept Scheme"@en .
+
+<https://linked.data.gov.au/def/reg-statuses/experimental> prez:description "An entry that has been accepted into the register temporarily and may be subject to change or withdrawal."@en ;
+    prez:label "experimental"@en .
+
+ns5:148553 prez:description "URL of the item" ;
+    prez:label "Geoscience Australia's geoscientific relational databases use look-up tables to describe the data stored within. These look-ups contain, but are not limited to, information about boreholes, field geology, inorganic and organic geochemistry, hydrochemistry, geophysics, rock properties, samples and other general geological terms. These terms have then been compiled into a vocabulary of terms for publication via GA's vocabulary service. Within this vocabulary, GA references where sourced terms are published in external vocabularies with a source vocabulary URI (Uniform Resource Identifier)." .
+
+prez:OGCSchemesObjectProfile prez:description "A profile for SKOS Concept Schemes" ;
+    prez:label "OGC Concept Scheme Object Profile" .
+
+ns2:ga prez:description "Australia's pre-eminent public sector geoscience organisation. We are the nation's trusted advisor on the geology and geography of Australia. We apply science and technology to describe and understand the Earth for the benefit of Australia." ;
+    prez:label "Geoscience Australia" .
+
+[] prez:currentProfile prez:OGCSchemesObjectProfile .

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/banding-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration that selectively replaces specific bands within rocks.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">banding-controlled</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011).</skos:definition>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Derived from GSWA&apos;s WAROX database&apos;s table  [GEOLOGY].[WAROX.REF].[AltForm], and expanded to include additional terms. Definitions compiled from:
+1) Neuendorf, KKE, Mehl Jr, JP and Jackson, JA (editors) 2011, Glossary of geology (5th edition, revised): American Geosciences Institute, Alexandria, Virginia, USA, 800p.
+2) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p.
+3) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals, St. John&apos;s, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p.</skos:historyNote>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration form</skos:prefLabel>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/alteration-form/1"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/pervasive"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/selective"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/unaltered"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</schema:dateCreated>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-02</schema:dateModified>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral"/>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:version>1</schema:version>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/layer-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration restricted to compositionally or texturally defined layers within rocks.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">layer-controlled</skos:prefLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/banding-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/bedding-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/unconformity-related"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/bedding-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration that selectively replaces specific beds within sedimentary rocks.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">bedding-controlled</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">stratabound</skos:altLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/breccia-vein">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration associated with a fissure containing cemented wallrock fragments.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">breccia vein</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration spatially associated with a breccia.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">hydrothermal breccia-controlled</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">hydrothermal breccia</skos:altLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/breccia-vein"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/fault-breccia">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/fault-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration associated with a fault displaying angular rock fragments resulting from fracturing.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">fault breccia</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/fault-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/fracture-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration spatially associated with a fault.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">fault-controlled</skos:prefLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/fault-breccia"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/foliation-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration confined to volumes of rocks exhibiting a foliation.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">foliation-controlled</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">foliation parallel</skos:altLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/structure-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration spatially restricted to rocks within and/or immediately adjacent to structures such as shear zones, fault zones, veins, hydrothermal breccias, vugs or fractures.</skos:definition>
+    <skos:historyNote>Definition from Pirajno (2009; Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">structure-controlled</skos:prefLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/hydrothermal-breccia-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/foliation-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/shear-zone-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/vein-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/vug-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/fracture-controlled"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/pervasive">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration characterized by the replacement of most, or all, original rock-forming minerals and obliteration of textures at the scale of observation.</skos:definition>
+    <skos:historyNote>Definition from:
+1) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p. (p. 95)
+2) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals, St. John&apos;s, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p. (p. 3).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">pervasive</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">complete</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">continuous</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">extensive</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">homogeneous</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">massive</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ubiquitous</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">widespread</skos:altLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/selective"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration characterized by the replacement of only specific components (e.g. minerals, grains, clasts) of the original rock, with partial to complete obliteration of textures only in part of the area under observation.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">selectively non-pervasive</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/selective">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration characterized by the replacement of only specific components (e.g. minerals, grains, clasts) of the original rock, with partial to complete obliteration of textures at the scale of observation.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">selective</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/selectively-non-pervasive"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/selectively-pervasive"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/selectively-pervasive">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/selective"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration characterized by the replacement of only specific components (e.g. minerals, grains, clasts) of the original rock, with partial to complete obliteration of textures across the whole area of observation.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">selectively pervasive</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/shear-zone-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration spatially associated with a shear zone.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">shear zone-controlled</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/unaltered">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A rock with no visible signs of alteration, in which primary minerals, fabrics (including primary pore space) and chemistry are unchanged.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">unaltered</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">not altered</skos:altLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:exactMatch rdf:resource="https://linked.data.gov.au/def/alteration-intensity/unaltered"/>
+    <skos:exactMatch rdf:resource="https://linked.data.gov.au/def/alteration-type/unaltered"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/unconformity-related">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration that occurs at or around an unconformable or disconformable contact.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">unconformity-related</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/vein-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration spatially associated with a vein.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">vein-controlled</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">stockwork</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">veined</skos:altLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/vug-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration associated with small cavities in a vein or rock, usually lined with crystals of a different mineral composition from the enclosing rock.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">vug-controlled</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">vuggy</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">vugh</skos:altLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned-central">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The central region of an alteration zone</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">zoned-central</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/non-pervasive"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration that can be divided spatially into several mineralogically or texturally distinct regions, with systematic variations in mineral assemblages, compositions and/or textures.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">zoned</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">aureole</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">selvage</skos:altLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned-central"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned-inner"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned-outer"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned-inner">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The inner region of an alteration zone.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">zoned-inner</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/zoned-outer">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The outer region of an alteration zone.</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">zoned-outer</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/fracture-controlled">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:broader rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration spatially associated with a fracture, i.e. with any break/separation in a geological formation with or without relative displacement of the parts (e.g. a joint or a fault).</skos:definition>
+    <skos:historyNote>Definition from Pirajno (2009; Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p).</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">fracture-controlled</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">fracture parallel</skos:altLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/fault-controlled"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/non-pervasive">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Alteration that has replaced or filled in only certain portions of the rock at the scale of observation (e.g. the envelopes around veins), certain primary minerals, or pore spaces (including vesicles and interclast voids).</skos:definition>
+    <skos:historyNote>Definition compiled by the Geological Survey of Western Australia.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">non-pervasive</skos:prefLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">selective</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">anastomosing</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">blebby</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">concentrated</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">diffuse</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">discrete</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">disseminated</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">heterogeneous</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">irregular</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">localised</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">localized</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">matrix</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mottled</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">patchy</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">semi-pervasive</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">spotty</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">variable</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">wispy</skos:altLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/alteration-form"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/layer-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/structure-controlled"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/alteration-form/zoned"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/alteration-form/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-357">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-358">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0001-5888-5102"/>
+  </rdf:Description>
+
+</rdf:RDF>

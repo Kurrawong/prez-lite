@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from a pre-existing hole, whether at surface or underground.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">from pre-existing hole</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates the nature of the borehole start point location, i.e. the general setting and type of surrounding where the borehole is positioned (e.g. onshore, offshore, etc.).</skos:definition>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Borehole start point setting</skos:prefLabel>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Terms and definitions are predominantly sourced from the Geological Survey of Queensland&apos;s (GSQ) Borehole start point vocabulary (http:/linked.data.gov.au/def/borehole-start-point), with some modifications and additional concepts.</skos:historyNote>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</schema:dateCreated>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/borehole-start-point/from-pre-existing-hole"/>
+    <skos:hasTopConcept rdf:resource="http://linked.data.gov.au/def/borehole-start-point/underground"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting/offshore"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting/onshore"/>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/resources"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from an open pit floor or open pit wall.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">open pit floor or wall</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://linked.data.gov.au/def/borehole-start-point/underground">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://linked.data.gov.au/def/borehole-start-point/underground</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from an underground location.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">underground</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from an artificially made or engineered surface, commonly near a natural ground surface. This concept includes drilling originating from tailings and waste dumps, as well as excavations such as quarries and open pit mines.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">man-made surface</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:narrower rdf:resource="http://linked.data.gov.au/def/borehole-start-point/open-pit-floor-or-wall"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting/mining-byproduct-surface">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from artificially made surfaces related to byproducts of exploration and mining operations, such as tailings and waste dumps.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mining byproduct surface</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from the natural ground surface or from ground with limited disturbance carried out in preparation for drilling, i.e. shallow excavation works, drill pads, cut and fill.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">natural ground surface</skos:prefLabel>
+    <skos:historyNote>Compiled by GSWA</skos:historyNote>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/borehole-start-point/natural-ground-surface"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting/offshore">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled in marine waters / open sea from a floating vessel or fixed platform, such as a drill ship, jackup or semisubmersible rig, petroleum platform or a marine research vessel, on the seaward side of the baseline of the territorial sea (as defined in the Seas and Submerged Lands Act 1973, Registered 11 September 2019).</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">offshore</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:historyNote>This concept is defined in conjunction with &apos;onshore&apos; by taking into account the definition of territorial sea and its baseline as defined in the Seas and Submerged Lands Act 1973, Registered 11 September 2019
+https://www.legislation.gov.au/Details/C2008C00402</skos:historyNote>
+    <skos:closeMatch rdf:resource="http://linked.data.gov.au/def/borehole-start-point/offshore"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting/onshore">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indicates that the borehole was drilled from or near the natural ground surface. This includes drilling originating on land and on internal waters, i.e. those bodies of water that are located on the landward side of the baseline of the territorial sea (as defined in the Seas and Submerged Lands Act 1973, Registered 11 September 2019).</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">onshore</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting"/>
+    <skos:historyNote>This concept is defined in conjunction with &apos;offshore&apos; by taking into account the definition of territorial sea and its baseline as defined in the Seas and Submerged Lands Act 1973, Registered 11 September 2019
+https://www.legislation.gov.au/Details/C2008C00399</skos:historyNote>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting/manmade-surface"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/borehole-start-point-setting/natural-ground-surface"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/borehole-start-point-setting/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-375">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-376">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+</rdf:RDF>

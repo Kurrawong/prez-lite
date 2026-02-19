@@ -1,0 +1,99 @@
+@prefix ns1: <http://purl.org/linked-data/registry#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prez: <https://prez.dev/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:status rdfs:label "status" ;
+    schema:description "The status of this register entry" .
+
+rdfs:label rdfs:label "label" .
+
+owl:versionIRI rdfs:label "version IRI" ;
+    schema:description "The property that identifies the version IRI of an ontology." .
+
+skos:definition rdfs:label "definition"@en ;
+    skos:definition "A statement or formal explanation of the meaning of a concept."@en .
+
+skos:historyNote rdfs:label "history note"@en ;
+    skos:definition "A note about the past state/use/meaning of a concept."@en .
+
+skos:prefLabel rdfs:label "preferred label"@en ;
+    skos:definition "The preferred lexical label for a resource, in a given language."@en .
+
+prov:agent rdfs:label "agent" .
+
+prov:hadRole rdfs:label "role" .
+
+prov:qualifiedAttribution rdfs:label "qualified attribution" ;
+    schema:description "If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ]." .
+
+<https://linked.data.gov.au/def/alteration-form> a skos:ConceptScheme ;
+    ns1:status <https://linked.data.gov.au/def/reg-statuses/stable> ;
+    owl:versionIRI <https://linked.data.gov.au/def/alteration-form/1> ;
+    skos:definition "Compilation of terms that described geometry (i.e. the shape, distribution and configuration) of alteration in rocks and minerals as observed at the macro-, meso- and microscopic scale, and applying to the specific area of observation. Alteration in this context is defined as a modification of the original lithology caused by meteoric, connate, metamorphic, or magmatic-derived fluids, excluding the weathering environment, mineralization and direct magmatic or metamorphic processes. Definitions are largely taken from Pirajno (2009) and the Glossary of geology (Neuendorf et al., 2011)."@en ;
+    skos:historyNote """Derived from GSWA's WAROX database's table  [GEOLOGY].[WAROX.REF].[AltForm], and expanded to include additional terms. Definitions compiled from:
+1) Neuendorf, KKE, Mehl Jr, JP and Jackson, JA (editors) 2011, Glossary of geology (5th edition, revised): American Geosciences Institute, Alexandria, Virginia, USA, 800p.
+2) Pirajno, F 2009, Hydrothermal processes and mineral systems: Springer-Verlag, 1250p.
+3) Thompson, JFH, Thompson, AJB and Allen, RL 1996, Atlas of alteration: A field and petrographic guide to hydrothermal alteration minerals, St. John's, Nfld: Geological Association of Canada, Mineral Deposits Division, 119p."""@en ;
+    skos:prefLabel "Alteration form"@en ;
+    prov:qualifiedAttribution [ prov:agent <https://orcid.org/0000-0001-5888-5102> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian> ],
+        [ prov:agent <https://orcid.org/0000-0002-7645-5031> ;
+            prov:hadRole <https://linked.data.gov.au/def/data-roles/custodian> ] ;
+    prez:childrenCount 4 ;
+    schema:creator <https://linked.data.gov.au/org/gswa> ;
+    schema:dateCreated "2024-12-02"^^xsd:date ;
+    schema:dateModified "2024-12-02"^^xsd:date ;
+    schema:keywords <https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral> ;
+    schema:publisher <https://linked.data.gov.au/org/gswa> ;
+    schema:version "1" .
+
+schema:creator rdfs:label "creator" ;
+    schema:description "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork" .
+
+schema:dateCreated rdfs:label "dateCreated" ;
+    schema:description "The date on which the CreativeWork was created or the item was added to a DataFeed" .
+
+schema:dateModified rdfs:label "dateModified" ;
+    schema:description "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed" .
+
+schema:description rdfs:label "description" ;
+    schema:description "A description of the item" .
+
+schema:keywords rdfs:label "keywords" ;
+    schema:description "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property" .
+
+schema:name rdfs:label "name" ;
+    schema:description "The name of the item" .
+
+schema:publisher rdfs:label "publisher" ;
+    schema:description "The publisher of the creative work" .
+
+schema:version rdfs:label "version" ;
+    schema:description "The version of the CreativeWork embodied by a specified resource" .
+
+skos:ConceptScheme rdfs:label "Concept Scheme"@en ;
+    skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
+
+<https://linked.data.gov.au/def/alteration-form/1> rdfs:label "1" .
+
+<https://linked.data.gov.au/def/gswa-vocabulary-themes/mineral> skos:definition "Vocabularies related to the study, exploration for and exploitation of concentrations of natural inorganic or fossilized organic material occurring on or within the Earthâ€™s crust, in sufficient quantity and quality to have reasonable prospects for economic extraction. Mineral resources are non-renewable and include metals (e.g. iron, copper, and aluminium), non-metals (e.g. salt, gypsum, clay, sand, phosphates), and rocks (e.g. dimension stones, basic raw materials)."@en ;
+    skos:prefLabel "mineral"@en .
+
+<https://linked.data.gov.au/def/reg-statuses/stable> rdfs:label "stable" ;
+    schema:description "An entry that is seen as having a reasonable measure of stability, may be used to mark the full adoption of a previously 'experimental' entry." .
+
+<https://orcid.org/0000-0001-5888-5102> rdfs:label "Paul Duuring" ;
+    schema:name "Paul Duuring" .
+
+<https://orcid.org/0000-0002-7645-5031> rdfs:label "Angela Riganti" ;
+    schema:name "Angela Riganti" .
+
+<https://linked.data.gov.au/def/data-roles/custodian> rdfs:label "custodian" .
+
+<https://linked.data.gov.au/org/gswa> rdfs:label "Geological Survey of Western Australia" ;
+    schema:name "Geological Survey of Western Australia" .

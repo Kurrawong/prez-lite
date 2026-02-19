@@ -1,0 +1,487 @@
+{
+  "iri": "https://linked.data.gov.au/def/borehole-geometry",
+  "label": "Borehole geometry",
+  "description": "This vocabulary covers the common terminology and concepts used in the mineral and energy industries to fully depict the 3D extent of a borehole (i.e. its position in space and the depth reached) or the position of any point along the borehole. The list focuses on the primary and some derived/calculated parameters that are part of reporting for drilling activities, and does include specific processes/procedures related to the acquisition of some of these parameters (e.g. downhole directional survey). The vocabulary does not include colloquial terms used by industry or the various ways of projecting a borehole trace onto different planes (e.g. plan view, longitudinal projection, cross-section). The coordinate and vertical reference systems used to report borehole parameters are described in separate vocabularies (Western Australian coordinate reference systems and Vertical/depth reference systems, respectively). A companion vocabulary (Borehole configuration) covers the qualitative terms used to describe the intended configuration and trajectory of a borehole.",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-azimuth",
+      "label": "azimuth",
+      "definition": "The angle, measured in the horizontal plane, between north (unspecified) and the projection of the borehole axis at the point of measurement. For curved trajectories, the azimuth is measured from the projection of the tangent to the borehole axis at the point of measurement.",
+      "altLabels": [
+        "drift",
+        "drift direction",
+        "heading"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth",
+        "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth",
+        "https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth",
+      "label": "grid azimuth",
+      "definition": "The azimuth measured clockwise from the central meridian of a plane-rectangular coordinate system such as a local reference grid."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth",
+      "label": "magnetic azimuth",
+      "definition": "The azimuth measured clockwise from magnetic north through to 360°. This parameter changes with time and thus needs to be qualified by a date."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth",
+      "label": "true azimuth",
+      "definition": "The azimuth measured clockwise from true north (also called geodetic north or geographic north) through 360°."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-diameter",
+      "label": "borehole diameter",
+      "definition": "The width of the borehole.",
+      "altLabels": [
+        "hole size"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-dip",
+      "label": "dip",
+      "definition": "Measured on a vertical plane, dip is the angle of a borehole defined by a tangent line at the point of measurement and the horizontal plane. In the minerals industry, vertical is commonly denoted as –90° and changes to 0° (horizontal). The sum of inclination and dip is 90°."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-downholesurvey",
+      "label": "downhole directional survey",
+      "definition": "A geometric measurement of inclination and azimuth at a certain depth along the borehole trajectory.",
+      "altLabels": [
+        "alignment survey",
+        "borehole survey",
+        "deviation survey",
+        "directional survey",
+        "downhole deviation survey",
+        "well survey"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section",
+        "https://linked.data.gov.au/def/borehole-geometry/dogleg-rate"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section",
+      "label": "vertical section",
+      "definition": "The vertical section is the horizontal distance along the centreline of a wellbore to a certain point on a well trajectory, measured along a pre-defined azimuth in the horizontal plane.",
+      "altLabels": [
+        "VS"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/dogleg-rate",
+      "label": "dogleg rate",
+      "definition": "A particularly crooked place in a borehole where the trajectory of the borehole in 3D space changes rapidly, either intentionally or unintentionally. In surveying borehole trajectories, a standard calculation of dogleg severity is made, usually expressed in 2D degrees per 30 metres of wellbore length.",
+      "altLabels": [
+        "dogleg severity"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-end-point",
+      "label": "end point location",
+      "definition": "The spatial location where the drilling of a borehole was completed, expressed as coordinates and elevation (i.e. x, y, z).",
+      "altLabels": [
+        "EOH",
+        "bottom hole location",
+        "end of hole",
+        "end point"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-inclination",
+      "label": "inclination",
+      "definition": "Measured on a vertical plane, inclination is the angle defined by a tangent line to the borehole and a vertical line representing the Earth's gravity vector at the point of measurement. In the energy industry, inclination is usually expressed as an angle from the vertical (0°, downward pointing) to 90° (horizontal). The sum of inclination and dip is 90°. In the resources industry, inclination is often used interchangeably with dip, though the two concepts are not the same.",
+      "altLabels": [
+        "deviation",
+        "deviation angle"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-kickoff-point",
+      "label": "kick-off point",
+      "definition": "The point at a given measured depth at which a directional borehole is intentionally deviated.",
+      "altLabels": [
+        "KOP",
+        "kickoff point",
+        "wedge depth"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-declination",
+      "label": "magnetic declination",
+      "definition": "The angle, measured in the horizontal plane, between magnetic north and true north. This angle varies depending on the position on the Earth's surface, and changes over time. By convention, magnetic declination is positive when magnetic north is east of true north, and negative when it is to the west. Magnetic declination is a critical parameter to report in conjunction with magnetic azimuth to fully characterize the 3D orientation of a borehole.",
+      "altLabels": [
+        "magnetic variation"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-start-point",
+      "label": "start point location",
+      "definition": "The spatial location where the drilling of a borehole commenced, expressed as coordinates and elevation (i.e. x, y, z).",
+      "altLabels": [
+        "collar",
+        "point of origin",
+        "start point",
+        "top hole location"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-totaldepth",
+      "label": "total depth",
+      "definition": "Total depth is the distance measured along the actual trajectory of the borehole from the borehole start point / surface reference point to the end of the hole where the drilling has stopped.",
+      "altLabels": [
+        "EOH depth",
+        "End of hole depth",
+        "TD",
+        "TML",
+        "Total measured length",
+        "borehole depth",
+        "drillhole depth"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing",
+      "label": "measured depth from kelly bushing",
+      "definition": "Measured depth of the borehole measured from the kelly bushing to the point of interest or survey point.",
+      "altLabels": [
+        "MDKB"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/md-rotarytable",
+      "label": "measured depth from rotary table",
+      "definition": "Measured depth of the borehole measured from the rotary table to the point of interest or survey point.",
+      "altLabels": [
+        "MDRT"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/measured-depth",
+      "label": "measured depth",
+      "definition": "Measured depth (MD), or drilled to depth (DD), is the distance measured along the actual trajectory of the borehole from the borehole start point / surface reference point to the point of interest or survey point, i.e. to any feature in the hole such as a casing point, a sidewall core or a significant geological marker.",
+      "altLabels": [
+        "DD",
+        "Depth",
+        "MD"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing",
+        "https://linked.data.gov.au/def/borehole-geometry/md-rotarytable",
+        "https://linked.data.gov.au/def/borehole-geometry/precollar-depth"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/precollar-depth",
+      "label": "pre-collar depth",
+      "definition": "The measured depth where the pre-collar hole ends and the diamond tail (i.e. diamond drilling) starts, and from which the length/depth of the diamond core is referenced."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/reduced-level-depth",
+      "label": "reduced level depth",
+      "definition": "Reduced level depth (usually reported as mRL, i.e. metres from reduced level) is the vertical distance between a survey point and the adopted datum plane, i.e. the base elevation that is used as reference to report heights or depths during drilling. The reference datum may be a real or arbitrary location/plane, and is commonly assigned a nominated elevation.",
+      "altLabels": [
+        "mRL",
+        "relative level"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/true-vertical-depth",
+      "label": "true vertical depth",
+      "definition": "True vertical depth (TVD) of a point within a borehole is the distance of that point from the depth reference level / borehole start point (e.g. mean sea level, kelly bushing, rotary table, ground level, drill collar) projected on a vertical line (i.e. a line connecting the point to the centre of the Earth). This is a calculated or derived depth. In the energy industry, this depth is always calculated from the deviation survey data.",
+      "altLabels": [
+        "TVD"
+      ],
+      "narrower": [
+        "https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline",
+        "https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor",
+        "https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing",
+        "https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table",
+        "https://linked.data.gov.au/def/borehole-geometry/tvd-subsea"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline",
+      "label": "true vertical depth below mudline",
+      "definition": "True vertical depth below mudline (TVDBML) of a point within a borehole is the distance of that point from the mudline projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).",
+      "altLabels": [
+        "TVDBML"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor",
+      "label": "true vertical depth drillfloor",
+      "definition": "True vertical depth drill floor (TVDDF) of a point within a borehole is the distance of that point from the drill floor projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).",
+      "altLabels": [
+        "TVDDF"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing",
+      "label": "true vertical depth kelly bushing",
+      "definition": "True vertical depth kelly bushing (TVDKB) of a point within a borehole is the distance of that point from the kelly bushing projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).",
+      "altLabels": [
+        "TVDKB"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table",
+      "label": "true vertical depth rotary table",
+      "definition": "True vertical depth rotary table (TVDRT) of a point within a borehole is the distance of that point from the rotary table projected on a vertical line (i.e. a line connecting the point to the centre of the Earth).",
+      "altLabels": [
+        "TVDRT"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-subsea",
+      "label": "true vertical depth subsea",
+      "definition": "The true vertical depth subsea (TVDSS) is the vertical distance from the mean sea level to a point on the borehole course. This depth is always calculated from the deviation survey data.",
+      "altLabels": [
+        "TVDSS",
+        "true vertical depth sub-sea"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-azimuth",
+      "label": "azimuth",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth",
+          "label": "grid azimuth",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth",
+          "label": "magnetic azimuth",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth",
+          "label": "true azimuth",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-diameter",
+      "label": "borehole diameter",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-dip",
+      "label": "dip",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/dogleg-rate",
+      "label": "dogleg rate",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-downholesurvey",
+      "label": "downhole directional survey",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/dogleg-rate",
+          "label": "dogleg rate",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section",
+          "label": "vertical section",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-end-point",
+      "label": "end point location",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-grid-azimuth",
+      "label": "grid azimuth",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-inclination",
+      "label": "inclination",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-kickoff-point",
+      "label": "kick-off point",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-azimuth",
+      "label": "magnetic azimuth",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-magnetic-declination",
+      "label": "magnetic declination",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/measured-depth",
+      "label": "measured depth",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing",
+          "label": "measured depth from kelly bushing",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/md-rotarytable",
+          "label": "measured depth from rotary table",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/precollar-depth",
+          "label": "pre-collar depth",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/md-kelly-bushing",
+      "label": "measured depth from kelly bushing",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/md-rotarytable",
+      "label": "measured depth from rotary table",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/precollar-depth",
+      "label": "pre-collar depth",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/reduced-level-depth",
+      "label": "reduced level depth",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-start-point",
+      "label": "start point location",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-totaldepth",
+      "label": "total depth",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-true-azimuth",
+      "label": "true azimuth",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/true-vertical-depth",
+      "label": "true vertical depth",
+      "notation": null,
+      "children": [
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline",
+          "label": "true vertical depth below mudline",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor",
+          "label": "true vertical depth drillfloor",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing",
+          "label": "true vertical depth kelly bushing",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table",
+          "label": "true vertical depth rotary table",
+          "notation": null,
+          "children": []
+        },
+        {
+          "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-subsea",
+          "label": "true vertical depth subsea",
+          "notation": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-below-mudline",
+      "label": "true vertical depth below mudline",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-drillfloor",
+      "label": "true vertical depth drillfloor",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-kelly-bushing",
+      "label": "true vertical depth kelly bushing",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-rotary-table",
+      "label": "true vertical depth rotary table",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/tvd-subsea",
+      "label": "true vertical depth subsea",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/borehole-geometry/bh-vertical-section",
+      "label": "vertical section",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

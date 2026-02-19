@@ -1,0 +1,4466 @@
+{
+  "iri": "https://linked.data.gov.au/def/uom-geoscience",
+  "label": "Geoscience units of measurement",
+  "description": "A list of units of measurement relevant for geoscience and the administration of statutory submissions from the resource industries. The list is based on the Geological Survey of Queensland (GSQ) Geoscience Profile of the Quantities, Units, Dimensions & Types (QUDT) ontology and vocabularies lists (https://linked.data.gov.au/def/geou and https://www.qudt.org/doc/DOC_VOCAB-UNITS.html - version 2.1.29). QUDT is based largely on the international standard for metric units (International System of Units, or SI) but also includes units from other systems, notably the Centimetre–Gram–Second (CGS or cgs) system of units and most US Customary and British imperial units for length, weight and heat. Wherever applicable, the SI standard is used for conversions between non-SI units (https://www.qudt.org/pages/QUDToverviewPage.html). Commonly used multiples of base units are also included, and the list has been expanded to include units of measurements for time that are relevant to earth sciences; for these, notations follow the recommendations of Norman et al. (2011), available at http://www.dmp.wa.gov.au/Documents/Geological-Survey/Use-and-reporting-of-geochronology.pdf). Some QUDT definitions have been extended, mostly to clarify what the unit is a measure of. Notations are the correct symbol to use for the unit of measurement; common variations of these are indicated as alternate labels, but their use is strongly discouraged. English spelling is preferred over American spelling (e.g. metre, not meter). Other rules and style conventions for spelling units names follow the 2008 Edition of the Guide for International System of Units (SI), NIST Special Publication 811, National Institute of Standards and Technology, US Department of Commerce (https://physics.nist.gov/cuu/pdf/sp811.pdf).",
+  "concepts": [
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BBLOE",
+      "label": "barrel of oil equivalent per megalitre",
+      "notation": "BOE/Ml",
+      "definition": "A measure of oil quality or energy density defined as the energy in one barrel of oil equivalent (6.1178632×10⁻⁹ J) per million litres.",
+      "altLabels": [
+        "BBLOE",
+        "BOE_Ml"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BBL_US-PER-HR",
+      "label": "US barrels per hour",
+      "notation": "bbl/h (US)",
+      "definition": "A measure of flow rate, typically used for oil production. The number of standard US barrels flowing past a given point per hour.",
+      "altLabels": [
+        "bbl/hr",
+        "bbl_h (US)"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BBL_US-PER-MIN",
+      "label": "US barrels per minute",
+      "notation": "bbl/min (US)",
+      "definition": "A measure of flow rate, typically used for oil production. The number of standard US barrels flowing past a given point per minute.",
+      "altLabels": [
+        "bbl/min",
+        "bbl_min (US)"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BOE",
+      "label": "barrel of oil equivalent",
+      "notation": "BOE",
+      "definition": "A measure of energy defined as the energy equivalent to one barrel of oil (6.1178632×10⁻⁹ J)."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BTU-PER-MegaL",
+      "label": "British thermal unit per megalitre",
+      "notation": "BTU/Ml",
+      "definition": "A measure of oil quality or energy density defined as the energy in one BTU (British Thermal Units, or 1055 J) per million litres.",
+      "altLabels": [
+        "BTU/ML",
+        "BTU_Ml"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BWOC",
+      "label": "by weight of cement",
+      "notation": "%w/c",
+      "definition": "A measure of concentration within cement. The amount of an additives' mass per unit mass of cement.",
+      "altLabels": [
+        "BWOC"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BWOW",
+      "label": "by weight of water",
+      "notation": "%w/w",
+      "definition": "A measure of concentration within water. The amount of an additives' mass per unit mass of water.",
+      "altLabels": [
+        "BWOW"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/CARAT-PER-M3",
+      "label": "carat per cubic metre",
+      "notation": "ct/m³",
+      "definition": "Carat per cubic metre is a derived unit of density, defined by mass in carats divided by volume in cubic metres. The symbolic abbreviation is ct/m³ (or ct.m⁻³).",
+      "altLabels": [
+        "carat per cubic meter",
+        "carats per cubic meter",
+        "ct_m³",
+        "ct·m⁻³"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/COUNT",
+      "label": "count",
+      "definition": "The number of unique and discrete objects or entities in a set.",
+      "altLabels": [
+        "COUNT",
+        "cnt",
+        "count",
+        "cp"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/CentiM3-PER-GM",
+      "label": "cubic centimetres per gram",
+      "notation": "cm³/g",
+      "definition": "A measure of concentration, typically a fluid held within a solid. The cubic centimetres or millilitres of a substance per gram of host material.",
+      "altLabels": [
+        "cm³_g"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/CentiM3-PER-TON_M",
+      "label": "cubic centimetres per tonne",
+      "notation": "cm³/t",
+      "definition": "A measure of concentration, typically a fluid held within a solid. The cubic centimetres or millilitres of a substance per ton of host material.",
+      "altLabels": [
+        "cm³_t"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/D",
+      "label": "darcy",
+      "notation": "D",
+      "definition": "A darcy (D) is a measure of permeability. A medium with a permeability of 1 D permits a flow of 1 cm³/s of a fluid with viscosity 1 cP (1 mPa·s) under a pressure gradient of 1 atm/cm acting across an area of 1 cm²."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DD-PER-MIN",
+      "label": "dial divisions per minute",
+      "notation": "ddm",
+      "definition": "Maximum fluidity measure of coal which is determined against temperature.",
+      "altLabels": [
+        "DD/min",
+        "Dial Degrees per Minute"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-100F",
+      "label": "degrees per hundred feet",
+      "notation": "°/100 ft",
+      "definition": "A measure of curvature. The deviation (in degrees) of a line over an arc length of 100 ft.",
+      "altLabels": [
+        "°_100 ft",
+        "°_100ft"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-30M",
+      "label": "degrees per thirty metres",
+      "notation": "°/30 m",
+      "definition": "A measure of curvature. The deviation (in degrees) of a line over an arc length of 30 m.",
+      "altLabels": [
+        "°_30 m",
+        "°_30m"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-F",
+      "label": "degrees per foot",
+      "notation": "°/ft",
+      "definition": "A measure of curvature. The deviation (in degrees) of a line over an arc length of 1 ft.",
+      "altLabels": [
+        "°_ft"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-M",
+      "label": "degrees per metre",
+      "notation": "°/m",
+      "definition": "A measure of curvature. The deviation (in degrees) of a line over an arc length of 1 m.",
+      "altLabels": [
+        "°_m"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DecaREV-PER-MIN",
+      "label": "hundred revolutions per minute",
+      "notation": "hrpm",
+      "definition": "A measure of rotation of angular velocity. The number of revolutions of an object relative to a fixed frame of reference in 1 min, divided by 100.",
+      "altLabels": [
+        "100·rev/min",
+        "hRPM"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/ExaBYTE",
+      "label": "exabyte",
+      "notation": "EB",
+      "definition": "The exabyte is a multiple of the unit byte for digital information. In the International System of Units (SI), the prefix exa indicates multiplication by the sixth power of 1000 (10¹⁸). Therefore, one exabyte is one quintillion bytes (short scale)."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/FRAC",
+      "label": "decimal fraction",
+      "notation": ".",
+      "definition": "A fraction whose denominator is a power of ten and whose numerator is expressed by figures placed to the right of a decimal point."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/FT3-PER-TON",
+      "label": "standard cubic feet per ton",
+      "notation": "SCF/t",
+      "definition": "A measure of concentration or gas content. Typically used in the resource industry to refer to the number of cubic feet of a gas contained within 1 t of host material.",
+      "altLabels": [
+        "SCF_t",
+        "scf/ton"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/FT3-PER-TON_M",
+      "label": "cubic feet per tonne",
+      "notation": "ft³/t",
+      "definition": "A measure of concentration. The number of cubic feet of a fluid contained within 1 t (metric) of host material.",
+      "altLabels": [
+        "ft³_t"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GAL_IMP-PER-50SACK",
+      "label": "gallons per 50 kg sack",
+      "notation": "gal/50 kg",
+      "definition": "A proportional concentration ratio typically used for cement mixtures. The number of gallons of water added to 50 kg of additive(s).",
+      "altLabels": [
+        "gal_50 kg"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GM-PER-KiloGM",
+      "label": "grams per kilogram",
+      "notation": "g/kg",
+      "definition": "Grams per kilogram (g/kg) is a measure of concentration. The number of grams of a material of interest within the mass of 1 kg of total material.",
+      "altLabels": [
+        "g_kg"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GM-PER-TON_M",
+      "label": "grams per tonne",
+      "notation": "g/t",
+      "definition": "Grams per tonne (g/t) is a measure of concentration. The number of grams of a material of interest within the mass of one tonne of total material. In mining, it is also equivalent to one part per million, expressed as ppm.",
+      "altLabels": [
+        "G/T",
+        "GPT",
+        "g_t",
+        "gram/tonne",
+        "grams per tonne",
+        "gt"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GigaJ",
+      "label": "gigajoule",
+      "notation": "GJ",
+      "definition": "The gigajoule (GJ) is equal to one billion (10⁹) joules. 6 GJ is about the chemical energy of combusting 1 barrel (159 l) of crude oil."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GigaJ-PER-MegaL",
+      "label": "gigajoules per megalitre",
+      "notation": "GJ/Ml",
+      "definition": "A measure of energy density defined as the energy in gigajoules per million litres.",
+      "altLabels": [
+        "GJ/ML",
+        "GJ_Ml"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GigaM3",
+      "label": "billion cubic metres",
+      "notation": "Gm3",
+      "definition": "A measure of volume equivalent to one billion cubic metres. Alternate label bcm not recommended to avoid confusion with bank cubic metres (BCM/bcm).",
+      "altLabels": [
+        "bcm",
+        "billion cubic meters"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/HR-PER-FT",
+      "label": "hours per foot",
+      "notation": "h/ft",
+      "definition": "An imperial unit for linear velocity. Used in borehole drilling to describe the rate of penetration and describes the number of hours taken to penetrate 1 ft of material.",
+      "altLabels": [
+        "h_ft",
+        "hr/ft"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/HR-PER-M",
+      "label": "hours per metre",
+      "notation": "h/m",
+      "definition": "A unit for linear velocity. Used in borehole drilling to describe the rate of penetration and describes the number of hours taken to penetrate 1 m of material.",
+      "altLabels": [
+        "h_m",
+        "hr/m"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBBL",
+      "label": "thousand barrels",
+      "notation": "Mbbl",
+      "definition": "A unit equivalent in volume to 1000 barrels.",
+      "altLabels": [
+        "kbbl"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBBLOE",
+      "label": "thousand barrels of oil equivalent per megalitre",
+      "notation": "MBOE/Ml",
+      "definition": "A measure of oil quality or energy density defined as the energy equivalent to 1000 barrel of oil equivalents (6.1178632×10¹² J) per million litres.",
+      "altLabels": [
+        "MBOE_Ml",
+        "kBOE/ML"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBTU",
+      "label": "thousand British thermal unit",
+      "notation": "MBTU",
+      "definition": "An imperial measure unit of energy, defined as 1000 BTU (British Thermal Units).",
+      "altLabels": [
+        "kBTU"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBTU-PER-MegaL",
+      "label": "thousand British thermal units per megalitre",
+      "notation": "MBTU/Ml",
+      "definition": "A measure of oil quality or energy density defined as the energy in 1000 BTU (British Thermal Units; 1 055 000 J) per million litres.",
+      "altLabels": [
+        "MBTU_Ml",
+        "kBTU/ML"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloL-PER-DAY",
+      "label": "kilolitre per day",
+      "notation": "kl/d",
+      "definition": "A measure of volume flow rate. Thousands of litres divided by number of days.",
+      "altLabels": [
+        "kL/d",
+        "kl_d"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloLB_F",
+      "label": "thousand pounds force",
+      "notation": "klbf",
+      "definition": "A US customary unit of force. It equals 1000 lbf, used primarily by US architects and engineers to measure engineering loads."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloLB_M",
+      "label": "thousand pounds",
+      "notation": "klb",
+      "definition": "A mass equivalent to 1000 lb.",
+      "altLabels": [
+        "klbs"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloREV-PER-MIN",
+      "label": "thousand revolutions per minute",
+      "notation": "krpm",
+      "definition": "A measure of rotation or angular velocity. The number of revolutions of an object relative to a fixed frame of reference in 1 min, divided by 1000.",
+      "altLabels": [
+        "kRPM"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/L-PER-50SACK",
+      "label": "litres per 50 kg sack",
+      "notation": "l/50 kg",
+      "definition": "A proportional concentration ratio typically used for cement mixtures. The number of litres of water added to 50 kg of additive(s).",
+      "altLabels": [
+        "L/50 kg",
+        "l_50 kg"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/L-PER-TON_M",
+      "label": "litres per tonne",
+      "notation": "l/t",
+      "definition": "A measure of concentration ratio. The number of litres of a subject fluid per tonne of total material.",
+      "altLabels": [
+        "L/t",
+        "L_T",
+        "Litres/tonne",
+        "l_t"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_F-PER-100FT2",
+      "label": "pounds force per 100 square feet",
+      "notation": "lbf/100 ft²",
+      "definition": "Pounds force per 100 square feet (lbf/100 ft²) is a British (imperial) and US pressure unit. The number of pounds force applied to an area of 100 ft².",
+      "altLabels": [
+        "lbf_100 ft²"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_F-PER-IN",
+      "label": "pounds per inch",
+      "notation": "lbf/in",
+      "definition": "A measure of the resistance offered by an elastic body to deformation. The length change of a body, in inches, relative to the force applied, in pounds force.",
+      "altLabels": [
+        "lb_in",
+        "lbf/in",
+        "pounds force per inch"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_M-PER-100FT2",
+      "label": "pounds per 100 square feet",
+      "notation": "lb/100 ft²",
+      "definition": "Pounds per 100 square feet (lb/100 ft²) is a British (imperial) and US pressure unit. The force equivalent to the number of pounds mass under standard gravity conditions applied to an area of 100 ft².",
+      "altLabels": [
+        "lb_100 ft²"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_M-PER-50SAC",
+      "label": "pounds per 50 kg sack",
+      "notation": "lb/50 kg",
+      "definition": "A proportional concentration ratio typically used for cement mixtures. The number of pounds of water added to 50 kg of additive(s).",
+      "altLabels": [
+        "lb/50kg",
+        "lb_50 kg"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_M-PER-BBL",
+      "label": "pounds per barrel",
+      "notation": "lb/bbl",
+      "definition": "A measure of fluid density. The weight in pounds equivalent to one barrel of fluid.",
+      "altLabels": [
+        "lb_bbl",
+        "lbs/bbl"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/M2-PER-N",
+      "label": "metre squared per newton",
+      "notation": "m²/N",
+      "definition": "A measure of compressibility equivalent to the inverse of 1 Pa.",
+      "altLabels": [
+        "m²_N"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MYR",
+      "label": "millions of years",
+      "notation": "Ma",
+      "definition": "The number of years divided by 1 000 000. Commonly used in disciplines that describe events over long periods, such as astronomy and geology. The symbol Myr is deprecated in geology.",
+      "altLabels": [
+        "MA",
+        "Mega-anni",
+        "Million Years Ago",
+        "Myr"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBBL",
+      "label": "million barrels",
+      "notation": "MMbbl",
+      "definition": "A unit equivalent in volume to 1 000 000 barrels."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBBLOE",
+      "label": "million barrel of oil equivalent per megalitre",
+      "notation": "MMBOE/Ml",
+      "definition": "A measure of oil quality or energy density defined as the energy equivalent to 1 000 000 barrel of oil equivalents (6.1178632×10¹⁵ J) per million litres.",
+      "altLabels": [
+        "MMBOE/ML",
+        "MMBOE_Ml"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBOE",
+      "label": "million barrel of oil equivalent",
+      "notation": "MMBOE",
+      "definition": "A measure of energy defined as the energy equivalent to 1 000 000 barrels of oil (6.1178632×10¹⁵ J)."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBTU",
+      "label": "million British thermal units",
+      "notation": "MMBTU",
+      "definition": "An imperial measure unit of energy, defined as 1 000 000 British thermal units (BTU)."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBTU-PER-MegaL",
+      "label": "million British thermal units per megalitre",
+      "notation": "MMBTU/Ml",
+      "definition": "A measure of oil quality or energy density defined as the energy in 1 000 000 British thermal units (BTU) (1 055 000 000 J) per million litres.",
+      "altLabels": [
+        "MMBTU/ML",
+        "MMBTU_Ml"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaF3-PER-DAY",
+      "label": "million cubic feet per day",
+      "notation": "Mft³/d",
+      "definition": "A measure of volume flow rate. Millions of cubic feet divided by number of days.",
+      "altLabels": [
+        "Mcf/d",
+        "Mft³_d"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaFT3",
+      "label": "million cubic feet",
+      "notation": "Mft³",
+      "definition": "An imperial measure of volume equivalent to 1 000 000 ft³.",
+      "altLabels": [
+        "Mcf"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaL-PER-DAY",
+      "label": "megalitres per day",
+      "notation": "Ml/d",
+      "definition": "A measure of volume flow rate. Millions of litres (Ml) divided by number of days (d).",
+      "altLabels": [
+        "ML/d",
+        "Ml_d"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaM3",
+      "label": "million cubic metres",
+      "notation": "Mm³",
+      "definition": "A measure of volume equivalent to 1 000 000 m³."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaTON_M",
+      "label": "megatonne",
+      "notation": "Mt",
+      "definition": "A measure of mass equivalent to one million (or 10⁶) tonnes.",
+      "altLabels": [
+        "megatonne",
+        "million tonnes"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliD",
+      "label": "millidarcy",
+      "notation": "md",
+      "definition": "A measure of permeability. A medium with a permeability of 1 millidarcy (mD) permits a flow of 0.001 cm³/s of a fluid with viscosity 1 cP (1 mPa·s) under a pressure gradient of 1 atm/cm acting across an area of 1 cm²."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliGM-PER-KiloGM",
+      "label": "milligram per kilogram",
+      "notation": "mg/kg",
+      "definition": "A measure of concentration. The number of milligrams (mg) of a material of interest within the mass of 1 kg of total material. Also defined as 0.000001-fold of the International System of Units (SI) base unit kilogram divided by the SI base unit kilogram.",
+      "altLabels": [
+        "MG/KG",
+        "mg_kg",
+        "milligrams per kilogram"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliGM-PER-TON_M",
+      "label": "milligrams per tonne",
+      "notation": "mg/t",
+      "definition": "A measure of concentration. The number of milligrams of a material of interest within the mass of 1 t of total material.",
+      "altLabels": [
+        "mg_t"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliM-PER-SEC",
+      "label": "metres per millisecond",
+      "notation": "m/ms",
+      "definition": "A measure of velocity. The number of metres traversed in the time of 1 ms.",
+      "altLabels": [
+        "m_ms"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/OZ-PER-TON_LONG",
+      "label": "ounce per ton",
+      "notation": "oz/ton",
+      "definition": "A measure of concentration. The number of ounces of a material of interest within the mass of 1 t of total material.",
+      "altLabels": [
+        "Ounce per long ton"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/OZ-PER-TON_M",
+      "label": "ounce per tonne",
+      "notation": "oz/t",
+      "definition": "A measure of concentration. The number of ounces of a material of interest within the mass of 1 t of total material.",
+      "altLabels": [
+        "oz_t"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PER-PA",
+      "label": "inverse pascal",
+      "notation": "1/Pa",
+      "definition": "A measure of compressibility. The inverse of one pascal.",
+      "altLabels": [
+        "1_Pa",
+        "Pa⁻¹"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PERCENT-MOL",
+      "label": "mole percent",
+      "notation": "mol%",
+      "definition": "Percentage of the total moles that is of a particular component.",
+      "altLabels": [
+        "%mol"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PERCENT-PER-VOL",
+      "label": "percent by volume",
+      "notation": "vol%",
+      "definition": "The proportion of the volume of a material of interest within the volume of a total sample expressed as a percentage.",
+      "altLabels": [
+        "% v/v",
+        "%_VOL",
+        "vo%",
+        "vol %",
+        "volume percent"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PERCENT-PER-WEIGHT",
+      "label": "percent by weight",
+      "notation": "wt%",
+      "definition": "The proportion of the weight or mass of a material of interest within the weight or mass of a total sample expressed as a percentage.",
+      "altLabels": [
+        "% w/w",
+        "%_WGT",
+        "weight %",
+        "wgt%",
+        "wt %"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PetaJ-PER-MegaL",
+      "label": "petajoules per megalitre",
+      "notation": "PJ/Ml",
+      "definition": "A measure of energy density defined as the energy in petajoules per million litres.",
+      "altLabels": [
+        "PJ/ML",
+        "PJ_Ml"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/RATIO",
+      "label": "ratio",
+      "definition": "The quantitative relation between two amounts showing the number of times one value contains or is contained within the other. The ratio has no symbol."
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/SHOTS-PER-FT",
+      "label": "shots per foot",
+      "notation": "shots/ft",
+      "definition": "The number of perforation shots in a borehole casing or liner per foot.",
+      "altLabels": [
+        "shots_ft",
+        "sht/ft"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/SHOTS-PER-M",
+      "label": "shots per metre",
+      "notation": "shots/m",
+      "definition": "The number of perforation shots in a borehole casing or liner per metre.",
+      "altLabels": [
+        "shots per meter",
+        "shots_m",
+        "sht/m"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/kiloTON_M",
+      "label": "kilotonne",
+      "notation": "kt",
+      "definition": "A measure of mass equivalent to 1000 t.",
+      "altLabels": [
+        "KT",
+        "Kilo Tonne"
+      ]
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/iso-4217-currencies/aud",
+      "label": "Australian dollar",
+      "notation": "AUD",
+      "definition": "A currency used in Australia, Christmas Island, Cocos (Keeling) Islands, Heard Island and McDonald Islands, Kiribati, Nauru, Norfolk Island and Tuvalu.",
+      "altLabels": [
+        "$",
+        "A$"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ANGSTROM",
+      "label": "ångström",
+      "notation": "Å",
+      "definition": "The ångström is an internationally recognized unit of length equal to 0.1 nm or 1 x 10⁻¹⁰ m. Although accepted for use, it is not formally defined within the International System of Units (SI). The ångström is often used in the natural sciences to express the sizes of atoms, lengths of chemical bonds and the wavelengths of electromagnetic radiation, and in technology for the dimensions of parts of integrated circuits. It is also commonly used in structural biology.",
+      "altLabels": [
+        "Angstrom",
+        "Angstroms"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ARCMIN",
+      "label": "arcminute",
+      "notation": "'",
+      "definition": "A minute of arc, arcminute, or minute arc (MOA), is a unit of angular measurement equal to one sixtieth (1/60) of one degree (circle/21 600), or π/10 800 radians. In turn, a second of arc or arcsecond is one sixtieth (1/60) of one minute of arc. Since one degree is defined as one three hundred and sixtieth (1/360) of a rotation, one minute of arc is 1/21 600 of a rotation. Prime (') is the symbol for the arcminute.",
+      "altLabels": [
+        "ARCMIN",
+        "MOA",
+        "minute arc",
+        "minute of arc"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ARCSEC",
+      "label": "arcsecond",
+      "notation": "\"",
+      "definition": "Arcsecond is a unit of angular measure, also called the second of arc, equal to 1/60 arcminute. One arcsecond is a very small angle: there are 1 296 000 in a circle. The International System of Units (SI) recommends double prime (ʺ) as the symbol for the arcsecond. The symbol has become common in astronomy, where very small angles are stated in milliarcseconds (mas).",
+      "altLabels": [
+        "ARCSEC",
+        "second of arc"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ATM",
+      "label": "standard atmosphere",
+      "notation": "atm",
+      "definition": "The standard atmosphere (atm) is an international reference pressure defined as 101.325 kPa and formerly used as unit of pressure. For practical purposes it has been replaced by the bar which is 100 kPa. The difference of about 1% is not significant for many applications, and is within the error range of common pressure gauges."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/AU",
+      "label": "astronomical unit",
+      "notation": "AU",
+      "definition": "An astronomical unit, abbreviated as AU, au, a. u, or ua is a unit of length equal to 149,597,870,700 m (92,955,807.273 mi) or approximately the mean Earth–Sun distance.",
+      "altLabels": [
+        "a. u",
+        "au",
+        "ua"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BAR",
+      "label": "bar",
+      "notation": "bar",
+      "definition": "The bar is a non-International System of Units (SI) unit of pressure, defined by the International Union of Pure and Applied Chemistry (IUPAC) as exactly equal to 100 000 Pa. It is about equal to the atmospheric pressure on Earth at sea level, and since 1982 the IUPAC has recommended that the standard for atmospheric pressure should be harmonized to 100 000 Pa = 1 bar ≈ 750.0616827 Torr. Units derived from the bar are the megabar (Mbar), kilobar (kbar), decibar (dbar), centibar (cbar) and millibar (mbar or mb). They are not part of either the SI or Centimetre–Gram–Second (CGS) system of units, but they are accepted for use with the SI."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BBL",
+      "label": "barrel",
+      "notation": "bbl",
+      "definition": "A barrel is one of several units of volume, including dry barrels, fluid barrels (UK beer barrel, US beer barrel), oil barrel, etc. The volume of some barrel units is double others, with various volumes in the range of about 100–200 litres (22–44 gal{imp}; 26–53 gal (US). The barrel is commonly used as a measure of liquid recovery.",
+      "altLabels": [
+        "BBL"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BIT",
+      "label": "bit",
+      "notation": "b",
+      "definition": "The bit is the most basic unit of information in computing and digital communications, representing the capacity of data storage systems or communication channels. The name is a portmanteau of binary digit. A byte corresponds to 8 bits. Terms for large quantities of bits can be formed using the standard range of SI prefixes for powers of 10, e.g., kilo = 10³ = 1000 (as in kilobit or kbit), mega = 10⁶ = 1 000 000 (as in megabit or Mbit) and giga = 10⁹ = 1 000 000 000 (as in gigabit or Gbit). These prefixes are more often used for multiples of bytes, as in kilobyte (1 kB = 8000 bit), megabyte (1 MB = 8 000 000 bit), and gigabyte (1 GB = 8 000 000 000 bit).",
+      "altLabels": [
+        "bit"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BQ",
+      "label": "becquerel",
+      "notation": "Bq",
+      "definition": "The International System of Units (SI) derived unit of activity, usually meaning radioactivity. Radioactivity is caused when atoms disintegrate, ejecting energetic particles. One becquerel is the radiation caused by one disintegration per second; this is equivalent to about 27.0270 picocuries (pCi). The unit is named for a French physicist, Antoine-Henri Becquerel (1852–1908), the discoverer of radioactivity. Note: both the becquerel and the hertz are basically defined as one event per second, yet they measure different things. The hertz is used to measure the rates of events that happen periodically in a fixed and definite cycle. The becquerel is used to measure the rates of events that happen sporadically and unpredictably, not in a definite cycle."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BTU_IT",
+      "label": "British thermal unit (international definition)",
+      "notation": "BTU{IT}",
+      "definition": "British thermal unit (BTU or Btu) is a traditional unit of energy equal to about 1.0550558526 kJ. It is approximately the amount of energy needed to heat 1 pound (0.454 kg) of water from 39 °F to 40 °F. The unit is most often used in the power, steam generation, heating and air conditioning industries. In scientific contexts the BTU has largely been replaced by the International System of Units (SI) unit of energy, the joule, though it may be used as a measure of agricultural energy production (BTU/kg). It is still used unofficially in metric English-speaking countries (such as Canada), and remains the standard unit of classification for air conditioning units manufactured and sold in many non-English-speaking metric countries.",
+      "altLabels": [
+        "BTU",
+        "Btu",
+        "Btu_IT"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BTU_IT-PER-LB",
+      "label": "British thermal unit per imperial pound",
+      "notation": "BTU{IT}/lb",
+      "definition": "The amount of energy generated by a pound of substance is measured in British thermal units (IT) per pound of mass (Btu{IT}/lb). 1 Btu{IT}/lb is equivalent to 2.326 x 10³ J/kg.",
+      "altLabels": [
+        "BTU/LB",
+        "BTU/lb",
+        "BTU_IT/lb",
+        "BTU{IT}_lb"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BYTE",
+      "label": "byte",
+      "notation": "B",
+      "definition": "The byte (B) is a unit of digital information in computing and telecommunications that most commonly consists of 8 bits."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CARAT",
+      "label": "carat",
+      "notation": "ct",
+      "definition": "The carat is a unit of mass equal to 200 mg (0.2 g) and is used for measuring gemstones and pearls. The current definition, sometimes known as the metric carat, was adopted in 1907 at the Fourth General Conference on Weights and Measures, and soon afterward in many countries around the world. The carat is divisible into one hundred points of 2 mg each. Other subdivisions, and slightly different mass values, have been used in the past in different locations. In terms of diamonds, a paragon is a flawless stone of at least 100 carats (20 g). The ANSI X.12 EDI standard abbreviation for the carat is CD.",
+      "altLabels": [
+        "CD",
+        "MC",
+        "Metric carat",
+        "carat",
+        "carats",
+        "cts"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CH",
+      "label": "chain",
+      "notation": "ch",
+      "definition": "A chain is a unit of length. It measures 66 ft, or 22 yd, or 100 links, or 4 rods. There are 10 chains in a furlong, and 80 chains in one statute mile. An acre is the area of 10 square chains (that is, an area of one chain by one furlong). The chain has been used for several centuries in Britain and in some other countries influenced by British practice, and was commonly used to define map scales prior to the introduction of the metric system.",
+      "altLabels": [
+        "ch"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiM",
+      "label": "centimetre",
+      "notation": "cm",
+      "definition": "A centimetre is a unit of length in the metric system, equal to one hundredth of a metre, which is the International System of Units (SI) base unit of length. Centi is the SI prefix for a factor of 0.01. The centimetre is the base unit of length in the now deprecated Centimetre–Gram–Second (CGS) system of units.",
+      "altLabels": [
+        "CM",
+        "CentiM",
+        "centimeter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiM2",
+      "label": "square centimetre",
+      "notation": "cm²",
+      "definition": "A unit of area equal to that of a square of sides 1 cm.",
+      "altLabels": [
+        "CM2",
+        "square centimeter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiM3",
+      "label": "cubic centimetre",
+      "notation": "cm³",
+      "definition": "The Centimetre–Gram–Second (CGS) system unit of volume, equal to 10⁻⁶ m³, 1 ml, or about 0.0610237 in³.",
+      "altLabels": [
+        "CM3",
+        "CentiM3"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiPOISE",
+      "label": "centipoise",
+      "notation": "cP",
+      "definition": "Centipoise is a Centimetre–Gram–Second (CGS) system unit for dynamic viscosity, expressed as cP. 1 cP = 0.01 P."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/Ci",
+      "label": "curie",
+      "notation": "Ci",
+      "definition": "The curie (symbol Ci) is a non-International System of Units (SI) unit of radioactivity, named after Marie and Pierre Curie. It is defined as 1 Ci = 3.7 × 10¹⁰ decays per second. Its continued use is discouraged. One curie is roughly the activity of 1 gram of the radium isotope Ra, a substance studied by the Curies. The SI derived unit of radioactivity is the becquerel (Bq), which equates to one decay per second. Therefore: 1 Ci = 3.7 × 10¹⁰ Bq and 1 Bq = 2.703 × 10⁻¹¹ Ci."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DAY",
+      "label": "day",
+      "notation": "d",
+      "definition": "Mean solar day."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DEG",
+      "label": "degree",
+      "notation": "°",
+      "definition": "A degree (in full, a degree of arc, arc degree, or arcdegree), usually denoted by ° (the degree symbol), is a measurement of plane angle, representing 1/360 of a full rotation; one degree is equivalent to 2π/360 rad, 0.017453 rad. It is not an International System of Units (SI) unit, which for angles is the radian, but is an accepted non-SI unit.",
+      "altLabels": [
+        "DEG",
+        "ddmmss·ss",
+        "decimal degrees",
+        "deg*"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DEG_C",
+      "label": "degree Celsius",
+      "notation": "°C",
+      "definition": "Celsius, also known as centigrade, is a scale and unit of measurement for temperature. It can refer to a specific temperature on the Celsius scale as well as a unit to indicate a temperature interval, a difference between two temperatures or an uncertainty. This definition fixes the magnitude of both the degree Celsius and the kelvin as precisely 1 part in 273.16 (approximately 0.00366) of the difference between absolute zero and the triple point of water. Thus, it sets the magnitude of one degree Celsius and that of one kelvin as exactly the same. Additionally, it establishes the difference between the null points of the two scales' as precisely 273.15 °C.",
+      "altLabels": [
+        "degrees C",
+        "degrees centigrade"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DEG_F",
+      "label": "degree Fahrenheit",
+      "notation": "°F",
+      "definition": "Degree Fahrenheit is an imperial unit for thermodynamic temperature expressed as °F.",
+      "altLabels": [
+        "degF",
+        "degrees F",
+        "degrees Fahrenheit"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DWT",
+      "label": "penny weight",
+      "notation": "dwt",
+      "definition": "Penny weight (dwt) is a non-International System of Units (SI)-conforming unit of mass which comes from the Anglo–American Troy or Apothecaries' Weight System of units according to the National Institute of Standards and Technology (NIST) of 1 dwt = 1.555174 10³ kg.",
+      "altLabels": [
+        "DWT",
+        "pennyweight"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DeciM",
+      "label": "decimetre",
+      "notation": "dm",
+      "definition": "A decimetre is a tenth of a metre.",
+      "altLabels": [
+        "decimeter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DeciM3",
+      "label": "cubic decimetre",
+      "notation": "dm³",
+      "definition": "A unit of volume equal to that of a cube having sides each 1 dm in length, equal to 10⁻³ m³ and 1 litre. Commonly used in fluid measure and for engine sizes."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT",
+      "label": "foot",
+      "notation": "ft",
+      "definition": "A foot (plural feet) is a unit of length defined as being exactly 0.3048 m and used in the imperial system of units and US customary units. It is subdivided into 12 in. The foot is still officially used in Canada and still commonly used in the UK, although the latter has partially metricated its units of measurement.",
+      "altLabels": [
+        "FOOT",
+        "Feet"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT-PER-HR",
+      "label": "foot per hour",
+      "notation": "ft/h",
+      "definition": "Foot per hour (plural feet per hour) is an imperial unit for linear velocity expressed as ft/hr.",
+      "altLabels": [
+        "ft/hr",
+        "ft_h"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT-PER-SEC",
+      "label": "foot per second",
+      "notation": "ft/s",
+      "definition": "Foot per second (plural feet per second) is a unit of both speed (scalar) and velocity (vector quantity, which includes direction). It expresses the distance in feet (ft) travelled or displaced, divided by the time in seconds (s). The corresponding unit in the International System of Units (SI) is the metre per second.",
+      "altLabels": [
+        "fps",
+        "ft s",
+        "ft/sec",
+        "ft_s"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT2",
+      "label": "square foot",
+      "notation": "ft²",
+      "definition": "The square foot is an imperial unit and US customary unit of area, used mainly in the US, Canada, UK, Hong Kong, Bangladesh, India, Pakistan and Afghanistan. It is defined as the area of a square with sides of 1 ft in length.",
+      "altLabels": [
+        "FOOT2",
+        "Square Imperial Foot",
+        "sq ft",
+        "square feet"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT3",
+      "label": "cubic foot",
+      "notation": "ft³",
+      "definition": "The cubic foot is an imperial and US customary unit of volume, used in the US and the UK. It is defined as the volume of a cube with sides of 1 ft (0.3048 m) in length. To calculate cubic feet multiply length × width × height.",
+      "altLabels": [
+        "cubic imperial foot"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT3-PER-DAY",
+      "label": "cubic foot per day",
+      "notation": "ft³/d",
+      "definition": "Power of the unit foot according to the Anglo–American and the imperial system of units with the exponent 3 divided by the unit for time day.",
+      "altLabels": [
+        "ft³/day",
+        "ft³_day"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT3-PER-HR",
+      "label": "cubic foot per hour",
+      "notation": "ft³/h",
+      "definition": "Power of the unit foot according to the Anglo–American and the imperial system of units with the exponent 3 divided by the unit hour.",
+      "altLabels": [
+        "ft³/hr",
+        "ft³_h"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GALILEO",
+      "label": "galileo",
+      "notation": "Gal",
+      "definition": "The galileo (or Gal) is the unit of acceleration of free fall used extensively in the science of gravimetry. The galileo is defined as 1 cm/s². Unfortunately, the galileo is often denoted with the symbol Gal, not to be confused with the gallon that also uses the same symbol (gal).",
+      "altLabels": [
+        "cm/s²",
+        "cm_s²",
+        "gal"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GAL_IMP",
+      "label": "imperial gallon",
+      "notation": "gal{Imp}",
+      "definition": "Imperial gallon is an imperial unit for liquid volume, expressed as gal{Imp}. It corresponds to 4.5609 litres.",
+      "altLabels": [
+        "galIMP",
+        "imp gal"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GAL_US",
+      "label": "US gallon",
+      "notation": "gal (US)",
+      "definition": "United States (US) Gallon is a unit for liquid volume, corresponding to 3.78541178 litres.",
+      "altLabels": [
+        "Queen Anne's wine gallon"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GAUSS",
+      "label": "gauss",
+      "notation": "Gs",
+      "definition": "The gauss is the Centimetre–Gram–Second (CGS) system unit for magnetic flux density (B)."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM",
+      "label": "gram",
+      "notation": "g",
+      "definition": "The gram (g) is a unit of mass in the metric system. The name comes from the Greek gramma, a small weight identified in later Roman and Byzantine times with the Latin scripulum or scruple (the English scruple is equal to about 1.3 g). The gram was originally defined to be the mass of one cubic centimetre of pure water, but to provide precise standards it was necessary to construct physical objects of specified mass. One gram is now defined to be 1/1000 of the mass of the standard kilogram, a platinum–iridium bar carefully guarded by the International Bureau of Weights and Measures in Paris for more than a century. (The kilogram, rather than the gram, is considered the base unit of mass in the International System of Units [SI].) The gram is a small mass, equal to about 15.432 grains or 0.035273966 oz.",
+      "altLabels": [
+        "GRAMS",
+        "gm",
+        "gms",
+        "grams"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-CentiM3",
+      "label": "gram per cubic centimetre",
+      "notation": "g/cm³",
+      "definition": "Gram per cubic centimetre is an International System of Units (SI) derived unit of density, defined by mass in grams divided by volume in cubic centimetres. The official SI symbol is g.cm⁻³, or equivalently g/cm³. Also defined as 0.001-fold of the SI base unit kilogram divided by the 0.000 001-fold of the power of the SI base unit metre with the exponent 3.",
+      "altLabels": [
+        "G/CM3",
+        "G_CM3",
+        "g/cc",
+        "g_cm³",
+        "gcm⁻³",
+        "gm/cc",
+        "gm/cm³"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-L",
+      "label": "gram per litre",
+      "notation": "g/l",
+      "definition": "Gram per litre is an International System of Units (SI) derived unit of density, defined by mass in grams divided by volume in litres. The official SI symbol is g/l (or g.l⁻¹). Also defined as 0.001-fold of the SI base unit kilogram divided by the unit litre.",
+      "altLabels": [
+        "G/L",
+        "G_L",
+        "g/L",
+        "g_l",
+        "gram per liter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-M3",
+      "label": "gram per cubic metre",
+      "notation": "g/m³",
+      "definition": "Gram per cubic metre is an International System of Units (SI) derived unit of density, defined by mass in grams divided by volume in cubic metres. The official SI symbol is g.m⁻³ (or g/m³).",
+      "altLabels": [
+        "G/M3",
+        "g_m³"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-MilliL",
+      "label": "grams per millilitre",
+      "notation": "g/ml",
+      "definition": "Grams per millilitre (g/ml) is a measure of concentration. The number of grams of a material of interest within the volume of one millilitre of total material. Also defined as 0.001-fold of the International System of Units (SI) base unit kilogram divided by the 0.001-fold of the unit litre",
+      "altLabels": [
+        "G_ML",
+        "Grams/millilitre",
+        "g/mL",
+        "g_ml",
+        "grams per milliliter",
+        "grams/milliliter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GRAD",
+      "label": "grad",
+      "notation": "grad",
+      "definition": "Grad is a unit for plane angle."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GRAIN",
+      "label": "grain",
+      "notation": "gr{UK}",
+      "definition": "A grain is a unit of measurement of mass that is nominally based upon the mass of a single seed of a cereal. The grain is the only unit of mass measure common to the three traditional English mass and weight systems; the obsolete Tower grain was, by definition, exactly 1/64 of a troy grain. Since 1958, the grain or troy grain measure has been defined in terms of units of mass in the International System of Units (SI) as precisely 64.79891 mg. Thus, 1 gram ≈ 15.4323584 grains. There are precisely 7000 grains per avoirdupois pound in the imperial and US customary units, and 5760 grains in the troy pound.",
+      "altLabels": [
+        "gr_UK"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GRAY",
+      "label": "gray",
+      "notation": "Gy",
+      "definition": "The International System of Units (SI) unit of radiation dose. Radiation carries energy, and when it is absorbed by matter the matter receives this energy. The dose is the amount of energy deposited per unit of mass. One gray is defined to be the dose of one joule of energy absorbed per kilogram of matter, or 100 rad. The unit is named for the British physician L Harold Gray (1905–65), an authority on the use of radiation in the treatment of cancer.",
+      "altLabels": [
+        "J/kg"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/Gamma",
+      "label": "gamma",
+      "notation": "γ",
+      "definition": "Gamma is the Centimetre–Gram–Second (CGS) system unit for magnetic field."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GigaBYTE",
+      "label": "gigabyte",
+      "notation": "GB",
+      "definition": "The gigabyte is a multiple of the unit byte for digital information storage. The prefix giga means 10⁹ in the International System of Units (SI), therefore 1 GB is 1 000 000 000 B. The unit symbol for the gigabyte is GB or Gbyte, but not Gb (lowercase b) which is typically used for the gigabit. Historically, the term has also been used in some fields of computer science and information technology to denote the gibibyte, or 1073741824 B."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GigaPA",
+      "label": "gigapascal",
+      "notation": "GPa",
+      "definition": "1 000 000 000-fold of the International System of Units (SI) derived unit pascal."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/HA",
+      "label": "hectare",
+      "notation": "ha",
+      "definition": "The US customary metric unit of land area, equal to 100 acres. One hectare is a square hectometre, that is, the area of a square 100 metres on each side: exactly 10 000 m² or approximately 107 639.1 ft², 11 959.9 yd², or 2.471054 acres.",
+      "altLabels": [
+        "HA"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/HR",
+      "label": "hour",
+      "notation": "h",
+      "definition": "The hour (common symbol: h or hr) is a unit of measurement of time. In modern usage, an hour comprises 60 min, or 3600 s. It is approximately 1/24 of a mean solar day. An hour in the Universal Coordinated Time (UTC) time standard can include a negative or positive leap second, and may therefore have a duration of 3599 or 3601 seconds for adjustment purposes. Although it is not a standard defined by the International System of Units (SI), the hour is a unit accepted for use within the SI, represented by the symbol h.",
+      "altLabels": [
+        "HR",
+        "hr"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/HZ",
+      "label": "hertz",
+      "notation": "Hz",
+      "definition": "The hertz (Hz) is the International System of Units (SI) unit of frequency defined as the number of cycles per second of a periodic phenomenon. One of its most common uses is the description of the sine wave, particularly those used in radio and audio applications, such as the frequency of musical tones. The unit is named for Heinrich Rudolf Hertz, who was the first to conclusively prove the existence of electromagnetic waves."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/IN",
+      "label": "inch",
+      "notation": "in",
+      "definition": "An inch (in) is the name of a unit of length in a number of different systems, including imperial units, and US customary units. There are 36 in in a yard and 12 in in a foot, and 1 in equals 25.4 mm. The difference between a US customary inch and an imperial inch is insignificant for most applications (the accepted value of 25.4 mm is 1.7 millionths of an inch longer than the old imperial inch and 2 millionths of an inch shorter than the old US inch). Corresponding units of area and volume are the square inch and the cubic inch."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/J",
+      "label": "joule",
+      "notation": "J",
+      "definition": "The joule (J) is the International System of Units (SI) unit for work or energy, defined to be the work done by a force of 1 N acting to move an object through a distance of 1 m in the direction in which the force is applied. Equivalently, since kinetic energy is one half the mass times the square of the velocity, 1 J is the kinetic energy of a mass of 2 kg moving at a velocity of 1 m/s."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/J-PER-CentiM2",
+      "label": "joule per square centimetre",
+      "notation": "J/cm²",
+      "definition": "Joule per square centimetre (J/cm²) is a measure of energy density. This unit is commonly used in the International System of units (SI). Also defined as derived SI unit joule divided by the 0.0001-fold of the power of the SI base unit metre by exponent 2.",
+      "altLabels": [
+        "J_cm²",
+        "joule/square centimeter",
+        "joule/square centimetre",
+        "joules per square centimeter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/K",
+      "label": "kelvin",
+      "notation": "K",
+      "definition": "The International System of Units (SI) base unit of temperature, previously called the degree kelvin. One kelvin (K) represents the same temperature difference as one degree Celsius. In 1967, the General Conference on Weights and Measures defined the temperature of the triple point of water (the temperature at which water exists simultaneously in the gaseous, liquid, and solid states) to be exactly 273.16 K. Since this temperature is also equal to 0.01 °C, the temperature in kelvins is always equal to 273.15 plus the temperature in degrees Celsius. The kelvin equals exactly 1.8 °F. The unit is named for the British mathematician and physicist William Thomson (1824–1907), later known as Lord Kelvin after he was named Baron Kelvin of Largs."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloBAR",
+      "label": "kilobar",
+      "notation": "kbar",
+      "definition": "The kilobar (kbar) is derived from the bar and is equivalent to 1000 or 10³ bars. It is not an International System of Units (SI) or Centimetre–Gram–Second (CGS) unit, but is accepted for use with the SI."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloBYTE",
+      "label": "kilobyte",
+      "notation": "kB",
+      "definition": "The kilobyte is a multiple of the unit byte for digital information equivalent to 1000 bytes. Although the prefix kilo means 1000, the term kilobyte and symbol kB have historically been used to refer to either 1024 (2¹⁰) bytes or 1000 (10³) bytes, dependent upon context, in the fields of computer science and information technology. This ambiguity is removed in the Quantities, Units, Dimensions and Types Ontology (QUDT), with kibibyte (KiB) used to refer to 10²⁴ bytes.",
+      "altLabels": [
+        "KB",
+        "Kilo Byte"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloEV",
+      "label": "kilo electron volt",
+      "notation": "keV",
+      "definition": "Kilo electron volt is a unit for energy and work expressed as keV, and is a multiple of the electron volt (eV), where 1 keV = 1000 eV."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM",
+      "label": "kilogram",
+      "notation": "kg",
+      "definition": "The kilogram (kg), also known as the kilo, is the base unit of mass in the International System of Units (SI) and is defined as being equal to the mass of the International Prototype Kilogram (IPK), which is almost exactly equal to the mass of 1 litre of water. The avoirdupois (or international) pound, used in both the imperial system and US customary units, is defined as exactly 0.45359237 kg, making 1 kg approximately equal to 2.2046 avoirdupois pounds.",
+      "altLabels": [
+        "KG",
+        "KGS",
+        "k",
+        "kgs",
+        "kilo",
+        "kilogramme",
+        "kilograms"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM-PER-L",
+      "label": "kilogram per litre",
+      "notation": "kg/l",
+      "definition": "Kilogram per litre is an International System of Units (SI) derived unit of density, defined by mass in kilograms divided by volume in litres. The official SI symbol is kg/l (or kg.l⁻¹). Also defined as the SI base unit kilogram divided by the unit litre.",
+      "altLabels": [
+        "KG/L",
+        "KG_L",
+        "kg.l⁻¹",
+        "kg/L",
+        "kg_l"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM-PER-M",
+      "label": "kilogram per metre",
+      "notation": "kg/m",
+      "definition": "Kilogram per metre (kg/m) is a unit of linear mass density. This unit is commonly used in the International System of Units (SI). Kilogram per metre (kg/m) has a dimension of ML⁻¹ where M is mass, and L is length. This unit is the standard SI unit in this category.",
+      "altLabels": [
+        "kg_m",
+        "kilogram/meter",
+        "kilogram/metre",
+        "kilograms per meter",
+        "kilograms per metre"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM-PER-M3",
+      "label": "kilogram per cubic metre",
+      "notation": "kg/m³",
+      "definition": "Kilogram per cubic metre is an International System of Units (SI) derived unit of density, defined by mass in kilograms divided by volume in cubic metres. The official SI symbol is kg.m⁻³ (or kg/m³).",
+      "altLabels": [
+        "KG/M3",
+        "KG_M3",
+        "Kg/m³",
+        "kg_m³",
+        "kgs/m³"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloJ",
+      "label": "kilojoule",
+      "notation": "kJ",
+      "definition": "The kilojoule is a multiple of the unit joule, the unit of energy in the International System of Units (SI), equivalent to 1000 or 10³ joules. Also defined as 1000-fold of the SI derived unit joule."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloL",
+      "label": "kilolitre",
+      "notation": "kl",
+      "definition": "The kilolitre is a multiple of the unit litre, a non-International System of Units (SI) metric system unit of volume, equivalent to 1000 or 10³ litres.",
+      "altLabels": [
+        "KL",
+        "kL"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloLB_M-PER-IN2",
+      "label": "thousand pounds per square inch",
+      "notation": "kpsi",
+      "definition": "A scaled unit derived from psi, equivalent to a thousand psi (1000 lbf/in²)."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloM",
+      "label": "kilometre",
+      "notation": "km",
+      "definition": "The kilometre (km) is a common metric unit of length or distance. 1 km equals exactly 1000 m, about 0.62137119 mi, 1093.6133 yd, or 3280.8399 ft. Oddly, higher multiples of the metre are rarely used; even the distances to the farthest galaxies are usually measured in kilometres.",
+      "altLabels": [
+        "KM",
+        "KMTR",
+        "kilomet",
+        "kilometer",
+        "kilometers",
+        "kilometres",
+        "kmtr"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloN",
+      "label": "kilonewton",
+      "notation": "kN",
+      "definition": "The kilonewton (kN) is a multiple of the unit newton (N), the International System of Units (SI) unit of force."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloPA",
+      "label": "kilopascal",
+      "notation": "kPa",
+      "definition": "Kilopascal (kPa) is a unit of pressure. 1 kPa is approximately the pressure exerted by a 10 g mass resting on a 1 cm² area. 101.3 kPa = 1 atm. There are 1000 Pa in 1 kPa."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L",
+      "label": "litre",
+      "notation": "l",
+      "definition": "The litre (l or L) is a non-International System of Units (SI) metric system unit of volume equal to 1 dm³, 1000 cm³ or 1/1000 m³. If the lowercase \"l\" is used as the symbol, it is sometimes rendered as a cursive \"l\" to help distinguish it from the capital \"I\", although this usage has no official approval by any international bureau.",
+      "altLabels": [
+        "L",
+        "liter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L-PER-DAY",
+      "label": "litre per day",
+      "notation": "l/d",
+      "definition": "The unit litre (l) divided by the unit day (d).",
+      "altLabels": [
+        "L/d",
+        "L/day",
+        "l/day",
+        "l_d"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L-PER-HR",
+      "label": "litre per hour",
+      "notation": "l/h",
+      "definition": "The unit litre (l) divided by the unit hour (h).",
+      "altLabels": [
+        "L/h",
+        "L/hr",
+        "l_h"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L-PER-MIN",
+      "label": "litre per minute",
+      "notation": "l/min",
+      "definition": "The unit litre (l) divided by the unit minute (min).",
+      "altLabels": [
+        "L/min",
+        "l_min"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB",
+      "label": "pound mass",
+      "notation": "lbm",
+      "definition": "A pound of mass, based on the international standard definition of the pound as exactly 0.45359237 kg.",
+      "altLabels": [
+        "avoirdupois pound",
+        "imperial pound",
+        "lb",
+        "pound"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_F",
+      "label": "pound force",
+      "notation": "lbf",
+      "definition": "Pound force is an imperial unit for force expressed as lbf."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_M-PER-FT",
+      "label": "pound per foot",
+      "notation": "lb/ft",
+      "definition": "Pound per foot is an imperial unit for mass per length.",
+      "altLabels": [
+        "lb_ft",
+        "lbs/ft",
+        "pounds per foot"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_M-PER-FT3",
+      "label": "pound per cubic foot",
+      "notation": "lb/ft³",
+      "definition": "Pound per cubic foot is an imperial unit for density.",
+      "altLabels": [
+        "Pounds per Cubic Feet",
+        "lb_ft³",
+        "lbs/ft³"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_M-PER-GAL",
+      "label": "pound per gallon",
+      "notation": "lb/gal",
+      "definition": "Pound per gallon is an imperial unit for density.",
+      "altLabels": [
+        "lb_gal",
+        "lbs/gal",
+        "pounds per gallon"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_T",
+      "label": "troy pound",
+      "notation": "lbt",
+      "definition": "An obsolete unit of mass; the troy pound has been defined as exactly 5760 grains, or 0.3732417216 kg. A troy ounce is 1/12th of a troy pound.",
+      "altLabels": [
+        "pound troy"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LY",
+      "label": "light year",
+      "notation": "ly",
+      "definition": "A unit of length defining the distance, in metres, that light travels in a vacuum in one year."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M",
+      "label": "metre",
+      "notation": "m",
+      "definition": "The metric and International System of Units (SI) base unit of distance. The 17th General Conference on Weights and Measures in 1983 defined the metre as that distance that makes the speed of light in a vacuum equal to exactly 299 792 458 m/s. The speed of light in a vacuum, c, is one of the fundamental constants of nature. The metre is equal to approximately 1.0936133 yd, 3.280840 ft, or 39.370079 in.",
+      "altLabels": [
+        "M",
+        "MTR",
+        "met*",
+        "meter",
+        "mtr"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M-PER-HR",
+      "label": "metre per hour",
+      "notation": "m/h",
+      "definition": "Metre per hour (m/h) is a metric unit of both speed (scalar) and velocity (vector quantity which specifies both magnitude and a specific direction). By definition, an object travelling at a speed of 1 m/h for an hour would move 1 m.",
+      "altLabels": [
+        "m_h",
+        "mh⁻¹"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M-PER-SEC",
+      "label": "metre per second",
+      "notation": "m/s",
+      "definition": "Metre per second (m/s) is an International System of Units (SI) derived unit of both speed (scalar) and velocity (vector quantity which specifies both magnitude and a specific direction), defined by distance in metres divided by time in seconds. The official SI symbol is ms⁻¹ (or m/s).",
+      "altLabels": [
+        "m_s",
+        "ms⁻¹"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M-PER-SEC2",
+      "label": "metre per square second",
+      "notation": "m/s2",
+      "definition": "Metre per square second is the unit of acceleration in the International System of Units (SI). As a derived unit it is composed from the SI base units of length, the metre, and the standard unit of time, the second. Its symbol is written in several forms as m/s², or ms⁻². As acceleration, the unit is interpreted physically as change in velocity or speed per time interval, that is, metre per second per second.",
+      "altLabels": [
+        "m/s²",
+        "metre per second squared",
+        "ms⁻²"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M2",
+      "label": "square metre",
+      "notation": "m²",
+      "definition": "The International System of Units (SI) unit of area is the square metre. A unit of area equal to that of a square of sides 1 m.",
+      "altLabels": [
+        "M2",
+        "square meter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M3",
+      "label": "cubic metre",
+      "notation": "m³",
+      "definition": "The International System of Units (SI) unit of volume, equal to 1 × 10⁶ cm³, 1000 l, 35.3147 ft³ or 1.30795 yd³. A cubic metre holds about 264.17 gal (US) or 219.99 gal{Imp}.",
+      "altLabels": [
+        "M3",
+        "cubic meter",
+        "cubic meters",
+        "cubic metres",
+        "mc",
+        "meters cubed",
+        "metres cubed"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M3-PER-DAY",
+      "label": "cubic metre per day",
+      "notation": "m³/d",
+      "definition": "Power of the International System of Units (SI) base unit metre with the exponent 3 divided by the unit day.",
+      "altLabels": [
+        "cubic meter per day",
+        "m³/day",
+        "m³_d"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M3-PER-HR",
+      "label": "cubic metre per hour",
+      "notation": "m³/h",
+      "definition": "Cubic metre per hour (m³/h) is a unit in the category of volume flow rate. Cubic metre per hour has a dimension of L³T⁻¹ where L is length, and T is time. It can be converted to the corresponding standard International System of Units (SI) unit m³/s by multiplying its value by a factor of 0.00027777777.",
+      "altLabels": [
+        "cubic meter per hour",
+        "cubic meter/hour",
+        "cubic meter/hr",
+        "cubic meters per hour",
+        "cubic metre/hour",
+        "cubic metre/hr",
+        "flowrate",
+        "m³_h"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MI",
+      "label": "imperial mile",
+      "notation": "mi",
+      "definition": "The exact length of the land mile (mi) varied slightly among English-speaking countries until the international yard and pound agreement in 1959 established the yard as exactly 0.9144 m, giving a mile of exactly 1609.344 m. The US adopted this international mile for most purposes, but retained the pre-1959 mile for some land-survey data, terming it the US survey mile. In the US, statute mile formally refers to the survey mile, about 3.219 mm (1/8 in) longer than the international mile (the international mile is exactly 0.0002% less than the US survey mile).",
+      "altLabels": [
+        "MILE",
+        "international mile",
+        "mile",
+        "statute mile"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MI2",
+      "label": "square mile",
+      "notation": "mi²",
+      "definition": "The square mile is an imperial and US unit of measure for an area equal to the area of a square of one statute mile. It should not be confused with miles square, which refers to the number of miles on each side squared. For instance, 20 miles square (20 × 20 mi) is equal to 400 square miles. One square mile is equivalent to: 4 014 489 600 in², 27 878 400 ft², 3 097 600 yd², 640 acres, 258.9988110336 ha, 2560 roods, 25 899 881 103.36 cm², 2 589 988.110336 m², 2.589988110336 km². When applied to a portion of the Earth's surface, which is curved rather than flat, 'square mile' is an informal synonym for section.",
+      "altLabels": [
+        "MILE2",
+        "sq mi",
+        "square imperial mile"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MIN",
+      "label": "minute",
+      "notation": "min",
+      "definition": "A minute is a unit of measurement of time. The minute is a unit of time equal to 1/60 (the first sexagesimal fraction) of an hour or 60 s. In the Coordinated Universal Time (UTC) time scale, a minute on rare occasions has 59 or 61 seconds. The minute is not an International System of Units (SI) unit; however, it is accepted for use with SI units. The SI symbol for minute or minutes is min (for time measurement) or the prime symbol after a number, e.g. 5' (for angle measurement, even if it is informally used for time)."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MI_N",
+      "label": "nautical mile",
+      "notation": "nmi",
+      "definition": "A unit of distance used primarily at sea and in aviation. The nautical mile (nmi) is defined to be the average distance on the Earth's surface represented by one minute of latitude. In 1929, an international conference in Monaco redefined the nautical mile to be exactly 1852 m or 6076.11549 ft, a distance known as the international nautical mile. The international nautical mile equals about 1.1508 statute miles. There are usually 3 nautical miles in a league. The unit is designed to equal 1/60 degree, although actual degrees of latitude vary from about 59.7 to 60.3 nautical miles. (Note: using data from the Geodetic Reference System 1980, the 'true' length of a nautical mile would be 1852.216 m).",
+      "altLabels": [
+        "NM",
+        "international nautical mile"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MO",
+      "label": "month",
+      "notation": "mo",
+      "definition": "A unit of time corresponding approximately to one cycle of the moon's phases, or about 30 days or 4 weeks. Also known as the 'Synodic Month' and calculated as 29.53059 days.",
+      "altLabels": [
+        "synodic month"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MOL",
+      "label": "mole",
+      "notation": "mol",
+      "definition": "The mole (mol) is a unit of measurement used in chemistry to express amounts of a chemical substance (as distinct from its mass or weight). The official definition, adopted as part of the International System of Units (SI) in 1971, is that 1 mol of a substance contains just as many elementary entities (atoms, molecules, ions, or other kinds of particles) as there are atoms in 12 g of carbon-12 (carbon-12 is the most common atomic form of carbon, consisting of atoms having 6 protons and 6 neutrons). This corresponds to a value of 6.02214179(30) × 10²³ elementary entities of the substance."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaBYTE",
+      "label": "megabyte",
+      "notation": "MB",
+      "definition": "The megabyte is defined here as 1 000 000 bytes."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaJ",
+      "label": "megajoule",
+      "notation": "MJ",
+      "definition": "The megajoule (MJ) is a multiple of the unit joule (J), the unit of energy in the International System of Units (SI), equivalent to one million or 10⁶ joules. Also defined as 1 000 000-fold of the derived unit joule."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaL",
+      "label": "megalitre",
+      "notation": "Ml",
+      "definition": "The megalitre (Ml) is a multiple of the unit litre (l), a non-International System of Units (SI) metric system unit of volume, equivalent to one million or 10⁶ litres. Also defined as 1 000 000-fold of the unit litre.",
+      "altLabels": [
+        "ML"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaLB_F",
+      "label": "megapound force",
+      "notation": "Mlbf",
+      "definition": "Megapound force (Mlbf) is a multiple of the unit pound force (lbf), a unit of force used in some systems of measurement, including English Engineering units and the foot–pound–second system. 1 Mlbf is equivalent to 1 000 000 lbf."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaPA",
+      "label": "megapascal",
+      "notation": "MPa",
+      "definition": "The megapascal (MPa) is a multiple of the pascal (Pa), the International System of Units (SI) unit of pressure. 1 MPa equals 1 000 000 or 10⁶ pascals. Also defined as 1 000 000-fold of the derived unit pascal."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM",
+      "label": "microgram",
+      "notation": "µg",
+      "definition": "Microgram (μg) is a unit of mass equal to one-millionth of 1 g or 10⁻⁶ g. Also defined as 0.000000001-fold of the International System of Units (SI) base unit kilogram.",
+      "altLabels": [
+        "UG",
+        "U_G",
+        "micrograms"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM-PER-GM",
+      "label": "micrograms per gram",
+      "notation": "µg/g",
+      "definition": "A measure of concentration. The number of micrograms (μg) of a material of interest within the mass of 1 g of total material. Also defined as one part per 10⁶ (million) by mass of the measurand in the matrix.",
+      "altLabels": [
+        "Microgrammes Per Gram",
+        "UG/G",
+        "µg_g"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM-PER-KiloGM",
+      "label": "microgram per kilogram",
+      "notation": "µg/kg",
+      "definition": "A measure of concentration. The number of micrograms (μg) of a material of interest within the mass of 1 kg of total material. Also defined as mass ratio of 0.000000001-fold of the International System of Units (SI) base unit kilogram divided by the SI base unit kilogram.",
+      "altLabels": [
+        "Microgrammes Per Kilogram",
+        "UG/KG",
+        "µg_kg"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM-PER-L",
+      "label": "microgram per litre",
+      "notation": "µg/l",
+      "definition": "A measure of concentration. The number of micrograms (μg) of a material of interest within the volume of one litre (l) of total material. Also defined as 0.000000001-fold of the International System of Units (SI) base unit kilogram divided by the unit litre.",
+      "altLabels": [
+        "Microgrammes Per Litre",
+        "UG/L",
+        "ug/l",
+        "ugm/L",
+        "µg_l",
+        "μg/L",
+        "μg·L⁻¹"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroM",
+      "label": "micrometre",
+      "notation": "µm",
+      "definition": "The micrometre (μm), also commonly known by the non-International System of Units (SI) term micron, is a unit of length in the SI equalling 1×10⁻⁶ metre; that is, one millionth of a metre (or one thousandth of a millimetre, 0.001 mm, or about 0.00004 in).",
+      "altLabels": [
+        "UMTRE",
+        "micrometres",
+        "micron",
+        "um",
+        "umtre"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroS",
+      "label": "microsiemens",
+      "notation": "µS",
+      "definition": "Microsiemens (μS) is a unit of electrical conductance, susceptance and admittance equal to one-millionth of a siemens or 10⁻⁶ siemens. Also defined as 0.000001-fold of the International System of Units (SI) derived unit siemens."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroS-PER-CentiM",
+      "label": "microsiemens per centimetre",
+      "notation": "µS/cm",
+      "definition": "A measure of conductivity. The number of microsiemens divided by the number of centimetres. Also defined as 0.000001-fold of the International System of Units (SI) derived unit Siemens divided by the 0.01-fold of the SI base unit metre.",
+      "altLabels": [
+        "SI",
+        "µS_cm"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroS-PER-M",
+      "label": "microsiemens per metre",
+      "notation": "µS/m",
+      "definition": "A measure of conductivity. The number of microsiemens divided by the number of metres. Also defined as 0.000001-fold of the International System of Units (SI) derived unit Siemens divided by the SI base unit metre.",
+      "altLabels": [
+        "µS_m"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroSV",
+      "label": "microsievert",
+      "notation": "µSv",
+      "definition": "The microsievert is a measure of dose equivalent for ionizing radiation, equal to one-millionth of one sievert or 10⁻⁶ sievert."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGAL",
+      "label": "milligal",
+      "notation": "mGal",
+      "definition": "0.001-fold of the unit of acceleration called Gal according to the Centimetre–Gram–Second (CGS) system of units."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGM",
+      "label": "milligram",
+      "notation": "mg",
+      "definition": "Milligram (mg) is a unit of mass equal to one-thousandth of one gram or 10⁻³ grams. Also defined as 0.000001-fold of the International System of Units (SI) base unit kilogram."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGM-PER-GM",
+      "label": "milligrams per gram",
+      "notation": "mg/g",
+      "definition": "A measure of concentration. The number of milligrams of material of interest per gram of total material in a sample. Also defined as the 0.000001-fold of the International System of Units (SI) base unit kilogram divided by the 0.001-fold of the SI base unit kilogram.",
+      "altLabels": [
+        "mg_g"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGM-PER-L",
+      "label": "milligram per litre",
+      "notation": "mg/l",
+      "definition": "A measure of concentration. The number of milligrams (mg) of a material of interest within the volume of one litre (l) of total material. Also defined as 0.000001-fold of the International System of Units (SI) base unit kilogram divided by the unit litre.",
+      "altLabels": [
+        "MG_L",
+        "Milligrams/litre",
+        "mg/L",
+        "mg_l"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliL",
+      "label": "millilitre",
+      "notation": "ml",
+      "definition": "The Centimetre–Gram–Second (CGS) system unit of volume, equal to 10⁻⁶ cubic metre, 10⁻³ litre, or about 0.0610237 in³. Also defined as 0.001-fold of the unit litre.",
+      "altLabels": [
+        "ML",
+        "mL"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliM",
+      "label": "millimetre",
+      "notation": "mm",
+      "definition": "The millimetre (mm) is a unit of length in the metric system, equal to one thousandth of a metre, which is the International System of Units (SI) base unit of length. It is equal to 1000 µm or 1 000 000 nm. A millimetre is equal to exactly  5/127 (approximately 0.039370) of an inch.",
+      "altLabels": [
+        "MM",
+        "MMTR",
+        "millimet",
+        "millimeter",
+        "millimeters",
+        "millimetres",
+        "mmtr"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliM2",
+      "label": "square millimetre",
+      "notation": "mm²",
+      "definition": "A unit of area equal to that of a square of sides 1 mm.",
+      "altLabels": [
+        "MM2",
+        "square millimeter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliM3",
+      "label": "cubic millimetre",
+      "notation": "mm³",
+      "definition": "A metric measure of volume or capacity equal to a cube 1 mm on each edge.",
+      "altLabels": [
+        "MM3"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliRAD",
+      "label": "milliradian",
+      "notation": "mrad",
+      "definition": "A milliradian is a unit of angular measure, equivalent to one-thousandth of one radian, or 10⁻³ radians."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliS",
+      "label": "millisiemens",
+      "notation": "mS",
+      "definition": "Millisiemens (mS) is a unit of electrical conductance, susceptance and admittance equal to one-thousandth of a siemens or 10⁻³ siemens. Also defined as 0.001-fold of the International System of Units (SI) derived unit siemens."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliSEC",
+      "label": "millisecond",
+      "notation": "ms",
+      "definition": "Millisecond (ms) is an imperial unit for time, equivalent to one-thousandth of one second, or 10⁻³ seconds."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliW-PER-M2",
+      "label": "milliwatt per square metre",
+      "notation": "mW/m²",
+      "definition": "A measure of the rate of heat flow, as determined or estimated through an area at or below the Earth's surface (crustal or mantle heat flow). It corresponds to 0.001-fold of the International System of Units (SI) derived unit watt divided by the power of the SI base unit metre with the exponent 2.",
+      "altLabels": [
+        "mW_m²",
+        "mW·m⁻²",
+        "milliwatt per square meter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/N",
+      "label": "newton",
+      "notation": "N",
+      "definition": "The newton (N) is the International System of Units (SI) unit of force. A force of 1 N will accelerate a mass of 1 kg at the rate of 1 m per second per second. The newton is named for Isaac Newton (1642–1727), the British mathematician, physicist, and natural philosopher. He was the first person to understand clearly the relationship between force (F), mass (m), and acceleration (a) expressed by the formula F = m⋅a."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/N-PER-KiloGM",
+      "label": "newton per kilogram",
+      "notation": "N/kg",
+      "definition": "Gravitational field strength at a point is the gravitational force per unit mass at that point. It is a vector and its International System of Units (SI) unit is N/kg.",
+      "altLabels": [
+        "N kg⁻¹"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/N-PER-M",
+      "label": "newton per metre",
+      "notation": "N/m",
+      "definition": "Newton per metre (N/m) is a unit in the category of surface tension. This unit is commonly used in the International System of Units (SI). Newton per metre has a dimension of MT⁻² where M is mass, and T is time. This unit is the standard SI unit in this category.",
+      "altLabels": [
+        "N_m",
+        "Newtons per Metre",
+        "newton/meter",
+        "newton/metre",
+        "newtons per meter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NUM-PER-SEC",
+      "label": "counts per second",
+      "notation": "cps",
+      "definition": "A measurement of ionizing radiation, expressed as a rate of counts per second (CPS), as registered by a radiation monitoring instrument.",
+      "altLabels": [
+        "#/s",
+        "#·s⁻¹",
+        "CPS",
+        "TCS",
+        "c/s",
+        "total count",
+        "total counts per second"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoGM",
+      "label": "nanogram",
+      "notation": "ng",
+      "definition": "A nanogram (ng) is a unit of mass equivalent to 10⁻⁹ grams or one 10⁻¹² of the International System of Units (SI) standard unit of mass (kilogram).",
+      "altLabels": [
+        "NG",
+        "nanograms"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoGM-PER-L",
+      "label": "nanogram per litre",
+      "notation": "ng/l",
+      "definition": "Nanogram per litre (ng/L) is a measurement of mass density, expressed as nanograms divided by number of litres.",
+      "altLabels": [
+        "NGM/L",
+        "Nanograms per liter",
+        "Nanograms per litre",
+        "nanogram per liter",
+        "ng_l",
+        "ngm/L"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoM",
+      "label": "nanometre",
+      "notation": "nm",
+      "definition": "A nanometre (nm) is a unit of length equivalent to one-billionth of one metre or 10⁻⁹ metres. Also defined as 0.000000001-fold of the International System of Units (SI) base unit metre.",
+      "altLabels": [
+        "nanometer"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoSEC",
+      "label": "nanosecond",
+      "notation": "ns",
+      "definition": "A nanosecond is an International System of Units (SI) unit of time equal to one-billionth of one second (10⁻⁹ or 1/1 000 000 000 s). One nanosecond is to one second as one second is to 31.69 years."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoT",
+      "label": "nanotesla",
+      "notation": "nT",
+      "definition": "A measure of flux density (or field intensity) for magnetic fields (also called the magnetic induction). A nanotesla is 0.000000001-fold of the International System of Units (SI) derived unit tesla. A nanotesla is equivalent to one gamma, a unit originally defined as 10⁻⁵ gauss, which is the unit of magnetic field in the Centimetre–Gram–Second (CGS) system.",
+      "altLabels": [
+        "gamma"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OHM",
+      "label": "ohm",
+      "notation": "Ω",
+      "definition": "The ohm (represented by the uppercase Greek letter omega, Ω) is the unit of electrical resistance in the International System of Units (SI). The ohm is defined as an electrical resistance between two points of a conductor when a constant potential difference of one volt (V), applied to these points, produces in the conductor a current of one ampere (A), the conductor not being the seat of any electromotive force. It is named after German physicist Georg Simon Ohm (1789–1854).",
+      "altLabels": [
+        "volt/ampere"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OHM-M",
+      "label": "ohm metre",
+      "notation": "Ω·m",
+      "definition": "The ohm metre is the International System of Units (SI) unit of electrical resistivity (Ω⋅m). It measures the electrical resistance of a material or how strongly it resists electric current.",
+      "altLabels": [
+        "Ohm",
+        "Ohm Meter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OZ",
+      "label": "ounce",
+      "notation": "oz",
+      "definition": "An ounce of mass is 1/16th of a pound of mass or 28.349523125 g, based on the international standard definition of the pound as exactly 0.45359237 kg.",
+      "altLabels": [
+        "Auvoirdupois Ounce",
+        "OZ",
+        "ounces"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OZ-PER-YD3",
+      "label": "ounce (avoirdupois) per cubic yard",
+      "notation": "oz/yd³",
+      "definition": "Unit ounce according to the avoirdupois system of units divided by the power of the unit yard according to the Anglo–American and the imperial system of units with the exponent 3.",
+      "altLabels": [
+        "OZ-PER-YD³",
+        "OZ/YD³",
+        "OZ_YD³"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OZ_TROY",
+      "label": "troy ounce",
+      "notation": "oz{troy}",
+      "definition": "The troy ounce is an obsolete metric used in weighing precious metals. The troy ounce is 1/12th of a troy pound. Based on the international definition of a troy pound as 5760 grains, the troy ounce is exactly 480 grains, or 0.0311034768 kg (or 31.1034768 g).",
+      "altLabels": [
+        "OZ-TR",
+        "oz{troy}",
+        "oz t"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PA",
+      "label": "pascal",
+      "notation": "Pa",
+      "definition": "The International System of Units (SI) unit of pressure. The pascal is the standard pressure unit in the metre–kilogram–second (MKS) metric system, equal to one newton per square metre or one kilogram per metre per second per second. The unit is named for Blaise Pascal (1623–1662), French philosopher and mathematician, who was the first person to use a barometer to measure differences in altitude.",
+      "altLabels": [
+        "N/m²"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PA-PER-SEC",
+      "label": "pascal per second",
+      "notation": "Pa/s",
+      "definition": "A rate of change of pressure measured as the number of pascals in a period of 1 s.",
+      "altLabels": [
+        "Pa_s"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PA-SEC",
+      "label": "pascal second",
+      "notation": "Pa·s",
+      "definition": "The International System of Units (SI) unit of dynamic viscosity, equal to 10 poises or 1000 centipoises."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PERCENT",
+      "label": "percent",
+      "notation": "%",
+      "definition": "Percent is a unit for 'Dimensionless Ratio' expressed as %.",
+      "altLabels": [
+        "parts per hundred",
+        "pc",
+        "pct",
+        "percentage"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PH",
+      "label": "acidity (pH)",
+      "notation": "pH",
+      "definition": "The negative decadic logarithm of the concentration of free protons (or hydronium ions) expressed in 1 mol/L.",
+      "altLabels": [
+        "PH"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/POISE",
+      "label": "poise",
+      "notation": "P",
+      "definition": "Poise (P) is a Centimetre–Gram–Second (CGS) system unit for dynamic viscosity. The SI derived unit for dynamic viscosity is the pascal second (Pa.s); 1 Pa.s is equal to 10 P. It is named after Jean Louis Marie Poiseuille."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPB",
+      "label": "parts per billion",
+      "notation": "ppb",
+      "definition": "Dimensionless unit for concentration. Recommended practice is to use specific units such as µg/l, but note that parts per billion is a common standard for reporting geochemical analyses.",
+      "altLabels": [
+        "PPB"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPM",
+      "label": "parts per million",
+      "notation": "ppm",
+      "definition": "Dimensionless unit for concentration. Recommended practice is to use specific units such as µg/l, but note that parts per million is a standard for reporting geochemical analyses. In mining, it is also equivalent to one gram per metric ton, expressed as g/t.",
+      "altLabels": [
+        "PPM",
+        "g/t"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPTH",
+      "label": "parts per thousand",
+      "notation": "ppth",
+      "definition": "Dimensionless unit for concentration. Recommended practice is to use specific units such as µg/l, but note that parts per thousand is a common standard for reporting geochemical analyses. Often referred to as per mille (‰) when reporting the results of isotope analyses.",
+      "altLabels": [
+        "PPTH",
+        "per mil",
+        "per mill",
+        "per mille",
+        "permil",
+        "permill",
+        "permille",
+        "‰"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPTR",
+      "label": "parts per trillion",
+      "notation": "pptr",
+      "definition": "Dimensionless unit for concentration. Recommended practice is to use specific units such as µg/l, but note that parts per trillion is a common standard for reporting geochemical analyses.",
+      "altLabels": [
+        "PPT",
+        "ppt"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PSI",
+      "label": "pound per square inch",
+      "notation": "psi",
+      "definition": "Pounds of force per square inch, the unit for pressure as a compounded unit pound-force according to the Anglo–American system of units divided by the power of the unit inch according to the Anglo–American and imperial system of units by exponent 2.",
+      "altLabels": [
+        "pounds per square inch"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PetaBYTE",
+      "label": "petabyte",
+      "notation": "PB",
+      "definition": "A petabyte (PB) is a unit of information equal to one quadrillion bytes, or 10²⁴ TB. The prefix peta (P) indicates the fifth power to 1000: 1 PB = 1 000 000 000 000 000 B, 1 000 000 GB = 1000 TB. The pebibyte (PiB), using a binary prefix, is the corresponding power of 10²⁴, which is more than 12% greater (2⁵⁰ B = 1 125 899 906 842 624 B)."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PetaJ",
+      "label": "petajoule",
+      "notation": "PJ",
+      "definition": "The petajoule (PJ) is equal to one quadrillion (10¹⁵) joules. 210 PJ is about 50 megatons of TNT (trinitrotoluene) which is the amount of energy released by the Tsar Bomba, the largest man-made explosion ever. Also defined as the 1 000 000 000 000 000-fold of the derived International System of Units (SI) unit joule."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/R",
+      "label": "roentgen",
+      "notation": "R",
+      "definition": "Not to be confused with roentgen equivalent man or roentgen equivalent physical. The roentgen (symbol R) is an obsolete unit of measurement for the kerma of X-rays and gamma rays up to 3 MeV."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/RAD",
+      "label": "radian",
+      "notation": "rad",
+      "definition": "The radian is the standard unit of angular measure in the International System of Units (SI), and is used in many areas of mathematics. It describes the plane angle subtended by a circular arc as the length of the arc divided by the radius of the arc. Angles without explicitly specified units are generally assumed to be measured in radians, especially in mathematical writing, and when degrees are meant the symbol degree (°) is used."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/RAD_R",
+      "label": "rad",
+      "notation": "RAD_R",
+      "definition": "The rad is a deprecated unit of absorbed radiation dose, defined as 1 rad = 0.01 Gy = 0.01 J/kg. It was originally defined in CGS units in 1953 as the dose causing 100 ergs of energy to be absorbed by one gram of matter. It has been replaced by the gray in most of the world. A related unit, the roentgen, was formerly used to quantify the number of rad deposited into a target when it was exposed to radiation. The F-factor can used to convert between rad and roentgens. The material absorbing the radiation can be human tissue or silicon microchips or any other medium (for example, air, water, lead shielding, etc.)."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/REM",
+      "label": "rem",
+      "notation": "REM",
+      "definition": "A rem is a deprecated unit used to measure the biological effects of ionizing radiation. The rem is defined as equal to 0.01 sievert, which is the more commonly used unit outside of the United States. Equivalent dose, effective dose and committed dose can all be measured in units of rem. These quantities are products of the absorbed dose in rads and weighting factors. These factors must be selected for each exposure situation; there is no universally applicable conversion constant from rad to rem. A rem is a large dose of radiation, so the millirem (mrem), which is one thousandth of a rem, is often used for the dosages commonly encountered, such as the amount of radiation received from medical x-rays and background sources."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/REV-PER-HR",
+      "label": "revolution per hour",
+      "notation": "rev/h",
+      "definition": "Revolution per hour is a measure of angular velocity expressed as rev/h.",
+      "altLabels": [
+        "rev_h",
+        "revolutions per hour",
+        "rph"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/REV-PER-MIN",
+      "label": "revolution per minute",
+      "notation": "rev/min",
+      "definition": "Revolution per minute is a measure of angular velocity expressed as rev/min.",
+      "altLabels": [
+        "rev_min",
+        "rpm"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/S",
+      "label": "siemens",
+      "notation": "S",
+      "definition": "A siemens (S) is the International System of Units (SI) unit of electric conductance, susceptance and admittance. The most important property of a conductor is the amount of current it will carry when a voltage is applied. Current flow is opposed by resistance in all circuits, and by also by reactance and impedance in alternating current circuits. Conductance, susceptance and admittance are the inverses of resistance, reactance and impedance, respectively. To measure these properties, the siemens is the reciprocal of the ohm (Ω). In other words, the conductance, susceptance or admittance, in siemens, is simply 1 divided by the resistance, reactance or impedance, respectively, in ohms. The unit is named for the German electrical engineer Werner von Siemens (1816–1892)."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/SCM",
+      "label": "standard cubic metre",
+      "notation": "SCM",
+      "definition": "The standard cubic metre (SCM) is a unit representing the amount of gas (such as natural gas) contained in a volume of one cubic metre at reference temperature and pressure conditions. As such, it is a measure of the actual amount of gas, not the volume of the gas. The reference conditions for standard cubic metre are 0 degrees Celsius and 101.325 kilopascals (kPa) of pressure.",
+      "altLabels": [
+        "SCM",
+        "scm",
+        "standard cubic meter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/SEC",
+      "label": "second",
+      "notation": "s",
+      "definition": "The second (s) is the base unit of time in the International System of Units (SI) and is also a unit of time in other systems of measurement.",
+      "altLabels": [
+        "SEC",
+        "sec"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/SV",
+      "label": "sievert",
+      "notation": "Sv",
+      "definition": "A measure of dose equivalent, a computed average measure of the radiation absorbed by a fixed mass of biological tissue, that attempts to account for the different biological damage potential of different types of ionizing radiation. Although the sievert has the same dimensions as the gray (i.e. joules per kilogram), it measures a different quantity. To avoid any risk of confusion between the absorbed dose and the equivalent dose, the corresponding special units, namely the gray instead of the joule per kilogram for absorbed dose and the sievert instead of the joule per kilogram for the dose equivalent, should be used."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/T",
+      "label": "tesla",
+      "notation": "T",
+      "definition": "The International System of Units (SI) unit of flux density (or field intensity) for magnetic fields (also called the magnetic induction). The intensity of a magnetic field can be measured by placing a current-carrying conductor in the field. The magnetic field exerts a force on the conductor, a force which depends on the amount of the current and on the length of the conductor. One tesla (T) is defined as the field intensity generating 1 N of force per ampere of current per metre of conductor. Equivalently, 1 T represents a magnetic flux density of 1 weber (Wb) per square metre of area. A field of 1 T is quite strong: the strongest fields available in laboratories are about 20 T, and the Earth's magnetic flux density, at its surface, is about 50 µT. The tesla, defined in 1958, honours the Serbian–American electrical engineer Nikola Tesla (1856–1943), whose work in electromagnetic induction led to the first practical generators and motors using alternating current."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TOE",
+      "label": "tonne of oil equivalent",
+      "notation": "TOE",
+      "definition": "The tonne of oil equivalent (toe) is a unit of energy: the amount of energy released by burning 1 t of crude oil, approximately 42 GJ (as different crude oils have different calorific values, the exact value of the toe is defined by convention; unfortunately there are several slightly different definitions). The toe is sometimes used for large amounts of energy, as it can be more intuitive to visualise, say, the energy released by burning 1000 t of oil than 42 000 billion joules (the International System of Units [SI] unit of energy).",
+      "altLabels": [
+        "toe"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TONNE-PER-M3",
+      "label": "tonne per cubic metre",
+      "notation": "t/m³",
+      "definition": "A measure of mass density, expressed by the unit tonne divided by the power of the International System of Units (SI) base unit metre with the exponent 3.",
+      "altLabels": [
+        "T/M3",
+        "Tonnes per Cubic Meter",
+        "Tonnes per Cubic Metre",
+        "t/m",
+        "t_m³",
+        "tcm",
+        "tonne per cubic meter"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TON_LONG",
+      "label": "long ton",
+      "notation": "lt",
+      "definition": "Long ton is the name for the unit called the 'ton' in the avoirdupois or imperial system of measurements, as used in the UK and several other Commonwealth countries. 1 lt is equal to 2240 lb (1016 kg), 1.12 times as much as a short ton, or 35 ft³ (0.9911 m³) of salt water with a density of 64 lb/ft³ (1.025 g/ml).",
+      "altLabels": [
+        "Imperial ton",
+        "Long Imperial Ton",
+        "TL",
+        "TON_LONG",
+        "weight ton"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TON_M",
+      "label": "tonne",
+      "notation": "t",
+      "definition": "The tonne (t) is a metric system unit of mass equal to 1000 kg (2204.6 lb). It is a non-International System of Units (SI) unit accepted for use with the SI. To avoid confusion with the ton, it is also known as the metric tonne and metric ton in the US and occasionally in the UK. In SI units and prefixes, the tonne is a megagram (Mg), a rarely used symbol, easily confused with mg, for milligram.",
+      "altLabels": [
+        "T",
+        "TON",
+        "kg/tonne",
+        "metric ton",
+        "metric tonne",
+        "ton",
+        "tonne",
+        "tonnes"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TON_SHORT",
+      "label": "short ton",
+      "notation": "st",
+      "definition": "The short ton (st) is a unit of mass equal to 2000 lb (907.18474 kg). In the US it is often called simply ton without distinguishing it from the metric ton (tonne, 1000 kg / 2204.62262 lb) or the long ton (2240 lb / 1016.0469088 kg); rather, the other two are specifically noted. There are, however, some US applications for which unspecified tons normally means long tons.",
+      "altLabels": [
+        "Short Imperial Ton",
+        "TON_SHORT",
+        "TS",
+        "ton{short}"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TeraBYTE",
+      "label": "terabyte",
+      "notation": "TB",
+      "definition": "The terabyte (TB) is a multiple of the unit byte for digital information. The prefix tera means 10¹² in the International System of Units (SI), and therefore 1 TB is 1 000 000 000 000 B (1 trillion bytes) or 1000 GB. 1 TB in binary prefixes is 0.9095 tebibytes, or 931.32 gibibytes. The unit symbol for the terabyte is TB or TByte, but not Tb (lowercase b) which refers to terabit.",
+      "altLabels": [
+        "Tbyte"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TeraJ",
+      "label": "terajoule",
+      "notation": "TJ",
+      "definition": "The terajoule is a multiple of the unit joule, the unit of energy in the International System of Units (SI), equivalent to 1 000 000 000 000 or 10¹² J. Also defined as 1 000 000 000 000-fold of the SI derived unit joule."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/UNITLESS",
+      "label": "unitless",
+      "notation": "unitless",
+      "definition": "An explicit unit to describe a value with no units."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/W",
+      "label": "watt",
+      "notation": "W",
+      "definition": "The International System of Units (SI) unit of power. Power is the rate at which work is done, or (equivalently) the rate at which energy is expended. One watt (W) is equal to a power rate of 1 J of work per second of time. This unit is used both in mechanics and in electricity, so it links the mechanical and electrical units to one another. In mechanical terms, one watt equals about 0.001 341 02 horsepower (hp) or 0.737 562 foot-pound per second. In electrical terms, 1 W is the power produced by a current of 1 A flowing through an electric potential of 1 V. The name of the unit honours James Watt (1736–1819), the British engineer whose improvements to the steam engine are often credited with igniting the Industrial Revolution."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/WK",
+      "label": "week",
+      "notation": "wk",
+      "definition": "Mean solar week. A week is a unit of time equal to seven days. It is the standard time period used for short cycles of days in most parts of the world."
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/YD",
+      "label": "yard",
+      "notation": "yd",
+      "definition": "A yard (yd) is a unit of length in several different systems including US customary units, imperial units and the former English units. It is equal to 3 ft or 36 in. Under an agreement in 1959 between Australia, Canada, New Zealand, South Africa, the UK and the US, the yard (known as the 'international yard' in the US) was legally defined to be exactly 0.9144 m.",
+      "altLabels": [
+        "US yard",
+        "imperial yard",
+        "international yard",
+        "yd"
+      ]
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/YR",
+      "label": "year",
+      "notation": "yr",
+      "definition": "A year is any of the various periods equated with one passage of Earth about the Sun, and hence of roughly 365 days. The familiar calendar has a mixture of 365- and 366-day years, reflecting the fact that the time for one complete passage takes about 365¼ days; the precise value for this figure depends on the manner of defining the year.",
+      "altLabels": [
+        "a",
+        "anni",
+        "annus"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/100TON_M",
+      "label": "hectotonne",
+      "notation": "ht",
+      "definition": "A metric system unit of mass equal to 100 times the metric tonne.",
+      "altLabels": [
+        "100 t",
+        "100 tonnes",
+        "10² t",
+        "hundred tonnes"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/API",
+      "label": "API",
+      "notation": "API",
+      "definition": "The unit of radioactivity used for natural gamma ray logs. This unit is based on an artificially radioactive concrete block located at the University of Houston (Texas, US), that is defined to have a radioactivity of 200 American Petroleum Institute (API) units.",
+      "altLabels": [
+        "API Units"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/BANK_M3",
+      "label": "bank cubic metres",
+      "notation": "BCM",
+      "definition": "A measure of volume used in the mining industry to indicate an in situ volume of material, frequently used in mining contracts to indicate the amount of material to be moved",
+      "altLabels": [
+        "bcm"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/BBL_US",
+      "label": "barrel (US)",
+      "notation": "bbl (US)",
+      "definition": "The unit of volume for crude oil according to the Anglo-American system of units. One barrel is exactly 42 gal (US) and is easily converted to any other unit of volume. As the US gallon since 1893 is defined as 3.785411784 litres, a volume of one barrel is exactly 158.987294928 litres.",
+      "altLabels": [
+        "bblUS{petroleum}"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/BBL_US_d",
+      "label": "barrel (US) per day",
+      "notation": "bbl/d (US)",
+      "definition": "A measure of oil output, represented by the number of barrels (US petroleum) of crude oil (according to the Anglo-American system of units) produced in a single day.",
+      "altLabels": [
+        "[bbl_us]/d",
+        "[bbl_us]·d⁻¹",
+        "bblUS{petroleum}/day",
+        "bbl_d (US)"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/Bq-PER-GM",
+      "label": "becquerel per gram",
+      "notation": "Bq/g",
+      "definition": "A unit of specific radioactivity (massic activity) equal to the activity of one becquerel of a sample with a total mass of one gram.",
+      "altLabels": [
+        "becquerel/gram",
+        "becquerels per gram"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-100-TON_M",
+      "label": "carat per 100 tonnes",
+      "notation": "ct/100t",
+      "definition": "Carat per 100 tonnes is a derived unit of density, defined by mass in carats divided by mass in 100 t.",
+      "altLabels": [
+        "CPHT",
+        "carat/100 tonnes",
+        "ct_100t"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-STONE",
+      "label": "carat per stone",
+      "notation": "ct/st{UK}",
+      "definition": "Carat per stone is a derived unit of density, defined by mass in carats divided by mass in stones.",
+      "altLabels": [
+        "carat/stone",
+        "carats per stone",
+        "carats/stone"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-TON_M",
+      "label": "carat per tonne",
+      "notation": "ct/t",
+      "definition": "Carat per tonne is a derived unit of density, defined by mass in carats divided by mass in tonnes.",
+      "altLabels": [
+        "CARAT/T",
+        "Metric Carats Per Metric Tonne",
+        "carat/tonne",
+        "ct_t"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-GigaPA",
+      "label": "degrees Celsius per gigapascal",
+      "notation": "°C/GPa",
+      "definition": "Degrees Celsius per gigapascal is a measure of geothermal gradient, expressed as temperature in degrees Celsius (°C) divided by pressure in gigapascal (GPa).",
+      "altLabels": [
+        "°C_GPa"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloBAR",
+      "label": "degrees Celsius per kilobar",
+      "notation": "°C/kbar",
+      "definition": "Degrees Celsius per kilobar is a measure of geothermal gradient, expressed as temperature in degrees Celsius (°C) divided by pressure in kilobars (kbar).",
+      "altLabels": [
+        "°C_kbar"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloM",
+      "label": "degrees Celsius per kilometre",
+      "notation": "°C/km",
+      "definition": "Degrees Celsius per kilometre is a measure of geothermal gradient, expressed as temperature in degrees Celsius (°C) divided by depth in kilometres (km). Use of degree Celsius per kilobar (or per gigapascal) is preferred, as the conversion from pressure to kilometre (depth) requires the rock density to be known.",
+      "altLabels": [
+        "°C_km"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DELTA-DEGREE-TWO-THETA",
+      "label": "delta degrees 2 theta",
+      "notation": "Δ°2θ",
+      "definition": "∆ °2θ is the variation in angle between incident and reflected X-rays during X-Ray diffraction (XRD) analysis. XRD plots provide information on the angles and intensities of refracted beams that allow scientists to construct a 3D model of the crystalline structure of minerals (e.g. illite). The focus of an XRD plot is the main peak. The width of the peak at one half of its height is measured and this angle (recorded with units of ∆ °2θ), can be plotted on a chart with metamorphic zones and facies. More specifically, θ is the angle between incident beam and the crystallographic reflecting plane, and is also equal to the angle between reflected beam and the crystallographic plane; 2θ is the angle between transmitted beam and reflected beam."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_LONG",
+      "label": "penny weight per long ton",
+      "notation": "dwt/ton",
+      "definition": "A measure of concentration. The amount of penny weight of a material of interest within the mass of one long ton of total material.",
+      "altLabels": [
+        "DWT/TL",
+        "Penny weight Per Long Imperial Ton",
+        "Pennyweight Per Long Imperial Ton",
+        "Pennyweight Per Long Ton",
+        "dwt/lt",
+        "dwt_ton"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_SHORT",
+      "label": "penny weight per short ton",
+      "notation": "dwt/st",
+      "definition": "A measure of concentration. The amount of penny weight of a material of interest within the mass of one short ton of total material.",
+      "altLabels": [
+        "DWT/TS",
+        "Penny weight Per Short Imperial Ton",
+        "Pennyweight Per Short Imperial Ton",
+        "Pennyweight Per Short Ton",
+        "dwt/ton{short}",
+        "dwt_st"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-YD3",
+      "label": "penny weight per cubic yard",
+      "notation": "dwt/yd³",
+      "definition": "A measure of density expressed as penny weight divided by cubic yards.",
+      "altLabels": [
+        "DWT/YD³",
+        "Penny weight per cubic imperial yard",
+        "Pennyweight per cubic imperial yard",
+        "dwt_yd³"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/FOZT",
+      "label": "fine ounce",
+      "notation": "f oz{troy}",
+      "definition": "A fine ounce is a troy ounce of pure gold content in a gold bar, computed as fineness multiplied by gross weight.",
+      "altLabels": [
+        "OZ-FN"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/FT3-PER-TON_SHORT",
+      "label": "cubic feet per short ton",
+      "notation": "ft³/ton{short}",
+      "definition": "A measure of concentration. The number of cubic feet of a fluid contained within 1 st of host material.",
+      "altLabels": [
+        "ft³_ton{short}"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/GM-PER-TON_SHORT",
+      "label": "gram per short ton",
+      "notation": "g/ton{short}",
+      "definition": "A measure of concentration. The number of grams of a material of interest within the mass of one short ton of total material.",
+      "altLabels": [
+        "G/T",
+        "g_ton{short}"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/GigaL",
+      "label": "gigalitre",
+      "notation": "Gl",
+      "definition": "The gigalitre (Gl) is a multiple of the unit litre (l), a non-International System of Units (SI) metric system unit of volume, equivalent to one billion or 10⁹ litres. Also defined as 1 000 000 000-fold of the unit litre.",
+      "altLabels": [
+        "Gl"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/GigaYR",
+      "label": "billions of years",
+      "notation": "Ga",
+      "definition": "The number of years divided by one billion. Commonly used in disciplines that describe events over long periods, such as astronomy and geology.",
+      "altLabels": [
+        "Giga-anni",
+        "Gyr"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloCARAT",
+      "label": "thousand carats",
+      "notation": "kct",
+      "definition": "A multiple of the unit carat (ct). Equal to 1000 carats or 10³ carats, and with a mass of 200 g."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloFT2",
+      "label": "thousand cubic feet",
+      "notation": "kft3",
+      "definition": "Thousand cubic feet is a unit of volume, used in the US and the UK. It is defined as the volume of a cube with sides of 1000 ft in length."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloGM-PER-TON_M",
+      "label": "kilogram per tonne",
+      "notation": "kg/t",
+      "definition": "A measure of concentration. The number of kilograms of a material of interest within the mass of 1 t of total material.",
+      "altLabels": [
+        "KG/T",
+        "kg_t"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloM2",
+      "label": "square kilometre",
+      "notation": "km²",
+      "definition": "A unit of area equal to that of a square of sides 1 km.",
+      "altLabels": [
+        "KM2",
+        "square kilometer"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloM3",
+      "label": "thousand cubic metres",
+      "notation": "TCM",
+      "definition": "Thousand cubic metres is a unit of volume, defined as the volume of a cube with sides of 1000 m in length.",
+      "altLabels": [
+        "thousand cubic meters"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloYR",
+      "label": "thousands of years",
+      "notation": "Ka",
+      "definition": "The number of years divided by 1000. Commonly used in disciplines that describe events over long periods, such as astronomy and geology.",
+      "altLabels": [
+        "Kilo-anni",
+        "Kyr"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/LAMBDA",
+      "label": "longitude degree",
+      "notation": "λ",
+      "definition": "Longitude degrees are the units of measurement for the angular distance of a place east or west of the International Reference Meridian (IRM, or prime meridian), a specially designated imaginary north–south line that passes through both geographic poles and Greenwich, London. The prime meridian defines 0° longitude. Longitude is measured in degrees, minutes and seconds or in decimal degrees, and corresponds to the amount of arc created by drawing first a line from Earth’s centre to the intersection of the Equator and the prime meridian and then another line from Earth’s centre to any point elsewhere on the Equator. Longitude is measured 180° both east and west of the prime meridian. Longitude angles are usually denoted by the Greek lowercase letter lambda (λ), One degree of latitude covers about 111 km (69 mi) and can be further divided into 60 minutes and 60 seconds. The distance per degree of longitude at the Equator is about 111.32 km (69.18 mi) and at the poles, 0.",
+      "altLabels": [
+        "lambda"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/M3-PER-TON",
+      "label": "cubic metres per tonne",
+      "notation": "m³/t",
+      "definition": "A measure of concentration. The number of cubic metres of a fluid contained within one tonne of host material. Cubic metres per tonne (m³/t) is a unit of measurement used to express the density or specific volume of a substance. It represents the volume of a substance in cubic metres (m³) per metric tonne (1000 kilograms) of that substance. It is commonly used in various fields, including chemistry, engineering and materials science, to quantify how much space or volume a substance occupies in relation to its weight or mass.",
+      "altLabels": [
+        "m³_t"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MegaCARAT",
+      "label": "million carats",
+      "notation": "Mct",
+      "definition": "A multiple of the unit carat (ct). Equal to 1 000 000 (or 10⁶) carats, and with a mass of 200 kg."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MegaTON_LONG",
+      "label": "million long tons",
+      "notation": "Mlt",
+      "definition": "A measure of mass equivalent to 1 000 000 lt (weight ton or imperial ton).",
+      "altLabels": [
+        "Mt_LONG",
+        "Mt{long}",
+        "million imperial tons",
+        "million weight tons"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MicroGAL",
+      "label": "microgal",
+      "notation": "µgal",
+      "definition": "Microgal (μGal) is a unit of acceleration equal to one-millionth of one Gal or 10⁻⁶ Gals."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MicroM-PER-SEC2",
+      "label": "micrometre per square second",
+      "notation": "µm/s²",
+      "definition": "The micrometre per square second (µm/s²) is a unit of acceleration and is often called the 'gravity unit'. As acceleration, the unit is interpreted physically as change in velocity or speed per time interval, that is, micrometre per second per second.",
+      "altLabels": [
+        "g.u.",
+        "gravity unit",
+        "gu",
+        "micrometre per second squared",
+        "µm/s²",
+        "µms⁻²"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MicroW-PER-M3",
+      "label": "microwatt for cubic metre",
+      "notation": "µW/m³",
+      "definition": "A volumetric measure of the rate of radiogenic heat production, corresponding to 0.000001-fold of the International System of Units (SI) derived unit watt divided by the power of the SI base unit metre with the exponent 3.",
+      "altLabels": [
+        "microwatt per cubic meter",
+        "µW/m³",
+        "µW_m³",
+        "µW·m⁻³"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MilliJ-PER-KiloGM",
+      "label": "millijoules per kilogram",
+      "notation": "mJ/kg",
+      "definition": "The amount of energy produced by the complete combustion of a material or fuel. Measured in millijoules per kilogram (mJ/kg). Also defined as 0.000001-fold of the International System of Units (SI) base unit joule divided by the unit kilogram.",
+      "altLabels": [
+        "MJ_KG",
+        "MJ_per_kg",
+        "mJ_kg"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/NanoGY-PER-H",
+      "label": "nanogray per hour",
+      "notation": "nGy/h",
+      "definition": "A measure of radiation dose, expressed as nanograys per hour. The gray (Gy) is an International System of Units (SI) unit for the measurement of radiation exposure, equivalent to the energy 'deposited' in a kilogram of a substance by the radiation. Exposure is also referred to as absorbed dose. The important concept is that exposure is measured by what radiation does to substances, not anything particular about the radiation itself. The gray is a large unit and for normal radiation protection levels a series of prefixes are used: nanogray (nGy) is one billionth of a gray (1/1 000 000 000), microgray (µGy) is one millionth of a gray (1/1 000 000), milligray (mGy) is one thousandth of a gray (1/1000).",
+      "altLabels": [
+        "DU (nGy/h)",
+        "absorbed dose units",
+        "dose rate",
+        "dose units",
+        "nGy_h"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_LONG",
+      "label": "troy ounce per long ton",
+      "notation": "oz{troy}/ton",
+      "definition": "A measure of concentration. The number of troy ounces of a material of interest within the mass of 1 lt of total material.",
+      "altLabels": [
+        "OZ-TR/TL",
+        "Troy Ounce Per Long Imperial Ton",
+        "oz{troy}_ton",
+        "oz t/ton"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_SHORT",
+      "label": "troy ounce per short ton",
+      "notation": "oz{troy}/st",
+      "definition": "A measure of concentration. The number of troy ounces of a material of interest within the mass of 1 st of total material.",
+      "altLabels": [
+        "OZ-TR/TS",
+        "Troy Ounce Per Short Imperial Ton",
+        "oz{troy}_st",
+        "oz t/st"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/PER-CentiM",
+      "label": "reciprocal centimetre",
+      "notation": "cm⁻¹",
+      "definition": "Reciprocal of the 0.01-fold of the International System of Units (SI) base unit metre. It is used to measure wavenumber in spectroscopy and most chemistry fields, and is defined as the number of wavelengths per unit distance, typically centimetres (cm⁻¹).",
+      "altLabels": [
+        "/cm",
+        "reciprocal centimeter"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/PHI",
+      "label": "latitude degree",
+      "notation": "ϕ",
+      "definition": "Latitude degrees are the units of measurement for the angular distance of a place north or south of the earth's equator. Lines of constant latitude run east and west, parallel to the equator, and range from 0 degrees at the equator to 90 degrees at the North or South poles. There are different kinds of latitude — geocentric, astronomical, and geographic (or geodetic) — but there are only minor differences between them. In most common references, geodetic latitude is implied. Geodetic latitude is the arc subtended by the equatorial plane and the normal line that can be drawn at a given point on Earth’s surface. It is measured in degrees, minutes and seconds or decimal degrees, north or south of the equator. Geodetic latitude angles are usually denoted by the Greek lowercase letter phi (ϕ or φ), with uppercase N or S to indicate whether the location is in the Northern or Southern hemisphere. One degree of latitude covers about 111 km (69 mi) and can be further divided into 60 minutes and 60 seconds.",
+      "altLabels": [
+        "phi"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/SCM-PER-DAY",
+      "label": "standard cubic metre per day",
+      "notation": "SCM/d",
+      "definition": "The standard cubic metre per day (SCMD or SM³/d) is the molar flow rate of a gas (such as natural gas) contained in a volume of one cubic metre at reference temperature and pressure conditions. As such, it is a measure of the actual amount of gas, not the volume of the gas. The reference conditions for standard cubic metre per minute are 0 degrees Celsius and 101.325 kilopascals (kPa) of pressure.",
+      "altLabels": [
+        "SCMD",
+        "Sm3/d"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/eV",
+      "label": "electron volt",
+      "notation": "eV",
+      "definition": "An electron volt is the measure of an amount of kinetic energy gained by a single electron accelerating from rest through an electric potential difference of one volt in vacuum. When used as a unit of energy, the numerical value of 1 eV in joules (symbol J) is equivalent to the numerical value of the charge of an electron in coulombs (symbol C). Under the 2019 redefinition of the International System of Units (SI) base units, this sets 1 eV equal to the exact value 1.602176634×10⁻¹⁹ J.",
+      "altLabels": [
+        "electron-volt",
+        "electronvolt"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/eotvos",
+      "label": "eotvos",
+      "notation": "E",
+      "definition": "The eotvos is a unit of acceleration divided by distance and is used as a measurement of gravity gradient, being 1 nm/s²/m and equivalent to a gradient of 1 mGal over 10 km. The eotvos was used in conjunction with the older Centimetre–Gram–Second (CGS) system of units and is defined as 10⁻⁹ galileos per centimetre. The symbol of the eotvos unit is E.",
+      "altLabels": [
+        "Eö",
+        "Eötvos"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/millisecond-per-centimetre",
+      "label": "millisecond per centimetre",
+      "notation": "ms/cm",
+      "definition": "A measure of conductivity. Expressed as time in milliseconds divided by distance in centimetres.",
+      "altLabels": [
+        "MS/CM",
+        "millisecond per centimeter",
+        "ms_cm"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/not-applicable",
+      "label": "not applicable",
+      "notation": "N/A",
+      "definition": "Reserved for all those instances where results of qualitative nature are submitted in conjunction with quantitative results, e.g. as part of statutory requirements. For example, non-numeric results used to indicate if a soil sample fizzed when tested with acid, records of colour or other physical properties."
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/unknown",
+      "label": "unknown",
+      "definition": "The unit for a given value is unknown.",
+      "altLabels": [
+        "N/A",
+        "N_A",
+        "UNKN",
+        "na",
+        "none",
+        "unkn",
+        "unknown"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "http://qudt.org/vocab/unit/PH",
+      "label": "acidity (pH)",
+      "notation": "pH",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ANGSTROM",
+      "label": "ångström",
+      "notation": "Å",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/API",
+      "label": "API",
+      "notation": "API",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ARCMIN",
+      "label": "arcminute",
+      "notation": "'",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ARCSEC",
+      "label": "arcsecond",
+      "notation": "\"",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/AU",
+      "label": "astronomical unit",
+      "notation": "AU",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/iso-4217-currencies/aud",
+      "label": "Australian dollar",
+      "notation": "AUD",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/BANK_M3",
+      "label": "bank cubic metres",
+      "notation": "BCM",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BAR",
+      "label": "bar",
+      "notation": "bar",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BBL",
+      "label": "barrel",
+      "notation": "bbl",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/BBL_US",
+      "label": "barrel (US)",
+      "notation": "bbl (US)",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/BBL_US_d",
+      "label": "barrel (US) per day",
+      "notation": "bbl/d (US)",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BOE",
+      "label": "barrel of oil equivalent",
+      "notation": "BOE",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BBLOE",
+      "label": "barrel of oil equivalent per megalitre",
+      "notation": "BOE/Ml",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BQ",
+      "label": "becquerel",
+      "notation": "Bq",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/Bq-PER-GM",
+      "label": "becquerel per gram",
+      "notation": "Bq/g",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GigaM3",
+      "label": "billion cubic metres",
+      "notation": "Gm3",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/GigaYR",
+      "label": "billions of years",
+      "notation": "Ga",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BIT",
+      "label": "bit",
+      "notation": "b",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BTU_IT",
+      "label": "British thermal unit (international definition)",
+      "notation": "BTU{IT}",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BTU_IT-PER-LB",
+      "label": "British thermal unit per imperial pound",
+      "notation": "BTU{IT}/lb",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BTU-PER-MegaL",
+      "label": "British thermal unit per megalitre",
+      "notation": "BTU/Ml",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BWOC",
+      "label": "by weight of cement",
+      "notation": "%w/c",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BWOW",
+      "label": "by weight of water",
+      "notation": "%w/w",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/BYTE",
+      "label": "byte",
+      "notation": "B",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CARAT",
+      "label": "carat",
+      "notation": "ct",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-100-TON_M",
+      "label": "carat per 100 tonnes",
+      "notation": "ct/100t",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/CARAT-PER-M3",
+      "label": "carat per cubic metre",
+      "notation": "ct/m³",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-STONE",
+      "label": "carat per stone",
+      "notation": "ct/st{UK}",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/CARAT-PER-TON_M",
+      "label": "carat per tonne",
+      "notation": "ct/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiM",
+      "label": "centimetre",
+      "notation": "cm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiPOISE",
+      "label": "centipoise",
+      "notation": "cP",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CH",
+      "label": "chain",
+      "notation": "ch",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/COUNT",
+      "label": "count",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NUM-PER-SEC",
+      "label": "counts per second",
+      "notation": "cps",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiM3",
+      "label": "cubic centimetre",
+      "notation": "cm³",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/CentiM3-PER-GM",
+      "label": "cubic centimetres per gram",
+      "notation": "cm³/g",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/CentiM3-PER-TON_M",
+      "label": "cubic centimetres per tonne",
+      "notation": "cm³/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DeciM3",
+      "label": "cubic decimetre",
+      "notation": "dm³",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/FT3-PER-TON_SHORT",
+      "label": "cubic feet per short ton",
+      "notation": "ft³/ton{short}",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/FT3-PER-TON_M",
+      "label": "cubic feet per tonne",
+      "notation": "ft³/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT3",
+      "label": "cubic foot",
+      "notation": "ft³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT3-PER-DAY",
+      "label": "cubic foot per day",
+      "notation": "ft³/d",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT3-PER-HR",
+      "label": "cubic foot per hour",
+      "notation": "ft³/h",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M3",
+      "label": "cubic metre",
+      "notation": "m³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M3-PER-DAY",
+      "label": "cubic metre per day",
+      "notation": "m³/d",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M3-PER-HR",
+      "label": "cubic metre per hour",
+      "notation": "m³/h",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/M3-PER-TON",
+      "label": "cubic metres per tonne",
+      "notation": "m³/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliM3",
+      "label": "cubic millimetre",
+      "notation": "mm³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/Ci",
+      "label": "curie",
+      "notation": "Ci",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/D",
+      "label": "darcy",
+      "notation": "D",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DAY",
+      "label": "day",
+      "notation": "d",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/FRAC",
+      "label": "decimal fraction",
+      "notation": ".",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DeciM",
+      "label": "decimetre",
+      "notation": "dm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DEG",
+      "label": "degree",
+      "notation": "°",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DEG_C",
+      "label": "degree Celsius",
+      "notation": "°C",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DEG_F",
+      "label": "degree Fahrenheit",
+      "notation": "°F",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-GigaPA",
+      "label": "degrees Celsius per gigapascal",
+      "notation": "°C/GPa",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloBAR",
+      "label": "degrees Celsius per kilobar",
+      "notation": "°C/kbar",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DEG_C-PER-KiloM",
+      "label": "degrees Celsius per kilometre",
+      "notation": "°C/km",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-F",
+      "label": "degrees per foot",
+      "notation": "°/ft",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-100F",
+      "label": "degrees per hundred feet",
+      "notation": "°/100 ft",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-M",
+      "label": "degrees per metre",
+      "notation": "°/m",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DEG-PER-30M",
+      "label": "degrees per thirty metres",
+      "notation": "°/30 m",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DELTA-DEGREE-TWO-THETA",
+      "label": "delta degrees 2 theta",
+      "notation": "Δ°2θ",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DD-PER-MIN",
+      "label": "dial divisions per minute",
+      "notation": "ddm",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/eV",
+      "label": "electron volt",
+      "notation": "eV",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/eotvos",
+      "label": "eotvos",
+      "notation": "E",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/ExaBYTE",
+      "label": "exabyte",
+      "notation": "EB",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/FOZT",
+      "label": "fine ounce",
+      "notation": "f oz{troy}",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT",
+      "label": "foot",
+      "notation": "ft",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT-PER-HR",
+      "label": "foot per hour",
+      "notation": "ft/h",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT-PER-SEC",
+      "label": "foot per second",
+      "notation": "ft/s",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GALILEO",
+      "label": "galileo",
+      "notation": "Gal",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GAL_IMP-PER-50SACK",
+      "label": "gallons per 50 kg sack",
+      "notation": "gal/50 kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/Gamma",
+      "label": "gamma",
+      "notation": "γ",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GAUSS",
+      "label": "gauss",
+      "notation": "Gs",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GigaBYTE",
+      "label": "gigabyte",
+      "notation": "GB",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GigaJ",
+      "label": "gigajoule",
+      "notation": "GJ",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GigaJ-PER-MegaL",
+      "label": "gigajoules per megalitre",
+      "notation": "GJ/Ml",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/GigaL",
+      "label": "gigalitre",
+      "notation": "Gl",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GigaPA",
+      "label": "gigapascal",
+      "notation": "GPa",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GRAD",
+      "label": "grad",
+      "notation": "grad",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GRAIN",
+      "label": "grain",
+      "notation": "gr{UK}",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM",
+      "label": "gram",
+      "notation": "g",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-CentiM3",
+      "label": "gram per cubic centimetre",
+      "notation": "g/cm³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-M3",
+      "label": "gram per cubic metre",
+      "notation": "g/m³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-L",
+      "label": "gram per litre",
+      "notation": "g/l",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/GM-PER-TON_SHORT",
+      "label": "gram per short ton",
+      "notation": "g/ton{short}",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GM-PER-KiloGM",
+      "label": "grams per kilogram",
+      "notation": "g/kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GM-PER-MilliL",
+      "label": "grams per millilitre",
+      "notation": "g/ml",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/GM-PER-TON_M",
+      "label": "grams per tonne",
+      "notation": "g/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GRAY",
+      "label": "gray",
+      "notation": "Gy",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/HA",
+      "label": "hectare",
+      "notation": "ha",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/100TON_M",
+      "label": "hectotonne",
+      "notation": "ht",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/HZ",
+      "label": "hertz",
+      "notation": "Hz",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/HR",
+      "label": "hour",
+      "notation": "h",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/HR-PER-FT",
+      "label": "hours per foot",
+      "notation": "h/ft",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/HR-PER-M",
+      "label": "hours per metre",
+      "notation": "h/m",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/DecaREV-PER-MIN",
+      "label": "hundred revolutions per minute",
+      "notation": "hrpm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GAL_IMP",
+      "label": "imperial gallon",
+      "notation": "gal{Imp}",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MI",
+      "label": "imperial mile",
+      "notation": "mi",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/IN",
+      "label": "inch",
+      "notation": "in",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PER-PA",
+      "label": "inverse pascal",
+      "notation": "1/Pa",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/J",
+      "label": "joule",
+      "notation": "J",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/J-PER-CentiM2",
+      "label": "joule per square centimetre",
+      "notation": "J/cm²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/K",
+      "label": "kelvin",
+      "notation": "K",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloEV",
+      "label": "kilo electron volt",
+      "notation": "keV",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloBAR",
+      "label": "kilobar",
+      "notation": "kbar",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloBYTE",
+      "label": "kilobyte",
+      "notation": "kB",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM",
+      "label": "kilogram",
+      "notation": "kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM-PER-M3",
+      "label": "kilogram per cubic metre",
+      "notation": "kg/m³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM-PER-L",
+      "label": "kilogram per litre",
+      "notation": "kg/l",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloGM-PER-M",
+      "label": "kilogram per metre",
+      "notation": "kg/m",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloGM-PER-TON_M",
+      "label": "kilogram per tonne",
+      "notation": "kg/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloJ",
+      "label": "kilojoule",
+      "notation": "kJ",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloL",
+      "label": "kilolitre",
+      "notation": "kl",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloL-PER-DAY",
+      "label": "kilolitre per day",
+      "notation": "kl/d",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloM",
+      "label": "kilometre",
+      "notation": "km",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloN",
+      "label": "kilonewton",
+      "notation": "kN",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloPA",
+      "label": "kilopascal",
+      "notation": "kPa",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/kiloTON_M",
+      "label": "kilotonne",
+      "notation": "kt",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/PHI",
+      "label": "latitude degree",
+      "notation": "ϕ",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LY",
+      "label": "light year",
+      "notation": "ly",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L",
+      "label": "litre",
+      "notation": "l",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L-PER-DAY",
+      "label": "litre per day",
+      "notation": "l/d",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L-PER-HR",
+      "label": "litre per hour",
+      "notation": "l/h",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/L-PER-MIN",
+      "label": "litre per minute",
+      "notation": "l/min",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/L-PER-50SACK",
+      "label": "litres per 50 kg sack",
+      "notation": "l/50 kg",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/L-PER-TON_M",
+      "label": "litres per tonne",
+      "notation": "l/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TON_LONG",
+      "label": "long ton",
+      "notation": "lt",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/LAMBDA",
+      "label": "longitude degree",
+      "notation": "λ",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaBYTE",
+      "label": "megabyte",
+      "notation": "MB",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaJ",
+      "label": "megajoule",
+      "notation": "MJ",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaL",
+      "label": "megalitre",
+      "notation": "Ml",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaL-PER-DAY",
+      "label": "megalitres per day",
+      "notation": "Ml/d",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaPA",
+      "label": "megapascal",
+      "notation": "MPa",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MegaLB_F",
+      "label": "megapound force",
+      "notation": "Mlbf",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaTON_M",
+      "label": "megatonne",
+      "notation": "Mt",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M",
+      "label": "metre",
+      "notation": "m",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M-PER-HR",
+      "label": "metre per hour",
+      "notation": "m/h",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M-PER-SEC",
+      "label": "metre per second",
+      "notation": "m/s",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M-PER-SEC2",
+      "label": "metre per square second",
+      "notation": "m/s2",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/M2-PER-N",
+      "label": "metre squared per newton",
+      "notation": "m²/N",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliM-PER-SEC",
+      "label": "metres per millisecond",
+      "notation": "m/ms",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MicroGAL",
+      "label": "microgal",
+      "notation": "µgal",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM",
+      "label": "microgram",
+      "notation": "µg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM-PER-KiloGM",
+      "label": "microgram per kilogram",
+      "notation": "µg/kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM-PER-L",
+      "label": "microgram per litre",
+      "notation": "µg/l",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroGM-PER-GM",
+      "label": "micrograms per gram",
+      "notation": "µg/g",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroM",
+      "label": "micrometre",
+      "notation": "µm",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MicroM-PER-SEC2",
+      "label": "micrometre per square second",
+      "notation": "µm/s²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroS",
+      "label": "microsiemens",
+      "notation": "µS",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroS-PER-CentiM",
+      "label": "microsiemens per centimetre",
+      "notation": "µS/cm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroS-PER-M",
+      "label": "microsiemens per metre",
+      "notation": "µS/m",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MicroSV",
+      "label": "microsievert",
+      "notation": "µSv",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MicroW-PER-M3",
+      "label": "microwatt for cubic metre",
+      "notation": "µW/m³",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliD",
+      "label": "millidarcy",
+      "notation": "md",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGAL",
+      "label": "milligal",
+      "notation": "mGal",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGM",
+      "label": "milligram",
+      "notation": "mg",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliGM-PER-KiloGM",
+      "label": "milligram per kilogram",
+      "notation": "mg/kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGM-PER-L",
+      "label": "milligram per litre",
+      "notation": "mg/l",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliGM-PER-GM",
+      "label": "milligrams per gram",
+      "notation": "mg/g",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MilliGM-PER-TON_M",
+      "label": "milligrams per tonne",
+      "notation": "mg/t",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MilliJ-PER-KiloGM",
+      "label": "millijoules per kilogram",
+      "notation": "mJ/kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliL",
+      "label": "millilitre",
+      "notation": "ml",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliM",
+      "label": "millimetre",
+      "notation": "mm",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBOE",
+      "label": "million barrel of oil equivalent",
+      "notation": "MMBOE",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBBLOE",
+      "label": "million barrel of oil equivalent per megalitre",
+      "notation": "MMBOE/Ml",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBBL",
+      "label": "million barrels",
+      "notation": "MMbbl",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBTU",
+      "label": "million British thermal units",
+      "notation": "MMBTU",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaBTU-PER-MegaL",
+      "label": "million British thermal units per megalitre",
+      "notation": "MMBTU/Ml",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MegaCARAT",
+      "label": "million carats",
+      "notation": "Mct",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaFT3",
+      "label": "million cubic feet",
+      "notation": "Mft³",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaF3-PER-DAY",
+      "label": "million cubic feet per day",
+      "notation": "Mft³/d",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MegaM3",
+      "label": "million cubic metres",
+      "notation": "Mm³",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/MegaTON_LONG",
+      "label": "million long tons",
+      "notation": "Mlt",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/MYR",
+      "label": "millions of years",
+      "notation": "Ma",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliRAD",
+      "label": "milliradian",
+      "notation": "mrad",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliSEC",
+      "label": "millisecond",
+      "notation": "ms",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/millisecond-per-centimetre",
+      "label": "millisecond per centimetre",
+      "notation": "ms/cm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliS",
+      "label": "millisiemens",
+      "notation": "mS",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliW-PER-M2",
+      "label": "milliwatt per square metre",
+      "notation": "mW/m²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MIN",
+      "label": "minute",
+      "notation": "min",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MOL",
+      "label": "mole",
+      "notation": "mol",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PERCENT-MOL",
+      "label": "mole percent",
+      "notation": "mol%",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MO",
+      "label": "month",
+      "notation": "mo",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoGM",
+      "label": "nanogram",
+      "notation": "ng",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoGM-PER-L",
+      "label": "nanogram per litre",
+      "notation": "ng/l",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/NanoGY-PER-H",
+      "label": "nanogray per hour",
+      "notation": "nGy/h",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoM",
+      "label": "nanometre",
+      "notation": "nm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoSEC",
+      "label": "nanosecond",
+      "notation": "ns",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/NanoT",
+      "label": "nanotesla",
+      "notation": "nT",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MI_N",
+      "label": "nautical mile",
+      "notation": "nmi",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/N",
+      "label": "newton",
+      "notation": "N",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/N-PER-KiloGM",
+      "label": "newton per kilogram",
+      "notation": "N/kg",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/N-PER-M",
+      "label": "newton per metre",
+      "notation": "N/m",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/not-applicable",
+      "label": "not applicable",
+      "notation": "N/A",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OHM",
+      "label": "ohm",
+      "notation": "Ω",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OHM-M",
+      "label": "ohm metre",
+      "notation": "Ω·m",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OZ",
+      "label": "ounce",
+      "notation": "oz",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OZ-PER-YD3",
+      "label": "ounce (avoirdupois) per cubic yard",
+      "notation": "oz/yd³",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/OZ-PER-TON_LONG",
+      "label": "ounce per ton",
+      "notation": "oz/ton",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/OZ-PER-TON_M",
+      "label": "ounce per tonne",
+      "notation": "oz/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPB",
+      "label": "parts per billion",
+      "notation": "ppb",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPM",
+      "label": "parts per million",
+      "notation": "ppm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPTH",
+      "label": "parts per thousand",
+      "notation": "ppth",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PPTR",
+      "label": "parts per trillion",
+      "notation": "pptr",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PA",
+      "label": "pascal",
+      "notation": "Pa",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PA-PER-SEC",
+      "label": "pascal per second",
+      "notation": "Pa/s",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PA-SEC",
+      "label": "pascal second",
+      "notation": "Pa·s",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/DWT",
+      "label": "penny weight",
+      "notation": "dwt",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-YD3",
+      "label": "penny weight per cubic yard",
+      "notation": "dwt/yd³",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_LONG",
+      "label": "penny weight per long ton",
+      "notation": "dwt/ton",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/DWT-PER-TON_SHORT",
+      "label": "penny weight per short ton",
+      "notation": "dwt/st",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PERCENT",
+      "label": "percent",
+      "notation": "%",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PERCENT-PER-VOL",
+      "label": "percent by volume",
+      "notation": "vol%",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PERCENT-PER-WEIGHT",
+      "label": "percent by weight",
+      "notation": "wt%",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PetaBYTE",
+      "label": "petabyte",
+      "notation": "PB",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PetaJ",
+      "label": "petajoule",
+      "notation": "PJ",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/PetaJ-PER-MegaL",
+      "label": "petajoules per megalitre",
+      "notation": "PJ/Ml",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/POISE",
+      "label": "poise",
+      "notation": "P",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_F",
+      "label": "pound force",
+      "notation": "lbf",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB",
+      "label": "pound mass",
+      "notation": "lbm",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_M-PER-FT3",
+      "label": "pound per cubic foot",
+      "notation": "lb/ft³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_M-PER-FT",
+      "label": "pound per foot",
+      "notation": "lb/ft",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_M-PER-GAL",
+      "label": "pound per gallon",
+      "notation": "lb/gal",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/PSI",
+      "label": "pound per square inch",
+      "notation": "psi",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_F-PER-100FT2",
+      "label": "pounds force per 100 square feet",
+      "notation": "lbf/100 ft²",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_M-PER-100FT2",
+      "label": "pounds per 100 square feet",
+      "notation": "lb/100 ft²",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_M-PER-50SAC",
+      "label": "pounds per 50 kg sack",
+      "notation": "lb/50 kg",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_M-PER-BBL",
+      "label": "pounds per barrel",
+      "notation": "lb/bbl",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/LB_F-PER-IN",
+      "label": "pounds per inch",
+      "notation": "lbf/in",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/RAD_R",
+      "label": "rad",
+      "notation": "RAD_R",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/RAD",
+      "label": "radian",
+      "notation": "rad",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/RATIO",
+      "label": "ratio",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/PER-CentiM",
+      "label": "reciprocal centimetre",
+      "notation": "cm⁻¹",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/REM",
+      "label": "rem",
+      "notation": "REM",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/REV-PER-HR",
+      "label": "revolution per hour",
+      "notation": "rev/h",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/REV-PER-MIN",
+      "label": "revolution per minute",
+      "notation": "rev/min",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/R",
+      "label": "roentgen",
+      "notation": "R",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/SEC",
+      "label": "second",
+      "notation": "s",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TON_SHORT",
+      "label": "short ton",
+      "notation": "st",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/SHOTS-PER-FT",
+      "label": "shots per foot",
+      "notation": "shots/ft",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/SHOTS-PER-M",
+      "label": "shots per metre",
+      "notation": "shots/m",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/S",
+      "label": "siemens",
+      "notation": "S",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/SV",
+      "label": "sievert",
+      "notation": "Sv",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/CentiM2",
+      "label": "square centimetre",
+      "notation": "cm²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/FT2",
+      "label": "square foot",
+      "notation": "ft²",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloM2",
+      "label": "square kilometre",
+      "notation": "km²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/M2",
+      "label": "square metre",
+      "notation": "m²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MI2",
+      "label": "square mile",
+      "notation": "mi²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/MilliM2",
+      "label": "square millimetre",
+      "notation": "mm²",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/ATM",
+      "label": "standard atmosphere",
+      "notation": "atm",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/FT3-PER-TON",
+      "label": "standard cubic feet per ton",
+      "notation": "SCF/t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/SCM",
+      "label": "standard cubic metre",
+      "notation": "SCM",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/SCM-PER-DAY",
+      "label": "standard cubic metre per day",
+      "notation": "SCM/d",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TeraBYTE",
+      "label": "terabyte",
+      "notation": "TB",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TeraJ",
+      "label": "terajoule",
+      "notation": "TJ",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/T",
+      "label": "tesla",
+      "notation": "T",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBBL",
+      "label": "thousand barrels",
+      "notation": "Mbbl",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBBLOE",
+      "label": "thousand barrels of oil equivalent per megalitre",
+      "notation": "MBOE/Ml",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBTU",
+      "label": "thousand British thermal unit",
+      "notation": "MBTU",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloBTU-PER-MegaL",
+      "label": "thousand British thermal units per megalitre",
+      "notation": "MBTU/Ml",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloCARAT",
+      "label": "thousand carats",
+      "notation": "kct",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloFT2",
+      "label": "thousand cubic feet",
+      "notation": "kft3",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloM3",
+      "label": "thousand cubic metres",
+      "notation": "TCM",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloLB_M",
+      "label": "thousand pounds",
+      "notation": "klb",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloLB_F",
+      "label": "thousand pounds force",
+      "notation": "klbf",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/KiloLB_M-PER-IN2",
+      "label": "thousand pounds per square inch",
+      "notation": "kpsi",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/KiloREV-PER-MIN",
+      "label": "thousand revolutions per minute",
+      "notation": "krpm",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/KiloYR",
+      "label": "thousands of years",
+      "notation": "Ka",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TON_M",
+      "label": "tonne",
+      "notation": "t",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TOE",
+      "label": "tonne of oil equivalent",
+      "notation": "TOE",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/TONNE-PER-M3",
+      "label": "tonne per cubic metre",
+      "notation": "t/m³",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/OZ_TROY",
+      "label": "troy ounce",
+      "notation": "oz{troy}",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_LONG",
+      "label": "troy ounce per long ton",
+      "notation": "oz{troy}/ton",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/OZ_TROY-PER-TON_SHORT",
+      "label": "troy ounce per short ton",
+      "notation": "oz{troy}/st",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/LB_T",
+      "label": "troy pound",
+      "notation": "lbt",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/UNITLESS",
+      "label": "unitless",
+      "notation": "unitless",
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/uom-geoscience/unknown",
+      "label": "unknown",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BBL_US-PER-HR",
+      "label": "US barrels per hour",
+      "notation": "bbl/h (US)",
+      "children": []
+    },
+    {
+      "iri": "http://linked.data.gov.au/def/geou/BBL_US-PER-MIN",
+      "label": "US barrels per minute",
+      "notation": "bbl/min (US)",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/GAL_US",
+      "label": "US gallon",
+      "notation": "gal (US)",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/W",
+      "label": "watt",
+      "notation": "W",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/WK",
+      "label": "week",
+      "notation": "wk",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/YD",
+      "label": "yard",
+      "notation": "yd",
+      "children": []
+    },
+    {
+      "iri": "http://qudt.org/vocab/unit/YR",
+      "label": "year",
+      "notation": "yr",
+      "children": []
+    }
+  ]
+}

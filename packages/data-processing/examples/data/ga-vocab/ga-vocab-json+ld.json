@@ -1,0 +1,154 @@
+[
+    {
+        "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://purl.org/dc/terms/identifier": [
+            {
+                "@value": "BoreholesSamplingMethod",
+                "@type": "http://www.w3.org/2001/XMLSchema#token"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. ",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "General Geology - Sampling Method",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/created": [
+            {
+                "@value": "2022-08-09",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/ga"
+            }
+        ],
+        "http://purl.org/dc/terms/modified": [
+            {
+                "@value": "2022-08-09",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/provenance": [
+            {
+                "@value": "Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/ga"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+            {
+                "@id": "https://pid.geoscience.gov.au/dataset/ga/148553"
+            }
+        ],
+        "http://www.w3.org/2002/07/owl#versionInfo": [
+            {
+                "@value": "1"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"
+            },
+            {
+                "@id": "https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#contactPoint": [
+            {
+                "@value": "Team Lead - Information Services; Energy, Minerals and Groundwater Division"
+            }
+        ],
+        "https://schema.org/status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/experimental"
+            }
+        ]
+    }
+]

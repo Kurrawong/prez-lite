@@ -1,0 +1,34 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cs: <http://example.com/vocab/> .
+
+cs: a skos:ConceptScheme ;
+    skos:prefLabel "Multi Concept Vocab"@en .
+
+cs:parent a skos:Concept ;
+    skos:prefLabel "Parent"@en ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: ;
+    skos:narrower cs:child-1 , cs:child-2 .
+
+cs:child-1 a skos:Concept ;
+    skos:prefLabel "Child 1"@en ;
+    skos:altLabel "First child"@en ;
+    skos:inScheme cs: ;
+    skos:broader cs:parent ;
+    skos:narrower cs:grandchild .
+
+cs:child-2 a skos:Concept ;
+    skos:prefLabel "Child 2"@en ;
+    skos:inScheme cs: ;
+    skos:broader cs:parent ;
+    skos:related cs:child-1 .
+
+cs:child-1 skos:related cs:child-2 .
+
+cs:grandchild a skos:Concept ;
+    skos:prefLabel "Grandchild"@en ;
+    skos:inScheme cs: ;
+    skos:broader cs:child-1 .
+
+cs: skos:hasTopConcept cs:parent .

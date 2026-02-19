@@ -1,0 +1,102 @@
+{
+  "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+  "label": "Metamorphic thermal regime style",
+  "description": "Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one).",
+  "concepts": [
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio",
+      "label": "high T/P",
+      "definition": "High geothermal gradient or high apparent thermal gradient metamorphism, characterized by high heat flow. That is, temperature increases more rapidly than average with depth. Defined by apparent thermal gradients between 77.5 and 150 °C/kbar (or 775 and 1500 °C/GPa), and encompassing most of what is traditionally referred to as Barrovian style metamorphism. High thermal gradients encompass the middle and lower pressure range of amphibolite facies as well as the pressure range of typical granulites and ultra-high temperature granulites. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "altLabels": [
+        "Barrovian style metamorphism",
+        "high temperature/pressure",
+        "kyanite to sillimanite series",
+        "ultra-high temperature granulites"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio",
+      "label": "intermediate T/P",
+      "definition": "Intermediate geothermal gradient or intermediate apparent thermal gradient metamorphism, characterized by average heat flow, approximating that of a steady-state geotherm for average thickness continental crust. That is, temperature increases at what is considered a normal rate with depth. Defined by apparent thermal gradients between 37.5 and 77.5°C/kbar (or 375 and 775°C/GPa), and encompassing, at the higher thermal gradient end of the range, the higher pressure part of what is traditionally referred to as Barrovian-style metamorphism. Intermediate thermal gradients encompass the middle and upper pressure range of amphibolite facies as well as high-pressure granulite (transitional to eclogite) facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "altLabels": [
+        "Barrovian style metamorphism",
+        "high pressure metamorphism",
+        "high-pressure amphibolite facies",
+        "high-pressure granulite facies",
+        "intermediate temperature/pressure",
+        "kyanite series"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio",
+      "label": "low T/P",
+      "definition": "Low geothermal gradient or low apparent thermal gradient metamorphism, characterized by low heat flow (i.e. temperature increases more slowly than average with depth). Defined by apparent thermal gradients between 15 and 37.5°C/kbar (or 150 and 375°C/GPa). Low thermal gradients encompass most of the blueschist and eclogite facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "altLabels": [
+        "\"high pressure\" metamorphism",
+        "blueschist facies",
+        "eclogite facies",
+        "low temperature/pressure",
+        "ultra-high pressure metamorphism"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio",
+      "label": "near-surface ultra-high T/P",
+      "definition": "Near-surface ultra-high geothermal gradient or near-surface ultra-high apparent thermal gradient metamorphism, characterized by extremely high heat flow. That is, temperature increases extremely rapidly with depth compared to average. Defined by apparent thermal gradients greater than 250°C/kbar (or 2500°C/GPa). Near-surface ultra-high thermal gradients encompass pyroxene-hornfels and sanidinite facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "altLabels": [
+        "\"low pressure\" metamorphism",
+        "near-surface ultra-high temperature/pressure",
+        "pyroxene hornfels facies",
+        "sanidinite facies"
+      ]
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio",
+      "label": "ultra-high T/P",
+      "definition": "Ultra-high geothermal gradient or ultra-high apparent thermal gradient metamorphism, characterized by very high heat flow. That is, temperature increases much more rapidly than average with depth. Defined by apparent thermal gradients between 150 and 250°C/kbar (or 1500 and 2500°C/GPa), and encompassing most of what is traditionally referred to as Buchan-style metamorphism. Ultra-high thermal gradients encompass low-pressure amphibolite facies (incorporating andalusite stability), low-pressure granulite facies, and rare low-pressure, ultra-high temperature metamorphism. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "altLabels": [
+        "\"low-pressure\" metamorphism",
+        "Buchan style metamorphism",
+        "andalusite series",
+        "high temperature-low pressure metamorphism",
+        "low-pressure",
+        "low-pressure amphibolite facies",
+        "low-pressure granulite facies",
+        "ultra-high temperature metamorphism",
+        "ultra-high temperature/pressure"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio",
+      "label": "high T/P",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio",
+      "label": "intermediate T/P",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio",
+      "label": "low T/P",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio",
+      "label": "near-surface ultra-high T/P",
+      "notation": null,
+      "children": []
+    },
+    {
+      "iri": "https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio",
+      "label": "ultra-high T/P",
+      "notation": null,
+      "children": []
+    }
+  ]
+}

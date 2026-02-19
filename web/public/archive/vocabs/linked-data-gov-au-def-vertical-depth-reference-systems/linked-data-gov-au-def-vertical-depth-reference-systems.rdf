@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:schema="https://schema.org/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum-TAS83">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.icsm.gov.au/australian-height-datum</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">AHD</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">AHD–TAS83</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The &apos;Australian Height Datum (Tasmania) 1983&apos; (AHD–TAS83) zero reference is fixed to mean sea level (MSL) observed for 1972 only at tides gauges in Hobart and Burnie, and was propagated throughout Tasmania on 17 October 1983. Because AHD (mainland) and AHD (Tas) are referenced to MSL observed at different times and locations, there is a vertical offset between the two datums (variably estimated at about 10 cm, between 12 cm and 26 cm, and about 1 cm (https://www.icsm.gov.au/australian-height-datum). Note that the term AHD is used to refer to both the Australian Height Datum 1971 (AHD71; Australian mainland) and Australian Height Datum (Tasmania) 1983 (AHD–TAS83).</skos:definition>
+    <skos:historyNote>Height datum in Tasmania (Australia)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Australian Height Datum (Tasmania) 1983</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The point or level from which heights and depths are measured and referenced to for an entity or activity. Typically these are expressed relative to a common global or regional reference datum such as the Australian Height Datum (AHD) or can be related to local reference systems. Specific emphasis is placed on elevation references used by resource exploration and drilling programs, whereby depths are measured relative to local reference datums or specific parts of a borehole/drilling platform. Concepts in this vocabulary include both reference datums (e.g. mean sea level) and how depths are expressed relative to them (e.g. mean sea level height).</skos:definition>
+    <skos:historyNote xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Derived from [WAPIMS].[dbo].[WellPermanentDatumType], [WAPIMS].[dbo].[BoreholeVerticalReferenceType], and [WAPIMS].[dbo].[WellDepthReferenceType] with additions from the unpublished Geoscience Australia&apos;s Depth Reference Type vocabulary. Also refers to Geological Survey of Queensland&apos;s Depth Reference vocabulary (https://linked.data.gov.au/def/depth-reference), with considerably expanded definitions.</skos:historyNote>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Vertical/depth reference systems</skos:prefLabel>
+    <schema:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</schema:dateCreated>
+    <schema:creator rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <schema:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-06</schema:dateModified>
+    <schema:publisher rdf:resource="https://linked.data.gov.au/org/gswa"/>
+    <owl:versionIRI rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/1"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <http://purl.org/linked-data/registry#status rdf:resource="https://linked.data.gov.au/def/reg-statuses/stable"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum-TAS83"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-vertical-working-surface"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/islw"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/lat"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-systems-drilling"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-unknown"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/mean-sea-level"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/depth-reference/water-bottom"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/reduced-level"/>
+    <skos:hasTopConcept rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/seismic-reference-datum"/>
+    <schema:keywords rdf:resource="https://linked.data.gov.au/def/gswa-vocabulary-themes/geology-mapping"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-vertical-working-surface">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.icsm.gov.au/australian-vertical-working-surface</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.icsm.gov.au/publications/australian-vertical-working-surface-technical-implementation-plan-v16</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">AVWS</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Australian Vertical Working Surface (AVWS) is a reference surface for heights in Australia, introduced on 1 January 2020 to allow more accurate height computations where needed. Due to biases and distortions of the AHD, Global Navigation Satellite System (GNSS) users are only capable of deriving AHD heights with accuracy of 6–13 cm across Australia, which is inappropriate for some applications that require a more accurate reference surface. AVWS heights can be computed directly from GNSS without needing to connect to survey mark infrastructure with accuracy of 4–8 cm. AHD is considered fit for purpose for tasks over short distances (less than about 10 km) for projects such as cadastral, civil engineering, construction and mining, whereas the Australian Vertical Working Surface (AVWS) has been defined to assist users working over larger areas (greater than about 10 km) for environmental studies (e.g. flood, storm modelling), LiDAR surveys, geodesy and hydrography.</skos:definition>
+    <skos:historyNote>Based on the recommendation of the &apos;https://www.icsm.gov.au/publications/australian-vertical-working-surface-technical-implementation-plan-v16&apos; study to adopt a &apos;two-frame&apos; approach similar to that done with GDA2020 and Australian Terrestrial Reference Frame.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Australian Vertical Working Surface</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/australian-height-datum">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.icsm.gov.au/australian-height-datum</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/australian-height-datum</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.ga.gov.au/scientific-topics/positioning-navigation/geodesy/datums-projections/australian-height-datum-ahd</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">AHD</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">AHD71</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The Australian Height Datum (AHD) is the vertical datum to which all height measurements are referred to in Australia. Adopted in 1971, the datum surface is that which passes through mean sea level (MSL) at the 30 tide gauges around the coast of the Australian continent as determined in 1966–68. AHD is considered fit for purpose for tasks over short distances (less than about 10 km) for projects such as cadastral, civil engineering, construction and mining; however, the Australian Vertical Working Surface (AVWS) has been defined to assist users working over larger areas (greater than about 10 km) for environmental studies (e.g. flood, storm modelling), LiDAR surveys, geodesy, hydrography.</skos:definition>
+    <skos:historyNote>Official height datum in Australia</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Australian Height Datum</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/australian-height-datum"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/islw">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/1085-datum</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.ametsoc.org/wiki/Indian_spring_low_water</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.hydro.gov.au/prodserv/data/tides/tidal-glossary.htm</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ISLW</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indian tide plane</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A tidal low water datum, originally developed by Sir G Darwin for parts of the Indian Ocean. Designed for regions of mixed tides, the datum is depressed below mean sea level by the sum of the amplitudes of the principal semidiurnal lunar and solar tides and the principal diurnal tides (M2 + S2 + K1 + O1). Area of use: World. Users are advised to not use this generic vertical datum but to define explicit realizations of Indian Spring Low Water (ISLW) by specifying location and epoch, for instance &apos;ISLW at xxx during yyyy-yyyy&apos;.</skos:definition>
+    <skos:historyNote>Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indian Spring Low Water</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/islw-depth"/>
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:1085</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/1085-datum</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/islw-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.hydro.gov.au/prodserv/data/tides/tidal-glossary.htm</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/5863</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Indian Spring Low Water depth</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A depth measured relative to the Indian Spring Low Water (ISLW) datum. Area of use: World.</skos:definition>
+    <skos:historyNote>Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ISLW depth</skos:prefLabel>
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:5863</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/5863</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/lat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/1080-datum</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.icsm.gov.au/education/tidal-interface-compendium-related-terms</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">LAT</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The lowest tide level that can be predicted to occur under average meteorological conditions and under any combination of astronomical conditions. It can only be obtained properly by studying tidal predictions covering, ideally, 19 years. Area of use: World. Users are advised to not use this generic vertical datum but to define explicit realizations of Lowest Astronomical Tide (LAT) by specifying location and epoch, for instance &apos;LAT at xxx during yyyy-yyyy&apos;.</skos:definition>
+    <skos:historyNote>Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Lowest Astronomical Tide</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/lat-depth"/>
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:1080</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/1080-datum</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/lat-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/5861</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A depth measured relative to the Lowest Astronomical Tide (LAT) datum. Area of use: World.</skos:definition>
+    <skos:historyNote>Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">LAT depth</skos:prefLabel>
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:5861</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/5861</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-depth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/5715</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">below sea level</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mean sea level depth</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The depth in metres measured below the mean sea level (MSL). Area of use: World. Not specific to any location or epoch.</skos:definition>
+    <skos:historyNote>Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MSL depth</skos:prefLabel>
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:5715</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/5715</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-height">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/5714</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ASL</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">above mean sea level (AMSL)</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">above sea level (ASL</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">asl</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">asl)</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">height above mean sea level (HAMSL)</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mASL (metres above sea level)</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mean sea level height</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The height in metres measured above the mean sea level (MSL). Area of use: World. Not specific to any location or epoch.</skos:definition>
+    <skos:historyNote>Defined in the official EPSG database maintained by OGP Geomatics Committee (http://www.epsg.org/, https://epsg.io/)</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MSL height</skos:prefLabel>
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:5714</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/5714</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/above-ground-level">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dronelaunchacademy.com/the-difference-between-msl-and-agl/</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Height_above_ground_level</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">AGL</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">HAGL</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Above ground level (AGL) or height above ground level (HAGL) is the distance of an object or point from the ground below it.</skos:definition>
+    <skos:historyNote>Mineral industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">above ground level</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-systems-drilling">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Depth_in_a_well</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">In the resources industry,the depth of any point in a borehole/drillhole/well is the measurement of the distance between a reference point or elevation and that point. It is the most common method of reference for locations in a borehole. In the minerals industry, it usually refers to the distance from the drill collar. Inthe oil industry, &apos;depth&apos; also refers to the location itself. By extension, depth can refer to locations below, or distances from, a reference point or elevation, even when there is no well. In that sense, depth is a concept related toelevation, albeit in the opposite direction. Depth in a borehole is not necessarily measured vertically or along a straight line. Because boreholes are not always drilled vertically, there may be two &apos;depths&apos; for every given point in a borehole: themeasured depth(MD)measured along the path of theborehole, and thetrue vertical depth(TVD), the absolute vertical distance between thereference datumand the point in theborehole. In perfectly vertical holes, the TVD equals the MD; otherwise, the TVD is less than the MD measured from the same datum. Common references used are reduced level (RL), drill collar, ground level (GL),drilling rigfloor (DF),rotary table(RT),kelly bushing(KB or RKB) andmean sea level(MSL).</skos:definition>
+    <skos:historyNote>An umbrella term for resources industry concepts related to the reference points from which depth is measured in boreholes/wells.</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">depth reference systems — drilling</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-collar"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-floor"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/ground-level"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/kelly-bushing"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/mudline"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/precollar"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/rotary-table"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/depth-reference/well-head"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-collar">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/drill-collar</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">In the mineral resources industry, &apos;drill collar&apos; is referred to as the location (in an x, y, z coordinate system) as well as the start point of a borehole from which depths are measured. Drill collars are tubular pieces of material, usually metal or plastic, to aid in keeping the hole entry from collapsing.</skos:definition>
+    <skos:historyNote>Mineral industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">drill collar</skos:prefLabel>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/drill-collar"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/drill-floor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.slb.com/en/terms/r/rig_floor</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">BDF – Below rig derrick floor</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">DF</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">derrick floor</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">drilling floor</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rig drill floor</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rig floor</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The drill floor (DF), also known as derrick floor, is the working area in which the rig crew conducts drilling operations, and is often used as a reference point for downhole/depth measurements. Depth measurements are commonly referenced to the DF, with notations like 2538 m DF or 2358 m BDF, indicating 2538 m below the drill/derrick floor.</skos:definition>
+    <skos:historyNote>Energy industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">drill floor</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/ground-level">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.hopgoodganim.com.au/page/knowledge-centre/blog/ground-level-calculating-building-height</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">GL</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ground surface</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The height or level of the natural ground or the level of the exposed surface of the ground. This may be at the Earth&apos;s surface (ground surface) or below (e.g. bottom of a mine shaft or floor of an open pit). Ground level can be used as a reference point for vertical measurements (especially in drilling), without reference to any equipment used during drilling (cf. rotary table, kelly bushing).</skos:definition>
+    <skos:historyNote>Mineral industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ground level</skos:prefLabel>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/above-ground-level"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/kelly-bushing">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/kelly-bushing</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.slb.com/en/terms/k/kelly_bushing</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">BKB</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">KB</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">RKB</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">In drilling, the kelly bushing (KB) or rotary kelly bushing (RKB) is an adapter that serves to connect the rotary table to the kelly (a long square or hexagonal steel bar with a hole drilled through the middle for a fluid path). Depth measurements are commonly referenced to the KB, such as 2538 m KB, meaning 2538 metres below the kelly bushing (BKB).</skos:definition>
+    <skos:historyNote>Energy industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">kelly bushing</skos:prefLabel>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/kelly-bushing"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/mudline">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://iadclexicon.org/mudline/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">ML</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Mudline as referenced in subsea operations refers to the seafloor or water bottom.</skos:definition>
+    <skos:historyNote>Energy industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mudline</skos:prefLabel>
+    <skos:relatedMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/water-bottom"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/precollar">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://develop.com.au/mining-glossary/</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The point at depth where the pre-collar hole ends and the diamond tail (i.e. diamond drilling) starts, and from which the length/depth of the diamond core is referenced.</skos:definition>
+    <skos:historyNote>Mineral industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">pre-collar</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/rotary-table">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/rotary-table</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://glossary.slb.com/en/terms/r/rotary_table</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">BRT</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">RT</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The revolving or spinning section of the drill floor that provides power to turn the drillstring in a clockwise direction (as viewed from above), often used as a starting point for measurement of borehole depth (below rotary table or BRT).</skos:definition>
+    <skos:historyNote>Energy industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">rotary table</skos:prefLabel>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/rotary-table"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/depth-reference/well-head">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/well-head</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.oilfieldwiki.com/wiki/Wellhead</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Wellhead</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/depth-reference"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">WH</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">well head</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A wellhead (WH) is the component at the surface of an oil or gas well that provides the structural and pressure-containing interface for the drilling and production equipment. Depth is commonly referenced from the valve or outlet point from which samples are extracted.</skos:definition>
+    <skos:historyNote>Energy industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">wellhead</skos:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/depth-reference-unknown">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The exact depth reference datum, surface, or point (e.g. for a borehole) is not known.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">unknown</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/mean-sea-level">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.icsm.gov.au/education/tidal-interface-compendium-related-terms</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.iho-ohi.net/S32/engView.php</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://epsg.io/5100-datum</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://gcmd.earthdata.nasa.gov/kms/concept/f3ea8884-87a8-4a12-96d5-98e21a9fa2c7</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/mean-sea-level</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MSL</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A global datum of the average surface of Earth&apos;s coastal bodies of water used as a reference to measure elevation (on the ground), altitude (in the air), or depth (below sea level) of an object or point. Derived from the arithmetic mean of hourly heights of the sea at the tidal station observed over a period of time (usually 19 years). Areas of use: World. Users are advised to not use this generic vertical datum but to define explicit realizations of mean sea level (MSL) by specifying location and epoch, for instance &apos;MSL at xxx during yyyy-yyyy&apos;.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">mean sea level</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/mean-sea-level"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-depth"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/msl-height"/>
+    <skos:narrower rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems/metres-sub-sea"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/depth-reference/mean-sea-level">
+    <skos:notation rdf:datatype="https://epsg.io/">EPSG:5100</skos:notation>
+    <skos:notation rdf:datatype="https://epsg.io/">https://epsg.io/5100-datum</skos:notation>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/metres-sub-sea">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Depth_in_a_well</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/metres-sub-sea</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">MSS</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The distance below mean sea level, the inverse of measurements to mean sea level (MSL). The term &apos;subsea&apos; (SS) by itself should not be used, as it is ambiguous. It could mean: below sea floor or bottom, below mean sea level (MSL), below Lowest Astronomical Tide (LAT), etc.</skos:definition>
+    <skos:historyNote>Energy industry concept</skos:historyNote>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">metres subsea</skos:prefLabel>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/metres-sub-sea"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/depth-reference/water-bottom">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/water-bottom</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/depth-reference"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">WB</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">sea floor</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">seafloor</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The depth of the interface between water and solid substrate, such as the seabed or the bottom of a terrestrial body of water.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">water bottom</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/reduced-level">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.thirdistudio.com.au/HowToWorkOutReducedLevels.html</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Reduced_level</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">RL</skos:altLabel>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">relative level</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Reduced level (or relative level, RL)insurveyingrefers to equating elevations of survey points with reference to a common assumeddatum (usually AHD). It is a vertical distance between survey point and adopted datum plane, thus it is considered as the base elevation that is used as reference to reckon heights or depths of other important places.Reduced here means equating and level means elevations. Datum may be a real or imaginary location, commonly with a nominated elevation of straightzero.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">reduced level</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/seismic-reference-datum">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://linked.data.gov.au/def/depth-reference/seismic-reference-datum</schema:citation>
+    <schema:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://help.dugeo.com/m/faq/l/1022116-seismic-reference-datums</schema:citation>
+    <rdfs:isDefinedBy rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:altLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">SRD</skos:altLabel>
+    <skos:definition xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">A seismic reference datum (SRD) is used in land seismic projects as a reference surface to counteract the fact that elevation on land is variable. An SRD is a plane that sits above the highest elevation in the data. In a land project with a seismic reference datum set, the SRD will have a time of 0 ms. All time data, for example seismic and velocities, will start at this datum. Marine seismic is usually referenced to mean sea level (MSL), a global datum for measuring height. In a marine project, zero elevation (the mean sea level) will have a time of 0 ms.</skos:definition>
+    <skos:inScheme rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:prefLabel xml:lang="en" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">seismic reference datum</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://linked.data.gov.au/def/vertical-depth-reference-systems"/>
+    <skos:closeMatch rdf:resource="https://linked.data.gov.au/def/depth-reference/seismic-reference-datum"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://linked.data.gov.au/def/vertical-depth-reference-systems/1">
+    <rdfs:label>1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-365">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0009-0002-5543-2719"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="n3-366">
+    <http://www.w3.org/ns/prov#hadRole rdf:resource="https://linked.data.gov.au/def/data-roles/custodian"/>
+    <http://www.w3.org/ns/prov#agent rdf:resource="https://orcid.org/0000-0002-7645-5031"/>
+  </rdf:Description>
+
+</rdf:RDF>

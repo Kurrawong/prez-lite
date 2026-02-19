@@ -1,0 +1,28 @@
+name: Deploy to AWS
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy-mode:
+        description: 'Deploy mode'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - data-only
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    uses: Kurrawong/prez-lite/.github/workflows/site-deploy-aws.yml@main
+    with:
+      prez-lite-ref: ${{ vars.PREZ_LITE_VERSION || 'main' }}
+      deploy-mode: ${{ inputs.deploy-mode }}
+      s3-bucket: ${{ vars.DEV_BUCKET_NAME }}
+      cloudfront-id: ${{ vars.DEV_CDN_ID || '' }}
+    secrets:
+      aws-role-arn: ${{ secrets.AWS_ROLE_ARN }}

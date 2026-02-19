@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <skos:definition xml:lang="en">This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification.</skos:definition>
+    <skos:historyNote xml:lang="en">This file contains the 2021.01 SKOS-RDF version of the GGIC Petroleum Tenement Type vocabulary; adopted April 2021; converted to MS Excel XML for SKOS generation using SKOS_from_XLS_2019.01.xslt</skos:historyNote>
+    <skos:prefLabel xml:lang="en">Petroleum Tenement Status</skos:prefLabel>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-14</sdo:dateCreated>
+    <sdo:creator rdf:resource="https://linked.data.gov.au/org/agson"/>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-06-04</sdo:dateModified>
+    <sdo:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/experimental"/>
+    <sdo:publisher rdf:resource="https://linked.data.gov.au/org/agson"/>
+    <skos:changeNote>2025-08-25 NJC: Added status experimental to ConceptScheme for status testing</skos:changeNote>
+    <skos:changeNote>2024-10-16 NJC: update to be VocPub 4.10 valid</skos:changeNote>
+    <skos:changeNote>2021-06-14 OLR: Original SKOS implementation</skos:changeNote>
+    <skos:changeNote>2021-07-05 Nicholas Car &amp; Vaughan Edgell: SKOS implementation aligned with VocPub vocabulary profile for display</skos:changeNote>
+    <skos:changeNote xml:lang="en">2025-06-04 NJC Updates metadata to meet the VocPub 5.1 profile</skos:changeNote>
+    <skos:hasTopConcept rdf:resource="http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"/>
+    <skos:hasTopConcept rdf:resource="http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"/>
+    <skos:hasTopConcept rdf:resource="http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"/>
+    <skos:hasTopConcept rdf:resource="http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"/>
+  </rdf:Description>
+</rdf:RDF>

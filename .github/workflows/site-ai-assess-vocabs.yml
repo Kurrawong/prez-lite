@@ -1,0 +1,73 @@
+name: 'Site: AI Assess Vocabularies'
+
+on:
+  workflow_call:
+    inputs:
+      prez-lite-ref:
+        description: 'prez-lite branch, tag, or commit'
+        type: string
+        default: 'main'
+      vocabs-dir:
+        description: 'Directory containing source TTL vocabularies'
+        type: string
+        default: 'data/vocabs'
+      validators-dir:
+        description: 'Directory containing SHACL validator shapes'
+        type: string
+        default: 'data/validators'
+      node-version:
+        description: 'Node.js version'
+        type: string
+        default: '22'
+    secrets:
+      ai-worker-url:
+        description: 'Cloudflare Worker AI endpoint URL'
+        required: true
+      ai-worker-key:
+        description: 'Bearer token for the AI worker'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  assess:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        with:
+          prez-lite-ref: ${{ inputs.prez-lite-ref }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Run validation first
+        run: |
+          node ${{ steps.tools.outputs.scripts-dir }}/run-validation-tests.js \
+            --vocabs-dir "${{ inputs.vocabs-dir }}" \
+            --validators-dir "${{ inputs.validators-dir }}" \
+            --tests-dir "${{ inputs.validators-dir }}/tests" \
+            --reports-dir "${{ inputs.validators-dir }}/reports"
+
+      - name: Run AI assessment
+        env:
+          AI_WORKER_URL: ${{ secrets.ai-worker-url }}
+          AI_WORKER_KEY: ${{ secrets.ai-worker-key }}
+        run: |
+          node ${{ steps.tools.outputs.scripts-dir }}/ai-assess-vocabs.js \
+            --vocabs-dir "${{ inputs.vocabs-dir }}" \
+            --reports-dir "${{ inputs.validators-dir }}/reports" \
+            --validator "${{ inputs.validators-dir }}/vocabs.ttl"
+
+      - name: Commit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ inputs.validators-dir }}/reports/"
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update validation and AI assessment reports"
+          git push

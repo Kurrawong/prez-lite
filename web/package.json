@@ -1,0 +1,76 @@
+{
+  "name": "@prez-lite/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Prez Lite Nuxt layer for vocabulary publishing",
+  "exports": {
+    "./utils/shacl-profile-parser": "./app/utils/shacl-profile-parser.ts"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev --port 3123",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "test": "vitest",
+    "test:unit": "vitest run --config vitest.config.ts",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.11.0",
+    "@nuxt/ui": "^4.4.0",
+    "@orama/orama": "^3.1.18",
+    "monaco-editor": "^0.52.0",
+    "n3": "^2.0.1",
+    "nuxt": "^4.3.0",
+    "nuxt-monaco-editor": "^1.4.0",
+    "tailwindcss": "^4.1.18",
+    "vue": "^3.5.27",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.87",
+    "@nuxt/test-utils": "^4.0.0",
+    "@playwright/test": "^1.58.2",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.6.1",
+    "mermaid": "^11.12.2",
+    "playwright-core": "^1.58.2",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "@iconify-json/heroicons": "^1.2.0",
+    "@iconify-json/lucide": "^1.2.0",
+    "@nuxt/content": "^3.11.0",
+    "@nuxt/fonts": "^0.13.0",
+    "@nuxt/icon": "^2.2.0",
+    "@nuxt/ui": "^4.4.0",
+    "@nuxtjs/color-mode": "^4.0.0",
+    "mermaid": "^11.0.0",
+    "tailwindcss": "^4.1.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@iconify-json/heroicons": {
+      "optional": true
+    },
+    "@iconify-json/lucide": {
+      "optional": true
+    },
+    "@nuxt/fonts": {
+      "optional": true
+    },
+    "mermaid": {
+      "optional": true
+    }
+  }
+}

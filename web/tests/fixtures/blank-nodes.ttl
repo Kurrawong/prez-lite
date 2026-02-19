@@ -1,0 +1,18 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix cs: <http://example.com/vocab/> .
+
+cs: a skos:ConceptScheme ;
+    skos:prefLabel "Blank Nodes Test"@en ;
+    prov:qualifiedAttribution [
+        prov:agent <http://example.com/agent/alice> ;
+        prov:hadRole <http://example.com/role/author>
+    ] .
+
+cs:item a skos:Concept ;
+    skos:prefLabel "Item"@en ;
+    skos:inScheme cs: ;
+    skos:topConceptOf cs: .
+
+cs: skos:hasTopConcept cs:item .

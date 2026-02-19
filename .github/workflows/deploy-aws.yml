@@ -1,0 +1,118 @@
+name: Deploy to AWS
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy-mode:
+        description: 'Deploy mode'
+        required: true
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - data-only
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy-full:
+    if: inputs.deploy-mode == 'full'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '🚀 Deploy AWS (Full) — Build site and deploy to S3 + CloudFront'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  DEPLOY TO AWS — FULL                                      ║"
+          echo "║                                                            ║"
+          echo "║  Builds the complete Nuxt static site from committed       ║"
+          echo "║  exports and deploys to S3. Invalidates CloudFront cache   ║"
+          echo "║  if configured.                                            ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: manual (workflow_dispatch)                        ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build site
+        run: pnpm build:site
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          NUXT_PUBLIC_GITHUB_REPO: ${{ vars.GH_REPO_SLUG }}
+          NUXT_PUBLIC_GITHUB_BRANCH: ${{ vars.GH_BRANCH || 'main' }}
+          NUXT_PUBLIC_GITHUB_VOCAB_PATH: ${{ vars.GH_VOCAB_PATH || 'web/public/sample-data/vocabs' }}
+          NUXT_PUBLIC_GITHUB_CLIENT_ID: ${{ vars.GH_CLIENT_ID }}
+          NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL: ${{ vars.GH_AUTH_WORKER_URL }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ap-southeast-2
+
+      - name: Deploy to S3
+        run: |
+          echo "Syncing to s3://${{ vars.DEV_BUCKET_NAME }}/ ..."
+          aws s3 sync web/.output/public/ "s3://${{ vars.DEV_BUCKET_NAME }}/" --delete --quiet
+          echo "✓ Deploy complete"
+
+      - name: Invalidate CloudFront cache
+        if: vars.DEV_CDN_ID != ''
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.DEV_CDN_ID }}" \
+            --paths "/*"
+
+  deploy-data-only:
+    if: inputs.deploy-mode == 'data-only'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '📦 Deploy AWS (Data Only) — Sync exports to S3'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  DEPLOY TO AWS — DATA ONLY                                 ║"
+          echo "║                                                            ║"
+          echo "║  Syncs committed export files directly to S3 without       ║"
+          echo "║  rebuilding the site. Use when only vocabulary data has     ║"
+          echo "║  changed.                                                  ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: manual (workflow_dispatch)                        ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ap-southeast-2
+
+      - name: Sync exports to S3
+        run: |
+          echo "Syncing exports to s3://${{ vars.DEV_BUCKET_NAME }}/export/ ..."
+          aws s3 sync web/public/export/ "s3://${{ vars.DEV_BUCKET_NAME }}/export/" --delete --quiet
+          echo "✓ Export sync complete"
+
+      - name: Invalidate CloudFront cache
+        if: vars.DEV_CDN_ID != ''
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.DEV_CDN_ID }}" \
+            --paths "/export/*"

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling">
+    <skos:prefLabel xml:lang="en">borehole fluid sampling</skos:prefLabel>
+    <skos:definition xml:lang="en">Sampling of fluids (oil, gas, or water) from a borehole by an unspecified method.</skos:definition>
+    <skos:topConceptOf rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#token">boreholeFluidSampling</dcterms:identifier>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+</rdf:RDF>

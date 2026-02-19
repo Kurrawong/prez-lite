@@ -1,0 +1,218 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/2004/02/skos/core#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "schema": "https://schema.org/",
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@language": "en"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@language": "en"
+    },
+    "definition": {
+      "@id": "skos:definition",
+      "@language": "en"
+    },
+    "notation": "skos:notation",
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@type": "@id"
+    },
+    "related": {
+      "@id": "skos:related",
+      "@type": "@id"
+    },
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "topConceptOf": {
+      "@id": "skos:topConceptOf",
+      "@type": "@id"
+    },
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "_:n3-409",
+      "http://www.w3.org/ns/prov#agent": {
+        "@id": "https://www.linkedin.com/in/david-kelsey-425746137/"
+      },
+      "http://www.w3.org/ns/prov#hadRole": {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    },
+    {
+      "@id": "_:n3-410",
+      "http://www.w3.org/ns/prov#agent": {
+        "@id": "https://orcid.org/0009-0003-0007-8342"
+      },
+      "http://www.w3.org/ns/prov#hadRole": {
+        "@id": "https://linked.data.gov.au/def/data-roles/custodian"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "@type": "ConceptScheme",
+      "http://purl.org/linked-data/registry#status": {
+        "@id": "https://linked.data.gov.au/def/reg-statuses/stable"
+      },
+      "http://www.w3.org/2002/07/owl#versionIRI": {
+        "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/1"
+      },
+      "http://www.w3.org/2002/07/owl#versionInfo": "1",
+      "definition": "Terms that describe the ratio of temperature to pressure (T/P) during metamorphism, defining a classification scheme based on thermal gradient that is regarded as the most appropriate for building a temporal geodynamic context for metamorphic data. Some of these terms only partly correspond to metamorphic facies fields and classic-style terminology such as Barrovian and Buchan (i.e. correspondence is not one-for-one).",
+      "hasTopConcept": [
+        "https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio",
+        "https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio",
+        "https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio",
+        "https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio",
+        "https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio"
+      ],
+      "historyNote": {
+        "@language": "en",
+        "@value": "Concepts and definitions adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.\r\nc) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p."
+      },
+      "prefLabel": "Metamorphic thermal regime style",
+      "http://www.w3.org/ns/prov#qualifiedAttribution": [
+        {
+          "@id": "_:n3-409"
+        },
+        {
+          "@id": "_:n3-410"
+        }
+      ],
+      "schema:creator": {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      },
+      "schema:dateCreated": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-11-01"
+      },
+      "schema:dateModified": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-11-01"
+      },
+      "schema:keywords": {
+        "@id": "https://linked.data.gov.au/def/gswa-vocabulary-themes/geology"
+      },
+      "schema:publisher": {
+        "@id": "https://linked.data.gov.au/org/gswa"
+      }
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/1",
+      "rdfs:label": "1"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/high-t-p-ratio",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+      },
+      "altLabel": [
+        "Barrovian style metamorphism",
+        "high temperature/pressure",
+        "kyanite to sillimanite series",
+        "ultra-high temperature granulites"
+      ],
+      "definition": "High geothermal gradient or high apparent thermal gradient metamorphism, characterized by high heat flow. That is, temperature increases more rapidly than average with depth. Defined by apparent thermal gradients between 77.5 and 150 °C/kbar (or 775 and 1500 °C/GPa), and encompassing most of what is traditionally referred to as Barrovian style metamorphism. High thermal gradients encompass the middle and lower pressure range of amphibolite facies as well as the pressure range of typical granulites and ultra-high temperature granulites. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "historyNote": "Adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.\r\nc) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.",
+      "inScheme": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "prefLabel": "high T/P",
+      "topConceptOf": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/intermediate-t-p-ratio",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+      },
+      "altLabel": [
+        "Barrovian style metamorphism",
+        "high pressure metamorphism",
+        "high-pressure amphibolite facies",
+        "high-pressure granulite facies",
+        "intermediate temperature/pressure",
+        "kyanite series"
+      ],
+      "definition": "Intermediate geothermal gradient or intermediate apparent thermal gradient metamorphism, characterized by average heat flow, approximating that of a steady-state geotherm for average thickness continental crust. That is, temperature increases at what is considered a normal rate with depth. Defined by apparent thermal gradients between 37.5 and 77.5°C/kbar (or 375 and 775°C/GPa), and encompassing, at the higher thermal gradient end of the range, the higher pressure part of what is traditionally referred to as Barrovian-style metamorphism. Intermediate thermal gradients encompass the middle and upper pressure range of amphibolite facies as well as high-pressure granulite (transitional to eclogite) facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "historyNote": "Adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.\r\nc) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.",
+      "inScheme": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "prefLabel": "intermediate T/P",
+      "topConceptOf": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/low-t-p-ratio",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+      },
+      "altLabel": [
+        "\"high pressure\" metamorphism",
+        "blueschist facies",
+        "eclogite facies",
+        "low temperature/pressure",
+        "ultra-high pressure metamorphism"
+      ],
+      "definition": "Low geothermal gradient or low apparent thermal gradient metamorphism, characterized by low heat flow (i.e. temperature increases more slowly than average with depth). Defined by apparent thermal gradients between 15 and 37.5°C/kbar (or 150 and 375°C/GPa). Low thermal gradients encompass most of the blueschist and eclogite facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "historyNote": "Adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.\r\nc) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.",
+      "inScheme": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "prefLabel": "low T/P",
+      "topConceptOf": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/nearsurface-ultrahigh-t-p-ratio",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+      },
+      "altLabel": [
+        "\"low pressure\" metamorphism",
+        "near-surface ultra-high temperature/pressure",
+        "pyroxene hornfels facies",
+        "sanidinite facies"
+      ],
+      "definition": "Near-surface ultra-high geothermal gradient or near-surface ultra-high apparent thermal gradient metamorphism, characterized by extremely high heat flow. That is, temperature increases extremely rapidly with depth compared to average. Defined by apparent thermal gradients greater than 250°C/kbar (or 2500°C/GPa). Near-surface ultra-high thermal gradients encompass pyroxene-hornfels and sanidinite facies. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "historyNote": "Adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.\r\nc) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.",
+      "inScheme": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "prefLabel": "near-surface ultra-high T/P",
+      "topConceptOf": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+    },
+    {
+      "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime/ultrahigh-t-p-ratio",
+      "@type": "Concept",
+      "rdfs:isDefinedBy": {
+        "@id": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+      },
+      "altLabel": [
+        "\"low-pressure\" metamorphism",
+        "Buchan style metamorphism",
+        "andalusite series",
+        "high temperature-low pressure metamorphism",
+        "low-pressure",
+        "low-pressure amphibolite facies",
+        "low-pressure granulite facies",
+        "ultra-high temperature metamorphism",
+        "ultra-high temperature/pressure"
+      ],
+      "definition": "Ultra-high geothermal gradient or ultra-high apparent thermal gradient metamorphism, characterized by very high heat flow. That is, temperature increases much more rapidly than average with depth. Defined by apparent thermal gradients between 150 and 250°C/kbar (or 1500 and 2500°C/GPa), and encompassing most of what is traditionally referred to as Buchan-style metamorphism. Ultra-high thermal gradients encompass low-pressure amphibolite facies (incorporating andalusite stability), low-pressure granulite facies, and rare low-pressure, ultra-high temperature metamorphism. Thermal gradient is defined in terms of pressure (i.e. thermobarometric ratio) rather than depth in kilometres to avoid assumptions involving density-related conversions.",
+      "historyNote": "Adapted from:\r\na) Brown, M 2006, Duality of thermal regimes is the distinctive characteristic of plate tectonics since the Neoarchean: Geology,v.34,no.11,p.961–964, doi:10.1130/G22853A.1.\r\nb) Stüwe, K 2007, Geodynamics of the lithosphere: An introduction: Springer, Berlin, 493p.\r\nc) Brown, M and Johnson, T 2018, Secular change in metamorphism and the onset of global plate tectonics: American Mineralogist,v.103,no.2,p.181–196, doi:10.2138/am-2018-6166.",
+      "inScheme": "https://linked.data.gov.au/def/metamorphic-thermal-regime",
+      "prefLabel": "ultra-high T/P",
+      "topConceptOf": "https://linked.data.gov.au/def/metamorphic-thermal-regime"
+    }
+  ]
+}

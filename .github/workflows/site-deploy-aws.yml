@@ -1,0 +1,147 @@
+name: 'Site: Deploy to AWS'
+
+on:
+  workflow_call:
+    inputs:
+      prez-lite-ref:
+        description: 'prez-lite branch, tag, or commit'
+        type: string
+        default: 'main'
+      deploy-mode:
+        description: 'Deploy mode: full (build + deploy) or data-only (sync exports)'
+        type: string
+        default: 'full'
+      aws-region:
+        description: 'AWS region'
+        type: string
+        default: 'ap-southeast-2'
+      s3-bucket:
+        description: 'S3 bucket name for deployment'
+        type: string
+        required: true
+      cloudfront-id:
+        description: 'CloudFront distribution ID for cache invalidation (optional)'
+        type: string
+        default: ''
+      node-version:
+        description: 'Node.js version'
+        type: string
+        default: '22'
+    secrets:
+      aws-role-arn:
+        description: 'AWS IAM role ARN for OIDC authentication'
+        required: true
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy-full:
+    if: inputs.deploy-mode == 'full'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        with:
+          prez-lite-ref: ${{ inputs.prez-lite-ref }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Process vocabularies
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+
+          ARGS="--sourceDir data/vocabs --outputBase public/export/vocabs --systemDir public/export/system --pattern *.ttl"
+          [ -f "data/config/profiles.ttl" ] && ARGS="$ARGS --profiles data/config/profiles.ttl"
+          [ -d "data/background" ] && ARGS="$ARGS --backgroundDir data/background"
+          [ -d "data/validators" ] && ARGS="$ARGS --validators data/validators"
+
+          node "$DP/scripts/process-vocab.js" $ARGS
+
+      - name: Generate system metadata
+        run: |
+          DP="${{ steps.tools.outputs.data-processing-dir }}"
+          mkdir -p public/export/system/vocabularies public/export/system/search
+
+          ARGS="--sourceDir data/vocabs --output public/export/system/vocabularies/index.json"
+          [ -d "data/background" ] && ARGS="$ARGS --backgroundDir data/background"
+          [ -d "data/validators" ] && ARGS="$ARGS --validators data/validators"
+          node "$DP/scripts/generate-vocab-metadata.js" $ARGS || echo "Vocab metadata skipped"
+
+          if ls data/background/*.ttl >/dev/null 2>&1; then
+            node "$DP/scripts/generate-labels.js" \
+              --backgroundDir data/background \
+              --output public/export/system/labels.json || echo "Labels skipped"
+          fi
+
+          node "$DP/scripts/generate-search-index.js" \
+            --exportDir public/export \
+            --output public/export/system/search \
+            --vocabMetadata public/export/system/vocabularies/index.json || echo "Search index skipped"
+
+      - name: Setup pnpm cache
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build site
+        run: pnpm generate
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.aws-role-arn }}
+          aws-region: ${{ inputs.aws-region }}
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync .output/public/ "s3://${{ inputs.s3-bucket }}/" --delete --quiet
+          echo "Deploy complete"
+
+      - name: Invalidate CloudFront cache
+        if: inputs.cloudfront-id != ''
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ inputs.cloudfront-id }}" \
+            --paths "/*"
+
+  deploy-data-only:
+    if: inputs.deploy-mode == 'data-only'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.aws-role-arn }}
+          aws-region: ${{ inputs.aws-region }}
+
+      - name: Sync exports to S3
+        run: |
+          aws s3 sync public/export/ "s3://${{ inputs.s3-bucket }}/export/" --delete --quiet
+          echo "Export sync complete"
+
+      - name: Invalidate CloudFront cache
+        if: inputs.cloudfront-id != ''
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ inputs.cloudfront-id }}" \
+            --paths "/export/*"

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="http://pid.geoscience.gov.au/catalogue/ga-vocabs">
+    <rdf:type rdf:resource="https://schema.org/DataCatalog"/>
+    <sdo:hasPart rdf:resource="http://qudt.org/community/ga/voc"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionMaterial"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholeConstructionType"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholePurpose"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholeStatus"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/CDCS"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/ConfidenceLevel"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/ContactCharacter"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/ContactType"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/CountryCodes"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DateQualifier"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyAzimuth"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyClass"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyMethod"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyPathComputeMethod"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DirectionalSurveyRecordingMode"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/DrillingMethods"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/EntityTypeOrFeature"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/FieldSitePurpose"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/FieldSiteTypes"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/HazardAndRisk"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/LandformTypes"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/Legislation"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/LocationMethod"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStatus"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStorageType"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/MiningWasteStructureType"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/MiningWasteType"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/ModesOfOccurence"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/OnlineFunctions"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/PetrophysicalProperty"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/ProportionTerms"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/QaStatusCode"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyGeneral"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyMorphology"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologyPhysiography"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/SeabedGeomorphologySettings"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/SourceRockQuality"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/StatisticalResultQualifier"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/StatisticalUncertaintyTypes"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/associationtype"/>
+    <sdo:hasPart rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/materialtype"/>
+    <skos:historyNote xml:lang="en">This catalogue was was created in 2024 from pre-existing vocabularies</skos:historyNote>
+    <sdo:codeRepository>https://github.com/GeoscienceAustralia/ga-vocabs</sdo:codeRepository>
+    <sdo:contributor rdf:resource="https://kurrawong.ai"/>
+    <sdo:creator rdf:resource="https://linked.data.gov.au/org/ga"/>
+    <sdo:dateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">2017</sdo:dateCreated>
+    <sdo:dateModified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-30</sdo:dateModified>
+    <sdo:description>Geoscience Australia&apos;s vocabularies of controlled terms.
+
+Geoscience Australia uses domain standards that are openly available, to provide a common language for communicating ideas and provide consistency of meaning of the data collected, research undertaken and products created. Part of the use of standards is the use of controlled terms - vocabularies - and this system contains those vocabularies created by Geosceince Australia.
+
+These vocabularies must be used in concert with international geo-domain vocabularies from the Commission for Geoscience Information (CGI), the Open Geospatial Consortium (OGC) and the International Organization for Standardization (ISO) and with Australian national vocabularies from the Government Geoscience Information Committee (GGIC) and the Intergovernmental Committee on Surveying and Mapping (ICSM).</sdo:description>
+    <sdo:name>GA Vocabularies</sdo:name>
+    <sdo:publisher rdf:resource="https://linked.data.gov.au/org/ga"/>
+  </rdf:Description>
+</rdf:RDF>

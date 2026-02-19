@@ -1,0 +1,33 @@
+# CORS Policy: Open Access for Public Vocabularies
+# Used by: Netlify, Cloudflare Pages, and other platforms supporting _headers
+
+# Vocabulary exports - open machine consumption
+/export/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Access-Control-Allow-Headers: Content-Type
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=3600
+
+# Web components - open embedding
+/web-components/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=86400
+
+# System metadata - open access
+/export/system/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Cache-Control: public, max-age=300
+
+# Security headers for all pages
+# Note: script-src includes 'unsafe-inline' for Nuxt SSG hydration scripts
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()

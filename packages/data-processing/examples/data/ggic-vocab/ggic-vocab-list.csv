@@ -1,0 +1,79 @@
+iri,broader,prefLabel
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/abandoned,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Abandoned
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/accepted,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted,Accepted
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/active,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Active
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,,Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-cancelled,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Application Cancelled
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-lapsed,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Application lapsed
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,,Application non-current
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-pending,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Application Pending
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-withdrawn,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Application Withdrawn
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-ministerial-decision,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted,Awaiting Ministerial decision
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/awaiting-payment-confirmation,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Awaiting payment confirmation
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cancelled,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Cancelled
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Ceased
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ceased-to-operate,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Ceased to Operate
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Certificate of Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate-of-application-issued,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Certificate of Application issued
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/certificate_of-public-notice-issued,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Certificate of Public Notice issued
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/cessation,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Cessation
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/competing-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Competing Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/conditionally-surrendered,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Conditionally surrendered
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/consolidation-cancellation,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Consolidation cancellation
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/conversion_of-ml-to-mc,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted,Conversion of ML to MC
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,,Current
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/deemed-abandoned,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Deemed abandoned
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Discarded
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Expired
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired-blocks-encumbered,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/expired,Expired - Blocks Encumbered
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/exploration-permit-proposal,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Exploration Permit Proposal
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/extended,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Extended
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/extension-renewal,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Extension Renewal
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/finalised,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Finalised
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/for-grant,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,For Grant
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Granted
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/in-progress,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded,In progress
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/mining-permit-status,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Mining Permit Status
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,,Non-current
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current-unfinalised,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Non-current unfinalised
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/not-accepted,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Not accepted
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/on-hold-oil-shale-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,On-hold Oil Shale Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/paid,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded,Paid
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/payment-authorised,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement,Payment authorised
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/payment-pending,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/discarded,Payment pending
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Pending
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Pending Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-ceased-to-operate,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Ceased to operate
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Extension
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension-drilling-reservation,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Extension Drilling Reservation
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-extension-exploration-permit,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Extension Exploration Permit
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-renewal,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Renewal
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-surrender,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Surrender
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending-suspension,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/pending,Pending Suspension
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/preferred-tenderer,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Preferred Tenderer
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/prelodgement,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Prelodgement
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/priority-applicant,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Priority Applicant
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proceed-with-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Proceed with Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposal-accepted,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Proposal accepted
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/proposed,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Proposed
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/ranked,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Ranked
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/refusal,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Refusal
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/rejected,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Rejected
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-application-rejected,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Renewal Application rejected
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-lodged,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted,Renewal lodged
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewal-withdrawn,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/granted,Renewal withdrawn
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/renewed,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Renewed
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Replacement Permit
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/replacement-permit-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Replacement Permit Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/revoked,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Revoked
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/secondary-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Secondary Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/sub-blocks-all-relinquished,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Sub-blocks all relinquished
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/submitted,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Submitted
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/surrendered,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Surrendered
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/suspended-condition,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Suspended Condition
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/term-extended,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current,Term Extended
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/terminated,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Terminated
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/tribunal-recommendation,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application,Tribunal Recommendation
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unfinalised,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current,Unfinalised
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/unsuccessful-application,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Unsuccessful Application
+http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/withdrawn,http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current,Withdrawn

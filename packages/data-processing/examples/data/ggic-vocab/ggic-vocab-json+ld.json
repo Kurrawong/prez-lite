@@ -1,0 +1,85 @@
+[
+    {
+        "@id": "http://resource.geoscience.gov.au/classifierScheme/ggic/2021.01/petroleum-tenement-status",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "This vocabulary maps all terms used by Australian State, Territory and Commonwealth jurisdictions to describe the status of petroleum tenement to a common simplified classification.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#historyNote": [
+            {
+                "@value": "This file contains the 2021.01 SKOS-RDF version of the GGIC Petroleum Tenement Type vocabulary; adopted April 2021; converted to MS Excel XML for SKOS generation using SKOS_from_XLS_2019.01.xslt",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Petroleum Tenement Status",
+                "@language": "en"
+            }
+        ],
+        "https://schema.org/dateCreated": [
+            {
+                "@value": "2021-06-14",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/creator": [
+            {
+                "@id": "https://linked.data.gov.au/org/agson"
+            }
+        ],
+        "https://schema.org/dateModified": [
+            {
+                "@value": "2025-06-04",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://schema.org/status": [
+            {
+                "@id": "https://linked.data.gov.au/def/reg-statuses/experimental"
+            }
+        ],
+        "https://schema.org/publisher": [
+            {
+                "@id": "https://linked.data.gov.au/org/agson"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#changeNote": [
+            {
+                "@value": "2025-08-25 NJC: Added status experimental to ConceptScheme for status testing"
+            },
+            {
+                "@value": "2024-10-16 NJC: update to be VocPub 4.10 valid"
+            },
+            {
+                "@value": "2021-06-14 OLR: Original SKOS implementation"
+            },
+            {
+                "@value": "2021-07-05 Nicholas Car & Vaughan Edgell: SKOS implementation aligned with VocPub vocabulary profile for display"
+            },
+            {
+                "@value": "2025-06-04 NJC Updates metadata to meet the VocPub 5.1 profile",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#hasTopConcept": [
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/application-non-current"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/current"
+            },
+            {
+                "@id": "http://resource.geoscience.gov.au/classifier/ggic/petroleum-tenement-status/non-current"
+            }
+        ]
+    }
+]

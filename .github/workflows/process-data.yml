@@ -1,0 +1,98 @@
+name: Process Data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/vocabs/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: '🔄 Process Data — Rebuild exports from source vocabularies'
+        run: |
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  PROCESS DATA                                              ║"
+          echo "║                                                            ║"
+          echo "║  Rebuilds export assets (JSON, JSON-LD, RDF/XML, CSV,     ║"
+          echo "║  HTML, search index, labels) from source TTL vocabularies.  ║"
+          echo "║  Commits the updated exports back to the repo.             ║"
+          echo "║                                                            ║"
+          echo "║  Trigger: push to main (data/vocabs changes) or manual     ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Detect changed vocabs
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+          else
+            CHANGED=$(git diff --name-only HEAD~1 -- 'data/vocabs/*.ttl' || true)
+            if [ -z "$CHANGED" ]; then
+              echo "mode=none" >> "$GITHUB_OUTPUT"
+            else
+              echo "mode=incremental" >> "$GITHUB_OUTPUT"
+              echo "files<<EOF" >> "$GITHUB_OUTPUT"
+              echo "$CHANGED" >> "$GITHUB_OUTPUT"
+              echo "EOF" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Full rebuild (manual dispatch)
+        if: steps.changed.outputs.mode == 'full'
+        run: pnpm build:data
+
+      - name: Process changed vocabs (incremental)
+        if: steps.changed.outputs.mode == 'incremental'
+        run: |
+          echo "${{ steps.changed.outputs.files }}" | while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            echo "Processing: $file"
+            node packages/data-processing/scripts/process-vocab.js \
+              --profiles data/config/profiles.ttl \
+              --source "$file" \
+              --type vocab \
+              --outDir "web/public/export/vocabs/$(basename "$file" .ttl)" \
+              --backgroundDir data/background
+          done
+
+      - name: Regenerate global assets (incremental)
+        if: steps.changed.outputs.mode == 'incremental'
+        run: |
+          pnpm build:vocablist
+          pnpm build:vocab-metadata
+          pnpm build:labels
+          pnpm build:search
+
+      - name: Commit updated exports
+        if: steps.changed.outputs.mode != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/public/export/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update processed exports"
+          git push

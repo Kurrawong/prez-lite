@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:sdo="https://schema.org/"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:reg="http://purl.org/linked-data/registry#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xmlns:prez="https://prez.dev/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#token">BoreholesSamplingMethod</dcterms:identifier>
+    <skos:definition xml:lang="en">Method by which a physical specimen was obtained, or may indicate that a feature was only observed and not physically sampled. </skos:definition>
+    <skos:prefLabel xml:lang="en">General Geology - Sampling Method</skos:prefLabel>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-09</dcterms:created>
+    <dcterms:creator rdf:resource="https://linked.data.gov.au/org/ga"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-09</dcterms:modified>
+    <dcterms:provenance xml:lang="en">Geoscience Australia Sampling Method (A.LU_SAMPLING_METHODS)</dcterms:provenance>
+    <dcterms:publisher rdf:resource="https://linked.data.gov.au/org/ga"/>
+    <rdfs:seeAlso rdf:resource="https://pid.geoscience.gov.au/dataset/ga/148553"/>
+    <owl:versionInfo>1</owl:versionInfo>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"/>
+    <skos:hasTopConcept rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"/>
+    <dcat:contactPoint>Team Lead - Information Services; Energy, Minerals and Groundwater Division</dcat:contactPoint>
+    <sdo:status rdf:resource="https://linked.data.gov.au/def/reg-statuses/experimental"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airfallDustCollector">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/auger"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCatcher"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCutter"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/reverseCirculationDrilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeLoggingTool">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationDark"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationLight"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationDark"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationLight"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationDark">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreIncubationLight">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVeihmeyerTube">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/crushing">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/currentMeter">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filteredDustCollector">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/filtration">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/gasSampling">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grainsizeSeparation">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/handheldPortableDevice"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurvey">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineralSeparation">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/niskinBottle"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/passiveWaterSampling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingCentrifugal"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingSqueezing"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rainGauge"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingLowFlow"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/outcropSampling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pitOrTrenchSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sedimentTrap">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sonde">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/undergroundMineSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/unknown">
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling">
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/RABDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/RABDrilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/cableToolDrilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryHammerDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/cableToolDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryHammerDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/percussionDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/auger">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreAir"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreBox"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreConventional"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDiamond"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGeoprobe"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGravity"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreKasten"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreMackereth"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePiston"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePush"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreRov"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSonic"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSpike"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVibro"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCatcher">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreCutter">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/reverseCirculationDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rotaryDrilling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/drilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterStillPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography"/>
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterStillPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterStillPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterStillPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterStillPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyAUV"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyROV"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterStillPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterStillPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterStillPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyAUV">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotographyROV">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterVideo">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography"/>
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/baitedRemoteUnderwaterVideo"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterVideo"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterVideo"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterVideo"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoAUV"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoROV"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/diverOperatedUnderwaterVideo">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stereoTowedUnderwaterVideo">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/towedUnderwaterVideo">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoAUV">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideoROV">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeDstTest">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeProdTest">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeWftTest">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/liquidGasSeparation">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterGrabSampling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/airlift">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholeFluidSampling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingLowFlow"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholePurgingUntilAnalyteStabilisation">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/boreholePurgingUntilAnalyteStabilisation"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/purgingOfThreeCaseVolumes"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/purgingOfThreeCaseVolumes">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingHighFlow"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationDark">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubationLight">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/bottleIncubation"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationDark">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubationLight">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/chamberIncubation"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreAir">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreBox">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreConventional">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDiamond">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGeoprobe">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreGravity">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreKasten">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreMackereth">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePiston">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/corePush">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreRov">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSonic">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreSpike">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreVibro">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/coreDrilling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreBullet"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreMechanical"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeBenthic">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeBenthic"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeChainBag"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeDiamantina"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgePipe"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeChainBag">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgeDiamantina">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredgePipe">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/dredge"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/plantobenthicSampler"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabEckman">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/marineSurveySampling"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabEckman"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabROV"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabShipek"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabSmithMcintyre"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabVanVeen"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabROV">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabShipek">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabSmithMcintyre">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grabVanVeen">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/grab"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/handheldPortableDevice">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/fieldMappingSurvey"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/niskinBottle">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/passiveWaterSampling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingCentrifugal">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/poreFluidSamplingSqueezing">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/rainGauge">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumpingLowFlow">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/waterSampling"/>
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pumping"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/outcropSampling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/pitOrTrenchSampling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/surfaceMaterialSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/plantobenthicSampler">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/epibenthicSled"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreBullet">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCoreMechanical">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/sidewallCore"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/undergroundMineSampling">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/mineSampling"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/stillPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/videoPhotography">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterCamera">
+    <skos:broader rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/camera"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterStillPhotography"/>
+    <skos:narrower rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod/underwaterVideo"/>
+    <skos:inScheme rdf:resource="https://pid.geoscience.gov.au/def/voc/ga/BoreholesSamplingMethod"/>
+  </rdf:Description>
+</rdf:RDF>

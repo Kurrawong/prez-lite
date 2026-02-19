@@ -1,0 +1,59 @@
+name: 'Site: Get Background Labels'
+
+on:
+  workflow_call:
+    inputs:
+      prez-lite-ref:
+        description: 'prez-lite branch, tag, or commit'
+        type: string
+        default: 'main'
+      endpoint:
+        description: 'SPARQL endpoint URL'
+        type: string
+        default: 'http://demo.dev.kurrawong.ai/sparql'
+      node-version:
+        description: 'Node.js version'
+        type: string
+        default: '22'
+permissions:
+  contents: write
+
+jobs:
+  fetch-labels:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch prez-lite tools
+        id: tools
+        uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
+        with:
+          prez-lite-ref: ${{ inputs.prez-lite-ref }}
+          node-version: ${{ inputs.node-version }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ensure data directory
+        run: |
+          mkdir -p data/vocabs data/background data/config
+
+      - name: Fetch background labels
+        env:
+          DATA_DIR: ${{ github.workspace }}/data
+        run: |
+          bash "${{ steps.tools.outputs.scripts-dir }}/fetch-labels.sh" \
+            --endpoint "${{ inputs.endpoint }}"
+
+      - name: Commit background labels
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/background/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update background labels"
+          git push

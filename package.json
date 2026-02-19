@@ -1,0 +1,37 @@
+{
+  "name": "prez-lite",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lightweight static vocabulary publishing system",
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build:vocabs": "node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --sourceDir data/vocabs --outputBase web/public/export/vocabs --systemDir web/public/export/system --pattern \"*.ttl\" --backgroundDir data/background --validators data/validators",
+    "build:vocablist": "node packages/data-processing/scripts/generate-vocablist.js --sourceDir data/vocabs --output .cache/catalog.ttl && node packages/data-processing/scripts/process-vocab.js --profiles data/config/profiles.ttl --source .cache/catalog.ttl --type catalog --outDir web/public/export/system/vocabularies --backgroundDir data/background",
+    "build:vocab-metadata": "node packages/data-processing/scripts/generate-vocab-metadata.js --sourceDir data/vocabs --backgroundDir data/background --validators data/validators --output web/public/export/system/vocabularies/index.json",
+    "build:search": "node packages/data-processing/scripts/generate-search-index.js --exportDir web/public/export --output web/public/export/system/search --vocabMetadata web/public/export/system/vocabularies/index.json",
+    "build:get-labels": "bash scripts/fetch-labels.sh",
+    "build:labels": "node packages/data-processing/scripts/generate-labels.js --backgroundDir data/background --output web/public/export/system/labels.json",
+    "build:ensure-data": "if [ ! -d data/vocabs ] || [ -z \"$(ls -A data/vocabs/*.ttl 2>/dev/null)\" ]; then echo 'No vocabs found in data/, using sample-data'; mkdir -p data/vocabs data/background data/config && cp sample-data/vocabs/*.ttl data/vocabs/ && cp sample-data/config/profiles.ttl data/config/profiles.ttl && cp sample-data/manifest.ttl data/manifest.ttl && if [ -d sample-data/background ] && ls sample-data/background/*.ttl >/dev/null 2>&1; then cp sample-data/background/*.ttl data/background/; fi; fi && mkdir -p sample-data/background && touch sample-data/background/.gitkeep",
+    "build:clean-export": "rm -rf web/public/export",
+    "build:all-export": "pnpm build:clean-export && pnpm build:ensure-data && pnpm build:vocabs && pnpm build:vocablist && pnpm build:vocab-metadata && pnpm build:labels && pnpm build:search",
+    "build:components": "pnpm --filter @prez-lite/web-components build",
+    "build:data": "pnpm build:all-export",
+    "build:site": "pnpm build:components && pnpm --filter @prez-lite/web generate",
+    "dev": "pnpm --filter @prez-lite/web dev",
+    "build": "pnpm build:data && pnpm build:site",
+    "generate": "pnpm --filter @prez-lite/web generate",
+    "preview": "pnpm --filter @prez-lite/web preview",
+    "validate": "node scripts/run-validation-tests.js",
+    "ai-assess": "node --env-file=.env scripts/ai-assess-vocabs.js"
+  },
+  "dependencies": {
+    "@fast-csv/format": "^5.0.2",
+    "jsonld": "^8.3.3",
+    "n3": "^2.0.1",
+    "rdf-validate-shacl": "^0.6.5"
+  }
+}
