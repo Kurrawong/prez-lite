@@ -39,7 +39,7 @@ cs:
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
     skos:altLabel "NSW" ;
-    skos:broader :states ;
+    skos:broader :territories ;
     skos:definition "The most populous state, located on the east coast. Capital: Sydney. XXX" ;
     skos:inScheme cs: ;
     skos:notation "NSW" ;
