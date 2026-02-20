@@ -69,7 +69,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://example.com/def/australian-states/states"
+        "@id": "https://example.com/def/australian-states/territories"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#notation": [

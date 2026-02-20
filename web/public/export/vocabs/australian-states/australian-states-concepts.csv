@@ -1,6 +1,6 @@
 iri,broader,prefLabel
 https://example.com/def/australian-states/act,https://example.com/def/australian-states/territories,Australian Capital Territory
-https://example.com/def/australian-states/nsw,https://example.com/def/australian-states/states,New South Wales
+https://example.com/def/australian-states/nsw,https://example.com/def/australian-states/territories,New South Wales
 https://example.com/def/australian-states/nt,https://example.com/def/australian-states/territories,Northern Territory
 https://example.com/def/australian-states/qld,https://example.com/def/australian-states/states,Queensland
 https://example.com/def/australian-states/sa,https://example.com/def/australian-states/states,South Australia
