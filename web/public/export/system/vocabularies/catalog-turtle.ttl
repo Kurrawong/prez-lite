@@ -13,7 +13,7 @@
 <https://example.org/catalogue/vocabularies> a sdo:DataCatalog;
     sdo:name "Vocabularies"@en;
     sdo:description "Published vocabularies."@en;
-    sdo:dateModified "2026-02-19"^^xsd:date;
+    sdo:dateModified "2026-02-20"^^xsd:date;
     sdo:hasPart <https://linked.data.gov.au/def/alteration-form>, <https://example.com/def/australian-states>, <https://example.com/def/colours>, <https://example.com/def/project-status>.
 <https://linked.data.gov.au/def/alteration-form> skos:prefLabel "Alteration form"@en.
 <https://example.com/def/australian-states> skos:prefLabel "Australian States and Territories"@en.
