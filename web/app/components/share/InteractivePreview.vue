@@ -450,7 +450,7 @@ function toggleAttr(name: string) {
 <template>
   <div class="space-y-4">
     <!-- Type selector + Attribute Toggles -->
-    <div class="flex flex-wrap items-center gap-2">
+    <div id="preview-types" class="flex flex-wrap items-center gap-2">
       <!-- Type selector for select component -->
       <template v-if="component === 'list'">
         <span class="text-sm text-gray-600 dark:text-gray-400 mr-1">Type:</span>
@@ -470,7 +470,7 @@ function toggleAttr(name: string) {
         <span class="text-gray-300 dark:text-gray-600 mx-1">|</span>
       </template>
 
-      <span class="text-sm text-gray-600 dark:text-gray-400 mr-1">Options:</span>
+      <span id="preview-attributes" class="text-sm text-gray-600 dark:text-gray-400 mr-1">Options:</span>
       <button
         v-for="attr in attributes"
         :key="attr.name"

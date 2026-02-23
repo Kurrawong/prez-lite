@@ -1,0 +1,158 @@
+[
+  {
+    "id": "editor-welcome",
+    "title": "Editing Walkthrough",
+    "description": "This tour walks through the editing features — entering edit mode, using the toolbar, making changes, and saving to GitHub. You'll need to be signed in to follow along.",
+    "action": "none",
+    "position": "bottom",
+    "delay": 5000
+  },
+  {
+    "id": "editor-go-to-vocabs",
+    "target": "header nav a[href='/vocabs'], a[href='/vocabs']",
+    "title": "Navigate to Vocabularies",
+    "description": "First, let's head to the vocabularies page to pick a vocabulary to edit.",
+    "action": "click",
+    "position": "bottom",
+    "waitFor": "input[placeholder*='Search vocabularies']",
+    "delay": 2500
+  },
+  {
+    "id": "editor-pick-vocab",
+    "target": ".grid > a:first-child",
+    "title": "Pick a Vocabulary",
+    "description": "Click a vocabulary card to open it. We'll use this one for our editing walkthrough.",
+    "action": "click",
+    "navigateTo": "/vocabs",
+    "position": "bottom",
+    "waitFor": "#concepts-panel",
+    "delay": 3000
+  },
+  {
+    "id": "editor-edit-dropdown",
+    "target": ".edit-toolbar-edit-btn",
+    "title": "Edit Button",
+    "description": "The Edit dropdown lets you choose between Full and Inline edit modes. Full mode opens a form-based editor; Inline mode lets you click cells directly in the concept table.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 5000
+  },
+  {
+    "id": "editor-enter-inline",
+    "title": "Enter Inline Edit Mode",
+    "description": "We'll switch to inline edit mode now. This adds editing controls to the toolbar and makes concept properties editable directly in the table.",
+    "navigateTo": "?edit=inline",
+    "action": "none",
+    "position": "bottom",
+    "delay": 4000
+  },
+  {
+    "id": "editor-toolbar-overview",
+    "target": ".edit-toolbar",
+    "title": "The Edit Toolbar",
+    "description": "The toolbar provides all the editing controls — mode switching, undo/redo, change tracking, view options, and save. Let's look at each one.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 4500
+  },
+  {
+    "id": "editor-mode-switch",
+    "target": ".edit-toolbar-mode-btn",
+    "title": "Mode Switch",
+    "description": "Toggle between Full and Inline edit modes. Full mode shows a form-based editor; Inline lets you edit values directly in the table.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 4000
+  },
+  {
+    "id": "editor-undo-redo",
+    "target": ".edit-toolbar-undo-btn",
+    "title": "Undo & Redo",
+    "description": "Made a mistake? Use undo to step back through your changes, or redo to restore them. Each action is tracked individually.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "editor-select-concept",
+    "target": ".overflow-auto.flex-1 > ul > li:first-child > div > .cursor-pointer",
+    "title": "Select a Concept",
+    "description": "Click a concept in the tree to select it. In inline mode, its properties become editable in the detail panel.",
+    "action": "click",
+    "position": "right",
+    "skipOnMissing": true,
+    "delay": 3000
+  },
+  {
+    "id": "editor-inline-editing",
+    "target": ".inline-edit-cell",
+    "title": "Inline Editing",
+    "description": "Click any editable cell to modify its value. Changes are tracked locally until you save them to GitHub.",
+    "action": "none",
+    "position": "right",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "editor-add-concept",
+    "target": ".edit-toolbar-add-btn",
+    "title": "Add a Concept",
+    "description": "Use the Add button to create a new concept in the vocabulary. It will appear at the top of the tree ready for you to fill in.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "editor-changes-badge",
+    "target": ".edit-toolbar-changes-btn",
+    "title": "Pending Changes",
+    "description": "The changes badge shows how many concepts you've modified. Click it to see a summary of all pending changes, with the option to revert individual items.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 4000
+  },
+  {
+    "id": "editor-view-mode",
+    "target": ".edit-toolbar-view-btn",
+    "title": "View Mode",
+    "description": "Switch between Simple and Expert views. Simple hides technical properties like IRIs; Expert shows everything.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "editor-save-button",
+    "target": ".edit-toolbar-save-btn",
+    "title": "Save to GitHub",
+    "description": "When you're done editing, click Save. You'll enter a commit message, then the changes are pushed to the GitHub repository as a new commit.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 4500
+  },
+  {
+    "id": "editor-close-edit",
+    "target": ".edit-toolbar-close-btn",
+    "title": "Exit Edit Mode",
+    "description": "Click the close button to leave edit mode and return to the browse view. Unsaved changes will prompt for confirmation.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "editor-complete",
+    "title": "Editor Tour Complete!",
+    "description": "You've seen the full editing workflow — entering edit mode, making changes inline, tracking modifications, and saving to GitHub. Start this tour again anytime from the header.",
+    "action": "none",
+    "position": "bottom",
+    "delay": 5000
+  }
+]

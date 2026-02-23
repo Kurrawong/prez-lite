@@ -26,7 +26,8 @@
     "generate": "pnpm --filter @prez-lite/web generate",
     "preview": "pnpm --filter @prez-lite/web preview",
     "validate": "node scripts/run-validation-tests.js",
-    "ai-assess": "node --env-file=.env scripts/ai-assess-vocabs.js"
+    "ai-assess": "node --env-file=.env scripts/ai-assess-vocabs.js",
+    "generate:tour-audio": "npx tsx scripts/generate-tour-audio.ts"
   },
   "dependencies": {
     "@fast-csv/format": "^5.0.2",

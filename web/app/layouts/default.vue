@@ -11,5 +11,6 @@ const fluid = provideFluidLayout()
       </UContainer>
     </UMain>
     <SiteFooter />
+    <TourOverlay />
   </div>
 </template>

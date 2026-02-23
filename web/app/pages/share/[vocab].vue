@@ -298,7 +298,7 @@ async function loadPreview(format: ExportFormat) {
 
       <!-- Export Formats -->
       <div class="mb-8">
-        <h2 class="text-xl font-semibold mb-4">Export Formats</h2>
+        <h2 id="export-formats" class="text-xl font-semibold mb-4">Export Formats</h2>
 
         <div class="flex flex-col lg:flex-row border border-default rounded-lg overflow-hidden">
           <!-- Preview panel (left, larger) -->
@@ -377,7 +377,7 @@ async function loadPreview(format: ExportFormat) {
 
           <!-- Format list (right, narrower) -->
           <div class="lg:w-64 shrink-0 border-t lg:border-t-0 lg:border-l border-default bg-gray-50/50 dark:bg-gray-900/30">
-            <div class="flex items-center px-3 py-2 h-[37px] text-sm font-semibold border-b border-default">Downloads</div>
+            <div id="export-downloads" class="flex items-center px-3 py-2 h-[37px] text-sm font-semibold border-b border-default">Downloads</div>
             <div class="divide-y divide-default">
               <div
                 v-for="format in formats"
@@ -415,7 +415,7 @@ async function loadPreview(format: ExportFormat) {
       <!-- Interactive Preview -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xl font-semibold">Interactive Preview</h2>
+          <h2 id="interactive-preview" class="text-xl font-semibold">Interactive Preview</h2>
           <NuxtLink
             to="/share/components/list"
             class="text-sm text-primary hover:underline"

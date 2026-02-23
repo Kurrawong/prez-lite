@@ -84,7 +84,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
   <Teleport to="header">
     <div class="absolute top-full inset-x-0 z-50 bg-muted border-y border-default">
       <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 py-1.5">
-        <div class="flex items-center gap-3 flex-wrap">
+        <div class="edit-toolbar flex items-center gap-3 flex-wrap">
 
       <!-- ============================================================ -->
       <!-- AUTHENTICATED, NOT EDITING -->
@@ -98,7 +98,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
           ]]"
           :ui="{ content: 'z-50' }"
         >
-          <UButton icon="i-heroicons-pencil-square" variant="subtle" size="sm">
+          <UButton class="edit-toolbar-edit-btn" icon="i-heroicons-pencil-square" variant="subtle" size="sm">
             Edit
             <UIcon name="i-heroicons-chevron-down" class="size-3 ml-0.5" />
           </UButton>
@@ -174,6 +174,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
       <template v-else>
         <!-- Mode switcher -->
         <UButton
+          class="edit-toolbar-mode-btn"
           :icon="editView === 'full' ? 'i-heroicons-pencil-square' : 'i-heroicons-cursor-arrow-rays'"
           variant="subtle"
           size="sm"
@@ -187,6 +188,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <!-- Undo/Redo -->
         <UButton
+          class="edit-toolbar-undo-btn"
           icon="i-heroicons-arrow-uturn-left"
           variant="ghost"
           size="xs"
@@ -195,6 +197,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
           @click="emit('undo')"
         />
         <UButton
+          class="edit-toolbar-redo-btn"
           icon="i-heroicons-arrow-uturn-right"
           variant="ghost"
           size="xs"
@@ -222,7 +225,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
         <!-- Changes summary -->
         <template v-else>
           <UPopover v-if="changeCount > 0" v-model:open="changesOpen" :content="{ align: 'start', side: 'bottom' }" :ui="{ content: 'z-50' }">
-            <UButton variant="ghost" size="xs">
+            <UButton class="edit-toolbar-changes-btn" variant="ghost" size="xs">
               <UBadge color="warning" variant="subtle" size="xs" class="mr-1">{{ changeCount }}</UBadge>
               change{{ changeCount !== 1 ? 's' : '' }}
               <UIcon name="i-heroicons-chevron-down" class="size-3 ml-0.5" />
@@ -268,6 +271,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <!-- View mode toggle -->
         <UButton
+          class="edit-toolbar-view-btn"
           :icon="viewMode === 'simple' ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'"
           variant="ghost"
           size="xs"
@@ -329,6 +333,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <!-- Save button -->
         <UButton
+          class="edit-toolbar-save-btn"
           size="sm"
           :disabled="!changeCount"
           :loading="saving"
@@ -339,6 +344,7 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <!-- Close edit mode -->
         <UButton
+          class="edit-toolbar-close-btn"
           icon="i-heroicons-x-mark"
           color="neutral"
           variant="ghost"

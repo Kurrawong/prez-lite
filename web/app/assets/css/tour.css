@@ -1,0 +1,190 @@
+/* Ensure our custom tour UI elements remain interactive above driver.js overlay.
+   driver.js sets pointer-events: none on .driver-active * */
+.driver-active .tour-controls,
+.driver-active .tour-controls * {
+  pointer-events: auto !important;
+}
+
+/* driver.js popover overrides — match Nuxt UI design tokens */
+
+.driver-popover.tour-popover {
+  background-color: white;
+  border: 1px solid var(--ui-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  min-width: 280px;
+  max-width: 360px;
+  color: var(--ui-text);
+}
+
+.driver-popover.tour-popover .driver-popover-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 1rem 1rem 0.25rem;
+  color: var(--ui-text);
+  font-family: inherit;
+}
+
+.driver-popover.tour-popover .driver-popover-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0 1rem 0.75rem;
+  color: var(--ui-text-muted);
+  font-family: inherit;
+}
+
+.driver-popover.tour-popover .driver-popover-footer {
+  padding: 0.75rem 1rem;
+  margin-top: 0;
+  border-top: 1px solid var(--ui-border);
+}
+
+.driver-popover.tour-popover .driver-popover-progress-text {
+  font-size: 0.75rem;
+  color: var(--ui-text-dimmed);
+  font-family: inherit;
+}
+
+.driver-popover.tour-popover .driver-popover-footer button {
+  text-shadow: none; /* clear driver.js default white text-shadow */
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-family: inherit;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.driver-popover.tour-popover .driver-popover-prev-btn {
+  color: var(--ui-text-muted);
+  background: transparent;
+}
+
+.driver-popover.tour-popover .driver-popover-prev-btn:hover {
+  background: var(--ui-bg-elevated);
+}
+
+.driver-popover.tour-popover .driver-popover-next-btn {
+  background: var(--ui-primary);
+  color: white;
+}
+
+.driver-popover.tour-popover .driver-popover-next-btn:hover {
+  opacity: 0.9;
+}
+
+.driver-popover.tour-popover .driver-popover-close-btn {
+  color: var(--ui-text-dimmed);
+  width: 28px;
+  height: 28px;
+  top: 6px;
+  right: 4px;
+}
+
+.driver-popover.tour-popover .driver-popover-close-btn:hover {
+  color: var(--ui-text-muted);
+}
+
+/* Arrow color */
+.driver-popover.tour-popover .driver-popover-arrow {
+  border: 5px solid white;
+}
+
+.driver-popover.tour-popover .driver-popover-arrow-side-left {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+
+.driver-popover.tour-popover .driver-popover-arrow-side-right {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+
+.driver-popover.tour-popover .driver-popover-arrow-side-top {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.driver-popover.tour-popover .driver-popover-arrow-side-bottom {
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+/* Dark mode */
+.dark .driver-popover.tour-popover {
+  background-color: var(--ui-bg-elevated, #1e293b);
+  border-color: var(--ui-border);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-title {
+  color: var(--ui-text);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-description {
+  color: var(--ui-text-muted);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-footer {
+  border-top-color: var(--ui-border);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-close-btn {
+  color: var(--ui-text-dimmed);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-close-btn:hover {
+  color: var(--ui-text-muted);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-arrow {
+  border-color: var(--ui-bg-elevated, #1e293b);
+}
+
+.dark .driver-popover.tour-popover .driver-popover-arrow-side-left {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+
+.dark .driver-popover.tour-popover .driver-popover-arrow-side-right {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+
+.dark .driver-popover.tour-popover .driver-popover-arrow-side-top {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.dark .driver-popover.tour-popover .driver-popover-arrow-side-bottom {
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+/* Auto-mode progress bar at top of popover */
+.tour-popover-progress {
+  height: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+}
+
+.tour-popover-progress-bar {
+  height: 100%;
+  background: var(--ui-primary);
+  transition: width 0.1s linear;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.dark .tour-popover-progress {
+  background: rgba(255, 255, 255, 0.05);
+}

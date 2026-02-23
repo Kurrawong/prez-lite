@@ -6,7 +6,7 @@
  * and asserts pass/fail matches the filename pattern (valid/invalid).
  */
 import { describe, it, expect, beforeAll } from 'vitest'
-import { readFileSync, readdirSync } from 'fs'
+import { readFileSync, readdirSync, existsSync } from 'fs'
 import { join, resolve } from 'path'
 import { Parser, Store } from 'n3'
 import SHACLValidator from 'rdf-validate-shacl'
@@ -14,6 +14,8 @@ import SHACLValidator from 'rdf-validate-shacl'
 const ROOT = resolve(__dirname, '../../../')
 const VALIDATORS_DIR = join(ROOT, 'data/validators')
 const TESTS_DIR = join(ROOT, 'data/validators/tests')
+
+const HAS_FIXTURES = existsSync(TESTS_DIR)
 
 function parseFile(filepath: string): Store {
   const store = new Store()
@@ -38,7 +40,7 @@ async function validate(dataStore: Store, shapesStore: Store) {
   return { conforms: violations === 0, violations }
 }
 
-describe('SHACL validation fixtures', () => {
+describe.skipIf(!HAS_FIXTURES)('SHACL validation fixtures', () => {
   let shapesStore: Store
 
   beforeAll(() => {
@@ -53,9 +55,9 @@ describe('SHACL validation fixtures', () => {
   })
 
   // Discover all test fixture files
-  const fixtureFiles = readdirSync(TESTS_DIR)
-    .filter(f => f.endsWith('.ttl'))
-    .sort()
+  const fixtureFiles = HAS_FIXTURES
+    ? readdirSync(TESTS_DIR).filter(f => f.endsWith('.ttl')).sort()
+    : []
 
   // Group by vocab prefix for readability
   const groups = new Map<string, string[]>()

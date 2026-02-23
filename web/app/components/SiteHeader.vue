@@ -1,6 +1,19 @@
 <script setup lang="ts">
+import type { TourMenuItem } from '~/components/tour/TourMenu.vue'
+
 const site = useSiteConfig()
 const { navLinks } = useNavigation()
+const { isAuthenticated } = useGitHubAuth()
+
+const availableTours = computed<TourMenuItem[]>(() => {
+  const tours: TourMenuItem[] = [
+    { id: 'site-overview', label: 'Site Overview', icon: 'i-heroicons-play-circle' },
+  ]
+  if (isAuthenticated.value) {
+    tours.push({ id: 'editor-guide', label: 'Editor Guide', icon: 'i-heroicons-pencil-square' })
+  }
+  return tours
+})
 </script>
 
 <template>
@@ -24,11 +37,12 @@ const { navLinks } = useNavigation()
     </template>
 
     <slot name="navigation">
-      <UNavigationMenu :items="navLinks" :ui="{ content: 'z-[60]' }" />
+      <UNavigationMenu :items="navLinks" :ui="{ viewportWrapper: 'z-[60]' }" />
     </slot>
 
     <template #right>
       <slot name="actions">
+        <TourMenu :tours="availableTours" />
         <UButton
           to="/search"
           icon="i-heroicons-magnifying-glass"

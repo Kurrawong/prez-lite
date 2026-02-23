@@ -1,0 +1,207 @@
+[
+  {
+    "id": "welcome",
+    "title": "Welcome to Prez Lite",
+    "description": "This guided tour will walk you through the main features of the vocabulary browser. You can switch between auto and manual modes at any time.",
+    "action": "none",
+    "position": "bottom",
+    "delay": 4000
+  },
+  {
+    "id": "nav-menu",
+    "target": "header nav",
+    "title": "Navigation",
+    "description": "Use the navigation menu to move between the main sections of the site \u2014 vocabularies, search, sharing, and documentation pages.",
+    "action": "none",
+    "position": "bottom",
+    "delay": 3500
+  },
+  {
+    "id": "go-to-vocabs",
+    "target": "header nav a[href='/vocabs'], a[href='/vocabs']",
+    "title": "Vocabularies Page",
+    "description": "Let\u2019s visit the vocabularies page to browse the available concept schemes.",
+    "action": "click",
+    "position": "bottom",
+    "waitFor": "input[placeholder*='Search vocabularies']",
+    "delay": 2500
+  },
+  {
+    "id": "vocab-search",
+    "target": "input[placeholder*='Search vocabularies']",
+    "title": "Search Vocabularies",
+    "description": "Filter vocabularies by name using the search input. Results update instantly as you type.",
+    "action": "none",
+    "navigateTo": "/vocabs",
+    "position": "bottom",
+    "delay": 3000
+  },
+  {
+    "id": "vocab-card",
+    "target": ".grid > a:first-child",
+    "title": "Vocabulary Cards",
+    "description": "Each card shows a vocabulary with its name, description, concept count, version, and validation status. Click a card to explore its concepts.",
+    "action": "click",
+    "position": "bottom",
+    "waitFor": "#concepts-panel",
+    "delay": 3000
+  },
+  {
+    "id": "scheme-overview",
+    "target": "#concepts-panel",
+    "title": "Vocabulary Detail",
+    "description": "This page has three collapsible panels: Concepts, Collections, and Metadata. You can click any panel header to collapse or expand it. Let\u2019s try it.",
+    "action": "none",
+    "position": "top",
+    "skipOnMissing": true,
+    "delay": 4000
+  },
+  {
+    "id": "collapse-concepts",
+    "target": "#concepts-panel h2.cursor-pointer",
+    "title": "Collapse a Panel",
+    "description": "Click the Concepts header to collapse the panel. This keeps the page tidy when you want to focus on other sections.",
+    "action": "click",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3000
+  },
+  {
+    "id": "expand-concepts",
+    "target": "#concepts-panel h2.cursor-pointer",
+    "title": "Expand It Back",
+    "description": "Click again to expand the panel. All three sections work the same way.",
+    "action": "click",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 2500
+  },
+  {
+    "id": "concept-search",
+    "target": "input[placeholder*='Search concepts']",
+    "title": "Search Concepts",
+    "description": "Quickly find concepts within this vocabulary by typing keywords. The tree filters in real time.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3000
+  },
+  {
+    "id": "click-first-concept",
+    "target": ".overflow-auto.flex-1 > ul > li:first-child > div > .cursor-pointer",
+    "title": "Select a Concept",
+    "description": "Click any concept to view its details \u2014 properties, relationships, and linked data appear in the side panel.",
+    "action": "click",
+    "position": "right",
+    "skipOnMissing": true,
+    "delay": 2500
+  },
+  {
+    "id": "expand-node",
+    "target": ".overflow-auto.flex-1 .cursor-pointer > button",
+    "title": "Expand a Node",
+    "description": "Click the arrow to expand a concept and reveal its narrower (child) concepts in the hierarchy.",
+    "action": "click",
+    "position": "right",
+    "skipOnMissing": true,
+    "delay": 2500
+  },
+  {
+    "id": "metadata-panel",
+    "target": "#metadata-section h2.cursor-pointer",
+    "title": "Vocabulary Metadata",
+    "description": "The Metadata panel shows detailed information about the vocabulary \u2014 publisher, version, licence, and other DCAT/Schema.org properties.",
+    "action": "none",
+    "position": "top",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "metadata-content",
+    "target": "#metadata-section",
+    "title": "Metadata Fields",
+    "description": "You\u2019ll find properties like title, description, creator, publisher, date modified, and licence. These come from the vocabulary\u2019s RDF metadata.",
+    "action": "none",
+    "position": "top",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "share-button",
+    "target": "a[aria-label*='hare'], button[aria-label*='hare']",
+    "title": "Share & Export",
+    "description": "Click the share button to access export formats, download links, and embeddable web component snippets.",
+    "action": "click",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3000
+  },
+  {
+    "id": "share-arrived",
+    "target": "#export-formats",
+    "title": "Export Formats",
+    "description": "The share page offers your vocabulary in multiple serialisations. A live preview shows each format\u2019s content on the left.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "export-downloads",
+    "target": "#export-downloads",
+    "title": "Download Sidebar",
+    "description": "Download the vocabulary in Turtle, Annotated Turtle, JSON, JSON-LD, RDF/XML, CSV, or HTML. Each row has download and copy-URL buttons.",
+    "action": "none",
+    "position": "left",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "click-format",
+    "target": "#export-downloads + .divide-y > div:first-child",
+    "title": "Preview a Format",
+    "description": "Click any format row to load a live preview. The source view shows raw content; some formats also offer a rendered or tree view.",
+    "action": "click",
+    "position": "left",
+    "skipOnMissing": true,
+    "delay": 3000
+  },
+  {
+    "id": "interactive-preview",
+    "target": "h2#interactive-preview",
+    "title": "Interactive Preview",
+    "description": "Below the exports is an interactive playground where you can configure and preview the prez-list web component with your vocabulary.",
+    "action": "none",
+    "position": "top",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "component-types",
+    "target": "#preview-types",
+    "title": "Component Types",
+    "description": "Choose between select (default tree), dropdown, radio, or table display modes. Each renders the vocabulary differently.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "attribute-toggles",
+    "target": "#preview-attributes",
+    "title": "Attribute Options",
+    "description": "Toggle options like flat (no hierarchy), search, multiple selection, descriptions, and more. The live preview and code snippet update instantly.",
+    "action": "none",
+    "position": "bottom",
+    "skipOnMissing": true,
+    "delay": 3500
+  },
+  {
+    "id": "tour-complete",
+    "title": "Tour Complete!",
+    "description": "You\u2019ve seen the main features of Prez Lite \u2014 browsing vocabularies, exploring concept hierarchies, exporting data, and embedding interactive web components. Restart this tour anytime from the header.",
+    "action": "none",
+    "position": "bottom",
+    "delay": 5000
+  }
+]

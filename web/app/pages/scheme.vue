@@ -1238,6 +1238,7 @@ function copyIriToClipboard(iri: string) {
 
       <!-- Concepts Tree with inline panel -->
       <UCard
+        id="concepts-panel"
         class="mb-8"
         :ui="immersiveMode ? { root: 'border-0 ring-0 shadow-none rounded-none' } : {}"
       >
@@ -1323,6 +1324,7 @@ function copyIriToClipboard(iri: string) {
           <!-- Add concept (edit mode) -->
           <UButton
             v-if="treeEditMode"
+            class="edit-toolbar-add-btn"
             icon="i-heroicons-plus"
             size="sm"
             variant="soft"
