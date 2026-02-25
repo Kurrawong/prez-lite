@@ -76,6 +76,9 @@ jobs:
         run: npx nuxt prepare
         working-directory: web
 
+      - name: Generate validation test fixtures
+        run: node scripts/generate-test-fixtures.js
+
       - name: Run integration tests
         run: pnpm --filter @prez-lite/web test:integration
 
