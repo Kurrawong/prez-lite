@@ -188,6 +188,12 @@ pnpm dev            # start dev server
 3. **Profile-Driven**: Profiles control all rendering/output
 4. **Progressive**: Start simple, add complexity as needed
 
+## PR and Commit Conventions
+
+- PR titles must use **lowercase** conventional commit format: `type: description`
+- Valid types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
+- Do not include "Generated with Claude Code" in PRs, commits, comments, or issues
+
 ## Don't Forget
 
 - Update docs when changing features

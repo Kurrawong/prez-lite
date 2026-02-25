@@ -22,5 +22,12 @@ export default defineConfig({
     url: 'http://localhost:3123',
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
+    env: {
+      NUXT_PUBLIC_GITHUB_REPO: 'Kurrawong/prez-lite',
+      NUXT_PUBLIC_GITHUB_BRANCH: 'main',
+      NUXT_PUBLIC_GITHUB_VOCAB_PATH: 'data/vocabs',
+      NUXT_PUBLIC_GITHUB_CLIENT_ID: 'e2e-mock-client-id',
+      NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL: 'http://localhost:9999',
+    },
   },
 })

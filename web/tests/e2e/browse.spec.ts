@@ -15,7 +15,7 @@ test.describe('Browse flow', () => {
     // Wait for vocab cards to appear (they load from static JSON)
     const cards = page.locator('a[href*="/scheme?uri="]')
     await expect(cards.first()).toBeVisible({ timeout: 10_000 })
-    await expect(cards).toHaveCount(3) // 3 vocabs in test data
+    await expect(cards).toHaveCount(4) // 4 vocabs in test data
   })
 
   test('vocab cards show concept counts', async ({ page }) => {

@@ -8,6 +8,8 @@ description: Write SKOS vocabularies in Turtle format
 
 # Writing Vocabularies
 
+A vocabulary is a structured list of terms (concepts) with definitions and relationships between them. Prez Lite uses the [SKOS](https://www.w3.org/TR/skos-primer/) standard, where a **Concept Scheme** groups related **Concepts** into a hierarchy. For more background, see the [Kurrawong vocabulary documentation](https://docs.kurrawong.ai/products/tools/vocexcel/).
+
 Each vocabulary is a single Turtle (`.ttl`) file containing a `skos:ConceptScheme` and its `skos:Concept` members.
 
 ## Minimal Example

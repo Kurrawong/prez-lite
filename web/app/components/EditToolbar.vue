@@ -106,12 +106,13 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <USeparator orientation="vertical" class="h-5" />
 
-        <!-- View mode toggle -->
+        <!-- View mode toggle (disabled outside edit mode) -->
         <UButton
           :icon="viewMode === 'simple' ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'"
           variant="ghost"
           size="xs"
-          @click="emit('toggle-view-mode')"
+          disabled
+          title="Available in edit mode"
         >
           {{ viewMode === 'simple' ? 'Simple' : 'Expert' }}
         </UButton>

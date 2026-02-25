@@ -1605,7 +1605,7 @@ function copyIriToClipboard(iri: string) {
         />
       </UCard>
 
-      <!-- Metadata -->
+      <!-- Vocabulary -->
       <UCard v-if="!immersiveMode" id="metadata-section" class="mb-8">
         <template #header>
           <h2
@@ -1617,12 +1617,12 @@ function copyIriToClipboard(iri: string) {
               class="size-4"
             />
             <UIcon name="i-heroicons-information-circle" />
-            Metadata
+            Vocabulary
           </h2>
         </template>
 
         <p v-if="!metadataPanelOpen" class="text-sm text-muted">
-          Vocabulary metadata — click header to expand
+          Vocabulary properties — click header to expand
         </p>
         <div v-show="metadataPanelOpen">
         <!-- Edit mode: full → ConceptForm for scheme properties -->

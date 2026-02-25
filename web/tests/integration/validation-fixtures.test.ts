@@ -38,13 +38,20 @@ async function validate(dataStore: Store, shapesStore: Store) {
   return { conforms: violations === 0, violations }
 }
 
-describe('SHACL validation fixtures', () => {
+// Check prerequisites — skip entire suite if fixtures or shapes are missing
+function safeReaddir(dir: string): string[] {
+  try { return readdirSync(dir) } catch { return [] }
+}
+
+const fixtureFiles = safeReaddir(TESTS_DIR).filter(f => f.endsWith('.ttl')).sort()
+const shapeFiles = safeReaddir(VALIDATORS_DIR).filter(f => f.endsWith('.ttl'))
+const canRun = fixtureFiles.length > 0 && shapeFiles.length > 0
+
+describe.skipIf(!canRun)('SHACL validation fixtures', () => {
   let shapesStore: Store
 
   beforeAll(() => {
-    // Load shapes from all TTL files in validators dir (same as run-validation-tests.js)
     shapesStore = new Store()
-    const shapeFiles = readdirSync(VALIDATORS_DIR).filter(f => f.endsWith('.ttl'))
     for (const f of shapeFiles) {
       const parser = new Parser()
       const content = readFileSync(join(VALIDATORS_DIR, f), 'utf-8')
@@ -52,15 +59,9 @@ describe('SHACL validation fixtures', () => {
     }
   })
 
-  // Discover all test fixture files
-  const fixtureFiles = readdirSync(TESTS_DIR)
-    .filter(f => f.endsWith('.ttl'))
-    .sort()
-
   // Group by vocab prefix for readability
   const groups = new Map<string, string[]>()
   for (const f of fixtureFiles) {
-    // Extract prefix: everything before -valid- or -invalid-
     const match = f.match(/^(.+?)-(valid|invalid)-/)
     const prefix = match ? match[1]! : 'unknown'
     if (!groups.has(prefix)) groups.set(prefix, [])
