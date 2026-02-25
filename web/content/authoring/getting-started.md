@@ -25,6 +25,10 @@ flowchart LR
 
 No servers, no databases, no SPARQL endpoints required.
 
+## Before You Start
+
+Browsing vocabularies works without signing in. To **edit or create** vocabularies, sign in with your GitHub account using the button in the site header.
+
 ## Quick Start
 
 ### 1. Use the Template

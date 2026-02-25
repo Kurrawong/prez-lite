@@ -47,7 +47,7 @@ const categoryLabels: Record<string, string> = {
   label: 'Labels',
   description: 'Descriptions',
   provenance: 'Provenance',
-  metadata: 'Metadata',
+  metadata: 'Vocabulary',
   hierarchy: 'Hierarchy',
   other: 'Other',
 }
