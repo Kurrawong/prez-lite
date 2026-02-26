@@ -1,0 +1,22 @@
+@prefix prez: <https://prez.dev/> .
+
+<workspaces> a prez:WorkspaceConfig ;
+    prez:workspace [
+        prez:slug "staging" ;
+        prez:label "Staging" ;
+        prez:description "For vocabulary authors" ;
+        prez:icon "i-heroicons-pencil-square" ;
+        prez:refreshFrom "main"
+    ] , [
+        prez:slug "dev" ;
+        prez:label "Development" ;
+        prez:description "For system changes and integrations" ;
+        prez:icon "i-heroicons-code-bracket" ;
+        prez:refreshFrom "main"
+    ] , [
+        prez:slug "sandbox" ;
+        prez:label "Sandbox" ;
+        prez:description "Playground - can be refreshed anytime" ;
+        prez:icon "i-heroicons-beaker" ;
+        prez:refreshFrom "staging"
+    ] .

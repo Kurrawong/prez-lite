@@ -80,12 +80,17 @@ const { getShareUrl, getVocabByIri } = useShare()
 const shareUrl = computed(() => uri.value ? getShareUrl(uri.value) : undefined)
 
 // Edit on GitHub
-const { githubRepo, githubBranch, githubVocabPath } = useRuntimeConfig().public
+const { githubRepo, githubBranch: defaultBranch, githubVocabPath } = useRuntimeConfig().public
+
+// Workspace-aware branch selection
+const workspace = useWorkspace()
+const effectiveBranch = computed(() => workspace.activeBranch.value ?? defaultBranch as string)
+
 const githubEditUrl = computed(() => {
   if (!githubRepo || !uri.value) return null
   const vocab = getVocabByIri(uri.value)
   if (!vocab) return null
-  return `https://github.dev/${githubRepo}/blob/${githubBranch}/${githubVocabPath}/${vocab.slug}.ttl`
+  return `https://github.dev/${githubRepo}/blob/${effectiveBranch.value}/${githubVocabPath}/${vocab.slug}.ttl`
 })
 
 // --- Editor State ---
@@ -115,7 +120,7 @@ const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'p
 
 // --- Structured Form Editor ---
 const editMode = (editorOwner && editorRepoName)
-  ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, githubBranch as string, uri)
+  ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, effectiveBranch.value, uri)
   : null
 
 // Build status polling
@@ -132,7 +137,7 @@ const diffModalCommitMsg = ref('')
 
 // History composable (created lazily)
 const vocabHistory = (editorOwner && editorRepoName)
-  ? useVocabHistory(editorOwner, editorRepoName, editorFilePath as Ref<string>, githubBranch as string)
+  ? useVocabHistory(editorOwner, editorRepoName, editorFilePath as Ref<string>, effectiveBranch.value)
   : null
 
 // Load commits when popover opens or when page loads with a sha param
@@ -999,6 +1004,7 @@ function copyIriToClipboard(iri: string) {
       :error="editMode?.error.value ?? null"
       :pending-changes="pendingChanges"
       :view-mode="viewMode"
+      :workspace-label="workspace.workspaceLabel.value"
       :history-commits="vocabHistory?.commits.value ?? []"
       :history-loading="!!vocabHistory?.loading.value"
       :can-undo="!!editMode?.canUndo.value"
@@ -1011,6 +1017,7 @@ function copyIriToClipboard(iri: string) {
       @save="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
       @toggle-view-mode="toggleViewMode"
       @sign-in="authLogin"
+      @open-workspace="navigateTo('/workspace')"
       @load-history="vocabHistory?.fetchCommits()"
       @browse-version="browseVersion"
       @open-diff="(commit, index) => openDiffModal(commit, index)"

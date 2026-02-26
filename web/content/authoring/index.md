@@ -12,6 +12,7 @@ Everything you need to create, configure, and publish SKOS vocabularies with Pre
 ## Guides
 
 - [Getting Started](/authoring/getting-started) — Set up a project and publish your first vocabulary
+- [Editing Workflow](/authoring/workflow) — Workspaces, branches, and the approval process
 - [Writing Vocabularies](/authoring/vocabularies) — SKOS structure, properties, and examples
 - [Collections](/authoring/collections) — SKOS collection groupings
 - [Configuring Profiles](/authoring/profiles) — Control rendering and export with SHACL profiles

@@ -14,6 +14,8 @@ const props = defineProps<{
   error: string | null
   pendingChanges: SubjectChange[]
   viewMode: 'simple' | 'expert'
+  // Workspace
+  workspaceLabel?: string | null
   // History
   historyCommits: HistoryCommit[]
   historyLoading: boolean
@@ -31,6 +33,7 @@ const emit = defineEmits<{
   'save': []
   'toggle-view-mode': []
   'sign-in': []
+  'open-workspace': []
   // History
   'load-history': []
   'browse-version': [commit: HistoryCommit]
@@ -85,6 +88,18 @@ function truncateCommitMsg(msg: string, max = 50): string {
     <div class="absolute top-full inset-x-0 z-50 bg-muted border-y border-default">
       <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 py-1.5">
         <div class="flex items-center gap-3 flex-wrap">
+
+      <!-- Workspace badge (always visible when workspace is selected) -->
+      <UButton
+        v-if="workspaceLabel"
+        variant="soft"
+        color="neutral"
+        size="xs"
+        icon="i-heroicons-folder-open"
+        @click="emit('open-workspace')"
+      >
+        {{ workspaceLabel }}
+      </UButton>
 
       <!-- ============================================================ -->
       <!-- AUTHENTICATED, NOT EDITING -->
