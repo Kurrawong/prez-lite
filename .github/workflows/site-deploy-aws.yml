@@ -101,6 +101,8 @@ jobs:
         run: pnpm generate
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
+          NUXT_PUBLIC_GITHUB_CLIENT_ID: ${{ vars.GH_CLIENT_ID }}
+          NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL: ${{ vars.GH_AUTH_WORKER_URL }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
