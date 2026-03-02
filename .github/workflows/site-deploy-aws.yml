@@ -84,6 +84,13 @@ jobs:
             --output public/export/system/search \
             --vocabMetadata public/export/system/vocabularies/index.json || echo "Search index skipped"
 
+          # Workspaces
+          if [ -f "data/config/workspaces.ttl" ] && [ -f "$DP/scripts/generate-workspaces.js" ]; then
+            node "$DP/scripts/generate-workspaces.js" \
+              --source data/config/workspaces.ttl \
+              --output public/export/system/workspaces.json || echo "Workspaces skipped"
+          fi
+
       - name: Setup pnpm cache
         run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
