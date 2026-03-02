@@ -278,11 +278,11 @@ async function generateSystemFiles() {
     console.warn('      ⚠ Failed to generate search index:', error.message)
   }
 
-  // Generate workspaces configuration
+  // Generate workspaces configuration (optional, requires prez-lite v1.x+)
   const workspacesFile = join(ROOT_DIR, 'data', 'config', 'workspaces.ttl')
-  if (existsSync(workspacesFile)) {
+  const workspacesScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-workspaces.js')
+  if (existsSync(workspacesFile) && existsSync(workspacesScript)) {
     console.log('   Generating workspaces.json...')
-    const workspacesScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-workspaces.js')
     try {
       execSync(`node "${workspacesScript}" --source "${workspacesFile}" --output "${join(SYSTEM_DIR, 'workspaces.json')}"`, {
         stdio: 'pipe',
