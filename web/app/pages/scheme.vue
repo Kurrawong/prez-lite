@@ -1068,7 +1068,7 @@ function copyIriToClipboard(iri: string) {
   <div :class="immersiveMode ? 'py-2' : 'py-8'">
     <!-- Edit Toolbar (always visible, fixed at top below header) -->
     <EditToolbar
-      v-if="displayScheme && !historySha && isAuthenticated"
+      v-if="displayScheme && !historySha && isAuthenticated && status !== 'error'"
       :is-edit-mode="!!editMode?.isEditMode.value"
       :is-dirty="!!editMode?.isDirty.value"
       :loading="!!editMode?.loading.value"
