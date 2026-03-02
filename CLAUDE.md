@@ -45,6 +45,22 @@ prez-lite/
 └── resources/             # Static resources
 ```
 
+## Important: Child Repos in the Monorepo
+
+**Client sites** (`packages/sites/*`) and **template repos** (`packages/gh-templates/*`) are **separate git repositories** checked out within the prez-lite monorepo for convenience. They are **not part of the main prez-lite project**.
+
+- Each directory under `packages/sites/` (e.g., `suncorp-vpp`) has its own `.git` directory
+- Each directory under `packages/gh-templates/` (e.g., `default`) has its own `.git` directory
+- These are listed in `.gitignore` so changes don't affect the main repo
+- They have their own remotes (e.g., `Kurrawong/suncorp-vpp`, `Kurrawong/prez-lite-template-default`)
+
+**Before cloning a child site or template:**
+1. Check if it already exists in `packages/sites/` or `packages/gh-templates/`
+2. If it exists, navigate to that directory and work with it directly
+3. Only clone separately if you need it outside the monorepo structure
+
+This arrangement allows convenient side-by-side development while keeping the repositories independent.
+
 ## Documentation Structure
 
 Documentation in `/docs` is organized by concern:
