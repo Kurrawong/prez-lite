@@ -145,6 +145,27 @@ export function useWorkspace() {
     return true
   }
 
+  /** Ensure the workspace root branch exists (e.g. staging), creating from refreshFrom if needed */
+  async function ensureWorkspaceBranch(): Promise<boolean> {
+    const ws = activeWorkspace.value
+    if (!ws || !token.value) return false
+
+    // Ensure branches are loaded
+    if (!branches.value.length) {
+      await fetchBranches()
+    }
+
+    if (branches.value.some(b => b.name === ws.slug)) return true
+
+    // Create workspace branch from its refreshFrom (e.g. main)
+    const created = await createBranch(ws.slug, ws.refreshFrom)
+    if (!created) {
+      await fetchBranches()
+      return branches.value.some(b => b.name === ws.slug)
+    }
+    return true
+  }
+
   /** Ensure the edit branch exists (called before first save) */
   async function ensureEditBranch(): Promise<boolean> {
     if (!state.value?.vocabSlug) return false
@@ -152,10 +173,9 @@ export function useWorkspace() {
     const branchName = activeBranch.value
     if (!branchName || !ws) return false
 
-    // Ensure branches are loaded
-    if (!branches.value.length && token.value) {
-      await fetchBranches()
-    }
+    // Ensure workspace branch exists first (also loads branches list)
+    const wsOk = await ensureWorkspaceBranch()
+    if (!wsOk) return false
 
     if (branches.value.some(b => b.name === branchName)) return true
 
@@ -306,6 +326,7 @@ export function useWorkspace() {
     loadDefinitions,
     selectWorkspace,
     selectVocab,
+    ensureWorkspaceBranch,
     ensureEditBranch,
     clearWorkspace,
     openSelector,

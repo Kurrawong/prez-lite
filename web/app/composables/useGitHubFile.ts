@@ -11,8 +11,8 @@ export function useGitHubFile(
   repo: string,
   rawPath: Ref<string>,
   branch: Ref<string>,
-  /** Fallback branch for loading (e.g. workspace branch when edit branch doesn't exist yet) */
-  fallbackBranch?: Ref<string>,
+  /** Fallback branches for loading, tried in order when primary branch 404s */
+  fallbackBranches?: Ref<string>[],
 ) {
   const { token } = useGitHubAuth()
 
@@ -38,24 +38,32 @@ export function useGitHubFile(
     error.value = null
 
     try {
-      // Try the primary branch first
-      let branchRef = branch.value
-      let res = await fetch(
-        `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branchRef)}`,
-        { headers: { Authorization: `Bearer ${token.value}` } },
-      )
-
-      // If 404 and we have a fallback branch, try that
-      if (res.status === 404 && fallbackBranch?.value && fallbackBranch.value !== branchRef) {
-        branchRef = fallbackBranch.value
-        res = await fetch(
-          `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branchRef)}`,
-          { headers: { Authorization: `Bearer ${token.value}` } },
-        )
+      // Build ordered list of branches to try: primary, then fallbacks
+      const tried = new Set<string>()
+      const branches = [branch.value]
+      if (fallbackBranches) {
+        for (const fb of fallbackBranches) {
+          if (fb.value) branches.push(fb.value)
+        }
       }
 
-      if (!res.ok) {
-        error.value = res.status === 404 ? `File not found: ${path}` : `GitHub API error ${res.status}: ${path}`
+      let branchRef = ''
+      let res: Response | null = null
+
+      for (const candidate of branches) {
+        if (tried.has(candidate)) continue
+        tried.add(candidate)
+        branchRef = candidate
+        res = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(candidate)}`,
+          { headers: { Authorization: `Bearer ${token.value}` } },
+        )
+        if (res.status !== 404) break
+      }
+
+      if (!res || !res.ok) {
+        const status = res?.status ?? 0
+        error.value = status === 404 ? `File not found: ${path}` : `GitHub API error ${status}: ${path}`
         return
       }
 

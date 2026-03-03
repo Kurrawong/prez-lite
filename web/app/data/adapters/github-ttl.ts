@@ -22,6 +22,8 @@ export interface GitHubTTLAdapterOptions {
   branch: string
   vocabPath: string
   token: string
+  /** Branch to fall back to if primary branch doesn't exist (e.g. 'main') */
+  fallbackBranch?: string
 }
 
 interface GitHubFileResponse {
@@ -37,7 +39,7 @@ function decodeBase64(encoded: string): string {
 }
 
 export function createGitHubTTLAdapter(options: GitHubTTLAdapterOptions): VocabSourceAdapter {
-  const { owner, repo, branch, vocabPath, token } = options
+  const { owner, repo, branch, vocabPath, token, fallbackBranch } = options
   const basePath = vocabPath.replace(/^\/+|\/+$/g, '')
 
   // Cache parsed stores per slug to avoid re-fetching within a session
@@ -50,8 +52,18 @@ export function createGitHubTTLAdapter(options: GitHubTTLAdapterOptions): VocabS
         `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${branch}`,
         { headers: { Authorization: `Bearer ${token}` } },
       )
-      if (!res.ok) return null
-      return await res.json()
+      if (res.ok) return await res.json()
+
+      // If primary branch 404s and we have a fallback, try that
+      if (res.status === 404 && fallbackBranch && fallbackBranch !== branch) {
+        const fallbackRes = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${fallbackBranch}`,
+          { headers: { Authorization: `Bearer ${token}` } },
+        )
+        if (fallbackRes.ok) return await fallbackRes.json()
+      }
+
+      return null
     } catch {
       return null
     }

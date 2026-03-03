@@ -18,6 +18,9 @@ const props = defineProps<{
   error?: string | null
   merging?: boolean
   rejecting?: boolean
+  commenting?: boolean
+  /** Workspace display name (e.g. "Staging") */
+  workspaceLabel?: string
 }>()
 
 const emit = defineEmits<{
@@ -33,7 +36,46 @@ const commentText = ref('')
 
 watch(() => props.defaultTitle, (v) => { title.value = v })
 
-const mergeLabel = computed(() => props.layerName === 'pending' ? 'Approve' : 'Publish')
+// --- Layer-aware labels ---
+
+const isPending = computed(() => props.layerName === 'pending')
+const wsName = computed(() => props.workspaceLabel || 'staging')
+
+/** Primary action button label */
+const actionLabel = computed(() =>
+  isPending.value ? 'Submit for Approval' : 'Submit for Publishing',
+)
+
+/** Merge/approve button label */
+const mergeLabel = computed(() =>
+  isPending.value ? 'Approve' : 'Publish to Production',
+)
+
+/** Success message after merge */
+const mergeSuccessTitle = computed(() =>
+  isPending.value
+    ? `Changes approved and included in ${wsName.value}`
+    : 'Changes published to production',
+)
+
+/** Next step hint after merge */
+const mergeSuccessHint = computed(() =>
+  isPending.value
+    ? `Your changes are now in ${wsName.value}, ready to be published to production.`
+    : null,
+)
+
+/** Submitted confirmation heading */
+const submittedHeading = computed(() =>
+  isPending.value ? 'Submitted for approval' : 'Submitted for publishing',
+)
+
+/** Submitted confirmation description */
+const submittedDescription = computed(() =>
+  isPending.value
+    ? `Your changes to ${props.vocabLabel} have been submitted for review. Once approved, they will be included in ${wsName.value}.`
+    : `All changes in ${wsName.value} have been submitted for review. Once approved, they will be published to production.`,
+)
 
 function handleCreate() {
   if (!title.value.trim()) return
@@ -51,6 +93,9 @@ function handleReject() {
   emit('reject', commentText.value.trim())
   commentText.value = ''
 }
+
+/** True when any async action is in progress */
+const busy = computed(() => !!props.creating || !!props.merging || !!props.rejecting || !!props.commenting)
 
 function formatDate(dateStr: string): string {
   const d = new Date(dateStr)
@@ -84,10 +129,13 @@ function errorDescription(msg: string): string | null {
   if (!msg) return null
   const lower = msg.toLowerCase()
   if (lower.includes('conflict') || lower.includes('not mergeable')) {
-    return 'Resolve conflicts on GitHub before approving.'
+    return 'Conflicts need to be resolved before this can be approved.'
   }
   if (lower.includes('check') || lower.includes('status')) {
-    return 'Wait for checks to pass or resolve on GitHub.'
+    return 'Checks must pass before this can be approved.'
+  }
+  if (lower.includes('already') || lower.includes('409')) {
+    return 'Please wait a moment and try again.'
   }
   return null
 }
@@ -97,25 +145,23 @@ function errorDescription(msg: string): string | null {
   <div class="space-y-4">
     <!-- Create Mode -->
     <template v-if="mode === 'create'">
-      <div class="text-sm text-muted flex items-center gap-1.5">
-        <UIcon name="i-heroicons-arrow-right-circle" class="size-4" />
-        <span class="font-medium">{{ sourceBranch }}</span>
-        <UIcon name="i-heroicons-arrow-right" class="size-3" />
-        <span class="font-medium">{{ targetBranch }}</span>
-      </div>
+      <!-- Context description -->
+      <p v-if="isPending" class="text-sm text-muted">
+        Submit your saved changes for review before they are included in {{ wsName }}.
+      </p>
 
-      <!-- Warning for approved → main -->
+      <!-- Warning for approved → production -->
       <UAlert
-        v-if="layerName === 'approved'"
+        v-if="!isPending"
         color="warning"
         icon="i-heroicons-exclamation-triangle"
-        :title="`This will publish ALL approved changes in ${sourceBranch} to ${targetBranch}`"
+        :title="`This will publish ALL changes in ${wsName} to production`"
         description="Review the changes below before submitting."
       />
 
       <!-- Title input -->
       <div>
-        <label class="text-sm font-medium mb-1 block">Review Title</label>
+        <label class="text-sm font-medium mb-1 block">Title</label>
         <UInput v-model="title" class="w-full" placeholder="Review title..." />
       </div>
 
@@ -162,14 +208,14 @@ function errorDescription(msg: string): string | null {
 
       <!-- Actions -->
       <div class="flex justify-end gap-2 pt-2">
-        <UButton variant="ghost" @click="emit('close')">Cancel</UButton>
+        <UButton variant="ghost" :disabled="busy" @click="emit('close')">Cancel</UButton>
         <UButton
           icon="i-heroicons-arrow-up-tray"
           :loading="creating"
           :disabled="!title.trim() || !changes.length"
           @click="handleCreate"
         >
-          Submit for Review
+          {{ actionLabel }}
         </UButton>
       </div>
     </template>
@@ -178,17 +224,8 @@ function errorDescription(msg: string): string | null {
     <template v-else-if="mode === 'submitted' && existingPR">
       <div class="text-center py-4 space-y-3">
         <UIcon name="i-heroicons-check-circle" class="size-10 text-success mx-auto" />
-        <p class="text-lg font-semibold">Submitted for approval</p>
-        <p class="text-sm text-muted">Your changes have been submitted for review.</p>
-        <a
-          :href="existingPR.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary hover:underline inline-flex items-center gap-0.5 text-sm"
-        >
-          View on GitHub
-          <UIcon name="i-heroicons-arrow-top-right-on-square" class="size-3" />
-        </a>
+        <p class="text-lg font-semibold">{{ submittedHeading }}</p>
+        <p class="text-sm text-muted">{{ submittedDescription }}</p>
       </div>
       <div class="flex justify-end pt-2">
         <UButton @click="emit('close')">Done</UButton>
@@ -206,29 +243,21 @@ function errorDescription(msg: string): string | null {
           {{ existingPR.merged ? 'Merged' : existingPR.state }}
         </UBadge>
         <span class="font-semibold text-sm">{{ existingPR.title }}</span>
-        <span class="text-xs text-muted">#{{ existingPR.number }}</span>
       </div>
 
       <div class="flex items-center gap-2 text-xs text-muted">
         <span>Created {{ formatDate(existingPR.createdAt) }}</span>
-        <a
-          :href="existingPR.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary hover:underline inline-flex items-center gap-0.5"
-        >
-          View on GitHub
-          <UIcon name="i-heroicons-arrow-top-right-on-square" class="size-3" />
-        </a>
       </div>
 
       <!-- Merged success -->
-      <UAlert
-        v-if="existingPR.merged"
-        color="success"
-        icon="i-heroicons-check-circle"
-        :title="layerName === 'pending' ? 'Changes approved successfully' : 'Changes published successfully'"
-      />
+      <template v-if="existingPR.merged">
+        <UAlert
+          color="success"
+          icon="i-heroicons-check-circle"
+          :title="mergeSuccessTitle"
+          :description="mergeSuccessHint ?? undefined"
+        />
+      </template>
 
       <!-- Error with actionable guidance -->
       <template v-else-if="error">
@@ -238,16 +267,6 @@ function errorDescription(msg: string): string | null {
           :title="error"
           :description="errorDescription(error) ?? undefined"
         />
-        <a
-          v-if="existingPR.url"
-          :href="existingPR.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary hover:underline inline-flex items-center gap-0.5 text-xs"
-        >
-          View on GitHub
-          <UIcon name="i-heroicons-arrow-top-right-on-square" class="size-3" />
-        </a>
       </template>
 
       <!-- Comments + actions (only for non-merged reviews) -->
@@ -293,10 +312,12 @@ function errorDescription(msg: string): string | null {
             />
 
             <div class="flex items-center gap-2">
-              <UButton variant="ghost" @click="emit('close')">Close</UButton>
+              <UButton variant="ghost" :disabled="busy" @click="emit('close')">Close</UButton>
               <UButton
                 v-if="commentText.trim()"
                 variant="soft"
+                :loading="commenting"
+                :disabled="busy && !commenting"
                 @click="handleComment"
               >
                 Comment
@@ -308,7 +329,7 @@ function errorDescription(msg: string): string | null {
                 <UButton
                   variant="soft"
                   color="neutral"
-                  :disabled="!commentText.trim()"
+                  :disabled="!commentText.trim() || (busy && !rejecting)"
                   :loading="rejecting"
                   :title="commentText.trim() ? '' : 'Write a reason to reject'"
                   @click="handleReject"
@@ -318,6 +339,7 @@ function errorDescription(msg: string): string | null {
                 <UButton
                   color="primary"
                   :loading="merging"
+                  :disabled="busy && !merging"
                   @click="emit('merge')"
                 >
                   {{ mergeLabel }}
@@ -328,7 +350,7 @@ function errorDescription(msg: string): string | null {
         </div>
       </template>
 
-      <!-- Merged: just a close button -->
+      <!-- Merged: done button + next step hint -->
       <div v-else class="flex justify-end pt-2">
         <UButton @click="emit('close')">Done</UButton>
       </div>

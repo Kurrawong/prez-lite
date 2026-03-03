@@ -34,10 +34,6 @@ const props = defineProps<{
   approvedReview?: PRInfo | null
   /** When set, keep this layer's popover open (diff modal is showing) */
   diffOpenLayer?: string | null
-  /** Workspace slug for the green indicator label */
-  workspaceSlug?: string | null
-  /** Changed vocab files for publish popover */
-  publishVocabs?: { slug: string; status: string }[]
 }>()
 
 const emit = defineEmits<{
@@ -59,6 +55,7 @@ const emit = defineEmits<{
   'show-layer-diff': [layerName: string, changeIndex: number]
   'submit-for-review': [layerName: 'pending' | 'approved']
   'view-review': [layerName: 'pending' | 'approved']
+  'navigate-to-workspace': []
 }>()
 
 // Panel state — mutual exclusion: only one popover open at a time
@@ -84,6 +81,17 @@ watch(() => props.diffOpenLayer, (name) => {
   if (name === 'pending') pendingOpen.value = true
   else if (name === 'approved') approvedOpen.value = true
 })
+
+/** Whether the current vocab has per-vocab staging changes (show popover vs navigate) */
+const hasApprovedChanges = computed(() => (props.approvedLayer?.changes.length ?? 0) > 0)
+
+function handleApprovedClick() {
+  if (hasApprovedChanges.value) {
+    approvedOpen.value = !approvedOpen.value
+  } else {
+    emit('navigate-to-workspace')
+  }
+}
 
 // Load history when panel opens
 watch(historyOpen, (open) => {
@@ -150,17 +158,18 @@ function truncateCommitMsg(msg: string, max = 50): string {
   return firstLine.length > max ? firstLine.slice(0, max) + '...' : firstLine
 }
 
-/** Get the review button label for a layer */
-function submitLabel(layerName: string): string {
-  return layerName === 'pending' ? 'Submit for Approval' : 'Submit for Publishing'
-}
+/** Pending (blue) indicator label — changes based on review state */
+const pendingLabel = computed(() => {
+  if (props.pendingReview && !props.pendingReview.merged) return 'pending approval'
+  return props.pendingLayer?.label ?? 'saved'
+})
 
-/** Get the review for a given layer */
-function reviewForLayer(layerName: string): PRInfo | null {
-  if (layerName === 'pending') return props.pendingReview ?? null
-  if (layerName === 'approved') return props.approvedReview ?? null
-  return null
-}
+/** Approved (green) indicator label — changes based on review state */
+const approvedLabel = computed(() => {
+  if (props.approvedReview && !props.approvedReview.merged) return 'awaiting publishing'
+  return 'in staging'
+})
+
 </script>
 
 <template>
@@ -292,19 +301,20 @@ function reviewForLayer(layerName: string): PRInfo | null {
               >
                 <span class="w-2 h-2 rounded-full shrink-0" :class="dotClasses[pendingLayer.color]" />
                 <span class="font-semibold">{{ pendingLayer.count }}</span>
-                <span class="capitalize">{{ pendingLayer.label }}</span>
+                <span class="capitalize">{{ pendingLabel }}</span>
               </button>
               <template #content>
                 <div class="w-80 max-h-72 overflow-y-auto p-2 space-y-1">
-                  <p class="text-xs font-medium text-muted px-2 mb-2 capitalize">Saved changes</p>
-                  <button
+                  <p class="text-xs font-medium text-muted px-2 mb-2">{{ pendingLabel === 'pending approval' ? 'Changes pending approval' : 'Saved changes' }}</p>
+                  <div
                     v-for="(change, idx) in pendingLayer.changes"
                     :key="change.subjectIri"
-                    type="button"
-                    class="w-full text-left px-2 py-1.5 rounded-md hover:bg-muted/10 text-sm cursor-pointer"
-                    @click="emit('navigate-to-change', change.subjectIri, change.propertyChanges[0]?.predicateIri)"
+                    class="px-2 py-1.5 rounded-md hover:bg-muted/10 text-sm"
                   >
-                    <div class="flex items-center gap-1.5">
+                    <div
+                      class="flex items-center gap-1.5 cursor-pointer"
+                      @click="emit('navigate-to-change', change.subjectIri, change.propertyChanges[0]?.predicateIri)"
+                    >
                       <UIcon
                         :name="changeIcon(change.type)"
                         :class="changeColor(change.type)"
@@ -321,14 +331,16 @@ function reviewForLayer(layerName: string): PRInfo | null {
                         @click.stop="emit('show-layer-diff', 'pending', idx)"
                       />
                     </div>
-                    <div
+                    <button
                       v-for="pc in change.propertyChanges"
                       :key="pc.predicateIri"
-                      class="text-xs text-muted ml-5 mt-0.5"
+                      type="button"
+                      class="text-xs text-muted ml-5 mt-0.5 hover:text-default transition-colors cursor-pointer block"
+                      @click="emit('navigate-to-change', change.subjectIri, pc.predicateIri)"
                     >
                       {{ pc.predicateLabel }}: {{ pc.type }}
-                    </div>
-                  </button>
+                    </button>
+                  </div>
 
                   <!-- Review footer -->
                   <div
@@ -379,29 +391,18 @@ function reviewForLayer(layerName: string): PRInfo | null {
               />
               <span v-else class="w-2 h-2 rounded-full shrink-0 bg-gray-300 dark:bg-gray-600" />
               <span class="font-semibold">0</span>
-              <span class="capitalize">{{ pendingLayer.label }}</span>
+              <span class="capitalize">{{ pendingLabel }}</span>
               <UTooltip v-if="pendingLayer.error" :text="pendingLayer.error">
                 <UIcon name="i-heroicons-exclamation-triangle" class="size-3 text-error" />
               </UTooltip>
             </div>
-
-            <!-- Inline review badge -->
-            <UBadge
-              v-if="promotionEnabled && pendingReview && !pendingReview.merged"
-              color="neutral"
-              variant="subtle"
-              size="xs"
-              class="cursor-pointer text-[10px] py-0"
-              @click="emit('view-review', 'pending')"
-            >
-              Pending Approval
-            </UBadge>
           </template>
 
           <!-- Approved layer indicator -->
           <template v-if="approvedLayer">
+            <!-- Has per-vocab changes: popover with diff list -->
             <UPopover
-              v-if="approvedLayer.count > 0"
+              v-if="hasApprovedChanges"
               :open="approvedOpen"
               :content="{ align: 'start', side: 'bottom' }"
               :ui="{ content: 'z-50' }"
@@ -414,70 +415,76 @@ function reviewForLayer(layerName: string): PRInfo | null {
               >
                 <span class="w-2 h-2 rounded-full shrink-0" :class="dotClasses[approvedLayer.color]" />
                 <span class="font-semibold">{{ approvedLayer.count }}</span>
-                <span class="capitalize">{{ approvedLayer.label }}</span>
-                <span v-if="workspaceSlug" class="font-medium">{{ workspaceSlug }}</span>
+                <span class="capitalize">{{ approvedLabel }}</span>
               </button>
               <template #content>
                 <div class="w-80 max-h-72 overflow-y-auto p-2 space-y-1">
-                  <p class="text-xs font-medium text-muted px-2 mb-2">
-                    Ready to publish{{ workspaceSlug ? ` — ${workspaceSlug}` : '' }}
-                  </p>
-
-                  <!-- Vocab-level list -->
-                  <template v-if="publishVocabs && publishVocabs.length">
+                  <p class="text-xs font-medium text-muted px-2 mb-2">Changes in staging for this vocabulary</p>
+                  <div
+                    v-for="(change, idx) in approvedLayer.changes"
+                    :key="change.subjectIri"
+                    class="px-2 py-1.5 rounded-md hover:bg-muted/10 text-sm"
+                  >
                     <div
-                      v-for="v in publishVocabs"
-                      :key="v.slug"
-                      class="flex items-center gap-1.5 px-2 py-1.5 text-sm"
+                      class="flex items-center gap-1.5 cursor-pointer"
+                      @click="emit('navigate-to-change', change.subjectIri, change.propertyChanges[0]?.predicateIri)"
                     >
-                      <UIcon name="i-heroicons-document-text" class="size-3.5 shrink-0 text-muted" />
-                      <span class="font-medium truncate">{{ v.slug }}</span>
-                      <span class="text-xs text-muted ml-auto">{{ v.status }}</span>
+                      <UIcon
+                        :name="changeIcon(change.type)"
+                        :class="changeColor(change.type)"
+                        class="size-3.5 shrink-0"
+                      />
+                      <span class="font-medium truncate">{{ change.subjectLabel }}</span>
+                      <UButton
+                        icon="i-heroicons-document-magnifying-glass"
+                        variant="ghost"
+                        color="neutral"
+                        size="xs"
+                        title="View diff"
+                        class="size-5 ml-auto shrink-0"
+                        @click.stop="emit('show-layer-diff', 'approved', idx)"
+                      />
                     </div>
-                  </template>
-                  <div v-else class="text-xs text-muted px-2 py-2">
-                    {{ approvedLayer.count }} concept{{ approvedLayer.count !== 1 ? 's' : '' }} changed
+                    <button
+                      v-for="pc in change.propertyChanges"
+                      :key="pc.predicateIri"
+                      type="button"
+                      class="text-xs text-muted ml-5 mt-0.5 hover:text-default transition-colors cursor-pointer block"
+                      @click="emit('navigate-to-change', change.subjectIri, pc.predicateIri)"
+                    >
+                      {{ pc.predicateLabel }}: {{ pc.type }}
+                    </button>
                   </div>
 
-                  <!-- Review footer -->
-                  <div
-                    v-if="promotionEnabled"
-                    class="border-t border-default mt-2 pt-2 px-2"
-                  >
-                    <template v-if="approvedReview && !approvedReview.merged">
-                      <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-1.5 text-xs">
-                          <UBadge color="success" variant="subtle" size="xs">
-                            Review #{{ approvedReview.number }}
-                          </UBadge>
-                          <span class="text-muted">Open</span>
-                        </div>
-                        <UButton
-                          size="xs"
-                          variant="ghost"
-                          @click="emit('view-review', 'approved')"
-                        >
-                          View
-                        </UButton>
-                      </div>
-                    </template>
-                    <template v-else>
-                      <UButton
-                        size="xs"
-                        variant="soft"
-                        icon="i-heroicons-arrow-up-tray"
-                        class="w-full justify-center"
-                        @click="emit('submit-for-review', 'approved')"
-                      >
-                        Publish {{ workspaceSlug || '' }}
-                      </UButton>
-                    </template>
+                  <!-- Link to workspace -->
+                  <div class="border-t border-default mt-2 pt-2 px-2">
+                    <UButton
+                      size="xs"
+                      variant="link"
+                      icon="i-heroicons-arrow-top-right-on-square"
+                      @click="emit('navigate-to-workspace')"
+                    >
+                      View all in workspace
+                    </UButton>
                   </div>
                 </div>
               </template>
             </UPopover>
 
-            <!-- Zero-count: dimmed, no popover -->
+            <!-- No per-vocab changes but workspace has changes or PR open: navigate -->
+            <button
+              v-else-if="approvedLayer.count > 0 || (approvedReview && !approvedReview.merged)"
+              type="button"
+              class="flex items-center gap-1.5 px-2 py-0.5 rounded-md text-xs hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors"
+              :class="textClasses[approvedLayer.color]"
+              @click="emit('navigate-to-workspace')"
+            >
+              <span class="w-2 h-2 rounded-full shrink-0" :class="dotClasses[approvedLayer.color]" />
+              <span class="font-semibold">{{ approvedLayer.count }}</span>
+              <span class="capitalize">{{ approvedLabel }}</span>
+            </button>
+
+            <!-- Zero-count: dimmed, no interaction -->
             <div
               v-else
               class="flex items-center gap-1.5 px-2 py-0.5 text-xs text-muted/40"
@@ -489,23 +496,11 @@ function reviewForLayer(layerName: string): PRInfo | null {
               />
               <span v-else class="w-2 h-2 rounded-full shrink-0 bg-gray-300 dark:bg-gray-600" />
               <span class="font-semibold">0</span>
-              <span class="capitalize">{{ approvedLayer.label }}</span>
+              <span class="capitalize">{{ approvedLabel }}</span>
               <UTooltip v-if="approvedLayer.error" :text="approvedLayer.error">
                 <UIcon name="i-heroicons-exclamation-triangle" class="size-3 text-error" />
               </UTooltip>
             </div>
-
-            <!-- Inline review badge -->
-            <UBadge
-              v-if="promotionEnabled && approvedReview && !approvedReview.merged"
-              color="neutral"
-              variant="subtle"
-              size="xs"
-              class="cursor-pointer text-[10px] py-0"
-              @click="emit('view-review', 'approved')"
-            >
-              Review #{{ approvedReview.number }}
-            </UBadge>
           </template>
         </template>
 

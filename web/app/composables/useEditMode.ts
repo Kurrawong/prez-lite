@@ -195,8 +195,8 @@ export function useEditMode(
   branch: Ref<string>,
   schemeIri: Ref<string>,
   options?: {
-    /** Fallback branch for loading (workspace branch when edit branch doesn't exist) */
-    fallbackBranch?: Ref<string>
+    /** Fallback branches for loading, tried in order (e.g. workspace branch, then main) */
+    fallbackBranches?: Ref<string>[]
     /** Called before first save to ensure the edit branch exists */
     ensureEditBranch?: () => Promise<boolean>
   },
@@ -229,7 +229,7 @@ export function useEditMode(
 
   function getGitHubFile() {
     if (!githubFile) {
-      githubFile = useGitHubFile(owner, repo, vocabPath, branch, options?.fallbackBranch)
+      githubFile = useGitHubFile(owner, repo, vocabPath, branch, options?.fallbackBranches)
     }
     return githubFile
   }

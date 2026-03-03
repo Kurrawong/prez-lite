@@ -207,16 +207,16 @@ describe('EditToolbar', () => {
       expect(text).toContain('saved') // CSS capitalize renders as "Saved"
     })
 
-    it('renders ready to publish indicator with count', async () => {
+    it('renders in staging indicator with count', async () => {
       await mountSuspended(EditToolbar, {
         props: {
           ...editProps,
-          approvedLayer: makeLayer('approved', 'ready to publish', 'green', 5),
+          approvedLayer: makeLayer('approved', 'in staging', 'green', 5),
         },
       })
       const text = headerText()
       expect(text).toContain('5')
-      expect(text).toContain('ready to publish') // CSS capitalize renders as "Ready To Publish"
+      expect(text).toContain('in staging')
     })
 
     it('renders dimmed saved when count is 0', async () => {
@@ -231,30 +231,72 @@ describe('EditToolbar', () => {
       expect(text).toContain('saved')
     })
 
-    it('renders dimmed ready to publish when count is 0', async () => {
+    it('renders dimmed in staging when count is 0', async () => {
       await mountSuspended(EditToolbar, {
         props: {
           ...editProps,
-          approvedLayer: makeLayer('approved', 'ready to publish', 'green', 0),
+          approvedLayer: makeLayer('approved', 'in staging', 'green', 0),
         },
       })
       const text = headerText()
       expect(text).toContain('0')
-      expect(text).toContain('ready to publish')
+      expect(text).toContain('in staging')
     })
 
-    it('shows workspace name in ready to publish indicator', async () => {
+    it('shows awaiting publishing label when approvedReview exists', async () => {
       await mountSuspended(EditToolbar, {
         props: {
           ...editProps,
-          approvedLayer: makeLayer('approved', 'ready to publish', 'green', 3),
-          workspaceSlug: 'staging',
+          approvedLayer: makeLayer('approved', 'in staging', 'green', 3),
+          promotionEnabled: true,
+          approvedReview: {
+            number: 15,
+            title: 'review: publish staging',
+            state: 'open' as const,
+            merged: false,
+            url: 'https://github.com/test/pull/15',
+            reviewDecision: null,
+            createdAt: '2026-03-01T00:00:00Z',
+          },
         },
       })
-      expect(headerText()).toContain('staging')
+      expect(headerText()).toContain('awaiting publishing')
     })
 
-    it('shows Pending Approval badge when pendingReview exists', async () => {
+    it('does not navigate when approved layer has per-vocab changes (opens popover)', async () => {
+      const wrapper = await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          approvedLayer: makeLayer('approved', 'in staging', 'green', 3),
+        },
+      })
+      // Find the green indicator button in the slot (contains "in staging")
+      const stagingBtn = headerButtons().find(b => b.textContent?.includes('in staging'))
+      expect(stagingBtn).toBeDefined()
+      stagingBtn?.click()
+      // Should NOT navigate — opens popover instead
+      expect(wrapper.emitted('navigate-to-workspace')).toBeUndefined()
+    })
+
+    it('emits navigate-to-workspace when no per-vocab changes but workspace count > 0', async () => {
+      // count=1 but no changes array entries (workspace-level count override)
+      const layer = {
+        ...makeLayer('approved', 'in staging', 'green', 0),
+        count: 1,
+      }
+      const wrapper = await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          approvedLayer: layer,
+        },
+      })
+      const stagingBtn = headerButtons().find(b => b.textContent?.includes('in staging'))
+      expect(stagingBtn).toBeDefined()
+      stagingBtn?.click()
+      expect(wrapper.emitted('navigate-to-workspace')).toHaveLength(1)
+    })
+
+    it('shows pending approval label when pendingReview exists', async () => {
       await mountSuspended(EditToolbar, {
         props: {
           ...editProps,
@@ -271,7 +313,8 @@ describe('EditToolbar', () => {
           },
         },
       })
-      expect(headerText()).toContain('Pending Approval')
+      // pendingLabel computed returns lowercase; CSS capitalize handles display
+      expect(headerText()).toContain('pending approval')
     })
   })
 })

@@ -5,6 +5,7 @@ const props = defineProps<{
   changeSummary: ChangeSummary
   originalTTL: string
   patchedTTL: string
+  saving?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -163,8 +164,8 @@ function changeTypePrefix(type: 'added' | 'removed' | 'modified'): string {
 
     <!-- Actions -->
     <div class="flex justify-end gap-2 pt-2">
-      <UButton variant="ghost" @click="emit('cancel')">Cancel</UButton>
-      <UButton @click="handleConfirm">
+      <UButton variant="ghost" :disabled="saving" @click="emit('cancel')">Cancel</UButton>
+      <UButton :loading="saving" @click="handleConfirm">
         Save to GitHub
       </UButton>
     </div>

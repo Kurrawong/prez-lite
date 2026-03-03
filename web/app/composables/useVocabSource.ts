@@ -31,12 +31,13 @@ function getGitHubAdapter(
   branch: string,
   vocabPath: string,
   token: string,
+  fallbackBranch?: string,
 ): VocabSourceAdapter {
   const key = `github:${branch}`
   const existing = githubAdapters.get(key)
   if (existing) return existing
 
-  const adapter = createGitHubTTLAdapter({ owner, repo, branch, vocabPath, token })
+  const adapter = createGitHubTTLAdapter({ owner, repo, branch, vocabPath, token, fallbackBranch })
   githubAdapters.set(key, adapter)
   return adapter
 }
@@ -64,6 +65,7 @@ export function useVocabSource() {
         workspace.activeReadBranch.value,
         (githubVocabPath as string) || '',
         token.value,
+        workspace.activeWorkspace.value?.refreshFrom,
       )
     }
     return getStaticAdapter()

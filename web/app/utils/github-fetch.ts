@@ -15,6 +15,7 @@ export function createGithubFetch(token: Ref<string | null>, logPrefix = 'github
     try {
       const res = await fetch(url, {
         ...options,
+        cache: 'no-store',
         headers: {
           Authorization: `Bearer ${token.value}`,
           'Content-Type': 'application/json',

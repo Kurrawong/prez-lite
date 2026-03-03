@@ -162,10 +162,12 @@ const colorMode = useColorMode()
 const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'prez-light')
 
 // --- Structured Form Editor ---
+// Fallback chain: edit branch → workspace branch → refreshFrom (e.g. main)
 const workspaceBranch = computed(() => workspace.activeReadBranch.value ?? defaultBranch as string)
+const refreshFromBranch = computed(() => workspace.activeWorkspace.value?.refreshFrom ?? defaultBranch as string)
 const editMode = (editorOwner && editorRepoName)
   ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, effectiveBranch, uri, {
-    fallbackBranch: workspaceBranch,
+    fallbackBranches: [workspaceBranch, refreshFromBranch],
     ensureEditBranch: () => workspace.ensureEditBranch(),
   })
   : null
@@ -221,6 +223,7 @@ const prComments = ref<PRComment[]>([])
 const prCommentsLoading = ref(false)
 const prCreating = ref(false)
 const prRejecting = ref(false)
+const prCommenting = ref(false)
 const promotionError = ref<string | null>(null)
 
 function handlePromote(layerName: 'pending' | 'approved') {
@@ -251,6 +254,15 @@ async function handleCreatePR(title: string, body: string) {
 
   prCreating.value = true
   promotionError.value = null
+
+  // Ensure the target branch exists (e.g. staging) before creating the PR
+  const wsOk = await workspace.ensureWorkspaceBranch()
+  if (!wsOk) {
+    promotionError.value = 'Failed to create workspace branch'
+    prCreating.value = false
+    return
+  }
+
   const pr = await promotion.createPR(branches.head, branches.base, title, body)
   prCreating.value = false
 
@@ -338,9 +350,14 @@ async function handlePRComment(body: string) {
   const pr = promotionLayer.value === 'pending' ? promotion.branchPR.value : promotion.stagingPR.value
   if (!pr) return
 
-  const ok = await promotion.addPRComment(pr.number, body)
-  if (ok) {
-    prComments.value = await promotion.getPRComments(pr.number)
+  prCommenting.value = true
+  try {
+    const ok = await promotion.addPRComment(pr.number, body)
+    if (ok) {
+      prComments.value = await promotion.getPRComments(pr.number)
+    }
+  } finally {
+    prCommenting.value = false
   }
 }
 
@@ -366,30 +383,61 @@ const promotionExistingPR = computed(() => {
   return promotionLayer.value === 'pending' ? promotion.branchPR.value : promotion.stagingPR.value
 })
 
+/** Context-aware modal title */
+const reviewModalTitle = computed(() => {
+  const vocabName = editModeTitle.value ?? displayScheme.value?.prefLabel ?? 'Changes'
+  const wsLabel = workspace.activeWorkspace.value?.label ?? 'Staging'
+  const isPending = promotionLayer.value === 'pending'
+
+  if (promotionMode.value === 'create') {
+    return isPending
+      ? `Submit ${vocabName} Changes for Approval`
+      : `Publish ${wsLabel} to Production`
+  }
+  if (promotionMode.value === 'submitted') {
+    return isPending ? 'Approval Submitted' : 'Publishing Submitted'
+  }
+  // view mode
+  return isPending
+    ? `Review ${vocabName} Changes`
+    : `Publish ${wsLabel} to Production`
+})
+
 // Computed helpers for layer indicators on EditToolbar
 const pendingLayer = computed(() =>
   layerStatus?.layers.value.find(l => l.name === 'pending') ?? null,
 )
-const approvedLayer = computed(() =>
+const approvedLayerRaw = computed(() =>
   layerStatus?.layers.value.find(l => l.name === 'approved') ?? null,
 )
+/** Workspace-level changed vocab count for the green indicator */
+const publishVocabCount = ref(0)
 
-const workspaceSlug = computed(() => workspace.activeWorkspace.value?.slug ?? null)
-
-const publishVocabs = ref<{ slug: string; status: string }[]>([])
-
-// Fetch changed vocabs when approved layer has changes
+// Fetch workspace-level count when staging has changes OR there's an open staging PR
 watch(
-  [approvedLayer, () => workspace.activeWorkspace.value],
-  async ([layer, ws]) => {
-    if (layer && layer.count > 0 && ws && promotion) {
-      publishVocabs.value = await promotion.fetchChangedVocabs()
+  [approvedLayerRaw, () => workspace.activeWorkspace.value, () => promotion?.stagingPR.value],
+  async ([layer, ws, stagingPR]) => {
+    const hasChanges = layer && layer.count > 0
+    const hasOpenPR = stagingPR && !stagingPR.merged
+    if ((hasChanges || hasOpenPR) && ws && promotion) {
+      const vocabs = await promotion.fetchChangedVocabs()
+      publishVocabCount.value = vocabs.length
     } else {
-      publishVocabs.value = []
+      publishVocabCount.value = 0
     }
   },
   { immediate: true },
 )
+
+/** Override approved layer count with workspace-level vocab count when available */
+const approvedLayer = computed(() => {
+  const raw = approvedLayerRaw.value
+  if (!raw) return null
+  if (publishVocabCount.value > 0) {
+    return { ...raw, count: publishVocabCount.value }
+  }
+  return raw
+})
 
 // Version label from scheme metadata
 const versionLabel = computed(() => displayScheme.value?.version ?? null)
@@ -892,6 +940,8 @@ async function handleSaveConfirm(commitMessage: string) {
     saveModalSubjectIri.value = null
     clearCaches()
     buildStatus?.startPolling()
+    // Refresh layer status after a brief delay to let GitHub API propagate the commit
+    setTimeout(() => layerStatus?.refresh(), 1500)
   }
 }
 
@@ -963,7 +1013,7 @@ function handleNavigateToChange(subjectIri: string, predicateIri?: string) {
   // Flash the changed predicate
   if (highlightTimer) clearTimeout(highlightTimer)
   highlightPredicate.value = predicateIri ?? null
-  highlightTimer = setTimeout(() => { highlightPredicate.value = null }, 2000)
+  highlightTimer = setTimeout(() => { highlightPredicate.value = null }, 3000)
 
   if (subjectIri === uri.value) {
     // Scheme-level: scroll to metadata, optionally focus the field
@@ -994,6 +1044,19 @@ const pendingChanges = computed(() => {
   void editMode.storeVersion.value
   const summary = editMode.getChangeSummary()
   return summary.subjects
+})
+
+// --- Workspace-aware breadcrumbs ---
+const effectiveBreadcrumbs = computed(() => {
+  if (workspace.state.value) {
+    const wsLabel = workspace.activeWorkspace.value?.label ?? workspace.state.value.workspaceSlug
+    return [
+      { label: 'Workspace', to: '/workspace' },
+      { label: wsLabel, to: '/workspace' },
+      { label: editModeTitle.value ?? displayScheme.value?.prefLabel ?? 'Scheme' },
+    ]
+  }
+  return breadcrumbs.value
 })
 
 // --- Change indicators for tree nodes ---
@@ -1453,8 +1516,6 @@ function copyIriToClipboard(iri: string) {
       :pending-review="promotion?.branchPR.value ?? null"
       :approved-review="promotion?.stagingPR.value ?? null"
       :diff-open-layer="showChangeDetail && changeDetailLayerName ? changeDetailLayerName : null"
-      :workspace-slug="workspaceSlug"
-      :publish-vocabs="publishVocabs"
       @save="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
       @toggle-view-mode="toggleViewMode"
       @open-workspace="navigateTo('/workspace')"
@@ -1470,9 +1531,10 @@ function copyIriToClipboard(iri: string) {
       @show-layer-diff="handleShowLayerDiff"
       @submit-for-review="handlePromote"
       @view-review="handleViewPR"
+      @navigate-to-workspace="navigateTo('/workspace')"
     />
 
-    <UBreadcrumb v-if="!immersiveMode && !site.siteHeaderBreadcrumbs" ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
+    <UBreadcrumb v-if="!immersiveMode && !site.siteHeaderBreadcrumbs" ref="breadcrumbRef" :items="effectiveBreadcrumbs" class="mb-6" />
 
     <div v-if="!uri" class="text-center py-12">
       <UAlert color="warning" title="No scheme selected" description="Please select a vocabulary from the vocabularies page" />
@@ -2197,6 +2259,7 @@ function copyIriToClipboard(iri: string) {
             :change-summary="saveModalChangeSummary"
             :original-t-t-l="saveModalOriginalTTL"
             :patched-t-t-l="saveModalPatchedTTL"
+            :saving="editMode?.saveStatus.value === 'saving'"
             @confirm="handleSaveConfirm"
             @cancel="showSaveModal = false"
           />
@@ -2301,7 +2364,7 @@ function copyIriToClipboard(iri: string) {
       <UModal v-model:open="showReviewModal">
         <template #header>
           <h3 class="font-semibold">
-            {{ promotionMode === 'create' ? 'Submit for Review' : promotionMode === 'submitted' ? 'Review Submitted' : 'Review' }}
+            {{ reviewModalTitle }}
           </h3>
         </template>
         <template #body>
@@ -2320,6 +2383,8 @@ function copyIriToClipboard(iri: string) {
             :error="promotionError"
             :merging="prMerging"
             :rejecting="prRejecting"
+            :commenting="prCommenting"
+            :workspace-label="workspace.activeWorkspace.value?.label ?? 'Staging'"
             @create="handleCreatePR"
             @merge="handleMergePR"
             @reject="handleRejectPR"

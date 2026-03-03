@@ -54,7 +54,7 @@ async function fetchTTLAtRef(
   const cleanPath = path.replace(/^\/+/, '')
   const res = await fetch(
     `https://api.github.com/repos/${owner}/${repo}/contents/${cleanPath}?ref=${encodeURIComponent(ref)}`,
-    { headers: { Authorization: `Bearer ${token}` } },
+    { headers: { Authorization: `Bearer ${token}` }, cache: 'no-store' },
   )
 
   if (res.status === 404) return null
@@ -194,6 +194,12 @@ export function useLayerStatus(
     const ws = workspace.activeWorkspace.value
     if (!ws || !token.value) return
 
+    // If workspace branch doesn't exist yet, there are no staging-level changes
+    if (!workspace.branchExists(ws.slug)) {
+      stagingChanges.value = { subjects: [], totalAdded: 0, totalRemoved: 0, totalModified: 0 }
+      return
+    }
+
     stagingLoading.value = true
     stagingError.value = null
     try {
@@ -236,7 +242,7 @@ export function useLayerStatus(
     },
     {
       name: 'approved' as LayerName,
-      label: 'ready to publish',
+      label: 'in staging',
       color: 'green',
       count: stagingChanges.value.subjects.length,
       changes: stagingChanges.value.subjects,

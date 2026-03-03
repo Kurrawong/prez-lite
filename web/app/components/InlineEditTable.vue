@@ -20,6 +20,15 @@ const changedPredicates = computed(() => {
   return new Set(props.subjectChanges.propertyChanges.map(c => c.predicateIri))
 })
 
+// Scroll highlighted row into view
+watch(() => props.highlightPredicate, (pred) => {
+  if (!pred) return
+  nextTick(() => {
+    const row = document.querySelector(`[data-inline-edit-row="${CSS.escape(pred)}"]`)
+    row?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+  })
+})
+
 /** Map predicate → error messages for this subject */
 const errorsByPredicate = computed(() => {
   const map = new Map<string, string[]>()
@@ -333,7 +342,7 @@ onUnmounted(() => {
               'hover:bg-muted/50 cursor-pointer': (isEditable(prop) || prop.fieldType === 'nested') && editingPredicate !== prop.predicate,
               'border-l-2 border-l-error bg-error/5': editingPredicate !== prop.predicate && errorsByPredicate.has(prop.predicate),
               'border-l-2 border-l-warning': !errorsByPredicate.has(prop.predicate) && changedPredicates.has(prop.predicate),
-              'bg-emerald-50 dark:bg-emerald-950/30': highlightPredicate === prop.predicate,
+              'bg-emerald-100 dark:bg-emerald-900/40 ring-1 ring-inset ring-emerald-300 dark:ring-emerald-700': highlightPredicate === prop.predicate,
             }"
             @click.stop="handleRowClick(prop)"
           >
@@ -342,19 +351,15 @@ onUnmounted(() => {
               class="py-3 pl-4 pr-4 text-left align-top font-medium text-muted w-[172px] whitespace-nowrap transition-colors"
               :class="{ 'bg-primary-50 dark:bg-primary-950/50': editingPredicate === prop.predicate }"
             >
-              <UTooltip v-if="constraintDescription(prop)" :text="constraintDescription(prop)!">
-                <UIcon
-                  name="i-heroicons-information-circle"
-                  class="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 cursor-help shrink-0 inline-block align-text-bottom mr-1"
-                  @click.stop
-                />
-              </UTooltip>
               <span
                 v-if="changedPredicates.has(prop.predicate)"
                 class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block align-middle mr-1 shrink-0"
                 :class="{ 'animate-pulse': highlightPredicate === prop.predicate }"
               />
-              <span class="mr-1" :class="{ 'text-error': editingPredicate !== prop.predicate && errorsByPredicate.has(prop.predicate) }">{{ prop.label }}</span>
+              <UTooltip v-if="constraintDescription(prop)" :text="constraintDescription(prop)!">
+                <span class="mr-1 cursor-help" :class="{ 'text-error': editingPredicate !== prop.predicate && errorsByPredicate.has(prop.predicate) }">{{ prop.label }}</span>
+              </UTooltip>
+              <span v-else class="mr-1" :class="{ 'text-error': editingPredicate !== prop.predicate && errorsByPredicate.has(prop.predicate) }">{{ prop.label }}</span>
               <a
                 :href="prop.predicate"
                 target="_blank"
