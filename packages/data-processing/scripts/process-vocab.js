@@ -3035,12 +3035,26 @@ function buildProfileJson(shaclConfig, cardinalityMap) {
           path: p.paths && p.paths[0] ? p.paths[0] : '',
           order: p.order ?? 0,
         };
+        // Cardinality from SHACL profile
+        if (p.minCount != null) entry.minCount = p.minCount;
+        if (p.maxCount != null) entry.maxCount = p.maxCount;
+        // Closed value set from sh:in
+        if (p.allowedValues && p.allowedValues.length > 0) entry.allowedValues = p.allowedValues;
+        // Expected class of values from sh:class
+        if (p.class) entry.class = p.class;
         // Embed nested property order from sh:node
         if (p.nestedProperties && p.nestedProperties.length > 0) {
-          entry.propertyOrder = p.nestedProperties.map((np) => ({
-            path: np.paths && np.paths[0] ? np.paths[0] : '',
-            order: np.order ?? 0,
-          }));
+          entry.propertyOrder = p.nestedProperties.map((np) => {
+            const nested = {
+              path: np.paths && np.paths[0] ? np.paths[0] : '',
+              order: np.order ?? 0,
+            };
+            if (np.minCount != null) nested.minCount = np.minCount;
+            if (np.maxCount != null) nested.maxCount = np.maxCount;
+            if (np.allowedValues && np.allowedValues.length > 0) nested.allowedValues = np.allowedValues;
+            if (np.class) nested.class = np.class;
+            return nested;
+          });
         }
         return entry;
       });

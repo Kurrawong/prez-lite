@@ -5,6 +5,7 @@ const fluid = provideFluidLayout()
 <template>
   <div>
     <SiteHeader />
+    <div id="edit-toolbar-slot" class="sticky top-0 z-50" />
     <UMain class="min-h-[calc(100vh-12rem)]">
       <UContainer :class="{ 'max-w-full': fluid }">
         <slot />

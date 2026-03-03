@@ -51,6 +51,12 @@ export interface PropertyShape {
   order: number
   paths: string[]
   nestedProperties?: PropertyShape[]
+  minCount?: number
+  maxCount?: number
+  /** Closed set of allowed values from sh:in */
+  allowedValues?: string[]
+  /** Expected class of values from sh:class (e.g. skos:Concept, prov:Agent) */
+  class?: string
 }
 
 /** Parsed profile from SHACL */
@@ -247,6 +253,22 @@ function parsePropertyShape(store: Store, shapeNode: Term): PropertyShape {
     order: parseInt(getFirstValue(store, shapeNode, `${SH}order`) || '0', 10),
     paths: []
   }
+
+  // Extract cardinality constraints
+  const minCountVal = getFirstValue(store, shapeNode, `${SH}minCount`)
+  if (minCountVal != null) shape.minCount = parseInt(minCountVal, 10)
+  const maxCountVal = getFirstValue(store, shapeNode, `${SH}maxCount`)
+  if (maxCountVal != null) shape.maxCount = parseInt(maxCountVal, 10)
+
+  // Extract sh:in (closed set of allowed values)
+  const inQuads = store.getQuads(shapeNode, `${SH}in`, null, null)
+  if (inQuads.length > 0) {
+    shape.allowedValues = parseRdfList(store, inQuads[0].object)
+  }
+
+  // Extract sh:class (expected type of IRI values)
+  const classIri = getIriValue(store, shapeNode, `${SH}class`)
+  if (classIri) shape.class = classIri
 
   // Get the path - can be direct or a complex path expression
   const pathQuads = store.getQuads(shapeNode, `${SH}path`, null, null)

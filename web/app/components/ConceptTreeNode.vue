@@ -15,6 +15,7 @@ const props = defineProps<{
   editMode?: boolean
   expandToId?: string
   changeCountMap?: Map<string, number>
+  errorCountMap?: Map<string, number>
 }>()
 
 const emit = defineEmits<{
@@ -26,6 +27,7 @@ const level = props.level ?? 0
 const hasChildren = computed(() => props.item.children && props.item.children.length > 0)
 const isSelected = computed(() => props.selectedId === props.item.id)
 const changeCount = computed(() => props.changeCountMap?.get(props.item.id) ?? 0)
+const errorCount = computed(() => props.errorCountMap?.get(props.item.id) ?? 0)
 
 // Track expanded state - default based on item.defaultExpanded or expandAll prop
 const isExpanded = ref(props.item.defaultExpanded ?? false)
@@ -116,6 +118,17 @@ function handleEdit() {
         {{ item.label }}
       </span>
 
+      <!-- Error count badge -->
+      <UBadge
+        v-if="errorCount"
+        color="error"
+        variant="subtle"
+        size="xs"
+      >
+        <UIcon name="i-heroicons-exclamation-triangle" class="size-3" />
+        {{ errorCount }}
+      </UBadge>
+
       <!-- Change count badge (always visible when changes exist) -->
       <UBadge
         v-if="changeCount"
@@ -159,6 +172,7 @@ function handleEdit() {
         :edit-mode="editMode"
         :expand-to-id="expandToId"
         :change-count-map="changeCountMap"
+        :error-count-map="errorCountMap"
         @select="emit('select', $event)"
         @edit="emit('edit', $event)"
       />

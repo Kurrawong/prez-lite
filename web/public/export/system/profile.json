@@ -55,11 +55,20 @@
         "propertyOrder": [
           {
             "path": "http://www.w3.org/ns/prov#agent",
-            "order": 0
+            "order": 0,
+            "minCount": 1,
+            "maxCount": 1,
+            "class": "http://www.w3.org/ns/prov#Agent"
           },
           {
             "path": "http://www.w3.org/ns/prov#hadRole",
-            "order": 1
+            "order": 1,
+            "minCount": 1,
+            "maxCount": 1,
+            "allowedValues": [
+              "https://linked.data.gov.au/def/data-roles/custodian",
+              "https://linked.data.gov.au/def/data-roles/pointOfContact"
+            ]
           }
         ]
       },

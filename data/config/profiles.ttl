@@ -77,7 +77,30 @@ prez:OGCSchemesObjectProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     sh:property [ sh:path sdo:dateModified ; sh:order 9 ] ;
     sh:property [ sh:path sdo:keywords ; sh:order 10 ] ;
     sh:property [ sh:path sdo:version ; sh:order 11 ] ;
-    sh:property [ sh:path prov:qualifiedAttribution ; sh:order 12 ] ;
+    sh:property [
+        sh:path prov:qualifiedAttribution ;
+        sh:order 12 ;
+        sh:node [
+            sh:property [
+                sh:path prov:agent ;
+                sh:name "Agent" ;
+                sh:order 0 ;
+                sh:class prov:Agent ;
+                sh:minCount 1 ;
+                sh:maxCount 1
+            ] , [
+                sh:path prov:hadRole ;
+                sh:name "Role" ;
+                sh:order 1 ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                sh:in (
+                    <https://linked.data.gov.au/def/data-roles/custodian>
+                    <https://linked.data.gov.au/def/data-roles/pointOfContact>
+                )
+            ]
+        ]
+    ] ;
     sh:property [ sh:path dcterms:provenance ; sh:order 13 ] ;
 
     # Link templates

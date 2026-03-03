@@ -744,6 +744,34 @@ const changeCountMap = computed<Map<string, number>>(() => {
   return counts
 })
 
+// --- Validation error indicators for tree nodes ---
+
+const errorCountMap = computed<Map<string, number>>(() => {
+  const errors = editMode?.validationErrors.value ?? []
+  if (!errors.length) return new Map()
+  // Count errors per subject
+  const perSubject = new Map<string, number>()
+  for (const err of errors) {
+    perSubject.set(err.subjectIri, (perSubject.get(err.subjectIri) ?? 0) + 1)
+  }
+  // Walk tree to bubble up counts (same pattern as changeCountMap)
+  const counts = new Map<string, number>()
+  function walk(items: TreeItem[]): number {
+    let subtotal = 0
+    for (const item of items) {
+      let count = perSubject.get(item.id) ?? 0
+      if (item.children?.length) {
+        count += walk(item.children)
+      }
+      if (count > 0) counts.set(item.id, count)
+      subtotal += count
+    }
+    return subtotal
+  }
+  walk(activeTreeItems.value)
+  return counts
+})
+
 // --- Change indicators for form fields ---
 
 const selectedConceptChanges = computed(() => {
@@ -756,6 +784,17 @@ const schemeChanges = computed(() => {
   if (!editMode) return null
   void editMode.storeVersion.value
   return editMode.getChangesForSubject(uri.value)
+})
+
+// Validation errors filtered per subject (for InlineEditTable highlighting)
+const selectedConceptErrors = computed(() => {
+  if (!editMode || !selectedConceptUri.value) return []
+  return (editMode.validationErrors.value ?? []).filter(e => e.subjectIri === selectedConceptUri.value)
+})
+
+const schemeErrors = computed(() => {
+  if (!editMode) return []
+  return (editMode.validationErrors.value ?? []).filter(e => e.subjectIri === uri.value)
 })
 
 function truncateValue(val: string, max = 30): string {
@@ -817,6 +856,20 @@ function formatChangeTooltip(prop: { predicateLabel: string; predicateIri: strin
     for (const v of prop.newValues) lines.push(`+ ${v}`)
   }
   return lines.join('\n')
+}
+
+// --- Navigate from toolbar (errors/changes) ---
+
+function handleSelectFromToolbar(iri: string) {
+  if (iri === uri.value) {
+    // Scheme-level error: scroll to metadata section
+    metadataPanelOpen.value = true
+    nextTick(() => {
+      document.getElementById('metadata-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  } else {
+    selectConcept(iri)
+  }
 }
 
 // --- Scroll to metadata property ---
@@ -1083,6 +1136,8 @@ function copyIriToClipboard(iri: string) {
       :can-redo="!!editMode?.canRedo.value"
       :undo-label="undoLabel"
       :redo-label="redoLabel"
+      :validation-errors="editMode?.validationErrors.value ?? []"
+      :new-validation-errors="editMode?.newValidationErrors.value ?? []"
       @save="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
       @toggle-view-mode="toggleViewMode"
       @open-workspace="navigateTo('/workspace')"
@@ -1093,6 +1148,7 @@ function copyIriToClipboard(iri: string) {
       @redo="editMode?.redo()"
       @revert-subject="handleRevertSubject"
       @show-change-detail="handleShowChangeDetail"
+      @select-concept="handleSelectFromToolbar"
     />
 
     <UBreadcrumb v-if="!immersiveMode && !site.siteHeaderBreadcrumbs" ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
@@ -1471,6 +1527,7 @@ function copyIriToClipboard(iri: string) {
                   :edit-mode="treeEditMode"
                   :expand-to-id="expandToId"
                   :change-count-map="changeCountMap"
+                  :error-count-map="errorCountMap"
                   @select="selectConcept"
                   @edit="selectConcept"
                 />
@@ -1493,7 +1550,7 @@ function copyIriToClipboard(iri: string) {
               :class="[
                 immersiveMode ? 'h-full' : 'max-h-[600px]',
               ]"
-              class="pl-6 min-h-[200px] overflow-y-auto"
+              class="pl-6 min-h-[200px] min-w-0 overflow-y-auto overflow-x-hidden"
             >
               <!-- Collection membership badges -->
               <div v-if="conceptCollections.length" class="flex items-center gap-1.5 flex-wrap mb-2">
@@ -1554,7 +1611,7 @@ function copyIriToClipboard(iri: string) {
                   :subject-changes="selectedConceptChanges"
                   @update:value="(pred, oldVal, newVal) => editMode!.updateValue(selectedConceptUri!, pred, oldVal, newVal)"
                   @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(selectedConceptUri!, pred, oldVal, newLang)"
-                  @add:value="(pred) => editMode!.addValue(selectedConceptUri!, pred)"
+                  @add:value="(pred, type, defaultIri) => editMode!.addValue(selectedConceptUri!, pred, type, defaultIri)"
                   @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
                   @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
                   @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
@@ -1606,13 +1663,20 @@ function copyIriToClipboard(iri: string) {
                   :subject-iri="selectedConceptUri"
                   :properties="selectedConceptProperties"
                   :concepts="editMode.concepts.value"
+                  :agents="editMode.agents.value"
                   :subject-changes="selectedConceptChanges"
+                  :validation-errors="selectedConceptErrors"
                   @update:value="(pred, oldVal, newVal) => editMode!.updateValue(selectedConceptUri!, pred, oldVal, newVal)"
                   @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(selectedConceptUri!, pred, oldVal, newLang)"
-                  @add:value="(pred) => editMode!.addValue(selectedConceptUri!, pred)"
+                  @add:value="(pred, type, defaultIri) => editMode!.addValue(selectedConceptUri!, pred, type, defaultIri)"
                   @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
                   @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
                   @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
+                  @update:nested="(bnId, pred, oldVal, newVal) => editMode!.updateValue(bnId, pred, oldVal, newVal)"
+                  @remove:nested="(bnId, pred, val) => editMode!.removeValue(bnId, pred, val)"
+                  @add:nested-value="(bnId, pred, type, defVal) => editMode!.addNestedValue(bnId, pred, type, defVal)"
+                  @add:blank-node="(pred) => editMode!.addBlankNode(selectedConceptUri!, pred)"
+                  @remove:blank-node="(pred, bnId) => editMode!.removeBlankNode(selectedConceptUri!, pred, bnId)"
                   @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectConcept(newIri) }"
                   @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
@@ -1706,6 +1770,15 @@ function copyIriToClipboard(iri: string) {
             <UIcon name="i-heroicons-information-circle" />
             Vocabulary
             <UBadge
+              v-if="schemeErrors.length"
+              color="error"
+              variant="subtle"
+              size="xs"
+            >
+              <UIcon name="i-heroicons-exclamation-triangle" class="size-3" />
+              {{ schemeErrors.length }} error{{ schemeErrors.length !== 1 ? 's' : '' }}
+            </UBadge>
+            <UBadge
               v-if="schemeChanges?.propertyChanges.length"
               color="warning"
               variant="subtle"
@@ -1730,7 +1803,7 @@ function copyIriToClipboard(iri: string) {
             :subject-changes="schemeChanges"
             @update:value="(pred, oldVal, newVal) => editMode!.updateValue(uri, pred, oldVal, newVal)"
             @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(uri, pred, oldVal, newLang)"
-            @add:value="(pred) => editMode!.addValue(uri, pred)"
+            @add:value="(pred, type, defaultIri) => editMode!.addValue(uri, pred, type, defaultIri)"
             @remove:value="(pred, val) => editMode!.removeValue(uri, pred, val)"
           />
         </template>
@@ -1741,13 +1814,20 @@ function copyIriToClipboard(iri: string) {
             :subject-iri="uri"
             :properties="schemeProperties"
             :concepts="editMode!.concepts.value"
+            :agents="editMode!.agents.value"
             :is-scheme="true"
             :auto-edit-predicate="autoEditPredicate"
             :subject-changes="schemeChanges"
+            :validation-errors="schemeErrors"
             @update:value="(pred, oldVal, newVal) => editMode!.updateValue(uri, pred, oldVal, newVal)"
             @update:language="(pred, oldVal, newLang) => editMode!.updateValueLanguage(uri, pred, oldVal, newLang)"
-            @add:value="(pred) => editMode!.addValue(uri, pred)"
+            @add:value="(pred, type, defaultIri) => editMode!.addValue(uri, pred, type, defaultIri)"
             @remove:value="(pred, val) => editMode!.removeValue(uri, pred, val)"
+            @update:nested="(bnId, pred, oldVal, newVal) => editMode!.updateValue(bnId, pred, oldVal, newVal)"
+            @remove:nested="(bnId, pred, val) => editMode!.removeValue(bnId, pred, val)"
+            @add:nested-value="(bnId, pred, type, defVal) => editMode!.addNestedValue(bnId, pred, type, defVal)"
+            @add:blank-node="(pred) => editMode!.addBlankNode(uri, pred)"
+            @remove:blank-node="(pred, bnId) => editMode!.removeBlankNode(uri, pred, bnId)"
           />
         </template>
 

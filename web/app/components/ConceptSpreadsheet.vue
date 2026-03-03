@@ -2,7 +2,7 @@
 import type { TableColumn } from '@nuxt/ui'
 import type { SortingState, ColumnFiltersState, ColumnPinningState } from '@tanstack/vue-table'
 import type { TreeItem } from '~/composables/useScheme'
-import type { EditableProperty, EditableValue, ConceptSummary } from '~/composables/useEditMode'
+import type { EditableProperty, EditableValue, ConceptSummary, AgentEntry } from '~/composables/useEditMode'
 
 const SIMPLE_HIDDEN_PREDICATES = new Set([
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
@@ -19,12 +19,16 @@ interface EditModeApi {
   isEditMode: { value: boolean }
   storeVersion: { value: number }
   concepts: { value: ConceptSummary[] }
+  agents: { value: AgentEntry[] }
   getPropertiesForSubject: (iri: string, type: 'conceptScheme' | 'concept', populatedOnly?: boolean) => EditableProperty[]
   resolveLabel: (iri: string) => string
   updateValue: (subjectIri: string, predicateIri: string, oldValue: EditableValue, newValue: string) => void
   updateValueLanguage: (subjectIri: string, predicateIri: string, oldValue: EditableValue, newLang: string) => void
   addValue: (subjectIri: string, predicateIri: string) => void
   removeValue: (subjectIri: string, predicateIri: string, value: EditableValue) => void
+  addBlankNode: (subjectIri: string, predicateIri: string) => void
+  removeBlankNode: (subjectIri: string, predicateIri: string, blankNodeId: string) => void
+  addNestedValue: (blankNodeId: string, predicateIri: string, type: 'iri' | 'literal', defaultValue?: string) => void
   syncBroaderNarrower: (conceptIri: string, newBroaderIris: string[], oldBroaderIris: string[]) => void
   syncRelated: (conceptIri: string, newIris: string[], oldIris: string[]) => void
   renameSubject: (oldIri: string, newIri: string) => void
@@ -387,12 +391,18 @@ function getExpandedProperties(iri: string): EditableProperty[] {
               :subject-iri="row.original.iri"
               :properties="getExpandedProperties(row.original.iri)"
               :concepts="editMode.concepts.value"
+              :agents="editMode.agents.value"
               @update:value="(pred, oldVal, newVal) => editMode.updateValue(row.original.iri, pred, oldVal, newVal)"
               @update:language="(pred, oldVal, newLang) => editMode.updateValueLanguage(row.original.iri, pred, oldVal, newLang)"
               @add:value="(pred) => editMode.addValue(row.original.iri, pred)"
               @remove:value="(pred, val) => editMode.removeValue(row.original.iri, pred, val)"
               @update:broader="(newIris, oldIris) => editMode.syncBroaderNarrower(row.original.iri, newIris, oldIris)"
               @update:related="(newIris, oldIris) => editMode.syncRelated(row.original.iri, newIris, oldIris)"
+              @update:nested="(bnId, pred, oldVal, newVal) => editMode.updateValue(bnId, pred, oldVal, newVal)"
+              @remove:nested="(bnId, pred, val) => editMode.removeValue(bnId, pred, val)"
+              @add:nested-value="(bnId, pred, type, defVal) => editMode.addNestedValue(bnId, pred, type, defVal)"
+              @add:blank-node="(pred) => editMode.addBlankNode(row.original.iri, pred)"
+              @remove:blank-node="(pred, bnId) => editMode.removeBlankNode(row.original.iri, pred, bnId)"
               @rename="(oldIri, newIri) => editMode.renameSubject(oldIri, newIri)"
               @delete="editMode.deleteConcept(row.original.iri)"
             />

@@ -644,11 +644,30 @@ export function getModifiedSubjects(
 // Change summary builder (standalone, no composable state needed)
 // ============================================================================
 
-/** Format a quad object for display, including language tag if present */
-function formatObjectValue(obj: Quad['object']): string {
+/** Format a quad object for display, including language tag if present.
+ *  When the object is a blank node and a store + labelResolver are provided,
+ *  expands the blank node's properties into a readable summary. */
+function formatObjectValue(
+  obj: Quad['object'],
+  store?: Store,
+  labelResolver?: (iri: string) => string,
+): string {
   if (obj.termType === 'Literal') {
     const lang = (obj as any).language
     if (lang) return `${obj.value} @${lang}`
+    return obj.value
+  }
+  if (obj.termType === 'BlankNode' && store) {
+    const quads = store.getQuads(obj, null, null, null) as Quad[]
+    if (quads.length === 0) return obj.value
+    const parts: string[] = []
+    for (const q of quads) {
+      const val = q.object.termType === 'Literal'
+        ? q.object.value
+        : labelResolver ? labelResolver(q.object.value) : q.object.value
+      parts.push(val)
+    }
+    return parts.join(', ')
   }
   return obj.value
 }
@@ -729,8 +748,8 @@ export function buildChangeSummary(
         predicateIri: pred,
         predicateLabel: predicateLabelResolver(pred),
         type: propType,
-        oldValues: predRemoved.map(q => formatObjectValue(q.object)),
-        newValues: predAdded.map(q => formatObjectValue(q.object)),
+        oldValues: predRemoved.map(q => formatObjectValue(q.object, olderStore, labelResolver)),
+        newValues: predAdded.map(q => formatObjectValue(q.object, newerStore, labelResolver)),
       })
     }
 

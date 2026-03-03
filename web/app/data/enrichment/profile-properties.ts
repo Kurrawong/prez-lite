@@ -44,6 +44,7 @@ export interface ProfilePropertyOrder {
   propertyOrder?: ProfilePropertyOrder[]
   minCount?: number
   maxCount?: number
+  allowedValues?: string[]
 }
 
 export interface ProfileConfig {

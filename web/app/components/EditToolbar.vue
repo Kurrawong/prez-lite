@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SubjectChange } from '~/composables/useEditMode'
+import type { SubjectChange, ValidationError } from '~/composables/useEditMode'
 import type { HistoryCommit } from '~/composables/useVocabHistory'
 
 const props = defineProps<{
@@ -20,6 +20,10 @@ const props = defineProps<{
   canRedo?: boolean
   undoLabel?: string
   redoLabel?: string
+  // Validation
+  validationErrors?: ValidationError[]
+  /** Errors introduced by user edits only (controls save gate) */
+  newValidationErrors?: ValidationError[]
 }>()
 
 const emit = defineEmits<{
@@ -35,6 +39,7 @@ const emit = defineEmits<{
   'redo': []
   'revert-subject': [subjectIri: string]
   'show-change-detail': [subjectIri: string]
+  'select-concept': [iri: string]
 }>()
 
 // Panel state
@@ -49,6 +54,16 @@ watch(historyOpen, (open) => {
 })
 
 const changeCount = computed(() => props.pendingChanges.length)
+const errorCount = computed(() => props.validationErrors?.length ?? 0)
+const newErrorCount = computed(() => props.newValidationErrors?.length ?? 0)
+const canSave = computed(() => changeCount.value > 0 && newErrorCount.value === 0)
+
+const newErrorKeySet = computed(() => new Set(
+  (props.newValidationErrors ?? []).map(e => `${e.subjectIri}|${e.predicate}|${e.message}`),
+))
+function isBaselineError(err: ValidationError): boolean {
+  return !newErrorKeySet.value.has(`${err.subjectIri}|${err.predicate}|${err.message}`)
+}
 
 function formatHistoryDate(dateStr: string): string {
   if (!dateStr) return ''
@@ -73,11 +88,8 @@ function truncateCommitMsg(msg: string, max = 50): string {
 </script>
 
 <template>
-  <!-- Spacer to prevent content from hiding behind fixed toolbar -->
-  <div class="h-12" />
-
-  <Teleport to="header">
-    <div class="absolute top-full inset-x-0 z-50 bg-primary-50 dark:bg-primary-950 border-b-2 border-primary-300 dark:border-primary-700">
+  <Teleport to="#edit-toolbar-slot">
+    <div class="z-50 bg-primary-50 dark:bg-primary-950 border-b-2 border-primary-300 dark:border-primary-700">
       <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 py-1.5">
         <div class="flex items-center gap-3 flex-wrap">
 
@@ -108,17 +120,21 @@ function truncateCommitMsg(msg: string, max = 50): string {
         <!-- Undo/Redo -->
         <UButton
           icon="i-heroicons-arrow-uturn-left"
-          variant="ghost"
+          :variant="canUndo ? 'ghost' : 'ghost'"
+          :color="canUndo ? 'primary' : 'neutral'"
           size="xs"
           :disabled="!canUndo"
+          :ui="canUndo ? {} : { base: 'text-gray-300 dark:text-gray-600' }"
           :title="canUndo ? `Undo: ${undoLabel}` : 'Nothing to undo'"
           @click="emit('undo')"
         />
         <UButton
           icon="i-heroicons-arrow-uturn-right"
-          variant="ghost"
+          :variant="canRedo ? 'ghost' : 'ghost'"
+          :color="canRedo ? 'primary' : 'neutral'"
           size="xs"
           :disabled="!canRedo"
+          :ui="canRedo ? {} : { base: 'text-gray-300 dark:text-gray-600' }"
           :title="canRedo ? `Redo: ${redoLabel}` : 'Nothing to redo'"
           @click="emit('redo')"
         />
@@ -247,11 +263,44 @@ function truncateCommitMsg(msg: string, max = 50): string {
 
         <USeparator orientation="vertical" class="h-5" />
 
+        <!-- Validation errors -->
+        <UPopover v-if="errorCount > 0" :content="{ align: 'end', side: 'bottom' }" :ui="{ content: 'z-50' }">
+          <UButton variant="ghost" size="xs" :color="newErrorCount > 0 ? 'error' : 'warning'">
+            <UIcon name="i-heroicons-exclamation-triangle" class="size-3.5" />
+            {{ errorCount }} error{{ errorCount !== 1 ? 's' : '' }}
+          </UButton>
+          <template #content>
+            <div class="w-80 max-h-72 overflow-y-auto p-2 space-y-1">
+              <p class="text-xs font-medium text-muted px-2 mb-2">Validation errors</p>
+              <div
+                v-for="(err, idx) in validationErrors"
+                :key="idx"
+                class="px-2 py-1.5 rounded-md text-sm hover:bg-muted/50 cursor-pointer transition-colors"
+                :class="{ 'opacity-50': isBaselineError(err) }"
+                @click="emit('select-concept', err.subjectIri)"
+              >
+                <div class="flex items-center gap-1.5">
+                  <UIcon name="i-heroicons-exclamation-triangle" class="size-3.5 shrink-0" :class="isBaselineError(err) ? 'text-warning' : 'text-error'" />
+                  <span class="font-medium truncate">{{ err.subjectLabel }}</span>
+                  <span v-if="isBaselineError(err)" class="text-[10px] text-warning shrink-0">(pre-existing)</span>
+                </div>
+                <p class="text-xs text-muted ml-5 mt-0.5">
+                  {{ err.predicateLabel }}: {{ err.message }}
+                </p>
+              </div>
+            </div>
+          </template>
+        </UPopover>
+
         <!-- Save button -->
         <UButton
           size="sm"
-          :disabled="!changeCount"
+          :disabled="!canSave"
+          :color="canSave ? 'primary' : 'neutral'"
+          :variant="canSave ? 'solid' : 'outline'"
+          :ui="canSave ? {} : { base: 'text-gray-300 dark:text-gray-600 border-gray-200 dark:border-gray-700' }"
           :loading="saving"
+          :title="newErrorCount > 0 ? `Fix ${newErrorCount} validation error${newErrorCount !== 1 ? 's' : ''} before saving` : ''"
           @click="emit('save')"
         >
           Save

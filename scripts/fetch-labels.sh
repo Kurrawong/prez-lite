@@ -24,7 +24,7 @@ BACKGROUND_DIR="$DATA_DIR/background"
 MANIFEST="$DATA_DIR/manifest.ttl"
 
 # Default SPARQL endpoint (Kurrawong's demo endpoint with semantic background data)
-SPARQL_ENDPOINT="http://demo.dev.kurrawong.ai/sparql"
+SPARQL_ENDPOINT="https://api.data.kurrawong.ai/sparql"
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do

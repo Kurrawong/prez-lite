@@ -133,15 +133,20 @@ const NESTED_NODE_PROFILE = `
     ] , [
         sh:path sdo:temporalCoverage ;
         sh:order 2 ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
         sh:node [
             sh:property [
                 sh:path sdo:startTime ;
                 sh:name "Start Time" ;
-                sh:order 0
+                sh:order 0 ;
+                sh:minCount 1 ;
+                sh:maxCount 1
             ] , [
                 sh:path sdo:endTime ;
                 sh:name "End Time" ;
-                sh:order 1
+                sh:order 1 ;
+                sh:maxCount 1
             ]
         ]
     ] , [
@@ -151,7 +156,8 @@ const NESTED_NODE_PROFILE = `
             sh:property [
                 sh:path prov:agent ;
                 sh:name "Agent" ;
-                sh:order 0
+                sh:order 0 ;
+                sh:minCount 1
             ] , [
                 sh:path prov:hadRole ;
                 sh:name "Role" ;
@@ -285,23 +291,160 @@ describe('parseProfilesContent', () => {
     expect(profile.properties[0]!.paths).toEqual(['http://www.w3.org/2004/02/skos/core#prefLabel'])
     expect(profile.properties[0]!.nestedProperties).toBeUndefined()
 
-    // Second property: sdo:temporalCoverage with sh:node
+    // Second property: sdo:temporalCoverage with sh:node and cardinality
     const temporal = profile.properties[1]!
     expect(temporal.paths).toEqual(['https://schema.org/temporalCoverage'])
+    expect(temporal.minCount).toBe(0)
+    expect(temporal.maxCount).toBe(1)
     expect(temporal.nestedProperties).toHaveLength(2)
     expect(temporal.nestedProperties![0]!.paths).toEqual(['https://schema.org/startTime'])
     expect(temporal.nestedProperties![0]!.name).toBe('Start Time')
     expect(temporal.nestedProperties![0]!.order).toBe(0)
+    expect(temporal.nestedProperties![0]!.minCount).toBe(1)
+    expect(temporal.nestedProperties![0]!.maxCount).toBe(1)
     expect(temporal.nestedProperties![1]!.paths).toEqual(['https://schema.org/endTime'])
     expect(temporal.nestedProperties![1]!.name).toBe('End Time')
     expect(temporal.nestedProperties![1]!.order).toBe(1)
+    expect(temporal.nestedProperties![1]!.minCount).toBeUndefined()
+    expect(temporal.nestedProperties![1]!.maxCount).toBe(1)
 
     // Third property: prov:qualifiedAttribution with sh:node
     const attr = profile.properties[2]!
     expect(attr.paths).toEqual(['http://www.w3.org/ns/prov#qualifiedAttribution'])
+    expect(attr.minCount).toBeUndefined()
+    expect(attr.maxCount).toBeUndefined()
     expect(attr.nestedProperties).toHaveLength(2)
     expect(attr.nestedProperties![0]!.paths).toEqual(['http://www.w3.org/ns/prov#agent'])
+    expect(attr.nestedProperties![0]!.minCount).toBe(1)
+    expect(attr.nestedProperties![0]!.maxCount).toBeUndefined()
     expect(attr.nestedProperties![1]!.paths).toEqual(['http://www.w3.org/ns/prov#hadRole'])
+    expect(attr.nestedProperties![1]!.minCount).toBeUndefined()
+  })
+
+  it('parses sh:in as allowedValues', () => {
+    const ttl = `
+      @prefix prof: <http://www.w3.org/ns/dx/prof/> .
+      @prefix sh: <http://www.w3.org/ns/shacl#> .
+      @prefix dcterms: <http://purl.org/dc/terms/> .
+      @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+      @prefix reg: <http://purl.org/linked-data/registry#> .
+
+      <http://example.com/profile/with-in>
+          a prof:Profile ;
+          dcterms:identifier "with-in" ;
+          sh:targetClass skos:ConceptScheme ;
+          sh:property [
+              sh:path reg:status ;
+              sh:order 1 ;
+              sh:minCount 1 ;
+              sh:maxCount 1 ;
+              sh:in ( reg:statusStable reg:statusExperimental reg:statusRetired )
+          ] , [
+              sh:path skos:prefLabel ;
+              sh:order 0
+          ] .
+    `
+    const config = parseProfilesContent(ttl)
+    const profile = Object.values(config.profiles)[0]!
+
+    expect(profile.properties).toHaveLength(2)
+
+    // prefLabel — no sh:in
+    const prefLabel = profile.properties.find(p => p.paths[0]?.includes('prefLabel'))!
+    expect(prefLabel.allowedValues).toBeUndefined()
+
+    // reg:status — with sh:in
+    const status = profile.properties.find(p => p.paths[0]?.includes('status'))!
+    expect(status.paths).toEqual(['http://purl.org/linked-data/registry#status'])
+    expect(status.minCount).toBe(1)
+    expect(status.maxCount).toBe(1)
+    expect(status.allowedValues).toEqual([
+      'http://purl.org/linked-data/registry#statusStable',
+      'http://purl.org/linked-data/registry#statusExperimental',
+      'http://purl.org/linked-data/registry#statusRetired',
+    ])
+  })
+
+  it('parses sh:class on property shapes', () => {
+    const ttl = `
+      @prefix prof: <http://www.w3.org/ns/dx/prof/> .
+      @prefix sh: <http://www.w3.org/ns/shacl#> .
+      @prefix dcterms: <http://purl.org/dc/terms/> .
+      @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+      @prefix prov: <http://www.w3.org/ns/prov#> .
+      @prefix sdo: <https://schema.org/> .
+
+      <http://example.com/profile/with-class>
+          a prof:Profile ;
+          dcterms:identifier "with-class" ;
+          sh:targetClass skos:Concept ;
+          sh:property [
+              sh:path prov:wasDerivedFrom ;
+              sh:order 1 ;
+              sh:class skos:Concept
+          ] , [
+              sh:path sdo:creator ;
+              sh:order 2 ;
+              sh:class prov:Agent
+          ] , [
+              sh:path skos:prefLabel ;
+              sh:order 0
+          ] .
+    `
+    const config = parseProfilesContent(ttl)
+    const profile = Object.values(config.profiles)[0]!
+
+    expect(profile.properties).toHaveLength(3)
+
+    // prefLabel — no sh:class
+    const prefLabel = profile.properties.find(p => p.paths[0]?.includes('prefLabel'))!
+    expect(prefLabel.class).toBeUndefined()
+
+    // wasDerivedFrom — sh:class skos:Concept
+    const derived = profile.properties.find(p => p.paths[0]?.includes('wasDerivedFrom'))!
+    expect(derived.class).toBe('http://www.w3.org/2004/02/skos/core#Concept')
+
+    // creator — sh:class prov:Agent
+    const creator = profile.properties.find(p => p.paths[0]?.includes('creator'))!
+    expect(creator.class).toBe('http://www.w3.org/ns/prov#Agent')
+  })
+
+  it('parses sh:class on nested property shapes', () => {
+    const ttl = `
+      @prefix prof: <http://www.w3.org/ns/dx/prof/> .
+      @prefix sh: <http://www.w3.org/ns/shacl#> .
+      @prefix dcterms: <http://purl.org/dc/terms/> .
+      @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+      @prefix prov: <http://www.w3.org/ns/prov#> .
+
+      <http://example.com/profile/nested-class>
+          a prof:Profile ;
+          dcterms:identifier "nested-class" ;
+          sh:targetClass skos:ConceptScheme ;
+          sh:property [
+              sh:path prov:qualifiedAttribution ;
+              sh:order 1 ;
+              sh:node [
+                  sh:property [
+                      sh:path prov:agent ;
+                      sh:name "Agent" ;
+                      sh:order 0 ;
+                      sh:class prov:Agent
+                  ] , [
+                      sh:path prov:hadRole ;
+                      sh:name "Role" ;
+                      sh:order 1
+                  ]
+              ]
+          ] .
+    `
+    const config = parseProfilesContent(ttl)
+    const profile = Object.values(config.profiles)[0]!
+
+    const attr = profile.properties[0]!
+    expect(attr.nestedProperties).toHaveLength(2)
+    expect(attr.nestedProperties![0]!.class).toBe('http://www.w3.org/ns/prov#Agent')
+    expect(attr.nestedProperties![1]!.class).toBeUndefined()
   })
 
   it('returns empty config for TTL with no profiles', () => {

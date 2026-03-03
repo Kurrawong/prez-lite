@@ -23,7 +23,11 @@ import {
 } from '~/utils/ttl-patch'
 import type { TreeItem } from '~/composables/useScheme'
 
-const { namedNode, literal, defaultGraph } = DataFactory
+const { namedNode, blankNode, literal, defaultGraph } = DataFactory
+
+function toSubjectTerm(iri: string) {
+  return iri.startsWith('_:') ? blankNode(iri.slice(2)) : namedNode(iri)
+}
 
 // ============================================================================
 // Types
@@ -33,6 +37,11 @@ export interface EditableNestedProperty {
   predicate: string
   label: string
   values: EditableValue[]
+  fieldType?: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly' | 'select' | 'agent-picker'
+  allowedValues?: string[]
+  class?: string
+  minCount?: number
+  maxCount?: number
 }
 
 export interface EditableValue {
@@ -50,9 +59,21 @@ export interface EditableProperty {
   description?: string
   order: number
   values: EditableValue[]
-  fieldType: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly'
+  fieldType: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly' | 'nested' | 'select' | 'concept-picker' | 'agent-picker'
   minCount?: number
   maxCount?: number
+  /** Closed set of allowed IRI values from sh:in */
+  allowedValues?: string[]
+  /** Expected class of IRI values from sh:class */
+  class?: string
+}
+
+export interface ValidationError {
+  subjectIri: string
+  subjectLabel: string
+  predicate: string
+  predicateLabel: string
+  message: string
 }
 
 export interface ConceptSummary {
@@ -96,11 +117,19 @@ interface ProfilePropertyOrder {
   propertyOrder?: ProfilePropertyOrder[]
   minCount?: number
   maxCount?: number
+  allowedValues?: string[]
+  class?: string
 }
 
 interface ProfileConfig {
   conceptScheme: { propertyOrder: ProfilePropertyOrder[] }
   concept: { propertyOrder: ProfilePropertyOrder[] }
+}
+
+export interface AgentEntry {
+  iri: string
+  name: string
+  type: 'Person' | 'Organization'
 }
 
 // ============================================================================
@@ -111,6 +140,9 @@ const SKOS = 'http://www.w3.org/2004/02/skos/core#'
 const RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
 const XSD = 'http://www.w3.org/2001/XMLSchema#'
 const SDO = 'https://schema.org/'
+
+const SKOS_CONCEPT_CLASS = `${SKOS}Concept`
+const PROV_AGENT_CLASS = 'http://www.w3.org/ns/prov#Agent'
 
 const TEXTAREA_PREDICATES = new Set([
   `${SKOS}definition`,
@@ -128,6 +160,8 @@ const IRI_PICKER_PREDICATES = new Set([
 const DATE_PREDICATES = new Set([
   `${SDO}dateCreated`,
   `${SDO}dateModified`,
+  `${SDO}startTime`,
+  `${SDO}endTime`,
 ])
 
 const READONLY_PREDICATES = new Set([
@@ -165,12 +199,16 @@ export function useEditMode(
   const store = shallowRef<Store | null>(null)
   const storeVersion = ref(0)
   const profileConfig = ref<ProfileConfig | null>(null)
+  const agents = ref<AgentEntry[]>([])
   const originalPrefixes = ref<Record<string, string>>({})
   const originalTTL = ref('')
 
   // Diff-tracking state
   const originalStore = shallowRef<Store | null>(null)
   const originalParsedTTL = shallowRef<ParsedTTL | null>(null)
+
+  // Baseline validation errors (pre-existing in source data, not caused by user edits)
+  const baselineErrorKeys = ref<Set<string>>(new Set())
 
   // UI state
   const isEditMode = ref(false)
@@ -269,17 +307,34 @@ export function useEditMode(
         'prefixBlock length:', originalParsedTTL.value.prefixBlock.length,
         'prefixes:', Object.keys(originalPrefixes.value).join(', '))
 
-      // Load profile config
+      // Load profile config and agents (in parallel)
+      const loads: Promise<void>[] = []
       if (!profileConfig.value) {
-        try {
-          const resp = await fetch('/export/system/profile.json')
-          profileConfig.value = await resp.json()
-        } catch {
-          // Non-fatal: forms still work without ordering
-        }
+        loads.push(
+          fetch('/export/system/profile.json')
+            .then(r => r.json())
+            .then(data => { profileConfig.value = data })
+            .catch(() => { /* Non-fatal: forms still work without ordering */ }),
+        )
       }
+      if (!agents.value.length) {
+        loads.push(
+          fetch('/export/system/agents.json')
+            .then(r => r.json())
+            .then((data: AgentEntry[]) => { agents.value = data })
+            .catch(() => { /* Non-fatal: agent picker will be empty */ }),
+        )
+      }
+      await Promise.all(loads)
 
       isEditMode.value = true
+
+      // Snapshot pre-existing validation errors so they don't block saving
+      nextTick(() => {
+        baselineErrorKeys.value = new Set(
+          validationErrors.value.map(validationErrorKey),
+        )
+      })
     } catch (e) {
       error.value = e instanceof Error ? e.message : 'Failed to enter edit mode'
     } finally {
@@ -327,17 +382,18 @@ export function useEditMode(
     const seen = new Set<string>()
 
     for (const po of propertyOrder) {
-      // Nested property orders (e.g. prov:qualifiedAttribution) — extract blank node children, shown readonly
+      // Nested property orders (e.g. prov:qualifiedAttribution, sdo:temporalCoverage)
       if (po.propertyOrder) {
         const values = quadValuesForPredicate(iri, po.path, po.propertyOrder)
-        if (values.length > 0) {
+        // Show nested properties even when empty (unless populatedOnly mode)
+        if (values.length > 0 || !populatedOnly) {
           result.push({
             predicate: po.path,
             label: getPredicateLabel(po.path),
             description: getPredicateDescription(po.path),
             order: po.order,
             values,
-            fieldType: 'readonly',
+            fieldType: 'nested',
           })
         }
         seen.add(po.path)
@@ -352,15 +408,29 @@ export function useEditMode(
         continue
       }
 
+      // Determine field type: sh:in → select, sh:class → concept/agent picker, else default
+      let fieldType: EditableProperty['fieldType']
+      if (po.allowedValues?.length) {
+        fieldType = 'select'
+      } else if (po.class === SKOS_CONCEPT_CLASS) {
+        fieldType = 'concept-picker'
+      } else if (po.class === PROV_AGENT_CLASS) {
+        fieldType = 'agent-picker'
+      } else {
+        fieldType = getFieldType(po.path)
+      }
+
       result.push({
         predicate: po.path,
         label: getPredicateLabel(po.path),
         description: getPredicateDescription(po.path),
         order: po.order,
         values,
-        fieldType: getFieldType(po.path),
+        fieldType,
         ...(po.minCount != null && { minCount: po.minCount }),
         ...(po.maxCount != null && { maxCount: po.maxCount }),
+        ...(po.allowedValues?.length && { allowedValues: po.allowedValues }),
+        ...(po.class && { class: po.class }),
       })
       seen.add(po.path)
     }
@@ -437,13 +507,29 @@ export function useEditMode(
     if (nestedOrder) {
       for (const po of nestedOrder) {
         const predQuads = grouped.get(po.path)
-        if (predQuads) {
-          result.push({
-            predicate: po.path,
-            label: getPredicateLabel(po.path),
-            values: predQuads.map(quadToEditableValue),
-          })
+
+        // Determine field type from constraints
+        let fieldType: EditableNestedProperty['fieldType']
+        if (po.allowedValues?.length) {
+          fieldType = 'select'
+        } else if (po.class === PROV_AGENT_CLASS) {
+          fieldType = 'agent-picker'
+        } else {
+          fieldType = getFieldType(po.path)
         }
+
+        // Always show profile-defined nested properties (even with no values)
+        // so users can populate them on newly created blank nodes
+        result.push({
+          predicate: po.path,
+          label: getPredicateLabel(po.path),
+          values: predQuads ? predQuads.map(quadToEditableValue) : [],
+          fieldType,
+          ...(po.minCount != null && { minCount: po.minCount }),
+          ...(po.maxCount != null && { maxCount: po.maxCount }),
+          ...(po.allowedValues?.length && { allowedValues: po.allowedValues }),
+          ...(po.class && { class: po.class }),
+        })
         seen.add(po.path)
       }
     }
@@ -455,6 +541,7 @@ export function useEditMode(
         predicate: pred,
         label: getPredicateLabel(pred),
         values: predQuads.map(quadToEditableValue),
+        fieldType: getFieldType(pred),
       })
     }
 
@@ -485,7 +572,7 @@ export function useEditMode(
   function updateValue(subjectIri: string, predicateIri: string, oldValue: EditableValue, newValue: string) {
     recordMutation(`Update ${getPredicateLabel(predicateIri)}`, () => {
       if (!store.value) return
-      const s = namedNode(subjectIri)
+      const s = toSubjectTerm(subjectIri)
       const p = namedNode(predicateIri)
 
       // Remove old quad
@@ -513,7 +600,7 @@ export function useEditMode(
   function updateValueLanguage(subjectIri: string, predicateIri: string, oldValue: EditableValue, newLang: string) {
     recordMutation(`Update ${getPredicateLabel(predicateIri)} language`, () => {
       if (!store.value) return
-      const s = namedNode(subjectIri)
+      const s = toSubjectTerm(subjectIri)
       const p = namedNode(predicateIri)
 
       // Remove old quad
@@ -530,33 +617,86 @@ export function useEditMode(
     })
   }
 
-  function addValue(subjectIri: string, predicateIri: string, type: 'literal' | 'iri' = 'literal') {
-    if (type === 'iri') {
+  function addValue(subjectIri: string, predicateIri: string, type: 'literal' | 'iri' = 'literal', defaultIri?: string) {
+    if (type === 'iri' && !defaultIri) {
       // Don't add empty IRI — caller should use iri-picker
       return
     }
     recordMutation(`Add ${getPredicateLabel(predicateIri)}`, () => {
       if (!store.value) return
-      const s = namedNode(subjectIri)
+      const s = toSubjectTerm(subjectIri)
       const p = namedNode(predicateIri)
-      store.value.addQuad(s, p, literal(''), defaultGraph())
+      const obj = type === 'iri' && defaultIri ? namedNode(defaultIri) : literal('')
+      store.value.addQuad(s, p, obj, defaultGraph())
+    })
+  }
+
+  /**
+   * Add a new blank node value for a nested property.
+   * Creates the blank node and links it to the subject via the predicate.
+   * Populates default nested triples from the property order config.
+   */
+  function addBlankNode(subjectIri: string, predicateIri: string) {
+    recordMutation(`Add ${getPredicateLabel(predicateIri)}`, () => {
+      if (!store.value) return
+      const s = toSubjectTerm(subjectIri)
+      const p = namedNode(predicateIri)
+      const bn = blankNode()
+      store.value.addQuad(s, p, bn, defaultGraph())
+      // Nested fields are shown via extractBlankNodeProperties (profile-driven)
+      // even when empty, so no pre-population needed — user picks values.
+    })
+  }
+
+  /** Remove a blank node and all its nested triples */
+  function removeBlankNode(subjectIri: string, predicateIri: string, blankNodeId: string) {
+    recordMutation(`Remove ${getPredicateLabel(predicateIri)}`, () => {
+      if (!store.value) return
+      const s = toSubjectTerm(subjectIri)
+      const p = namedNode(predicateIri)
+      const bn = blankNode(blankNodeId.startsWith('_:') ? blankNodeId.slice(2) : blankNodeId)
+
+      // Remove the linking quad (subject → predicate → blankNode)
+      store.value.removeQuad(s, p, bn, defaultGraph())
+
+      // Remove all the blank node's own triples
+      const bnQuads = store.value.getQuads(bn, null, null, null)
+      store.value.removeQuads(bnQuads)
+    })
+  }
+
+  /** Add a value to a nested blank node property */
+  function addNestedValue(blankNodeId: string, predicateIri: string, type: 'iri' | 'literal', defaultValue?: string) {
+    recordMutation(`Add ${getPredicateLabel(predicateIri)}`, () => {
+      if (!store.value) return
+      const bn = toSubjectTerm(blankNodeId)
+      const p = namedNode(predicateIri)
+      const obj = type === 'iri' && defaultValue
+        ? namedNode(defaultValue)
+        : literal(defaultValue ?? '')
+      store.value.addQuad(bn, p, obj, defaultGraph())
     })
   }
 
   function removeValue(subjectIri: string, predicateIri: string, val: EditableValue) {
     recordMutation(`Remove ${getPredicateLabel(predicateIri)}`, () => {
       if (!store.value) return
-      const s = namedNode(subjectIri)
+      const s = toSubjectTerm(subjectIri)
       const p = namedNode(predicateIri)
 
-      const obj = val.type === 'iri'
-        ? namedNode(val.value)
-        : val.language
-          ? literal(val.value, val.language)
-          : val.datatype
-            ? literal(val.value, namedNode(val.datatype))
-            : literal(val.value)
-      store.value.removeQuad(s, p, obj, defaultGraph())
+      // Find the exact quad in the store by matching subject, predicate, and object value.
+      // This is more robust than reconstructing terms, which can fail for blank node subjects.
+      const quads = store.value.getQuads(s, p, null, defaultGraph()) as Quad[]
+      const match = quads.find(q => {
+        if (val.type === 'iri') return q.object.termType === 'NamedNode' && q.object.value === val.value
+        if (q.object.termType !== 'Literal') return false
+        if (q.object.value !== val.value) return false
+        if (val.language && (q.object as any).language !== val.language) return false
+        return true
+      })
+      if (match) {
+        store.value.removeQuad(match)
+      }
     })
   }
 
@@ -1061,6 +1201,138 @@ export function useEditMode(
     return iri.substring(Math.max(hashIdx, slashIdx) + 1)
   }
 
+  // ---- Validation ----
+
+  function validateSubject(
+    subjectIri: string,
+    type: 'conceptScheme' | 'concept',
+  ): ValidationError[] {
+    if (!store.value || !profileConfig.value) return []
+    const propertyOrder = profileConfig.value[type]?.propertyOrder ?? []
+    if (!propertyOrder.length) return []
+
+    const errors: ValidationError[] = []
+    const subjectLabel = resolveLabel(subjectIri)
+
+    for (const po of propertyOrder) {
+      const quads = store.value.getQuads(subjectIri, po.path, null, null) as Quad[]
+      const count = quads.length
+
+      if (po.minCount != null && count < po.minCount) {
+        errors.push({
+          subjectIri,
+          subjectLabel,
+          predicate: po.path,
+          predicateLabel: getPredicateLabel(po.path),
+          message: `Requires at least ${po.minCount} value${po.minCount !== 1 ? 's' : ''}`,
+        })
+      }
+      if (po.maxCount != null && count > po.maxCount) {
+        errors.push({
+          subjectIri,
+          subjectLabel,
+          predicate: po.path,
+          predicateLabel: getPredicateLabel(po.path),
+          message: `Allows at most ${po.maxCount} value${po.maxCount !== 1 ? 's' : ''}`,
+        })
+      }
+
+      // Check sh:in constraint
+      if (po.allowedValues?.length) {
+        const allowed = new Set(po.allowedValues)
+        for (const q of quads) {
+          if (!allowed.has(q.object.value)) {
+            errors.push({
+              subjectIri,
+              subjectLabel,
+              predicate: po.path,
+              predicateLabel: getPredicateLabel(po.path),
+              message: `"${q.object.value}" is not an allowed value`,
+            })
+          }
+        }
+      }
+
+      // Validate nested properties
+      if (po.propertyOrder) {
+        const parentLabel = getPredicateLabel(po.path)
+        for (const q of quads) {
+          if (q.object.termType !== 'BlankNode') continue
+          for (const nested of po.propertyOrder) {
+            const nestedLabel = getPredicateLabel(nested.path)
+            const nestedQuads = store.value!.getQuads(q.object, nested.path, null, null) as Quad[]
+            const nestedCount = nestedQuads.length
+            if (nested.minCount != null && nestedCount < nested.minCount) {
+              errors.push({
+                subjectIri,
+                subjectLabel,
+                predicate: po.path,
+                predicateLabel: parentLabel,
+                message: `${nestedLabel} requires at least ${nested.minCount} value${nested.minCount !== 1 ? 's' : ''}`,
+              })
+            }
+            if (nested.maxCount != null && nestedCount > nested.maxCount) {
+              errors.push({
+                subjectIri,
+                subjectLabel,
+                predicate: po.path,
+                predicateLabel: parentLabel,
+                message: `${nestedLabel} allows at most ${nested.maxCount} value${nested.maxCount !== 1 ? 's' : ''}`,
+              })
+            }
+            // Check sh:in constraint on nested properties
+            if (nested.allowedValues?.length) {
+              const nestedAllowed = new Set(nested.allowedValues)
+              for (const nq of nestedQuads) {
+                if (!nestedAllowed.has(nq.object.value)) {
+                  errors.push({
+                    subjectIri,
+                    subjectLabel,
+                    predicate: po.path,
+                    predicateLabel: parentLabel,
+                    message: `${nestedLabel} "${nq.object.value}" is not an allowed value`,
+                  })
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return errors
+  }
+
+  /** Stable key for deduplicating validation errors across snapshots */
+  function validationErrorKey(e: ValidationError): string {
+    return `${e.subjectIri}|${e.predicate}|${e.message}`
+  }
+
+  const validationErrors = computed<ValidationError[]>(() => {
+    void storeVersion.value
+    if (!store.value || !profileConfig.value) return []
+
+    const errors: ValidationError[] = []
+
+    // Validate scheme
+    if (schemeIri.value) {
+      errors.push(...validateSubject(schemeIri.value, 'conceptScheme'))
+    }
+
+    // Validate all concepts
+    for (const c of concepts.value) {
+      errors.push(...validateSubject(c.iri, 'concept'))
+    }
+
+    return errors
+  })
+
+  /** Errors introduced by the user's edits (excludes pre-existing issues in source data) */
+  const newValidationErrors = computed<ValidationError[]>(() => {
+    if (!baselineErrorKeys.value.size) return validationErrors.value
+    return validationErrors.value.filter(e => !baselineErrorKeys.value.has(validationErrorKey(e)))
+  })
+
   return {
     // State
     store: readonly(store),
@@ -1080,6 +1352,9 @@ export function useEditMode(
     updateValue,
     updateValueLanguage,
     addValue,
+    addBlankNode,
+    removeBlankNode,
+    addNestedValue,
     removeValue,
     syncBroaderNarrower,
     syncRelated,
@@ -1113,5 +1388,10 @@ export function useEditMode(
     conceptProperties,
     concepts,
     treeItems,
+    agents: readonly(agents),
+
+    // Validation
+    validationErrors,
+    newValidationErrors,
   }
 }
