@@ -1,10 +1,10 @@
 /**
  * useLayerStatus composable
  *
- * Computes three layers of change visibility for the layered status bar:
+ * Computes three layers of change visibility for the editing toolbar:
  *   Layer 1 (unsaved) — reactive from editMode.getChangeSummary()
- *   Layer 2 (branch)  — diff: workspace root TTL vs edit branch TTL
- *   Layer 3 (staging)  — diff: main TTL vs workspace root TTL
+ *   Layer 2 (pending)  — diff: workspace root TTL vs edit branch TTL
+ *   Layer 3 (approved)  — diff: main TTL vs workspace root TTL
  *
  * Uses GitHub Contents API to fetch TTL at branch refs, then N3 + buildChangeSummary for diffs.
  */
@@ -18,7 +18,7 @@ import type { ChangeSummary, SubjectChange } from '~/composables/useEditMode'
 // Types
 // ============================================================================
 
-export type LayerName = 'unsaved' | 'branch' | 'staging'
+export type LayerName = 'unsaved' | 'pending' | 'approved'
 
 export interface LayerData {
   name: LayerName
@@ -172,6 +172,12 @@ export function useLayerStatus(
     const branch = workspace.activeBranch.value
     if (!ws || !branch || !token.value) return
 
+    // If edit branch doesn't exist yet, there are no branch-level changes
+    if (!workspace.branchExists(branch)) {
+      branchChanges.value = { subjects: [], totalAdded: 0, totalRemoved: 0, totalModified: 0 }
+      return
+    }
+
     branchLoading.value = true
     branchError.value = null
     try {
@@ -220,8 +226,8 @@ export function useLayerStatus(
       error: null,
     },
     {
-      name: 'branch' as LayerName,
-      label: 'on branch',
+      name: 'pending' as LayerName,
+      label: 'saved',
       color: 'blue',
       count: branchChanges.value.subjects.length,
       changes: branchChanges.value.subjects,
@@ -229,8 +235,8 @@ export function useLayerStatus(
       error: branchError.value,
     },
     {
-      name: 'staging' as LayerName,
-      label: 'in staging',
+      name: 'approved' as LayerName,
+      label: 'ready to publish',
       color: 'green',
       count: stagingChanges.value.subjects.length,
       changes: stagingChanges.value.subjects,

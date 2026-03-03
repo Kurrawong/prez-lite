@@ -194,6 +194,12 @@ export function useEditMode(
   vocabPath: Ref<string>,
   branch: Ref<string>,
   schemeIri: Ref<string>,
+  options?: {
+    /** Fallback branch for loading (workspace branch when edit branch doesn't exist) */
+    fallbackBranch?: Ref<string>
+    /** Called before first save to ensure the edit branch exists */
+    ensureEditBranch?: () => Promise<boolean>
+  },
 ) {
   // Core state
   const store = shallowRef<Store | null>(null)
@@ -223,7 +229,7 @@ export function useEditMode(
 
   function getGitHubFile() {
     if (!githubFile) {
-      githubFile = useGitHubFile(owner, repo, vocabPath, branch)
+      githubFile = useGitHubFile(owner, repo, vocabPath, branch, options?.fallbackBranch)
     }
     return githubFile
   }
@@ -1044,6 +1050,16 @@ export function useEditMode(
     error.value = null
 
     try {
+      // Ensure edit branch exists before first save
+      if (options?.ensureEditBranch) {
+        const ok = await options.ensureEditBranch()
+        if (!ok) {
+          error.value = 'Failed to create edit branch'
+          saveStatus.value = 'error'
+          return false
+        }
+      }
+
       const ttl = serializeWithPatch()
       const ghFile = getGitHubFile()
       const msg = ensureConventionalCommit(commitMessage ?? '', 'chore: update vocabulary')
@@ -1079,6 +1095,16 @@ export function useEditMode(
     error.value = null
 
     try {
+      // Ensure edit branch exists before first save
+      if (options?.ensureEditBranch) {
+        const ok = await options.ensureEditBranch()
+        if (!ok) {
+          error.value = 'Failed to create edit branch'
+          saveStatus.value = 'error'
+          return false
+        }
+      }
+
       const ttl = serializeWithPatch(iri)
       const ghFile = getGitHubFile()
       const label = resolveLabel(iri)

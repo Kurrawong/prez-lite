@@ -114,7 +114,7 @@ describe('EditToolbar', () => {
         },
       })
       expect(headerText()).toContain('2')
-      expect(headerText()).toContain('changes')
+      expect(headerText()).toContain('Unsaved')
     })
 
     it('shows "No changes yet" when no changes', async () => {
@@ -174,6 +174,104 @@ describe('EditToolbar', () => {
       })
       const saveBtn = headerButtons().find(b => b.textContent?.trim() === 'Save')
       expect(saveBtn?.disabled).toBe(false)
+    })
+  })
+
+  describe('layer indicators', () => {
+    const editProps = { ...baseProps, isEditMode: true }
+
+    const makeLayer = (name: string, label: string, color: string, count: number, loading = false) => ({
+      name,
+      label,
+      color,
+      count,
+      changes: Array.from({ length: count }, (_, i) => ({
+        subjectIri: `http://example.com/${name}-${i}`,
+        subjectLabel: `Concept ${i}`,
+        type: 'modified' as const,
+        propertyChanges: [],
+      })),
+      loading,
+      error: null,
+    })
+
+    it('renders saved indicator with count', async () => {
+      await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          pendingLayer: makeLayer('pending', 'saved', 'blue', 3),
+        },
+      })
+      const text = headerText()
+      expect(text).toContain('3')
+      expect(text).toContain('saved') // CSS capitalize renders as "Saved"
+    })
+
+    it('renders ready to publish indicator with count', async () => {
+      await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          approvedLayer: makeLayer('approved', 'ready to publish', 'green', 5),
+        },
+      })
+      const text = headerText()
+      expect(text).toContain('5')
+      expect(text).toContain('ready to publish') // CSS capitalize renders as "Ready To Publish"
+    })
+
+    it('renders dimmed saved when count is 0', async () => {
+      await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          pendingLayer: makeLayer('pending', 'saved', 'blue', 0),
+        },
+      })
+      const text = headerText()
+      expect(text).toContain('0')
+      expect(text).toContain('saved')
+    })
+
+    it('renders dimmed ready to publish when count is 0', async () => {
+      await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          approvedLayer: makeLayer('approved', 'ready to publish', 'green', 0),
+        },
+      })
+      const text = headerText()
+      expect(text).toContain('0')
+      expect(text).toContain('ready to publish')
+    })
+
+    it('shows workspace name in ready to publish indicator', async () => {
+      await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          approvedLayer: makeLayer('approved', 'ready to publish', 'green', 3),
+          workspaceSlug: 'staging',
+        },
+      })
+      expect(headerText()).toContain('staging')
+    })
+
+    it('shows Pending Approval badge when pendingReview exists', async () => {
+      await mountSuspended(EditToolbar, {
+        props: {
+          ...editProps,
+          pendingLayer: makeLayer('pending', 'saved', 'blue', 2),
+          promotionEnabled: true,
+          pendingReview: {
+            number: 12,
+            title: 'review: test',
+            state: 'open' as const,
+            merged: false,
+            url: 'https://github.com/test/pull/12',
+            reviewDecision: null,
+            createdAt: '2026-03-01T00:00:00Z',
+          },
+        },
+      })
+      expect(headerText()).toContain('Pending Approval')
     })
   })
 })

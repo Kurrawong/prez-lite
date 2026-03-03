@@ -123,8 +123,8 @@ function handleEdit() {
       <!-- Layer status dots -->
       <span v-if="nodeLayers.size" class="flex items-center gap-0.5 ml-1">
         <span v-if="nodeLayers.has('unsaved')" class="w-1.5 h-1.5 rounded-full bg-amber-500" title="Unsaved" />
-        <span v-if="nodeLayers.has('branch')" class="w-1.5 h-1.5 rounded-full bg-blue-500" title="On branch" />
-        <span v-if="nodeLayers.has('staging')" class="w-1.5 h-1.5 rounded-full bg-emerald-500" title="In staging" />
+        <span v-if="nodeLayers.has('pending')" class="w-1.5 h-1.5 rounded-full bg-blue-500" title="Saved changes" />
+        <span v-if="nodeLayers.has('approved')" class="w-1.5 h-1.5 rounded-full bg-emerald-500" title="Ready to publish" />
       </span>
 
       <!-- Error count badge -->

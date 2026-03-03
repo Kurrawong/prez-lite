@@ -7,6 +7,8 @@
  * State is stored in localStorage (persists across login redirects and page refreshes).
  */
 
+import { createGithubFetch } from '~/utils/github-fetch'
+
 export interface WorkspaceDefinition {
   slug: string
   label: string
@@ -66,10 +68,17 @@ export function useWorkspace() {
   const BRANCH_PREFIX = 'edit'
 
   // Derived state
+  /** Edit branch name (e.g. edit/staging/brands) — used for saving */
   const activeBranch = computed(() => {
     if (!state.value) return null
     const { workspaceSlug, vocabSlug } = state.value
     return vocabSlug ? `${BRANCH_PREFIX}/${workspaceSlug}/${vocabSlug}` : workspaceSlug
+  })
+
+  /** Workspace branch name (e.g. staging) — used for browsing/reading */
+  const activeReadBranch = computed(() => {
+    if (!state.value) return null
+    return state.value.workspaceSlug
   })
 
   const hasWorkspace = computed(() => !!state.value)
@@ -130,31 +139,33 @@ export function useWorkspace() {
 
   async function selectVocab(vocabSlug: string): Promise<boolean> {
     if (!state.value) return false
-    const ws = activeWorkspace.value
-    const branchName = `${BRANCH_PREFIX}/${state.value.workspaceSlug}/${vocabSlug}`
+    // Just record the selection — edit branch is created lazily at save time
+    state.value = { ...state.value, vocabSlug }
+    persistState()
+    return true
+  }
 
-    // Ensure branches are loaded before checking
+  /** Ensure the edit branch exists (called before first save) */
+  async function ensureEditBranch(): Promise<boolean> {
+    if (!state.value?.vocabSlug) return false
+    const ws = activeWorkspace.value
+    const branchName = activeBranch.value
+    if (!branchName || !ws) return false
+
+    // Ensure branches are loaded
     if (!branches.value.length && token.value) {
       await fetchBranches()
     }
 
-    // Check if branch already exists in our local list
-    const exists = branches.value.some(b => b.name === branchName)
-    if (!exists && ws) {
-      // Auto-create from refreshFrom
-      const created = await createBranch(branchName, ws.refreshFrom)
-      if (!created) {
-        // Branch creation failed — could be a race (already exists remotely)
-        // or a permissions issue. Re-fetch branches and check again.
-        await fetchBranches()
-        if (!branches.value.some(b => b.name === branchName)) {
-          return false
-        }
-      }
-    }
+    if (branches.value.some(b => b.name === branchName)) return true
 
-    state.value = { ...state.value, vocabSlug }
-    persistState()
+    // Create from the workspace branch (e.g. staging)
+    const created = await createBranch(branchName, ws.slug)
+    if (!created) {
+      // Race condition: may already exist remotely
+      await fetchBranches()
+      return branches.value.some(b => b.name === branchName)
+    }
     return true
   }
 
@@ -169,32 +180,7 @@ export function useWorkspace() {
 
   // ---- GitHub Branch API ----
 
-  async function githubFetch<T>(url: string, options?: RequestInit): Promise<T | null> {
-    if (!token.value) {
-      console.warn('[workspace] No token available for GitHub API call')
-      return null
-    }
-    try {
-      const res = await fetch(url, {
-        ...options,
-        headers: {
-          Authorization: `Bearer ${token.value}`,
-          'Content-Type': 'application/json',
-          ...options?.headers,
-        },
-      })
-      if (!res.ok) {
-        const body = await res.text().catch(() => '')
-        console.error(`[workspace] GitHub API ${options?.method ?? 'GET'} ${url} → ${res.status}: ${body}`)
-        return null
-      }
-      if (res.status === 204) return null
-      return await res.json()
-    } catch (e) {
-      console.error('[workspace] GitHub API fetch error:', e)
-      return null
-    }
-  }
+  const githubFetch = createGithubFetch(token, 'workspace')
 
   async function fetchBranches() {
     if (!owner || !repo || !token.value) return
@@ -273,10 +259,36 @@ export function useWorkspace() {
     return branches.value.some(b => b.name === name)
   }
 
+  /** Delete a remote branch (e.g. after merge) */
+  async function deleteBranch(name: string): Promise<boolean> {
+    if (!owner || !repo || !token.value) return false
+
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(name)}`,
+        {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${token.value}` },
+        },
+      )
+      if (res.ok || res.status === 204 || res.status === 422) {
+        // 422 = ref already deleted (race condition)
+        await fetchBranches()
+        return true
+      }
+      console.warn(`[workspace] Failed to delete branch ${name}: ${res.status}`)
+      return false
+    } catch (e) {
+      console.warn(`[workspace] Error deleting branch ${name}:`, e)
+      return false
+    }
+  }
+
   return {
     // State
     state: readonly(state),
     activeBranch: readonly(activeBranch),
+    activeReadBranch: readonly(activeReadBranch),
     hasWorkspace,
     isEnabled,
     activeWorkspace,
@@ -294,11 +306,13 @@ export function useWorkspace() {
     loadDefinitions,
     selectWorkspace,
     selectVocab,
+    ensureEditBranch,
     clearWorkspace,
     openSelector,
     fetchBranches,
     fetchComparison,
     createBranch,
+    deleteBranch,
     branchExists,
 
     // Config

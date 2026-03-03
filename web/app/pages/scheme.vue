@@ -5,6 +5,7 @@ import { getPredicateLabel } from '~/utils/vocab-labels'
 import type { ChangeSummary, SubjectChange } from '~/composables/useEditMode'
 import type { HistoryCommit, HistoryDiff } from '~/composables/useVocabHistory'
 import type { LayerName } from '~/composables/useLayerStatus'
+import type { PRComment } from '~/composables/usePromotion'
 
 const route = useRoute()
 const router = useRouter()
@@ -161,8 +162,12 @@ const colorMode = useColorMode()
 const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'prez-light')
 
 // --- Structured Form Editor ---
+const workspaceBranch = computed(() => workspace.activeReadBranch.value ?? defaultBranch as string)
 const editMode = (editorOwner && editorRepoName)
-  ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, effectiveBranch, uri)
+  ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, effectiveBranch, uri, {
+    fallbackBranch: workspaceBranch,
+    ensureEditBranch: () => workspace.ensureEditBranch(),
+  })
   : null
 
 // Build status polling
@@ -199,11 +204,180 @@ const layerStatus = (editorOwner && editorRepoName)
   ? useLayerStatus(editMode, workspace, editorFilePath as Ref<string>, editorOwner, editorRepoName)
   : null
 
-const flowChain = computed<string[]>(() => {
-  const ws = workspace.activeWorkspace.value
-  if (!ws) return []
-  return [ws.refreshFrom, ws.slug, 'branch', 'you']
+// --- Promotion (PR workflow) ---
+const promotion = (editorOwner && editorRepoName)
+  ? usePromotion(workspace, computed(() => editModeTitle.value ?? displayScheme.value?.prefLabel ?? ''))
+  : null
+
+const promotionEnabled = computed(() =>
+  (appConfig.site as any)?.promotion?.enabled !== false,
+)
+
+// Review modal state
+const showReviewModal = ref(false)
+const promotionMode = ref<'create' | 'view' | 'submitted'>('create')
+const promotionLayer = ref<'pending' | 'approved'>('pending')
+const prComments = ref<PRComment[]>([])
+const prCommentsLoading = ref(false)
+const prCreating = ref(false)
+const prRejecting = ref(false)
+const promotionError = ref<string | null>(null)
+
+function handlePromote(layerName: 'pending' | 'approved') {
+  promotionError.value = null
+  promotionLayer.value = layerName
+  promotionMode.value = 'create'
+  showReviewModal.value = true
+}
+
+async function handleViewPR(layerName: 'pending' | 'approved') {
+  promotionLayer.value = layerName
+  promotionMode.value = 'view'
+  prComments.value = []
+  prCommentsLoading.value = true
+  showReviewModal.value = true
+
+  const pr = layerName === 'pending' ? promotion?.branchPR.value : promotion?.stagingPR.value
+  if (pr && promotion) {
+    prComments.value = await promotion.getPRComments(pr.number)
+  }
+  prCommentsLoading.value = false
+}
+
+async function handleCreatePR(title: string, body: string) {
+  if (!promotion) return
+  const branches = promotion.getBranches(promotionLayer.value)
+  if (!branches) return
+
+  prCreating.value = true
+  promotionError.value = null
+  const pr = await promotion.createPR(branches.head, branches.base, title, body)
+  prCreating.value = false
+
+  if (pr) {
+    // Switch to submitted confirmation mode
+    promotionMode.value = 'submitted'
+    prComments.value = []
+    promotionError.value = null
+  } else {
+    // Surface the error from the composable
+    promotionError.value = promotion.error.value ?? 'Failed to submit for review'
+  }
+}
+
+const prMerging = ref(false)
+
+async function handleMergePR() {
+  if (!promotion) return
+  const pr = promotionLayer.value === 'pending' ? promotion.branchPR.value : promotion.stagingPR.value
+  if (!pr) return
+
+  // Capture the branches before merge (refs get updated after)
+  const branches = promotion.getBranches(promotionLayer.value)
+
+  prMerging.value = true
+  promotionError.value = null
+  const ok = await promotion.mergePR(pr.number)
+  prMerging.value = false
+
+  if (ok) {
+    // Review ref now has merged=true; modal stays open showing success
+
+    // Clean up: delete the edit branch after Layer 2 merge (edit/staging/vocab → staging)
+    // Edit branches are ephemeral — a fresh one is created on next save
+    if (promotionLayer.value === 'pending' && branches) {
+      await workspace.deleteBranch(branches.head)
+      // Re-enter edit mode so a fresh branch is created on next save
+      if (editMode?.isEditMode.value) {
+        editMode.exitEditMode(true)
+        await editMode.enterEditMode()
+      }
+    }
+
+    // Refresh layer diffs
+    layerStatus?.refresh()
+  } else {
+    promotionError.value = promotion.error.value ?? 'Failed to complete review'
+  }
+}
+
+async function handleRejectPR(comment: string) {
+  if (!promotion) return
+  const pr = promotionLayer.value === 'pending' ? promotion.branchPR.value : promotion.stagingPR.value
+  if (!pr) return
+
+  prRejecting.value = true
+  promotionError.value = null
+  const ok = await promotion.closePR(pr.number, comment)
+  prRejecting.value = false
+
+  if (ok) {
+    showReviewModal.value = false
+    // Refresh PRs and layer diffs
+    promotion.findExistingPRs(true)
+    layerStatus?.refresh()
+  } else {
+    promotionError.value = promotion.error.value ?? 'Failed to reject review'
+  }
+}
+
+async function handlePRComment(body: string) {
+  if (!promotion) return
+  const pr = promotionLayer.value === 'pending' ? promotion.branchPR.value : promotion.stagingPR.value
+  if (!pr) return
+
+  const ok = await promotion.addPRComment(pr.number, body)
+  if (ok) {
+    prComments.value = await promotion.getPRComments(pr.number)
+  }
+}
+
+const promotionChanges = computed(() => {
+  if (!layerStatus) return []
+  const layerName = promotionLayer.value
+  const layer = layerStatus.layers.value.find(l => l.name === layerName)
+  return layer?.changes ?? []
 })
+
+const promotionBranches = computed(() => {
+  if (!promotion) return { head: '', base: '' }
+  return promotion.getBranches(promotionLayer.value) ?? { head: '', base: '' }
+})
+
+const promotionDefaultTitle = computed(() => {
+  if (!promotion) return ''
+  return promotion.generateTitle(promotionLayer.value)
+})
+
+const promotionExistingPR = computed(() => {
+  if (!promotion) return null
+  return promotionLayer.value === 'pending' ? promotion.branchPR.value : promotion.stagingPR.value
+})
+
+// Computed helpers for layer indicators on EditToolbar
+const pendingLayer = computed(() =>
+  layerStatus?.layers.value.find(l => l.name === 'pending') ?? null,
+)
+const approvedLayer = computed(() =>
+  layerStatus?.layers.value.find(l => l.name === 'approved') ?? null,
+)
+
+const workspaceSlug = computed(() => workspace.activeWorkspace.value?.slug ?? null)
+
+const publishVocabs = ref<{ slug: string; status: string }[]>([])
+
+// Fetch changed vocabs when approved layer has changes
+watch(
+  [approvedLayer, () => workspace.activeWorkspace.value],
+  async ([layer, ws]) => {
+    if (layer && layer.count > 0 && ws && promotion) {
+      publishVocabs.value = await promotion.fetchChangedVocabs()
+    } else {
+      publishVocabs.value = []
+    }
+  },
+  { immediate: true },
+)
 
 // Version label from scheme metadata
 const versionLabel = computed(() => displayScheme.value?.version ?? null)
@@ -449,6 +623,9 @@ const showChangeDetail = ref(false)
 const changeDetailIri = ref<string | null>(null)
 // Direct change data for branch/staging layers (bypass editMode lookup)
 const changeDetailDirect = ref<SubjectChange | null>(null)
+// Layer diff stepping state (set when opened from layer flyout)
+const changeDetailLayerName = ref<string | null>(null)
+const changeDetailLayerIndex = ref(0)
 
 // Draggable modals
 const { handleRef: saveDragHandle } = useDraggableModal(showSaveModal)
@@ -460,6 +637,15 @@ const changeDetailData = computed(() => {
   if (!editMode || !changeDetailIri.value) return null
   return editMode.getChangesForSubject(changeDetailIri.value)
 })
+
+/** All changes in the active layer (for stepping) */
+const changeDetailLayerChanges = computed<SubjectChange[]>(() => {
+  if (!changeDetailLayerName.value || !layerStatus) return []
+  const layer = layerStatus.layers.value.find(l => l.name === changeDetailLayerName.value)
+  return layer?.changes ?? []
+})
+
+const changeDetailTotal = computed(() => changeDetailLayerChanges.value.length)
 
 // Undo/redo labels for toolbar tooltips
 const undoLabel = computed(() => {
@@ -480,6 +666,10 @@ const ttlViewerTitle = ref('')
 
 // Auto-edit predicate for inline mode scroll-to-property
 const autoEditPredicate = ref<string | null>(null)
+
+// Highlight predicate for navigate-to-change (temporary flash)
+const highlightPredicate = ref<string | null>(null)
+let highlightTimer: ReturnType<typeof setTimeout> | null = null
 
 // Add Concept — inline creation (no modal)
 
@@ -723,16 +913,62 @@ function openTTLViewer(type: 'original' | 'patched', iri?: string) {
 // --- Change detail modal ---
 
 function handleShowChangeDetail(subjectIri: string) {
+  changeDetailLayerName.value = null
   changeDetailDirect.value = null
   changeDetailIri.value = subjectIri
   showChangeDetail.value = true
 }
 
-/** Show change detail for a layer change (branch/staging/unsaved) with data already available */
-function handleShowLayerChange(change: SubjectChange) {
+/** Open diff popup from layer flyout (with stepping support) */
+function handleShowLayerDiff(layerName: string, changeIndex: number) {
+  const layer = layerStatus?.layers.value.find(l => l.name === layerName)
+  const change = layer?.changes[changeIndex]
+  if (!change) return
+
+  changeDetailLayerName.value = layerName
+  changeDetailLayerIndex.value = changeIndex
   changeDetailDirect.value = change
   changeDetailIri.value = null
   showChangeDetail.value = true
+
+  // Also navigate to the change
+  handleNavigateToChange(change.subjectIri, change.propertyChanges[0]?.predicateIri)
+}
+
+/** Step through layer changes in the diff popup */
+function handleStepChange(delta: number) {
+  const changes = changeDetailLayerChanges.value
+  if (!changes.length) return
+  const newIndex = (changeDetailLayerIndex.value + delta + changes.length) % changes.length
+  changeDetailLayerIndex.value = newIndex
+  changeDetailDirect.value = changes[newIndex]!
+
+  // Navigate to the new change
+  handleNavigateToChange(changes[newIndex]!.subjectIri, changes[newIndex]!.propertyChanges[0]?.predicateIri)
+}
+
+function handleNavigateToChange(subjectIri: string, predicateIri?: string) {
+  // Flash the changed predicate
+  if (highlightTimer) clearTimeout(highlightTimer)
+  highlightPredicate.value = predicateIri ?? null
+  highlightTimer = setTimeout(() => { highlightPredicate.value = null }, 2000)
+
+  if (subjectIri === uri.value) {
+    // Scheme-level: scroll to metadata, optionally focus the field
+    metadataPanelOpen.value = true
+    nextTick(() => {
+      if (predicateIri) {
+        scrollToMetadataProperty(predicateIri)
+      } else {
+        document.getElementById('metadata-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    })
+  } else {
+    // Concept-level: select concept in tree + expand to it
+    selectConcept(subjectIri)
+    expandToId.value = subjectIri
+    setTimeout(() => { expandToId.value = undefined }, 500)
+  }
 }
 
 function handleRevertSubject(subjectIri: string) {
@@ -1199,6 +1435,14 @@ function copyIriToClipboard(iri: string) {
       :redo-label="redoLabel"
       :validation-errors="editMode?.validationErrors.value ?? []"
       :new-validation-errors="editMode?.newValidationErrors.value ?? []"
+      :pending-layer="pendingLayer"
+      :approved-layer="approvedLayer"
+      :promotion-enabled="promotionEnabled"
+      :pending-review="promotion?.branchPR.value ?? null"
+      :approved-review="promotion?.stagingPR.value ?? null"
+      :diff-open-layer="showChangeDetail && changeDetailLayerName ? changeDetailLayerName : null"
+      :workspace-slug="workspaceSlug"
+      :publish-vocabs="publishVocabs"
       @save="pendingChanges.length === 1 ? openSaveModal(pendingChanges[0]!.subjectIri) : openSaveModal(selectedConceptUri || uri)"
       @toggle-view-mode="toggleViewMode"
       @open-workspace="navigateTo('/workspace')"
@@ -1210,15 +1454,10 @@ function copyIriToClipboard(iri: string) {
       @revert-subject="handleRevertSubject"
       @show-change-detail="handleShowChangeDetail"
       @select-concept="handleSelectFromToolbar"
-    />
-
-    <!-- Layer Status Bar (branch/staging change indicators) -->
-    <LayerStatusBar
-      v-if="layerStatus && displayScheme && !historySha && isAuthenticated && status !== 'error'"
-      :layers="layerStatus.layers.value"
-      :flow-chain="flowChain"
-      @select-concept="handleSelectFromToolbar"
-      @show-layer-change="handleShowLayerChange"
+      @navigate-to-change="handleNavigateToChange"
+      @show-layer-diff="handleShowLayerDiff"
+      @submit-for-review="handlePromote"
+      @view-review="handleViewPR"
     />
 
     <UBreadcrumb v-if="!immersiveMode && !site.siteHeaderBreadcrumbs" ref="breadcrumbRef" :items="breadcrumbs" class="mb-6" />
@@ -1735,6 +1974,7 @@ function copyIriToClipboard(iri: string) {
                   :properties="selectedConceptProperties"
                   :concepts="editMode.concepts.value"
                   :agents="editMode.agents.value"
+                  :highlight-predicate="highlightPredicate"
                   :subject-changes="selectedConceptChanges"
                   :validation-errors="selectedConceptErrors"
                   @update:value="(pred, oldVal, newVal) => editMode!.updateValue(selectedConceptUri!, pred, oldVal, newVal)"
@@ -1888,6 +2128,7 @@ function copyIriToClipboard(iri: string) {
             :agents="editMode!.agents.value"
             :is-scheme="true"
             :auto-edit-predicate="autoEditPredicate"
+            :highlight-predicate="highlightPredicate"
             :subject-changes="schemeChanges"
             :validation-errors="schemeErrors"
             @update:value="(pred, oldVal, newVal) => editMode!.updateValue(uri, pred, oldVal, newVal)"
@@ -1962,8 +2203,11 @@ function copyIriToClipboard(iri: string) {
             v-if="changeDetailData"
             :change="changeDetailData"
             :revertable="!changeDetailDirect"
+            :total-changes="changeDetailTotal"
+            :current-index="changeDetailLayerIndex"
             @revert="handleRevertSubject"
-            @close="showChangeDetail = false; changeDetailDirect = null"
+            @step="handleStepChange"
+            @close="showChangeDetail = false; changeDetailDirect = null; changeDetailLayerName = null"
           />
         </template>
       </UModal>
@@ -2037,6 +2281,38 @@ function copyIriToClipboard(iri: string) {
             :diff="diffModalData"
             :commit-message="diffModalCommitMsg"
             @close="showDiffModal = false"
+          />
+        </template>
+      </UModal>
+
+      <!-- Review Modal -->
+      <UModal v-model:open="showReviewModal">
+        <template #header>
+          <h3 class="font-semibold">
+            {{ promotionMode === 'create' ? 'Submit for Review' : promotionMode === 'submitted' ? 'Review Submitted' : 'Review' }}
+          </h3>
+        </template>
+        <template #body>
+          <ReviewModal
+            :mode="promotionMode"
+            :layer-name="promotionLayer"
+            :changes="promotionChanges"
+            :existing-p-r="promotionExistingPR"
+            :comments="prComments"
+            :comments-loading="prCommentsLoading"
+            :creating="prCreating"
+            :vocab-label="editModeTitle ?? displayScheme?.prefLabel ?? ''"
+            :source-branch="promotionBranches.head"
+            :target-branch="promotionBranches.base"
+            :default-title="promotionDefaultTitle"
+            :error="promotionError"
+            :merging="prMerging"
+            :rejecting="prRejecting"
+            @create="handleCreatePR"
+            @merge="handleMergePR"
+            @reject="handleRejectPR"
+            @comment="handlePRComment"
+            @close="showReviewModal = false"
           />
         </template>
       </UModal>

@@ -11,6 +11,8 @@ export function useGitHubFile(
   repo: string,
   rawPath: Ref<string>,
   branch: Ref<string>,
+  /** Fallback branch for loading (e.g. workspace branch when edit branch doesn't exist yet) */
+  fallbackBranch?: Ref<string>,
 ) {
   const { token } = useGitHubAuth()
 
@@ -18,6 +20,8 @@ export function useGitHubFile(
   const sha = ref('')
   const loading = ref(false)
   const error = ref<string | null>(null)
+  /** Which branch was actually loaded from (may differ from branch if fallback was used) */
+  const loadedFromBranch = ref<string | null>(null)
 
   function getPath(): string {
     return rawPath.value.replace(/^\/+/, '')
@@ -30,16 +34,25 @@ export function useGitHubFile(
     }
 
     const path = getPath()
-    const ref = branch.value
-
     loading.value = true
     error.value = null
 
     try {
-      const res = await fetch(
-        `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(ref)}`,
+      // Try the primary branch first
+      let branchRef = branch.value
+      let res = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branchRef)}`,
         { headers: { Authorization: `Bearer ${token.value}` } },
       )
+
+      // If 404 and we have a fallback branch, try that
+      if (res.status === 404 && fallbackBranch?.value && fallbackBranch.value !== branchRef) {
+        branchRef = fallbackBranch.value
+        res = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branchRef)}`,
+          { headers: { Authorization: `Bearer ${token.value}` } },
+        )
+      }
 
       if (!res.ok) {
         error.value = res.status === 404 ? `File not found: ${path}` : `GitHub API error ${res.status}: ${path}`
@@ -49,6 +62,7 @@ export function useGitHubFile(
       const data = await res.json()
       sha.value = data.sha
       content.value = decodeBase64(data.content)
+      loadedFromBranch.value = branchRef
     } catch (e) {
       error.value = e instanceof Error ? e.message : 'Failed to load file'
     } finally {
@@ -104,7 +118,7 @@ export function useGitHubFile(
     }
   }
 
-  return { content, sha, loading, error, load, save }
+  return { content, sha, loading, error, loadedFromBranch, load, save }
 }
 
 /** Decode base64-encoded content (GitHub returns base64 with newlines) */

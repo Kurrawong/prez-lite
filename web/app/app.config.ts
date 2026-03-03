@@ -18,6 +18,9 @@ export default defineAppConfig({
     ],
     editor: {
       defaultMode: 'inline' as 'inline' | 'full'
+    },
+    promotion: {
+      enabled: true
     }
   }
 })

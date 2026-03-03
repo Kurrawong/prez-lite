@@ -53,7 +53,7 @@ export function useVocabSource() {
     if (
       isAuthenticated.value
       && workspace.hasWorkspace.value
-      && workspace.activeBranch.value
+      && workspace.activeReadBranch.value
       && token.value
       && owner
       && repo
@@ -61,7 +61,7 @@ export function useVocabSource() {
       return getGitHubAdapter(
         owner,
         repo,
-        workspace.activeBranch.value,
+        workspace.activeReadBranch.value,
         (githubVocabPath as string) || '',
         token.value,
       )

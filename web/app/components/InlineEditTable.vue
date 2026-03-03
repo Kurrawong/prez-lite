@@ -9,6 +9,8 @@ const props = defineProps<{
   isScheme?: boolean
   /** Auto-open editing for this predicate (used by scroll-to-property links) */
   autoEditPredicate?: string | null
+  /** Temporarily highlight this predicate row (flash dot) */
+  highlightPredicate?: string | null
   subjectChanges?: SubjectChange | null
   validationErrors?: ValidationError[]
 }>()
@@ -331,6 +333,7 @@ onUnmounted(() => {
               'hover:bg-muted/50 cursor-pointer': (isEditable(prop) || prop.fieldType === 'nested') && editingPredicate !== prop.predicate,
               'border-l-2 border-l-error bg-error/5': editingPredicate !== prop.predicate && errorsByPredicate.has(prop.predicate),
               'border-l-2 border-l-warning': !errorsByPredicate.has(prop.predicate) && changedPredicates.has(prop.predicate),
+              'bg-emerald-50 dark:bg-emerald-950/30': highlightPredicate === prop.predicate,
             }"
             @click.stop="handleRowClick(prop)"
           >
@@ -346,6 +349,11 @@ onUnmounted(() => {
                   @click.stop
                 />
               </UTooltip>
+              <span
+                v-if="changedPredicates.has(prop.predicate)"
+                class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block align-middle mr-1 shrink-0"
+                :class="{ 'animate-pulse': highlightPredicate === prop.predicate }"
+              />
               <span class="mr-1" :class="{ 'text-error': editingPredicate !== prop.predicate && errorsByPredicate.has(prop.predicate) }">{{ prop.label }}</span>
               <a
                 :href="prop.predicate"

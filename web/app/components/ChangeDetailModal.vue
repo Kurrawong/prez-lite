@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import type { SubjectChange } from '~/composables/useEditMode'
 
-defineProps<{
+const props = defineProps<{
   change: SubjectChange
   revertable?: boolean
+  /** Total number of changes in the set (enables prev/next) */
+  totalChanges?: number
+  /** Current index within the set (0-based) */
+  currentIndex?: number
 }>()
 
 const emit = defineEmits<{
   revert: [subjectIri: string]
+  step: [delta: number]
   close: []
 }>()
+
+const hasStepping = computed(() => (props.totalChanges ?? 0) > 1)
 
 function changeTypeIcon(type: 'added' | 'removed' | 'modified'): string {
   switch (type) {
@@ -44,9 +51,31 @@ function changeTypePrefix(type: 'added' | 'removed' | 'modified'): string {
         :name="changeTypeIcon(change.type)"
         :class="['size-5', changeTypeColor(change.type)]"
       />
-      <h3 class="text-lg font-semibold">
+      <h3 class="text-lg font-semibold truncate flex-1">
         {{ changeTypePrefix(change.type) }}: "{{ change.subjectLabel }}"
       </h3>
+      <!-- Prev / Next stepping -->
+      <template v-if="hasStepping">
+        <span class="text-xs text-muted shrink-0">
+          {{ (currentIndex ?? 0) + 1 }} / {{ totalChanges }}
+        </span>
+        <UButton
+          icon="i-heroicons-chevron-left"
+          variant="ghost"
+          size="xs"
+          class="size-6"
+          title="Previous change"
+          @click="emit('step', -1)"
+        />
+        <UButton
+          icon="i-heroicons-chevron-right"
+          variant="ghost"
+          size="xs"
+          class="size-6"
+          title="Next change"
+          @click="emit('step', 1)"
+        />
+      </template>
     </div>
 
     <!-- Property changes -->
