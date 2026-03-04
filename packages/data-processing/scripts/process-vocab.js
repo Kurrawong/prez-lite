@@ -162,19 +162,19 @@ const DEFAULT_FIELD_ORDER = {
   conceptScheme: HTML_PROPERTY_ORDER.map((p, i) => ({ path: p.predicate, order: i, type: p.type })),
   concept: [
     { path: `${RDF}type`, order: 0 },
-    { path: `${SKOS}definition`, order: 1 },
+    { path: `${SKOS}definition`, order: 1, simpleView: true },
     { path: `${SKOS}narrower`, order: 2 },
     { path: `${SKOS}broader`, order: 3 },
-    { path: `${SKOS}related`, order: 4 },
+    { path: `${SKOS}related`, order: 4, simpleView: true },
     { path: `${SKOS}inScheme`, order: 5 },
-    { path: `${DCTERMS}identifier`, order: 6 },
+    { path: `${DCTERMS}identifier`, order: 6, simpleView: true },
     { path: `${SKOS}topConceptOf`, order: 7 },
-    { path: `${SKOS}prefLabel`, order: 8 },
-    { path: `${SKOS}altLabel`, order: 9 },
-    { path: `${SKOS}notation`, order: 10 },
-    { path: `${SKOS}scopeNote`, order: 11 },
-    { path: `${SKOS}historyNote`, order: 12 },
-    { path: `${SKOS}example`, order: 13 },
+    { path: `${SKOS}prefLabel`, order: 8, simpleView: true },
+    { path: `${SKOS}altLabel`, order: 9, simpleView: true },
+    { path: `${SKOS}notation`, order: 10, simpleView: true },
+    { path: `${SKOS}scopeNote`, order: 11, simpleView: true },
+    { path: `${SKOS}historyNote`, order: 12, simpleView: true },
+    { path: `${SKOS}example`, order: 13, simpleView: true },
   ],
   catalog: [],
 };
@@ -3042,6 +3042,8 @@ function buildProfileJson(shaclConfig, cardinalityMap) {
         if (p.allowedValues && p.allowedValues.length > 0) entry.allowedValues = p.allowedValues;
         // Expected class of values from sh:class
         if (p.class) entry.class = p.class;
+        // Simple view flag from prez:simpleView
+        if (p.simpleView) entry.simpleView = true;
         // Embed nested property order from sh:node
         if (p.nestedProperties && p.nestedProperties.length > 0) {
           entry.propertyOrder = p.nestedProperties.map((np) => {
@@ -3059,10 +3061,14 @@ function buildProfileJson(shaclConfig, cardinalityMap) {
         return entry;
       });
     } else {
-      result[key].propertyOrder = (DEFAULT_FIELD_ORDER[key] || []).map((p) => ({
-        path: typeof p === 'object' ? p.path : p,
-        order: typeof p === 'object' ? p.order : 0,
-      }));
+      result[key].propertyOrder = (DEFAULT_FIELD_ORDER[key] || []).map((p) => {
+        const entry = {
+          path: typeof p === 'object' ? p.path : p,
+          order: typeof p === 'object' ? p.order : 0,
+        };
+        if (typeof p === 'object' && p.simpleView) entry.simpleView = true;
+        return entry;
+      });
     }
   }
 

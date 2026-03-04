@@ -6,6 +6,7 @@ import type { ChangeSummary, SubjectChange } from '~/composables/useEditMode'
 import type { HistoryCommit, HistoryDiff } from '~/composables/useVocabHistory'
 import type { LayerName } from '~/composables/useLayerStatus'
 import type { PRComment } from '~/composables/usePromotion'
+import { filterForSimpleView } from '~/utils/view-mode'
 
 const route = useRoute()
 const router = useRouter()
@@ -736,14 +737,6 @@ let highlightTimer: ReturnType<typeof setTimeout> | null = null
 // --- View mode (simple/expert) ---
 
 const VIEW_MODE_KEY = 'prez_view_mode'
-const SIMPLE_HIDDEN_PREDICATES = new Set([
-  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
-  'http://www.w3.org/2004/02/skos/core#inScheme',
-  'http://www.w3.org/2004/02/skos/core#topConceptOf',
-  'http://www.w3.org/2004/02/skos/core#hasTopConcept',
-  'http://www.w3.org/2004/02/skos/core#narrower',
-  'http://www.w3.org/2004/02/skos/core#broader',
-])
 
 const viewMode = ref<'simple' | 'expert'>('simple')
 
@@ -784,9 +777,9 @@ function toggleViewMode() {
 }
 
 /** Filter properties based on view mode */
-function filterByViewMode<T extends { predicate: string }>(properties: T[]): T[] {
+function filterByViewMode<T extends { predicate: string; simpleView?: boolean }>(properties: T[]): T[] {
   if (viewMode.value === 'expert') return properties
-  return properties.filter(p => !SIMPLE_HIDDEN_PREDICATES.has(p.predicate))
+  return filterForSimpleView(properties)
 }
 
 // --- Edit mode navigation ---
@@ -889,9 +882,7 @@ const schemeProperties = computed(() => {
 // Filtered rich metadata for read-only view (respects view mode)
 const filteredRichMetadata = computed(() => {
   if (viewMode.value === 'expert') return richMetadata.value
-  return richMetadata.value.filter((p: { predicate?: string }) =>
-    !p.predicate || !SIMPLE_HIDDEN_PREDICATES.has(p.predicate),
-  )
+  return filterForSimpleView(richMetadata.value)
 })
 
 // --- Save modal ---

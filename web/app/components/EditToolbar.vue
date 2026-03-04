@@ -509,7 +509,8 @@ const approvedLabel = computed(() => {
 
         <!-- View mode toggle -->
         <UButton
-          :icon="viewMode === 'simple' ? 'i-heroicons-eye-slash' : 'i-heroicons-eye'"
+          :key="viewMode"
+          :icon="viewMode === 'expert' ? 'i-heroicons-beaker' : 'i-heroicons-squares-2x2'"
           variant="ghost"
           size="xs"
           @click="emit('toggle-view-mode')"

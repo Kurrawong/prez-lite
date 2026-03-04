@@ -36,6 +36,8 @@ export interface EditableProperty {
   fieldType: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly'
   minCount?: number
   maxCount?: number
+  /** Whether this property appears in simple view mode */
+  simpleView?: boolean
 }
 
 export interface ProfilePropertyOrder {
@@ -45,6 +47,8 @@ export interface ProfilePropertyOrder {
   minCount?: number
   maxCount?: number
   allowedValues?: string[]
+  /** Whether this property appears in simple view mode */
+  simpleView?: boolean
 }
 
 export interface ProfileConfig {
@@ -239,6 +243,7 @@ export function getPropertiesForSubject(
           order: po.order,
           values,
           fieldType: 'readonly',
+          ...(po.simpleView && { simpleView: true }),
         })
       }
       seen.add(po.path)
@@ -261,6 +266,7 @@ export function getPropertiesForSubject(
       fieldType: getFieldType(po.path),
       ...(po.minCount != null && { minCount: po.minCount }),
       ...(po.maxCount != null && { maxCount: po.maxCount }),
+      ...(po.simpleView && { simpleView: true }),
     })
     seen.add(po.path)
   }

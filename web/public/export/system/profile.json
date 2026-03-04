@@ -7,47 +7,58 @@
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "order": 1
+        "order": 1,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#definition",
-        "order": 2
+        "order": 2,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#historyNote",
-        "order": 3
+        "order": 3,
+        "simpleView": true
       },
       {
         "path": "http://purl.org/linked-data/registry#status",
-        "order": 4
+        "order": 4,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2002/07/owl#versionIRI",
-        "order": 5
+        "order": 5,
+        "simpleView": true
       },
       {
         "path": "https://schema.org/creator",
-        "order": 6
+        "order": 6,
+        "simpleView": true
       },
       {
         "path": "https://schema.org/publisher",
-        "order": 7
+        "order": 7,
+        "simpleView": true
       },
       {
         "path": "https://schema.org/dateCreated",
-        "order": 8
+        "order": 8,
+        "simpleView": true
       },
       {
         "path": "https://schema.org/dateModified",
-        "order": 9
+        "order": 9,
+        "simpleView": true
       },
       {
         "path": "https://schema.org/keywords",
-        "order": 10
+        "order": 10,
+        "simpleView": true
       },
       {
         "path": "https://schema.org/version",
-        "order": 11
+        "order": 11,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/ns/prov#qualifiedAttribution",
@@ -74,7 +85,8 @@
       },
       {
         "path": "http://purl.org/dc/terms/provenance",
-        "order": 13
+        "order": 13,
+        "simpleView": true
       }
     ]
   },
@@ -86,7 +98,8 @@
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#definition",
-        "order": 1
+        "order": 1,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#narrower",
@@ -98,7 +111,8 @@
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#related",
-        "order": 4
+        "order": 4,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#inScheme",
@@ -106,7 +120,8 @@
       },
       {
         "path": "http://purl.org/dc/terms/identifier",
-        "order": 6
+        "order": 6,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#topConceptOf",
@@ -114,27 +129,33 @@
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#prefLabel",
-        "order": 8
+        "order": 8,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#altLabel",
-        "order": 9
+        "order": 9,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#notation",
-        "order": 10
+        "order": 10,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#scopeNote",
-        "order": 11
+        "order": 11,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#historyNote",
-        "order": 12
+        "order": 12,
+        "simpleView": true
       },
       {
         "path": "http://www.w3.org/2004/02/skos/core#example",
-        "order": 13
+        "order": 13,
+        "simpleView": true
       }
     ]
   },

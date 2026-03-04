@@ -3,15 +3,7 @@ import type { TableColumn } from '@nuxt/ui'
 import type { SortingState, ColumnFiltersState, ColumnPinningState } from '@tanstack/vue-table'
 import type { TreeItem } from '~/composables/useScheme'
 import type { EditableProperty, EditableValue, ConceptSummary, AgentEntry } from '~/composables/useEditMode'
-
-const SIMPLE_HIDDEN_PREDICATES = new Set([
-  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
-  'http://www.w3.org/2004/02/skos/core#inScheme',
-  'http://www.w3.org/2004/02/skos/core#topConceptOf',
-  'http://www.w3.org/2004/02/skos/core#hasTopConcept',
-  'http://www.w3.org/2004/02/skos/core#narrower',
-  'http://www.w3.org/2004/02/skos/core#broader',
-])
+import { filterForSimpleView } from '~/utils/view-mode'
 
 const SKOS_PREFLABEL = 'http://www.w3.org/2004/02/skos/core#prefLabel'
 
@@ -99,12 +91,9 @@ const profileColumns = computed<ProfileCol[]>(() => {
 
   // Deduplicate colIds by appending index if needed
   const seen = new Map<string, number>()
-  return allProps
-    .filter(p => {
-      if (p.predicate === SKOS_PREFLABEL) return false
-      if (props.viewMode === 'simple' && SIMPLE_HIDDEN_PREDICATES.has(p.predicate)) return false
-      return true
-    })
+  const filtered = props.viewMode === 'simple' ? filterForSimpleView(allProps) : allProps
+  return filtered
+    .filter(p => p.predicate !== SKOS_PREFLABEL)
     .map(p => {
       let base = predicateToColId(p.predicate)
       const count = seen.get(base) ?? 0
@@ -310,7 +299,7 @@ function getExpandedProperties(iri: string): EditableProperty[] {
   void props.editMode.storeVersion.value
   const allProps = props.editMode.getPropertiesForSubject(iri, 'concept', false)
   if (props.viewMode === 'expert') return allProps
-  return allProps.filter(p => !SIMPLE_HIDDEN_PREDICATES.has(p.predicate))
+  return filterForSimpleView(allProps)
 }
 
 </script>

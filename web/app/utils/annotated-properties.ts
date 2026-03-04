@@ -46,6 +46,8 @@ export interface PropertyOrderEntry {
   path: string
   order: number
   propertyOrder?: PropertyOrderEntry[] // For nested properties
+  /** Whether this property appears in simple view mode */
+  simpleView?: boolean
 }
 
 /** Profile JSON configuration from profile.json */
@@ -75,6 +77,8 @@ export interface RenderedProperty {
   predicateDescription?: string
   values: PropertyValue[]
   order: number
+  /** Whether this property appears in simple view mode */
+  simpleView?: boolean
 }
 
 /**
@@ -230,6 +234,7 @@ export function extractProperties(
       predicateDescription: descriptionMap.get(predicate),
       values,
       order: orderEntry?.order ?? 999,
+      ...(orderEntry?.simpleView && { simpleView: true }),
     })
   }
 

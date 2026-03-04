@@ -198,3 +198,45 @@ describe('getPropertiesForSubject', () => {
     expect(result[0]!.values[0]!.nestedProperties![0]!.values[0]!.value).toBe('nested value')
   })
 })
+
+describe('simpleView pass-through', () => {
+  it('passes simpleView from profile config to editable property', () => {
+    const store = makeStore()
+    const profile: ProfileConfig = {
+      conceptScheme: {
+        propertyOrder: [
+          { path: `${SKOS}prefLabel`, order: 1, simpleView: true },
+          { path: `${SKOS}definition`, order: 2, simpleView: true },
+          { path: `${RDF}type`, order: 0 },
+        ],
+      },
+      concept: { propertyOrder: [] },
+    }
+
+    const result = getPropertiesForSubject(store, 'http://ex.org/scheme', 'conceptScheme', profile)
+    const prefLabel = result.find(p => p.predicate === `${SKOS}prefLabel`)
+    const definition = result.find(p => p.predicate === `${SKOS}definition`)
+    const rdfType = result.find(p => p.predicate === `${RDF}type`)
+
+    expect(prefLabel?.simpleView).toBe(true)
+    expect(definition?.simpleView).toBe(true)
+    expect(rdfType?.simpleView).toBeUndefined()
+  })
+
+  it('does not set simpleView on unprofiled properties', () => {
+    const store = makeStore()
+    const profile: ProfileConfig = {
+      conceptScheme: {
+        propertyOrder: [
+          { path: `${SKOS}prefLabel`, order: 1, simpleView: true },
+        ],
+      },
+      concept: { propertyOrder: [] },
+    }
+
+    const result = getPropertiesForSubject(store, 'http://ex.org/scheme', 'conceptScheme', profile)
+    // dateModified is not in profile, so it gets added as extra
+    const dateModified = result.find(p => p.predicate === `${SDO}dateModified`)
+    expect(dateModified?.simpleView).toBeUndefined()
+  })
+})

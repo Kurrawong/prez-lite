@@ -57,6 +57,8 @@ export interface PropertyShape {
   allowedValues?: string[]
   /** Expected class of values from sh:class (e.g. skos:Concept, prov:Agent) */
   class?: string
+  /** Whether this property appears in simple view mode */
+  simpleView?: boolean
 }
 
 /** Parsed profile from SHACL */
@@ -269,6 +271,11 @@ function parsePropertyShape(store: Store, shapeNode: Term): PropertyShape {
   // Extract sh:class (expected type of IRI values)
   const classIri = getIriValue(store, shapeNode, `${SH}class`)
   if (classIri) shape.class = classIri
+
+  // Extract prez:simpleView (whether property appears in simple view mode)
+  if (getBooleanValue(store, shapeNode, `${PREZ}simpleView`)) {
+    shape.simpleView = true
+  }
 
   // Get the path - can be direct or a complex path expression
   const pathQuads = store.getQuads(shapeNode, `${SH}path`, null, null)

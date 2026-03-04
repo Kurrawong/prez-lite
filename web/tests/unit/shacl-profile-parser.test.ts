@@ -560,6 +560,71 @@ describe('toProcessingConfig', () => {
 })
 
 // ============================================================================
+// prez:simpleView parsing
+// ============================================================================
+
+const SIMPLE_VIEW_PROFILE = `
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prez: <https://prez.dev/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.com/profile/simple-view>
+    a prof:Profile ;
+    dcterms:identifier "simple-view" ;
+    sh:targetClass skos:Concept ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:order 0
+    ] , [
+        sh:path skos:prefLabel ;
+        sh:order 1 ;
+        prez:simpleView true
+    ] , [
+        sh:path skos:definition ;
+        sh:order 2 ;
+        prez:simpleView true
+    ] , [
+        sh:path skos:broader ;
+        sh:order 3
+    ] .
+`
+
+describe('prez:simpleView parsing', () => {
+  let config: ProfileConfig
+
+  beforeAll(() => {
+    config = parseProfilesContent(SIMPLE_VIEW_PROFILE)
+  })
+
+  it('sets simpleView true when prez:simpleView true is present', () => {
+    const profile = config.profiles['http://example.com/profile/simple-view']!
+    const prefLabel = profile.properties.find(p => p.paths[0] === 'http://www.w3.org/2004/02/skos/core#prefLabel')
+    expect(prefLabel?.simpleView).toBe(true)
+  })
+
+  it('sets simpleView true for definition', () => {
+    const profile = config.profiles['http://example.com/profile/simple-view']!
+    const definition = profile.properties.find(p => p.paths[0] === 'http://www.w3.org/2004/02/skos/core#definition')
+    expect(definition?.simpleView).toBe(true)
+  })
+
+  it('leaves simpleView undefined when prez:simpleView is absent', () => {
+    const profile = config.profiles['http://example.com/profile/simple-view']!
+    const rdfType = profile.properties.find(p => p.paths[0] === 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type')
+    expect(rdfType?.simpleView).toBeUndefined()
+  })
+
+  it('leaves simpleView undefined for broader', () => {
+    const profile = config.profiles['http://example.com/profile/simple-view']!
+    const broader = profile.properties.find(p => p.paths[0] === 'http://www.w3.org/2004/02/skos/core#broader')
+    expect(broader?.simpleView).toBeUndefined()
+  })
+})
+
+// ============================================================================
 // NS constants
 // ============================================================================
 
