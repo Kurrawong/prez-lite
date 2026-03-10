@@ -261,6 +261,23 @@ async function generateSystemFiles() {
     }
   }
 
+  // Generate agents index (if background directory exists)
+  if (existsSync(BACKGROUND_DIR)) {
+    console.log('   Generating agents.json...')
+    const agentsScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-agents.js')
+    if (existsSync(agentsScript)) {
+      try {
+        execSync(`node "${agentsScript}" --backgroundDir "${BACKGROUND_DIR}" --output "${join(SYSTEM_DIR, 'agents.json')}"`, {
+          stdio: 'pipe',
+          cwd: ROOT_DIR
+        })
+        console.log('      ✓ agents.json')
+      } catch (error) {
+        console.warn('      ⚠ Failed to generate agents index:', error.message)
+      }
+    }
+  }
+
   // Generate search index
   console.log('   Generating search index...')
   const searchScript = join(DATA_PROCESSING_DIR, 'scripts', 'generate-search-index.js')

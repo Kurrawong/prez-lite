@@ -54,20 +54,22 @@ prez:DefaultSchemeProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     prez:generateFocusNode true ;
 
     # Property shapes defining expected properties on a ConceptScheme export
+    # prez:simpleView true = visible in both simple and expert modes
+    # no prez:simpleView = expert mode only
     sh:property [ sh:path rdf:type ; sh:order 0 ] ;
-    sh:property [ sh:path skos:prefLabel ; sh:order 1 ] ;
-    sh:property [ sh:path skos:definition ; sh:order 2 ] ;
-    sh:property [ sh:path skos:historyNote ; sh:order 3 ] ;
-    sh:property [ sh:path reg:status ; sh:order 4 ] ;
-    sh:property [ sh:path owl:versionIRI ; sh:order 5 ] ;
-    sh:property [ sh:path sdo:creator ; sh:order 6 ] ;
-    sh:property [ sh:path sdo:publisher ; sh:order 7 ] ;
-    sh:property [ sh:path sdo:dateCreated ; sh:order 8 ] ;
-    sh:property [ sh:path sdo:dateModified ; sh:order 9 ] ;
-    sh:property [ sh:path sdo:keywords ; sh:order 10 ] ;
-    sh:property [ sh:path sdo:version ; sh:order 11 ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:order 1 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:definition ; sh:order 2 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:historyNote ; sh:order 3 ; prez:simpleView true ] ;
+    sh:property [ sh:path reg:status ; sh:order 4 ; prez:simpleView true ] ;
+    sh:property [ sh:path owl:versionIRI ; sh:order 5 ; prez:simpleView true ] ;
+    sh:property [ sh:path sdo:creator ; sh:order 6 ; prez:simpleView true ] ;
+    sh:property [ sh:path sdo:publisher ; sh:order 7 ; prez:simpleView true ] ;
+    sh:property [ sh:path sdo:dateCreated ; sh:order 8 ; prez:simpleView true ] ;
+    sh:property [ sh:path sdo:dateModified ; sh:order 9 ; prez:simpleView true ] ;
+    sh:property [ sh:path sdo:keywords ; sh:order 10 ; prez:simpleView true ] ;
+    sh:property [ sh:path sdo:version ; sh:order 11 ; prez:simpleView true ] ;
     sh:property [ sh:path prov:qualifiedAttribution ; sh:order 12 ] ;
-    sh:property [ sh:path dcterms:provenance ; sh:order 13 ] ;
+    sh:property [ sh:path dcterms:provenance ; sh:order 13 ; prez:simpleView true ] ;
 
     prez:linkTemplate "/vocabs/{schemeId}" ;
     prez:membersTemplate "/vocabs/{schemeId}/concepts" .
@@ -96,6 +98,24 @@ prez:DefaultConceptProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     prez:generateLabel true ;
     prez:generateDescription true ;
     prez:generateFocusNode true ;
+
+    # Property shapes defining expected properties on a Concept export
+    # prez:simpleView true = visible in both simple and expert modes
+    # no prez:simpleView = expert mode only
+    sh:property [ sh:path rdf:type ; sh:order 0 ] ;
+    sh:property [ sh:path skos:definition ; sh:order 1 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:narrower ; sh:order 2 ] ;
+    sh:property [ sh:path skos:broader ; sh:order 3 ] ;
+    sh:property [ sh:path skos:related ; sh:order 4 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:inScheme ; sh:order 5 ] ;
+    sh:property [ sh:path dcterms:identifier ; sh:order 6 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:topConceptOf ; sh:order 7 ] ;
+    sh:property [ sh:path skos:prefLabel ; sh:order 8 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:altLabel ; sh:order 9 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:notation ; sh:order 10 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:scopeNote ; sh:order 11 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:historyNote ; sh:order 12 ; prez:simpleView true ] ;
+    sh:property [ sh:path skos:example ; sh:order 13 ; prez:simpleView true ] ;
 
     prez:linkTemplate "/vocabs/{schemeId}/concepts/{conceptId}" .
 
