@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { EditableProperty, EditableValue, ConceptSummary, SubjectChange } from '~/composables/useEditMode'
+import { resolveIriLabel } from '~/utils/vocab-labels'
 
 const props = defineProps<{
   subjectIri: string
@@ -126,13 +127,13 @@ function confirmDelete() {
   emit('delete')
 }
 
-/** Format an IRI for readonly display — show prefLabel if available */
+/** Format an IRI for display — prefer the current vocab's prefLabel, then
+ *  the background-labels store (Data Themes, reg-statuses, etc.), then
+ *  fall back to the local-name slice (#26). */
 function formatIri(iri: string): string {
   const concept = props.concepts.find(c => c.iri === iri)
   if (concept) return concept.prefLabel
-  const hashIdx = iri.lastIndexOf('#')
-  const slashIdx = iri.lastIndexOf('/')
-  return iri.substring(Math.max(hashIdx, slashIdx) + 1)
+  return resolveIriLabel(iri)
 }
 </script>
 

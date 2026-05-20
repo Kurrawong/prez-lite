@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { EditableProperty, EditableValue, EditableNestedProperty, ConceptSummary, SubjectChange, AgentEntry, ValidationError } from '~/composables/useEditMode'
+import { resolveIriLabel } from '~/utils/vocab-labels'
 
 const props = defineProps<{
   subjectIri: string
@@ -289,11 +290,13 @@ function formatAgent(iri: string): string {
 }
 
 function formatIri(iri: string): string {
+  // 1. Current vocab's own concepts (skos:broader / related pickers etc.)
   const concept = props.concepts.find(c => c.iri === iri)
   if (concept) return concept.prefLabel
-  const hashIdx = iri.lastIndexOf('#')
-  const slashIdx = iri.lastIndexOf('/')
-  return iri.substring(Math.max(hashIdx, slashIdx) + 1)
+  // 2. Background labels (issue #26 — Data Themes, reg-statuses, etc. live in
+  //    data/background/*.ttl and the editor seeded the runtime label store
+  //    from /export/system/labels.json). Falls back to the local-name slice.
+  return resolveIriLabel(iri)
 }
 
 function formatValue(val: EditableValue): string {
