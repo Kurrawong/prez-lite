@@ -57,6 +57,8 @@ export interface PropertyShape {
   allowedValues?: string[]
   /** Expected class of values from sh:class (e.g. skos:Concept, prov:Agent) */
   class?: string
+  /** sh:nodeKind constraint (e.g. http://www.w3.org/ns/shacl#IRI) */
+  nodeKind?: string
   /** Whether this property appears in simple view mode */
   simpleView?: boolean
 }
@@ -271,6 +273,10 @@ function parsePropertyShape(store: Store, shapeNode: Term): PropertyShape {
   // Extract sh:class (expected type of IRI values)
   const classIri = getIriValue(store, shapeNode, `${SH}class`)
   if (classIri) shape.class = classIri
+
+  // Extract sh:nodeKind (e.g. sh:IRI for IRI-valued shapes without a class constraint)
+  const nodeKindIri = getIriValue(store, shapeNode, `${SH}nodeKind`)
+  if (nodeKindIri) shape.nodeKind = nodeKindIri
 
   // Extract prez:simpleView (whether property appears in simple view mode)
   if (getBooleanValue(store, shapeNode, `${PREZ}simpleView`)) {
