@@ -27,6 +27,27 @@ interface ProfilePropertyOrder {
   minCount?: number
   maxCount?: number
   allowedValues?: string[]
+  class?: string
+  nodeKind?: string
+}
+
+const SH_IRI = 'http://www.w3.org/ns/shacl#IRI'
+const BARE_SCHEME_SEEDS = new Set(['https://', 'http://', 'urn:'])
+
+/** Mirrors isIriValued in useEditMode */
+function isIriValued(po: { class?: string; nodeKind?: string }): boolean {
+  if (po.nodeKind === SH_IRI) return true
+  if (po.class) return true
+  return false
+}
+
+/** Mirrors isValidIri in useEditMode */
+function isValidIri(value: string | undefined | null): boolean {
+  if (!value) return false
+  const v = value.trim()
+  if (!v) return false
+  if (BARE_SCHEME_SEEDS.has(v)) return false
+  return /^[a-zA-Z][a-zA-Z0-9+.\-]*:[^\s]+$/.test(v)
 }
 
 interface ValidationError {
@@ -83,6 +104,27 @@ function validateSubject(
             predicate: po.path,
             predicateLabel: getPredicateLabel(po.path),
             message: `"${q.object.value}" is not an allowed value`,
+          })
+        }
+      }
+    }
+
+    // Check IRI validity (issue #29) — catches empty NamedNodes and bare scheme seeds.
+    // N3's namedNode('') normalises to a DefaultGraph-typed term, so we check
+    // anything non-literal / non-blank rather than just NamedNode.
+    if (isIriValued(po)) {
+      for (const q of quads) {
+        const obj = q.object
+        if (obj.termType === 'Literal' || obj.termType === 'BlankNode') continue
+        if (!isValidIri(obj.value)) {
+          errors.push({
+            subjectIri,
+            subjectLabel,
+            predicate: po.path,
+            predicateLabel: getPredicateLabel(po.path),
+            message: obj.value
+              ? `"${obj.value}" is not a valid IRI`
+              : 'IRI value cannot be empty',
           })
         }
       }
@@ -349,6 +391,144 @@ describe('edit validation', () => {
       const store = new Store()
       const errors = validateSubject(store, CONCEPT_IRI, profile)
       expect(errors[0].subjectLabel).toBe('a')
+    })
+  })
+
+  /**
+   * IRI value validation — issue #29. The iri-input widget seeds new values
+   * with `https://`, so users can produce empty / scheme-only IRIs if they
+   * clear the seeded text. Validation must catch these before save.
+   */
+  describe('IRI validity (issue #29)', () => {
+    const iriPathProfile: ProfilePropertyOrder[] = [
+      { path: `${SDO}image`, order: 0, nodeKind: SH_IRI },
+      { path: `${SDO}creator`, order: 1, class: `${PROV}Agent` },
+    ]
+
+    it('accepts well-formed IRIs', () => {
+      const store = new Store()
+      store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SDO}image`), namedNode('https://example.com/img.png'), defaultGraph())
+      store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SDO}creator`), namedNode('https://linked.data.gov.au/org/ga'), defaultGraph())
+      const errors = validateSubject(store, CONCEPT_IRI, iriPathProfile)
+      expect(errors).toHaveLength(0)
+    })
+
+    it('rejects empty IRI (NamedNode with empty value)', () => {
+      const store = new Store()
+      store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SDO}image`), namedNode(''), defaultGraph())
+      const errors = validateSubject(store, CONCEPT_IRI, iriPathProfile)
+      expect(errors).toHaveLength(1)
+      expect(errors[0].message).toContain('cannot be empty')
+    })
+
+    it('rejects bare scheme seeds (the iri-input default before user edits)', () => {
+      for (const seed of ['https://', 'http://', 'urn:']) {
+        const store = new Store()
+        store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SDO}image`), namedNode(seed), defaultGraph())
+        const errors = validateSubject(store, CONCEPT_IRI, iriPathProfile)
+        expect(errors, `seed: ${seed}`).toHaveLength(1)
+        expect(errors[0].message).toContain('not a valid IRI')
+      }
+    })
+
+    it('rejects whitespace-only IRI', () => {
+      const store = new Store()
+      store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SDO}image`), namedNode('   '), defaultGraph())
+      const errors = validateSubject(store, CONCEPT_IRI, iriPathProfile)
+      expect(errors.length).toBeGreaterThan(0)
+    })
+
+    it('rejects malformed IRI (no scheme)', () => {
+      const store = new Store()
+      store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SDO}image`), namedNode('not-an-iri'), defaultGraph())
+      const errors = validateSubject(store, CONCEPT_IRI, iriPathProfile)
+      expect(errors).toHaveLength(1)
+    })
+
+    it('only applies to IRI-valued shapes; literals on non-IRI predicates pass', () => {
+      const profile: ProfilePropertyOrder[] = [
+        { path: `${SKOS}prefLabel`, order: 0 }, // no nodeKind/class → literal expected
+      ]
+      const store = new Store()
+      store.addQuad(namedNode(CONCEPT_IRI), namedNode(`${SKOS}prefLabel`), literal('Some label', 'en'), defaultGraph())
+      const errors = validateSubject(store, CONCEPT_IRI, profile)
+      expect(errors).toHaveLength(0)
+    })
+  })
+
+  /**
+   * Pure-function unit tests for the widget helpers added in InlineEditTable.vue
+   * (#28 "Add agent" dedup, #29 "Add IRI" with incomplete value).
+   */
+  describe('widget helpers', () => {
+    type AgentEntry = { iri: string; name: string; type: 'Person' | 'Organization' }
+    type PropLike = { values: Array<{ value: string }> }
+
+    function nextUnusedAgentIri(prop: PropLike, agents: AgentEntry[]): string | null {
+      if (!agents.length) return null
+      const used = new Set(prop.values.map(v => v.value))
+      return agents.find(a => !used.has(a.iri))?.iri ?? null
+    }
+
+    function hasIncompleteIriValue(prop: PropLike): boolean {
+      const bareSeeds = new Set(['https://', 'http://', 'urn:', ''])
+      return prop.values.some(v => bareSeeds.has((v.value ?? '').trim()))
+    }
+
+    const agents: AgentEntry[] = [
+      { iri: 'https://example.com/agent/ga', name: 'GA', type: 'Organization' },
+      { iri: 'https://example.com/agent/dpi', name: 'DPI', type: 'Organization' },
+      { iri: 'https://example.com/agent/csiro', name: 'CSIRO', type: 'Organization' },
+    ]
+
+    describe('nextUnusedAgentIri (#28 dedup fix)', () => {
+      it('returns the first agent when no values are set', () => {
+        const r = nextUnusedAgentIri({ values: [] }, agents)
+        expect(r).toBe(agents[0].iri)
+      })
+
+      it('skips agents already used as values', () => {
+        const r = nextUnusedAgentIri({ values: [{ value: agents[0].iri }] }, agents)
+        expect(r).toBe(agents[1].iri)
+      })
+
+      it('returns null when all agents are already used (blocks dedup no-op)', () => {
+        const r = nextUnusedAgentIri(
+          { values: agents.map(a => ({ value: a.iri })) },
+          agents,
+        )
+        expect(r).toBeNull()
+      })
+
+      it('returns null when the agents list is empty', () => {
+        const r = nextUnusedAgentIri({ values: [] }, [])
+        expect(r).toBeNull()
+      })
+    })
+
+    describe('hasIncompleteIriValue (#29 dedup fix)', () => {
+      it('false when all values are valid IRIs', () => {
+        expect(hasIncompleteIriValue({ values: [{ value: 'https://example.com/a' }] })).toBe(false)
+      })
+
+      it('true when any value is a bare scheme seed', () => {
+        for (const seed of ['https://', 'http://', 'urn:', '']) {
+          expect(
+            hasIncompleteIriValue({ values: [{ value: seed }] }),
+            `seed: ${JSON.stringify(seed)}`,
+          ).toBe(true)
+        }
+      })
+
+      it('true even when some values are valid (any incomplete blocks add)', () => {
+        expect(hasIncompleteIriValue({
+          values: [{ value: 'https://example.com/a' }, { value: 'https://' }],
+        })).toBe(true)
+      })
+
+      it('trims whitespace before checking', () => {
+        expect(hasIncompleteIriValue({ values: [{ value: '  https://  ' }] })).toBe(true)
+      })
     })
   })
 })

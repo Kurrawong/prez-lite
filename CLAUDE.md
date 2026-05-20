@@ -34,8 +34,7 @@ prez-lite/
 │   ├── data-processing/   # TTL → JSON pipeline (N3.js, SHACL profiles)
 │   ├── web-components/    # Lit-based embeddable components (prez-lite.min.js)
 │   ├── github-auth-worker/# Cloudflare Worker for GitHub OAuth (inline editing)
-│   ├── sites/             # Client site implementations
-│   │   └── suncorp-vpp/   # Suncorp VPP (extends web/ as Nuxt layer)
+│   ├── sites/             # Client site implementations (separate repos, gitignored)
 │   ├── gh-templates/      # GitHub template repositories
 │   │   └── default/       # Standard vocabulary template (subtree sync)
 │   └── examples/          # Example data and configurations
@@ -49,10 +48,10 @@ prez-lite/
 
 **Client sites** (`packages/sites/*`) and **template repos** (`packages/gh-templates/*`) are **separate git repositories** checked out within the prez-lite monorepo for convenience. They are **not part of the main prez-lite project**.
 
-- Each directory under `packages/sites/` (e.g., `suncorp-vpp`) has its own `.git` directory
-- Each directory under `packages/gh-templates/` (e.g., `default`) has its own `.git` directory
-- These are listed in `.gitignore` so changes don't affect the main repo
-- They have their own remotes (e.g., `Kurrawong/suncorp-vpp`, `Kurrawong/prez-lite-template-default`)
+- Each directory under `packages/sites/` has its own `.git` directory and remote
+- Each directory under `packages/gh-templates/` has its own `.git` directory and remote
+- These are listed in `.gitignore` so changes don't affect the main prez-lite repo
+- Always work with these repos in-place — never clone them elsewhere
 
 **Before cloning a child site or template:**
 1. Check if it already exists in `packages/sites/` or `packages/gh-templates/`
@@ -181,20 +180,19 @@ Client sites extend `web/` as a Nuxt layer, overriding components, content, and 
 - Caller workflows in `.github/workflows/` invoke prez-lite's reusable workflows
 - `public/export/` is gitignored — CI regenerates it
 
+Each site under `packages/sites/` is its own repo — commit and push directly from within the site directory.
+
 ## Template Repository (`packages/gh-templates/default/`)
 
 - **Not in pnpm workspace** — has its own `package.json` and `node_modules/`
-- Synced to `Kurrawong/prez-lite-template-default` via git subtree
+- Separate git repo cloned in-place (`Kurrawong/prez-lite-template-default`)
+- Commit and push directly from within the directory
 
 ```bash
 cd packages/gh-templates/default
 pnpm install        # independent install
 pnpm process        # regenerate vocab exports (auto-detects monorepo)
 pnpm dev            # start dev server
-
-# Subtree sync
-./scripts/sync-template-push.sh   # push to prez-lite-template-default
-./scripts/sync-template-pull.sh   # pull changes back (squashed)
 ```
 
 ## Important Principles
@@ -209,6 +207,16 @@ pnpm dev            # start dev server
 - PR titles must use **lowercase** conventional commit format: `type: description`
 - Valid types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 - Do not include "Generated with Claude Code" in PRs, commits, comments, or issues
+
+## Widget Development Checklist
+
+When adding a new `EditableProperty['fieldType']` to `useEditMode.ts` (or a new render branch in `InlineEditTable.vue` / `ConceptForm.vue`):
+
+1. **Lifecycle check** — verify the full happy *and* edge path before commit: add → edit value → clear value → add a second value → remove → save → reload from GitHub. Walking only the "does it render" path misses the bugs that ship.
+2. **Validation parity** — add a matching rule in `validateSubject` the moment the new field type is introduced. e.g. an IRI-typed field must reject empty / non-IRI values; a date field must reject malformed dates. Validation rules and field types travel together.
+3. **Defensive serialisation** — `serializeWithPatch` and `serializeToTTL` must refuse to emit invalid quads (empty `NamedNode`s, malformed URIs, literals without required language tags). Audit these functions when introducing a new value-shape.
+4. **Unit tests in the same PR** — cover at minimum: (a) widget dispatch from a representative profile shape (`getPropertiesForSubject` picks the right `fieldType`), (b) full mutation cycle (`addValue` → `updateValue('')` → store state), and (c) the resulting TTL is valid (no empty-IRI quads, no broken literals).
+5. **Profile parser parity** — every new SHACL constraint the widget consumes (e.g. `sh:nodeKind`, `sh:hasValue`) must be extracted in `web/app/utils/shacl-profile-parser.ts` *and* emitted by `packages/data-processing/scripts/process-vocab.js`. Without both, the constraint silently disappears between `profiles.ttl` and the running app.
 
 ## Don't Forget
 

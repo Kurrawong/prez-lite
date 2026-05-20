@@ -155,6 +155,25 @@ function isIriValued(po: { class?: string; nodeKind?: string }): boolean {
   return false
 }
 
+/**
+ * Loose IRI validity check used for save-time validation and defensive
+ * serialisation. We accept anything that looks like `scheme:opaque-part`
+ * (where opaque-part has no whitespace and is non-empty after the colon).
+ *
+ * Bare scheme prefixes that the iri-input widget seeds (`https://`,
+ * `http://`, `urn:`) are rejected as "incomplete" — the user must finish
+ * typing the IRI before save.
+ */
+const BARE_SCHEME_SEEDS = new Set(['https://', 'http://', 'urn:'])
+function isValidIri(value: string | undefined | null): boolean {
+  if (!value) return false
+  const v = value.trim()
+  if (!v) return false
+  if (BARE_SCHEME_SEEDS.has(v)) return false
+  // Require a scheme followed by something non-empty and whitespace-free.
+  return /^[a-zA-Z][a-zA-Z0-9+.\-]*:[^\s]+$/.test(v)
+}
+
 const TEXTAREA_PREDICATES = new Set([
   `${SKOS}definition`,
   `${SKOS}scopeNote`,
@@ -615,7 +634,11 @@ export function useEditMode(
             : literal(oldValue.value)
       store.value.removeQuad(s, p, oldObj, defaultGraph())
 
-      // Add new quad
+      // Add new quad. For IRI values we still add a (placeholder) quad so
+      // the UI keeps showing the row the user is editing — validation
+      // surfaces the invalid IRI and `pruneInvalidQuads` will strip it
+      // before serialisation. Without the placeholder the row disappears
+      // when the user clears the input.
       const newObj = oldValue.type === 'iri'
         ? namedNode(newValue)
         : oldValue.language
@@ -957,8 +980,47 @@ export function useEditMode(
 
   // ---- Serialization ----
 
+  /**
+   * Defensive: refuse to emit quads with empty or otherwise invalid IRI
+   * objects (issue #29). Validation should catch these and block the save,
+   * but if a value sneaks through (e.g. the user typed and cleared right
+   * before clicking save) we silently drop it rather than producing
+   * broken TTL like `<s> <p> <> .`.
+   *
+   * Catches both:
+   *   - NamedNode terms with values failing isValidIri
+   *   - Any object term with empty `value` (N3's DataFactory turns
+   *     namedNode('') into a DefaultGraph-typed term with empty value,
+   *     which the Turtle writer emits as `<>`)
+   *
+   * Returns the number of dropped quads so callers can log if it happens.
+   */
+  function pruneInvalidQuads(): number {
+    if (!store.value) return 0
+    const invalid = (store.value.getQuads(null, null, null, null) as Quad[])
+      .filter(q => {
+        const obj = q.object
+        // Empty value on anything non-literal is broken (N3 normalises
+        // namedNode('') to DefaultGraph-typed, so this catches that path)
+        if (obj.termType !== 'Literal' && obj.termType !== 'BlankNode' && !obj.value) {
+          return true
+        }
+        // NamedNode that doesn't look like an IRI
+        if (obj.termType === 'NamedNode' && !isValidIri(obj.value)) {
+          return true
+        }
+        return false
+      })
+    if (invalid.length) {
+      store.value.removeQuads(invalid)
+      console.warn('[useEditMode] Pruned', invalid.length, 'quads with invalid IRI objects before serialise.')
+    }
+    return invalid.length
+  }
+
   function serializeToTTL(): string {
     if (!store.value) return ''
+    pruneInvalidQuads()
 
     const writer = new Writer({
       prefixes: originalPrefixes.value,
@@ -986,6 +1048,7 @@ export function useEditMode(
         'originalParsedTTL:', !!originalParsedTTL.value)
       return serializeToTTL()
     }
+    pruneInvalidQuads()
 
     if (originalParsedTTL.value.subjectBlocks.length === 0) {
       console.warn('[useEditMode] originalParsedTTL has 0 subject blocks — patching will append instead of replace.')
@@ -1319,6 +1382,30 @@ export function useEditMode(
         }
       }
 
+      // Check that IRI-typed values look like real IRIs (issue #29).
+      // Catches blank values and bare scheme seeds like "https://" that the
+      // iri-input widget defaults to. Without this, a save would produce
+      // an empty NamedNode (or DefaultGraph term, since N3 collapses
+      // namedNode('') to that) and broken TTL output.
+      if (isIriValued(po)) {
+        for (const q of quads) {
+          const obj = q.object
+          // Skip literals and blank nodes — they're a separate concern.
+          if (obj.termType === 'Literal' || obj.termType === 'BlankNode') continue
+          if (!isValidIri(obj.value)) {
+            errors.push({
+              subjectIri,
+              subjectLabel,
+              predicate: po.path,
+              predicateLabel: getPredicateLabel(po.path),
+              message: obj.value
+                ? `"${obj.value}" is not a valid IRI`
+                : 'IRI value cannot be empty',
+            })
+          }
+        }
+      }
+
       // Validate nested properties
       if (po.propertyOrder) {
         const parentLabel = getPredicateLabel(po.path)
@@ -1357,6 +1444,24 @@ export function useEditMode(
                     predicate: po.path,
                     predicateLabel: parentLabel,
                     message: `${nestedLabel} "${nq.object.value}" is not an allowed value`,
+                  })
+                }
+              }
+            }
+            // Check IRI validity on nested properties (issue #29)
+            if (isIriValued(nested)) {
+              for (const nq of nestedQuads) {
+                const obj = nq.object
+                if (obj.termType === 'Literal' || obj.termType === 'BlankNode') continue
+                if (!isValidIri(obj.value)) {
+                  errors.push({
+                    subjectIri,
+                    subjectLabel,
+                    predicate: po.path,
+                    predicateLabel: parentLabel,
+                    message: obj.value
+                      ? `${nestedLabel} "${obj.value}" is not a valid IRI`
+                      : `${nestedLabel} IRI value cannot be empty`,
                   })
                 }
               }

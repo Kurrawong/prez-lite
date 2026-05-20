@@ -126,6 +126,30 @@ function formatIriAuto(iri: string): string {
   return formatIri(iri)
 }
 
+/**
+ * Pick a default agent IRI for a new agent-picker row that isn't already
+ * one of this property's existing values. Without this, N3.Store dedupes
+ * the addQuad and the "Add agent" click appears to do nothing (#28).
+ * Returns null if every loaded agent is already in use.
+ */
+function nextUnusedAgentIri(prop: EditableProperty | EditableNestedProperty): string | null {
+  if (!props.agents?.length) return null
+  const used = new Set(prop.values.map(v => v.value))
+  const unused = props.agents.find(a => !used.has(a.iri))
+  return unused?.iri ?? null
+}
+
+/**
+ * True if this iri-input property already has an empty / placeholder value
+ * (#29). Used to hide "Add IRI" until the user finishes typing the
+ * incomplete one — otherwise the dedup'd addQuad makes the click silently
+ * fail.
+ */
+function hasIncompleteIriValue(prop: EditableProperty | EditableNestedProperty): boolean {
+  const bareSeeds = new Set(['https://', 'http://', 'urn:', ''])
+  return prop.values.some(v => bareSeeds.has((v.value ?? '').trim()))
+}
+
 function constraintDescription(prop: EditableProperty): string | null {
   const parts: string[] = []
   if (prop.minCount != null) parts.push(`Min: ${prop.minCount}`)
@@ -486,8 +510,11 @@ onUnmounted(() => {
                         @click.stop="emit('remove:value', prop.predicate, val)"
                       />
                     </div>
+                    <!-- Hide "Add IRI" while an existing row is still a bare scheme seed
+                         or empty (#29) — clicking would otherwise be a dedup no-op AND
+                         leave the existing invalid value un-edited. -->
                     <UButton
-                      v-if="prop.maxCount == null || prop.values.length < prop.maxCount"
+                      v-if="!hasIncompleteIriValue(prop) && (prop.maxCount == null || prop.values.length < prop.maxCount)"
                       icon="i-heroicons-plus"
                       variant="ghost"
                       size="xs"
@@ -520,11 +547,11 @@ onUnmounted(() => {
                       />
                     </div>
                     <UButton
-                      v-if="agents?.length && (prop.maxCount == null || prop.values.length < prop.maxCount)"
+                      v-if="nextUnusedAgentIri(prop) && (prop.maxCount == null || prop.values.length < prop.maxCount)"
                       icon="i-heroicons-plus"
                       variant="ghost"
                       size="xs"
-                      @click.stop="emit('add:value', prop.predicate, 'iri', agents![0].iri)"
+                      @click.stop="emit('add:value', prop.predicate, 'iri', nextUnusedAgentIri(prop)!)"
                     >
                       Add agent
                     </UButton>
