@@ -139,13 +139,19 @@ jobs:
       - name: Deploy to S3
         run: |
           # Long-cache the immutable hashed Nuxt chunks — filenames change with content.
+          # No --delete: chunk filenames are content-hashed, so old chunks are never
+          # referenced by the new HTML. Leaving them on S3 means users still mid-load
+          # when the deploy lands can finish fetching the chunks their (already-loaded)
+          # HTML expects, instead of hitting 404. Stale chunks are reaped by an S3
+          # lifecycle rule (separate Terraform config, ~7 days).
           aws s3 sync .output/public/_nuxt/ "s3://${{ inputs.s3-bucket }}/_nuxt/" \
-            --delete --quiet \
+            --quiet \
             --cache-control "public, max-age=31536000, immutable"
 
-          # Everything else (HTML entry, JSON exports, sitemap, etc.) MUST revalidate
-          # so workspaces/profile/labels updates take effect on the next page load
-          # rather than being held by the browser cache for hours.
+          # Everything else (HTML entry, JSON exports, sitemap, etc.) is keyed by
+          # stable URL paths, so --delete is safe and desirable here — it removes
+          # routes / exports that no longer exist in the new build. MUST revalidate
+          # so workspaces/profile/labels updates take effect on the next page load.
           aws s3 sync .output/public/ "s3://${{ inputs.s3-bucket }}/" \
             --delete --quiet \
             --exclude "_nuxt/*" \
