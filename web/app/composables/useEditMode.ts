@@ -37,7 +37,7 @@ export interface EditableNestedProperty {
   predicate: string
   label: string
   values: EditableValue[]
-  fieldType?: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly' | 'select' | 'agent-picker'
+  fieldType?: 'text' | 'textarea' | 'iri-picker' | 'iri-input' | 'date' | 'readonly' | 'select' | 'agent-picker'
   allowedValues?: string[]
   class?: string
   minCount?: number
@@ -59,7 +59,7 @@ export interface EditableProperty {
   description?: string
   order: number
   values: EditableValue[]
-  fieldType: 'text' | 'textarea' | 'iri-picker' | 'date' | 'readonly' | 'nested' | 'select' | 'concept-picker' | 'agent-picker'
+  fieldType: 'text' | 'textarea' | 'iri-picker' | 'iri-input' | 'date' | 'readonly' | 'nested' | 'select' | 'concept-picker' | 'agent-picker'
   minCount?: number
   maxCount?: number
   /** Closed set of allowed IRI values from sh:in */
@@ -119,6 +119,8 @@ interface ProfilePropertyOrder {
   maxCount?: number
   allowedValues?: string[]
   class?: string
+  /** SHACL sh:nodeKind constraint (e.g. http://www.w3.org/ns/shacl#IRI) */
+  nodeKind?: string
 }
 
 interface ProfileConfig {
@@ -143,6 +145,15 @@ const SDO = 'https://schema.org/'
 
 const SKOS_CONCEPT_CLASS = `${SKOS}Concept`
 const PROV_AGENT_CLASS = 'http://www.w3.org/ns/prov#Agent'
+const SH_IRI = 'http://www.w3.org/ns/shacl#IRI'
+
+/** True if the property shape declares its value must be an IRI */
+function isIriValued(po: { class?: string; nodeKind?: string }): boolean {
+  if (po.nodeKind === SH_IRI) return true
+  // Any sh:class constraint implies the value is a typed IRI (instance of that class)
+  if (po.class) return true
+  return false
+}
 
 const TEXTAREA_PREDICATES = new Set([
   `${SKOS}definition`,
@@ -170,7 +181,14 @@ const READONLY_PREDICATES = new Set([
   `${SKOS}topConceptOf`,
 ])
 
-function getFieldType(predicate: string): EditableProperty['fieldType'] {
+/**
+ * Narrow return type — only the field types this function can actually return.
+ * This is intentionally a subset of both EditableProperty['fieldType'] and
+ * EditableNestedProperty['fieldType'] so it can be assigned to either.
+ */
+type DefaultFieldType = 'readonly' | 'textarea' | 'iri-picker' | 'date' | 'text'
+
+function getFieldType(predicate: string): DefaultFieldType {
   if (READONLY_PREDICATES.has(predicate)) return 'readonly'
   if (TEXTAREA_PREDICATES.has(predicate)) return 'textarea'
   if (IRI_PICKER_PREDICATES.has(predicate)) return 'iri-picker'
@@ -414,7 +432,9 @@ export function useEditMode(
         continue
       }
 
-      // Determine field type: sh:in → select, sh:class → concept/agent picker, else default
+      // Determine field type: sh:in → select, sh:class → concept/agent picker,
+      // any other IRI-valued shape (sh:class or sh:nodeKind sh:IRI) → iri-input,
+      // else default by predicate name.
       let fieldType: EditableProperty['fieldType']
       if (po.allowedValues?.length) {
         fieldType = 'select'
@@ -422,6 +442,8 @@ export function useEditMode(
         fieldType = 'concept-picker'
       } else if (po.class === PROV_AGENT_CLASS) {
         fieldType = 'agent-picker'
+      } else if (isIriValued(po)) {
+        fieldType = 'iri-input'
       } else {
         fieldType = getFieldType(po.path)
       }
@@ -520,6 +542,8 @@ export function useEditMode(
           fieldType = 'select'
         } else if (po.class === PROV_AGENT_CLASS) {
           fieldType = 'agent-picker'
+        } else if (isIriValued(po)) {
+          fieldType = 'iri-input'
         } else {
           fieldType = getFieldType(po.path)
         }

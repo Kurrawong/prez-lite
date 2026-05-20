@@ -466,6 +466,38 @@ onUnmounted(() => {
                   </div>
                 </template>
 
+                <!-- iri-input (generic IRI-valued predicate: sh:class set or sh:nodeKind sh:IRI) -->
+                <template v-else-if="prop.fieldType === 'iri-input'">
+                  <div class="min-h-7" @click.stop @pointerdown.stop>
+                    <div v-for="val in prop.values" :key="val.id" class="flex items-start gap-2 mb-2 min-w-0">
+                      <UInput
+                        :model-value="getLocalValue(val)"
+                        type="url"
+                        placeholder="https://… or urn:…"
+                        class="flex-1 font-mono text-xs"
+                        @input="handleValueInput(prop.predicate, val, $event)"
+                      />
+                      <UButton
+                        v-if="prop.minCount == null || prop.values.length > prop.minCount"
+                        icon="i-heroicons-x-mark"
+                        color="error"
+                        variant="ghost"
+                        size="xs"
+                        @click.stop="emit('remove:value', prop.predicate, val)"
+                      />
+                    </div>
+                    <UButton
+                      v-if="prop.maxCount == null || prop.values.length < prop.maxCount"
+                      icon="i-heroicons-plus"
+                      variant="ghost"
+                      size="xs"
+                      @click.stop="emit('add:value', prop.predicate, 'iri', 'https://')"
+                    >
+                      Add IRI
+                    </UButton>
+                  </div>
+                </template>
+
                 <!-- agent-picker (creator, publisher, prov:agent) -->
                 <template v-else-if="prop.fieldType === 'agent-picker'">
                   <div class="min-h-7" @click.stop @pointerdown.stop>

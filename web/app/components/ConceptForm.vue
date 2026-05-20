@@ -17,7 +17,7 @@ const changedPredicates = computed(() => {
 const emit = defineEmits<{
   'update:value': [predicate: string, oldValue: EditableValue, newValue: string]
   'update:language': [predicate: string, oldValue: EditableValue, newLang: string]
-  'add:value': [predicate: string]
+  'add:value': [predicate: string, type?: 'literal' | 'iri', defaultIri?: string]
   'remove:value': [predicate: string, value: EditableValue]
   'update:broader': [newIris: string[], oldIris: string[]]
   'update:related': [newIris: string[], oldIris: string[]]
@@ -216,6 +216,36 @@ function formatIri(iri: string): string {
                   : null
             "
           />
+        </template>
+
+        <!-- iri-input (generic IRI-valued predicate) -->
+        <template v-else-if="prop.fieldType === 'iri-input'">
+          <div v-for="val in prop.values" :key="val.id" class="flex items-start gap-2 mb-2">
+            <UInput
+              :model-value="getLocalValue(val)"
+              type="url"
+              placeholder="https://… or urn:…"
+              class="flex-1"
+              @input="handleValueInput(prop.predicate, val, $event)"
+            />
+            <UButton
+              v-if="prop.minCount == null || prop.values.length > prop.minCount"
+              icon="i-heroicons-x-mark"
+              color="error"
+              variant="ghost"
+              size="xs"
+              @click="emit('remove:value', prop.predicate, val)"
+            />
+          </div>
+          <UButton
+            v-if="prop.maxCount == null || prop.values.length < prop.maxCount"
+            icon="i-heroicons-plus"
+            variant="ghost"
+            size="xs"
+            @click="emit('add:value', prop.predicate, 'iri', 'https://')"
+          >
+            Add IRI
+          </UButton>
         </template>
 
         <!-- text / textarea / date -->

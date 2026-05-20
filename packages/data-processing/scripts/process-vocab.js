@@ -3042,6 +3042,8 @@ function buildProfileJson(shaclConfig, cardinalityMap) {
         if (p.allowedValues && p.allowedValues.length > 0) entry.allowedValues = p.allowedValues;
         // Expected class of values from sh:class
         if (p.class) entry.class = p.class;
+        // Node kind from sh:nodeKind (e.g. sh:IRI for IRI-valued predicates)
+        if (p.nodeKind) entry.nodeKind = p.nodeKind;
         // Simple view flag from prez:simpleView
         if (p.simpleView) entry.simpleView = true;
         // Embed nested property order from sh:node
@@ -3055,6 +3057,7 @@ function buildProfileJson(shaclConfig, cardinalityMap) {
             if (np.maxCount != null) nested.maxCount = np.maxCount;
             if (np.allowedValues && np.allowedValues.length > 0) nested.allowedValues = np.allowedValues;
             if (np.class) nested.class = np.class;
+            if (np.nodeKind) nested.nodeKind = np.nodeKind;
             return nested;
           });
         }
