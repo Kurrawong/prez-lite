@@ -163,6 +163,45 @@ describe('parseAnnotatedJsonLd', () => {
     expect(focusNode!['@id']).toBe('http://example.com/vocab/')
   })
 
+  it('seeds labelMap with background labels (issues #21, #23)', () => {
+    // Simulates /export/system/labels.json: agent and predicate IRIs that
+    // don't carry a prez:label in the annotated JSON-LD.
+    const background = {
+      'https://linked.data.gov.au/org/ga': { en: 'Geoscience Australia' },
+      'http://www.w3.org/ns/dcat#contactPoint': { en: 'contact point' },
+      'http://www.w3.org/2002/07/owl#versionInfo': { '': 'version info' },
+    }
+
+    const data = makeSchemeFixture()
+    const { labelMap } = parseAnnotatedJsonLd(data, background)
+
+    // Background labels are present
+    expect(labelMap.get('https://linked.data.gov.au/org/ga')).toBe('Geoscience Australia')
+    expect(labelMap.get('http://www.w3.org/ns/dcat#contactPoint')).toBe('contact point')
+    expect(labelMap.get('http://www.w3.org/2002/07/owl#versionInfo')).toBe('version info')
+  })
+
+  it('prefers per-vocab prez:label over background label', () => {
+    // The vocab JSON-LD has its own label for skos:prefLabel; background
+    // shouldn't shadow it.
+    const background = {
+      [`${SKOS}prefLabel`]: { en: 'background label' },
+    }
+
+    const data = makeSchemeFixture()
+    const { labelMap } = parseAnnotatedJsonLd(data, background)
+
+    expect(labelMap.get(`${SKOS}prefLabel`)).toBe('Preferred Label')
+  })
+
+  it('falls back to the default (empty-lang) entry when `en` is missing', () => {
+    const background = {
+      'http://example.com/predicate': { '': 'fallback' },
+    }
+    const { labelMap } = parseAnnotatedJsonLd(makeSchemeFixture(), background)
+    expect(labelMap.get('http://example.com/predicate')).toBe('fallback')
+  })
+
   it('returns null focusNode when none marked', () => {
     const data: JsonLdNode[] = [
       {

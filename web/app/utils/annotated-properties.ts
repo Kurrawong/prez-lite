@@ -5,6 +5,9 @@
  * to dynamically render all properties with their prez:label and prez:description.
  */
 
+import { seedRuntimeLabels } from '~/utils/vocab-labels'
+import type { LabelsIndex } from '~/composables/useVocabData'
+
 // Prez namespace
 const PREZ = 'https://prez.dev/'
 const PREZ_LABEL = `${PREZ}label`
@@ -81,14 +84,40 @@ export interface RenderedProperty {
   simpleView?: boolean
 }
 
+/** Pick the best label from a labels.json entry, preferring `lang` then default */
+function pickRuntimeLabel(
+  entry: Record<string, string> | undefined,
+  lang = 'en',
+): string | undefined {
+  if (!entry) return undefined
+  return entry[lang] ?? entry[''] ?? Object.values(entry)[0]
+}
+
 /**
- * Parse annotated JSON-LD and build lookup maps
+ * Parse annotated JSON-LD and build lookup maps.
+ *
+ * Background labels (from /export/system/labels.json) seed the labelMap so
+ * IRIs that don't carry a `prez:label` in the annotated JSON-LD (e.g. agents
+ * like creator/publisher, or extra predicates like rdfs:seeAlso) still
+ * render with a human-readable label. JSON-LD-supplied prez:labels take
+ * priority because they are vocabulary-specific.
  */
-export function parseAnnotatedJsonLd(data: JsonLdNode[]) {
+export function parseAnnotatedJsonLd(
+  data: JsonLdNode[],
+  backgroundLabels?: LabelsIndex,
+) {
   const nodeMap = new Map<string, JsonLdNode>()
   const labelMap = new Map<string, string>()
   const descriptionMap = new Map<string, string>()
   let focusNode: JsonLdNode | null = null
+
+  // Seed with background labels first; prez:label on the node overrides.
+  if (backgroundLabels) {
+    for (const iri of Object.keys(backgroundLabels)) {
+      const label = pickRuntimeLabel(backgroundLabels[iri])
+      if (label) labelMap.set(iri, label)
+    }
+  }
 
   for (const node of data) {
     const id = node['@id']
@@ -319,6 +348,28 @@ async function fetchProfile(): Promise<ProfileJsonConfig | undefined> {
   }
 }
 
+// Cache for background labels index to avoid refetching
+let cachedLabelsIndex: LabelsIndex | undefined
+let labelsIndexFetched = false
+
+/**
+ * Fetch the background labels index (cached).
+ * Also seeds the runtime label store used by edit-mode predicate lookups,
+ * so both view and edit paths resolve the same background labels.
+ */
+async function fetchBackgroundLabels(): Promise<LabelsIndex | undefined> {
+  if (labelsIndexFetched) return cachedLabelsIndex
+  try {
+    cachedLabelsIndex = await $fetch<LabelsIndex>('/export/system/labels.json')
+    seedRuntimeLabels(cachedLabelsIndex)
+  } catch {
+    cachedLabelsIndex = undefined
+  } finally {
+    labelsIndexFetched = true
+  }
+  return cachedLabelsIndex
+}
+
 /**
  * Fetch and parse annotated JSON-LD for a vocabulary
  */
@@ -327,13 +378,14 @@ export async function fetchAnnotatedProperties(
   type: 'conceptScheme' | 'concept' | 'catalog' = 'conceptScheme'
 ): Promise<{ properties: RenderedProperty[], focusIri: string | null }> {
   try {
-    // Fetch annotated JSON-LD and profile in parallel
-    const [data, profile] = await Promise.all([
+    // Fetch annotated JSON-LD, profile, and background labels in parallel
+    const [data, profile, backgroundLabels] = await Promise.all([
       $fetch<JsonLdNode[]>(`/export/vocabs/${slug}/${slug}-anot-ld-json.json`),
-      fetchProfile()
+      fetchProfile(),
+      fetchBackgroundLabels(),
     ])
 
-    const { nodeMap, labelMap, descriptionMap, focusNode } = parseAnnotatedJsonLd(data)
+    const { nodeMap, labelMap, descriptionMap, focusNode } = parseAnnotatedJsonLd(data, backgroundLabels)
 
     if (!focusNode) {
       return { properties: [], focusIri: null }
@@ -403,13 +455,14 @@ export async function fetchConceptAnnotatedProperties(
     const conceptId = conceptIdFromIri(conceptIri)
     const prefix = conceptPrefix(conceptId)
 
-    // Fetch concept's annotated JSON-LD and profile in parallel
-    const [data, profile] = await Promise.all([
+    // Fetch concept's annotated JSON-LD, profile, and background labels in parallel
+    const [data, profile, backgroundLabels] = await Promise.all([
       $fetch<JsonLdNode[]>(`/export/vocabs/${slug}/concepts/${prefix}/${conceptId}-anot-ld-json.json`),
-      fetchProfile()
+      fetchProfile(),
+      fetchBackgroundLabels(),
     ])
 
-    const { nodeMap, labelMap, descriptionMap, focusNode } = parseAnnotatedJsonLd(data)
+    const { nodeMap, labelMap, descriptionMap, focusNode } = parseAnnotatedJsonLd(data, backgroundLabels)
 
     if (!focusNode) {
       return { properties: [], conceptIri: null }
