@@ -392,4 +392,79 @@ describe('serializeWithPatch', () => {
       expect(result).toContain('Modified A')
     })
   })
+
+  /**
+   * Defensive pruning before serialise (issue #29). Mirrors the
+   * pruneInvalidQuads helper in useEditMode — quads whose object is an
+   * empty / non-IRI NamedNode (or N3's DefaultGraph-typed empty term)
+   * must be stripped before output to avoid emitting broken `<>` syntax.
+   */
+  describe('pruneInvalidQuads (#29)', () => {
+    const BARE_SCHEME_SEEDS = new Set(['https://', 'http://', 'urn:'])
+    function isValidIri(value: string | undefined | null): boolean {
+      if (!value) return false
+      const v = value.trim()
+      if (!v) return false
+      if (BARE_SCHEME_SEEDS.has(v)) return false
+      return /^[a-zA-Z][a-zA-Z0-9+.\-]*:[^\s]+$/.test(v)
+    }
+    function pruneInvalidQuads(store: Store): number {
+      const invalid = (store.getQuads(null, null, null, null) as Quad[])
+        .filter(q => {
+          const obj = q.object
+          if (obj.termType !== 'Literal' && obj.termType !== 'BlankNode' && !obj.value) return true
+          if (obj.termType === 'NamedNode' && !isValidIri(obj.value)) return true
+          return false
+        })
+      store.removeQuads(invalid)
+      return invalid.length
+    }
+
+    const SUBJECT = 'http://example.com/vocab'
+    const PRED = 'http://www.w3.org/2002/07/owl#versionIRI'
+
+    it('drops quads whose object is an empty IRI (DefaultGraph-typed in N3)', () => {
+      const store = new Store()
+      // namedNode('') gets normalised to DefaultGraph by N3
+      store.addQuad(namedNode(SUBJECT), namedNode(PRED), namedNode(''), defaultGraph())
+      expect(store.size).toBe(1)
+      const dropped = pruneInvalidQuads(store)
+      expect(dropped).toBe(1)
+      expect(store.size).toBe(0)
+    })
+
+    it('drops quads with bare scheme seed IRIs', () => {
+      const store = new Store()
+      store.addQuad(namedNode(SUBJECT), namedNode(PRED), namedNode('https://'), defaultGraph())
+      const dropped = pruneInvalidQuads(store)
+      expect(dropped).toBe(1)
+      expect(store.size).toBe(0)
+    })
+
+    it('keeps valid IRI quads', () => {
+      const store = new Store()
+      store.addQuad(namedNode(SUBJECT), namedNode(PRED), namedNode('https://example.com/v/1'), defaultGraph())
+      const dropped = pruneInvalidQuads(store)
+      expect(dropped).toBe(0)
+      expect(store.size).toBe(1)
+    })
+
+    it('keeps literal values even if empty (they are a separate concern)', () => {
+      const store = new Store()
+      store.addQuad(namedNode(SUBJECT), namedNode(`${SKOS}prefLabel`), literal(''), defaultGraph())
+      const dropped = pruneInvalidQuads(store)
+      expect(dropped).toBe(0)
+      expect(store.size).toBe(1)
+    })
+
+    it('strips multiple invalid quads in one pass', () => {
+      const store = new Store()
+      store.addQuad(namedNode(SUBJECT), namedNode(PRED), namedNode(''), defaultGraph())
+      store.addQuad(namedNode(SUBJECT), namedNode(PRED), namedNode('http://'), defaultGraph())
+      store.addQuad(namedNode(SUBJECT), namedNode(PRED), namedNode('https://example.com/ok'), defaultGraph())
+      const dropped = pruneInvalidQuads(store)
+      expect(dropped).toBe(2)
+      expect(store.size).toBe(1)
+    })
+  })
 })

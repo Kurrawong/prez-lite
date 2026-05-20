@@ -29,6 +29,17 @@ const emit = defineEmits<{
 const SKOS_BROADER = 'http://www.w3.org/2004/02/skos/core#broader'
 const SKOS_RELATED = 'http://www.w3.org/2004/02/skos/core#related'
 
+/**
+ * True if this iri-input property already has an empty / placeholder value
+ * (#29). Used to hide "Add IRI" until the user finishes typing the
+ * incomplete one — otherwise the dedup'd addQuad makes the click silently
+ * fail.
+ */
+function hasIncompleteIriValue(prop: EditableProperty): boolean {
+  const bareSeeds = new Set(['https://', 'http://', 'urn:', ''])
+  return prop.values.some(v => bareSeeds.has((v.value ?? '').trim()))
+}
+
 // Reka UI SelectItem rejects empty-string values, so we use a sentinel
 // for "no language tag" and convert at the model-value boundary.
 const LANG_NONE = '_none'
@@ -237,8 +248,10 @@ function formatIri(iri: string): string {
               @click="emit('remove:value', prop.predicate, val)"
             />
           </div>
+          <!-- Hide "Add IRI" while an existing row is still a bare scheme seed
+               or empty (#29) — clicking would otherwise be a dedup no-op. -->
           <UButton
-            v-if="prop.maxCount == null || prop.values.length < prop.maxCount"
+            v-if="!hasIncompleteIriValue(prop) && (prop.maxCount == null || prop.values.length < prop.maxCount)"
             icon="i-heroicons-plus"
             variant="ghost"
             size="xs"

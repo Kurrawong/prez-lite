@@ -10,6 +10,7 @@
 
 import { Store, Parser, Writer, DataFactory, type Quad } from 'n3'
 import { getPredicateLabel, getPredicateDescription } from '~/utils/vocab-labels'
+import { isIriValued, isValidIri, pruneInvalidIriQuads } from '~/utils/iri-validation'
 import {
   extractPrefixes,
   parseSubjectBlocks,
@@ -145,15 +146,8 @@ const SDO = 'https://schema.org/'
 
 const SKOS_CONCEPT_CLASS = `${SKOS}Concept`
 const PROV_AGENT_CLASS = 'http://www.w3.org/ns/prov#Agent'
-const SH_IRI = 'http://www.w3.org/ns/shacl#IRI'
-
-/** True if the property shape declares its value must be an IRI */
-function isIriValued(po: { class?: string; nodeKind?: string }): boolean {
-  if (po.nodeKind === SH_IRI) return true
-  // Any sh:class constraint implies the value is a typed IRI (instance of that class)
-  if (po.class) return true
-  return false
-}
+// isIriValued / isValidIri / pruneInvalidIriQuads live in ~/utils/iri-validation
+// so the validation logic can be unit-tested without a Nuxt context.
 
 const TEXTAREA_PREDICATES = new Set([
   `${SKOS}definition`,
@@ -615,7 +609,11 @@ export function useEditMode(
             : literal(oldValue.value)
       store.value.removeQuad(s, p, oldObj, defaultGraph())
 
-      // Add new quad
+      // Add new quad. For IRI values we still add a (placeholder) quad so
+      // the UI keeps showing the row the user is editing — validation
+      // surfaces the invalid IRI and `pruneInvalidQuads` will strip it
+      // before serialisation. Without the placeholder the row disappears
+      // when the user clears the input.
       const newObj = oldValue.type === 'iri'
         ? namedNode(newValue)
         : oldValue.language
@@ -957,8 +955,25 @@ export function useEditMode(
 
   // ---- Serialization ----
 
+  /**
+   * Defensive backstop before any TTL output (issue #29). Validation should
+   * already have blocked the save, but if a value sneaks through (e.g. the
+   * user typed and cleared right before clicking save) we silently drop it
+   * rather than producing broken TTL like `<s> <p> <> .`.
+   * See `~/utils/iri-validation` for the rules.
+   */
+  function pruneInvalidQuads(): number {
+    if (!store.value) return 0
+    const dropped = pruneInvalidIriQuads(store.value)
+    if (dropped) {
+      console.warn('[useEditMode] Pruned', dropped, 'quads with invalid IRI objects before serialise.')
+    }
+    return dropped
+  }
+
   function serializeToTTL(): string {
     if (!store.value) return ''
+    pruneInvalidQuads()
 
     const writer = new Writer({
       prefixes: originalPrefixes.value,
@@ -986,6 +1001,7 @@ export function useEditMode(
         'originalParsedTTL:', !!originalParsedTTL.value)
       return serializeToTTL()
     }
+    pruneInvalidQuads()
 
     if (originalParsedTTL.value.subjectBlocks.length === 0) {
       console.warn('[useEditMode] originalParsedTTL has 0 subject blocks — patching will append instead of replace.')
@@ -1319,6 +1335,30 @@ export function useEditMode(
         }
       }
 
+      // Check that IRI-typed values look like real IRIs (issue #29).
+      // Catches blank values and bare scheme seeds like "https://" that the
+      // iri-input widget defaults to. Without this, a save would produce
+      // an empty NamedNode (or DefaultGraph term, since N3 collapses
+      // namedNode('') to that) and broken TTL output.
+      if (isIriValued(po)) {
+        for (const q of quads) {
+          const obj = q.object
+          // Skip literals and blank nodes — they're a separate concern.
+          if (obj.termType === 'Literal' || obj.termType === 'BlankNode') continue
+          if (!isValidIri(obj.value)) {
+            errors.push({
+              subjectIri,
+              subjectLabel,
+              predicate: po.path,
+              predicateLabel: getPredicateLabel(po.path),
+              message: obj.value
+                ? `"${obj.value}" is not a valid IRI`
+                : 'IRI value cannot be empty',
+            })
+          }
+        }
+      }
+
       // Validate nested properties
       if (po.propertyOrder) {
         const parentLabel = getPredicateLabel(po.path)
@@ -1357,6 +1397,24 @@ export function useEditMode(
                     predicate: po.path,
                     predicateLabel: parentLabel,
                     message: `${nestedLabel} "${nq.object.value}" is not an allowed value`,
+                  })
+                }
+              }
+            }
+            // Check IRI validity on nested properties (issue #29)
+            if (isIriValued(nested)) {
+              for (const nq of nestedQuads) {
+                const obj = nq.object
+                if (obj.termType === 'Literal' || obj.termType === 'BlankNode') continue
+                if (!isValidIri(obj.value)) {
+                  errors.push({
+                    subjectIri,
+                    subjectLabel,
+                    predicate: po.path,
+                    predicateLabel: parentLabel,
+                    message: obj.value
+                      ? `${nestedLabel} "${obj.value}" is not a valid IRI`
+                      : `${nestedLabel} IRI value cannot be empty`,
                   })
                 }
               }
