@@ -138,7 +138,18 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync .output/public/ "s3://${{ inputs.s3-bucket }}/" --delete --quiet
+          # Long-cache the immutable hashed Nuxt chunks — filenames change with content.
+          aws s3 sync .output/public/_nuxt/ "s3://${{ inputs.s3-bucket }}/_nuxt/" \
+            --delete --quiet \
+            --cache-control "public, max-age=31536000, immutable"
+
+          # Everything else (HTML entry, JSON exports, sitemap, etc.) MUST revalidate
+          # so workspaces/profile/labels updates take effect on the next page load
+          # rather than being held by the browser cache for hours.
+          aws s3 sync .output/public/ "s3://${{ inputs.s3-bucket }}/" \
+            --delete --quiet \
+            --exclude "_nuxt/*" \
+            --cache-control "public, max-age=0, must-revalidate"
           echo "Deploy complete"
 
       - name: Invalidate CloudFront cache
@@ -164,7 +175,11 @@ jobs:
 
       - name: Sync exports to S3
         run: |
-          aws s3 sync public/export/ "s3://${{ inputs.s3-bucket }}/export/" --delete --quiet
+          # JSON exports MUST revalidate so editors see config/data changes
+          # without waiting for the browser's heuristic cache to expire.
+          aws s3 sync public/export/ "s3://${{ inputs.s3-bucket }}/export/" \
+            --delete --quiet \
+            --cache-control "public, max-age=0, must-revalidate"
           echo "Export sync complete"
 
       - name: Invalidate CloudFront cache
