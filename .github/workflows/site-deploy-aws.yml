@@ -88,7 +88,13 @@ jobs:
         id: tools
         uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
         with:
-          prez-lite-ref: ${{ steps.resolve-sha.outputs.sha }}
+          # Pass the original ref (branch/tag/SHA) here — the action's
+          # `git clone -b` only accepts branch/tag names, and `git clone`
+          # uses git protocol, not codeload, so it's not affected by the
+          # tarball cache that motivates the resolve-sha step. The SHA is
+          # only needed for the Nuxt layer fetch (codeload-based) further
+          # down.
+          prez-lite-ref: ${{ inputs.prez-lite-ref }}
           node-version: ${{ inputs.node-version }}
 
       - name: Process vocabularies
