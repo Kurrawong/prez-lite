@@ -147,16 +147,22 @@ jobs:
           restore-keys: ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
+        # `pnpm install` triggers `nuxt prepare` as postinstall, which is what
+        # actually fetches the github layer via giget. The Nuxt layer URL is
+        # built from `process.env.PREZ_LITE_VERSION || 'main'` in nuxt.config,
+        # so the SHA must be set HERE, not just on the Build step — otherwise
+        # postinstall pins to `main` (hitting the stale codeload tarball) and
+        # the build later uses that cached layer.
         run: pnpm install
+        env:
+          PREZ_LITE_VERSION: ${{ steps.resolve-sha.outputs.sha }}
 
       - name: Build site
         run: pnpm generate
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
-          # Pin the Nuxt layer fetch (github:Kurrawong/prez-lite/web#<ref>) to
-          # the resolved SHA — same cache-bypass reason as the resolve-sha
-          # step above. nuxt.config.ts reads PREZ_LITE_VERSION when building
-          # the layer URL.
+          # Also set on Build (defensive — covers the case where pnpm generate
+          # re-runs nuxt prepare or invokes any layer-fetch path).
           PREZ_LITE_VERSION: ${{ steps.resolve-sha.outputs.sha }}
           NUXT_PUBLIC_GITHUB_CLIENT_ID: ${{ vars.GH_CLIENT_ID }}
           NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL: ${{ vars.GH_AUTH_WORKER_URL }}
