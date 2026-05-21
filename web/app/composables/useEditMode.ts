@@ -11,6 +11,7 @@
 import { Store, Parser, Writer, DataFactory, type Quad } from 'n3'
 import { getPredicateLabel, getPredicateDescription } from '~/utils/vocab-labels'
 import { isIriValued, isValidIri, pruneInvalidIriQuads } from '~/utils/iri-validation'
+import { seedRuntimeLabels } from '~/utils/vocab-labels'
 import {
   extractPrefixes,
   parseSubjectBlocks,
@@ -325,7 +326,11 @@ export function useEditMode(
         'prefixBlock length:', originalParsedTTL.value.prefixBlock.length,
         'prefixes:', Object.keys(originalPrefixes.value).join(', '))
 
-      // Load profile config and agents (in parallel)
+      // Load profile config, agents, and background labels (in parallel).
+      // labels.json seeds the runtime label store so dropdown/picker IRI
+      // values render with human prefLabels (Data Themes, reg-statuses, etc.)
+      // — the read-view path already seeds these via annotated-properties,
+      // but going straight to edit mode skips that, leaving slug-only options.
       const loads: Promise<void>[] = []
       if (!profileConfig.value) {
         loads.push(
@@ -343,6 +348,12 @@ export function useEditMode(
             .catch(() => { /* Non-fatal: agent picker will be empty */ }),
         )
       }
+      loads.push(
+        fetch('/export/system/labels.json')
+          .then(r => r.json())
+          .then(data => { seedRuntimeLabels(data) })
+          .catch(() => { /* Non-fatal: dropdowns fall back to local-name slugs */ }),
+      )
       await Promise.all(loads)
 
       isEditMode.value = true
