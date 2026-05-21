@@ -4,6 +4,18 @@ import type { RenderedProperty, PropertyValue } from '~/utils/annotated-properti
 defineProps<{
   properties: RenderedProperty[]
 }>()
+
+/**
+ * Predicates whose literal values are displayed in a monospace `<code>`
+ * block in read mode. The edit-mode textarea stays plain — only the
+ * rendered output gets the code styling (#27).
+ */
+const SKOS_EXAMPLE = 'http://www.w3.org/2004/02/skos/core#example'
+const CODE_RENDERED_PREDICATES = new Set([SKOS_EXAMPLE])
+
+function isCodeRendered(predicate: string): boolean {
+  return CODE_RENDERED_PREDICATES.has(predicate)
+}
 </script>
 
 <template>
@@ -32,12 +44,13 @@ defineProps<{
               <span class="inline">
                 <template v-for="(val, idx) in prop.values" :key="idx">
                   <span v-if="val.type === 'literal' && val.datatypeLabel" class="flex items-center justify-between gap-2">
-                    <span>{{ val.value }}</span>
+                    <component :is="isCodeRendered(prop.predicate) ? 'code' : 'span'" :class="isCodeRendered(prop.predicate) ? 'font-mono text-xs whitespace-pre-wrap break-words bg-muted/40 rounded px-1.5 py-0.5' : ''">{{ val.value }}</component>
                     <UBadge as="a" :href="val.datatype" target="_blank" rel="noopener noreferrer" :title="val.datatype" color="neutral" variant="subtle" size="xs" class="shrink-0 no-underline gap-0.5">
                       {{ val.datatypeLabel }}
                       <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3 h-3" />
                     </UBadge>
                   </span>
+                  <code v-else-if="val.type === 'literal' && isCodeRendered(prop.predicate)" class="font-mono text-xs whitespace-pre-wrap break-words bg-muted/40 rounded px-1.5 py-0.5">{{ val.value }}</code>
                   <span v-else-if="val.type === 'literal'">{{ val.value }}</span>
                   <span v-else-if="val.type === 'iri'" class="inline-flex items-center gap-1">
                     <a
@@ -74,12 +87,13 @@ defineProps<{
                             <span class="inline">
                               <template v-for="(nv, nidx) in nested.values" :key="nidx">
                                 <span v-if="nv.type === 'literal' && nv.datatypeLabel" class="flex items-center justify-between gap-2">
-                                  <span>{{ nv.value }}</span>
+                                  <component :is="isCodeRendered(nested.predicate) ? 'code' : 'span'" :class="isCodeRendered(nested.predicate) ? 'font-mono text-xs whitespace-pre-wrap break-words bg-muted/40 rounded px-1.5 py-0.5' : ''">{{ nv.value }}</component>
                                   <UBadge as="a" :href="nv.datatype" target="_blank" rel="noopener noreferrer" :title="nv.datatype" color="neutral" variant="subtle" size="xs" class="shrink-0 no-underline gap-0.5">
                                     {{ nv.datatypeLabel }}
                                     <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3 h-3" />
                                   </UBadge>
                                 </span>
+                                <code v-else-if="nv.type === 'literal' && isCodeRendered(nested.predicate)" class="font-mono text-xs whitespace-pre-wrap break-words bg-muted/40 rounded px-1.5 py-0.5">{{ nv.value }}</code>
                                 <span v-else-if="nv.type === 'literal'">{{ nv.value }}</span>
                                 <span v-else-if="nv.type === 'iri'" class="inline-flex items-center gap-1">
                                   <a
