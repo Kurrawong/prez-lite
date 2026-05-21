@@ -170,10 +170,20 @@ const monacoTheme = computed(() => colorMode.value === 'dark' ? 'prez-dark' : 'p
 // Fallback chain: edit branch → workspace branch → refreshFrom (e.g. main)
 const workspaceBranch = computed(() => workspace.activeReadBranch.value ?? defaultBranch as string)
 const refreshFromBranch = computed(() => workspace.activeWorkspace.value?.refreshFrom ?? defaultBranch as string)
+/** Format a workspace GitHub API error into a one-line UI string */
+function formatWorkspaceError(): string | null {
+  const e = workspace.lastGithubError.value
+  if (!e) return null
+  const detail = e.githubMessage || e.message
+  // "403 Forbidden — Resource not accessible by integration"
+  return e.status > 0 ? `${e.status} ${e.message.replace(/^\d+\s+/, '')}${e.githubMessage ? ` — ${e.githubMessage}` : ''}` : detail
+}
+
 const editMode = (editorOwner && editorRepoName)
   ? useEditMode(editorOwner, editorRepoName, editorFilePath as Ref<string>, effectiveBranch, uri, {
     fallbackBranches: [workspaceBranch, refreshFromBranch],
     ensureEditBranch: () => workspace.ensureEditBranch(),
+    getLastBranchError: formatWorkspaceError,
   })
   : null
 
@@ -2277,6 +2287,7 @@ function copyIriToClipboard(iri: string) {
             :original-t-t-l="saveModalOriginalTTL"
             :patched-t-t-l="saveModalPatchedTTL"
             :saving="editMode?.saveStatus.value === 'saving'"
+            :error="editMode?.saveStatus.value === 'error' ? (editMode?.error?.value ?? null) : null"
             @confirm="handleSaveConfirm"
             @cancel="showSaveModal = false"
           />

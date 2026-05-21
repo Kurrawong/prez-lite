@@ -7,7 +7,7 @@
  * State is stored in localStorage (persists across login redirects and page refreshes).
  */
 
-import { createGithubFetch } from '~/utils/github-fetch'
+import { createGithubFetch, type GithubFetchError } from '~/utils/github-fetch'
 
 export interface WorkspaceDefinition {
   slug: string
@@ -200,7 +200,12 @@ export function useWorkspace() {
 
   // ---- GitHub Branch API ----
 
-  const githubFetch = createGithubFetch(token, 'workspace')
+  // Structured info about the most recent failing GitHub call (status code,
+  // response body, etc.). useEditMode reads this when a save flow fails so
+  // it can surface a real error message in the UI instead of "Failed to
+  // create edit branch".
+  const lastGithubError = ref<GithubFetchError | null>(null)
+  const githubFetch = createGithubFetch(token, 'workspace', lastGithubError)
 
   async function fetchBranches() {
     if (!owner || !repo || !token.value) return
@@ -321,6 +326,8 @@ export function useWorkspace() {
     comparisons: readonly(comparisons),
     branchesLoading: readonly(branchesLoading),
     branchesError,
+    /** Structured GitHub error from the last failing branch / API call */
+    lastGithubError: readonly(lastGithubError),
 
     // Actions
     loadDefinitions,
