@@ -327,14 +327,19 @@ export function useEditMode(
         'prefixes:', Object.keys(originalPrefixes.value).join(', '))
 
       // Load profile config, agents, and background labels (in parallel).
-      // labels.json seeds the runtime label store so dropdown/picker IRI
-      // values render with human prefLabels (Data Themes, reg-statuses, etc.)
-      // — the read-view path already seeds these via annotated-properties,
-      // but going straight to edit mode skips that, leaving slug-only options.
+      //
+      // `cache: 'no-store'` is deliberate: any visitor who hit the site
+      // before we set proper Cache-Control headers will have these files
+      // cached by the browser under the OLD heuristic policy (cached for
+      // days). The new server headers (max-age=0, must-revalidate) only
+      // apply to *future* fetches that pass through HTTP cache. To unblock
+      // existing users we have to bypass HTTP cache entirely on these
+      // small JSON files — they're tiny and a fresh fetch each time is
+      // cheap, and editors need them to be current to render correctly.
       const loads: Promise<void>[] = []
       if (!profileConfig.value) {
         loads.push(
-          fetch('/export/system/profile.json')
+          fetch('/export/system/profile.json', { cache: 'no-store' })
             .then(r => r.json())
             .then(data => { profileConfig.value = data })
             .catch(() => { /* Non-fatal: forms still work without ordering */ }),
@@ -342,14 +347,14 @@ export function useEditMode(
       }
       if (!agents.value.length) {
         loads.push(
-          fetch('/export/system/agents.json')
+          fetch('/export/system/agents.json', { cache: 'no-store' })
             .then(r => r.json())
             .then((data: AgentEntry[]) => { agents.value = data })
             .catch(() => { /* Non-fatal: agent picker will be empty */ }),
         )
       }
       loads.push(
-        fetch('/export/system/labels.json')
+        fetch('/export/system/labels.json', { cache: 'no-store' })
           .then(r => r.json())
           .then(data => { seedRuntimeLabels(data) })
           .catch(() => { /* Non-fatal: dropdowns fall back to local-name slugs */ }),
