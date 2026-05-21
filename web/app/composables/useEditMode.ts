@@ -212,6 +212,13 @@ export function useEditMode(
     fallbackBranches?: Ref<string>[]
     /** Called before first save to ensure the edit branch exists */
     ensureEditBranch?: () => Promise<boolean>
+    /**
+     * Read the most recent GitHub API error from whatever helper owns the
+     * branch-creation flow (typically `useWorkspace`'s `lastGithubError`).
+     * Used to surface a real error message in the UI when `ensureEditBranch`
+     * returns false, instead of the generic "Failed to create edit branch".
+     */
+    getLastBranchError?: () => string | null
   },
 ) {
   // Core state
@@ -1110,7 +1117,10 @@ export function useEditMode(
       if (options?.ensureEditBranch) {
         const ok = await options.ensureEditBranch()
         if (!ok) {
-          error.value = 'Failed to create edit branch'
+          const detail = options.getLastBranchError?.()
+          error.value = detail
+            ? `Couldn't create the edit branch: ${detail}`
+            : 'Failed to create edit branch'
           saveStatus.value = 'error'
           return false
         }
@@ -1155,7 +1165,10 @@ export function useEditMode(
       if (options?.ensureEditBranch) {
         const ok = await options.ensureEditBranch()
         if (!ok) {
-          error.value = 'Failed to create edit branch'
+          const detail = options.getLastBranchError?.()
+          error.value = detail
+            ? `Couldn't create the edit branch: ${detail}`
+            : 'Failed to create edit branch'
           saveStatus.value = 'error'
           return false
         }

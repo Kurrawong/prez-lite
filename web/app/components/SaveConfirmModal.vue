@@ -6,6 +6,13 @@ const props = defineProps<{
   originalTTL: string
   patchedTTL: string
   saving?: boolean
+  /**
+   * Save error from the most recent attempt (#19). When set, an alert is
+   * shown so the user can see what GitHub returned (e.g. 403 messages from
+   * a stale token or a missing App authorisation) rather than the modal
+   * silently doing nothing.
+   */
+  error?: string | null
 }>()
 
 const emit = defineEmits<{
@@ -162,11 +169,24 @@ function changeTypePrefix(type: 'added' | 'removed' | 'modified'): string {
       />
     </div>
 
+    <!-- Save failure surfacing (#19) — show the actual GitHub response so
+         users / supporters can diagnose, instead of the click silently
+         doing nothing. -->
+    <UAlert
+      v-if="error"
+      color="error"
+      variant="soft"
+      icon="i-heroicons-exclamation-triangle"
+      title="Save failed"
+      :description="error"
+      class="text-sm"
+    />
+
     <!-- Actions -->
     <div class="flex justify-end gap-2 pt-2">
       <UButton variant="ghost" :disabled="saving" @click="emit('cancel')">Cancel</UButton>
       <UButton :loading="saving" @click="handleConfirm">
-        Save to GitHub
+        {{ error ? 'Retry save' : 'Save to GitHub' }}
       </UButton>
     </div>
   </div>
