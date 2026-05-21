@@ -61,11 +61,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Resolve `main` (or any branch ref) to an immutable SHA before any
+      # download. GitHub's codeload tarball CDN serves stale content for
+      # `refs/heads/<branch>` URLs (cache window appears to be ~1h+), which
+      # means giget — and therefore Nuxt's `extends: github:.../web#main`
+      # layer fetch — can silently build against pre-merge code. Pinning
+      # downstream steps to the resolved SHA bypasses the cache.
+      - name: Resolve prez-lite ref to SHA
+        id: resolve-sha
+        run: |
+          REF="${{ inputs.prez-lite-ref }}"
+          # If it already looks like a 40-char SHA, use it as-is.
+          if [[ "$REF" =~ ^[0-9a-f]{40}$ ]]; then
+            SHA="$REF"
+          else
+            SHA=$(git ls-remote https://github.com/Kurrawong/prez-lite.git "refs/heads/$REF" "refs/tags/$REF" | awk '{print $1; exit}')
+            if [ -z "$SHA" ]; then
+              echo "Could not resolve $REF on Kurrawong/prez-lite" >&2
+              exit 1
+            fi
+          fi
+          echo "Resolved $REF -> $SHA"
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+
       - name: Fetch prez-lite tools
         id: tools
         uses: Kurrawong/prez-lite/.github/actions/fetch-prez-lite-tools@main
         with:
-          prez-lite-ref: ${{ inputs.prez-lite-ref }}
+          prez-lite-ref: ${{ steps.resolve-sha.outputs.sha }}
           node-version: ${{ inputs.node-version }}
 
       - name: Process vocabularies
@@ -124,6 +147,11 @@ jobs:
         run: pnpm generate
         env:
           NODE_OPTIONS: '--max-old-space-size=4096'
+          # Pin the Nuxt layer fetch (github:Kurrawong/prez-lite/web#<ref>) to
+          # the resolved SHA — same cache-bypass reason as the resolve-sha
+          # step above. nuxt.config.ts reads PREZ_LITE_VERSION when building
+          # the layer URL.
+          PREZ_LITE_VERSION: ${{ steps.resolve-sha.outputs.sha }}
           NUXT_PUBLIC_GITHUB_CLIENT_ID: ${{ vars.GH_CLIENT_ID }}
           NUXT_PUBLIC_GITHUB_AUTH_WORKER_URL: ${{ vars.GH_AUTH_WORKER_URL }}
           NUXT_PUBLIC_GITHUB_REPO: ${{ vars.GH_REPO }}
