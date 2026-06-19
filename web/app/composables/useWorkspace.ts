@@ -177,7 +177,15 @@ export function useWorkspace() {
     const wsOk = await ensureWorkspaceBranch()
     if (!wsOk) return false
 
-    if (branches.value.some(b => b.name === branchName)) return true
+    if (branches.value.some(b => b.name === branchName)) {
+      // An edit branch left over from an abandoned session holds stale content;
+      // useGitHubFile.load() reads the edit branch first, so reusing it would
+      // load outdated TTL. Reset it to the workspace branch head so editing
+      // always starts from current state (#41). Discards any un-merged commits
+      // on the edit branch — intended, edit branches are ephemeral.
+      await resetBranch(branchName, ws.slug)
+      return true
+    }
 
     // Create from the workspace branch (e.g. staging)
     const created = await createBranch(branchName, ws.slug)
@@ -275,6 +283,36 @@ export function useWorkspace() {
     if (!data) return false
 
     // Refresh branch list
+    await fetchBranches()
+    return true
+  }
+
+  /**
+   * Force-reset an existing branch to the head of `fromBranch`, discarding any
+   * commits unique to it. Used to refresh a stale edit branch on re-entry (#41).
+   */
+  async function resetBranch(name: string, fromBranch: string): Promise<boolean> {
+    if (!owner || !repo || !token.value) return false
+
+    // Resolve the source branch SHA (cache first, then API)
+    let sha = branches.value.find(b => b.name === fromBranch)?.sha
+    if (!sha) {
+      const branchData = await githubFetch<{ commit: { sha: string } }>(
+        `https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(fromBranch)}`,
+      )
+      sha = branchData?.commit?.sha
+    }
+    if (!sha) return false
+
+    const data = await githubFetch<{ ref: string }>(
+      `https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(name)}`,
+      {
+        method: 'PATCH',
+        body: JSON.stringify({ sha, force: true }),
+      },
+    )
+    if (!data) return false
+
     await fetchBranches()
     return true
   }
