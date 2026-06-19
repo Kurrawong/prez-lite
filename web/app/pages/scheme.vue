@@ -810,6 +810,15 @@ const editErrorPath = ref('')
 // On page load auth token and vocab metadata may not be available yet, so watch all three.
 watch([editView, authToken, vocabSlugForEditor], async ([view]) => {
   if (view !== 'none' && editMode && !editMode.isEditMode.value && vocabSlugForEditor.value) {
+    // Bind the workspace's vocab context to the vocab being edited. Reaching the
+    // editor via the home → vocab card path doesn't go through the workspace
+    // dashboard (which is the only place that calls selectVocab), so vocabSlug
+    // would otherwise stay null and ensureEditBranch() fails the first save with
+    // "Failed to create edit branch". Set it here so every entry path works.
+    if (workspace.activeWorkspace.value
+      && workspace.activeVocabSlug.value !== vocabSlugForEditor.value) {
+      await workspace.selectVocab(vocabSlugForEditor.value)
+    }
     await editMode.enterEditMode()
     if (editMode.error.value) {
       editErrorMessage.value = editMode.error.value
