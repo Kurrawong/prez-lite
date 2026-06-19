@@ -204,6 +204,26 @@ export function clearCaches() {
   listConceptsPromiseCache.clear()
 }
 
+/**
+ * Inject a vocabulary into the in-memory caches so a freshly-created vocab —
+ * one that exists only on an edit branch and is not yet in the generated
+ * index.json (CI hasn't reprocessed) — is visible to the editor immediately.
+ *
+ * Idempotent by IRI. After calling this, the caller must
+ * `refreshNuxtData(['schemes', 'vocabMetadata', 'export-vocabs'])` so the
+ * useAsyncData consumers (useScheme, useShare) re-read these caches.
+ */
+export function injectVocab(meta: VocabMetadata): void {
+  if (!cachedVocabMetadata) cachedVocabMetadata = []
+  if (!cachedVocabMetadata.some(v => v.iri === meta.iri)) {
+    cachedVocabMetadata.push(meta)
+  }
+  // Keep the derived schemes cache in sync if it has already been built.
+  if (cachedSchemes && !cachedSchemes.some(s => s.iri === meta.iri)) {
+    cachedSchemes.push(metadataToScheme(meta))
+  }
+}
+
 // Fetch vocabulary metadata (new format) — cached
 export async function fetchVocabMetadata(): Promise<VocabMetadata[]> {
   if (cachedVocabMetadata) return cachedVocabMetadata
