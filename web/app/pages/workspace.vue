@@ -148,6 +148,24 @@ const prRejecting = ref(false)
 const prCommenting = ref(false)
 const promotionError = ref<string | null>(null)
 
+// --- Create vocabulary ---
+const vocabCreate = useVocabCreate()
+const showCreateModal = ref(false)
+const createIriBase = ref('')
+
+async function openCreateModal() {
+  createIriBase.value = await vocabCreate.suggestIriBase()
+  showCreateModal.value = true
+}
+
+async function handleCreateVocab(payload: { title: string; definition: string; slug: string; iri: string }) {
+  const res = await vocabCreate.createVocabulary(payload)
+  if (res.ok && res.iri) {
+    showCreateModal.value = false
+    navigateTo({ path: '/scheme', query: { uri: res.iri } })
+  }
+}
+
 async function handleSubmitForPublishing() {
   promotionError.value = null
   // Refresh live PR state first so we don't offer Submit on an already-open PR (#41)
@@ -436,6 +454,22 @@ const workspaceBreadcrumbs = computed(() => {
           </div>
         </div>
 
+        <!-- Vocabularies header + create -->
+        <div class="flex items-center justify-between mt-2 mb-3">
+          <div>
+            <h2 class="text-lg font-semibold">Vocabularies</h2>
+            <p class="text-xs text-muted">Click a vocabulary to open it in the editor.</p>
+          </div>
+          <UButton
+            size="sm"
+            icon="i-heroicons-plus"
+            variant="soft"
+            @click="openCreateModal"
+          >
+            New vocabulary
+          </UButton>
+        </div>
+
         <!-- Loading vocabs -->
         <div v-if="vocabsLoading" class="py-12 text-center">
           <UIcon name="i-heroicons-arrow-path" class="size-5 animate-spin text-muted" />
@@ -452,11 +486,6 @@ const workspaceBreadcrumbs = computed(() => {
         <div v-else class="space-y-1">
           <!-- Error selecting vocab -->
           <UAlert v-if="selectError" color="error" icon="i-heroicons-exclamation-triangle" :description="selectError" class="mb-4" />
-
-          <h2 class="text-lg font-semibold mb-1">Vocabularies</h2>
-          <p class="text-xs text-muted mb-3">
-            Click a vocabulary to open it in the editor.
-          </p>
 
           <button
             v-for="vocab in vocabs"
@@ -549,6 +578,22 @@ const workspaceBreadcrumbs = computed(() => {
             @reject="handleRejectPR"
             @comment="handlePRComment"
             @close="showReviewModal = false"
+          />
+        </template>
+      </UModal>
+
+      <!-- Create Vocabulary Modal -->
+      <UModal v-model:open="showCreateModal">
+        <template #header>
+          <h3 class="font-semibold">New vocabulary</h3>
+        </template>
+        <template #body>
+          <CreateVocabModal
+            :creating="vocabCreate.creating.value"
+            :error="vocabCreate.error.value"
+            :iri-base="createIriBase"
+            @create="handleCreateVocab"
+            @close="showCreateModal = false"
           />
         </template>
       </UModal>
