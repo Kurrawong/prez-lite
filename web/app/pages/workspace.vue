@@ -201,19 +201,18 @@ async function handleMergePR() {
   const pr = promotion.stagingPR.value
   if (!pr) return
 
-  const branches = promotion.getBranches('approved')
-
   prMerging.value = true
   promotionError.value = null
   const ok = await promotion.mergePR(pr.number)
   prMerging.value = false
 
   if (ok) {
-    // Delete staging branch after merge — it's now merged into main.
-    // A fresh branch will be created lazily on next save.
-    if (branches) {
-      await workspace.deleteBranch(branches.head)
-    }
+    // NB: do NOT delete the head branch here. For publishing (Layer 3) the head
+    // is the workspace root branch (e.g. develop) — a long-lived integration
+    // branch, not an ephemeral edit branch. Deleting it removed the workspace
+    // branch entirely and broke the workspace until it was recreated. Ephemeral
+    // edit-branch cleanup happens in the Layer 2 flow (scheme.vue), guarded to
+    // promotionLayer === 'pending'.
     await workspace.fetchBranches()
     changedVocabs.value = await promotion.fetchChangedVocabs()
   } else {
@@ -225,8 +224,6 @@ async function handleRejectPR(comment: string) {
   const pr = promotion.stagingPR.value
   if (!pr) return
 
-  const branches = promotion.getBranches('approved')
-
   prRejecting.value = true
   promotionError.value = null
   const ok = await promotion.closePR(pr.number, comment)
@@ -235,12 +232,10 @@ async function handleRejectPR(comment: string) {
   if (ok) {
     showReviewModal.value = false
 
-    // Delete the staging branch to discard conflicting/rejected changes
-    // A fresh staging branch will be created on next save
-    if (branches) {
-      await workspace.deleteBranch(branches.head)
-    }
-
+    // NB: do NOT delete the head branch on reject. For publishing the head is
+    // the workspace root branch (e.g. develop); its accumulated changes must
+    // survive a rejected publish so they can be re-submitted. Only the PR is
+    // closed. (Deleting develop here previously discarded all workspace work.)
     await workspace.fetchBranches()
     promotion.findExistingPRs(true)
     changedVocabs.value = await promotion.fetchChangedVocabs()

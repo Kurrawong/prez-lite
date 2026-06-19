@@ -152,6 +152,53 @@ describe('protected branches from definitions', () => {
   })
 })
 
+describe('branch deletion safety (publish must not delete the workspace branch)', () => {
+  // Mirrors the guard added to useWorkspace.deleteBranch: a branch may only be
+  // deleted when it is NOT protected (main + every workspace root slug).
+  function canDelete(name: string, protectedSet: Set<string>): boolean {
+    return !protectedSet.has(name)
+  }
+
+  // Mirrors usePromotion.getBranches for the two promotion layers.
+  function getBranches(
+    layer: 'pending' | 'approved',
+    ws: WorkspaceDefinition,
+    editBranch: string,
+  ): { head: string; base: string } {
+    if (layer === 'pending') return { head: editBranch, base: ws.slug }
+    return { head: ws.slug, base: ws.refreshFrom }
+  }
+
+  const ws: WorkspaceDefinition = { slug: 'develop', label: 'Develop', description: '', refreshFrom: 'master' }
+  const protectedSet = new Set(['main', 'develop', 'staging'])
+  const editBranch = 'edit/develop/AssociationType'
+
+  it('Layer 3 (approved/publish) head is the workspace root branch', () => {
+    expect(getBranches('approved', ws, editBranch).head).toBe('develop')
+  })
+
+  it('refuses to delete the workspace branch published in Layer 3 (the bug)', () => {
+    const head = getBranches('approved', ws, editBranch).head
+    expect(canDelete(head, protectedSet)).toBe(false)
+  })
+
+  it('Layer 2 (pending) head is the ephemeral edit branch', () => {
+    expect(getBranches('pending', ws, editBranch).head).toBe(editBranch)
+  })
+
+  it('still allows deleting the ephemeral edit branch (Layer 2 cleanup)', () => {
+    const head = getBranches('pending', ws, editBranch).head
+    expect(canDelete(head, protectedSet)).toBe(true)
+  })
+
+  it('refuses main and every workspace slug, allows edit/* branches', () => {
+    expect(canDelete('main', protectedSet)).toBe(false)
+    expect(canDelete('develop', protectedSet)).toBe(false)
+    expect(canDelete('staging', protectedSet)).toBe(false)
+    expect(canDelete('edit/staging/colours', protectedSet)).toBe(true)
+  })
+})
+
 describe('workspace label', () => {
   function deriveLabel(
     state: WorkspaceState | null,

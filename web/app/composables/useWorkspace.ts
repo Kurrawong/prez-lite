@@ -326,6 +326,15 @@ export function useWorkspace() {
   async function deleteBranch(name: string): Promise<boolean> {
     if (!owner || !repo || !token.value) return false
 
+    // Safety net: never delete a protected branch (main + every workspace root
+    // slug, e.g. develop/staging). Only ephemeral edit branches
+    // (edit/<workspace>/<vocab>) should ever be deleted. This guards against any
+    // caller mistakenly passing a workspace branch as the merge head.
+    if (protectedBranches.value.has(name)) {
+      console.warn(`[workspace] Refusing to delete protected branch: ${name}`)
+      return false
+    }
+
     try {
       const res = await fetch(
         `https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(name)}`,
