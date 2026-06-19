@@ -8,7 +8,7 @@
  * Provides: PR detection, creation, comment reading/posting.
  */
 
-import { createGithubFetch } from '~/utils/github-fetch'
+import { createGithubFetch, type GithubFetchError } from '~/utils/github-fetch'
 import { fetchVocabMetadata } from '~/composables/useVocabData'
 import type { SubjectChange } from '~/composables/useEditMode'
 
@@ -104,7 +104,11 @@ export function usePromotion(
   const { token } = useGitHubAuth()
   const { owner, repo } = workspace
 
-  const githubFetch = createGithubFetch(token, 'promotion')
+  // Capture structured errors from GitHub reads so failures surface to the
+  // user instead of collapsing to a silent null (which the UI misreads as
+  // "no PR exists"). See #41.
+  const lastFetchError = ref<GithubFetchError | null>(null)
+  const githubFetch = createGithubFetch(token, 'promotion', lastFetchError)
 
   const branchPR = ref<PRInfo | null>(null)
   const stagingPR = ref<PRInfo | null>(null)
@@ -147,6 +151,12 @@ export function usePromotion(
         stagingPR.value = data?.length ? toPRInfo(data[0]!) : null
       } else {
         stagingPR.value = null
+      }
+
+      // A null PR ref can mean "no PR" OR "the lookup failed". Surface the
+      // latter so the UI doesn't silently offer Submit on an already-open PR.
+      if (lastFetchError.value) {
+        error.value = lastFetchError.value.githubMessage ?? lastFetchError.value.message
       }
     } catch (e: unknown) {
       error.value = e instanceof Error ? e.message : 'Failed to check PRs'

@@ -241,9 +241,11 @@ const prRejecting = ref(false)
 const prCommenting = ref(false)
 const promotionError = ref<string | null>(null)
 
-function handlePromote(layerName: 'pending' | 'approved') {
+async function handlePromote(layerName: 'pending' | 'approved') {
   promotionError.value = null
   promotionLayer.value = layerName
+  // Refresh live PR state first so we don't offer Submit on an already-open PR (#41)
+  if (promotion) await promotion.findExistingPRs(true)
   promotionMode.value = 'create'
   showReviewModal.value = true
 }
@@ -255,6 +257,8 @@ async function handleViewPR(layerName: 'pending' | 'approved') {
   prCommentsLoading.value = true
   showReviewModal.value = true
 
+  // Force a fresh lookup so the review screen reflects current PR state (#41)
+  if (promotion) await promotion.findExistingPRs(true)
   const pr = layerName === 'pending' ? promotion?.branchPR.value : promotion?.stagingPR.value
   if (pr && promotion) {
     prComments.value = await promotion.getPRComments(pr.number)

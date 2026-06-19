@@ -148,8 +148,10 @@ const prRejecting = ref(false)
 const prCommenting = ref(false)
 const promotionError = ref<string | null>(null)
 
-function handleSubmitForPublishing() {
+async function handleSubmitForPublishing() {
   promotionError.value = null
+  // Refresh live PR state first so we don't offer Submit on an already-open PR (#41)
+  await promotion.findExistingPRs(true)
   promotionMode.value = 'create'
   showReviewModal.value = true
 }
@@ -160,6 +162,8 @@ async function handleViewPR() {
   prCommentsLoading.value = true
   showReviewModal.value = true
 
+  // Force a fresh lookup so the review screen reflects current PR state (#41)
+  await promotion.findExistingPRs(true)
   const pr = promotion.stagingPR.value
   if (pr) {
     prComments.value = await promotion.getPRComments(pr.number)

@@ -278,3 +278,69 @@ describe('usePromotion API orchestration', () => {
     expect(body).toContain('Properties changed')
   })
 })
+
+// ---------------------------------------------------------------------------
+// Structured error capture (#41 slice 2): a failed PR lookup must surface a
+// real error instead of collapsing to a silent null the UI reads as "no PR".
+// ---------------------------------------------------------------------------
+
+describe('createGithubFetch lastError capture', () => {
+  const token = ref<string | null>('test-token')
+  let mockFetch: ReturnType<typeof vi.fn>
+
+  beforeEach(() => {
+    mockFetch = vi.fn()
+    vi.stubGlobal('fetch', mockFetch)
+  })
+
+  it('populates lastError with status + GitHub message on a non-OK response', async () => {
+    mockFetch.mockResolvedValue({
+      ok: false,
+      status: 403,
+      statusText: 'Forbidden',
+      text: async () => JSON.stringify({ message: 'Resource not accessible by integration' }),
+    })
+
+    const { createGithubFetch } = await import('~/utils/github-fetch')
+    const lastError = ref<import('~/utils/github-fetch').GithubFetchError | null>(null)
+    const githubFetch = createGithubFetch(token, 'test', lastError)
+
+    const result = await githubFetch('https://api.github.com/repos/o/r/pulls?state=open')
+
+    expect(result).toBeNull()
+    expect(lastError.value).not.toBeNull()
+    expect(lastError.value!.status).toBe(403)
+    expect(lastError.value!.githubMessage).toBe('Resource not accessible by integration')
+  })
+
+  it('clears lastError after a subsequent successful call', async () => {
+    const { createGithubFetch } = await import('~/utils/github-fetch')
+    const lastError = ref<import('~/utils/github-fetch').GithubFetchError | null>(null)
+    const githubFetch = createGithubFetch(token, 'test', lastError)
+
+    mockFetch.mockResolvedValueOnce({
+      ok: false, status: 404, statusText: 'Not Found', text: async () => '{}',
+    })
+    await githubFetch('https://api.github.com/repos/o/r/pulls')
+    expect(lastError.value).not.toBeNull()
+
+    // A later success must clear it, else it reads as a stale failure
+    mockFetch.mockResolvedValueOnce({
+      ok: true, status: 200, json: async () => [],
+    })
+    await githubFetch('https://api.github.com/repos/o/r/pulls')
+    expect(lastError.value).toBeNull()
+  })
+
+  it('captures "Not authenticated" when there is no token', async () => {
+    const { createGithubFetch } = await import('~/utils/github-fetch')
+    const lastError = ref<import('~/utils/github-fetch').GithubFetchError | null>(null)
+    const noToken = ref<string | null>(null)
+    const githubFetch = createGithubFetch(noToken, 'test', lastError)
+
+    const result = await githubFetch('https://api.github.com/repos/o/r/pulls')
+
+    expect(result).toBeNull()
+    expect(lastError.value?.message).toBe('Not authenticated')
+  })
+})
