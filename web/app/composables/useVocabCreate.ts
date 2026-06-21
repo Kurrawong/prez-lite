@@ -29,6 +29,26 @@ export function slugify(title: string): string {
 }
 
 /**
+ * Derive a lowerCamelCase IRI local name from a concept's preferred label, to
+ * match this repo's existing concept IRIs (e.g. "Cross Reference" →
+ * crossReference, alongside collectiveTitle, hadDerivation). Drops unsafe
+ * characters, joins words, and lower-cases the first letter. Falls back to
+ * 'concept' for empty / blank input.
+ */
+export function conceptLocalName(label: string): string {
+  const words = (label || '')
+    .replace(/[^A-Za-z0-9 _-]/g, ' ') // unsafe chars become word separators
+    .split(/[\s_-]+/)
+    .filter(Boolean)
+  if (words.length === 0) return 'concept'
+  const camel = words
+    .map((w, i) => (i === 0 ? w.charAt(0).toLowerCase() : w.charAt(0).toUpperCase()) + w.slice(1))
+    .join('')
+    .slice(0, 80)
+  return camel || 'concept'
+}
+
+/**
  * Derive the IRI base (everything up to and including the final slash) from the
  * existing vocabularies, picking the most common base so a new vocab's IRI
  * matches the site's convention (e.g. https://pid.geoscience.gov.au/def/voc/ga/).

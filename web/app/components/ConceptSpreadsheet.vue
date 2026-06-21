@@ -392,7 +392,6 @@ function getExpandedProperties(iri: string): EditableProperty[] {
               @add:nested-value="(bnId, pred, type, defVal) => editMode.addNestedValue(bnId, pred, type, defVal)"
               @add:blank-node="(pred) => editMode.addBlankNode(row.original.iri, pred)"
               @remove:blank-node="(pred, bnId) => editMode.removeBlankNode(row.original.iri, pred, bnId)"
-              @rename="(oldIri, newIri) => editMode.renameSubject(oldIri, newIri)"
               @delete="editMode.deleteConcept(row.original.iri)"
             />
           </div>

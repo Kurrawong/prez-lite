@@ -1289,28 +1289,39 @@ function scrollToMetadataProperty(predicateIri: string) {
 }
 
 // --- Add Concept ---
+const showAddConcept = ref(false)
+const addConceptError = ref<string | null>(null)
+
+// Scheme IRI used as the IRI base for new concepts (trailing '/' or '#' ensured).
+const addConceptBase = computed(() =>
+  uri.value.endsWith('/') || uri.value.endsWith('#') ? uri.value : `${uri.value}/`,
+)
 
 function handleAddConcept() {
   if (!editMode) return
+  addConceptError.value = null
+  showAddConcept.value = true
+}
 
-  // Generate a unique local name
-  const existingIris = new Set(editMode.concepts.value.map(c => c.iri))
-  const schemeBase = uri.value.endsWith('/') || uri.value.endsWith('#')
-    ? uri.value
-    : `${uri.value}/`
-  let counter = 1
-  while (existingIris.has(`${schemeBase}new-concept-${counter}`)) {
-    counter++
+function handleCreateConcept(payload: { prefLabel: string; localName: string }) {
+  if (!editMode) return
+  addConceptError.value = null
+
+  // Reject collisions with existing concept IRIs.
+  const newIri = `${addConceptBase.value}${payload.localName}`
+  if (editMode.concepts.value.some(c => c.iri === newIri)) {
+    addConceptError.value = `A concept with identifier "${payload.localName}" already exists`
+    return
   }
 
-  const localName = `new-concept-${counter}`
   const broaderIri = selectedConceptUri.value || undefined
-  const conceptIri = editMode.addConcept(localName, 'New Concept', broaderIri)
+  const conceptIri = editMode.addConcept(payload.localName, payload.prefLabel, broaderIri)
   if (conceptIri) {
     selectConcept(conceptIri)
     expandToId.value = conceptIri
     // Clear after the tree has had time to react
     setTimeout(() => { expandToId.value = undefined }, 500)
+    showAddConcept.value = false
   }
 }
 
@@ -2037,7 +2048,6 @@ function copyIriToClipboard(iri: string) {
                   @remove:value="(pred, val) => editMode!.removeValue(selectedConceptUri!, pred, val)"
                   @update:broader="(newIris, oldIris) => editMode!.syncBroaderNarrower(selectedConceptUri!, newIris, oldIris)"
                   @update:related="(newIris, oldIris) => editMode!.syncRelated(selectedConceptUri!, newIris, oldIris)"
-                  @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectConcept(newIri) }"
                   @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
 
@@ -2101,7 +2111,6 @@ function copyIriToClipboard(iri: string) {
                   @add:nested-value="(bnId, pred, type, defVal) => editMode!.addNestedValue(bnId, pred, type, defVal)"
                   @add:blank-node="(pred) => editMode!.addBlankNode(selectedConceptUri!, pred)"
                   @remove:blank-node="(pred, bnId) => editMode!.removeBlankNode(selectedConceptUri!, pred, bnId)"
-                  @rename="(oldIri, newIri) => { editMode!.renameSubject(oldIri, newIri); selectConcept(newIri) }"
                   @delete="editMode!.deleteConcept(selectedConceptUri!)"
                 />
               </template>
@@ -2370,6 +2379,21 @@ function copyIriToClipboard(iri: string) {
         </template>
       </UModal>
 
+
+      <!-- Add Concept Modal -->
+      <UModal v-model:open="showAddConcept">
+        <template #header>
+          <h3 class="font-semibold">New concept</h3>
+        </template>
+        <template #body>
+          <CreateConceptModal
+            :error="addConceptError"
+            :scheme-base="addConceptBase"
+            @create="handleCreateConcept"
+            @close="showAddConcept = false"
+          />
+        </template>
+      </UModal>
 
       <!-- Move Concept Modal -->
       <MoveConceptModal

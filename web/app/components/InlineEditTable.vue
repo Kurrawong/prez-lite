@@ -61,7 +61,6 @@ const emit = defineEmits<{
   'add:nested-value': [blankNodeId: string, predicate: string, type: 'iri' | 'literal', defaultValue?: string]
   'add:blank-node': [predicate: string]
   'remove:blank-node': [predicate: string, blankNodeId: string]
-  'rename': [oldIri: string, newIri: string]
   'delete': []
 }>()
 
@@ -89,24 +88,19 @@ const languageOptions = [
 
 const editingPredicate = ref<string | null>(null)
 const showDeleteConfirm = ref(false)
-const editingIri = ref(false)
-const editIriValue = ref('')
 
-function startIriEdit() {
-  editIriValue.value = props.subjectIri
-  editingIri.value = true
-}
+// The subject IRI is read-only in the UI (changing it would break back-links);
+// renaming is a manual TTL-only operation. Offer copy-to-clipboard instead.
+const iriCopied = ref(false)
 
-function commitIriEdit() {
-  const newIri = editIriValue.value.trim()
-  if (newIri && newIri !== props.subjectIri) {
-    emit('rename', props.subjectIri, newIri)
+async function copyIri() {
+  try {
+    await navigator.clipboard.writeText(props.subjectIri)
+    iriCopied.value = true
+    setTimeout(() => { iriCopied.value = false }, 1500)
+  } catch {
+    // Clipboard unavailable (e.g. insecure context) — nothing to do.
   }
-  editingIri.value = false
-}
-
-function cancelIriEdit() {
-  editingIri.value = false
 }
 
 // Watch for autoEditPredicate changes
@@ -341,26 +335,17 @@ onUnmounted(() => {
 
 <template>
   <div ref="rootRef" @click="stopEditing()">
-    <!-- Subject IRI (click-to-edit) -->
-    <div v-if="editingIri" class="flex items-center gap-2 mb-3" @click.stop>
-      <UInput
-        v-model="editIriValue"
-        class="flex-1 font-mono text-sm"
-        size="sm"
-        autofocus
-        @keydown.enter="commitIriEdit"
-        @keydown.escape="cancelIriEdit"
-      />
-      <UButton size="xs" @click="commitIriEdit">Apply</UButton>
-      <UButton size="xs" variant="ghost" @click="cancelIriEdit">Cancel</UButton>
-    </div>
+    <!-- Subject IRI (read-only; copy to clipboard) -->
     <div
-      v-else
       class="text-sm text-muted font-mono break-all bg-muted/30 px-3 py-2 rounded mb-3 cursor-pointer group flex items-center gap-2 hover:bg-muted/50 transition-colors"
-      @click.stop="startIriEdit"
+      :title="iriCopied ? 'Copied' : 'Copy IRI'"
+      @click.stop="copyIri"
     >
       <span class="flex-1">{{ subjectIri }}</span>
-      <UIcon name="i-heroicons-pencil" class="size-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <UIcon
+        :name="iriCopied ? 'i-heroicons-check' : 'i-heroicons-clipboard-document'"
+        class="size-3.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+      />
     </div>
 
     <div class="overflow-x-hidden -mx-4">
