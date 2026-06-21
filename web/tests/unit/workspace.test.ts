@@ -237,3 +237,39 @@ describe('workspace label', () => {
     expect(deriveLabel(null, definitions)).toBeNull()
   })
 })
+
+describe('vocab context sync (save targets the open vocab branch)', () => {
+  // Mirrors scheme.vue's dedicated sync watcher: re-bind the workspace vocabSlug to
+  // the vocab open in the editor whenever (definitions loaded) the open vocab is known
+  // and differs. Guards against saving to a stale/different vocab's edit branch.
+  function syncedVocabSlug(o: { wsLoaded: boolean; openSlug: string | undefined; currentSlug: string | null }): string | null {
+    if (o.wsLoaded && o.openSlug && o.currentSlug !== o.openSlug) return o.openSlug
+    return o.currentSlug
+  }
+  function editBranch(wsSlug: string, vocabSlug: string | null): string {
+    return vocabSlug ? `edit/${wsSlug}/${vocabSlug}` : wsSlug
+  }
+
+  it('re-binds to the open vocab when a different one is left stale (the bug)', () => {
+    const next = syncedVocabSlug({ wsLoaded: true, openSlug: 'AssociationType', currentSlug: 'E2EGIFVocabulary' })
+    expect(next).toBe('AssociationType')
+    // the save must target the open vocab's branch, not the stale one
+    expect(editBranch('develop', next)).toBe('edit/develop/AssociationType')
+  })
+
+  it('leaves the context unchanged when it already matches', () => {
+    expect(syncedVocabSlug({ wsLoaded: true, openSlug: 'AssociationType', currentSlug: 'AssociationType' }))
+      .toBe('AssociationType')
+  })
+
+  it('does not clobber the context when the open vocab is not yet indexed (new vocab)', () => {
+    // create-vocab flow sets vocabSlug itself; the open vocab may not be in the index yet
+    expect(syncedVocabSlug({ wsLoaded: true, openSlug: undefined, currentSlug: 'MyNewVocab' }))
+      .toBe('MyNewVocab')
+  })
+
+  it('waits for workspace definitions before binding', () => {
+    expect(syncedVocabSlug({ wsLoaded: false, openSlug: 'AssociationType', currentSlug: 'E2EGIFVocabulary' }))
+      .toBe('E2EGIFVocabulary')
+  })
+})

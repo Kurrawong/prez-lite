@@ -806,6 +806,23 @@ const editErrorModal = ref(false)
 const editErrorMessage = ref('')
 const editErrorPath = ref('')
 
+// Keep the workspace vocab context bound to the vocab currently open in the editor,
+// independent of edit-mode entry. Without this, navigating directly to a vocab while a
+// *different* vocab is left in the workspace state saves to the wrong edit branch (the
+// stale workspace vocabSlug). The enter-edit watcher below also binds it, but its guards
+// (not-yet-editing, definitions loaded) can be skipped by load-order races; this
+// dedicated, immediate watcher re-binds as soon as the vocab list and workspace
+// definitions are available, so the edit branch is correct before any save.
+watch(
+  [vocabSlugForEditor, () => workspace.activeWorkspace.value],
+  ([slug, ws]) => {
+    if (ws && slug && workspace.activeVocabSlug.value !== slug) {
+      workspace.selectVocab(slug)
+    }
+  },
+  { immediate: true },
+)
+
 // Auto-enter edit mode when authenticated + vocab ready.
 // On page load auth token and vocab metadata may not be available yet, so watch all three.
 watch([editView, authToken, vocabSlugForEditor], async ([view]) => {
