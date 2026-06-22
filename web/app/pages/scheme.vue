@@ -404,7 +404,10 @@ const promotionExistingPR = computed(() => {
 
 /** Context-aware modal title */
 const reviewModalTitle = computed(() => {
-  const vocabName = editModeTitle.value ?? displayScheme.value?.prefLabel ?? 'Changes'
+  // displayScheme.prefLabel is a LangMap, not a string — run it through getLabel so
+  // the title doesn't render "[object Object]" when editModeTitle is empty (e.g. the
+  // merged/approved review state).
+  const vocabName = editModeTitle.value || getLabel(displayScheme.value?.prefLabel) || 'Changes'
   const wsLabel = workspace.activeWorkspace.value?.label ?? 'Staging'
   const isPending = promotionLayer.value === 'pending'
 
