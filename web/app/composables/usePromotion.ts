@@ -465,27 +465,48 @@ export function usePromotion(
     if (!ws || !owner || !repo || !token.value) return []
 
     try {
-      const [compareData, metadata] = await Promise.all([
-        githubFetch<{ files?: Array<{ filename: string; status: string }> }>(
-          `https://api.github.com/repos/${owner}/${repo}/compare/${encodeURIComponent(ws.refreshFrom)}...${encodeURIComponent(ws.slug)}`,
-        ),
+      // Compare actual file CONTENT (git blob SHA) between the workspace branch
+      // (e.g. develop) and what it publishes to (e.g. master), NOT the commit-graph
+      // `compare` diff. When the two branches diverge, `compare/base...head` lists
+      // every file touched on head since the (stale) merge base — so an already
+      // published vocab keeps showing as "changed in staging" even though its content
+      // is byte-identical on both branches. Diffing blob SHAs reports only genuine
+      // content differences, so published vocabs drop off correctly.
+      const treeUrl = (ref: string) =>
+        `https://api.github.com/repos/${owner}/${repo}/git/trees/${encodeURIComponent(ref)}?recursive=1`
+      const [baseTree, headTree, metadata] = await Promise.all([
+        githubFetch<{ tree?: Array<{ path: string; type: string; sha: string }> }>(treeUrl(ws.refreshFrom)),
+        githubFetch<{ tree?: Array<{ path: string; type: string; sha: string }> }>(treeUrl(ws.slug)),
         fetchVocabMetadata().catch(() => []),
       ])
-      if (!compareData?.files) return []
+      if (!headTree?.tree || !baseTree?.tree) return []
 
       const { githubVocabPath } = useRuntimeConfig().public
       const vocabPrefix = ((githubVocabPath as string) || '').replace(/^\/+|\/+$/g, '')
+      const isVocab = (p: string) => p.endsWith('.ttl') && (!vocabPrefix || p.startsWith(vocabPrefix + '/'))
+      const shaMap = (tree: Array<{ path: string; type: string; sha: string }>) =>
+        new Map(tree.filter(t => t.type === 'blob' && isVocab(t.path)).map(t => [t.path, t.sha]))
+      const baseShas = shaMap(baseTree.tree)
+      const headShas = shaMap(headTree.tree)
 
-      // Build slug → label lookup from vocab metadata
       const labelMap = new Map(metadata.map(v => [v.slug, v.prefLabel]))
+      const slugOf = (path: string) => (path.split('/').pop() ?? path).replace(/\.ttl$/, '')
+      const changed: { slug: string; label: string; status: string }[] = []
 
-      return compareData.files
-        .filter(f => f.filename.endsWith('.ttl') && (!vocabPrefix || f.filename.startsWith(vocabPrefix + '/')))
-        .map(f => {
-          const filename = f.filename.split('/').pop() ?? f.filename
-          const slug = filename.replace(/\.ttl$/, '')
-          return { slug, label: labelMap.get(slug) ?? slug, status: f.status }
-        })
+      // Added / modified: present on head with a different (or absent) base blob SHA.
+      for (const [path, sha] of headShas) {
+        const baseSha = baseShas.get(path)
+        if (baseSha === sha) continue // identical content → already in sync, not "changed"
+        const slug = slugOf(path)
+        changed.push({ slug, label: labelMap.get(slug) ?? slug, status: baseSha ? 'modified' : 'added' })
+      }
+      // Removed: present on base but gone from head.
+      for (const path of baseShas.keys()) {
+        if (headShas.has(path)) continue
+        const slug = slugOf(path)
+        changed.push({ slug, label: labelMap.get(slug) ?? slug, status: 'removed' })
+      }
+      return changed
     } catch {
       return []
     }
