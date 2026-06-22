@@ -273,3 +273,41 @@ describe('vocab context sync (save targets the open vocab branch)', () => {
       .toBe('E2EGIFVocabulary')
   })
 })
+
+describe('changed-in-staging by content (blob SHA), not commit graph', () => {
+  // Mirrors usePromotion.fetchChangedVocabs: diff the per-file blob SHAs of the
+  // workspace branch (head, e.g. develop) against what it publishes to (base, e.g.
+  // master). A vocab is "changed in staging" only when its content actually differs.
+  // The old code trusted compare/base...head .files, which lists files touched on
+  // head since the merge base — so it falsely flagged already-published vocabs once
+  // the branches diverged. This contract prevents that.
+  function changedVocabs(base: Record<string, string>, head: Record<string, string>) {
+    const out: { slug: string; status: string }[] = []
+    for (const [path, sha] of Object.entries(head)) {
+      if (base[path] === sha) continue
+      out.push({ slug: path, status: path in base ? 'modified' : 'added' })
+    }
+    for (const path of Object.keys(base)) {
+      if (!(path in head)) out.push({ slug: path, status: 'removed' })
+    }
+    return out
+  }
+
+  it('does NOT flag an already-published vocab (identical SHA) even on diverged branches', () => {
+    // both branches hold the published edit -> same blob SHA -> not "changed"
+    expect(changedVocabs({ 'a.ttl': 'sha1', 'b.ttl': 'shaB' }, { 'a.ttl': 'sha1', 'b.ttl': 'shaB' }))
+      .toEqual([])
+  })
+
+  it('flags a genuinely modified vocab (SHA differs)', () => {
+    expect(changedVocabs({ 'a.ttl': 'sha1' }, { 'a.ttl': 'sha2' }))
+      .toEqual([{ slug: 'a.ttl', status: 'modified' }])
+  })
+
+  it('flags added and removed vocabs', () => {
+    const r = changedVocabs({ 'a.ttl': 's', 'gone.ttl': 'g' }, { 'a.ttl': 's', 'new.ttl': 'n' })
+    expect(r).toContainEqual({ slug: 'new.ttl', status: 'added' })
+    expect(r).toContainEqual({ slug: 'gone.ttl', status: 'removed' })
+    expect(r).toHaveLength(2)
+  })
+})
