@@ -72,6 +72,12 @@ prez-lite/
 
 Client repositories extend prez-lite as a Nuxt layer, customising branding, content, and configuration while inheriting all base functionality. See `packages/sites/` for examples.
 
+Start a new vocabulary site from the public template:
+
+```bash
+gh repo create my-vocabs --template Kurrawong/prez-lite-template-default --public --clone
+```
+
 ```bash
 # Run a client site locally
 cd packages/sites/suncorp-vpp
