@@ -51,9 +51,19 @@ function serializeWithPatch(
   subjectIri?: string,
 ): string {
   const { added, removed } = computeQuadDiff(originalStore, store)
-  const modifiedSubjects = subjectIri
-    ? new Set([subjectIri])
-    : getModifiedSubjects(added, removed)
+  const modifiedSubjects = new Set<string>()
+  if (subjectIri) {
+    modifiedSubjects.add(subjectIri)
+    // Include subjects modified only as a reciprocal side-effect (scheme hasTopConcept,
+    // parent narrower) that point AT this subject — part of the same logical change.
+    for (const q of [...added, ...removed]) {
+      if (q.object.termType === 'NamedNode' && q.object.value === subjectIri) {
+        modifiedSubjects.add(q.subject.value)
+      }
+    }
+  } else {
+    for (const s of getModifiedSubjects(added, removed)) modifiedSubjects.add(s)
+  }
 
   const patches = new Map<string, string | null>()
   const newBlocks: string[] = []
@@ -304,6 +314,41 @@ describe('serializeWithPatch', () => {
 
       expect(result).toContain('Changed A')
       expect(result).not.toContain('cs:c')
+    })
+
+    // Regression: adding a new TOP concept dirties two subjects (the concept + the
+    // scheme's hasTopConcept). A per-subject save must carry the scheme's reciprocal
+    // edit too, or it's orphaned as "unsaved" and the file becomes inconsistent.
+    it('includes the scheme hasTopConcept reciprocal when saving a new top concept', () => {
+      const { store, originalStore, parsedTTL } = makeContext()
+      const top = `${SCHEME}top`
+      store.addQuad(namedNode(top), namedNode(`${RDF}type`), namedNode(`${SKOS}Concept`), defaultGraph())
+      store.addQuad(namedNode(top), namedNode(`${SKOS}prefLabel`), literal('Top', 'en'), defaultGraph())
+      store.addQuad(namedNode(top), namedNode(`${SKOS}inScheme`), namedNode(SCHEME), defaultGraph())
+      store.addQuad(namedNode(top), namedNode(`${SKOS}topConceptOf`), namedNode(SCHEME), defaultGraph())
+      // reciprocal on the scheme subject
+      store.addQuad(namedNode(SCHEME), namedNode(`${SKOS}hasTopConcept`), namedNode(top), defaultGraph())
+
+      const result = serializeWithPatch(store, originalStore, parsedTTL, PREFIXES, top)
+
+      const reparsed = parseTTL(result)
+      expect(reparsed.getQuads(top, `${RDF}type`, `${SKOS}Concept`, null)).toHaveLength(1)
+      // the scheme's reciprocal link is saved alongside the concept (the bug: it wasn't)
+      expect(reparsed.getQuads(SCHEME, `${SKOS}hasTopConcept`, top, null)).toHaveLength(1)
+    })
+
+    it('includes a parent concept narrower reciprocal when saving a child concept', () => {
+      const { store, originalStore, parsedTTL } = makeContext()
+      const child = `${SCHEME}child`
+      store.addQuad(namedNode(child), namedNode(`${RDF}type`), namedNode(`${SKOS}Concept`), defaultGraph())
+      store.addQuad(namedNode(child), namedNode(`${SKOS}prefLabel`), literal('Child', 'en'), defaultGraph())
+      store.addQuad(namedNode(child), namedNode(`${SKOS}broader`), namedNode(CONCEPT_A), defaultGraph())
+      store.addQuad(namedNode(CONCEPT_A), namedNode(`${SKOS}narrower`), namedNode(child), defaultGraph())
+
+      const result = serializeWithPatch(store, originalStore, parsedTTL, PREFIXES, child)
+
+      const reparsed = parseTTL(result)
+      expect(reparsed.getQuads(CONCEPT_A, `${SKOS}narrower`, child, null)).toHaveLength(1)
     })
   })
 

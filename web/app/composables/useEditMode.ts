@@ -1031,15 +1031,23 @@ export function useEditMode(
     }
 
     const { added, removed } = computeDiff()
-    const modifiedSubjects = subjectIri
-      ? new Set([subjectIri])
-      : getModifiedSubjects(added, removed)
-
-    // Also include subjects affected indirectly (e.g. broader/narrower sync)
-    if (!subjectIri) {
-      // Re-compute to catch all
-      const allModified = getModifiedSubjects(added, removed)
-      for (const s of allModified) modifiedSubjects.add(s)
+    const modifiedSubjects = new Set<string>()
+    if (subjectIri) {
+      modifiedSubjects.add(subjectIri)
+      // Include subjects modified only as a reciprocal side-effect of saving this one —
+      // e.g. the scheme's skos:hasTopConcept, or a parent concept's skos:narrower, that
+      // point AT this subject. They are part of the same logical change, so a per-subject
+      // save must include them too. Otherwise the reciprocal edit is orphaned: it stays
+      // "unsaved" after the concept is saved, and the branch gets an inconsistent file
+      // (concept has topConceptOf but the scheme lacks the matching hasTopConcept).
+      for (const q of [...added, ...removed]) {
+        if (q.object.termType === 'NamedNode' && q.object.value === subjectIri) {
+          modifiedSubjects.add(q.subject.value)
+        }
+      }
+    } else {
+      // Full save: every modified subject (already covers indirect broader/narrower sync).
+      for (const s of getModifiedSubjects(added, removed)) modifiedSubjects.add(s)
     }
 
     // Include deleted subjects (exist in original but have zero quads in current store).
