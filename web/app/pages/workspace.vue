@@ -11,6 +11,9 @@ const vocabs = ref<VocabMetadata[]>([])
 const vocabsLoading = ref(false)
 const selectingVocab = ref<string | null>(null)
 const selectError = ref<string | null>(null)
+// Slugs on work branches but not yet in the published index (shown as "new")
+const unpublishedSlugs = ref<Set<string>>(new Set())
+const workspaceVocabs = useWorkspaceVocabs(workspace)
 
 // Redirect to home if not authenticated (wait for auth to finish initializing)
 watch([isAuthenticated, authLoading], ([authenticated, isLoading]) => {
@@ -29,19 +32,34 @@ watch(() => workspace.isEnabled.value, async (enabled) => {
   }
 }, { immediate: true })
 
-// Load vocab list when a workspace is selected
-watch(() => workspace.state.value?.workspaceSlug, async (slug) => {
-  if (slug) {
-    vocabsLoading.value = true
+// Load vocab list when a workspace is selected. Re-runs when branches load so
+// vocabs that exist only on work branches (not yet in the published index)
+// appear too — see useWorkspaceVocabs.
+async function loadVocabList() {
+  // Only flash the spinner on first load — refreshes swap in place
+  if (!vocabs.value.length) vocabsLoading.value = true
+  try {
+    const res = await workspaceVocabs.fetchWorkspaceVocabs()
+    vocabs.value = res.vocabs
+    unpublishedSlugs.value = res.unpublished
+  } catch {
     try {
       vocabs.value = await fetchVocabMetadata()
     } catch {
       vocabs.value = []
-    } finally {
-      vocabsLoading.value = false
     }
+  } finally {
+    vocabsLoading.value = false
   }
-}, { immediate: true })
+}
+
+watch(
+  [() => workspace.state.value?.workspaceSlug, () => workspace.branches.value],
+  async ([slug]) => {
+    if (slug) await loadVocabList()
+  },
+  { immediate: true },
+)
 
 function handleSelectWorkspace(slug: string) {
   workspace.selectWorkspace(slug)
@@ -113,12 +131,72 @@ const vocabIriMap = computed(() => {
   return map
 })
 
-function navigateToVocab(slug: string) {
-  const iri = vocabIriMap.value.get(slug)
-  if (iri) {
-    workspace.selectVocab(slug)
-    navigateTo({ path: '/scheme', query: { uri: iri } })
+function navigateToVocab(v: { slug: string; label: string; status: string }) {
+  if (v.status === 'removed') {
+    selectError.value = `"${v.label}" was removed in staging — use Discard to restore it from the published version.`
+    return
   }
+  const iri = vocabIriMap.value.get(v.slug)
+  if (!iri) {
+    selectError.value = `"${v.label}" could not be opened — its file was not found on the workspace branch.`
+    return
+  }
+  workspace.selectVocab(v.slug)
+  navigateTo({ path: '/scheme', query: { uri: iri } })
+}
+
+// --- Discard staged change (unwind a vocab on the workspace branch) ---
+
+const discardTarget = ref<{ slug: string; label: string; status: string } | null>(null)
+const discarding = ref(false)
+const discardError = ref<string | null>(null)
+const showDiscardModal = computed({
+  get: () => !!discardTarget.value,
+  set: (open: boolean) => { if (!open) discardTarget.value = null },
+})
+
+function openDiscardModal(v: { slug: string; label: string; status: string }) {
+  discardError.value = null
+  discardTarget.value = v
+}
+
+function closeDiscardModal() {
+  discardTarget.value = null
+}
+
+const discardDescription = computed(() => {
+  const v = discardTarget.value
+  if (!v) return ''
+  const base = workspace.activeWorkspace.value?.refreshFrom ?? 'the published version'
+  if (v.status === 'added') {
+    return `This permanently removes "${v.label}" from the ${wsLabel.value} workspace. It has not been published, so it will be gone entirely.`
+  }
+  if (v.status === 'removed') {
+    return `This restores "${v.label}" in the ${wsLabel.value} workspace from ${base}.`
+  }
+  return `This resets "${v.label}" in the ${wsLabel.value} workspace to match ${base}, dropping the staged edits.`
+})
+
+async function confirmDiscard() {
+  const v = discardTarget.value
+  if (!v) return
+  discarding.value = true
+  discardError.value = null
+  const ok = await promotion.discardVocabChange(v)
+  discarding.value = false
+  if (!ok) {
+    discardError.value = promotion.error.value ?? 'Failed to discard the change'
+    return
+  }
+  discardTarget.value = null
+  // Clear the vocab selection if the discarded vocab was open
+  if (workspace.activeVocabSlug.value === v.slug && workspace.state.value) {
+    workspace.selectWorkspace(workspace.state.value.workspaceSlug)
+  }
+  // Refresh branches, staged-changes summary and the vocab list
+  await workspace.fetchBranches()
+  changedVocabs.value = await promotion.fetchChangedVocabs()
+  await loadVocabList()
 }
 
 // Per-vocab status derived from branches + changedVocabs
@@ -411,18 +489,30 @@ const workspaceBreadcrumbs = computed(() => {
 
           <!-- Changed vocabs list -->
           <div v-if="changedVocabs.length > 0" class="ml-5.5 space-y-0.5 mb-4">
-            <button
+            <div
               v-for="v in changedVocabs"
               :key="v.slug"
-              type="button"
-              class="w-full flex items-center gap-2 text-sm py-1 px-2 -mx-2 rounded-md hover:bg-muted/50 transition-colors text-left"
-              @click="navigateToVocab(v.slug)"
+              class="flex items-center gap-1 -mx-2"
             >
-              <UIcon name="i-heroicons-book-open" class="size-3.5 shrink-0 text-muted" />
-              <span class="font-medium truncate text-primary hover:underline">{{ v.label }}</span>
-              <span class="text-xs text-muted ml-auto capitalize">{{ v.status }}</span>
-              <UIcon name="i-heroicons-chevron-right" class="size-3 text-muted shrink-0" />
-            </button>
+              <button
+                type="button"
+                class="flex-1 min-w-0 flex items-center gap-2 text-sm py-1 px-2 rounded-md hover:bg-muted/50 transition-colors text-left"
+                @click="navigateToVocab(v)"
+              >
+                <UIcon name="i-heroicons-book-open" class="size-3.5 shrink-0 text-muted" />
+                <span class="font-medium truncate text-primary hover:underline">{{ v.label }}</span>
+                <span class="text-xs text-muted ml-auto capitalize">{{ v.status }}</span>
+                <UIcon name="i-heroicons-chevron-right" class="size-3 text-muted shrink-0" />
+              </button>
+              <UButton
+                icon="i-heroicons-arrow-uturn-left"
+                color="error"
+                variant="ghost"
+                size="xs"
+                :title="`Discard staged change to ${v.label}`"
+                @click="openDiscardModal(v)"
+              />
+            </div>
           </div>
 
           <!-- Promotion actions -->
@@ -505,6 +595,15 @@ const workspaceBreadcrumbs = computed(() => {
             <!-- Status badges -->
             <div class="flex items-center gap-1.5 shrink-0">
               <UBadge
+                v-if="unpublishedSlugs.has(vocab.slug)"
+                color="warning"
+                variant="subtle"
+                size="xs"
+                title="Not yet published — exists only in the workspace"
+              >
+                new
+              </UBadge>
+              <UBadge
                 v-if="vocabStatusMap.get(vocab.slug)?.hasEditBranch"
                 color="primary"
                 variant="subtle"
@@ -579,6 +678,42 @@ const workspaceBreadcrumbs = computed(() => {
             @comment="handlePRComment"
             @close="showReviewModal = false"
           />
+        </template>
+      </UModal>
+
+      <!-- Discard Staged Change Modal -->
+      <UModal v-model:open="showDiscardModal">
+        <template #header>
+          <h3 class="font-semibold">Discard staged change</h3>
+        </template>
+        <template #body>
+          <div class="space-y-4">
+            <p class="text-sm">{{ discardDescription }}</p>
+            <UAlert
+              v-if="discardError"
+              color="error"
+              icon="i-heroicons-exclamation-triangle"
+              :description="discardError"
+            />
+            <div class="flex justify-end gap-2">
+              <UButton
+                variant="ghost"
+                color="neutral"
+                :disabled="discarding"
+                @click="closeDiscardModal"
+              >
+                Cancel
+              </UButton>
+              <UButton
+                color="error"
+                icon="i-heroicons-arrow-uturn-left"
+                :loading="discarding"
+                @click="confirmDiscard"
+              >
+                Discard
+              </UButton>
+            </div>
+          </div>
         </template>
       </UModal>
 

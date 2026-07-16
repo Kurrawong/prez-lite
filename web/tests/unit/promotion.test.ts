@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { buildPRBody } from '~/composables/usePromotion'
+import { buildPRBody, planDiscard } from '~/composables/usePromotion'
 import type { SubjectChange } from '~/composables/useEditMode'
 
 // ---------------------------------------------------------------------------
@@ -50,6 +50,46 @@ describe('buildPRBody', () => {
 
     const body = buildPRBody(changes)
     expect(body).toContain('| Concept C | removed | - |')
+  })
+})
+
+// ---------------------------------------------------------------------------
+// planDiscard (pure function — decides how to unwind a staged vocab change)
+// ---------------------------------------------------------------------------
+
+describe('planDiscard', () => {
+  it('deletes an added vocab from the workspace branch', () => {
+    expect(planDiscard('added', 'headsha', null)).toEqual({ kind: 'delete', sha: 'headsha' })
+  })
+
+  it('is a noop when an added vocab is already gone from the branch', () => {
+    expect(planDiscard('added', null, null)).toEqual({ kind: 'noop' })
+  })
+
+  it('restores base content over a modified vocab (sha = existing head file)', () => {
+    expect(planDiscard('modified', 'headsha', 'YmFzZTY0')).toEqual({
+      kind: 'restore',
+      content: 'YmFzZTY0',
+      sha: 'headsha',
+    })
+  })
+
+  it('recreates a removed vocab from base (no head sha — file is absent)', () => {
+    expect(planDiscard('removed', null, 'YmFzZTY0')).toEqual({
+      kind: 'restore',
+      content: 'YmFzZTY0',
+      sha: undefined,
+    })
+  })
+
+  it('errors when base content is unavailable for a modified/removed vocab', () => {
+    expect(planDiscard('modified', 'headsha', null)).toEqual({ kind: 'error', reason: 'missing-base' })
+    expect(planDiscard('removed', null, null)).toEqual({ kind: 'error', reason: 'missing-base' })
+  })
+
+  it('never plans a base restore for an added vocab (nothing exists on base)', () => {
+    // Even if a caller passed base content by mistake, added → delete
+    expect(planDiscard('added', 'headsha', 'YmFzZTY0')).toEqual({ kind: 'delete', sha: 'headsha' })
   })
 })
 
