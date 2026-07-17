@@ -57,10 +57,17 @@ The recommended way to use prez-lite is via **GitHub Template**.
 
 ### Step 1: Create Repository from Template
 
-1. Go to [prez-lite-template](https://github.com/Kurrawong/prez-lite-template) *(coming soon)*
+1. Go to [prez-lite-template-default](https://github.com/Kurrawong/prez-lite-template-default)
 2. Click "Use this template"
 3. Name your repository
 4. Clone locally
+
+Or use the GitHub CLI:
+
+```bash
+gh repo create my-vocabs --template Kurrawong/prez-lite-template-default --public --clone
+cd my-vocabs
+```
 
 ### Step 2: Add Your Vocabularies
 
@@ -308,7 +315,7 @@ Templates live in `packages/gh-templates/`:
 
 | Template | Path | Use Case | Status |
 |----------|------|----------|--------|
-| **default** | `gh-templates/default/` | Standard vocabulary site | Available |
+| **default** | `gh-templates/default/` | Standard vocabulary site | Available as `Kurrawong/prez-lite-template-default` |
 | **catalog** | `gh-templates/catalog/` | Vocabularies + Data catalogs | Planned |
 | **spatial** | `gh-templates/spatial/` | Vocabularies + Maps | Planned |
 
@@ -317,6 +324,8 @@ Each template is a standalone Nuxt project that:
 - Has its own `pnpm-workspace.yaml` (not part of main workspace)
 - Includes GitHub Actions for build/deploy
 - Can be used as a GitHub template repository
+
+Template source files are maintained in this repo and mirrored to the public template repo with `scripts/sync-template-push.sh` / `scripts/sync-template-pull.sh`.
 
 ---
 

@@ -46,6 +46,9 @@ Sites inherit everything from `web/` and selectively override:
 Use when starting a brand-new vocabulary site.
 
 1. Create a new GitHub repo from the `Kurrawong/prez-lite-template-default` template (or use `gh repo create` with `--template`)
+   ```bash
+   gh repo create Org/new-site --template Kurrawong/prez-lite-template-default --public
+   ```
 2. Clone into the monorepo:
    ```bash
    cd packages/sites

@@ -6,7 +6,14 @@ A static site for publishing SKOS vocabularies, powered by [prez-lite](https://g
 
 ### 1. Create your repository from this template
 
-Click "Use this template" on GitHub to create your own repository.
+Click "Use this template" on [Kurrawong/prez-lite-template-default](https://github.com/Kurrawong/prez-lite-template-default) to create your own repository.
+
+Or use the GitHub CLI:
+
+```bash
+gh repo create my-vocabs --template Kurrawong/prez-lite-template-default --public --clone
+cd my-vocabs
+```
 
 ### 2. Add your vocabularies
 
@@ -29,7 +36,7 @@ You can set repository variables to control the build. Go to Settings > Secrets 
 
 Pinning to a release tag (e.g. `v0.2.0`) is recommended for production stability.
 
-### 5. Deploy
+### 4. Deploy
 
 Push to `main` branch. The GitHub Action will:
 1. Process your vocabularies into multiple formats (TTL, JSON-LD, RDF/XML, CSV, HTML)
