@@ -22,9 +22,9 @@ export class EditToolbarPage {
     return this.page.getByRole('button', { name: /redo/i })
   }
 
-  /** Save button */
+  /** Save button (exact — "Unsaved" badge would otherwise match too) */
   get saveButton(): Locator {
-    return this.page.getByRole('button', { name: 'Save' })
+    return this.page.getByRole('button', { name: 'Save', exact: true })
   }
 
   /** "No changes yet" text */
@@ -32,9 +32,9 @@ export class EditToolbarPage {
     return this.page.getByText('No changes yet')
   }
 
-  /** Change count badge */
+  /** Unsaved-changes badge (shows the change count + "Unsaved") */
   get changeBadge(): Locator {
-    return this.page.getByText(/^\d+$/).locator('xpath=ancestor::button[contains(., "change")]')
+    return this.page.getByRole('button', { name: /Unsaved/ })
   }
 
   /** Click undo */
@@ -52,9 +52,9 @@ export class EditToolbarPage {
     await this.saveButton.click()
   }
 
-  /** Open the changes popover */
+  /** Open the unsaved-changes popover */
   async openChanges() {
-    await this.page.getByText(/\d+ changes?/).click()
+    await this.changeBadge.click()
   }
 
   /** Toggle Expert/Simple view */

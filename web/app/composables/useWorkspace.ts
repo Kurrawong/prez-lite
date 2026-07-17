@@ -121,7 +121,15 @@ export function useWorkspace() {
   }
 
   async function loadDefinitions() {
-    if (definitionsLoaded.value) return definitions.value
+    // Never fetch during SSR/prerender: the workspaces.json fetch fails at
+    // build time, and marking definitionsLoaded there bakes an empty-but-loaded
+    // state into the prerendered payload. A client that hydrates that state
+    // never retries, activeWorkspace stays null, and every save on a
+    // direct-loaded scheme page fails with "Failed to create edit branch".
+    if (import.meta.server) return definitions.value
+    // Retry when a previous attempt yielded nothing — covers hydrating an
+    // older poisoned payload and transient fetch failures.
+    if (definitionsLoaded.value && definitions.value.length) return definitions.value
     try {
       const data = await $fetch<{ workspaces: WorkspaceDefinition[] }>('/export/system/workspaces.json')
       definitions.value = data?.workspaces ?? []

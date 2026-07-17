@@ -1,27 +1,27 @@
 /**
  * Edit Flow E2E Test
  *
- * Verifies: Auth → edit mode entry → toolbar state → exit edit mode
+ * Verifies the always-on edit-mode entry: authenticated users auto-enter edit
+ * mode on the scheme page (no Edit button or URL param exists any more);
+ * unauthenticated users never see the edit toolbar.
  *
  * Uses shared fixtures for auth and GitHub API mocking.
  */
 import { test, expect } from './fixtures'
+import { setupWorkspace } from './fixtures/github-mock'
 import { VOCABS } from './helpers/fixtures'
 import { SchemeEditorPage } from './pages/scheme-editor.page'
 
 test.describe('Edit flow', () => {
-  test('authenticated user sees Edit button', async ({ authedPage }) => {
-    const editor = new SchemeEditorPage(authedPage)
+  test('authenticated user auto-enters edit mode', async ({ page, mockGitHubAPI }) => {
+    // A real session always has a workspace selected (fresh logins are
+    // redirected to /workspace until one is chosen)
+    await setupWorkspace(page)
+    const editor = new SchemeEditorPage(page)
     await editor.goto()
 
-    await expect(authedPage.getByRole('button', { name: 'Edit', exact: true })).toBeVisible({ timeout: 5_000 })
-  })
-
-  test('edit mode via URL param shows edit toolbar', async ({ page, mockGitHubAPI }) => {
-    const editor = new SchemeEditorPage(page)
-    await editor.gotoEdit('full')
+    // Edit toolbar initialises without any user action
     await editor.waitForEditMode()
-
     await expect(page.getByText('No changes yet')).toBeVisible()
   })
 
@@ -34,6 +34,7 @@ test.describe('Edit flow', () => {
     await page.goto(`/scheme?uri=${uri}`)
     await expect(page.getByText('Concepts').first()).toBeVisible({ timeout: 15_000 })
 
-    await expect(page.getByRole('button', { name: 'Edit', exact: true })).not.toBeVisible()
+    await expect(page.getByText('No changes yet')).not.toBeVisible()
+    await expect(page.getByRole('button', { name: 'Save', exact: true })).not.toBeVisible()
   })
 })
