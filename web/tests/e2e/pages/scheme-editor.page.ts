@@ -1,7 +1,9 @@
 /**
  * Page object for the scheme page in edit mode.
  *
- * Handles navigation, entering/exiting edit mode, and concept selection.
+ * Edit mode is always-on for authenticated users — navigating to a scheme
+ * while authenticated auto-enters edit mode; there is no Edit button, URL
+ * param, or exit affordance.
  */
 import type { Page, Locator } from '@playwright/test'
 import { VOCABS } from '../helpers/fixtures'
@@ -20,12 +22,6 @@ export class SchemeEditorPage {
     await this.waitForTree()
   }
 
-  /** Navigate directly into edit mode */
-  async gotoEdit(mode: 'full' | 'inline' = 'full', schemeIri: string = VOCABS.alterationForm.iri) {
-    const uri = encodeURIComponent(schemeIri)
-    await this.page.goto(`/scheme?uri=${uri}&edit=${mode}`)
-  }
-
   /** Wait for the concept tree to render */
   async waitForTree() {
     await this.page.getByText('Concepts').first().waitFor({ timeout: 30_000 })
@@ -38,16 +34,6 @@ export class SchemeEditorPage {
     await this.page.waitForTimeout(500)
   }
 
-  /** Enter edit mode via toolbar dropdown */
-  async enterEditMode(mode: 'full' | 'inline' = 'full') {
-    // Click the Edit dropdown button (exact to avoid matching DevTools "Open in editor")
-    await this.page.getByRole('button', { name: 'Edit', exact: true }).click()
-    // Select mode from dropdown
-    const label = mode === 'full' ? 'Full edit mode' : 'Inline edit mode'
-    await this.page.getByText(label).click()
-    await this.waitForEditMode()
-  }
-
   /** Click a concept in the tree */
   async selectConcept(label: string) {
     await this.page.locator('span.text-sm', { hasText: label }).first().click()
@@ -55,14 +41,9 @@ export class SchemeEditorPage {
     await this.page.waitForTimeout(500)
   }
 
-  /** Exit edit mode via toolbar X button */
-  async exitEditMode() {
-    await this.page.getByLabel('Exit edit mode').click()
-  }
-
-  /** Get the change count badge text */
-  get changeCount(): Locator {
-    return this.page.locator('.inline-flex', { hasText: /\d+ changes?/ })
+  /** The "Unsaved" changes badge (visible once in-memory edits exist) */
+  get unsavedBadge(): Locator {
+    return this.page.getByRole('button', { name: /Unsaved/ })
   }
 
   /** Get the "No changes yet" text */

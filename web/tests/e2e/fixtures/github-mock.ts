@@ -3,7 +3,11 @@
  *
  * Provides:
  * - `authedPage`: Page with GitHub OAuth mocked (token + user)
- * - `mockGitHubAPI`: GitHub Contents API interceptor with save capture
+ * - `mockGitHubAPI`: GitHub API interceptor (contents load/save capture,
+ *   branch listing/creation for the workspace edit-branch flow)
+ *
+ * Edit mode is always-on for authenticated users, so these fixtures are the
+ * entry point for every edit-mode spec.
  */
 import { test as base, expect, type Page } from '@playwright/test'
 import { TEST_VOCAB_TTL, TEST_SCHEME_IRI } from './vocab-data'
@@ -12,6 +16,7 @@ export interface SavedRequest {
   message: string
   content: string
   sha: string
+  branch?: string
 }
 
 export interface MockGitHubAPI {
@@ -26,6 +31,8 @@ const MOCK_USER = {
   avatar_url: 'https://avatars.githubusercontent.com/u/1?v=4',
   name: 'Test User',
 }
+
+const MOCK_SHA = 'aaaabbbbccccddddeeeeffff0000111122223333'
 
 /** Set up auth token and user mock on a page */
 async function setupAuth(page: Page): Promise<void> {
@@ -44,8 +51,28 @@ async function setupAuth(page: Page): Promise<void> {
   )
 }
 
-/** Set up GitHub Contents API mock (load + save interception) */
+/**
+ * Seed a selected workspace (normally chosen on /workspace) so the save flow
+ * can derive its edit branch. Must be called before navigation.
+ */
+export async function setupWorkspace(page: Page, workspaceSlug = 'staging'): Promise<void> {
+  await page.addInitScript((slug: string) => {
+    localStorage.setItem('prez_workspace', JSON.stringify({ workspaceSlug: slug, vocabSlug: null }))
+  }, workspaceSlug)
+}
+
+/** Set up GitHub API mocks (load + save interception, branch flow) */
 async function setupGitHubAPI(page: Page, loadTTL: string, savedRequests: SavedRequest[]): Promise<void> {
+  // Catch-all FIRST — later, more specific routes take precedence in Playwright.
+  // Keeps unanticipated GitHub calls (compare, pulls, trees) off the network.
+  await page.route('**/api.github.com/**', route =>
+    route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({}),
+    }),
+  )
+
   await page.route('**/api.github.com/repos/**/contents/**', (route, request) => {
     if (request.method() === 'GET') {
       const content = Buffer.from(loadTTL, 'utf-8').toString('base64')
@@ -61,6 +88,7 @@ async function setupGitHubAPI(page: Page, loadTTL: string, savedRequests: SavedR
         message: body.message,
         content: Buffer.from(body.content, 'base64').toString('utf-8'),
         sha: body.sha,
+        branch: body.branch,
       })
       return route.fulfill({
         status: 200,
@@ -69,6 +97,36 @@ async function setupGitHubAPI(page: Page, loadTTL: string, savedRequests: SavedR
       })
     }
     return route.continue()
+  })
+
+  // Branch listing — includes the workspace roots so ensureWorkspaceBranch()
+  // finds them and only the ephemeral edit branch needs creating.
+  await page.route('**/api.github.com/repos/**/branches**', route =>
+    route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify([
+        { name: 'main', commit: { sha: MOCK_SHA } },
+        { name: 'staging', commit: { sha: MOCK_SHA } },
+      ]),
+    }),
+  )
+
+  // Edit-branch creation / reset (ensureEditBranch flow)
+  await page.route('**/api.github.com/repos/**/git/refs**', (route, request) => {
+    if (request.method() === 'POST' || request.method() === 'PATCH') {
+      const body = JSON.parse(request.postData() || '{}')
+      return route.fulfill({
+        status: request.method() === 'POST' ? 201 : 200,
+        contentType: 'application/json',
+        body: JSON.stringify({ ref: body.ref ?? 'refs/heads/mock', object: { sha: MOCK_SHA } }),
+      })
+    }
+    return route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ object: { sha: MOCK_SHA } }),
+    })
   })
 
   // Mock GitHub Actions runs endpoint (build status polling)

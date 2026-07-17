@@ -6,7 +6,7 @@
  * Catches bugs where edits produce valid TTL but broken JSON exports.
  */
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
-import { readFileSync, writeFileSync, mkdtempSync, rmSync, readdirSync, existsSync } from 'fs'
+import { readFileSync, writeFileSync, mkdtempSync, mkdirSync, rmSync, readdirSync, existsSync } from 'fs'
 import { join, resolve } from 'path'
 import { execSync } from 'child_process'
 import { Store, Parser, DataFactory } from 'n3'
@@ -130,6 +130,8 @@ const skipIf = !existsSync(COLOURS_TTL) || !existsSync(PROFILES) || !existsSync(
 beforeAll(() => {
   if (skipIf) return
   originalTTL = readFileSync(COLOURS_TTL, 'utf-8')
+  // .cache exists on dev machines but not on a fresh CI checkout
+  mkdirSync(join(ROOT, '.cache'), { recursive: true })
   tmpDir = mkdtempSync(join(ROOT, '.cache/pipeline-test-'))
 })
 
