@@ -93,6 +93,31 @@ export function buildPRBody(changes: SubjectChange[]): string {
   return lines.join('\n')
 }
 
+/**
+ * Decide how to discard one vocab's staged change, given its status and what
+ * exists on the workspace branch (headSha) / publish target (baseContent).
+ * Pure — the composable executes the returned op against the contents API.
+ */
+export type DiscardOp =
+  | { kind: 'delete'; sha: string }
+  | { kind: 'restore'; content: string; sha?: string }
+  | { kind: 'noop' }
+  | { kind: 'error'; reason: string }
+
+export function planDiscard(
+  status: string,
+  headSha: string | null,
+  baseContent: string | null,
+): DiscardOp {
+  if (status === 'added') {
+    // Never published — remove the file outright (nothing to restore from base)
+    return headSha ? { kind: 'delete', sha: headSha } : { kind: 'noop' }
+  }
+  // modified / removed — restore the base branch content
+  if (!baseContent) return { kind: 'error', reason: 'missing-base' }
+  return { kind: 'restore', content: baseContent, sha: headSha ?? undefined }
+}
+
 // ============================================================================
 // Composable
 // ============================================================================
@@ -512,6 +537,87 @@ export function usePromotion(
     }
   }
 
+  /**
+   * Discard one vocabulary's staged change: reset the workspace branch copy of
+   * the vocab TTL to match the publish target (refreshFrom). This is the only
+   * unwind path for a vocab whose edit branch is already gone (e.g. a new
+   * vocab approved into staging whose publish PR was then rejected).
+   *
+   *   - added    → delete the TTL from the workspace branch (+ drop any
+   *                leftover edit branch so the vocab can't leak back)
+   *   - modified → overwrite the branch TTL with the base branch content
+   *   - removed  → restore the TTL from the base branch
+   */
+  async function discardVocabChange(v: { slug: string; status: string }): Promise<boolean> {
+    const ws = workspace.activeWorkspace.value
+    if (!ws || !owner || !repo || !token.value) {
+      error.value = 'Not authenticated'
+      return false
+    }
+    error.value = null
+
+    const { githubVocabPath } = useRuntimeConfig().public
+    const vocabPrefix = ((githubVocabPath as string) || 'data/vocabs').replace(/^\/+|\/+$/g, '')
+    const path = `${vocabPrefix}/${v.slug}.ttl`
+    const contentsUrl = (ref?: string) =>
+      `https://api.github.com/repos/${owner}/${repo}/contents/${path}${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`
+
+    try {
+      // Current file on the workspace branch — sha is required for update/delete.
+      const head = await githubFetch<{ sha: string }>(contentsUrl(ws.slug))
+      // Base content only needed for restore ops. The contents API returns
+      // base64, which PUT accepts as-is — no decode/re-encode needed.
+      const base = v.status === 'added'
+        ? null
+        : await githubFetch<{ content?: string }>(contentsUrl(ws.refreshFrom))
+
+      const op = planDiscard(v.status, head?.sha ?? null, base?.content ?? null)
+
+      if (op.kind === 'error') {
+        error.value = `Could not read ${v.slug} from ${ws.refreshFrom}`
+        return false
+      }
+
+      if (op.kind === 'delete') {
+        const res = await githubFetch(contentsUrl(), {
+          method: 'DELETE',
+          body: JSON.stringify({
+            message: `revert: remove ${v.slug} (discard staged addition)`,
+            sha: op.sha,
+            branch: ws.slug,
+          }),
+        })
+        if (!res) {
+          error.value = lastFetchError.value?.githubMessage ?? `Failed to remove ${v.slug}`
+          return false
+        }
+      } else if (op.kind === 'restore') {
+        const res = await githubFetch(contentsUrl(), {
+          method: 'PUT',
+          body: JSON.stringify({
+            message: `revert: restore ${v.slug} to match ${ws.refreshFrom} (discard staged change)`,
+            content: op.content.replace(/\s/g, ''),
+            branch: ws.slug,
+            ...(op.sha ? { sha: op.sha } : {}),
+          }),
+        })
+        if (!res) {
+          error.value = lastFetchError.value?.githubMessage ?? `Failed to restore ${v.slug}`
+          return false
+        }
+      }
+
+      if (v.status === 'added') {
+        // Drop the ephemeral edit branch so the discarded vocab can't leak back.
+        await workspace.deleteBranch(`edit/${ws.slug}/${v.slug}`)
+      }
+      return true
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : 'Something went wrong. Please try again.'
+      return false
+    }
+  }
+
   /** Generate a default review title for a given layer */
   function generateTitle(layer: 'pending' | 'approved'): string {
     const ws = workspace.activeWorkspace.value
@@ -565,5 +671,6 @@ export function usePromotion(
     generateTitle,
     getBranches,
     fetchChangedVocabs,
+    discardVocabChange,
   }
 }
