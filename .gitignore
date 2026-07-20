@@ -90,3 +90,6 @@ webtest/
 
 # Site repos (each subdirectory is its own git repo)
 packages/sites/
+
+# Agent tooling scratch (Codex/Claude skills libraries — not project source)
+.agents/
