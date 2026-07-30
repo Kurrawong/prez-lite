@@ -210,7 +210,7 @@ export function clearCaches() {
  * index.json (CI hasn't reprocessed) — is visible to the editor immediately.
  *
  * Idempotent by IRI. After calling this, the caller must
- * `refreshNuxtData(['schemes', 'vocabMetadata', 'export-vocabs'])` so the
+ * `clearNuxtData(['schemes', 'vocabMetadata', 'export-vocabs'])` so the
  * useAsyncData consumers (useScheme, useShare) re-read these caches.
  */
 export function injectVocab(meta: VocabMetadata): void {
