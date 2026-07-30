@@ -618,6 +618,53 @@ export function usePromotion(
     }
   }
 
+  /**
+   * Delete a vocabulary from the workspace branch.
+   *
+   * A published vocab (present on the publish target) becomes a staged
+   * "removed" change — visible on the workspace page, restorable via
+   * discard, and only final once submitted for publishing. An unpublished
+   * vocab is removed outright. Any leftover edit branch is dropped so stale
+   * content can't resurrect the vocab.
+   */
+  async function deleteVocabulary(slug: string): Promise<boolean> {
+    const ws = workspace.activeWorkspace.value
+    if (!ws || !owner || !repo || !token.value) {
+      error.value = 'Not authenticated'
+      return false
+    }
+    error.value = null
+
+    const { githubVocabPath } = useRuntimeConfig().public
+    const vocabPrefix = ((githubVocabPath as string) || 'data/vocabs').replace(/^\/+|\/+$/g, '')
+    const path = `${vocabPrefix}/${slug}.ttl`
+    const contentsUrl = (ref?: string) =>
+      `https://api.github.com/repos/${owner}/${repo}/contents/${path}${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`
+
+    try {
+      const head = await githubFetch<{ sha: string }>(contentsUrl(ws.slug))
+      if (head?.sha) {
+        const res = await githubFetch(contentsUrl(), {
+          method: 'DELETE',
+          body: JSON.stringify({
+            message: `chore: delete vocabulary ${slug}`,
+            sha: head.sha,
+            branch: ws.slug,
+          }),
+        })
+        if (!res) {
+          error.value = lastFetchError.value?.githubMessage ?? `Failed to delete ${slug}`
+          return false
+        }
+      }
+      await workspace.deleteBranch(`edit/${ws.slug}/${slug}`)
+      return true
+    } catch (e: unknown) {
+      error.value = e instanceof Error ? e.message : 'Something went wrong. Please try again.'
+      return false
+    }
+  }
+
   /** Generate a default review title for a given layer */
   function generateTitle(layer: 'pending' | 'approved'): string {
     const ws = workspace.activeWorkspace.value
@@ -672,5 +719,6 @@ export function usePromotion(
     getBranches,
     fetchChangedVocabs,
     discardVocabChange,
+    deleteVocabulary,
   }
 }
