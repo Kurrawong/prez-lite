@@ -809,6 +809,42 @@ const editErrorModal = ref(false)
 const editErrorMessage = ref('')
 const editErrorPath = ref('')
 
+// --- Delete vocabulary ---
+
+const showDeleteVocabModal = ref(false)
+const deletingVocab = ref(false)
+const deleteVocabError = ref<string | null>(null)
+
+function openDeleteVocabModal() {
+  deleteVocabError.value = null
+  showDeleteVocabModal.value = true
+}
+
+function closeDeleteVocabModal() {
+  showDeleteVocabModal.value = false
+}
+
+async function confirmDeleteVocab() {
+  const slug = vocabSlugForEditor.value
+  if (!promotion || !slug) return
+  deletingVocab.value = true
+  deleteVocabError.value = null
+  const ok = await promotion.deleteVocabulary(slug)
+  deletingVocab.value = false
+  if (!ok) {
+    deleteVocabError.value = promotion.error.value ?? 'Failed to delete the vocabulary'
+    return
+  }
+  showDeleteVocabModal.value = false
+  // Leave edit mode without prompting and clear the vocab selection —
+  // the file this editor session was bound to no longer exists.
+  editMode?.exitEditMode(true)
+  if (workspace.state.value) {
+    workspace.selectWorkspace(workspace.state.value.workspaceSlug)
+  }
+  navigateTo('/workspace')
+}
+
 // Keep the workspace vocab context bound to the vocab currently open in the editor,
 // independent of edit-mode entry. Without this, navigating directly to a vocab while a
 // *different* vocab is left in the workspace state saves to the wrong edit branch (the
@@ -1672,6 +1708,16 @@ function copyIriToClipboard(iri: string) {
             size="xs"
             aria-label="Share or embed this vocabulary"
           />
+          <UButton
+            v-if="isAuthenticated && editView !== 'none' && !historySha && vocabSlugForEditor && promotion"
+            icon="i-heroicons-trash"
+            color="error"
+            variant="ghost"
+            size="xs"
+            aria-label="Delete this vocabulary"
+            title="Delete this vocabulary"
+            @click="openDeleteVocabModal"
+          />
           <!-- History popover moved to EditToolbar -->
           <span v-if="historySha" class="inline-flex items-center gap-1.5 text-xs text-warning-500 dark:text-warning-400 bg-warning-50 dark:bg-warning-950/30 rounded-md px-2 py-0.5">
             <UIcon name="i-heroicons-clock" class="size-3 shrink-0" />
@@ -2378,6 +2424,53 @@ function copyIriToClipboard(iri: string) {
         <template #footer>
           <div class="flex justify-end">
             <UButton label="Close" @click="editErrorModal = false" />
+          </div>
+        </template>
+      </UModal>
+
+      <!-- Delete Vocabulary Modal -->
+      <UModal v-model:open="showDeleteVocabModal">
+        <template #header>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-trash" class="size-5 text-error" />
+            <h3 class="font-semibold">Delete vocabulary</h3>
+          </div>
+        </template>
+        <template #body>
+          <div class="space-y-4">
+            <p class="text-sm">
+              This removes <span class="font-medium">"{{ getLabel(displayScheme?.prefLabel) }}"</span>
+              from the {{ workspace.activeWorkspace.value?.label ?? 'current' }} workspace.
+            </p>
+            <p class="text-sm text-muted">
+              A published vocabulary is staged as removed — it stays live until the change is
+              submitted for publishing, and can be restored with Discard on the workspace page.
+              A vocabulary that has never been published is gone entirely.
+            </p>
+            <UAlert
+              v-if="deleteVocabError"
+              color="error"
+              icon="i-heroicons-exclamation-triangle"
+              :description="deleteVocabError"
+            />
+            <div class="flex justify-end gap-2">
+              <UButton
+                variant="ghost"
+                color="neutral"
+                :disabled="deletingVocab"
+                @click="closeDeleteVocabModal"
+              >
+                Cancel
+              </UButton>
+              <UButton
+                color="error"
+                icon="i-heroicons-trash"
+                :loading="deletingVocab"
+                @click="confirmDeleteVocab"
+              >
+                Delete
+              </UButton>
+            </div>
           </div>
         </template>
       </UModal>

@@ -131,6 +131,14 @@ const vocabIriMap = computed(() => {
   return map
 })
 
+// Changed rows with display labels. fetchChangedVocabs only knows the
+// published index, so an unpublished vocab falls back to its slug — the
+// stub-inclusive vocab list has the real label.
+const changedVocabsDisplay = computed(() => {
+  const labels = new Map(vocabs.value.map(v => [v.slug, v.prefLabel]))
+  return changedVocabs.value.map(v => ({ ...v, label: labels.get(v.slug) ?? v.label }))
+})
+
 function navigateToVocab(v: { slug: string; label: string; status: string }) {
   if (v.status === 'removed') {
     selectError.value = `"${v.label}" was removed in staging — use Discard to restore it from the published version.`
@@ -369,7 +377,7 @@ const wsLabel = computed(() =>
 
 /** Map changedVocabs to SubjectChange[] so ReviewModal can display them */
 const promotionChanges = computed<SubjectChange[]>(() =>
-  changedVocabs.value.map(v => ({
+  changedVocabsDisplay.value.map(v => ({
     subjectIri: vocabIriMap.value.get(v.slug) ?? v.slug,
     subjectLabel: v.label,
     type: v.status === 'added' ? 'added' as const : 'modified' as const,
@@ -490,7 +498,7 @@ const workspaceBreadcrumbs = computed(() => {
           <!-- Changed vocabs list -->
           <div v-if="changedVocabs.length > 0" class="ml-5.5 space-y-0.5 mb-4">
             <div
-              v-for="v in changedVocabs"
+              v-for="v in changedVocabsDisplay"
               :key="v.slug"
               class="flex items-center gap-1 -mx-2"
             >
