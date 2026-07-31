@@ -665,6 +665,71 @@ export function usePromotion(
     }
   }
 
+  /**
+   * Force the publish target's vocab content to match the workspace branch
+   * after a publish merge.
+   *
+   * Squash-merging develop → master applies develop's commits since the
+   * merge base, not the content difference. Because master accumulates its
+   * own squash + bot-export commits, the base goes stale: a vocab added and
+   * then deleted on develop nets to zero and its deletion silently never
+   * reaches master, even though the PR merges "successfully". Reconcile by
+   * blob-diffing (same content comparison as fetchChangedVocabs) and applying
+   * any residue as explicit commits on the publish target — exactly the
+   * change set the reviewer approved.
+   */
+  async function reconcilePublish(): Promise<{ applied: number; failed: number }> {
+    const ws = workspace.activeWorkspace.value
+    if (!ws || !owner || !repo || !token.value) return { applied: 0, failed: 0 }
+
+    const residual = await fetchChangedVocabs()
+    if (!residual.length) return { applied: 0, failed: 0 }
+
+    const { githubVocabPath } = useRuntimeConfig().public
+    const vocabPrefix = ((githubVocabPath as string) || 'data/vocabs').replace(/^\/+|\/+$/g, '')
+    const urlFor = (slug: string, ref?: string) =>
+      `https://api.github.com/repos/${owner}/${repo}/contents/${vocabPrefix}/${slug}.ttl${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`
+
+    let applied = 0
+    let failed = 0
+    for (const v of residual) {
+      if (v.status === 'removed') {
+        // On the publish target but gone from the workspace branch → delete
+        const target = await githubFetch<{ sha: string }>(urlFor(v.slug, ws.refreshFrom))
+        if (!target?.sha) { applied++; continue }
+        const res = await githubFetch(urlFor(v.slug), {
+          method: 'DELETE',
+          body: JSON.stringify({
+            message: `chore: publish deletion of ${v.slug} (reconcile ${ws.slug} → ${ws.refreshFrom})`,
+            sha: target.sha,
+            branch: ws.refreshFrom,
+          }),
+        })
+        res ? applied++ : failed++
+      } else {
+        // Added/modified on the workspace branch → copy its content across.
+        // Contents API returns base64, which PUT accepts as-is.
+        const src = await githubFetch<{ content?: string }>(urlFor(v.slug, ws.slug))
+        if (!src?.content) { failed++; continue }
+        const target = await githubFetch<{ sha: string }>(urlFor(v.slug, ws.refreshFrom))
+        const res = await githubFetch(urlFor(v.slug), {
+          method: 'PUT',
+          body: JSON.stringify({
+            message: `chore: publish ${v.slug} (reconcile ${ws.slug} → ${ws.refreshFrom})`,
+            content: src.content.replace(/\s/g, ''),
+            branch: ws.refreshFrom,
+            ...(target?.sha ? { sha: target.sha } : {}),
+          }),
+        })
+        res ? applied++ : failed++
+      }
+    }
+    if (failed > 0) {
+      error.value = `Publish reconcile could not apply ${failed} change${failed === 1 ? '' : 's'} — check the repository state`
+    }
+    return { applied, failed }
+  }
+
   /** Generate a default review title for a given layer */
   function generateTitle(layer: 'pending' | 'approved'): string {
     const ws = workspace.activeWorkspace.value
@@ -720,5 +785,6 @@ export function usePromotion(
     fetchChangedVocabs,
     discardVocabChange,
     deleteVocabulary,
+    reconcilePublish,
   }
 }

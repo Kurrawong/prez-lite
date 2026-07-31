@@ -325,6 +325,13 @@ async function handleMergePR() {
       }
     }
 
+    // Layer 3: the squash merge applies commit history, not content
+    // difference — with a stale merge base a deletion can silently no-op.
+    // Reconcile the publish target to match the workspace branch content.
+    if (promotionLayer.value === 'approved') {
+      await promotion.reconcilePublish()
+    }
+
     // Refresh layer diffs
     layerStatus?.refresh()
   } else {

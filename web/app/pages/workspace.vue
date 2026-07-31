@@ -317,6 +317,12 @@ async function handleMergePR() {
     // branch entirely and broke the workspace until it was recreated. Ephemeral
     // edit-branch cleanup happens in the Layer 2 flow (scheme.vue), guarded to
     // promotionLayer === 'pending'.
+
+    // The squash merge applies commit history, not content difference — with a
+    // stale merge base a deletion can silently no-op. Reconcile the publish
+    // target to match the workspace branch content.
+    await promotion.reconcilePublish()
+
     await workspace.fetchBranches()
     changedVocabs.value = await promotion.fetchChangedVocabs()
   } else {
