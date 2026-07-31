@@ -9,7 +9,7 @@
  * Flow:
  *   1. selectVocab(slug) + ensureEditBranch()  → edit/<workspace>/<slug>
  *   2. PUT data/vocabs/<slug>.ttl (file creation) to the edit branch
- *   3. injectVocab() + refreshNuxtData() so useScheme / useShare resolve it
+ *   3. injectVocab() + clearNuxtData() so useScheme / useShare resolve it
  *   4. caller navigates to /scheme?uri=<iri> to add concepts via the normal flow
  */
 
@@ -214,7 +214,13 @@ export function useVocabCreate() {
 
       // 4. Make the new vocab visible to the editor before CI reprocessing.
       injectVocab({ iri, slug, prefLabel: title, definition, conceptCount: 0 })
-      await refreshNuxtData(['schemes', 'vocabMetadata', 'export-vocabs'])
+      // Drop cached asyncData so the scheme page re-runs its fetchers (which
+      // read the injectVocab-patched caches) on mount. This must be
+      // clearNuxtData, not `await refreshNuxtData(...)`: on /workspace none of
+      // these keys have mounted consumers, and refreshNuxtData never resolves
+      // for consumer-less keys — the create hung forever with the vocab
+      // already committed to GitHub and the modal stuck open.
+      clearNuxtData(['schemes', 'vocabMetadata', 'export-vocabs'])
 
       return { ok: true, iri, slug }
     } catch (e: unknown) {
