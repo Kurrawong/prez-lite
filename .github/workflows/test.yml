@@ -6,16 +6,10 @@ on:
   push:
     branches: [main]
 
-# Allow GitHub Pages deployment
+# GitHub Pages is reserved for the vocab site (see deploy-pages.yml). The
+# Playwright report is kept as a downloadable workflow artifact instead.
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-# Only one Pages deployment at a time
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   unit-and-component:
@@ -146,21 +140,3 @@ jobs:
           name: playwright-report
           path: web/playwright-report/
           retention-days: 30
-
-      - name: Upload report to Pages
-        uses: actions/upload-pages-artifact@v3
-        if: ${{ !cancelled() }}
-        with:
-          path: web/playwright-report/
-
-  publish-report:
-    needs: e2e
-    if: ${{ !cancelled() }}
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

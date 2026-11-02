@@ -1,0 +1,85 @@
+name: Deploy to GitHub Pages
+
+# Builds the prez-lite site from the TTL files in data/vocabs/ and publishes it
+# to GitHub Pages.
+#
+# One-off setup in the repo: Settings -> Pages -> Build and deployment ->
+# Source: "GitHub Actions".
+#
+# Works for project pages (https://<owner>.github.io/<repo>/), user/org pages,
+# and custom domains: the base path comes from actions/configure-pages.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One Pages deployment at a time; queued runs wait rather than cancel a
+# deployment part-way through.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max-old-space-size=4096
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4 # version from "packageManager" in package.json
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # TTL -> TTL/JSON-LD/RDF-XML/CSV exports, vocab index, labels, search index.
+      # Always rebuilt from data/vocabs, so exports committed to the repo are ignored.
+      - name: Process vocabularies
+        run: pnpm build:all-export
+
+      - name: Generate static site
+        run: pnpm generate
+        env:
+          # base_path is "/<repo>" for project pages, "" for user/org pages or a
+          # custom domain. Nuxt needs a trailing slash.
+          NUXT_APP_BASE_URL: ${{ steps.pages.outputs.base_path }}/
+          # Adds "edit on github.dev" links to vocab pages (no login needed).
+          NUXT_PUBLIC_GITHUB_REPO: ${{ github.repository }}
+          NUXT_PUBLIC_GITHUB_BRANCH: ${{ github.ref_name }}
+          NUXT_PUBLIC_GITHUB_VOCAB_PATH: data/vocabs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/.output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
