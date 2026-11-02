@@ -3,18 +3,33 @@ PREFIX prez: <https://prez.dev/>
 PREFIX prof: <http://www.w3.org/ns/dx/prof/>
 PREFIX schema: <https://schema.org/>
 
-[]  a prez:Manifest ;
+<urn:ags-rdf:manifest:4.2.0>
+    a prez:Manifest ;
     prof:hasResource
-        [
-            prof:hasArtifact "vocabs/*.ttl" ;
-            prof:hasRole mrr:ResourceData ;
-            schema:description "SKOS vocabularies in Turtle format" ;
-            schema:name "Vocabulary Data" ;
-        ] ,
-        [
-            prof:hasArtifact "background/*.ttl" ;
-            prof:hasRole mrr:IncompleteCatalogueAndResourceLabels ;
-            schema:description "Background labels for external IRI resolution" ;
-            schema:name "Background Labels" ;
-        ] ;
+        <urn:ags-rdf:manifest:4.2.0:catalogue> ,
+        <urn:ags-rdf:manifest:4.2.0:data-model-and-shapes> ,
+        <urn:ags-rdf:manifest:4.2.0:vocabularies> ;
+.
+
+<urn:ags-rdf:manifest:4.2.0:catalogue>
+    prof:hasArtifact "catalogue.ttl" ;
+    prof:hasRole mrr:CatalogueData ;
+    schema:description "dcat:Catalog describing the AGS vocabularies, ontology and shapes" ;
+    schema:name "Catalogue" ;
+.
+
+<urn:ags-rdf:manifest:4.2.0:data-model-and-shapes>
+    prof:hasArtifact
+        "ags4-4.2.0-ontology.ttl" ,
+        "ags4-4.2.0-shapes.ttl" ;
+    prof:hasRole mrr:ResourceModel ;
+    schema:description "OWL data model and SHACL shapes for AGS data in RDF" ;
+    schema:name "Data model and shapes" ;
+.
+
+<urn:ags-rdf:manifest:4.2.0:vocabularies>
+    prof:hasArtifact "vocabs/*.ttl" ;
+    prof:hasRole mrr:ResourceData ;
+    schema:description "SKOS ConceptSchemes (VocPub profile), one per file" ;
+    schema:name "Vocabularies" ;
 .

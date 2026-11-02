@@ -1,0 +1,34 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://w3id.org/ags4/catalogue>
+    a dcat:Catalog ;
+    dcterms:creator <https://www.ags.org.uk/> ;
+    dcterms:description "SKOS vocabularies, an OWL data model and SHACL shapes generated from the AGS 4.2.0 data dictionary JSON."@en ;
+    dcterms:hasPart
+        <https://w3id.org/ags4/def> ,
+        <https://w3id.org/ags4/shapes> ,
+        <https://w3id.org/ags4/voc/abbreviations> ,
+        <https://w3id.org/ags4/voc/contaminant-codes> ,
+        <https://w3id.org/ags4/voc/data-types> ,
+        <https://w3id.org/ags4/voc/dictionary> ,
+        <https://w3id.org/ags4/voc/rules> ,
+        <https://w3id.org/ags4/voc/units> ;
+    dcterms:publisher <https://github.com/KoalaGeo> ;
+    dcterms:title "AGS 4.2.0 data dictionary in RDF"@en ;
+    schema:version "4.2.0" ;
+.
+
+<https://github.com/KoalaGeo>
+    a schema:Organization ;
+    schema:name "KoalaGeo" ;
+    schema:url "https://github.com/KoalaGeo"^^xsd:anyURI ;
+.
+
+<https://www.ags.org.uk/>
+    a schema:Organization ;
+    schema:name "Association of Geotechnical and Geoenvironmental Specialists (AGS)" ;
+    schema:url "https://www.ags.org.uk/"^^xsd:anyURI ;
+.
