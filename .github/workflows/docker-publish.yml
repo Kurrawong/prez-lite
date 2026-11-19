@@ -1,0 +1,204 @@
+name: Docker Image
+
+# Builds the prez-lite container image and publishes it to GitHub Container Registry.
+#
+#   push to main               → ghcr.io/<owner>/prez-lite:latest  (+ :sha-<short>)
+#   release (release-please)   → :<version>, :<major>.<minor>, :<major> (from 1.0.0)
+#   manually pushed v* tag     → same as a release
+#   pull request               → build + smoke test only, nothing is pushed
+#
+# release-please creates tags with GITHUB_TOKEN, and those tags don't trigger
+# workflows, so release.yml calls this workflow directly with the new tag.
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*', 'prez-lite-v*']
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Dockerfile'
+      - '.dockerignore'
+      - 'docker/**'
+      - 'docker-compose.yml'
+      - '.github/workflows/docker-publish.yml'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'packages/data-processing/**'
+      - 'web/app/utils/shacl-profile-parser.ts'
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Release tag to build and publish (e.g. prez-lite-v0.3.0)'
+        type: string
+        required: true
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: docker-${{ inputs.tag || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  docker:
+    name: Build, test and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve image name and tags
+        id: vars
+        shell: bash
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          # GHCR image names must be lowercase
+          echo "image=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+
+          # Release tag: passed in by release.yml, or a manually pushed tag
+          TAG="$INPUT_TAG"
+          if [ -z "$TAG" ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            TAG="$GITHUB_REF_NAME"
+          fi
+          VERSION="${TAG#prez-lite-}"
+          VERSION="${VERSION#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+          # :latest tracks main (not releases), so only non-release builds of main move it
+          if [ -z "$TAG" ] && [ "$GITHUB_REF" = "refs/heads/main" ] && [ "$EVENT_NAME" != "pull_request" ]; then
+            echo "latest=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "latest=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          # Shown at container start and used to invalidate cached exports on upgrade
+          echo "build_version=${VERSION:-sha-${GITHUB_SHA::7}}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.vars.outputs.tag }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        env:
+          # Put labels on the multi-arch index too, so GHCR links the package to this repo
+          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
+        with:
+          images: ${{ steps.vars.outputs.image }}
+          flavor: |
+            latest=false
+          tags: |
+            type=raw,value=latest,enable=${{ steps.vars.outputs.latest == 'true' }}
+            type=sha,prefix=sha-,format=short,enable=${{ steps.vars.outputs.latest == 'true' }}
+            type=semver,pattern={{version}},value=${{ steps.vars.outputs.version }},enable=${{ steps.vars.outputs.version != '' }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ steps.vars.outputs.version }},enable=${{ steps.vars.outputs.version != '' }}
+            type=semver,pattern={{major}},value=${{ steps.vars.outputs.version }},enable=${{ steps.vars.outputs.version != '' && !startsWith(steps.vars.outputs.version, '0.') }}
+            type=ref,event=branch,enable=${{ github.ref != 'refs/heads/main' }}
+            type=ref,event=pr
+          labels: |
+            org.opencontainers.image.title=prez-lite
+            org.opencontainers.image.description=Static SKOS vocabulary browser: mount or COPY your TTL vocabularies into /data
+            org.opencontainers.image.licenses=BSD-3-Clause
+
+      # Build once for the runner's platform and test it before anything is pushed
+      - name: Build image for smoke test
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          load: true
+          tags: prez-lite:smoke-test
+          build-args: PREZ_LITE_VERSION=${{ steps.vars.outputs.build_version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          wait_healthy() {
+            for _ in $(seq 1 60); do
+              curl -fsS "http://127.0.0.1:$1/healthz" >/dev/null 2>&1 && return 0
+              sleep 2
+            done
+            echo "::error::container on port $1 did not become healthy"
+            return 1
+          }
+          vocab_slugs() {
+            curl -fsS "http://127.0.0.1:$1/export/system/vocabularies/index.json" \
+              | jq -r '[.vocabularies[].slug] | sort | join(",")'
+          }
+
+          echo "::group::Bundled demo data"
+          docker run -d --name demo -p 8081:8080 prez-lite:smoke-test
+          wait_healthy 8081 || { docker logs demo; exit 1; }
+          docker logs demo
+          curl -fsS http://127.0.0.1:8081/ | grep -i '<html' >/dev/null
+          curl -fsS http://127.0.0.1:8081/vocabs | grep -i '<html' >/dev/null
+          curl -fsS -o /dev/null http://127.0.0.1:8081/web-components/prez-lite.min.js
+          test "$(vocab_slugs 8081)" = "alteration-form,australian-states,colours,project-status"
+          curl -fsSI http://127.0.0.1:8081/export/vocabs/colours/colours-turtle.ttl | grep -i 'content-type: text/turtle' >/dev/null
+          curl -fsSI http://127.0.0.1:8081/export/system/vocabularies/index.json | grep -i 'access-control-allow-origin: \*' >/dev/null
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8081/export/missing.json)" = "404"
+          echo "::endgroup::"
+
+          echo "::group::Volume-mounted data"
+          mkdir -p "$RUNNER_TEMP/vocab-data/vocabs"
+          cp data/vocabs/colours.ttl "$RUNNER_TEMP/vocab-data/vocabs/"
+          docker run -d --name mounted -p 8082:8080 -v "$RUNNER_TEMP/vocab-data:/data:ro" prez-lite:smoke-test
+          wait_healthy 8082 || { docker logs mounted; exit 1; }
+          docker logs mounted
+          test "$(vocab_slugs 8082)" = "colours"
+          echo "::endgroup::"
+
+          docker rm -f demo mounted
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # The Dockerfile builds the site on the native platform, so only the small
+      # runtime stage runs under QEMU for arm64.
+      - name: Build and push (linux/amd64, linux/arm64)
+        if: github.event_name != 'pull_request'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          annotations: ${{ steps.meta.outputs.annotations }}
+          build-args: PREZ_LITE_VERSION=${{ steps.vars.outputs.build_version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Summary
+        if: github.event_name != 'pull_request'
+        shell: bash
+        env:
+          TAGS: ${{ steps.meta.outputs.tags }}
+        run: |
+          {
+            echo "### Published image"
+            echo
+            echo '```'
+            echo "$TAGS"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

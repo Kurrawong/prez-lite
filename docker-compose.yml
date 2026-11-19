@@ -1,0 +1,23 @@
+# prez-lite with Docker Compose.
+#
+#   docker compose up -d            # run the published image
+#   docker compose up -d --build    # build the image from this checkout instead
+#
+# Vocabularies are read from ./data (same layout as the repo's data/ directory).
+# After changing them, run `docker compose restart` to reprocess.
+#
+# Open http://localhost:8080 (set PREZ_LITE_PORT to use another port).
+
+services:
+  prez-lite:
+    image: ${PREZ_LITE_IMAGE:-ghcr.io/kurrawong/prez-lite:latest}
+    build:
+      context: .
+    ports:
+      - "${PREZ_LITE_PORT:-8080}:8080"
+    volumes:
+      - ./data:/data:ro
+    environment:
+      # auto: reprocess only when ./data changes | always | never
+      PREZ_PROCESS: auto
+    restart: unless-stopped

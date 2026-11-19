@@ -13,6 +13,7 @@
 | Check specifications | [Specification](2-specification/) |
 | Check project status | [Roadmap](4-roadmap/milestones.md) |
 | Set up development | [Technical Guide](5-technical/setup.md) |
+| Run with Docker | [Docker](5-technical/docker.md) |
 
 ---
 
@@ -66,7 +67,7 @@ See [Features Overview](3-features/README.md) for complete details.
 | [2-specification/](2-specification/) | Normative specs | [JSON Contract](2-specification/json-contract.md), [Profiles](2-specification/profiles.md), [Data Processing](2-specification/data-processing.md) |
 | [3-features/](3-features/) | Feature documentation | [Overview](3-features/README.md), [Browsing](3-features/vocabulary-browsing.md), [Search](3-features/search.md), [Sharing](3-features/sharing.md), [Authoring](3-features/authoring.md) |
 | [4-roadmap/](4-roadmap/) | Planning & status | [Milestones](4-roadmap/milestones.md), [Changelog](4-roadmap/CHANGELOG.md), [Backlog](4-roadmap/backlog.md) |
-| [5-technical/](5-technical/) | Implementation | [Setup](5-technical/setup.md), [Data Pipeline](5-technical/data-pipeline.md), [Performance](5-technical/performance.md) |
+| [5-technical/](5-technical/) | Implementation | [Setup](5-technical/setup.md), [Docker](5-technical/docker.md), [Data Pipeline](5-technical/data-pipeline.md), [Performance](5-technical/performance.md) |
 | [archive/](archive/) | Historical docs | Previous planning documents |
 
 ---

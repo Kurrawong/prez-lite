@@ -1,0 +1,191 @@
+#!/bin/sh
+# prez-lite-process: turn SKOS vocabularies (TTL) into the exports the site reads.
+#
+# Runs the same steps as `pnpm build:all-export`, using the standalone pipeline
+# in /opt/prez-lite/processor.
+#
+# Usage: prez-lite-process [--data DIR] [--out DIR] [--if-changed]
+#
+#   --data DIR     Input directory (default: /data), laid out like the repo's data/:
+#                    vocabs/*.ttl            vocabularies (if there are none, the
+#                                            bundled demo data is used instead)
+#                    config/profiles.ttl     SHACL profiles (default: bundled)
+#                    config/workspaces.ttl   workspace definitions (optional)
+#                    background/*.ttl        background labels (optional)
+#                    validators/*.ttl        SHACL validators (optional)
+#   --out DIR      Output directory (default: /srv/prez-lite/export, which nginx
+#                  serves at /export/)
+#   --if-changed   Do nothing if the inputs and the prez-lite version match the
+#                  last successful run
+#
+# Use it in a derived Dockerfile to process vocabularies at build time, so the
+# container starts instantly:
+#
+#   FROM ghcr.io/kurrawong/prez-lite:latest
+#   COPY vocabs/ /data/vocabs/
+#   RUN prez-lite-process
+
+set -eu
+
+PROCESSOR=/opt/prez-lite/processor/scripts
+SAMPLE_DATA=/opt/prez-lite/sample-data
+
+data=/data
+out=/srv/prez-lite/export
+if_changed=false
+
+usage() { sed -n '2,/^$/s/^# \{0,1\}//p' "$0"; }
+log() { echo "[prez-lite] $*"; }
+die() { echo "[prez-lite] error: $*" >&2; exit 1; }
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --data) [ $# -ge 2 ] || die "--data needs a directory"; data=$2; shift 2 ;;
+    --out) [ $# -ge 2 ] || die "--out needs a directory"; out=$2; shift 2 ;;
+    --if-changed) if_changed=true; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) usage >&2; die "unknown option: $1" ;;
+  esac
+done
+
+has_ttl() {
+  for f in "$1"/*.ttl; do
+    [ -f "$f" ] && return 0
+  done
+  return 1
+}
+
+# --- Resolve inputs -----------------------------------------------------------
+
+if ! has_ttl "$data/vocabs"; then
+  log "no .ttl files in $data/vocabs, so using the bundled demo vocabularies"
+  log "(mount your vocabularies at $data/vocabs, or COPY them there, to publish your own)"
+  data=$SAMPLE_DATA
+fi
+data=$(cd "$data" && pwd)
+
+profiles_src="$data/config/profiles.ttl"
+if [ ! -f "$profiles_src" ]; then
+  profiles_src="$SAMPLE_DATA/config/profiles.ttl"
+  log "no config/profiles.ttl in $data, so using the default profiles"
+fi
+
+work=$(mktemp -d "${TMPDIR:-/tmp}/prez-lite.XXXXXX")
+cleanup() {
+  status=$?
+  rm -rf "$work"
+  if [ "$status" -ne 0 ]; then
+    echo "[prez-lite] error: processing failed (exit $status). See the messages above; existing exports were left unchanged." >&2
+  fi
+  exit "$status"
+}
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+# The pipeline scripts refuse paths outside their working directory, so they
+# run in a scratch workspace that links to the inputs.
+ln -s "$data" "$work/data"
+ln -s "$profiles_src" "$work/profiles.ttl"
+
+vocabs="$work/data/vocabs"
+profiles="$work/profiles.ttl"
+workspaces="$work/data/config/workspaces.ttl"
+
+background="$work/data/background"
+if [ ! -d "$background" ]; then
+  background="$work/empty-background"
+  mkdir -p "$background"
+fi
+
+# Like `pnpm build:vocabs`, pass the validators directory whenever it exists
+validators=""
+if [ -d "$data/validators" ]; then
+  validators="$work/data/validators"
+fi
+
+with_validators() {
+  if [ -n "$validators" ]; then "$@" --validators "$validators"; else "$@"; fi
+}
+
+# --- Skip if nothing changed ---------------------------------------------------
+
+fingerprint() {
+  echo "prez-lite ${PREZ_LITE_VERSION:-dev}"
+  echo "profiles $profiles_src"
+  find "$data" -type f -name '*.ttl' -exec sha256sum {} + | LC_ALL=C sort -k2
+  [ "$profiles_src" = "$data/config/profiles.ttl" ] || sha256sum "$profiles_src"
+}
+
+fingerprint > "$work/fingerprint"
+fingerprint_file="$out/.prez-lite-fingerprint"
+
+if [ "$if_changed" = true ] && [ -f "$fingerprint_file" ] && cmp -s "$work/fingerprint" "$fingerprint_file"; then
+  log "vocabularies unchanged since the last run, so skipping processing"
+  exit 0
+fi
+
+# --- Process -------------------------------------------------------------------
+
+count=$(find "$data/vocabs" -maxdepth 1 -type f -name '*.ttl' | wc -l | tr -d ' ')
+log "processing $count vocabulary file(s) from $data/vocabs"
+start=$(date +%s)
+
+stage="$work/export"
+mkdir -p "$stage/system/vocabularies" "$stage/system/search"
+
+cd "$work"
+
+log "step 1/6: vocabularies"
+with_validators node "$PROCESSOR/process-vocab.js" \
+  --profiles "$profiles" \
+  --sourceDir "$vocabs" \
+  --outputBase "$stage/vocabs" \
+  --systemDir "$stage/system" \
+  --pattern '*.ttl' \
+  --backgroundDir "$background"
+
+log "step 2/6: vocabulary catalogue"
+node "$PROCESSOR/generate-vocablist.js" \
+  --sourceDir "$vocabs" \
+  --output "$work/catalog.ttl"
+node "$PROCESSOR/process-vocab.js" \
+  --profiles "$profiles" \
+  --source "$work/catalog.ttl" \
+  --type catalog \
+  --outDir "$stage/system/vocabularies" \
+  --backgroundDir "$background"
+
+log "step 3/6: vocabulary metadata"
+with_validators node "$PROCESSOR/generate-vocab-metadata.js" \
+  --sourceDir "$vocabs" \
+  --backgroundDir "$background" \
+  --output "$stage/system/vocabularies/index.json"
+
+log "step 4/6: background labels"
+node "$PROCESSOR/generate-labels.js" \
+  --backgroundDir "$background" \
+  --output "$stage/system/labels.json"
+
+log "step 5/6: workspaces"
+node "$PROCESSOR/generate-workspaces.js" \
+  --source "$workspaces" \
+  --output "$stage/system/workspaces.json"
+
+log "step 6/6: search index"
+node "$PROCESSOR/generate-search-index.js" \
+  --exportDir "$stage" \
+  --output "$stage/system/search" \
+  --vocabMetadata "$stage/system/vocabularies/index.json"
+
+# --- Publish -------------------------------------------------------------------
+# Replace the old export in one go, so files from deleted vocabularies
+# don't linger. The fingerprint is written last: if this step is interrupted,
+# the next --if-changed run processes again.
+
+mkdir -p "$out"
+find "$out" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+cp -R "$stage"/. "$out"/
+cp "$work/fingerprint" "$fingerprint_file"
+
+log "done in $(( $(date +%s) - start ))s; exports written to $out"
