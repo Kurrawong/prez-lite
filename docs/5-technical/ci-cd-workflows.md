@@ -9,10 +9,13 @@ flowchart LR
   push_main["Push to main"] --> release["Release"]
   push_main --> test["Test"]
   push_main --> proc_data["Process Data"]
+  push_main --> docker["Docker Image"]
+  release -->|"Release cut"| docker
   push_vocabs["Push data/vocabs/**"] --> proc_data
 
   pr["Pull request"] --> test
   pr --> commitlint["Commitlint"]
+  pr -.->|"Docker files changed"| docker
 
   dispatch["workflow_dispatch"] --> deploy_aws["Deploy AWS"]
   dispatch --> validate["Validate Vocabs"]
@@ -108,9 +111,37 @@ flowchart LR
   push["Push to main"] --> rp["Release Please"]
   rp -->|"Pending changes"| pr["Create/update release PR"]
   rp -->|"PR merged"| release["Create GitHub Release + tag"]
+  release --> docker["Docker Image (versioned tags)"]
 ```
 
-Uses `googleapis/release-please-action@v4`.
+Uses `googleapis/release-please-action@v4`. When a release is created, the `docker` job calls [Docker Image](#docker-image) with the new tag. Tags created with `GITHUB_TOKEN` don't trigger workflows on their own.
+
+---
+
+### Docker Image
+
+> Builds the container image, smoke-tests it, and pushes it to GitHub Container Registry.
+
+| | |
+|---|---|
+| **File** | `.github/workflows/docker-publish.yml` |
+| **Trigger** | Auto: push to `main`, `v*`/`prez-lite-v*` tag push, PR to `main` touching Docker files. `workflow_call` from Release. Manual. |
+| **Image** | `ghcr.io/<owner>/<repo>` (lowercase) |
+
+```mermaid
+flowchart LR
+  trigger["Push / release / PR"] --> build["Build linux/amd64"]
+  build --> smoke["Smoke test: demo data + volume mount"]
+  smoke -->|"not a PR"| push["Build + push linux/amd64, linux/arm64"]
+```
+
+| Event | Tags |
+|-------|------|
+| Push to `main` | `latest`, `sha-<short>` |
+| Release / version tag | `<version>`, `<major>.<minor>`, `<major>` (from 1.0.0) |
+| Pull request | none (build + test only) |
+
+See [Docker](docker.md) for using the image.
 
 ---
 

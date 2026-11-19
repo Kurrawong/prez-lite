@@ -20,6 +20,24 @@ pnpm --filter web dev
 pnpm --filter web generate
 ```
 
+## Docker
+
+Run a vocabulary site without installing Node. Mount a folder laid out like `data/` (only `vocabs/*.ttl` is required) and open <http://localhost:8080>:
+
+```bash
+docker run -p 8080:8080 -v "$PWD/data:/data:ro" ghcr.io/kurrawong/prez-lite:latest
+```
+
+Or bake your vocabularies into your own image:
+
+```dockerfile
+FROM ghcr.io/kurrawong/prez-lite:latest
+COPY vocabs/ /data/vocabs/
+RUN prez-lite-process   # optional: process at build time
+```
+
+`docker compose up` serves this repo's `data/` directory. Images are published to GHCR: `latest` from `main`, plus a version tag for each release. See [docs/5-technical/docker.md](docs/5-technical/docker.md) for configuration, Compose, and building from source.
+
 ## Project Structure
 
 ```
@@ -46,6 +64,7 @@ prez-lite/
 │   └── examples/              # Example data and configurations
 ├── sample-data/               # Fallback vocabs (used when data/ is empty)
 ├── scripts/                   # Build and deploy utilities
+├── docker/                    # Container image: nginx config, entrypoint, prez-lite-process
 ├── docs/                      # Project documentation
 └── resources/                 # Static resources
 ```

@@ -1,0 +1,58 @@
+# Keep the build context small and the image reproducible.
+# Only what the Dockerfile needs to build the site and the processing tools.
+
+# VCS / editor / OS
+.git
+.github
+.claude
+.agents
+.idea
+.vscode
+.cursor
+.codex
+.fleet
+**/.DS_Store
+**/*.swp
+
+# Dependencies and build outputs (rebuilt inside the image)
+**/node_modules
+.pnpm-store
+**/.nuxt
+**/.output
+**/.nitro
+**/.cache
+**/.data
+**/dist
+!packages/web-components/dist
+
+# Generated vocabulary exports — the container regenerates these from /data
+web/public/export
+
+# Tests, reports and other non-runtime material
+web/coverage
+web/test-results
+web/playwright-report
+web/wireframes
+docs
+resources
+tmp
+temp
+**/*.log
+
+# Separate repos / packages not needed by the image
+packages/sites
+packages/gh-templates
+packages/examples
+
+# Secrets
+.env
+.env.*
+**/*.env
+**/*.pem
+**/*.key
+
+# Docker files themselves (avoid busting the cache on edits)
+Dockerfile
+docker-compose*.yml
+compose*.yml
+docker/examples

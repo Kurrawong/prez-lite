@@ -1,12 +1,24 @@
 ---
 title: Changelog
 status: current
-updated: 2025-02-08
+updated: 2026-11-19
 ---
 
 # Changelog
 
 > Version history and completed features.
+
+## 2026-11-19
+
+### Docker Image
+- `Dockerfile`: one image holding the pre-built site (nginx, port 8080, non-root) and the TTL → JSON pipeline. Vocabularies in `/data` are processed at start-up, and processing is skipped when nothing has changed.
+- Use it by mounting `/data`, or with a two-line custom `Dockerfile` (`FROM` + `COPY vocabs/`). Optional `RUN prez-lite-process` processes at build time.
+- `prez-lite-process` CLI in the image, also usable on its own to generate exports
+- `docker-compose.yml` serving `./data`
+- `docker-publish.yml` workflow: smoke-tests the image, then publishes multi-arch images to GHCR (`latest` from `main`, semver tags on release). `release.yml` calls it when release-please cuts a release.
+- Guide: `docs/5-technical/docker.md`
+
+---
 
 ## 2026-02-11
 

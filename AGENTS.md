@@ -39,6 +39,7 @@ prez-lite/
 │   │   └── default/       # Standard vocabulary template (subtree sync)
 │   └── examples/          # Example data and configurations
 ├── sample-data/           # Fallback sample vocabs (used when data/ is empty)
+├── docker/                # Container image (nginx config, entrypoint, prez-lite-process); see Dockerfile
 ├── docs/                  # Project documentation
 ├── scripts/               # Build utilities (deploy, sync, labels, validation)
 └── resources/             # Static resources
